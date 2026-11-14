@@ -1,0 +1,37 @@
+name: Automatinis gyvūnų duomenų atnaujinimas
+
+on:
+  schedule:
+    # Kiekvieną dieną 02:00 UTC (04:00 Lietuvos laiku)
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Leidžia paleisti rankiniu būdu per GitHub Actions skirtuką
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Atsisiųsti kodo repozitoriją
+        uses: actions/checkout@v4
+
+      - name: Paruošti Node.js aplinką
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Surinkti naujausius duomenis iš globok.lt
+        run: node scripts/scrape-globok.js
+
+      - name: Įrašyti atnaujintus duomenis į repozitoriją
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ src/data/
+          if git diff --staged --quiet; then
+            echo "Naujų duomenų pokyčių nėra."
+          else
+            git commit -m "chore(data): atnaujinti gyvūnų ir prieglaudų duomenys [skip ci]"
+            git push
+          fi

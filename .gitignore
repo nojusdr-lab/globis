@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Custom node binary
+.node-bin/
+
+# Expo & Web builds
+.expo/
+dist/
+web-build/
+
+# Temporary and Archives
+Archive.zip
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
+*.pem
+
+# Environment variables
+.env
+.env*.local
