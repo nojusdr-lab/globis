@@ -1,37 +1,62 @@
-name: Automatinis gyvūnų duomenų atnaujinimas
+name: Gyvūnų duomenų atnaujinimo pasiūlymas
 
 on:
   schedule:
-    # Kiekvieną dieną 02:00 UTC (04:00 Lietuvos laiku)
     - cron: '0 2 * * *'
-  workflow_dispatch: # Leidžia paleisti rankiniu būdu per GitHub Actions skirtuką
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'src/data/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/update-pets.yml'
+
+concurrency:
+  group: globis-data-${{ github.event_name == 'pull_request' && github.ref || 'refresh' }}
+
+permissions:
+  contents: read
 
 jobs:
-  scrape-and-update:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test tests/data-integrity.test.cjs
+  propose:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: check
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Atsisiųsti kodo repozitoriją
-        uses: actions/checkout@v4
-
-      - name: Paruošti Node.js aplinką
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Surinkti naujausius duomenis iš globok.lt
-        run: node scripts/scrape-globok.js
-
-      - name: Įrašyti atnaujintus duomenis į repozitoriją
+      - name: Surinkti ir patikrinti duomenis
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ src/data/
-          if git diff --staged --quiet; then
-            echo "Naujų duomenų pokyčių nėra."
-          else
-            git commit -m "chore(data): atnaujinti gyvūnų ir prieglaudų duomenys [skip ci]"
-            git push
+          set -o pipefail
+          node scripts/scrape-globok.js | tee refresh.log
+          node --test tests/data-integrity.test.cjs
+          tail -1 refresh.log >> "$GITHUB_STEP_SUMMARY"
+      - name: Atidaryti PR peržiūrai
+        run: |
+          git diff --quiet -- src/data/ && exit 0
+          existing=$(gh pr list --base main --state open --json headRefName --jq '[.[] | select(.headRefName | startswith("automation/globis-data-"))] | length')
+          if [ "$existing" -gt 0 ]; then
+            echo "An existing data refresh PR is awaiting review." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
           fi
+          branch="automation/globis-data-${GITHUB_RUN_ID}"
+          git switch -c "$branch"
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -am 'chore(data): propose Globis listing refresh'
+          git push origin "HEAD:refs/heads/$branch"
+          tail -1 refresh.log > refresh-summary.md
+          gh pr create --base main --head "$branch" --title 'Peržiūrai: Globis duomenų atnaujinimas' --body-file refresh-summary.md

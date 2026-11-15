@@ -45,15 +45,14 @@ Designed following the **Organic** aesthetic anchor:
 
 ## Data Pipeline & Scraper
 
-Data is scraped from globok.lt using `scripts/scrape-globok.js`:
-- Scrapes all 37 registered shelter profiles and contact details into `data/shelters.json`.
-- Extracts animal listings (names, photos, species, sex, age, city, waiting time, medical readiness) into `data/allPets.json`.
-- Uses polite 200ms delays to respect the server.
+Globok data used by the app lives in `src/data/allPets.json` and `src/data/shelters.json`. The scheduled workflow validates imports and proposes a pull request for human review. GitHub Actions must be permitted to create pull requests in the repository settings.
 
-To refresh the dataset:
 ```bash
-PATH="$(pwd)/.node-bin/bin:$PATH" node scripts/scrape-globok.js
+node --test tests/data-integrity.test.cjs
+node scripts/scrape-globok.js --check
 ```
+
+The check contacts the source and leaves the snapshot intact. Running the scraper without `--check` writes a new local snapshot only after validation. Historical values with insufficient provenance were removed and remain in Git history. The legacy-to-current listing ID mapping is in `docs/pr1-listing-id-map.json`. A listing marked as reserved is kept in its shelter roster and omitted from general discovery. Unconfirmed availability is labelled explicitly.
 
 ---
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   Modal,
+  Linking,
   View,
   Text,
   Image,
@@ -24,8 +25,6 @@ export default function PetDetailsModal({
   if (!pet) return null;
   const t = TRANSLATIONS[lang];
 
-  const tags = lang === 'lt' ? pet.compatibilityTagsLt : pet.compatibilityTagsEn;
-  const personality = lang === 'lt' ? pet.personalityTraitsLt : pet.personalityTraitsEn;
   const age = lang === 'lt' ? pet.ageLt : pet.ageEn;
   const bio = lang === 'lt' ? pet.bioLt : pet.bioEn;
   const photos = pet.photos || [];
@@ -76,7 +75,8 @@ export default function PetDetailsModal({
               </View>
 
               {/* Waiting badge */}
-              <View
+              {pet.waitingDays != null ? (
+                <View
                 style={[
                   styles.waitingFloatBadge,
                   isLongTerm ? styles.waitingFloatUrgent : styles.waitingFloatNormal,
@@ -96,7 +96,9 @@ export default function PetDetailsModal({
                   {t.waitingPrefix} {pet.waitingDays} {t.daysShort}
                 </Text>
               </View>
-            </View>
+              ) : null}
+
+              </View>
 
             {/* Photo Thumbnails Gallery */}
             {photos.length > 1 && (
@@ -129,14 +131,13 @@ export default function PetDetailsModal({
                 <View style={styles.metaRow}>
                   <Ionicons name="location-outline" size={14} color={TOKENS.colors.clayDark} />
                   <Text style={styles.metaText}>{pet.city}</Text>
-                  <Text style={styles.metaDivider}>·</Text>
-                  <Text style={styles.metaText}>{age}</Text>
+                  {age ? <Text style={styles.metaText}>· {age}</Text> : null}
                   <Text style={styles.metaDivider}>·</Text>
                   <Text style={styles.metaText}>{pet.shelter.name}</Text>
                 </View>
               </View>
 
-              <TouchableOpacity
+              {pet.status !== 'reserved' ? <TouchableOpacity
                 style={styles.likeFab}
                 onPress={() => {
                   onClose();
@@ -145,86 +146,25 @@ export default function PetDetailsModal({
                 activeOpacity={0.8}
               >
                 <Ionicons name="heart" size={24} color={TOKENS.colors.textInverse} />
-              </TouchableOpacity>
+              </TouchableOpacity> : null}
             </View>
 
-            {/* Medical Readiness Section */}
-            <View style={styles.sectionBlock}>
-              <Text style={styles.sectionTitle}>{t.medicalReadyHeading}</Text>
-              <View style={styles.medicalWrap}>
-                <View style={[styles.medPill, pet.medical?.chipped && styles.medPillActive]}>
-                  <Ionicons
-                    name="hardware-chip-outline"
-                    size={14}
-                    color={pet.medical?.chipped ? TOKENS.colors.mossDark : TOKENS.colors.textMuted}
-                  />
-                  <Text style={[styles.medText, pet.medical?.chipped && styles.medTextActive]}>
-                    {t.chipped}
-                  </Text>
-                </View>
-                <View style={[styles.medPill, pet.medical?.vaccinated && styles.medPillActive]}>
-                  <Ionicons
-                    name="shield-checkmark-outline"
-                    size={14}
-                    color={pet.medical?.vaccinated ? TOKENS.colors.mossDark : TOKENS.colors.textMuted}
-                  />
-                  <Text style={[styles.medText, pet.medical?.vaccinated && styles.medTextActive]}>
-                    {t.vaccinated}
-                  </Text>
-                </View>
-                <View style={[styles.medPill, pet.medical?.neutered && styles.medPillActive]}>
-                  <Ionicons
-                    name={pet.medical?.neutered ? 'checkmark-circle-outline' : 'ellipse-outline'}
-                    size={14}
-                    color={pet.medical?.neutered ? TOKENS.colors.mossDark : TOKENS.colors.textMuted}
-                  />
-                  <Text style={[styles.medText, pet.medical?.neutered && styles.medTextActive]}>
-                    {pet.medical?.neutered ? t.neutered : t.notNeutered}
-                  </Text>
-                </View>
-              </View>
-            </View>
-
-            {/* Personality Traits */}
-            <View style={styles.sectionBlock}>
-              <Text style={styles.sectionTitle}>{t.personalitySection}</Text>
-              <View style={styles.traitsWrap}>
-                {personality.map((trait, idx) => (
-                  <View key={idx} style={styles.traitPill}>
-                    <Ionicons name="leaf" size={12} color={TOKENS.colors.mossDark} />
-                    <Text style={styles.traitText}>{trait}</Text>
-                  </View>
-                ))}
-              </View>
-            </View>
-
-            {/* Compatibility Tags */}
-            <View style={styles.sectionBlock}>
-              <Text style={styles.sectionTitle}>{t.compatibilitySection}</Text>
-              <View style={styles.tagsWrap}>
-                {tags.map((tag, idx) => (
-                  <View key={idx} style={styles.tagPill}>
-                    <Ionicons name="checkmark-circle" size={13} color={TOKENS.colors.sageDark} />
-                    <Text style={styles.tagText}>{tag}</Text>
-                  </View>
-                ))}
-              </View>
-            </View>
-
-            {/* About / Bio Story */}
-            <View style={styles.sectionBlock}>
-              <Text style={styles.sectionTitle}>{t.aboutSection}</Text>
-              <Text style={styles.bioText}>{bio}</Text>
-            </View>
+            {pet.status === 'reserved' ? <Text>{lang === 'lt' ? 'Rezervuotas' : 'Reserved'}</Text> : null}
+            {pet.status === 'unknown' ? <Text>{lang === 'lt' ? 'Prieinamumas nepatvirtintas' : 'Availability unconfirmed'}</Text> : null}
+            {bio ? <Text style={styles.bioText}>{bio}</Text> : null}
+            {pet.url ? <Text accessibilityRole="link" onPress={() => Linking.openURL(pet.url)}>
+              {lang === 'lt' ? 'Originalus skelbimas' : 'Original listing'}
+            </Text> : null}
+            {pet.fetchedAt ? <Text>{lang === 'lt' ? 'Šaltinis nuskaitytas' : 'Source fetched'}: {new Date(pet.fetchedAt).toLocaleString(lang)}</Text> : null}
 
             {/* Shelter info block */}
             <View style={styles.shelterBox}>
               <View style={styles.shelterBadgeRow}>
-                <Ionicons name="shield-checkmark" size={16} color={TOKENS.colors.mossDark} />
+                <Ionicons name="home-outline" size={16} color={TOKENS.colors.mossDark} />
                 <Text style={styles.shelterTitle}>{pet.shelter.name}</Text>
               </View>
               <Text style={styles.shelterDesc}>
-                {pet.shelter.address} · Tel. {pet.shelter.phone} · {pet.shelter.email}
+                {[pet.shelter.address, pet.shelter.phone, pet.shelter.email].filter(Boolean).join(' · ')}
               </Text>
             </View>
           </ScrollView>

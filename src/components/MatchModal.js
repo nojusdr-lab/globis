@@ -38,8 +38,8 @@ export default function MatchModal({
     );
     const body = encodeURIComponent(
       lang === 'lt'
-        ? `Laba diena,\n\nEsu susidomėjęs(-usi) jūsų prieglaudos augintiniu ${pet.name} (${pet.ageLt}, ${pet.city}).\nNorėčiau sužinoti daugiau informacijos ir susitarti dėl atvykimo susipažinti.\n\nPagarbiai,\n`
-        : `Hello,\n\nI am interested in adopting ${pet.name} (${pet.ageEn}, ${pet.city}).\nI would love to learn more and arrange a visit to meet.\n\nBest regards,\n`
+        ? `Laba diena,\n\nEsu susidomėjęs(-usi) jūsų prieglaudos augintiniu ${pet.name}.\nNorėčiau sužinoti daugiau informacijos ir susitarti dėl atvykimo susipažinti.\n\nPagarbiai,\n`
+        : `Hello,\n\nI am interested in adopting ${pet.name}.\nI would love to learn more and arrange a visit to meet.\n\nBest regards,\n`
     );
     Linking.openURL(`mailto:${pet.shelter.email}?subject=${subject}&body=${body}`);
   };
@@ -94,10 +94,10 @@ export default function MatchModal({
               <View style={styles.petSnippetInfo}>
                 <Text style={styles.petSnippetName}>{pet.name}</Text>
                 <Text style={styles.petSnippetMeta}>
-                  {lang === 'lt' ? pet.ageLt : pet.ageEn} · {pet.city}
+                  {[lang === 'lt' ? pet.ageLt : pet.ageEn, pet.city].filter(Boolean).join(' · ')}
                 </Text>
                 <View style={styles.shelterMiniTag}>
-                  <Ionicons name="shield-checkmark" size={12} color={TOKENS.colors.mossDark} />
+                  <Ionicons name="home-outline" size={12} color={TOKENS.colors.mossDark} />
                   <Text style={styles.shelterMiniTagText}>{pet.shelter.name}</Text>
                 </View>
               </View>
@@ -111,18 +111,14 @@ export default function MatchModal({
               </View>
 
               {/* Shelter Name & Address */}
-              <View style={styles.infoLine}>
+              {pet.shelter.address ? <View style={styles.infoLine}>
                 <Text style={styles.infoLabel}>{t.address}:</Text>
                 <Text style={styles.infoValue}>{pet.shelter.address}</Text>
-              </View>
-
-              <View style={styles.infoLine}>
-                <Text style={styles.infoLabel}>{t.shelterCode}:</Text>
-                <Text style={styles.infoValue}>{pet.shelter.regCode}</Text>
-              </View>
+              </View> : null}
 
               {/* Phone Row */}
-              <View style={styles.contactItem}>
+              {pet.shelter.phone ? (
+                  <View style={styles.contactItem}>
                 <View style={styles.contactIconWrap}>
                   <Ionicons name="call" size={18} color={TOKENS.colors.terracottaDark} />
                 </View>
@@ -153,9 +149,10 @@ export default function MatchModal({
                   </TouchableOpacity>
                 </View>
               </View>
-
-              {/* Email Row */}
-              <View style={styles.contactItem}>
+                ) : null}
+                {/* Email Row */}
+              {pet.shelter.email ? (
+                  <View style={styles.contactItem}>
                 <View style={styles.contactIconWrap}>
                   <Ionicons name="mail" size={18} color={TOKENS.colors.sageDark} />
                 </View>
@@ -188,8 +185,12 @@ export default function MatchModal({
                   </TouchableOpacity>
                 </View>
               </View>
-            </View>
+                ) : null}
+                </View>
 
+            {pet.url ? <Text accessibilityRole="link" onPress={() => Linking.openURL(pet.url)}>
+              {lang === 'lt' ? 'Originalus skelbimas' : 'Original listing'}
+            </Text> : null}
             {/* Copy Notification Toast */}
             {copiedType && (
               <View style={styles.copyToast}>
@@ -199,7 +200,8 @@ export default function MatchModal({
             )}
 
             {/* Direct Inquiry Action Button */}
-            <TouchableOpacity
+            {pet.shelter.email ? (
+                <TouchableOpacity
               style={styles.inquiryBtn}
               onPress={handleInquirySubmit}
               activeOpacity={0.8}
@@ -207,8 +209,8 @@ export default function MatchModal({
               <Ionicons name="paper-plane" size={18} color={TOKENS.colors.textInverse} />
               <Text style={styles.inquiryBtnText}>{t.openInquiryForm}</Text>
             </TouchableOpacity>
-
-            {/* Continue Browsing Button */}
+              ) : null}
+              {/* Continue Browsing Button */}
             <TouchableOpacity
               style={styles.continueBtn}
               onPress={onClose}

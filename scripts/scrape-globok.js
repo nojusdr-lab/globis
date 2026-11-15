@@ -4,6 +4,7 @@ const path = require('path');
 const https = require('https');
 
 const BASE_URL = 'https://globok.lt';
+const { listingId, statusFromText, phone, email, validateImport } = require('../src/data/integrity.cjs');
 const DELAY_MS = 200;
 
 function sleep(ms) {
@@ -24,13 +25,13 @@ function fetchHtml(url) {
         },
       },
       (res) => {
-        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-          const redirectUrl = res.headers.location.startsWith('http')
-            ? res.headers.location
-            : BASE_URL + res.headers.location;
-          return fetchHtml(redirectUrl).then(resolve).catch(reject);
+        if (res.statusCode !== 200 || !/^text\/html\b/i.test(res.headers['content-type'] || '')) {
+          res.resume();
+          reject(new Error(`Unexpected HTTP response ${res.statusCode} for ${url}`));
+          return;
         }
         let data = '';
+        res.on('error', reject);
         res.on('data', (chunk) => (data += chunk));
         res.on('end', () => resolve(data));
       }
@@ -54,39 +55,6 @@ function decodeHtml(html) {
     .trim();
 }
 
-function generateWarmBio(pet) {
-  const isDog = pet.species === 'dog';
-  const isMale = pet.sex === 'Patinas';
-  const name = pet.name || 'Draugas';
-  const city = pet.city || 'Lietuvoje';
-  const shelterName = pet.shelterName || 'prieglaudos';
-  const isLongWait = pet.waitingDays >= 180;
-
-  const dogBios = [
-    `Labas! Esu ${name} – linksmas, draugiškas ir be galo ištikimas šuo iš ${city}. Labai mėgstu pasivaikščiojimus gamtoje, skanėstus ir pažadu būti tavo geriausias gyvenimo draugas bei ištikimas širdies sargas!`,
-    `Mano vardas ${name}! Esu pasirengęs(-usi) užkariauti tavo širdį ir kasdien vizginti uodegą vos tau grįžus namo. Dievinu žaidimus, švelnius paglostymus ir nekantriai laukiu susitikimo „${shelterName}“ prieglaudoje!`,
-    `Susipažinkime – aš ${name}. Esu tvarkingas, protingas ir meilus keturkojis, ieškantis saugių namų ${city} apylinkėse. Pažadu tapti pačiu nuoširdžiausiu tavo šeimos nariu ir padovanoti begalę šiltų akimirkų!`,
-  ];
-
-  const catBios = [
-    `Miau! Esu ${name} – švelni, rami ir elegantiška murklė, ieškanti jaukių namų ${city}. Dievinu šildytis saulėje, ramiai stebėti pasaulį ir vakarais dainuoti murkiančias lopšines tau ant kelių.`,
-    `Labas! Mano vardas ${name}. Esu be galo tvarkingas, meilus katinėlis su didele širdimi, laukiantis savo žmogaus „${shelterName}“ globoje. Pažadu pripildyti tavo namus ramybės, šilumos ir jaukumo!`,
-    `Esu ${name} – smalsi pūkuota asmenybė, pasiruošusi tapti tavo namų dvasios saugotoja. Mėgstu minkštus guolius, žaisliukus ir kasdienį artumą su mylinčiu šeimininku!`,
-  ];
-
-  const longWaitBios = [
-    `Esu ${name} ir prieglaudoje kantriai laukiu jau daugiau nei pusmetį. Nors mano kelias nebuvo lengvas, mano širdis vis dar pilna vilties ir begalinės meilės – man reikia tik vieno tikro žmogaus!`,
-    `Mano vardas ${name}. Jau ilgą laiką svajoju apie tikrus namus ir šiltą ranką. Esu nepaprastai ištikimas(-a), kantrus(-i) ir pažadu būti dėkingiausias draugas visame pasaulyje.`,
-  ];
-
-  if (isLongWait) {
-    return longWaitBios[Math.floor(Math.random() * longWaitBios.length)];
-  }
-  return isDog
-    ? dogBios[Math.floor(Math.random() * dogBios.length)]
-    : catBios[Math.floor(Math.random() * catBios.length)];
-}
-
 async function scrapeShelters() {
   console.log('\n🐾 [1/4] Fetching all 37 shelters from https://globok.lt/prieglaudos...');
   const html = await fetchHtml(`${BASE_URL}/prieglaudos`);
@@ -100,23 +68,23 @@ async function scrapeShelters() {
     const inner = match[2];
 
     const nameMatch = inner.match(/<h3[^>]*>(.*?)<\/h3>/);
-    const name = nameMatch ? decodeHtml(nameMatch[1].replace(/<[^>]+>/g, '')) : slug;
+    const name = nameMatch ? decodeHtml(nameMatch[1].replace(/<[^>]+>/g, '')) : null;
 
     const cityMatch = inner.match(/<span[^>]*>[\s\S]*?<\/svg>(.*?)<\/span>/);
-    const city = cityMatch ? decodeHtml(cityMatch[1].replace(/<[^>]+>/g, '')) : 'Lietuva';
+    const city = cityMatch ? decodeHtml(cityMatch[1].replace(/<[^>]+>/g, '')) : null;
 
     const addressMatch = inner.match(/<p class="[^"]*text-stone-400[^"]*">(.*?)<\/p>/);
-    const address = addressMatch ? decodeHtml(addressMatch[1].replace(/<[^>]+>/g, '')) : '';
+    const address = addressMatch ? decodeHtml(addressMatch[1].replace(/<[^>]+>/g, '')) : null;
 
     const countMatch = inner.match(/(\d+)\s*gyvūn/);
-    const count = countMatch ? parseInt(countMatch[1], 10) : 0;
+    const count = countMatch ? parseInt(countMatch[1], 10) : null;
 
     const logoMatch = inner.match(/src="([^"]+)"/);
     const logo = logoMatch
       ? logoMatch[1].startsWith('http')
         ? logoMatch[1]
         : BASE_URL + logoMatch[1]
-      : '';
+      : null;
 
     shelters.push({
       id: slug,
@@ -124,7 +92,7 @@ async function scrapeShelters() {
       name,
       city,
       address,
-      count,
+      sourceReportedCount: count,
       logo,
       url: `${BASE_URL}/prieglaudos/${slug}`,
       phone: '',
@@ -167,16 +135,16 @@ async function scrapeShelters() {
         } catch (e) {}
       }
 
-      // Fallback contacts if not listed
-      if (!s.phone) s.phone = '+370 600 00000';
-      if (!s.email) s.email = `info@${s.slug.replace(/[^a-z0-9]/g, '')}.lt`;
-      if (!s.website) s.website = `https://globok.lt/prieglaudos/${s.slug}`;
-
+      s.phone = phone(s.phone);
+      s.email = email(s.email?.split('?')[0]);
+      s.website = [s.website].flat().find(value => typeof value === 'string' && /^https?:\/\//i.test(value)) || null;
+      s.source = 'globok';
+      s.fetchedAt = new Date().toISOString();
       process.stdout.write(
         `   [${i + 1}/${shelters.length}] ${s.name} (${s.city}) - Tel: ${s.phone}\n`
       );
     } catch (err) {
-      console.warn(`   ⚠️ Could not fetch details for ${s.slug}: ${err.message}`);
+      throw new Error(`Shelter ${s.slug}: ${err.message}`);
     }
   }
 
@@ -184,47 +152,39 @@ async function scrapeShelters() {
 }
 
 async function scrapeAllAnimals(sheltersMap) {
-  console.log('\n🐶🐱 [3/4] Fetching all ~1,073 animals across globok.lt pages (pages 1 to 45)...');
+  console.log('\n🐶🐱 [3/4] Fetching animal listing pages...');
   const allCards = [];
   const seenUrls = new Set();
 
-  for (let page = 1; page <= 45; page++) {
+  for (let page = 1; page <= 100; page++) {
     try {
       await sleep(DELAY_MS);
       const url = `${BASE_URL}/gyvunai?page=${page}`;
       const pageHtml = await fetchHtml(url);
 
-      const cardRegex = /<div class="relative rounded-2xl border border-stone-200 overflow-hidden bg-white card-hover">([\s\S]*?)<\/div><\/div><\/div>/g;
-      let cardMatch;
-      let pageCardCount = 0;
+      const cards = pageHtml.split('<div class="relative rounded-2xl border border-stone-200 overflow-hidden bg-white card-hover">').slice(1);
+      const pageCardCount = cards.length;
+      const beforePage = allCards.length;
 
-      while ((cardMatch = cardRegex.exec(pageHtml)) !== null) {
-        const cardHtml = cardMatch[1];
-
+      for (const cardHtml of cards) {
         // Animal link & slug
         const linkMatch = cardHtml.match(/href="(\/gyvunai\/[a-z0-9\-]+)"/);
-        if (!linkMatch) continue;
+        if (!linkMatch) throw new Error('Unrecognized animal card');
         const petUrl = BASE_URL + linkMatch[1];
         if (seenUrls.has(petUrl)) continue;
         seenUrls.add(petUrl);
 
         // Name
         const nameMatch = cardHtml.match(/<a[^>]*data-umami-event="animal-open"[^>]*>([\s\S]*?)<\/a>/);
-        const name = nameMatch ? decodeHtml(nameMatch[1].replace(/<[^>]+>/g, '').trim()) : 'Draugas';
+        const name = nameMatch ? decodeHtml(nameMatch[1].replace(/<[^>]+>/g, '').trim()) : null;
 
         // Species
         const speciesMatch = cardHtml.match(/data-umami-event-species="(dog|cat)"/);
-        const species = speciesMatch ? speciesMatch[1] : 'dog';
+        const species = speciesMatch ? speciesMatch[1] : null;
 
         // Shelter slug
         const shelterSlugMatch = cardHtml.match(/data-umami-event-shelter="([^"]+)"/);
-        const shelterSlug = shelterSlugMatch ? shelterSlugMatch[1] : '';
-
-        // Wait badge & event
-        const waitMatch = cardHtml.match(/data-umami-event-wait="(new|normal|long)"/);
-        const waitEvent = waitMatch ? waitMatch[1] : 'normal';
-        const hasLongBadge =
-          waitEvent === 'long' || cardHtml.includes('Ilgai laukia') || cardHtml.includes('ilgai-laukia');
+        const shelterSlug = shelterSlugMatch ? shelterSlugMatch[1] : null;
 
         // Photo URL
         const imgMatch = cardHtml.match(/srcSet="([^"]+)"/) || cardHtml.match(/src="([^"]+)"/);
@@ -244,163 +204,63 @@ async function scrapeAllAnimals(sheltersMap) {
         const badgeMatches = cardHtml.match(/<span class="badge-pop[^"]*"[^>]*>(.*?)<\/span>/g) || [];
         const badges = badgeMatches.map((b) => decodeHtml(b.replace(/<[^>]+>/g, '').trim()));
 
-        let sex = badges.find((b) => b === 'Patinas' || b === 'Patelė') || (Math.random() > 0.5 ? 'Patinas' : 'Patelė');
-        let age = badges.find((b) => b.includes('m.') || b.includes('mėn.')) || (species === 'dog' ? '2 m.' : '1 m.');
-        let size = badges.find((b) => b === 'Mažas' || b === 'Vidutinis' || b === 'Didelis') || 'Vidutinis';
-
-        // Shelter metadata
-        const shelterObj = sheltersMap[shelterSlug] || {
-          id: shelterSlug,
-          name: 'Lietuvos gyvūnų prieglauda',
-          city: 'Vilnius',
-          address: 'Lietuva',
-          phone: '+370 600 00000',
-          email: 'info@globok.lt',
-          website: 'https://globok.lt',
-        };
-
-        // Update dog/cat counters on shelter
-        if (sheltersMap[shelterSlug]) {
-          if (species === 'dog') sheltersMap[shelterSlug].dogsCount++;
-          else sheltersMap[shelterSlug].catsCount++;
-        }
-
-        // Realistic waiting days
-        let waitingDays = 45;
-        if (hasLongBadge) {
-          waitingDays = Math.floor(180 + Math.random() * 260); // 180 to 440 days
-        } else if (waitEvent === 'new') {
-          waitingDays = Math.floor(5 + Math.random() * 25);
-        } else {
-          waitingDays = Math.floor(35 + Math.random() * 130);
-        }
-
+        const shelter = sheltersMap[shelterSlug];
+        if (!name || !species || !shelter) throw new Error(`Incomplete card: ${petUrl}`);
+        const age = badges.find(value => /^\d+\s*(?:m\.|mėn\.)$/u.test(value)) || null;
         allCards.push({
-          id: `pet-${allCards.length + 1}`,
-          slug: linkMatch[1].replace('/gyvunai/', ''),
+          id: listingId(petUrl),
+          slug: linkMatch[1].split('/').pop(),
           url: petUrl,
+          source: 'globok',
           name,
           species,
-          sex,
+          sex: badges.find(value => ['Patinas', 'Patelė'].includes(value)) || null,
           ageLt: age,
-          ageEn: age.replace('m.', 'yrs').replace('mėn.', 'mos'),
-          size,
-          city: shelterObj.city,
+          ageEn: age?.replace('mėn.', 'mos').replace('m.', 'yrs') || null,
+          size: badges.find(value => ['Mažas', 'Vidutinis', 'Didelis'].includes(value)) || null,
+          city: shelter.city,
           photos: photo ? [photo] : [],
-          waitingDays,
-          hasLongBadge,
-          medical: {
-            chipped: true,
-            vaccinated: true,
-            neutered: waitingDays > 90 || !age.includes('mėn.'),
-          },
-          compatibilityTagsLt: [
-            species === 'dog' ? 'Draugiškas su šunimis' : 'Draugiška su katėmis',
-            'Tinka bute',
-            hasLongBadge ? 'Ieško namų ilgai' : 'Mėgsta glamones',
-            'Čipuotas ir skiepytas',
-          ],
-          compatibilityTagsEn: [
-            species === 'dog' ? 'Friendly with dogs' : 'Friendly with cats',
-            'Apartment friendly',
-            hasLongBadge ? 'Long-term resident' : 'Affectionate',
-            'Vaccinated & chipped',
-          ],
-          personalityTraitsLt: [
-            hasLongBadge ? 'Kantrus' : 'Žaismingas',
-            'Socialus',
-            'Geras draugas',
-          ],
-          personalityTraitsEn: [
-            hasLongBadge ? 'Patient' : 'Playful',
-            'Social',
-            'Good companion',
-          ],
-          shelter: {
-            id: shelterObj.id || shelterSlug,
-            name: shelterObj.name,
-            city: shelterObj.city,
-            address: shelterObj.address,
-            phone: shelterObj.phone,
-            email: shelterObj.email,
-            website: shelterObj.website,
-          },
-          shelterName: shelterObj.name,
-          bioLt: '',
-          bioEn: '',
+          waitingDays: null,
+          medical: { chipped: null, vaccinated: null, neutered: null },
+          compatibilityTagsLt: [],
+          compatibilityTagsEn: [],
+          personalityTraitsLt: [],
+          personalityTraitsEn: [],
+          shelter: { id: shelter.id, name: shelter.name, city: shelter.city, address: shelter.address,
+            phone: shelter.phone, email: shelter.email, website: shelter.website, url: shelter.url },
+          bioLt: null,
+          bioEn: null,
+          ...statusFromText(badges.join('\n')),
         });
 
-        pageCardCount++;
       }
 
-      process.stdout.write(
-        `   [Page ${page}/45] Found ${pageCardCount} animals (Total collected so far: ${allCards.length})\n`
-      );
+      const markers = pageHtml.match(/class="relative rounded-2xl border border-stone-200 overflow-hidden bg-white card-hover"/g) || [];
+      const nextPage = pageHtml.match(/aria-label="Kitas puslapis"[^>]*>\s*<a[^>]*href="\/gyvunai\?page=(\d+)#results"/);
+      if (allCards.length === beforePage || markers.length !== pageCardCount) {
+        throw new Error('Empty, duplicated or incompletely parsed listing page');
+      }
+      if (!nextPage) {
+        if (/aria-label="Kitas puslapis"/.test(pageHtml) || pageCardCount >= 24) {
+          throw new Error('Cannot verify end of listing pagination');
+        }
+        break;
+      }
+      if (Number(nextPage[1]) !== page + 1 || page === 100) throw new Error('Unexpected pagination');
     } catch (err) {
-      console.warn(`   ⚠️ Error on page ${page}: ${err.message}`);
+      throw new Error(`Listing page ${page}: ${err.message}`);
     }
   }
 
-  console.log(`\n🎉 Total unique animals gathered: ${allCards.length}`);
-
-  // Fetch individual animal bios
-  console.log('\n📖 [4/4] Visiting individual animal pages to extract bios with polite delay...');
-  const sampleSampleSize = Math.min(allCards.length, 120); // fetch detailed pages for first batch, synthesize for remaining
-  
-  for (let i = 0; i < allCards.length; i++) {
-    const pet = allCards[i];
-    
-    // Visit first batch with polite delay to grab real bios
-    if (i < sampleSampleSize) {
-      try {
-        await sleep(DELAY_MS);
-        const detailHtml = await fetchHtml(pet.url);
-
-        // Grab additional photos
-        const extraPhotos = detailHtml.match(/srcSet="([^"]*storage\/photos\/[^"]*)"/g) || [];
-        extraPhotos.forEach((src) => {
-          const m = src.match(/url=([^&]+)/);
-          if (m) {
-            const decoded = decodeURIComponent(m[1]);
-            const fullPhoto = decoded.startsWith('http') ? decoded : BASE_URL + decoded;
-            if (!pet.photos.includes(fullPhoto)) pet.photos.push(fullPhoto);
-          }
-        });
-
-        // Grab real Lithuanian bio
-        const proseMatch = detailHtml.match(/<div class="[^"]*whitespace-pre-line[^"]*"[^>]*>([\s\S]*?)<\/div>/);
-        const textMatch = detailHtml.match(/<p class="[^"]*text-stone-700[^"]*">([\s\S]*?)<\/p>/);
-        const jsonLd = detailHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
-
-        let realBio = '';
-        if (proseMatch) realBio = decodeHtml(proseMatch[1].replace(/<[^>]+>/g, '').trim());
-        if (!realBio && textMatch) realBio = decodeHtml(textMatch[1].replace(/<[^>]+>/g, '').trim());
-        if (!realBio && jsonLd) {
-          try {
-            const parsed = JSON.parse(jsonLd[1]);
-            if (parsed.description) realBio = decodeHtml(parsed.description.trim());
-          } catch (e) {}
-        }
-
-        // If bio is just a phone prompt or too brief, generate warm Lithuanian bio
-        if (!realBio || realBio.length < 25 || realBio.toLowerCase().includes('daugiau informacijos tel')) {
-          pet.bioLt = generateWarmBio(pet);
-        } else {
-          pet.bioLt = realBio;
-        }
-
-        if ((i + 1) % 15 === 0 || i === sampleSampleSize - 1) {
-          process.stdout.write(`   [${i + 1}/${allCards.length}] Scraped bios (${pet.name} · ${pet.shelter.name})\n`);
-        }
-      } catch (err) {
-        pet.bioLt = generateWarmBio(pet);
-      }
-    } else {
-      // Warm 2-sentence Lithuanian Tinder-style bio
-      pet.bioLt = generateWarmBio(pet);
-    }
-
-    pet.bioEn = `${pet.name} is a loving and playful rescue companion from ${pet.city}. Ready to fill your home with unconditional warmth and joy!`;
+  for (const pet of allCards) {
+    await sleep(DELAY_MS);
+    const detail = await fetchHtml(pet.url);
+    const description = detail.match(/<div class="[^"]*whitespace-pre-line[^"]*"[^>]*>([\s\S]*?)<\/div>/);
+    const bio = description ? decodeHtml(description[1].replace(/<[^>]+>/g, ' ')) : null;
+    if (!description && !detail.includes(pet.slug)) throw new Error(`Unrecognized detail page: ${pet.url}`);
+    const status = statusFromText(bio);
+    if (status.status === 'reserved') Object.assign(pet, status);
+    Object.assign(pet, { bioLt: bio || null, fetchedAt: new Date().toISOString() });
   }
 
   return allCards;
@@ -408,7 +268,6 @@ async function scrapeAllAnimals(sheltersMap) {
 
 async function main() {
   console.log('🚀 Starting Globok.lt Scraper...');
-  const startTime = Date.now();
 
   // Step 1 & 2: Shelters
   const shelters = await scrapeShelters();
@@ -420,29 +279,21 @@ async function main() {
   // Step 3 & 4: Animals
   const allPets = await scrapeAllAnimals(sheltersMap);
 
-  // Recalculate shelter totals
-  shelters.forEach((s) => {
-    s.totalCount = s.dogsCount + s.catsCount;
-  });
+  const target = path.join(__dirname, '..', 'src', 'data');
+  const previousPets = require('../src/data/allPets.json');
+  const previousShelters = require('../src/data/shelters.json');
+  validateImport(allPets, shelters, previousPets, previousShelters);
+  console.log(`Animals: ${previousPets.length} → ${allPets.length}. Shelters: ${previousShelters.length} → ${shelters.length}. Reserved: ${allPets.filter(p => p.status === 'reserved').length}.`);
+  if (process.argv.includes('--check')) return;
+  for (const [name, rows] of [['shelters.json', shelters], ['allPets.json', allPets]]) {
+    const file = path.join(target, name);
+    fs.writeFileSync(file + '.tmp', JSON.stringify(rows, null, 2) + '\n');
+  }
+  for (const name of ['shelters.json', 'allPets.json']) {
+    const file = path.join(target, name);
+    fs.renameSync(file + '.tmp', file);
+  }
 
-  // Ensure directories exist
-  const dataDir = path.join(__dirname, '..', 'data');
-  const srcDataDir = path.join(__dirname, '..', 'src', 'data');
-  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-  if (!fs.existsSync(srcDataDir)) fs.mkdirSync(srcDataDir, { recursive: true });
-
-  // Save to data/
-  fs.writeFileSync(path.join(dataDir, 'shelters.json'), JSON.stringify(shelters, null, 2), 'utf-8');
-  fs.writeFileSync(path.join(dataDir, 'allPets.json'), JSON.stringify(allPets, null, 2), 'utf-8');
-
-  // Also save to src/data/ for direct Expo import
-  fs.writeFileSync(path.join(srcDataDir, 'shelters.json'), JSON.stringify(shelters, null, 2), 'utf-8');
-  fs.writeFileSync(path.join(srcDataDir, 'allPets.json'), JSON.stringify(allPets, null, 2), 'utf-8');
-
-  const duration = ((Date.now() - startTime) / 1000).toFixed(1);
-  console.log(`\n✨ DONE in ${duration}s!`);
-  console.log(`📁 Saved ${shelters.length} shelters to data/shelters.json`);
-  console.log(`📁 Saved ${allPets.length} animals to data/allPets.json`);
 }
 
 main().catch((err) => {

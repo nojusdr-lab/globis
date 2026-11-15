@@ -87,13 +87,14 @@ export default function LikesDrawer({
                   <View style={styles.petInfo}>
                     <Text style={styles.petName}>{item.name}</Text>
                     <Text style={styles.petMeta}>
-                      {lang === 'lt' ? item.ageLt : item.ageEn} · {item.city}
+                      {[lang === 'lt' ? item.ageLt : item.ageEn, item.city].filter(Boolean).join(' · ')}
                     </Text>
                     <Text style={styles.petShelter}>{item.shelter.name}</Text>
                   </View>
 
                   <View style={styles.itemActions}>
-                    <TouchableOpacity
+                    {item.shelter.phone ? (
+                        <TouchableOpacity
                       style={styles.callBtn}
                       onPress={(e) => {
                         e.stopPropagation();
@@ -103,8 +104,8 @@ export default function LikesDrawer({
                     >
                       <Ionicons name="call" size={14} color={TOKENS.colors.textInverse} />
                     </TouchableOpacity>
-
-                    <TouchableOpacity
+                      ) : null}
+                      <TouchableOpacity
                       style={styles.removeBtn}
                       onPress={(e) => {
                         e.stopPropagation();
