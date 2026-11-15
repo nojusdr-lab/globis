@@ -4,9 +4,12 @@ import {
   View,
   StyleSheet,
   StatusBar,
+  Text,
   Platform,
 } from 'react-native';
 import { eligible, shelterPets } from './src/data/integrity.cjs';
+import useDiscovery from './src/state/useDiscovery';
+import useReducedMotion from './src/state/useReducedMotion';
 import { PETS } from './src/data/pets';
 import { TOKENS } from './src/theme/tokens';
 import Header from './src/components/Header';
@@ -21,15 +24,17 @@ import GrainOverlay from './src/components/GrainOverlay';
 const PAGE_SIZE = 20;
 
 export default function App() {
-  const [lang, setLang] = useState('lt');
+  const reducedMotion=useReducedMotion();
+  const {state,dispatch,error,retry}=useDiscovery();
+  const lang=state.lang;
+  const setLang=lang=>dispatch({type:'language',lang});
   const [activeTab, setActiveTab] = useState('pets'); // 'pets' | 'shelters'
   const [shelterId, setShelterId] = useState(null);
   const [filter, setFilter] = useState('all'); // 'all' | 'dog' | 'cat'
   const [isUrgent, setIsUrgent] = useState(false); // "Skubiausi" toggle
   const [cityFilter, setCityFilter] = useState('all'); // 11 Lithuanian cities + all
   const [deckLimit, setDeckLimit] = useState(PAGE_SIZE); // Smooth 20-cards-at-a-time pagination
-  const [likedPets, setLikedPets] = useState([]);
-  const [passedPets, setPassedPets] = useState([]);
+  const likedPets=PETS.filter(p=>state.saved.includes(p.id));
   const [matchedPet, setMatchedPet] = useState(null);
   const [isMatchModalVisible, setIsMatchModalVisible] = useState(false);
   const [detailsPet, setDetailsPet] = useState(null);
@@ -41,6 +46,7 @@ export default function App() {
   const filteredPets = useMemo(() => {
     let result = shelterId ? shelterPets(PETS, shelterId) : PETS.filter(eligible);
 
+    result=result.filter(p=>!state.saved.includes(p.id) && !state.passed.includes(p.id));
     // 1. Filter by species
     if (filter !== 'all') {
       result = result.filter((p) => p.species === filter);
@@ -59,7 +65,7 @@ export default function App() {
     }
 
     return result;
-  }, [filter, cityFilter, isUrgent, shelterId]);
+  }, [filter, cityFilter, isUrgent, shelterId, state.saved, state.passed]);
 
   // Unique filter key used to safely reset pagination and stack index
   const filterKey = `${filter}-${cityFilter}-${isUrgent}-${shelterId}`;
@@ -84,24 +90,10 @@ export default function App() {
   // Handle Swipes
   const handleSwipeRight = (pet) => {
     if (!pet || !eligible(pet)) return;
-    setLikedPets((prev) => {
-      if (prev.some((p) => p.id === pet.id)) return prev;
-      return [pet, ...prev];
-    });
-    setMatchedPet(pet);
-    setIsMatchModalVisible(true);
+    dispatch({type:'save',id:pet.id});
   };
-
-  const handleSwipeLeft = (pet) => {
-    if (!pet) return;
-    setPassedPets((prev) => [pet, ...prev]);
-  };
-
-  const handleRewind = () => {
-    if (stackRef.current) {
-      stackRef.current.rewind();
-    }
-  };
+  const handleSwipeLeft = pet => {if(pet) dispatch({type:'pass',id:pet.id});};
+  const handleRewind = () => dispatch({type:'undo'});
 
   const handlePass = () => {
     if (stackRef.current) {
@@ -125,11 +117,11 @@ export default function App() {
   };
 
   const handleRemoveLike = (petId) => {
-    setLikedPets((prev) => prev.filter((p) => p.id !== petId));
+    dispatch({type:'remove',id:petId});
   };
 
   const handleResetStack = () => {
-    setPassedPets([]);
+    dispatch({type:'resetPassed'});
     setDeckLimit(PAGE_SIZE);
   };
 
@@ -147,6 +139,7 @@ export default function App() {
         backgroundColor={TOKENS.colors.sand}
       />
 
+      {error ? <Text accessibilityRole="alert" onPress={retry}>{error} Bandykite dar kartą.</Text> : null}
       {/* Tactile Organic Grain Overlay */}
       <GrainOverlay />
 
@@ -172,6 +165,7 @@ export default function App() {
           <>
             {/* Swipeable Pet Card Stack with 20-card-at-a-time pagination */}
             <CardStack
+              reduceMotion={reducedMotion}
               stackRef={stackRef}
               pets={visiblePets}
               totalCount={filteredPets.length}
@@ -188,11 +182,12 @@ export default function App() {
 
             {/* Action Controls: Rewind, Pass, Info, Like with Breathing Pulse */}
             <ActionButtons
+              reduceMotion={reducedMotion}
               onRewind={handleRewind}
               onPass={handlePass}
               onInfo={handleInfo}
               onLike={handleLike}
-              canRewind={true}
+              canRewind={state.history.length>0}
             />
           </>
         ) : (
