@@ -48,10 +48,12 @@ Designed following the **Organic** aesthetic anchor:
 The app uses the reviewed snapshots in `src/data/allPets.json` and `src/data/shelters.json`. Live Globok updates are disabled while source access and pagination remain unverified. See the [refresh policy and manual review process](docs/globok-refresh.md).
 
 ```bash
-node --test tests/*.test.cjs scripts/discovery-engine/*.test.cjs
+npm test
+npm run check:data
+CI=1 npm run build
 ```
 
-The checks run offline. Historical values with insufficient provenance remain in Git history. The legacy-to-current listing ID mapping is in `docs/pr1-listing-id-map.json`. A listing marked as reserved is kept in its shelter roster and omitted from general discovery. Unconfirmed availability is labelled explicitly.
+Node.js >=22.13.0 is required (Discovery Engine uses `node:sqlite`). CI tests Node 22.13.0, 24 and 26. The tests run offline; the build requires dependencies installed with `npm ci`. Historical values with insufficient provenance remain in Git history. The legacy-to-current listing ID mapping is in `docs/pr1-listing-id-map.json`. A listing marked as reserved is kept in its shelter roster and omitted from general discovery. Unconfirmed availability is labelled explicitly.
 
 ---
 

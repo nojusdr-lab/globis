@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: ['22.13.0', '26']
+        node: ['22.13.0', '24', '26']
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - run: node --test tests/*.test.cjs scripts/discovery-engine/*.test.cjs
+      - run: npm test
   expo-export:
     runs-on: ubuntu-latest
     env:
@@ -38,4 +38,4 @@ jobs:
         with:
           node-version: '26'
       - run: npm ci --no-audit --no-fund
-      - run: ./node_modules/.bin/expo export --platform all
+      - run: npm run build

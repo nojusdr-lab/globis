@@ -47,3 +47,20 @@ test('snapshot IDs and references are valid, partial or duplicate snapshots are 
     assert.equal(row.email ?? null, email(row.email));
   }
 });
+
+test('re-running migration preserves the reviewed snapshot and reserved evidence', () => {
+  const first = migrate(pets, shelters);
+  const second = migrate(first.listings, first.organizations);
+  assert.deepEqual(first.listings, pets);
+  assert.deepEqual(first.organizations, shelters);
+  assert.deepEqual(second.listings, first.listings);
+  assert.deepEqual(second.organizations, first.organizations);
+  assert.deepEqual(first.listings.filter(p => p.status === 'reserved'), pets.filter(p => p.status === 'reserved'));
+});
+
+test('snapshot validation rejects missing, blank and duplicate organization IDs', () => {
+  for (const invalid of [{}, {id: ''}, {id: '   '}, null]) {
+    assert.throws(() => validateImport(pets, [...shelters, invalid], pets, shelters));
+  }
+  assert.throws(() => validateImport(pets, [...shelters, shelters[0]], pets, shelters));
+});

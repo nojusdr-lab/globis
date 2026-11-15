@@ -35,6 +35,10 @@ function shelterPets(pets, id) {
 
 function validateImport(pets, shelters, previousPets, previousShelters) {
   for (const [rows, previous] of [[pets, previousPets], [shelters, previousShelters]]) {
+    if (!Array.isArray(rows) || !Array.isArray(previous) ||
+        rows.some(row => !row || typeof row.id !== 'string' || !row.id.trim())) {
+      throw new Error('Missing or invalid snapshot IDs');
+    }
     const ids = new Set(rows.map(row => row.id));
     const priorIds = previous.map(row => row.id);
     if (!rows.length || ids.size !== rows.length ||

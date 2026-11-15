@@ -19,7 +19,9 @@ function migrate(pets, shelters) {
     const { name, city, address, url } = organization;
     return {
       id, slug: pet.slug, url: pet.url, source: 'globok', name: pet.name, species: pet.species,
-      city, photos: pet.photos, ...statusFromText(pet.bioLt),
+      city, photos: pet.photos, ...statusFromText(
+        pet.source === 'globok' && pet.id === id ? pet.statusEvidence : pet.bioLt
+      ),
       sex: null, ageLt: null, ageEn: null, size: null, waitingDays: null,
       medical: { chipped: null, vaccinated: null, neutered: null },
       compatibilityTagsLt: [], compatibilityTagsEn: [], personalityTraitsLt: [], personalityTraitsEn: [],

@@ -63,3 +63,13 @@ test('invalid packets and disabled live CLI preserve the actual committed snapsh
   assert.match(cli.stderr,/disabled/);
   assert.deepEqual(paths.map(path=>readFileSync(path)),before);
 });
+
+test('a missing listing never becomes adopted and input snapshots remain unchanged', () => {
+  const packet = fixture();
+  const previous = validateCatalog(packet, {pets: [], shelters: []});
+  const before = structuredClone(previous);
+  packet.pages[1].listings[0].url = 'https://globok.lt/gyvunai/replacement';
+  assert.throws(() => validateCatalog(packet, previous), /Incomplete or suspicious/);
+  assert.deepEqual(previous, before);
+  assert.equal(previous.pets.some(pet => pet.status === 'adopted'), false);
+});
