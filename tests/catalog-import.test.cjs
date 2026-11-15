@@ -82,3 +82,14 @@ test('a missing listing never becomes adopted and input snapshots remain unchang
   assert.deepEqual(previous, before);
   assert.equal(previous.pets.some(pet => pet.status === 'adopted'), false);
 });
+
+
+test('an older observation cannot replace a newer reviewed observation', () => {
+  const packet = fixture();
+  const previous = validateCatalog(packet, {pets: [], shelters: []});
+  const before = structuredClone(previous);
+  packet.pages[0].observedAt = 69;
+  assert.throws(() => validateCatalog(packet, previous), /backwards/);
+  assert.deepEqual(previous, before);
+  assert.equal(previous.pets[0].source, 'globok');
+});

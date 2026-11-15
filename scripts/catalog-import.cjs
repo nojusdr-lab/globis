@@ -13,6 +13,7 @@ function validateCatalog({ decision, now, catalogId, total, pageSize, pages, she
       !Array.isArray(pages) || pages.length !== Math.ceil(total/pageSize) || !Array.isArray(shelters)) {
     throw Error('Missing or inconsistent catalog pagination');
   }
+  const priorById = new Map(previous.pets.map(pet => [pet.id, pet]));
   const ids = new Set();
   const pets = [];
   for (const [index,page] of pages.entries()) {
@@ -35,8 +36,12 @@ function validateCatalog({ decision, now, catalogId, total, pageSize, pages, she
       if (typeof listing.name !== 'string' || !listing.name.trim() ||
           !['dog','cat'].includes(listing.species) || typeof listing.shelterId !== 'string' ||
           (listing.statusText != null && typeof listing.statusText !== 'string')) throw Error('Invalid listing fields');
+      const prior = priorById.get(id);
+      if (prior?.observedAt && Date.parse(prior.observedAt) > page.observedAt) {
+        throw Error('Catalog observation would move backwards');
+      }
       ids.add(id);
-      pets.push({id,url:listing.url,name:listing.name,species:listing.species,
+      pets.push({id,source:'globok',url:listing.url,name:listing.name,species:listing.species,
         shelter:{id:listing.shelterId},observedAt,...statusFromText(listing.statusText)});
     }
   }
