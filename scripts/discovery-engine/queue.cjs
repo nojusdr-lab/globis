@@ -1,4 +1,5 @@
 const { DatabaseSync } = require('node:sqlite');
+const { sourceState } = require('./meta-adapter.cjs');
 
 class Queue {
   constructor(path, now = Date.now) {
@@ -35,6 +36,14 @@ class Queue {
         allowed INTEGER NOT NULL, expires INTEGER NOT NULL, evidence TEXT NOT NULL
       );
       CREATE TABLE IF NOT EXISTS file_run(
+        run TEXT PRIMARY KEY REFERENCES run(id), revision INTEGER NOT NULL, observed_at TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS meta_access(
+        source TEXT REFERENCES source(id), revision INTEGER, state TEXT NOT NULL,
+        page_id TEXT NOT NULL, route TEXT NOT NULL, expires INTEGER, evidence TEXT NOT NULL,
+        decided_at INTEGER NOT NULL, PRIMARY KEY(source,revision)
+      );
+      CREATE TABLE IF NOT EXISTS meta_run(
         run TEXT PRIMARY KEY REFERENCES run(id), revision INTEGER NOT NULL, observed_at TEXT NOT NULL
       );
     `);
@@ -107,10 +116,16 @@ class Queue {
     return `NOT EXISTS (SELECT 1 FROM file_run f WHERE f.run=j.run AND NOT EXISTS
       (SELECT 1 FROM file_grant g WHERE g.source=s.id AND g.revision=f.revision AND g.allowed=1 AND g.expires>?))`;
   }
+  metaAccess() {
+    return `NOT EXISTS (SELECT 1 FROM meta_run m WHERE m.run=j.run AND NOT EXISTS
+      (SELECT 1 FROM meta_access a WHERE a.source=s.id AND a.revision=m.revision
+       AND a.revision=(SELECT max(revision) FROM meta_access WHERE source=s.id)
+       AND a.state='approved' AND a.expires>?))`;
+  }
   hasPending() {
     return this.get(`SELECT 1 FROM job j JOIN run r ON r.id=j.run JOIN source s ON s.id=r.source
       JOIN organization o ON o.id=s.org WHERE s.mode='fixture' AND o.active=1
-      AND j.state IN ('ready','leased') AND ${this.fileAccess()} LIMIT 1`,this.now());
+      AND j.state IN ('ready','leased') AND ${this.fileAccess()} AND ${this.metaAccess()} LIMIT 1`,this.now(),this.now());
   }
   claim(worker, { leaseMs = 1000, domainLimit = 1, domainGapMs = 0 } = {}) {
     return this.tx(() => {
@@ -119,17 +134,18 @@ class Queue {
         AND EXISTS (SELECT 1 FROM job j WHERE j.id=attempt.job AND j.token=attempt.token AND j.lease<=?)`,now,now);
       this.sql("UPDATE job SET state='dead' WHERE state='leased' AND lease<=? AND token>=4", now);
       const job = this.get(`
-        SELECT j.*,s.org,s.domain,s.id AS source,f.observed_at FROM job j
+        SELECT j.*,s.org,s.domain,s.id AS source,f.observed_at,m.observed_at AS meta_observed_at FROM job j
         JOIN run r ON r.id=j.run JOIN source s ON s.id=r.source
         LEFT JOIN file_run f ON f.run=j.run
+        LEFT JOIN meta_run m ON m.run=j.run
         JOIN organization o ON o.id=s.org LEFT JOIN turn t ON t.org=s.org
         LEFT JOIN gate g ON g.domain=s.domain
-        WHERE o.active=1 AND s.mode='fixture' AND ${this.fileAccess()} AND j.ready<=?
+        WHERE o.active=1 AND s.mode='fixture' AND ${this.fileAccess()} AND ${this.metaAccess()} AND j.ready<=?
           AND (j.state='ready' OR (j.state='leased' AND j.lease<=?))
           AND coalesce(g.next,0)<=?
           AND (SELECT count(*) FROM job x JOIN run y ON y.id=x.run JOIN source z ON z.id=y.source
             WHERE z.domain=s.domain AND x.state='leased' AND x.lease>?) < ?
-        ORDER BY coalesce(t.last,0),j.ready,j.id LIMIT 1`,now,now,now,now,now,domainLimit);
+        ORDER BY coalesce(t.last,0),j.ready,j.id LIMIT 1`,now,now,now,now,now,now,domainLimit);
       // B1 has no network executor. Network tasks remain unclaimable even with approval.
       if (!job) return null;
       const token = job.token + 1;
@@ -143,7 +159,7 @@ class Queue {
   owns(job, now) {
     return this.get(`SELECT j.id FROM job j JOIN run r ON r.id=j.run JOIN source s ON s.id=r.source
       JOIN organization o ON o.id=s.org WHERE j.id=? AND j.token=? AND j.state='leased' AND j.lease>?
-      AND o.active=1 AND ${this.fileAccess()}`,job.id,job.token,now,now);
+      AND o.active=1 AND ${this.fileAccess()} AND ${this.metaAccess()}`,job.id,job.token,now,now,now);
   }
   renew(job, leaseMs) {
     return this.tx(() => {
@@ -159,10 +175,14 @@ class Queue {
     return this.tx(() => {
       const now = this.now();
       if (!this.owns(job,now)) return false;
-      const state = error ? (job.token >= 4 ? 'dead' : 'ready') : 'done';
+      const failure = job.meta_observed_at ? error?.metaFailure : null;
+      const state = error ? (job.token >= 4 || failure?.retry === false ? 'dead' : 'ready') : 'done';
+      const delay = error ? Math.max(20*2**(job.token-1),failure?.delayMs ?? 0) : 0;
+      if (failure?.cooldown) this.sql(`INSERT INTO gate VALUES (?,?) ON CONFLICT(domain)
+        DO UPDATE SET next=max(gate.next,excluded.next)`,job.domain,now+delay);
       this.sql('UPDATE job SET state=?,ready=?,lease=NULL,result=? WHERE id=?',
-        state,now+(error ? 20*2**(job.token-1) : 0),error ? null : JSON.stringify(result),job.id);
-      this.sql('UPDATE attempt SET ended=?,outcome=? WHERE job=? AND token=?',now,error ? 'error' : 'done',job.id,job.token);
+        state,now+delay,error ? null : JSON.stringify(result),job.id);
+      this.sql('UPDATE attempt SET ended=?,outcome=? WHERE job=? AND token=?',now,failure?.kind ?? (error ? 'error' : 'done'),job.id,job.token);
       return true;
     });
   }
@@ -174,6 +194,14 @@ class Queue {
       const run = this.get('SELECT * FROM run WHERE id=?',runId);
       const jobs = this.all('SELECT * FROM job WHERE run=? ORDER BY id',runId);
       if (!run || !jobs.length) return { published:false, reason:'empty_run' };
+      const meta = this.get('SELECT revision FROM meta_run WHERE run=?',runId);
+      if (meta) {
+        const decision = sourceState(this,run.source);
+        const active = this.get('SELECT o.active FROM organization o JOIN source s ON s.org=o.id WHERE s.id=?',run.source);
+        if (!active?.active || decision.state !== 'approved' || decision.revision !== meta.revision) {
+          return { published:false, reason:'meta_access_denied' };
+        }
+      }
       const file = this.get('SELECT revision FROM file_run WHERE run=?',runId);
       if (file) {
         const {org} = this.get('SELECT org FROM source WHERE id=?',run.source);
@@ -182,8 +210,8 @@ class Queue {
       const dead = jobs.filter(job => job.state === 'dead').map(job => job.key);
       if (dead.length) return { published:false, reason:'dead_jobs', jobs:dead };
       if (jobs.some(job => job.state !== 'done')) return { published:false, reason:'pending_jobs' };
-      const items = jobs.map(job => JSON.parse(job.result));
-      if (items.some(item => !item || typeof item.id !== 'string' || !item.id ||
+      const items = meta ? JSON.parse(jobs[0].result).items : jobs.map(job => JSON.parse(job.result));
+      if (!Array.isArray(items) || !items.length || items.some(item => !item || typeof item.id !== 'string' || !item.id ||
           typeof item.sourceUrl !== 'string' || !/^https:\/\/[^/]+\.invalid\//.test(item.sourceUrl) ||
           !Number.isFinite(Date.parse(item.observedAt)) ||
           ![null,true,false].includes(item.vaccinated)) ||

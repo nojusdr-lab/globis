@@ -1,5 +1,16 @@
 # Discovery Engine B1
 
+## C1. Meta Page adapterio karkasas
+
+Žr. [rankinį patvirtinimo planą](meta-setup.md). Vietiniam bandymui:
+
+```sh
+node --test scripts/discovery-engine/meta-adapter.test.cjs
+node --test scripts/discovery-engine/*.test.cjs
+```
+
+Naudojamas tik `fixtures/meta.synthetic.json` ir jo testinės variacijos. Joks Meta App, prieigos raktas ar tinklo jungtis šiai komandai nereikalingi.
+
 ## B2. Vietinio sintetinio failo importas
 
 ```sh
