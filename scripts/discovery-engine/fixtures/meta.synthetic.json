@@ -1,0 +1,36 @@
+{
+  "synthetic": true,
+  "pageId": "900000001",
+  "pages": [
+    {
+      "cursor": null,
+      "responses": [{
+        "status": 200,
+        "body": {
+          "data": [{
+            "id": "900000001_1",
+            "is_published": true,
+            "message": "Fiktyvus pavyzdys\nBūsena: rezervuotas",
+            "created_time": "2026-11-01T12:00:00+0000",
+            "permalink_url": "https://posts.invalid/1",
+            "full_picture": "https://images.invalid/1.jpg"
+          }],
+          "paging": {"next": "https://paging.invalid/cursor", "cursors": {"after": "synthetic-next"}}
+        }
+      }]
+    },
+    {
+      "cursor": "synthetic-next",
+      "responses": [{
+        "status": 200,
+        "body": {"data": [{
+          "id": "900000001_2",
+          "is_published": true,
+          "message": "Nerezervuotas. Galbūt jau įvaikintas.",
+          "created_time": "2026-11-02T12:00:00Z",
+          "permalink_url": "https://posts.invalid/2"
+        }]}
+      }]
+    }
+  ]
+}

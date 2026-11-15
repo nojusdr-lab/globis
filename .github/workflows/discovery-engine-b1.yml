@@ -1,4 +1,4 @@
-name: Discovery Engine B1
+name: Discovery Engine checks
 on:
   pull_request:
     paths:
