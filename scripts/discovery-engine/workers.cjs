@@ -1,4 +1,5 @@
 const { setTimeout: sleep } = require('node:timers/promises');
+const { observation } = require('./file-adapter.cjs');
 
 async function fixtureAdapter(job, now, signal) {
   await sleep(job.payload.delay ?? 5, undefined, {signal});
@@ -25,10 +26,7 @@ async function runPool(queue, { size = 3, leaseMs = 1000, deadlineMs = 5000, onE
     while (!stopping && Date.now() < deadline) {
       const job = queue.claim(worker, { leaseMs });
       if (!job) {
-        const pending = queue.get(`SELECT 1 FROM job j JOIN run r ON r.id=j.run
-          JOIN source s ON s.id=r.source JOIN organization o ON o.id=s.org
-          WHERE s.mode='fixture' AND o.active=1 AND j.state IN ('ready','leased') LIMIT 1`);
-        if (!pending) return;
+        if (!queue.hasPending()) return;
         await sleep(5);
         continue;
       }
@@ -46,7 +44,10 @@ async function runPool(queue, { size = 3, leaseMs = 1000, deadlineMs = 5000, onE
       let item;
       let adapterError;
       try {
-        item = await fixtureAdapter(job,queue.now,controller.signal);
+        if (job.observed_at) {
+          await sleep(0,undefined,{signal:controller.signal});
+          item = observation(job.payload.row,job.payload.evidenceRef,job.observed_at);
+        } else item = await fixtureAdapter(job,queue.now,controller.signal);
       } catch (error) {
         adapterError = error;
       } finally {
