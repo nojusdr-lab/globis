@@ -1,0 +1,6 @@
+nativeListingId,sourceUrl,name,status,vaccinated,photoUrl,sourceUpdatedAt
+sample-1,https://listings.invalid/1,"Demo, ""A""",active,true,https://media.invalid/a.jpg,2026-11-01T12:00:00Z
+sample-2,https://listings.invalid/2,"Demo
+B",reserved,false,,
+sample-3,https://listings.invalid/3,,unknown,,,
+sample-4,https://listings.invalid/4,,,,,
