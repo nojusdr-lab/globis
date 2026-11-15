@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const { mkdtempSync, rmSync } = require('node:fs');
 const { tmpdir } = require('node:os');
 const { join } = require('node:path');
+const { setTimeout: sleep } = require('node:timers/promises');
 const { Queue } = require('./queue.cjs');
 const { runPool } = require('./workers.cjs');
 
@@ -101,4 +102,65 @@ test('shared pool retries a fixture and publishes evidence with null intact',asy
     assert.deepEqual(values.map(v=>v.vaccinated),[null,false,true]);
     assert.equal(q.get("SELECT count(*) AS count FROM attempt WHERE outcome='error'").count,1);
   } finally { q.db.close(); }
+});
+
+test('worker discards its result after another connection takes the lease', async t => {
+  const {q, other, add, tick} = setup(t);
+  add('a');
+  q.enqueue('a','a',[{key:'x',delay:100}]);
+  const renew = q.renew.bind(q);
+  let takeover;
+  q.renew = (job, ms) => {
+    tick(ms);
+    takeover = other.claim('replacement');
+    assert.equal(other.complete(takeover,item('replacement')),true);
+    return renew(job,ms);
+  };
+  await runPool(q,{size:1,leaseMs:30});
+  assert.equal(takeover.token,2);
+  assert.equal(JSON.parse(q.get('SELECT result FROM job').result).id,'replacement');
+});
+
+test('heartbeat database failure rejects the pool through its promise', async () => {
+  const q = new Queue(':memory:');
+  q.register({org:'a',source:'a',domain:'a.invalid'});
+  q.enqueue('a','a',[{key:'x',delay:100}]);
+  await assert.rejects(runPool(q,{size:1,leaseMs:30,onEvent:()=>q.db.close()}),/Worker heartbeat failed/);
+});
+
+test('four failed attempts stop the pool and explain why publication is blocked',async t => {
+  const {q,add}=setup(t);
+  q.now=Date.now;
+  add('a');
+  q.enqueue('first','a',[{key:'good'}]);
+  await runPool(q);
+  assert.equal(q.publish('first'),true);
+  const before=q.get('SELECT data FROM snapshot').data;
+  q.enqueue('second','a',[{key:'valid'},{key:'broken',fail:true}]);
+  await runPool(q);
+  assert.deepEqual(q.publishPreview('second'),{published:false,reason:'dead_jobs',jobs:['broken']});
+  assert.equal(q.get("SELECT count(*) AS n FROM attempt WHERE outcome='error'").n,4);
+  assert.equal(q.get('SELECT data FROM snapshot').data,before);
+});
+
+test('a newly opened SQLite connection recovers work after the original closes',async t=>{
+  const dir=mkdtempSync(join(tmpdir(),'globis-reopen-'));
+  const path=join(dir,'queue.sqlite');
+  t.after(()=>rmSync(dir,{recursive:true}));
+  let initial=new Queue(path);
+  let old;
+  try {
+    initial.register({org:'a',source:'a',domain:'a.invalid'});
+    initial.enqueue('a','a',[{key:'x'}]);
+    old=initial.claim('old',{leaseMs:30});
+  } finally { initial.db.close(); }
+  await sleep(40);
+  const reopened=new Queue(path);
+  try {
+    const next=reopened.claim('after-restart');
+    assert.equal(next.id,old.id);
+    assert.equal(next.token,old.token+1);
+    assert.equal(reopened.complete(old,item('stale')),false);
+    assert.equal(reopened.complete(next,item('recovered')),true);
+  } finally { reopened.db.close(); }
 });

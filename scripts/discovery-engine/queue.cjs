@@ -123,19 +123,26 @@ class Queue {
     });
   }
   publish(runId) {
+    return this.publishPreview(runId).published;
+  }
+  publishPreview(runId) {
     return this.tx(() => {
       const run = this.get('SELECT * FROM run WHERE id=?',runId);
       const jobs = this.all('SELECT * FROM job WHERE run=? ORDER BY id',runId);
-      if (!run || !jobs.length || jobs.some(job => job.state !== 'done')) return false;
+      if (!run || !jobs.length) return { published:false, reason:'empty_run' };
+      const dead = jobs.filter(job => job.state === 'dead').map(job => job.key);
+      if (dead.length) return { published:false, reason:'dead_jobs', jobs:dead };
+      if (jobs.some(job => job.state !== 'done')) return { published:false, reason:'pending_jobs' };
       const items = jobs.map(job => JSON.parse(job.result));
       if (items.some(item => !item || typeof item.id !== 'string' || !item.id ||
           typeof item.sourceUrl !== 'string' || !/^https:\/\/[^/]+\.invalid\//.test(item.sourceUrl) ||
           !Number.isFinite(Date.parse(item.observedAt)) ||
           ![null,true,false].includes(item.vaccinated)) ||
-          new Set(items.map(item => item.id)).size !== items.length) return false;
-      return Boolean(this.sql(`INSERT INTO snapshot VALUES (?,?,?)
+          new Set(items.map(item => item.id)).size !== items.length) return { published:false, reason:'invalid_observations' };
+      const published = Boolean(this.sql(`INSERT INTO snapshot VALUES (?,?,?)
         ON CONFLICT(source) DO UPDATE SET seq=excluded.seq,data=excluded.data WHERE excluded.seq>snapshot.seq`,
         run.source,run.seq,JSON.stringify(items)).changes);
+      return { published, reason:published ? null : 'snapshot_not_newer' };
     });
   }
 }

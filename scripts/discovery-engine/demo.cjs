@@ -29,7 +29,8 @@ async function main() {
     }});
     if (!switches) throw Error('Expected a worker to switch organizations');
     for (const org of ['A','B','C']) {
-      if (!queue.publish(prefix+org)) throw Error('Snapshot rejected: '+org);
+      const result = queue.publishPreview(prefix+org);
+      if (!result.published) throw Error('Snapshot rejected: '+org+' '+JSON.stringify(result));
       const snapshot = queue.get('SELECT data FROM snapshot WHERE source=?',org);
       console.log('Validated preview:',org,JSON.parse(snapshot.data).length,'observations');
     }
