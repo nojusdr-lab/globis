@@ -68,3 +68,16 @@ test('reviewed VMVT inventory has consistent rows, statuses and destinations', (
   assert.equal(rows[26].split('\t')[4], 'inactive');
   assert.equal(rows[89].split('\t')[7], 'facebook website');
 });
+
+const { parseInventory, summarize } = require('./vmvt-inventory.cjs');
+test('destinations have independent unverified data and image permissions', () => {
+  const text = readFileSync(inventoryPath,'utf8');
+  const rows = parseInventory(text);
+  const mixed = rows.find(row=>row.destinations.length===2);
+  assert.deepEqual(mixed.destinations.map(d=>d.accessState),['social_authorization_required','website_review_required']);
+  assert.ok(rows.flatMap(row=>row.destinations).every(d=>d.dataPermission==='unverified' && d.photoPermission==='unverified'));
+  assert.equal(summarize(rows).registryRows,96);
+  assert.equal(summarize(rows).destinationLinks,96);
+  assert.equal(summarize(rows).approvedChannels,0);
+  for (const invalid of [text.replace('website_review_required','approved'),text.replace('http://animal.lt','javascript://animal.lt'),text.replace('http://animal.lt','http://user:password@animal.lt'),text.replace('1\tUAB','2\tUAB')]) assert.throws(()=>parseInventory(invalid));
+});
