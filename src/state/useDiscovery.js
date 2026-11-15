@@ -15,6 +15,16 @@ export default function useDiscovery() {
     try { write(KEY,JSON.stringify(state)); setError(null); }
     catch { setError('Nepavyko išsaugoti pasirinkimų šiame įrenginyje.'); }
   },[state,blocked]);
-  const retry=()=>{setBlocked(false); try {write(KEY,JSON.stringify(state));setError(null);}catch {setError('Vietinė saugykla vis dar nepasiekiama.');}};
+  const retry=()=>{
+    try {
+      if(blocked) {
+        // Retry reading the original bytes. Never replace an unreadable saved state with defaults.
+        const restored=decode(read(KEY));
+        dispatch({type:'hydrate',state:restored});
+        setBlocked(false);
+      } else write(KEY,JSON.stringify(state));
+      setError(null);
+    } catch {setError('Vietinė saugykla vis dar nepasiekiama arba duomenys netinkami. Esami duomenys neperrašyti.');}
+  };
   return {state,dispatch,error,retry};
 }

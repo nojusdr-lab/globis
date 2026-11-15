@@ -22,3 +22,7 @@ Reikia Python Playwright ir Chromium (testo aplinkoje `/usr/bin/chromium`). Jų 
 - Kontaktai kopijoje sąmoningai tušti. Nebuvo siunčiami laiškai ar daromi skambučiai. Tikrų kontaktų mygtukai reikalauja kilmės įrodymo ir formato validacijos; šiuo metu kontaktuojama per šaltinį. Nuorodos / Share negalėjimas atidaryti rodo klaidą.
 - Dabartinė kopija neturi aiškiai patvirtintų skubos įrodymų. Skubos filtras todėl duoda 0; laukimo trukmė nepaverčiama išgalvota skuba.
 - Prieš viešą beta reikia savininko kanalo, privatumo ir palaikymo kontakto bei duomenų / nuotraukų naudojimo sprendimų. Live Globok ir Meta importai neįjungti.
+
+## Leidimo paruošimo papildoma patikra
+
+Vėlesnis susietas beta paruošimo PR: 36/36 Node testų; švarus `npm ci`; pakartoti visų platformų eksportai ir web beta. Papildomai patikrinta „Apie GLOBIS“ su aiškia nepaskelbto kontakto būsena bei sugadintos localStorage kopijos išlaikymas po Retry. Kai skaitymas vėl veikia, atkuriami tikri ankstesni pasirinkimai, o ne įrašoma tuščia būsena. Siaurame ekrane Resize patikra laukia React Native useWindowDimensions perskaičiavimo. Telefonų skambučių / laiškų ir native įrenginių testų tai nepakeičia.

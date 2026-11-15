@@ -33,8 +33,8 @@ export default function MatchModal({
   const handleEmail = () => {
     const subject = encodeURIComponent(
       lang === 'lt'
-        ? `Užklausa dėl augintinio: ${pet.name} (per „Myliu tave“)`
-        : `Adoption inquiry for ${pet.name} (via "Myliu tave")`
+        ? `Užklausa dėl augintinio: ${pet.name} (per „GLOBIS“)`
+        : `Adoption inquiry for ${pet.name} (via "GLOBIS")`
     );
     const body = encodeURIComponent(
       lang === 'lt'

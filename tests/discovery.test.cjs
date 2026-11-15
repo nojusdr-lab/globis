@@ -22,3 +22,11 @@ test('taps and vertical scroll do not claim a swipe',()=>{
  for(const gesture of [{dx:0,dy:0},{dx:7,dy:1},{dx:10,dy:20}]) assert.equal(shouldClaim(gesture),false);
  assert.equal(shouldClaim({dx:10,dy:1}),true);assert.equal(shouldClaim({dx:-10,dy:1}),true);
 });
+
+
+test('storage read recovery hydrates validated prior choices without replacing them with defaults',()=>{
+ const previous=reducer(emptyState(),{type:'save',id:'globok:kept'});
+ assert.deepEqual(reducer(emptyState(),{type:'hydrate',state:decode(JSON.stringify(previous))}),previous);
+ assert.throws(()=>reducer(previous,{type:'hydrate',state:{broken:true}}));
+ assert.deepEqual(previous.saved,['globok:kept']);
+});

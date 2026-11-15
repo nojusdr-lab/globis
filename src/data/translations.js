@@ -1,6 +1,6 @@
 export const TRANSLATIONS = {
   lt: {
-    appTitle: 'Myliu tave',
+    appTitle: 'GLOBIS',
     appSubtitle: 'Lietuvos gyvūnų prieglaudos',
     tagline: 'Kiekviena širdelė nusipelnė tikrų namų',
 
@@ -34,7 +34,7 @@ export const TRANSLATIONS = {
     notNeutered: 'Nesterilizuotas',
 
     // Card badges & indicators
-    likeStamp: 'MYLIU',
+    likeStamp: 'IŠSAUGOTI',
     passStamp: 'PRALEISTI',
     verifiedShelter: 'Patikrinta prieglauda',
     tapForMorePhotos: 'Palieskite nuotrauką kitam kadrui',
@@ -44,7 +44,7 @@ export const TRANSLATIONS = {
     btnUndo: 'Atšaukti',
     btnPass: 'Praleisti',
     btnInfo: 'Apie augintinį',
-    btnLike: 'Myliu',
+    btnLike: 'Išsaugoti',
     btnLikesList: 'Pamėgti',
 
     // Match modal
@@ -61,7 +61,7 @@ export const TRANSLATIONS = {
     openInquiryForm: 'Siųsti įvaikinimo užklausą',
     copiedAlert: 'Nukopijuota į iškarpinę!',
     continueBrowsing: 'Tęsti paiešką',
-    inquiryPrefillNote: 'Laba diena, susidomėjau jūsų globojamu augintiniu per programėlę „Myliu tave“. Norėčiau atvykti susipažinti!',
+    inquiryPrefillNote: 'Laba diena, susidomėjau jūsų globojamu augintiniu per programėlę „GLOBIS“. Norėčiau atvykti susipažinti!',
 
     // Pet details modal
     detailsTitle: 'Augintinio istorija',
@@ -80,7 +80,7 @@ export const TRANSLATIONS = {
     // Likes sheet
     likesHeader: 'Pamėgti augintiniai',
     likesCountSuffix: 'išsaugoti',
-    noLikesPrompt: 'Dar neturite pamėgtų gyvūnų. Braukite korteles į dešinę arba spauskite „Myliu“!',
+    noLikesPrompt: 'Dar neturite pamėgtų gyvūnų. Braukite korteles į dešinę arba spauskite „Išsaugoti“!',
     contactShelterShort: 'Susisiekti',
 
     // Shelters View
@@ -96,7 +96,7 @@ export const TRANSLATIONS = {
   },
 
   en: {
-    appTitle: 'Myliu tave',
+    appTitle: 'GLOBIS',
     appSubtitle: 'Lithuanian Shelter Pets',
     tagline: 'Every heart deserves a real forever home',
 
@@ -157,7 +157,7 @@ export const TRANSLATIONS = {
     openInquiryForm: 'Send adoption inquiry',
     copiedAlert: 'Copied to clipboard!',
     continueBrowsing: 'Continue browsing',
-    inquiryPrefillNote: 'Hello, I saw your pet through the "Myliu tave" adoption app and would love to visit and get to know them!',
+    inquiryPrefillNote: 'Hello, I saw your pet through the "GLOBIS" adoption app and would love to visit and get to know them!',
 
     // Pet details modal
     detailsTitle: 'Pet Story',

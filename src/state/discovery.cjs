@@ -6,6 +6,7 @@ function restore(ids,id,index) {
   return result;
 }
 function reducer(state,action) {
+  if(action.type==='hydrate') return decode(JSON.stringify(action.state));
   if(action.type==='language') return {...state,lang:action.lang==='en'?'en':'lt'};
   if(action.type==='remove') return {...state,saved:without(state.saved,action.id),history:[]};
   if(action.type==='resetPassed') return {...state,passed:[],history:[]};

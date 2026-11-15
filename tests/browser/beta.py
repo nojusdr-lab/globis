@@ -71,10 +71,27 @@ with sync_playwright() as p:
  page.set_viewport_size({'width':1280,'height':900})
  page.screenshot(path=str(root/'docs/screenshots/discovery-desktop.png'),full_page=True)
  page.set_viewport_size({'width':320,'height':568})
- assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+ page.wait_for_function('document.documentElement.scrollWidth <= innerWidth')
  page.get_by_role('button',name='Filtrai',exact=True).click()
  page.get_by_role('button',name='Uždaryti',exact=True).click()
+ page.get_by_role('button',name='Apie GLOBIS',exact=True).click()
+ page.get_by_text('Palaikymo kontaktas dar nepaskelbtas.',exact=True).wait_for()
+ page.get_by_role('button',name='Uždaryti',exact=True).click()
+ # A failed storage read must not be retried by overwriting the original bytes.
+ bad=browser.new_context(viewport={'width':390,'height':844})
+ bad.route('**/*',lambda route:route.continue_() if route.request.url.startswith('http://127.0.0.1:8765') else route.abort())
+ broken=bad.new_page();broken.goto('http://127.0.0.1:8765',wait_until='networkidle')
+ broken.evaluate("localStorage.setItem('globis.choices.v1','invalid-original-bytes')")
+ broken.reload(wait_until='networkidle')
+ broken.get_by_role('button',name='Bandykite dar kartą',exact=True).click()
+ assert broken.evaluate("localStorage.getItem('globis.choices.v1')")== 'invalid-original-bytes'
+ kept=pets[0]['id']
+ broken.evaluate("value => localStorage.setItem('globis.choices.v1',JSON.stringify(value))",{'version':1,'saved':[kept],'passed':[],'history':[],'lang':'lt'})
+ broken.get_by_role('button',name='Bandykite dar kartą',exact=True).click()
+ broken.get_by_role('tab',name='Išsaugoti (1)',exact=True).wait_for()
+ assert json.loads(broken.evaluate("localStorage.getItem('globis.choices.v1')"))['saved']==[kept]
+ bad.close()
  assert not errors,errors
- assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+ page.wait_for_function('document.documentElement.scrollWidth <= innerWidth')
  print('PASS: profile/contact source, save/reload/undo, pass/undo, card/grid filters, empty search, reserved roster, offline missing image, reduced motion, mobile/desktop no overflow; no page errors')
  browser.close()

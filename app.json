@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Myliu tave",
+    "name": "GLOBIS",
     "slug": "myliu-tave",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./Code_Generated_Image (1).png",
     "userInterfaceStyle": "light",
     "splash": {
-      "backgroundColor": "#E8DCC7"
+      "backgroundColor": "#F5F8F7"
     },
     "ios": {
       "supportsTablet": false,
@@ -16,22 +16,21 @@
     "android": {
       "package": "com.myliutave.app",
       "versionCode": 1,
-      "adaptiveIcon": {
-        "backgroundColor": "#8B9D83",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      },
       "permissions": [
         "INTERNET"
       ]
     },
     "web": {
-      "favicon": "./assets/favicon.png",
+      "favicon": "./Code_Generated_Image (1).png",
       "bundler": "metro"
     },
     "plugins": [
       "expo-sqlite"
-    ]
+    ],
+    "extra": {
+      "betaStatus": "unpublished",
+      "supportEmail": null,
+      "privacyPolicyUrl": null
+    }
   }
 }
