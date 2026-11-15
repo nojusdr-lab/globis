@@ -1,5 +1,20 @@
 # Discovery Engine B1
 
+## B2. Vietinio sintetinio failo importas
+
+```sh
+node scripts/discovery-engine/file-demo.cjs
+node --test scripts/discovery-engine/*.test.cjs
+```
+
+Demo vienu metu apdoroja trijų fiktyvių organizacijų įrašus per bendrą worker pool. Failo adapteris vykdo tik vietines operacijas. Tikram organizacijos failui reikės atskiro patvirtinto duomenų ir nuotraukų naudojimo sprendimo.
+
+`enqueueFile(queue, {path, source, org})` skaito įprastą vietinį failą (iki 1 MiB ir 5000 įrašų). Prieš tai registruokite fiktyvų šaltinį per `queue.register` ir konkrečiam Source nustatykite `queue.authorizeSyntheticFile({source, allowed:true, expires, evidence})`. `expires` yra Unix milisekundės, o `evidence` – sintetinio failo kilmės nuoroda ar aprašas. Leidimo versija susiejama su importo paketu. Atšaukus, pakeitus ar pasibaigus sprendimui, senas paketas nebegali gauti darbų, rašyti rezultatų ar būti paskelbtas. Ankstesnė patvirtinta kopija išlieka. Šis leidimas skirtas sintetiniams pavyzdžiams.
+
+CSV schema pateikta `fixtures/synthetic.csv`. JSON priima to paties modelio objektų masyvą. Privalomi `nativeListingId` ir `sourceUrl`. Pasirinktiniai `name`, `status` (active, reserved, unknown), `vaccinated` (true, false), `photoUrl` ir `sourceUpdatedAt` (UTC YYYY-MM-DDTHH:mm:ssZ). Trūkstami laukai lieka null. URL turi būti HTTPS su fiktyviu `.invalid` domenu. Observacijos kilmę nurodo failo vardas, SHA-256 ir loginis įrašo numeris, įskaitant kelių eilučių CSV laukus. `observedAt` fiksuojamas priimant paketą ir nekinta kartojant darbus.
+
+Vienodi failo baitai toje pačioje šaltinio leidimo versijoje sudaro tą patį Run. Workeriai validuoja įrašus, o `publishPreview` patikrina visą paketą ir atmeta dubliuotus ID. Nauja kopija pakeičia ankstesnę tik po pilnos validacijos. Dingę skelbimai nepažymimi kaip įvaikinti.
+
 Vietinis [Issue #6](https://github.com/nojusdr-lab/globis/issues/6) prototipas pagal [fazės A ADR](https://github.com/nojusdr-lab/globis/pull/5). Reikia Node 22.13+ su integruotu `node:sqlite`. CI tikrina Node 22.13.0 ir 26. Papildomų paketų nereikia.
 
 ```sh

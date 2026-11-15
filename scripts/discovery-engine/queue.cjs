@@ -30,6 +30,13 @@ class Queue {
       CREATE TABLE IF NOT EXISTS turn(org TEXT PRIMARY KEY, last INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS gate(domain TEXT PRIMARY KEY, next INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS snapshot(source TEXT PRIMARY KEY, seq INTEGER NOT NULL, data TEXT NOT NULL);
+      CREATE TABLE IF NOT EXISTS file_grant(
+        source TEXT PRIMARY KEY REFERENCES source(id), revision INTEGER NOT NULL,
+        allowed INTEGER NOT NULL, expires INTEGER NOT NULL, evidence TEXT NOT NULL
+      );
+      CREATE TABLE IF NOT EXISTS file_run(
+        run TEXT PRIMARY KEY REFERENCES run(id), revision INTEGER NOT NULL, observed_at TEXT NOT NULL
+      );
     `);
   }
   sql(query, ...args) { return this.db.prepare(query).run(...args); }
@@ -55,21 +62,55 @@ class Queue {
       this.sql('INSERT OR REPLACE INTO access_decision VALUES (?,?,?)', source, +allowed, expires);
     });
   }
-  enqueue(run, source, tasks) {
-    if (!tasks.length || new Set(tasks.map(task => task.key)).size !== tasks.length) throw Error('Expected unique tasks');
-    this.tx(() => {
-      const created = this.sql('INSERT OR IGNORE INTO run(id,source) VALUES (?,?)', run, source).changes;
-      if (!created) {
-        const prior = this.get('SELECT source FROM run WHERE id=?', run);
-        const jobs = this.all('SELECT key,payload FROM job WHERE run=? ORDER BY id', run);
-        const expected = tasks.map(({key, ...payload}) => ({key, payload: JSON.stringify(payload)}));
-        if (prior.source !== source || JSON.stringify(jobs) !== JSON.stringify(expected)) throw Error('Run already sealed with different tasks');
-        return;
-      }
-      for (const {key, ...payload} of tasks) {
-        this.sql('INSERT INTO job(run,key,payload,ready) VALUES (?,?,?,?)', run,key,JSON.stringify(payload),this.now());
-      }
+  authorizeSyntheticFile({source, allowed, expires = 0, evidence}) {
+    if (typeof allowed !== 'boolean' || typeof evidence !== 'string' || !evidence.trim() ||
+        (allowed && (!Number.isSafeInteger(expires) || expires <= this.now()))) throw Error('Invalid file decision');
+    return this.tx(() => {
+      if (!this.get("SELECT id FROM source WHERE id=? AND mode='fixture'",source)) throw Error('Expected a fixture source');
+      this.sql(`INSERT INTO file_grant VALUES (?,1,?,?,?) ON CONFLICT(source) DO UPDATE
+        SET revision=revision+1, allowed=excluded.allowed, expires=excluded.expires, evidence=excluded.evidence`,
+        source,+allowed,expires,evidence);
     });
+  }
+  fileGrant(source, org) {
+    return this.get(`SELECT g.revision FROM file_grant g JOIN source s ON s.id=g.source
+      JOIN organization o ON o.id=s.org WHERE s.id=? AND o.id=? AND o.active=1 AND g.allowed=1 AND g.expires>?`,
+      source,org,this.now());
+  }
+  enqueueFileRun(run, source, org, revision, tasks) {
+    return this.tx(() => {
+      if (this.fileGrant(source,org)?.revision !== revision) throw Error('File authorization changed');
+      if (this.get('SELECT run FROM file_run WHERE run=?',run)) return;
+      this.insertRun(run,source,tasks);
+      this.sql('INSERT INTO file_run VALUES (?,?,?)',run,revision,new Date(this.now()).toISOString());
+    });
+  }
+  enqueue(run, source, tasks) {
+    return this.tx(() => this.insertRun(run,source,tasks));
+  }
+  insertRun(run, source, tasks) {
+    if (!tasks.length || new Set(tasks.map(task => task.key)).size !== tasks.length) throw Error('Expected unique tasks');
+    const created = this.sql('INSERT OR IGNORE INTO run(id,source) VALUES (?,?)', run, source).changes;
+    if (!created) {
+      const prior = this.get('SELECT source FROM run WHERE id=?', run);
+      const jobs = this.all('SELECT key,payload FROM job WHERE run=? ORDER BY id', run);
+      const expected = tasks.map(({key, ...payload}) => ({key, payload: JSON.stringify(payload)}));
+      if (prior.source !== source || JSON.stringify(jobs) !== JSON.stringify(expected)) throw Error('Run already sealed with different tasks');
+      return;
+    }
+    for (const {key, ...payload} of tasks) {
+      this.sql('INSERT INTO job(run,key,payload,ready) VALUES (?,?,?,?)', run,key,JSON.stringify(payload),this.now());
+    }
+  }
+  // SQL predicate for jobs aliased as j and their source aliased as s.
+  fileAccess() {
+    return `NOT EXISTS (SELECT 1 FROM file_run f WHERE f.run=j.run AND NOT EXISTS
+      (SELECT 1 FROM file_grant g WHERE g.source=s.id AND g.revision=f.revision AND g.allowed=1 AND g.expires>?))`;
+  }
+  hasPending() {
+    return this.get(`SELECT 1 FROM job j JOIN run r ON r.id=j.run JOIN source s ON s.id=r.source
+      JOIN organization o ON o.id=s.org WHERE s.mode='fixture' AND o.active=1
+      AND j.state IN ('ready','leased') AND ${this.fileAccess()} LIMIT 1`,this.now());
   }
   claim(worker, { leaseMs = 1000, domainLimit = 1, domainGapMs = 0 } = {}) {
     return this.tx(() => {
@@ -78,16 +119,17 @@ class Queue {
         AND EXISTS (SELECT 1 FROM job j WHERE j.id=attempt.job AND j.token=attempt.token AND j.lease<=?)`,now,now);
       this.sql("UPDATE job SET state='dead' WHERE state='leased' AND lease<=? AND token>=4", now);
       const job = this.get(`
-        SELECT j.*,s.org,s.domain,s.id AS source FROM job j
+        SELECT j.*,s.org,s.domain,s.id AS source,f.observed_at FROM job j
         JOIN run r ON r.id=j.run JOIN source s ON s.id=r.source
+        LEFT JOIN file_run f ON f.run=j.run
         JOIN organization o ON o.id=s.org LEFT JOIN turn t ON t.org=s.org
         LEFT JOIN gate g ON g.domain=s.domain
-        WHERE o.active=1 AND s.mode='fixture' AND j.ready<=?
+        WHERE o.active=1 AND s.mode='fixture' AND ${this.fileAccess()} AND j.ready<=?
           AND (j.state='ready' OR (j.state='leased' AND j.lease<=?))
           AND coalesce(g.next,0)<=?
           AND (SELECT count(*) FROM job x JOIN run y ON y.id=x.run JOIN source z ON z.id=y.source
             WHERE z.domain=s.domain AND x.state='leased' AND x.lease>?) < ?
-        ORDER BY coalesce(t.last,0),j.ready,j.id LIMIT 1`,now,now,now,now,domainLimit);
+        ORDER BY coalesce(t.last,0),j.ready,j.id LIMIT 1`,now,now,now,now,now,domainLimit);
       // B1 has no network executor. Network tasks remain unclaimable even with approval.
       if (!job) return null;
       const token = job.token + 1;
@@ -99,7 +141,9 @@ class Queue {
     });
   }
   owns(job, now) {
-    return this.get("SELECT id FROM job WHERE id=? AND token=? AND state='leased' AND lease>?",job.id,job.token,now);
+    return this.get(`SELECT j.id FROM job j JOIN run r ON r.id=j.run JOIN source s ON s.id=r.source
+      JOIN organization o ON o.id=s.org WHERE j.id=? AND j.token=? AND j.state='leased' AND j.lease>?
+      AND o.active=1 AND ${this.fileAccess()}`,job.id,job.token,now,now);
   }
   renew(job, leaseMs) {
     return this.tx(() => {
@@ -130,6 +174,11 @@ class Queue {
       const run = this.get('SELECT * FROM run WHERE id=?',runId);
       const jobs = this.all('SELECT * FROM job WHERE run=? ORDER BY id',runId);
       if (!run || !jobs.length) return { published:false, reason:'empty_run' };
+      const file = this.get('SELECT revision FROM file_run WHERE run=?',runId);
+      if (file) {
+        const {org} = this.get('SELECT org FROM source WHERE id=?',run.source);
+        if (this.fileGrant(run.source,org)?.revision !== file.revision) return { published:false, reason:'file_access_denied' };
+      }
       const dead = jobs.filter(job => job.state === 'dead').map(job => job.key);
       if (dead.length) return { published:false, reason:'dead_jobs', jobs:dead };
       if (jobs.some(job => job.state !== 'done')) return { published:false, reason:'pending_jobs' };
