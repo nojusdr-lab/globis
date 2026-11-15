@@ -2,7 +2,7 @@ const origin = 'https://globok.lt';
 
 function listingId(url) {
   const parsed = new URL(url);
-  if (parsed.origin !== origin || !/^\/gyvunai\/[a-z0-9-]+\/?$/.test(parsed.pathname)) {
+  if (parsed.origin !== origin || parsed.username || parsed.password || !/^\/gyvunai\/[a-z0-9-]+\/?$/.test(parsed.pathname)) {
     throw new Error('Invalid Globok animal URL');
   }
   return 'globok:' + parsed.pathname.split('/')[2];
@@ -10,7 +10,7 @@ function listingId(url) {
 
 function statusFromText(text) {
   const evidence = text?.split(/[.!?\n]+/).map(line => line.trim()).find(
-    line => /^(?:gyvūnas\s+)?rezervuot[ao]s?(?:$|[\s:–-])/iu.test(line)
+    line => /^(?:gyvūnas\s+|būsena:\s*)?rezervuot(?:as|a)$/iu.test(line)
   );
   return evidence ? { status: 'reserved', statusEvidence: evidence } :
     { status: 'unknown', statusEvidence: null };

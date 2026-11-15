@@ -45,14 +45,13 @@ Designed following the **Organic** aesthetic anchor:
 
 ## Data Pipeline & Scraper
 
-Globok data used by the app lives in `src/data/allPets.json` and `src/data/shelters.json`. The scheduled workflow validates imports and proposes a pull request for human review. GitHub Actions must be permitted to create pull requests in the repository settings.
+The app uses the reviewed snapshots in `src/data/allPets.json` and `src/data/shelters.json`. Live Globok updates are disabled while source access and pagination remain unverified. See the [refresh policy and manual review process](docs/globok-refresh.md).
 
 ```bash
-node --test tests/data-integrity.test.cjs
-node scripts/scrape-globok.js --check
+node --test tests/*.test.cjs scripts/discovery-engine/*.test.cjs
 ```
 
-The check contacts the source and leaves the snapshot intact. Running the scraper without `--check` writes a new local snapshot only after validation. Historical values with insufficient provenance were removed and remain in Git history. The legacy-to-current listing ID mapping is in `docs/pr1-listing-id-map.json`. A listing marked as reserved is kept in its shelter roster and omitted from general discovery. Unconfirmed availability is labelled explicitly.
+The checks run offline. Historical values with insufficient provenance remain in Git history. The legacy-to-current listing ID mapping is in `docs/pr1-listing-id-map.json`. A listing marked as reserved is kept in its shelter roster and omitted from general discovery. Unconfirmed availability is labelled explicitly.
 
 ---
 

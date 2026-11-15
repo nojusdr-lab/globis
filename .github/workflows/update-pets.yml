@@ -1,62 +1,41 @@
-name: Gyvūnų duomenų atnaujinimo pasiūlymas
-
+name: Offline pet data integrity
 on:
-  schedule:
-    - cron: '0 2 * * *'
-  workflow_dispatch:
   pull_request:
     paths:
-      - 'src/data/**'
+      - 'App.js'
+      - 'src/**'
       - 'scripts/**'
       - 'tests/**'
+      - 'package*.json'
       - '.github/workflows/update-pets.yml'
-
-concurrency:
-  group: globis-data-${{ github.event_name == 'pull_request' && github.ref || 'refresh' }}
-
+  workflow_dispatch:
 permissions:
   contents: read
-
 jobs:
   check:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22.13.0', '26']
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - run: node --test tests/data-integrity.test.cjs
-  propose:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    needs: check
+          node-version: ${{ matrix.node }}
+      - run: node --test tests/*.test.cjs scripts/discovery-engine/*.test.cjs
+  expo-export:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
     env:
-      GH_TOKEN: ${{ github.token }}
+      CI: '1'
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - name: Surinkti ir patikrinti duomenis
-        run: |
-          set -o pipefail
-          node scripts/scrape-globok.js | tee refresh.log
-          node --test tests/data-integrity.test.cjs
-          tail -1 refresh.log >> "$GITHUB_STEP_SUMMARY"
-      - name: Atidaryti PR peržiūrai
-        run: |
-          git diff --quiet -- src/data/ && exit 0
-          existing=$(gh pr list --base main --state open --json headRefName --jq '[.[] | select(.headRefName | startswith("automation/globis-data-"))] | length')
-          if [ "$existing" -gt 0 ]; then
-            echo "An existing data refresh PR is awaiting review." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          branch="automation/globis-data-${GITHUB_RUN_ID}"
-          git switch -c "$branch"
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -am 'chore(data): propose Globis listing refresh'
-          git push origin "HEAD:refs/heads/$branch"
-          tail -1 refresh.log > refresh-summary.md
-          gh pr create --base main --head "$branch" --title 'Peržiūrai: Globis duomenų atnaujinimas' --body-file refresh-summary.md
+          node-version: '26'
+      - run: npm ci --no-audit --no-fund
+      - run: ./node_modules/.bin/expo export --platform all
