@@ -2,9 +2,11 @@
 
 PR #3 pateikia išvalytą, peržiūrimą duomenų kopiją. Joje yra 937 gyvūnai, 37 organizacijos ir 4 aiškiai rezervuoti skelbimai. Tai repozitorijos momentinės kopijos skaičiai. Nėra patvirtinimo, kad jie apibūdina šiandienos katalogą.
 
-Gyva prieiga ir pakartotinio nuskaitymo pilnumas nepatvirtinti. `scripts/scrape-globok.js` baigiasi klaida prieš tinklo ar įrašymo operacijas. Naujas `update-pets.yml` yra tik skaitymo CI, be grafiko, įrašymo teisių ir PR kūrimo. Istorinė suplanuota darbo eiga tebėra `main` iki šio PR sujungimo arba kol savininkas ją išjungia GitHub Actions.
+Gyva prieiga ir pakartotinio nuskaitymo pilnumas nepatvirtinti. `scripts/scrape-globok.js` baigiasi klaida prieš tinklo ar įrašymo operacijas. Naujas `update-pets.yml` yra tik skaitymo CI, be grafiko, įrašymo teisių ir PR kūrimo. Suplanuotą importą iš `main` pašalino PR #14.
 
 ## Pilnumo patikra
+
+Adapteris pateikia kiekvieno puslapio faktinį stebėjimo laiką `observedAt` milisekundėmis nuo Unix epochos. Validatorius atmeta trūkstamą, netinkamą arba būsimą laiką ir prideda puslapio stebėjimo laiką UTC formatu prie kiekvieno jo skelbimo, išsaugodamas originalų URL. Pakartotinė patikra stebėjimo laiko nekeičia.
 
 `validateCatalog` priima jau išanalizuotus puslapių paketus. Būsimas adapteris turi pateikti iš šaltinio patikimai gautą vienos nuoseklios katalogo versijos žymą, bendrą įrašų skaičių, puslapio numerį, puslapio dydį ir kitą puslapį arba aiškų pabaigos žymeklį. Šių laukų negalima išvesti iš rastų HTML kortelių kiekio. Kol Globok tokių įrodymų nėra, sintetiniai testai tikrina kontraktą, o ne gyvą HTML.
 

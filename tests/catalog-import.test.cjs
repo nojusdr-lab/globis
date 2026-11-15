@@ -14,8 +14,8 @@ function fixture() {
     decision:{source:'globok',state:'approved',evidence:'Synthetic fixture only',expiresAt:200},
     now:100,catalogId,total:3,pageSize:2,shelters:[{id:'fixture'}],
     pages:[
-      {catalogId,total:3,number:1,next:2,httpStatus:200,listings:[listing('a','Rezervuota.'),listing('b','Rezervuotas anksčiau')]},
-      {catalogId,total:3,number:2,next:null,httpStatus:200,listings:[listing('c','Nerezervuotas.')]},
+      {catalogId,total:3,number:1,next:2,httpStatus:200,observedAt:70,listings:[listing('a','Rezervuota.'),listing('b','Rezervuotas anksčiau')]},
+      {catalogId,total:3,number:2,next:null,httpStatus:200,observedAt:80,listings:[listing('c','Nerezervuotas.')]},
     ],
   };
 }
@@ -24,9 +24,13 @@ test('complete catalog is deterministic and never infers adoption or a medical f
   const packet=fixture();
   const baseline={pets:[],shelters:[]};
   const first=validateCatalog(packet,baseline);
-  assert.deepEqual(validateCatalog(packet,first),first);
+  assert.deepEqual(validateCatalog({...packet,now:120},first),first);
   assert.deepEqual(first.pets.map(x=>x.status),['reserved','unknown','unknown']);
   assert.equal(first.pets[0].id,'globok:fixture-a');
+  assert.equal(first.pets[0].url,packet.pages[0].listings[0].url);
+  assert.deepEqual(first.pets.map(pet=>pet.observedAt),[
+    '1970-01-01T00:00:00.070Z','1970-01-01T00:00:00.070Z','1970-01-01T00:00:00.080Z',
+  ]);
   assert.equal(first.pets[0].medical,undefined);
 });
 
@@ -47,6 +51,11 @@ test('invalid packets and disabled live CLI preserve the actual committed snapsh
     p=>{p.pages[1].listings[0].id='globok:fixture-a';},
     p=>{p.pages[1].httpStatus=503;},
     p=>{p.pages[1].error='timeout';},
+    p=>{delete p.pages[1].observedAt;},
+    p=>{p.pages[1].observedAt='80';},
+    p=>{p.pages[1].observedAt=-1;},
+    p=>{p.pages[1].observedAt=p.now+1;},
+    p=>{p.pages[1].observedAt=8.64e15+1; p.now=8.64e15+2; p.decision.expiresAt=8.64e15+3;},
     p=>{p.decision.state='review_required';},
     p=>{p.decision.expiresAt=p.now;},
     p=>{p.decision.evidence='';},

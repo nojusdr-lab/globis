@@ -19,11 +19,16 @@ function validateCatalog({ decision, now, catalogId, total, pageSize, pages, she
     const current = index+1;
     const next = current < pages.length ? current+1 : null;
     if (page?.httpStatus !== 200 || page.error) throw Error('Catalog transport failed');
+    if (!Number.isSafeInteger(page.observedAt) || page.observedAt < 0 ||
+        page.observedAt > now || page.observedAt > 8.64e15) {
+      throw Error('Invalid catalog page observation time');
+    }
     if (page.number !== current || page.next !== next || page.catalogId !== catalogId ||
         page.total !== total || !Array.isArray(page.listings) ||
         page.listings.length !== Math.min(pageSize,total-index*pageSize)) {
       throw Error('Partial, repeated or inconsistent catalog page');
     }
+    const observedAt = new Date(page.observedAt).toISOString();
     for (const listing of page.listings) {
       const id = listingId(listing.url);
       if ((listing.id != null && listing.id !== id) || ids.has(id)) throw Error('Duplicate or mismatched listing ID');
@@ -32,7 +37,7 @@ function validateCatalog({ decision, now, catalogId, total, pageSize, pages, she
           (listing.statusText != null && typeof listing.statusText !== 'string')) throw Error('Invalid listing fields');
       ids.add(id);
       pets.push({id,url:listing.url,name:listing.name,species:listing.species,
-        shelter:{id:listing.shelterId},...statusFromText(listing.statusText)});
+        shelter:{id:listing.shelterId},observedAt,...statusFromText(listing.statusText)});
     }
   }
   validateImport(pets,shelters,previous.pets,previous.shelters);
