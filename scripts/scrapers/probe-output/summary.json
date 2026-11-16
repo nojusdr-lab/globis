@@ -1,0 +1,442 @@
+[
+  {
+    "id": "linksmosiospedutes",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      404
+    ]
+  },
+  {
+    "id": "penktakoja",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "bukmanodraugas",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "lese",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "katinosvajone",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "mazeikiugyvunai",
+    "robots": 200,
+    "pages": [
+      200,
+      200
+    ]
+  },
+  {
+    "id": "vizgis",
+    "robots": 404,
+    "pages": [
+      200,
+      403
+    ]
+  },
+  {
+    "id": "kggn",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "jbu",
+    "robots": 200,
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "keturkojodraugas",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "kursenai",
+    "robots": 200,
+    "pages": [
+      404,
+      404
+    ]
+  },
+  {
+    "id": "sggn",
+    "robots": 200,
+    "pages": [
+      200,
+      404
+    ]
+  },
+  {
+    "id": "kompak",
+    "robots": 200,
+    "pages": [
+      200,
+      404
+    ]
+  },
+  {
+    "id": "psa",
+    "robots": 200,
+    "pages": [
+      200,
+      404,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "grinda",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "binada",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "siauliuletenele",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "vggd",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "vysniusodas",
+    "robots": 200,
+    "pages": [
+      200,
+      500
+    ]
+  },
+  {
+    "id": "kaimograndine",
+    "robots": 404,
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "gyvunugloba",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "tautmilesgloba",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "beglobis",
+    "robots": 404,
+    "pages": [
+      200,
+      404
+    ]
+  },
+  {
+    "id": "pifas",
+    "robots": 404,
+    "pages": [
+      404,
+      404
+    ]
+  },
+  {
+    "id": "akeso",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "dogspotas",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "makatukai",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "donpita",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "sos-gyvunai",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "pukuotasvajone",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "mgma",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "padekman",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "telsiusuniukunamai",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "mazijausmai",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "mazasdraugas",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "nuaras",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "devynigyvenimai",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "keturkojoviltis",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "zga",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "id": "vggn",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "dryzuotalaime",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "linksmauodegele",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      403
+    ]
+  },
+  {
+    "id": "rozinepedute",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      403
+    ]
+  },
+  {
+    "id": "naminukai",
+    "robots": "fetch failed",
+    "pages": [
+      "robots",
+      "robots"
+    ]
+  },
+  {
+    "id": "rasugloba",
+    "robots": 200,
+    "pages": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ]
+  }
+]

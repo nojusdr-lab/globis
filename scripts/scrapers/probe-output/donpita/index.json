@@ -1,0 +1,27 @@
+{
+  "id": "donpita",
+  "website": "https://www.donpita.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:07:46.921Z",
+  "pages": [
+    {
+      "url": "https://www.donpita.lt/",
+      "error": "Blocked by robots.txt: /",
+      "code": "robots",
+      "status": null
+    },
+    {
+      "url": "https://www.donpita.lt/wp-json/wp/v2/types",
+      "error": "Blocked by robots.txt: /wp-json/wp/v2/types",
+      "code": "robots",
+      "status": null
+    }
+  ],
+  "robots": {
+    "error": "fetch failed"
+  },
+  "requests": 2,
+  "log": [
+    "GET https://www.donpita.lt/robots.txt"
+  ]
+}

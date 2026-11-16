@@ -1,0 +1,45 @@
+{
+  "id": "dogspotas",
+  "website": "https://dogspotas.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:07:28.955Z",
+  "pages": [
+    {
+      "url": "https://dogspotas.lt/",
+      "finalUrl": "https://dogspotas.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 78624,
+      "hash": "cba86a18ceeda2f1b28909e8706d6238baec0f432fce93d5ad233a14cf52327d"
+    },
+    {
+      "url": "https://dogspotas.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://dogspotas.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 1453,
+      "hash": "cff07c11f4de86040c23d21efa097dc8c95d12e853244548ba6ddf2879282680"
+    },
+    {
+      "url": "https://dogspotas.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://dogspotas.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 2,
+      "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://dogspotas.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://dogspotas.lt/wp-sitemap.xml\n"
+  },
+  "requests": 5,
+  "log": [
+    "GET https://dogspotas.lt/robots.txt",
+    "GET https://dogspotas.lt/",
+    "GET https://dogspotas.lt/wp-json/wp/v2/types",
+    "GET https://dogspotas.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

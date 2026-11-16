@@ -1,0 +1,52 @@
+{
+  "id": "rozinepedute",
+  "website": "https://rozinepedute.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:08:09.724Z",
+  "pages": [
+    {
+      "url": "https://rozinepedute.lt/",
+      "finalUrl": "https://rozinepedute.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 99204,
+      "hash": "aec96b772376bd99d0b0a564fd18eb32f866d2e9e6dab437df605a9dc00b7f7d"
+    },
+    {
+      "url": "https://rozinepedute.lt/gyvunai/",
+      "finalUrl": "https://rozinepedute.lt/gyvunai/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 89324,
+      "hash": "3408f10490aa30aa89d05833b8f8efe2ae6a36d7f2d93f0950ab29313bb917a4"
+    },
+    {
+      "url": "https://rozinepedute.lt/dokumentai/privatumo-politika/",
+      "finalUrl": "https://rozinepedute.lt/dokumentai/privatumo-politika/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 53970,
+      "hash": "617526e917ae151b608630c585de7d1f6847864ad356017c92169ab042ef666f"
+    },
+    {
+      "url": "https://rozinepedute.lt/wp-json/wp/v2/types",
+      "error": "Access restricted",
+      "code": "restricted",
+      "status": 403
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://rozinepedute.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nUser-agent: Amazonbot\nUser-agent: Applebot-Extended\nUser-agent: CCBot\nUser-agent: ClaudeBot\nUser-agent: GPTBot\nUser-agent: Google-Extended\nUser-agent: GoogleOther\nUser-agent: Meta-ExternalAgent\nUser-agent: FacebookBot\nDisallow: /\n\nUser-agent: AhrefsBot\nUser-agent: AhrefsSiteAudit\nUser-agent: barkrowler\nUser-agent: DataForSeoBot\nUser-agent: dotbot\nUser-agent: rogerbot\nUser-agent: SemrushBot\nUser-agent: SiteAuditBot\nUser-agent: SemrushBot-BA\nDisallow: /\n\nSitemap: https://rozinepedute.lt/sitemap.xml\n"
+  },
+  "requests": 6,
+  "log": [
+    "GET https://rozinepedute.lt/robots.txt",
+    "GET https://rozinepedute.lt/",
+    "GET https://rozinepedute.lt/gyvunai/",
+    "GET https://rozinepedute.lt/dokumentai/privatumo-politika/",
+    "GET https://rozinepedute.lt/wp-json/wp/v2/types"
+  ]
+}

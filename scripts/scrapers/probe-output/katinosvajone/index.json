@@ -1,0 +1,54 @@
+{
+  "id": "katinosvajone",
+  "website": "https://www.katinosvajone.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:06:04.670Z",
+  "pages": [
+    {
+      "url": "https://www.katinosvajone.lt/",
+      "finalUrl": "https://www.katinosvajone.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 40218,
+      "hash": "5e5232eca2ede3943d27ea9bbbcddb5b55bdbff2c5fa50837d78a1e0a50627af"
+    },
+    {
+      "url": "https://www.katinosvajone.lt/musu-globotiniai",
+      "finalUrl": "https://www.katinosvajone.lt/musu-globotiniai",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 70324,
+      "hash": "03095fe78ba0e9a801bb10379672725ce865983b37479be04135f1b0bc51da9f"
+    },
+    {
+      "url": "https://www.katinosvajone.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://www.katinosvajone.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 10287,
+      "hash": "91476047f2434465cc815a751e551f2a1424431111535b08c655fe9ab286a14b"
+    },
+    {
+      "url": "https://www.katinosvajone.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://www.katinosvajone.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 50897,
+      "hash": "0edbe0a461eaee3b08ad8ed2eb6529b924335b33c2a4d5a3c0503a83643d8ccb"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://www.katinosvajone.lt/robots.txt",
+    "contentType": "text/plain",
+    "text": "User-agent: *\nCrawl-delay: 10\n"
+  },
+  "requests": 6,
+  "log": [
+    "GET https://www.katinosvajone.lt/robots.txt",
+    "GET https://www.katinosvajone.lt/",
+    "GET https://www.katinosvajone.lt/musu-globotiniai",
+    "GET https://www.katinosvajone.lt/wp-json/wp/v2/types",
+    "GET https://www.katinosvajone.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

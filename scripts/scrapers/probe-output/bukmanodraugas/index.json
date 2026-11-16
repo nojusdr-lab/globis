@@ -1,0 +1,72 @@
+{
+  "id": "bukmanodraugas",
+  "website": "https://bukmanodraugas.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:06:04.673Z",
+  "pages": [
+    {
+      "url": "https://bukmanodraugas.lt/",
+      "finalUrl": "https://bukmanodraugas.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 58357,
+      "hash": "cc17a5d90cb2dc020d46b7dcfc38993e695087435290a5f8af589e283c19370f"
+    },
+    {
+      "url": "https://bukmanodraugas.lt/category/sunys-iesko-namu/",
+      "finalUrl": "https://bukmanodraugas.lt/category/sunys-iesko-namu/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 122668,
+      "hash": "b74800f429f402a4b2ba22875aff49db95a4f1e760a543fa72b4bf4941c936e3"
+    },
+    {
+      "url": "https://bukmanodraugas.lt/category/kates-iesko-namu/",
+      "finalUrl": "https://bukmanodraugas.lt/category/kates-iesko-namu/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 56067,
+      "hash": "aa5fd419dffaebeabea6d54575bdadd6375ec31283229e98aada6fe823f921c7"
+    },
+    {
+      "url": "https://bukmanodraugas.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://bukmanodraugas.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 6258,
+      "hash": "2d5012186a7ef84abc87d2ab3e423134a632f5e32ee049d17b8b93ab19d48927"
+    },
+    {
+      "url": "https://bukmanodraugas.lt/wp-json/wp/v2/elementskit-content?per_page=5",
+      "finalUrl": "https://bukmanodraugas.lt/wp-json/wp/v2/elementskit-content?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 2,
+      "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "url": "https://bukmanodraugas.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://bukmanodraugas.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 16405,
+      "hash": "2f441669702e84408725aba089cdecdedc82a618e6e6e80210840739c8a3a519"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://bukmanodraugas.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://bukmanodraugas.lt/wp-sitemap.xml\n"
+  },
+  "requests": 8,
+  "log": [
+    "GET https://bukmanodraugas.lt/robots.txt",
+    "GET https://bukmanodraugas.lt/",
+    "GET https://bukmanodraugas.lt/category/sunys-iesko-namu/",
+    "GET https://bukmanodraugas.lt/category/kates-iesko-namu/",
+    "GET https://bukmanodraugas.lt/wp-json/wp/v2/types",
+    "GET https://bukmanodraugas.lt/wp-json/wp/v2/elementskit-content?per_page=5",
+    "GET https://bukmanodraugas.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

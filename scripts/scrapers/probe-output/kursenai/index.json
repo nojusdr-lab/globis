@@ -1,0 +1,33 @@
+{
+  "id": "kursenai",
+  "website": "https://www.kursenai-ku.lt/d-u-k/beglobiai-gyvunai/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:06:49.161Z",
+  "pages": [
+    {
+      "url": "https://www.kursenai-ku.lt/d-u-k/beglobiai-gyvunai/",
+      "error": "HTTP 404",
+      "code": "http",
+      "status": 404
+    },
+    {
+      "url": "https://www.kursenai-ku.lt/wp-json/wp/v2/types",
+      "error": "HTTP 404",
+      "code": "http",
+      "status": 404
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://www.kursenai-ku.lt/robots.txt",
+    "contentType": "text/plain",
+    "text": "User-agent: *\nDisallow: /admin/\nDisallow: /uploads/apsaugoti/\n"
+  },
+  "requests": 5,
+  "log": [
+    "GET https://www.kursenai-ku.lt/robots.txt",
+    "GET https://www.kursenai-ku.lt/d-u-k/beglobiai-gyvunai/",
+    "GET https://www.kursenai-ku.lt/wp-json/wp/v2/types",
+    "GET https://www.kursenai-ku.lt/wp-json/wp/v2/types/"
+  ]
+}

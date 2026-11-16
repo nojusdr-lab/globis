@@ -1,0 +1,54 @@
+{
+  "id": "tautmilesgloba",
+  "website": "https://tautmilesgloba.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:07:08.686Z",
+  "pages": [
+    {
+      "url": "https://tautmilesgloba.lt/",
+      "finalUrl": "https://tautmilesgloba.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 63281,
+      "hash": "bfc2d45c64c67ebf9be2f20d87925b33c826006d04e783f8d8876558f1c13ef6"
+    },
+    {
+      "url": "https://tautmilesgloba.lt/dovanojami/",
+      "finalUrl": "https://tautmilesgloba.lt/dovanojami/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 63829,
+      "hash": "e3504d6e24de5a6de6f0bae9073b2b4edc83b50d6e624a3ed2f87fa177e31a28"
+    },
+    {
+      "url": "https://tautmilesgloba.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://tautmilesgloba.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 10514,
+      "hash": "d7d9b3f5ad20eb886582b46f00c152c58c75e2efbddecee34f615ba134d0ff51"
+    },
+    {
+      "url": "https://tautmilesgloba.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://tautmilesgloba.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 45861,
+      "hash": "f1d61c8f270f941ca755d139547ba4b4fbc3cff8c4a9e26108993cd686b8b634"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://tautmilesgloba.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "# START YOAST BLOCK\n# ---------------------------\nUser-agent: *\nDisallow:\n\nSitemap: https://tautmilesgloba.lt/sitemap_index.xml\n# ---------------------------\n# END YOAST BLOCK"
+  },
+  "requests": 6,
+  "log": [
+    "GET https://tautmilesgloba.lt/robots.txt",
+    "GET https://tautmilesgloba.lt/",
+    "GET https://tautmilesgloba.lt/dovanojami/",
+    "GET https://tautmilesgloba.lt/wp-json/wp/v2/types",
+    "GET https://tautmilesgloba.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

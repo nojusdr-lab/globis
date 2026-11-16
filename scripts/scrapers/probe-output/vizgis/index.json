@@ -1,0 +1,34 @@
+{
+  "id": "vizgis",
+  "website": "https://vizgis.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:06:43.151Z",
+  "pages": [
+    {
+      "url": "https://vizgis.lt/",
+      "finalUrl": "https://vizgis.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 9078,
+      "hash": "992c1b635599a64b59b240a1dc22d38c5b07622043681b5c27ec1516a59db465"
+    },
+    {
+      "url": "https://vizgis.lt/wp-json/wp/v2/types",
+      "error": "Access restricted",
+      "code": "restricted",
+      "status": 403
+    }
+  ],
+  "robots": {
+    "status": 404,
+    "finalUrl": "https://vizgis.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "The page could not be found\n\nNOT_FOUND\n\npdx1::tlwfb-1794866803390-575875e8eb74\n"
+  },
+  "requests": 4,
+  "log": [
+    "GET https://vizgis.lt/robots.txt",
+    "GET https://vizgis.lt/",
+    "GET https://vizgis.lt/wp-json/wp/v2/types"
+  ]
+}

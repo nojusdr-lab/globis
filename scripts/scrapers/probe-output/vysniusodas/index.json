@@ -1,0 +1,34 @@
+{
+  "id": "vysniusodas",
+  "website": "http://www.vysniusodas.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:07:12.354Z",
+  "pages": [
+    {
+      "url": "http://www.vysniusodas.lt/",
+      "finalUrl": "http://www.vysniusodas.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 53914,
+      "hash": "6fd288ed3c6e59138fe2e831ad7dc67a8ddf71802f7962c13c995004d85fc683"
+    },
+    {
+      "url": "http://www.vysniusodas.lt/wp-json/wp/v2/types",
+      "error": "HTTP 500",
+      "code": "http",
+      "status": 500
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "http://www.vysniusodas.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n"
+  },
+  "requests": 4,
+  "log": [
+    "GET http://www.vysniusodas.lt/robots.txt",
+    "GET http://www.vysniusodas.lt/",
+    "GET http://www.vysniusodas.lt/wp-json/wp/v2/types"
+  ]
+}

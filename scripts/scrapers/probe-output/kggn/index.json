@@ -1,0 +1,63 @@
+{
+  "id": "kggn",
+  "website": "https://kggn.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:06:04.630Z",
+  "pages": [
+    {
+      "url": "https://kggn.lt/",
+      "finalUrl": "https://kggn.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 117634,
+      "hash": "8462c3d185a2faf26f69ac7e882e91b9e49d376b4b6de0dde35a6140eaff3f25"
+    },
+    {
+      "url": "https://kggn.lt/globotiniai/",
+      "finalUrl": "https://kggn.lt/globotiniai/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 129776,
+      "hash": "fc4274db8221a5b8c08fffb31fb8c9fcaa072ca8155f23532f65f4721ee56f44"
+    },
+    {
+      "url": "https://kggn.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://kggn.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 7173,
+      "hash": "55f03b46aa6bcf3d1640daae0da91355bd2e534fa0c518dfe4eea4a1ad8dc097"
+    },
+    {
+      "url": "https://kggn.lt/wp-json/wp/v2/globotiniai?per_page=5",
+      "finalUrl": "https://kggn.lt/wp-json/wp/v2/globotiniai?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 29719,
+      "hash": "14762cac95d62b0504cce4f1190dfe373fda2f42ef42d5710f16990426e752f2"
+    },
+    {
+      "url": "https://kggn.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://kggn.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 2,
+      "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://kggn.lt/robots.txt",
+    "contentType": "text/plain",
+    "text": "User-agent: *\nCrawl-delay: 10\n"
+  },
+  "requests": 7,
+  "log": [
+    "GET https://kggn.lt/robots.txt",
+    "GET https://kggn.lt/",
+    "GET https://kggn.lt/globotiniai/",
+    "GET https://kggn.lt/wp-json/wp/v2/types",
+    "GET https://kggn.lt/wp-json/wp/v2/globotiniai?per_page=5",
+    "GET https://kggn.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

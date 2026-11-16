@@ -1,0 +1,34 @@
+{
+  "id": "kompak",
+  "website": "http://www.kompak.lt/index.php/gyvunai",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:06:58.678Z",
+  "pages": [
+    {
+      "url": "http://www.kompak.lt/index.php/gyvunai",
+      "finalUrl": "http://www.kompak.lt/index.php/gyvunai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 39367,
+      "hash": "4889eab37df02c0e40c23127201434eb5ed77c49bfef0008b6f24cfc7bcaef09"
+    },
+    {
+      "url": "http://www.kompak.lt/wp-json/wp/v2/types",
+      "error": "HTTP 404",
+      "code": "http",
+      "status": 404
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "http://www.kompak.lt/robots.txt",
+    "contentType": "text/plain",
+    "text": "# If the Joomla site is installed within a folder\n# eg www.example.com/joomla/ then the robots.txt file\n# MUST be moved to the site root\n# eg www.example.com/robots.txt\n# AND the joomla folder name MUST be prefixed to all of the\n# paths.\n# eg the Disallow rule for the /administrator/ folder MUST\n# be changed to read\n# Disallow: /joomla/administrator/\n#\n# For more information about the robots.txt standard, see:\n# https://www.robotstxt.org/orig.html\n\nUser-agent: *\nDisallow: /administrator/\nDisallow: /bin/\nDisallow: /cache/\nDisallow: /cli/\nDisallow: /components/\nDisallow: /includes/\nDisallow: /installation/\nDisallow: /language/\nDisallow: /layouts/\nDisallow: /libraries/\nDisallow: /logs/\nDisallow: /modules/\nDisallow: /plugins/\nDisallow: /tmp/\n"
+  },
+  "requests": 4,
+  "log": [
+    "GET http://www.kompak.lt/robots.txt",
+    "GET http://www.kompak.lt/index.php/gyvunai",
+    "GET http://www.kompak.lt/wp-json/wp/v2/types"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "siauliuletenele",
+  "website": "https://siauliuletenele.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:06:53.639Z",
+  "pages": [
+    {
+      "url": "https://siauliuletenele.lt/",
+      "finalUrl": "https://siauliuletenele.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 48560,
+      "hash": "d4c8755ec987adb3f90b46e1405453878c2f9eae7fe982566048ee30c2a55021"
+    },
+    {
+      "url": "https://siauliuletenele.lt/kategorija/sunys/",
+      "finalUrl": "https://siauliuletenele.lt/kategorija/sunys/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 93083,
+      "hash": "73680ae8508df69afd3ba3c859412d56ae98e6b26a52b33516ca0151c3f2e605"
+    },
+    {
+      "url": "https://siauliuletenele.lt/privatumo-politika-2/",
+      "finalUrl": "https://siauliuletenele.lt/privatumo-politika-2/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 42156,
+      "hash": "f119d4aa1489a8a79f1cb34cb53d1b7e69af2dce4087990689bd192b53e4ed77"
+    },
+    {
+      "url": "https://siauliuletenele.lt/kategorija/kates/",
+      "finalUrl": "https://siauliuletenele.lt/kategorija/kates/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 93798,
+      "hash": "1d836bc1655035e25f40c51704b5d3355c253434b4f8a7a13d22fb7fafbe0a69"
+    },
+    {
+      "url": "https://siauliuletenele.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://siauliuletenele.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 1488,
+      "hash": "ecbf27cf7dc6ae4558ef4b5dcef23e2b8f0056a392cf2c4f52d95520495b4e11"
+    },
+    {
+      "url": "https://siauliuletenele.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://siauliuletenele.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 74055,
+      "hash": "01a4add4bf894f0f37f56fc0ad8945297efabfe66c7dc2eff844e1fe45ce39ba"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://siauliuletenele.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://siauliuletenele.lt/sitemap.xml\n"
+  },
+  "requests": 8,
+  "log": [
+    "GET https://siauliuletenele.lt/robots.txt",
+    "GET https://siauliuletenele.lt/",
+    "GET https://siauliuletenele.lt/kategorija/sunys/",
+    "GET https://siauliuletenele.lt/privatumo-politika-2/",
+    "GET https://siauliuletenele.lt/kategorija/kates/",
+    "GET https://siauliuletenele.lt/wp-json/wp/v2/types",
+    "GET https://siauliuletenele.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

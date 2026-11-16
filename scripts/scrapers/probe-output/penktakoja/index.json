@@ -1,0 +1,72 @@
+{
+  "id": "penktakoja",
+  "website": "https://penktakoja.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:06:04.671Z",
+  "pages": [
+    {
+      "url": "https://penktakoja.lt/",
+      "finalUrl": "https://penktakoja.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 153748,
+      "hash": "57ab99967d1652ac05c73725e394656b2c2902b71cec15a7e59ac79615ee3159"
+    },
+    {
+      "url": "https://penktakoja.lt/beglobiai/?product_cat=sunys",
+      "finalUrl": "https://penktakoja.lt/beglobiai/?product_cat=sunys",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 137936,
+      "hash": "12d0dd9710447c8255df1b87b38eb5a926c1008f8f17eb0b08895fa43580eb67"
+    },
+    {
+      "url": "https://penktakoja.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://penktakoja.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 6753,
+      "hash": "b2980dd23f5aa8b7c3b943af4b3b290c94d51c23d04ff41834cb5c0790c135c0"
+    },
+    {
+      "url": "https://penktakoja.lt/wp-json/wp/v2/wpb_gutenberg_param?per_page=5",
+      "finalUrl": "https://penktakoja.lt/wp-json/wp/v2/wpb_gutenberg_param?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 2,
+      "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "url": "https://penktakoja.lt/wp-json/wp/v2/product?per_page=5",
+      "finalUrl": "https://penktakoja.lt/wp-json/wp/v2/product?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 11350,
+      "hash": "a91103d359a660baaf59a1131f9fb81b12d4063249c23600ed7a34ab927ab82e"
+    },
+    {
+      "url": "https://penktakoja.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://penktakoja.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 37057,
+      "hash": "9d615743cddd98cf3b07da253c87c0776581e15c1ff10304f8c5cc2e6657eaaf"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://penktakoja.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-content/uploads/wc-logs/\nDisallow: /wp-content/uploads/woocommerce_transient_files/\nDisallow: /wp-content/uploads/woocommerce_uploads/\nDisallow: /*?add-to-cart=\nDisallow: /*?*add-to-cart=\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://penktakoja.lt/sitemaps.xml\nSitemap: https://penktakoja.lt/xmlsitemap.xml\n\nAllow: /rsssitemap.xml\nAllow: /rsslatest.xml\nAllow: /htmlsitemap.htm\n\n"
+  },
+  "requests": 8,
+  "log": [
+    "GET https://penktakoja.lt/robots.txt",
+    "GET https://penktakoja.lt/",
+    "GET https://penktakoja.lt/beglobiai/?product_cat=sunys",
+    "GET https://penktakoja.lt/wp-json/wp/v2/types",
+    "GET https://penktakoja.lt/wp-json/wp/v2/wpb_gutenberg_param?per_page=5",
+    "GET https://penktakoja.lt/wp-json/wp/v2/product?per_page=5",
+    "GET https://penktakoja.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

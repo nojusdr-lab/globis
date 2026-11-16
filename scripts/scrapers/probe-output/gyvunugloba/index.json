@@ -1,0 +1,54 @@
+{
+  "id": "gyvunugloba",
+  "website": "https://gyvunugloba.com/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:07:06.796Z",
+  "pages": [
+    {
+      "url": "https://gyvunugloba.com/",
+      "finalUrl": "https://gyvunugloba.com/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 115393,
+      "hash": "5ba0fe8e32b87ac9bdf43c97eebde05b7ad1b5680110b414ff0ca957bfe788a0"
+    },
+    {
+      "url": "https://gyvunugloba.com/iesko-namu-gyvunai/",
+      "finalUrl": "https://gyvunugloba.com/iesko-namu-gyvunai/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 62676,
+      "hash": "b80bc6af9d93e83c2b31031b96bb401e69ba8dd3dd44bd117e6c920bff811ebe"
+    },
+    {
+      "url": "https://gyvunugloba.com/wp-json/wp/v2/types",
+      "finalUrl": "https://gyvunugloba.com/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 6708,
+      "hash": "8b7e7ed1e41bf2f4ad26125b65c0c3cc9e010fc0446caaba307916421f8c5221"
+    },
+    {
+      "url": "https://gyvunugloba.com/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://gyvunugloba.com/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 4021,
+      "hash": "f6f33950bf538e59d38e238799d961020290424cb7ee730f64285a1c646249bd"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://gyvunugloba.com/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://gyvunugloba.com/wp-sitemap.xml\n"
+  },
+  "requests": 6,
+  "log": [
+    "GET https://gyvunugloba.com/robots.txt",
+    "GET https://gyvunugloba.com/",
+    "GET https://gyvunugloba.com/iesko-namu-gyvunai/",
+    "GET https://gyvunugloba.com/wp-json/wp/v2/types",
+    "GET https://gyvunugloba.com/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

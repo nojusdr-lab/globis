@@ -1,0 +1,54 @@
+{
+  "id": "devynigyvenimai",
+  "website": "https://www.devyni-gyvenimai.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:08:04.323Z",
+  "pages": [
+    {
+      "url": "https://www.devyni-gyvenimai.lt/",
+      "finalUrl": "https://www.devyni-gyvenimai.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 118025,
+      "hash": "15d822572611254b334c790cb96d94e88f10492df1f361acaaaf8e844e4e0ef3"
+    },
+    {
+      "url": "https://www.devyni-gyvenimai.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://www.devyni-gyvenimai.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 6356,
+      "hash": "f00f3a29e08e03b0941116a2d8fe09e768a8143b9d6f81bb16a5f8b35d5be35c"
+    },
+    {
+      "url": "https://www.devyni-gyvenimai.lt/wp-json/wp/v2/portfolio?per_page=5",
+      "finalUrl": "https://www.devyni-gyvenimai.lt/wp-json/wp/v2/portfolio?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 2,
+      "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "url": "https://www.devyni-gyvenimai.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://www.devyni-gyvenimai.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 9132,
+      "hash": "7b81cb76883886058798862e8349d4a7eeaa9715bfd381e72c2226c32fd708e6"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://www.devyni-gyvenimai.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://www.devyni-gyvenimai.lt/wp-sitemap.xml\n"
+  },
+  "requests": 6,
+  "log": [
+    "GET https://www.devyni-gyvenimai.lt/robots.txt",
+    "GET https://www.devyni-gyvenimai.lt/",
+    "GET https://www.devyni-gyvenimai.lt/wp-json/wp/v2/types",
+    "GET https://www.devyni-gyvenimai.lt/wp-json/wp/v2/portfolio?per_page=5",
+    "GET https://www.devyni-gyvenimai.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}

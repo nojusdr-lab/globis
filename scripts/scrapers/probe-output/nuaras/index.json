@@ -1,0 +1,54 @@
+{
+  "id": "nuaras",
+  "website": "https://nuaras.lt/",
+  "userAgent": "GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)",
+  "at": "2026-11-16T22:08:05.267Z",
+  "pages": [
+    {
+      "url": "https://nuaras.lt/",
+      "finalUrl": "https://nuaras.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 76196,
+      "hash": "b498fc12784d29e5c34107e18648c17b9684502a05b3912ace8138e1cc88b986"
+    },
+    {
+      "url": "https://nuaras.lt/wp-json/wp/v2/types",
+      "finalUrl": "https://nuaras.lt/wp-json/wp/v2/types",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 5545,
+      "hash": "bf93bd68a1f066d084dd3cf9efcebda05153e56faf922171164f83431f3d61b4"
+    },
+    {
+      "url": "https://nuaras.lt/privatumo-politika/",
+      "finalUrl": "https://nuaras.lt/privatumo-politika/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 52568,
+      "hash": "eb2961d95c933d59113f3bdd4a3a13f4d4c314f22c11eee9fa3fe7c28822de01"
+    },
+    {
+      "url": "https://nuaras.lt/wp-json/wp/v2/posts?per_page=5",
+      "finalUrl": "https://nuaras.lt/wp-json/wp/v2/posts?per_page=5",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "bytes": 2,
+      "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "robots": {
+    "status": 200,
+    "finalUrl": "https://nuaras.lt/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "text": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://nuaras.lt/wp-sitemap.xml\n"
+  },
+  "requests": 6,
+  "log": [
+    "GET https://nuaras.lt/robots.txt",
+    "GET https://nuaras.lt/",
+    "GET https://nuaras.lt/wp-json/wp/v2/types",
+    "GET https://nuaras.lt/privatumo-politika/",
+    "GET https://nuaras.lt/wp-json/wp/v2/posts?per_page=5"
+  ]
+}
