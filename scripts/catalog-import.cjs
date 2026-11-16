@@ -37,12 +37,18 @@ function validateCatalog({ decision, now, catalogId, total, pageSize, pages, she
           !['dog','cat'].includes(listing.species) || typeof listing.shelterId !== 'string' ||
           (listing.statusText != null && typeof listing.statusText !== 'string')) throw Error('Invalid listing fields');
       const prior = priorById.get(id);
-      if (prior?.observedAt && Date.parse(prior.observedAt) > page.observedAt) {
+      const priorObservedAt = Date.parse(prior?.observedAt);
+      if (priorObservedAt > page.observedAt) {
         throw Error('Catalog observation would move backwards');
+      }
+      const status = statusFromText(listing.statusText);
+      if (priorObservedAt === page.observedAt &&
+          (prior.status !== status.status || prior.statusEvidence !== status.statusEvidence)) {
+        throw Error('Conflicting reservation evidence for the same observation');
       }
       ids.add(id);
       pets.push({id,source:'globok',url:listing.url,name:listing.name,species:listing.species,
-        shelter:{id:listing.shelterId},observedAt,...statusFromText(listing.statusText)});
+        shelter:{id:listing.shelterId},observedAt,...status});
     }
   }
   validateImport(pets,shelters,previous.pets,previous.shelters);

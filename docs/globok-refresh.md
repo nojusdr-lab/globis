@@ -8,6 +8,8 @@ Gyva prieiga ir pakartotinio nuskaitymo pilnumas nepatvirtinti. `scripts/scrape-
 
 Adapteris pateikia kiekvieno puslapio faktinį stebėjimo laiką `observedAt` milisekundėmis nuo Unix epochos. Validatorius atmeta trūkstamą, netinkamą arba būsimą laiką ir prideda puslapio stebėjimo laiką UTC formatu prie kiekvieno jo skelbimo, išsaugodamas originalų URL. Pakartotinė patikra stebėjimo laiko nekeičia.
 
+Jei ankstesnėje kopijoje tas pats skelbimas turi tą patį stebėjimo laiką, paketas su pasikeitusia rezervacijos būsena ar jos įrodymu atmetamas. Būsenai atnaujinti reikia naujesnio stebėjimo.
+
 `validateCatalog` priima jau išanalizuotus puslapių paketus. Būsimas adapteris turi pateikti iš šaltinio patikimai gautą vienos nuoseklios katalogo versijos žymą, bendrą įrašų skaičių, puslapio numerį, puslapio dydį ir kitą puslapį arba aiškų pabaigos žymeklį. Šių laukų negalima išvesti iš rastų HTML kortelių kiekio. Kol Globok tokių įrodymų nėra, sintetiniai testai tikrina kontraktą, o ne gyvą HTML.
 
 Atmetami nepilni, pakartoti ar nesuderinti puslapiai, tinklo klaidos, dubliuoti URL net su kitais query parametrais, ID neatitikimai, nežinomos organizacijos ir daugiau nei 5 % ankstesnio rinkinio ID netektis. Prieigos sprendimas turi būti konkrečiam šaltiniui, pagrįstas ir vis dar galiojantis. Validatorius grąžina peržiūros duomenis ir nerašo į programėlės failus. Skelbimo dingimas nesukuria įvaikinimo būsenos.
