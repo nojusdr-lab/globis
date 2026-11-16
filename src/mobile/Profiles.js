@@ -1,30 +1,89 @@
 import React from 'react';
-import {Text,View,Linking,Share} from 'react-native';
+import {Text,View,Linking,Share,Pressable} from 'react-native';
+import {Ionicons} from '@expo/vector-icons';
 import {eligible,phone,email} from '../data/integrity.cjs';
-import {Button,Photo,Sheet,SourceLink,Status} from './ui';
-import {styles as s} from './theme';
-export function PetProfile({pet,lang,onClose,onSave,onContact,saved,reduced,onError}) {
+import {Avatar,Button,Photo,Sheet,SourceLink,StatusNote} from './ui';
+import {C,styles as s} from './theme';
+import {facts,openQuestions} from './facts.cjs';
+
+function Fact({label,value,note}) {
+ const known=value!=null&&value!=='';
+ return <View style={[s.fact,!known&&s.factUnknown]}>
+  <Text style={s.factLabel}>{label}</Text>
+  <Text style={known?s.factValue:s.factValueUnknown}>{known?value:'Nenurodyta'}</Text>
+  {known&&note?<Text style={{fontSize:12,color:C.okInk,fontWeight:'500'}}>{note}</Text>:null}
+ </View>;
+}
+
+export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter,saved,reduced,onError}) {
  const t=(lt,en)=>lang==='lt'?lt:en;
- const known=[lang==='lt'?pet.ageLt:pet.ageEn,pet.sex,pet.size,pet.city].filter(Boolean);
  const date=pet.observedAt&&Number.isFinite(Date.parse(pet.observedAt))?new Date(pet.observedAt):null;
- return <Sheet full title={pet.name} reduced={reduced} onClose={onClose} footer={<View style={s.row}><Button style={{flex:1}} primary icon="heart-outline" label={saved?t('Išsaugota','Saved'):t('Išsaugoti','Save')} disabled={saved||!eligible(pet)} onPress={()=>onSave(pet)}/><Button style={{flex:1}} label={t('Susisiekti','Contact')} icon="chatbubble-outline" onPress={()=>onContact(pet)}/></View>}>
- <Photo lang={lang} pet={pet} height={320} gallery/><Status pet={pet} lang={lang}/><Text style={s.heading}>{pet.name}</Text>{known.length?<Text style={s.body}>{known.join(' · ')}</Text>:null}
- <Text style={s.body}>{pet.shelter?.name}</Text>{(lang==='lt'?pet.bioLt:pet.bioEn)?<Text style={s.body}>{lang==='lt'?pet.bioLt:pet.bioEn}</Text>:null}
- {Object.entries(pet.medical||{}).filter(([,value])=>typeof value==='boolean').map(([key,value])=><Text key={key} style={s.body}>{({chipped:t('Ženklintas','Microchipped'),vaccinated:t('Skiepytas','Vaccinated'),neutered:t('Sterilizuotas','Neutered')})[key]||key}: {value?t('Taip','Yes'):t('Ne','No')}</Text>)}
- <SourceLink url={pet.url} onError={onError}/>{date?<Text style={s.muted}>{t('Stebėta','Observed')}: {date.toLocaleString(lang==='lt'?'lt-LT':'en-GB')}</Text>:<Text style={s.muted}>{t('Stebėjimo laikas nežinomas.','Observation time unknown.')}</Text>}
- <Button label={t('Dalintis skelbimu','Share listing')} icon="share-outline" onPress={()=>Share.share({message:`${pet.name} — ${pet.url}`}).catch(()=>onError('Nepavyko pasidalinti.'))}/>
+ const bio=lang==='lt'?pet.bioLt:pet.bioEn;
+ const rows=facts(pet,lang);
+ const questions=openQuestions(pet,lang);
+ return <Sheet full title={pet.name} reduced={reduced} onClose={onClose} footer={<View style={s.row}>
+   <Button style={{flex:1}} icon={saved?'heart':'heart-outline'} selected={saved} label={saved?t('Išsaugota','Saved'):t('Išsaugoti','Save')}
+    accessibilityLabel={saved?t('Išsaugota','Saved'):t('Išsaugoti','Save')} disabled={!saved&&!eligible(pet)} onPress={()=>saved?onRemove(pet):onSave(pet)}/>
+   <Button style={{flex:1}} primary label={t('Susisiekti','Contact')} icon="call-outline" onPress={()=>onContact(pet)}/>
+  </View>}>
+  <View style={{borderRadius:22,overflow:'hidden'}}><Photo lang={lang} pet={pet} height={300} gallery/></View>
+  <View style={{gap:4}}>
+   <Text style={s.heading}>{pet.name}</Text>
+   <Text style={s.body}>{[pet.species==='dog'?t('Šuo','Dog'):pet.species==='cat'?t('Katė','Cat'):null,pet.city].filter(Boolean).join(' · ')}</Text>
+  </View>
+  <StatusNote pet={pet} lang={lang}/>
+  <View style={s.facts}>{rows.map(r=><Fact key={r.key} label={r.label} value={r.value} note={r.note}/>)}</View>
+  <View style={s.section}>
+   <Text style={s.sectionTitle}>{t('Aprašymas','Description')}</Text>
+   <Text style={s.body}>{bio||t('Prieglauda aprašymo nepateikė.','The shelter did not provide a description.')}</Text>
+  </View>
+  {questions.length?<View style={s.section}>
+   <Text style={s.sectionTitle}>{t('Ko verta paklausti prieglaudos','Worth asking the shelter')}</Text>
+   <View style={s.todo}>{questions.map((q,i)=><View key={q} style={[s.todoRow,i===questions.length-1&&{borderBottomWidth:0}]}>
+    <Ionicons name="help-circle-outline" size={18} color={C.muted} style={{marginTop:2}}/><Text style={[s.body,{flex:1,fontSize:15,lineHeight:21}]}>{q}</Text>
+   </View>)}</View>
+  </View>:null}
+  {pet.shelter?.name?<View style={s.section}>
+   <Text style={s.sectionTitle}>{t('Prieglauda','Shelter')}</Text>
+   <Pressable accessibilityRole="button" accessibilityLabel={`${t('Prieglauda','Shelter')}: ${pet.shelter.name}`} onPress={onShelter?()=>onShelter(pet.shelter.id):undefined} disabled={!onShelter} style={({pressed})=>[s.org,pressed&&{opacity:0.8}]}>
+    <Avatar name={pet.shelter.name}/>
+    <View style={{flex:1,minWidth:0}}><Text style={s.title}>{pet.shelter.name}</Text>{pet.shelter.city?<Text style={s.muted}>{pet.shelter.city}</Text>:null}</View>
+    {onShelter?<Ionicons name="chevron-forward" size={18} color={C.muted}/>:null}
+   </Pressable>
+  </View>:null}
+  <View style={s.section}>
+   <Text style={s.sectionTitle}>{t('Šaltinis','Source')}</Text>
+   <SourceLink url={pet.url} onError={onError}/>
+   {date?<Text style={s.muted}>{t('Stebėta','Observed')}: {date.toLocaleString(lang==='lt'?'lt-LT':'en-GB')}</Text>:<Text style={s.muted}>{t('Stebėjimo laikas nežinomas.','Observation time unknown.')}</Text>}
+  </View>
+  <Button label={t('Dalintis skelbimu','Share listing')} icon="share-outline" onPress={()=>Share.share({message:`${pet.name} — ${pet.url}`}).catch(()=>onError('Nepavyko pasidalinti.'))}/>
  </Sheet>;
 }
+
+function ContactRow({icon,title,value,onPress,primary}) {
+ return <Pressable accessibilityRole="button" accessibilityLabel={value} onPress={onPress}
+  style={({pressed})=>[s.org,primary&&{backgroundColor:C.green,borderColor:C.green},pressed&&{opacity:0.85}]}>
+  <View style={[s.avatar,{width:42,height:42},primary&&{backgroundColor:'rgba(255,255,255,0.16)'}]}><Ionicons name={icon} size={19} color={primary?C.white:C.green}/></View>
+  <View style={{flex:1,minWidth:0}}><Text style={[s.title,{fontSize:16},primary&&{color:C.white}]}>{title}</Text><Text selectable numberOfLines={1} style={[s.muted,primary&&{color:'rgba(255,255,255,0.85)'}]}>{value}</Text></View>
+ </Pressable>;
+}
+
 export function ContactSheet({pet,onClose,reduced,onError,lang}) {
  const shelter=pet.shelter||{};
  const trusted=Boolean(shelter.contactEvidence);
  const tel=trusted?phone(shelter.phone):null,mail=trusted?email(shelter.email):null;
  const t=(lt,en)=>lang==='lt'?lt:en;
  return <Sheet title={t('Susisiekti su prieglauda','Contact shelter')} onClose={onClose} reduced={reduced}>
- <Text style={s.title}>{shelter.name}</Text><Status pet={pet} lang={lang}/><Text style={s.body}>{t('Dėl gyvūno','About')}: {pet.name}</Text>{shelter.address?<Text selectable style={s.body}>{shelter.address}</Text>:null}
- {tel?<Button label={tel} icon="call-outline" onPress={()=>Linking.openURL(`tel:${tel}`).catch(()=>onError('Nepavyko pradėti skambučio.'))}/>:null}
- {mail?<Button label={mail} icon="mail-outline" onPress={()=>Linking.openURL(`mailto:${mail}?subject=${encodeURIComponent(`GLOBIS: ${pet.name}`)}`).catch(()=>onError('Nepavyko atidaryti pašto.'))}/>:null}
- {!tel&&!mail?<Text style={s.body}>{t('Patvirtintų telefono ir el. pašto duomenų nėra. Kreipkitės per originalų šaltinį.','Verified phone and email are unavailable. Contact through the original source.')}</Text>:null}
- <SourceLink url={pet.url} onError={onError}/><SourceLink url={shelter.url} label={t('Prieglaudos šaltinis','Shelter source')} onError={onError}/>
+  <View style={[s.org,{backgroundColor:C.surface2,borderColor:C.surface2}]}>
+   <Avatar name={shelter.name}/>
+   <View style={{flex:1,minWidth:0}}><Text style={s.title}>{shelter.name}</Text><Text style={s.muted}>{t('Dėl gyvūno','About')}: {pet.name}</Text></View>
+  </View>
+  <StatusNote pet={pet} lang={lang}/>
+  {shelter.address?<Text selectable style={s.body}>{shelter.address}</Text>:null}
+  {tel?<ContactRow primary icon="call-outline" title={t('Skambinti','Call')} value={tel} onPress={()=>Linking.openURL(`tel:${tel}`).catch(()=>onError('Nepavyko pradėti skambučio.'))}/>:null}
+  {mail?<ContactRow primary={!tel} icon="mail-outline" title={t('Rašyti el. laišką','Email')} value={mail} onPress={()=>Linking.openURL(`mailto:${mail}?subject=${encodeURIComponent(`GLOBIS: ${pet.name}`)}`).catch(()=>onError('Nepavyko atidaryti pašto.'))}/>:null}
+  {!tel&&!mail?<Text style={s.body}>{t('Patvirtintų telefono ir el. pašto duomenų nėra. Kreipkitės per originalų šaltinį.','Verified phone and email are unavailable. Contact through the original source.')}</Text>:null}
+  <SourceLink url={pet.url} onError={onError}/><SourceLink url={shelter.url} label={t('Prieglaudos šaltinis','Shelter source')} onError={onError}/>
+  <Text style={s.muted}>{t('Rodomi tik prieglaudos paskelbti kontaktai.','Only contacts published by the shelter are shown.')}</Text>
  </Sheet>;
 }
