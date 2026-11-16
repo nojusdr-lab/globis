@@ -93,3 +93,20 @@ test('an older observation cannot replace a newer reviewed observation', () => {
   assert.deepEqual(previous, before);
   assert.equal(previous.pets[0].source, 'globok');
 });
+
+test('conflicting reservation evidence requires a new observation', () => {
+  const packet = fixture();
+  const previous = validateCatalog(packet, {pets: [], shelters: []});
+  const before = structuredClone(previous);
+
+  packet.pages[0].listings[0].statusText = null;
+  assert.throws(() => validateCatalog(packet, previous), /Conflicting reservation evidence/);
+
+  packet.pages[0].listings[0].statusText = 'Gyvūnas rezervuotas.';
+  assert.throws(() => validateCatalog(packet, previous), /Conflicting reservation evidence/);
+  assert.deepEqual(previous, before);
+
+  packet.pages[0].observedAt++;
+  packet.pages[0].listings[0].statusText = null;
+  assert.equal(validateCatalog(packet, previous).pets[0].status, 'unknown');
+});
