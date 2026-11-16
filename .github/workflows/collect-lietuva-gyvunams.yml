@@ -1,0 +1,27 @@
+name: Collect Lietuva gyvunams (preview only)
+# Manual run. Reads the public catalogue and uploads the result as a file to review.
+# It does not change app data, the repository or any database.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: collect-lietuva-gyvunams
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/discovery-engine/lietuva-gyvunams.cjs > lietuva-gyvunams.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lietuva-gyvunams-preview
+          path: lietuva-gyvunams.json
+          retention-days: 7
