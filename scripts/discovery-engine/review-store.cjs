@@ -28,7 +28,12 @@ class ReviewStore {
    if(prior) for(const row of prior.items) {
     const next=items.find(item=>item.id===row.id);
     if(!next) throw Error('Missing previous listing; disappearance is not adoption');
-    if(Date.parse(next.observedAt)<Date.parse(row.observedAt)) throw Error('Observation time regression');
+    const priorObservedAt = Date.parse(row.observedAt);
+    const nextObservedAt = Date.parse(next.observedAt);
+    if (nextObservedAt < priorObservedAt) throw Error('Observation time regression');
+    if (nextObservedAt === priorObservedAt && next.status !== row.status) {
+     throw Error('Conflicting listing status for the same observation');
+    }
    }
    const data=JSON.stringify(items),id=createHash('sha256').update(JSON.stringify([source,runId,items])).digest('hex');
    if(prior?.id===id) {this.db.exec('COMMIT');return {published:false,reason:'unchanged',version:id};}

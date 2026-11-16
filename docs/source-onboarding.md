@@ -15,6 +15,8 @@ node scripts/discovery-engine/review-cli.cjs restore /tmp/globis-review.sqlite V
 
 Paskutinis importo argumentas yra peržiūrinčio operatoriaus laukiamas įrašų kiekis, ne iš realaus katalogo HTML išvestas pilnumo įrodymas. Nepilni, nebaigti, dubliuoti ir ankstesnius ID praradę paketai atmetami. Dingęs įrašas nevirsta įvaikinimu. Stebėjimo laikas negali regresuoti. Pakartotinai pateiktas tas pats failas yra no-op. SQLite transakcija atomariškai įrašo nekintamą versiją, dabartinės versijos rodyklę ir sėkmės įvykį. Nutrūkimas iki COMMIT palieka ankstesnę kopiją. Klaidos ir atmetimo priežastys matomos `status`; atkūrimas reikalauja konkrečios tos pačios šaltinio versijos ir priežasties. DB failą laikyti vietoje, nedėti į Git.
 
+Jei tam pačiam skelbimui pateikiama kita būsena su tuo pačiu stebėjimo laiku, visas paketas atmetamas ir dabartinė versija išsaugoma. Būsenai pakeisti reikia naujesnio stebėjimo.
+
 ## Kitos prieglaudos prijungimo kontrolė
 
 1. Peržiūrėti registro tapatybę ir priskirti stabilų organizacijos ID. Registro eilutės numeris ir bendras Facebook puslapis nėra organizacijos ID.

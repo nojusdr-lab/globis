@@ -2,6 +2,28 @@ const {test}=require('node:test');const assert=require('node:assert/strict');
 const {mkdtempSync,rmSync}=require('node:fs');const {tmpdir}=require('node:os');const {join}=require('node:path');
 const {ReviewStore}=require('./review-store.cjs');
 const row=(id,time=100)=>({id,sourceUrl:`https://shelter.invalid/${id}`,observedAt:new Date(time).toISOString(),status:'unknown',vaccinated:null});
+test('a reservation can change only with a newer observation', () => {
+ const store = new ReviewStore(':memory:', () => 1000);
+ try {
+  const options = {expectedCount: 1, completed: true, runId: 'initial'};
+  store.publish('s', [{...row('a'), status: 'reserved'}], options);
+  const baseline = store.current('s');
+
+  assert.throws(
+   () => store.publish('s', [row('a')], {...options, runId: 'conflict'}),
+   /Conflicting listing status/,
+  );
+  assert.deepEqual(store.current('s'), baseline);
+  assert.equal(store.versions('s').length, 1);
+  assert.equal(store.events('s').at(-1).kind, 'rejected');
+
+  store.publish('s', [row('a', 101)], {...options, runId: 'newer'});
+  assert.equal(store.current('s').items[0].status, 'unknown');
+ } finally {
+  store.close();
+ }
+});
+
 test('partial, repeated, regressing or interrupted batches preserve a durable current version',()=>{
  const dir=mkdtempSync(join(tmpdir(),'globis-review-'));let store=new ReviewStore(join(dir,'review.db'),()=>1000);
  try {
