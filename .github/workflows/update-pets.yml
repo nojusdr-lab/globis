@@ -6,6 +6,7 @@ on:
       - 'src/**'
       - 'scripts/**'
       - 'tests/**'
+      - 'supabase/**'
       - 'package*.json'
       - '.github/workflows/update-pets.yml'
   workflow_dispatch:
