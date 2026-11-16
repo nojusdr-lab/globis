@@ -26,7 +26,7 @@ function email(value) {
 }
 
 function eligible(pet) {
-  return pet.status !== 'reserved' && pet.status !== 'unavailable' && pet.status !== 'stale';
+  return !['reserved', 'unavailable', 'stale', 'adopted'].includes(pet.status);
 }
 
 function shelterPets(pets, id) {
