@@ -61,16 +61,18 @@ export default function PetCard({ pet, lang, onOpenDetails }) {
         )}
 
         {/* Left/Right tap zones for photo flipping */}
-        <TouchableOpacity
+        {photos.length>1 ? <><TouchableOpacity
+          accessibilityLabel="Ankstesnė nuotrauka"
           style={styles.tapZoneLeft}
           onPress={handlePrevPhoto}
           activeOpacity={0.9}
         />
         <TouchableOpacity
+          accessibilityLabel="Kita nuotrauka"
           style={styles.tapZoneRight}
           onPress={handleNextPhoto}
           activeOpacity={0.9}
-        />
+        /></> : null}
 
         {/* Top Badges Row */}
         <View style={styles.topBadgesRow}>
