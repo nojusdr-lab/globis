@@ -40,6 +40,11 @@ test('partial, repeated, regressing or interrupted batches preserve a durable cu
  const second=store.publish('s',[row('a',200),row('b',200)],{...opts,runId:'two'});
  assert.notEqual(first.version,second.version);assert.equal(store.versions('s').length,2);
  store.restore('s',first.version,'Reviewed rollback test');assert.deepEqual(store.current('s'),baseline);
+ const replay = store.publish('s',[row('a',300),row('b',300)],{...opts,runId:'two'});
+ assert.deepEqual(replay,{published:false,reason:'file_already_reviewed',version:second.version});
+ assert.deepEqual(store.current('s'),baseline);
+ assert.equal(store.versions('s').length,2);
+ assert.equal(store.events('s').at(-1).kind,'restore');
  assert.throws(()=>store.restore('other',first.version,'cross-source'));assert.throws(()=>store.restore('s',second.version,''));
  assert.ok(store.events('s').some(e=>e.kind==='rejected'));assert.ok(store.events('s').some(e=>e.kind==='restore'));
  }finally{store.close();rmSync(dir,{recursive:true,force:true});}

@@ -22,8 +22,6 @@ async function main() {
    // Local file digest is the stable import key. Observation time remains the actual adapter read time.
    const digest=items[0].evidenceRef.sha256;
    if(!Number.isSafeInteger(Number(args[1])) || items.length!==Number(args[1])) throw Error('Expected count mismatch');
-   const previous=store.current(source);
-   if(previous?.run===digest) return console.log(JSON.stringify({published:false,reason:'file_already_reviewed',version:previous.id},null,2));
    console.log(JSON.stringify(store.publish(source,items,{runId:digest,expectedCount:Number(args[1]),completed:true}),null,2));
   }catch(error){store.record(source,'import_error',error.message);throw error;}finally{queue.db.close();}
  }finally{store.close();}

@@ -35,8 +35,12 @@ class ReviewStore {
      throw Error('Conflicting listing status for the same observation');
     }
    }
+   const reviewed = this.db.prepare('SELECT id FROM version WHERE source=? AND run=? ORDER BY rowid LIMIT 1').get(source,runId);
+   if (reviewed) {
+    this.db.exec('COMMIT');
+    return {published:false,reason:'file_already_reviewed',version:reviewed.id};
+   }
    const data=JSON.stringify(items),id=createHash('sha256').update(JSON.stringify([source,runId,items])).digest('hex');
-   if(prior?.id===id) {this.db.exec('COMMIT');return {published:false,reason:'unchanged',version:id};}
    this.db.prepare('INSERT OR IGNORE INTO version VALUES(?,?,?,?,?)').run(id,source,runId,data,this.now());
    this.db.prepare('INSERT INTO head VALUES(?,?) ON CONFLICT(source) DO UPDATE SET version=excluded.version').run(source,id);
    this.record(source,'publish',id);this.db.exec('COMMIT');return {published:true,version:id};
