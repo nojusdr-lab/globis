@@ -7,7 +7,7 @@ from playwright.sync_api import expect, sync_playwright
 APP_URL = 'http://127.0.0.1:8765'
 FIXTURE_URL = 'https://globis-gallery.invalid/'
 PIXEL = b64decode(
-    'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aX1sAAAAASUVORK5CYII='
+    'iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAFElEQVR4nGNUiXZjwAaYsIoOWgkAn0QA1cTePVgAAAAASUVORK5CYII='
 )
 
 
