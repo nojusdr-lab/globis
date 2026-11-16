@@ -1,0 +1,8 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "GLOBIS"
+  },
+  "android": {
+    "app_name": "GLOBIS"
+  }
+}
