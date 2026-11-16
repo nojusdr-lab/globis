@@ -1,74 +1,30 @@
-# Myliu tave 🐾 — Lithuanian Pet Adoption App
+# GLOBIS
 
-**"Myliu tave"** is a Tinder-style pet adoption mobile app built with **Expo (React Native)** for animal shelters across Lithuania. It aggregates real animals from shelters across 11 Lithuanian cities (Vilnius, Kaunas, Klaipėda, Šiauliai, Panevėžys, Alytus, Mažeikiai, Utena, Visaginas, Kazlų Rūda, Marijampolė).
+Expo / React Native gyvūnų ir prieglaudų atradimo programėlė. Naudojama peržiūrima istorinė duomenų kopija, ne pažadas apie šiandienos gyvūnų prieinamumą. Gyvas Globok ir Meta importas išjungtas, kol nėra patvirtintų teisių ir pilnumo įrodymų.
 
-Designed following the **Organic** aesthetic anchor:
-- **Palette**: Earth tones (sage `#8B9D83`, clay `#B08B6E`, terracotta `#C66B3D`, ochre `#C08E3A`, moss `#606C38`), sand `#E8DCC7` and oat `#D4B895` surfaces. No pure white, black, or cold sterile greys.
-- **Structure**: Generous tactile rounded corners (16–32 px).
-- **Texture**: Soft tactile grain overlay (`GrainOverlay`).
-- **Motion**: Gentle organic springs (300–500 ms) and breathing pulse animations on hero like actions.
-- **Content Discipline**: Real Lithuanian rescue animals with verified shelter contacts, authentic photos, waiting-time pills, medical readiness badges, and warm Lithuanian bios.
+## Vietinis paleidimas
 
----
+Node.js >=22.13.0 (`node:sqlite`).
 
-## Features
-
-1. **Swipeable Card Stack with 20-Card Pagination**:
-   - Smooth gesture-driven card deck (swipe right to like/match, swipe left to pass).
-   - High-performance chunk loading: loads 20 cards at a time as the user swipes through all 950+ animals smoothly without memory bloat.
-   - Tactile terracotta "MYLIU" and clay "PRALEISTI" stamp seals with angle tilt physics.
-
-2. **Waiting-Time & Medical Readiness Badges**:
-   - Long-term resident badge: highlights pets waiting 180+ days in warm terracotta ("Laukia 240 d.") to prioritize animals in urgent need of adoption.
-   - Medical readiness pills: "Čipuotas" (Microchipped), "Skiepytas" (Vaccinated), and "Sterilizuotas" (Neutered).
-
-3. **Multi-Photo Gallery & Pet Details Modal**:
-   - High-resolution pet photos with tap navigation.
-   - Expandable bio sheet with shelter info, compatibility tags (*„Draugiškas su katėmis“*, *„Tinka bute“*, etc.), and personality traits.
-
-4. **"Valio! Susisiekite su prieglauda" Match Modal**:
-   - Instant celebration modal upon right-swipe.
-   - One-touch phone dialing, pre-filled email inquiry, and direct website links.
-
-5. **Lithuanian Shelters Directory ("Prieglaudos" Tab)**:
-   - Complete directory of 37 Lithuanian shelters with real addresses, phones, emails, logos, and dog/cat breakdowns.
-   - Filter shelters by city and view animal counts.
-   - "Rodyti augintinius" button to jump straight into swiping that shelter's animals.
-
-6. **Comprehensive Filters & Bilingual Support**:
-   - Species filters: **Visi / Šunys / Katės**.
-   - "Skubiausi" toggle: sorts deck by longest-waiting residents first.
-   - City filter: scrollable bar covering all 11 Lithuanian cities with animal counts.
-   - Bilingual toggle: instant **LT / EN** switching across the entire app.
-
----
-
-## Data Pipeline & Scraper
-
-The app uses the reviewed snapshots in `src/data/allPets.json` and `src/data/shelters.json`. Live Globok updates are disabled while source access and pagination remain unverified. See the [refresh policy and manual review process](docs/globok-refresh.md).
-
-```bash
+```sh
+npm ci --no-audit --no-fund
 npm test
 npm run check:data
+npm run web
+# Visų platformų eksportas:
 CI=1 npm run build
 ```
 
-Node.js >=22.13.0 is required (Discovery Engine uses `node:sqlite`). CI tests Node 22.13.0, 24 and 26. The tests run offline; the build requires dependencies installed with `npm ci`. Historical values with insufficient provenance remain in Git history. The legacy-to-current listing ID mapping is in `docs/pr1-listing-id-map.json`. A listing marked as reserved is kept in its shelter roster and omitted from general discovery. Unconfirmed availability is labelled explicitly.
+`npm run android` / `npm run ios` paleidžia Expo; native patikrai reikia Expo Go arba suderinto native build / įrenginio. Šio projekto CI atlieka eksportą, ne fizinio įrenginio testą.
 
----
+## Funkcijos ir duomenys
 
-## How to Run
+- Globoti / Prieglaudos / Išsaugoti. Kortelių ir tinklelio rodiniai naudoja tuos pačius rūšies, miesto ir tik šaltinio įrodymais pagrįstos skubos filtrus.
+- Braukimas dešinėn išsaugo, kairėn praleidžia; Atšaukti tiksliai grąžina paskutinę būseną. Pasirinkimai ir kalba saugomi vietoje. Perkrovimas jų neištrina; tarp įrenginių sinchronizavimo nėra.
+- Profiliai ir prieglaudų sąrašai siejami pagal tikslų ID. Aktyvūs skelbimai nėra prieglaudos talpa. Rezervuoti gyvūnai rodomi prieglaudos sąraše, bet ne atradime.
+- Nežinomi faktai, kontaktai ir stebėjimo laikai neišgalvojami. Dabartinė kopija neturi patikimų kontaktų ar stebėjimo laikų. Originalus šaltinis lieka pasiekiamas. Skelbimo dingimas nereiškia įvaikinimo.
+- GLOBIS #245B46, #F5F8F7 ir originalūs repo logotipo failai. Naujas Router / navigacijos karkasas neįdiegtas.
 
-### Dev Server
-```bash
-PATH="$(pwd)/.node-bin/bin:$PATH" HOME=/tmp EXPO_NO_TELEMETRY=1 npx expo start --web --port 8081
-```
+Vienintelė programėlės kopija: `src/data/allPets.json` ir `src/data/shelters.json`. [Atnaujinimo politika](docs/globok-refresh.md), [ID migracija](docs/pr1-listing-id-map.json), [beta patikros ir ribos](docs/beta-check.md), [leidimo paruošimas](docs/release-readiness.md), [privatumo informacija](docs/privacy.md).
 
-- **Web Preview**: Open [http://localhost:8081](http://localhost:8081) in your browser.
-- **Mobile (Expo Go)**: Scan the QR code displayed in the terminal using the Expo Go app.
-
-### Google Play Store Build (Android AAB)
-```bash
-PATH="$(pwd)/.node-bin/bin:$PATH" npx eas build --platform android
-```
-Configured in `app.json` under package `com.myliutave.app`.
+Discovery Engine yra atskiras vietinis prototipas: [adapteriai ir testai](scripts/discovery-engine/README.md). Viešo backend ar produkcinio duomenų atnaujinimo jis neįjungia.

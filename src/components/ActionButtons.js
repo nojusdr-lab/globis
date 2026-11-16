@@ -75,7 +75,7 @@ export default function ActionButtons({
         <Ionicons name="information" size={24} color={TOKENS.colors.sageDark} />
       </TouchableOpacity>
 
-      {/* Like / Myliu Button with Breathing Pulse */}
+      {/* Save Button with Breathing Pulse */}
       <Animated.View style={{ transform: [{ scale: breathingScale }] }}>
         <TouchableOpacity
           style={[styles.actionBtn, styles.likeBtn]}
