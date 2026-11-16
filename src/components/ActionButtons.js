@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { TOKENS } from '../theme/tokens';
 
 export default function ActionButtons({
+  reduceMotion=false,
   onRewind,
   onPass,
   onInfo,
@@ -14,6 +15,7 @@ export default function ActionButtons({
   const breathingScale = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
+    if(reduceMotion) {breathingScale.setValue(1);return;}
     const loop = Animated.loop(
       Animated.sequence([
         Animated.timing(breathingScale, {
@@ -30,7 +32,7 @@ export default function ActionButtons({
     );
     loop.start();
     return () => loop.stop();
-  }, [breathingScale]);
+  }, [breathingScale,reduceMotion]);
 
   return (
     <View style={styles.container}>
@@ -73,7 +75,7 @@ export default function ActionButtons({
         <Ionicons name="information" size={24} color={TOKENS.colors.sageDark} />
       </TouchableOpacity>
 
-      {/* Like / Myliu Button with Breathing Pulse */}
+      {/* Save Button with Breathing Pulse */}
       <Animated.View style={{ transform: [{ scale: breathingScale }] }}>
         <TouchableOpacity
           style={[styles.actionBtn, styles.likeBtn]}

@@ -36,8 +36,8 @@ export default function SheltersView({
     if (!email) return;
     const subject = encodeURIComponent(
       lang === 'lt'
-        ? `Užklausa dėl gyvūnų globos („Myliu tave“ - ${shelterName})`
-        : `Inquiry regarding animal adoption ("Myliu tave" - ${shelterName})`
+        ? `Užklausa dėl gyvūnų globos („GLOBIS“ - ${shelterName})`
+        : `Inquiry regarding animal adoption ("GLOBIS" - ${shelterName})`
     );
     Linking.openURL(`mailto:${email}?subject=${subject}`);
   };

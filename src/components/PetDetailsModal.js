@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Modal,
   Linking,
@@ -22,6 +22,7 @@ export default function PetDetailsModal({
 }) {
   const [selectedPhotoIdx, setSelectedPhotoIdx] = useState(0);
 
+  useEffect(()=>setSelectedPhotoIdx(0),[pet?.id]);
   if (!pet) return null;
   const t = TRANSLATIONS[lang];
 

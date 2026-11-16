@@ -1,0 +1,16 @@
+import {Platform,StyleSheet} from 'react-native';
+export const C={green:'#245B46',ink:'#163B2E',bg:'#F5F8F7',white:'#FFFFFF',muted:'#53665E',line:'#D9E4DF',soft:'#E7F0EB',amber:'#80541C',danger:'#923D3D'};
+export const styles=StyleSheet.create({
+ root:{flex:1,backgroundColor:C.bg},shell:{flex:1,width:'100%',maxWidth:1100,alignSelf:'center'},
+ header:{paddingHorizontal:20,paddingVertical:8,flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:8},logo:{width:148,height:40},row:{flexDirection:'row',alignItems:'center',gap:8},
+ heading:{fontSize:28,lineHeight:34,fontWeight:'700',color:C.ink,...Platform.select({ios:{fontFamily:'Georgia'},web:{fontFamily:'Georgia, serif'}})},title:{fontSize:20,lineHeight:28,fontWeight:'700',color:C.ink},body:{fontSize:16,lineHeight:24,color:C.ink},muted:{fontSize:14,lineHeight:20,color:C.muted},
+ button:{minHeight:48,minWidth:48,borderRadius:24,paddingHorizontal:16,paddingVertical:12,backgroundColor:C.soft,alignItems:'center',justifyContent:'center',flexDirection:'row',gap:8,borderWidth:1,borderColor:'transparent'},primary:{backgroundColor:C.green},buttonText:{fontSize:16,lineHeight:22,fontWeight:'600',color:C.green},primaryText:{color:C.white},disabled:{opacity:0.45},
+ toolbar:{paddingHorizontal:20,paddingVertical:8,flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:8},
+ card:{backgroundColor:C.white,borderRadius:28,overflow:'hidden',borderWidth:1,borderColor:C.line},cardContent:{padding:20,gap:8},photo:{width:'100%',backgroundColor:C.soft},placeholder:{alignItems:'center',justifyContent:'center',gap:8},
+ badge:{paddingHorizontal:12,paddingVertical:6,borderRadius:16,backgroundColor:C.soft,alignSelf:'flex-start'},status:{fontSize:13,lineHeight:19,color:C.muted},reserved:{color:C.amber,fontWeight:'700'},
+ tabs:{flexDirection:'row',borderTopWidth:1,borderTopColor:C.line,backgroundColor:C.white,padding:8,gap:4},tab:{flex:1,minHeight:64,borderRadius:24,padding:8,alignItems:'center',justifyContent:'center',gap:4},tabActive:{backgroundColor:C.soft},tabText:{fontSize:13,fontWeight:'600',color:C.green},
+ content:{padding:16,gap:16},empty:{padding:32,alignItems:'center',justifyContent:'center',gap:16,flex:1},
+ backdrop:{...StyleSheet.absoluteFillObject,backgroundColor:'rgba(16,40,30,0.42)'},modal:{flex:1,justifyContent:'flex-end'},sheet:{maxHeight:'94%',width:'100%',maxWidth:640,alignSelf:'center',backgroundColor:C.bg,borderTopLeftRadius:28,borderTopRightRadius:28,overflow:'hidden'},sheetHeader:{flexDirection:'row',alignItems:'center',justifyContent:'space-between',padding:20,gap:16,borderBottomWidth:1,borderBottomColor:C.line},sheetFooter:{padding:16,gap:8,backgroundColor:C.white,borderTopWidth:1,borderTopColor:C.line},
+ input:{minHeight:48,padding:12,borderWidth:1,borderColor:C.line,borderRadius:16,backgroundColor:C.white,fontSize:16,color:C.ink},chips:{flexDirection:'row',flexWrap:'wrap',gap:8},selected:{backgroundColor:C.green},toast:{marginHorizontal:16,padding:12,backgroundColor:C.ink,borderRadius:16},toastText:{color:C.white,fontSize:14,lineHeight:22},
+ listCard:{padding:16,borderRadius:20,backgroundColor:C.white,borderWidth:1,borderColor:C.line,gap:8},separator:{height:1,backgroundColor:C.line,marginVertical:8},link:{fontSize:16,lineHeight:24,color:C.green,textDecorationLine:'underline'},
+});
