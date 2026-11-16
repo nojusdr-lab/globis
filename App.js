@@ -6,6 +6,7 @@ import {
   StatusBar,
   Platform,
 } from 'react-native';
+import { eligible, shelterPets } from './src/data/integrity.cjs';
 import { PETS } from './src/data/pets';
 import { TOKENS } from './src/theme/tokens';
 import Header from './src/components/Header';
@@ -22,6 +23,7 @@ const PAGE_SIZE = 20;
 export default function App() {
   const [lang, setLang] = useState('lt');
   const [activeTab, setActiveTab] = useState('pets'); // 'pets' | 'shelters'
+  const [shelterId, setShelterId] = useState(null);
   const [filter, setFilter] = useState('all'); // 'all' | 'dog' | 'cat'
   const [isUrgent, setIsUrgent] = useState(false); // "Skubiausi" toggle
   const [cityFilter, setCityFilter] = useState('all'); // 11 Lithuanian cities + all
@@ -37,7 +39,7 @@ export default function App() {
 
   // Compute filtered & sorted pets list
   const filteredPets = useMemo(() => {
-    let result = [...PETS];
+    let result = shelterId ? shelterPets(PETS, shelterId) : PETS.filter(eligible);
 
     // 1. Filter by species
     if (filter !== 'all') {
@@ -45,7 +47,7 @@ export default function App() {
     }
 
     // 2. Filter by city across all Lithuanian cities
-    if (cityFilter !== 'all') {
+    if (!shelterId && cityFilter !== 'all') {
       result = result.filter(
         (p) => p.city && p.city.toLowerCase() === cityFilter.toLowerCase()
       );
@@ -57,10 +59,10 @@ export default function App() {
     }
 
     return result;
-  }, [filter, cityFilter, isUrgent]);
+  }, [filter, cityFilter, isUrgent, shelterId]);
 
   // Unique filter key used to safely reset pagination and stack index
-  const filterKey = `${filter}-${cityFilter}-${isUrgent}`;
+  const filterKey = `${filter}-${cityFilter}-${isUrgent}-${shelterId}`;
 
   // Reset deck limit to 20 whenever filter criteria change
   useEffect(() => {
@@ -81,7 +83,7 @@ export default function App() {
 
   // Handle Swipes
   const handleSwipeRight = (pet) => {
-    if (!pet) return;
+    if (!pet || !eligible(pet)) return;
     setLikedPets((prev) => {
       if (prev.some((p) => p.id === pet.id)) return prev;
       return [pet, ...prev];
@@ -131,8 +133,10 @@ export default function App() {
     setDeckLimit(PAGE_SIZE);
   };
 
-  const handleSelectShelterPets = (city) => {
-    setCityFilter(city);
+  const handleSelectShelterPets = (id) => {
+    setShelterId(id);
+    setFilter('all');
+    setCityFilter('all');
     setActiveTab('pets');
   };
 
@@ -156,11 +160,11 @@ export default function App() {
           isUrgent={isUrgent}
           setIsUrgent={setIsUrgent}
           cityFilter={cityFilter}
-          setCityFilter={setCityFilter}
+          setCityFilter={(city) => { setShelterId(null); setCityFilter(city); }}
           likedCount={likedPets.length}
           onOpenLikes={() => setIsLikesDrawerVisible(true)}
           activeTab={activeTab}
-          setActiveTab={setActiveTab}
+          setActiveTab={(tab) => { setShelterId(null); setActiveTab(tab); }}
         />
 
         {/* View Switcher: Augintiniai (Cards) vs Prieglaudos (Shelters) */}

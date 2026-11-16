@@ -15,7 +15,6 @@ export default function PetCard({ pet, lang, onOpenDetails }) {
   const [activePhotoIdx, setActivePhotoIdx] = useState(0);
   const t = TRANSLATIONS[lang];
 
-  const tags = lang === 'lt' ? pet.compatibilityTagsLt : pet.compatibilityTagsEn;
   const age = lang === 'lt' ? pet.ageLt : pet.ageEn;
   const bio = lang === 'lt' ? pet.bioLt : pet.bioEn;
   const photos = pet.photos || [];
@@ -75,9 +74,9 @@ export default function PetCard({ pet, lang, onOpenDetails }) {
 
         {/* Top Badges Row */}
         <View style={styles.topBadgesRow}>
-          {/* Verified Shelter Badge */}
+          {/* Shelter Badge */}
           <View style={styles.shelterBadge}>
-            <Ionicons name="shield-checkmark" size={12} color={TOKENS.colors.textInverse} />
+            <Ionicons name="home-outline" size={12} color={TOKENS.colors.textInverse} />
             <Text style={styles.shelterBadgeText} numberOfLines={1}>
               {pet.shelter.name}
             </Text>
@@ -91,7 +90,8 @@ export default function PetCard({ pet, lang, onOpenDetails }) {
         </View>
 
         {/* "Laukia X d." Waiting-time pill badge (Terracotta highlight for 180+ days) */}
-        <View style={styles.waitingBadgeWrapper}>
+        {pet.waitingDays != null ? (
+          <View style={styles.waitingBadgeWrapper}>
           <View
             style={[
               styles.waitingPill,
@@ -114,6 +114,7 @@ export default function PetCard({ pet, lang, onOpenDetails }) {
             </Text>
           </View>
         </View>
+        ) : null}
 
         {/* Gradient shadow to transition image smoothly to content */}
         <LinearGradient
@@ -125,98 +126,18 @@ export default function PetCard({ pet, lang, onOpenDetails }) {
         <View style={styles.heroInfoOverlay}>
           <View style={styles.nameRow}>
             <Text style={styles.petName}>{pet.name}</Text>
-            <View style={styles.ageBadge}>
+            {age ? <View style={styles.ageBadge}>
               <Text style={styles.ageBadgeText}>{age}</Text>
-            </View>
+            </View> : null}
           </View>
         </View>
       </View>
 
       {/* Card Content Body: Medical Readiness, Tags, Lithuanian Bio */}
       <View style={styles.contentBody}>
-        {/* Clean Medical Readiness Icons: Čipuotas, Skiepytas, Sterilizuotas */}
-        <View style={styles.medicalRow}>
-          {/* Čipuotas */}
-          <View
-            style={[
-              styles.medicalBadge,
-              pet.medical?.chipped ? styles.medicalBadgeActive : styles.medicalBadgeInactive,
-            ]}
-          >
-            <Ionicons
-              name="hardware-chip-outline"
-              size={13}
-              color={pet.medical?.chipped ? TOKENS.colors.mossDark : TOKENS.colors.textMuted}
-            />
-            <Text
-              style={[
-                styles.medicalText,
-                pet.medical?.chipped ? styles.medicalTextActive : styles.medicalTextInactive,
-              ]}
-            >
-              {t.chipped}
-            </Text>
-          </View>
-
-          {/* Skiepytas */}
-          <View
-            style={[
-              styles.medicalBadge,
-              pet.medical?.vaccinated ? styles.medicalBadgeActive : styles.medicalBadgeInactive,
-            ]}
-          >
-            <Ionicons
-              name="shield-checkmark-outline"
-              size={13}
-              color={pet.medical?.vaccinated ? TOKENS.colors.mossDark : TOKENS.colors.textMuted}
-            />
-            <Text
-              style={[
-                styles.medicalText,
-                pet.medical?.vaccinated ? styles.medicalTextActive : styles.medicalTextInactive,
-              ]}
-            >
-              {t.vaccinated}
-            </Text>
-          </View>
-
-          {/* Sterilizuotas */}
-          <View
-            style={[
-              styles.medicalBadge,
-              pet.medical?.neutered ? styles.medicalBadgeActive : styles.medicalBadgeInactive,
-            ]}
-          >
-            <Ionicons
-              name={pet.medical?.neutered ? 'checkmark-circle-outline' : 'ellipse-outline'}
-              size={13}
-              color={pet.medical?.neutered ? TOKENS.colors.mossDark : TOKENS.colors.textMuted}
-            />
-            <Text
-              style={[
-                styles.medicalText,
-                pet.medical?.neutered ? styles.medicalTextActive : styles.medicalTextInactive,
-              ]}
-            >
-              {pet.medical?.neutered ? t.neutered : t.notNeutered}
-            </Text>
-          </View>
-        </View>
-
-        {/* Compatibility Tags */}
-        <View style={styles.tagsContainer}>
-          {tags.slice(0, 3).map((tag, idx) => (
-            <View key={idx} style={styles.tagPill}>
-              <Text style={styles.tagText}>{tag}</Text>
-            </View>
-          ))}
-        </View>
-
-        {/* Short Bio */}
-        <Text style={styles.bioText} numberOfLines={2}>
-          {bio}
-        </Text>
-
+        {pet.status === 'reserved' ? <Text>{lang === 'lt' ? 'Rezervuotas' : 'Reserved'}</Text> : null}
+        {pet.status === 'unknown' ? <Text>{lang === 'lt' ? 'Prieinamumas nepatvirtintas' : 'Availability unconfirmed'}</Text> : null}
+        {bio ? <Text style={styles.bioText} numberOfLines={2}>{bio}</Text> : null}
         {/* Shelter footer link button */}
         <TouchableOpacity
           style={styles.detailsRow}

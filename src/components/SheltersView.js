@@ -58,7 +58,7 @@ export default function SheltersView({
         <View style={styles.statsTextWrap}>
           <Text style={styles.statsTitle}>{t.sheltersHeaderTitle}</Text>
           <Text style={styles.statsSubtitle}>
-            {SHELTERS.length} {lang === 'lt' ? 'Lietuvos prieglaudos' : 'Lithuanian shelters'} · {totalAnimals} {lang === 'lt' ? 'laukiantys gyvūnai' : 'waiting pets'}
+            {SHELTERS.length} {lang === 'lt' ? 'Lietuvos prieglaudos' : 'Lithuanian shelters'} · {totalAnimals} {lang === 'lt' ? 'aktyvūs Globis skelbimai' : 'active Globis listings'}
           </Text>
         </View>
       </View>
@@ -161,6 +161,9 @@ export default function SheltersView({
                 </View>
               </View>
 
+              {item.totalCount === 0 && (
+                <Text style={styles.descText}>{lang === 'lt' ? 'Šiuo metu nėra aktyvių Globis skelbimų' : 'No active Globis listings'}</Text>
+              )}
               {/* Short Shelter Story */}
               {desc ? (
                 <Text style={styles.descText} numberOfLines={2}>
@@ -192,20 +195,20 @@ export default function SheltersView({
                   </TouchableOpacity>
                 ) : null}
 
-                {item.website ? (
+                {(item.website || item.url) ? (
                   <TouchableOpacity
                     style={styles.actionBtnWeb}
-                    onPress={() => handleWebsite(item.website)}
+                    onPress={() => handleWebsite(item.website || item.url)}
                     activeOpacity={0.7}
                   >
                     <Ionicons name="globe-outline" size={13} color={TOKENS.colors.textSecondary} />
                   </TouchableOpacity>
                 ) : null}
 
-                {(item.totalCount || item.count || 0) > 0 && (
+                {item.rosterCount > 0 && (
                   <TouchableOpacity
                     style={styles.actionBtnPets}
-                    onPress={() => onSelectShelterPets?.(item.city)}
+                    onPress={() => onSelectShelterPets?.(item.id)}
                     activeOpacity={0.75}
                   >
                     <Text style={styles.actionBtnPetsText}>{t.filterByThisShelter}</Text>
