@@ -8,7 +8,7 @@ export function PetProfile({pet,lang,onClose,onSave,onContact,saved,reduced,onEr
  const known=[lang==='lt'?pet.ageLt:pet.ageEn,pet.sex,pet.size,pet.city].filter(Boolean);
  const date=pet.observedAt&&Number.isFinite(Date.parse(pet.observedAt))?new Date(pet.observedAt):null;
  return <Sheet full title={pet.name} reduced={reduced} onClose={onClose} footer={<View style={s.row}><Button style={{flex:1}} primary icon="heart-outline" label={saved?t('Išsaugota','Saved'):t('Išsaugoti','Save')} disabled={saved||!eligible(pet)} onPress={()=>onSave(pet)}/><Button style={{flex:1}} label={t('Susisiekti','Contact')} icon="chatbubble-outline" onPress={()=>onContact(pet)}/></View>}>
- <Photo pet={pet} height={320} gallery/><Status pet={pet} lang={lang}/><Text style={s.heading}>{pet.name}</Text>{known.length?<Text style={s.body}>{known.join(' · ')}</Text>:null}
+ <Photo lang={lang} pet={pet} height={320} gallery/><Status pet={pet} lang={lang}/><Text style={s.heading}>{pet.name}</Text>{known.length?<Text style={s.body}>{known.join(' · ')}</Text>:null}
  <Text style={s.body}>{pet.shelter?.name}</Text>{(lang==='lt'?pet.bioLt:pet.bioEn)?<Text style={s.body}>{lang==='lt'?pet.bioLt:pet.bioEn}</Text>:null}
  {Object.entries(pet.medical||{}).filter(([,value])=>typeof value==='boolean').map(([key,value])=><Text key={key} style={s.body}>{({chipped:t('Ženklintas','Microchipped'),vaccinated:t('Skiepytas','Vaccinated'),neutered:t('Sterilizuotas','Neutered')})[key]||key}: {value?t('Taip','Yes'):t('Ne','No')}</Text>)}
  <SourceLink url={pet.url} onError={onError}/>{date?<Text style={s.muted}>{t('Stebėta','Observed')}: {date.toLocaleString(lang==='lt'?'lt-LT':'en-GB')}</Text>:<Text style={s.muted}>{t('Stebėjimo laikas nežinomas.','Observation time unknown.')}</Text>}

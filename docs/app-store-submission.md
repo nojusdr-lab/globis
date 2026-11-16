@@ -41,3 +41,18 @@ Before submitting, append the models and iOS versions actually tested, plus the 
 | Pateikimas | Patikrinti vardą, kategoriją, amžiaus klausimyną, teisių deklaracijas, pasirašytą build’ą ir medžiagą prieš perduodant savininkui pateikti. |
 
 Dabartinės beta ribos aprašytos [leidimo paruošimo dokumente](release-readiness.md) ir [privatumo projekte](privacy.md). [„Apple“ versijos laukai](https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/) · [Pateikimo tvarka](https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-an-app/)
+
+## Pasirašyto iOS kandidato patikra
+
+Užfiksuok kandidato commit SHA, „App Store Connect“ build numerį, „iPhone“ modelį, iOS versiją ir bandymo datą. Kiekvieną eilutę pažymėk pagal faktinį rezultatą: praėjo, nepraėjo arba neišbandyta.
+
+| Veiksmas | Ko tikėtis |
+|---|---|
+| Atidaryti švariai įdiegtą programėlę | Įrenginyje rodoma GLOBIS ikona. Lietuvišką „Globoti“ ekraną galima atidaryti be paskyros. Sistemos juostos neuždengia navigacijos. |
+| Braukti į abi puses, paspausti „Atšaukti“ ir atidaryti gyvūno profilį | Kortelė pasikeičia pagal gestą. „Atšaukti“ grąžina ankstesnį pasirinkimą. Profilis ir galerijos valdikliai atsidaro be netyčinio braukimo veiksmo. |
+| Išsaugoti įrašą, užverti programėlę ir atidaryti iš naujo | Įrašas išlieka skiltyje „Išsaugoti“. Jį galima pašalinti. |
+| Pritaikyti filtrus ir atidaryti prieglaudos profilį | Kortelių ir tinklelio filtrai sutampa. Rezervuotas įrašas matomas prieglaudos profilyje su žyma, jei tokių įrašų yra kandidato rinkinyje. |
+| Atidaryti patvirtinto skelbimo šaltinį ir grįžti į GLOBIS | Atsiveria tinkamas originalus skelbimas. Grįžus programėlė veikia toliau. Kontaktą patikrink tik jei kandidato rinkinyje yra patvirtintas kontaktas. |
+| Įjungti „VoiceOver“, didesnį šriftą ir sumažintą judesį | Svarbiausi veiksmai turi suprantamus pavadinimus ir veikia paspaudimais. Didelis tekstas neuždengia veiksmų, animacija prisitaiko prie nustatymo. |
+| Išjungti ryšį ir atidaryti profilį | Išsaugoti pasirinkimai lieka pasiekiami. Negalint įkelti nuotraukos rodoma aiški būsena. |
+| Atidaryti „Apie GLOBIS“ ir užfiksuoti pateikimo ekranus | Privatumo ir palaikymo kontaktai pasiekiami. Ekranai užfiksuoti iš patikrinto kandidato su turiniu, kurį leidžiama viešinti. |

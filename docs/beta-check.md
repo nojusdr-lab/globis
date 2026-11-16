@@ -18,7 +18,7 @@ Reikia Python Playwright ir Chromium (testo aplinkoje `/usr/bin/chromium`). Jų 
 ## Neišbandyta / ribos
 
 - Nėra prijungto fizinio iOS / Android įrenginio ar native simuliatoriaus. Eksportas nėra įrodymas, kad native gestai, saugios zonos, klaviatūra, ekrano skaitytuvas ir SQLite išlikimas išbandyti įrenginyje.
-- Visi dabartinės kopijos gyvūnai turi vieną nuotrauką. Kelių nuotraukų valdikliai ir indekso atstatymas įgyvendinti, bet tikras kelių nuotraukų naršymo kelias nėra patikrintas su šia kopija.
+- Visi dabartinės kopijos gyvūnai turi po vieną nuotrauką. Kelių nuotraukų naršymui paruoštas atskiras „Chromium“ bandymas su sintetiniais vaizdais.
 - Kontaktai kopijoje sąmoningai tušti. Nebuvo siunčiami laiškai ar daromi skambučiai. Tikrų kontaktų mygtukai reikalauja kilmės įrodymo ir formato validacijos; šiuo metu kontaktuojama per šaltinį. Nuorodos / Share negalėjimas atidaryti rodo klaidą.
 - Dabartinė kopija neturi aiškiai patvirtintų skubos įrodymų. Skubos filtras todėl duoda 0; laukimo trukmė nepaverčiama išgalvota skuba.
 - Prieš viešą beta reikia savininko kanalo, privatumo ir palaikymo kontakto bei duomenų / nuotraukų naudojimo sprendimų. Live Globok ir Meta importai neįjungti.
@@ -26,3 +26,17 @@ Reikia Python Playwright ir Chromium (testo aplinkoje `/usr/bin/chromium`). Jų 
 ## Leidimo paruošimo papildoma patikra
 
 Vėlesnis susietas beta paruošimo PR: 36/36 Node testų; švarus `npm ci`; pakartoti visų platformų eksportai ir web beta. Papildomai patikrinta „Apie GLOBIS“ su aiškia nepaskelbto kontakto būsena bei sugadintos localStorage kopijos išlaikymas po Retry. Kai skaitymas vėl veikia, atkuriami tikri ankstesni pasirinkimai, o ne įrašoma tuščia būsena. Siaurame ekrane Resize patikra laukia React Native useWindowDimensions perskaičiavimo. Telefonų skambučių / laiškų ir native įrenginių testų tai nepakeičia.
+
+## Galerijos bandymas su sintetinėmis nuotraukomis
+
+Atskiroje vienkartinėje darbinėje kopijoje pirmojo `src/data/allPets.json` įrašo `photos` reikšmę pakeisk šiuo masyvu. Testinių nuorodų nekopijuok į paskelbiamų duomenų rinkinį.
+
+```json
+[
+  "https://globis-gallery.invalid/first.png",
+  "https://globis-gallery.invalid/missing.png",
+  "https://globis-gallery.invalid/third.png"
+]
+```
+
+Paleisk `npx expo export --platform web`, vietinį serverį kaip aprašyta aukščiau ir `python tests/browser/gallery.py`. Naršyklė perima visas tris užklausas vietoje. Patikrinama, kad po 404 galima atidaryti kitą nuotrauką, galerija veikia abiem kryptimis, iš naujo atidarytas profilis pradeda nuo pirmos nuotraukos ir angliški valdikliai atitinka pasirinktą kalbą.
