@@ -10,6 +10,7 @@
       "backgroundColor": "#F5F8F7"
     },
     "ios": {
+      "icon": "./assets/ios-app-icon.png",
       "supportsTablet": false,
       "bundleIdentifier": "com.myliutave.app"
     },

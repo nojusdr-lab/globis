@@ -35,7 +35,7 @@ Before submitting, append the models and iOS versions actually tested, plus the 
 |---|---|
 | Programėlės įrašas, iOS identifikatorius ir build’o numeris | Patikrinti esamą App Store Connect įrašą ir „Apple Developer“ komandą prieš tvirtinant identifikatorių, pasirašymą ir build’o numerį. |
 | Pasirašytas build’as ir vidinis bandymas | Iš pasirašyto kandidato atlikti vietinę arba TestFlight patikrą. Fiksuoti įrenginius, iOS versijas ir patikrintas sąveikas. |
-| Pateikimo ekrano nuotraukos ir ikona | Paruošti tinkamą iOS ikoną iš autentiško ženklo ir užfiksuoti ekranus iš realaus leidimo kandidato. |
+| Pateikimo ekrano nuotraukos ir ikona | Paruošta [1024 × 1024 RGB iOS ikona](../assets/ios-app-icon.png) iš originalaus GLOBIS ženklo. Patikrinti ikoną pasirašytame build’e ir užfiksuoti ekranus iš leidimo kandidato. |
 | Skelbimai ir nuotraukos | Patikrinti, kad leidimo kandidatas naudoja dokumentuotai leidžiamą duomenų rinkinį ir nuotraukas. |
 | Palaikymas, privatumas ir kontaktai | Patvirtinti atsakingą subjektą, palaikymo kontaktą bei veikiančius viešus URL. Užpildyti privatumo deklaraciją pagal galutinio build’o duomenų srautus. |
 | Pateikimas | Patikrinti vardą, kategoriją, amžiaus klausimyną, teisių deklaracijas, pasirašytą build’ą ir medžiagą prieš perduodant savininkui pateikti. |

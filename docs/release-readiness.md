@@ -8,7 +8,7 @@ Display name ir npm package pavadinimas pakeisti į GLOBIS / globis. UI, laišk�
 
 ## Originalūs failai
 
-Vizualiai patikrinti repo failai: `Code_Generated_Image.png` — 512×160 wordmark; `(1).png` — 512×512 programėlės ženklas; `(2)`, `(3)`, `(4)` — 400×333 ženklai. Naudojami originalai, ne generuota kopija. App icon ir favicon nukreipti į `(1).png`; pašalinta Expo starter adaptiveIcon konfigūracija, Android naudoja bendrą icon. **Parduotuvės pateikimas blokuotas**: prieš jį reikia patikrinti / paruošti 1024×1024 nepermatomą iOS ikoną ir Android mask / monochrome safe-zone rezultatą. Dabartinė 512 px ikona su apvaliais kampais nėra patvirtintas App Store asset.
+Vizualiai patikrinti repo failai: `Code_Generated_Image.png` — 512×160 wordmark; `(1).png` — 512×512 programėlės ženklas; `(2)`, `(3)`, `(4)` — 400×333 ženklai. Naudojami originalai, ne generuota kopija. iOS naudoja [1024 × 1024 RGB ikoną](../assets/ios-app-icon.png). Ji paruošta iš originalaus `(1).png` ženklo, skaidrius kampus užpildžius originalia #245B46 spalva. iOS pritaiko sistemos kampų formą. Galutinę išvaizdą dar reikia peržiūrėti pasirašytame build’e. Android ir web naudoja originalų 512 px failą. Prieš Android leidimą dar reikia patikrinti adaptuojamos ikonos ir monochrominės versijos saugias zonas.
 
 ## Prieš viešą beta
 
