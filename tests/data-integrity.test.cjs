@@ -9,7 +9,10 @@ test('reserved evidence is explicit and exclusions apply only to discovery', () 
   assert.equal(statusFromText('Ramus. REZERVUOTA.').status, 'reserved');
   assert.equal(statusFromText('Nerezervuotas.').status, 'unknown');
   assert.equal(statusFromText('Gali būti rezervuotas.').status, 'unknown');
-  assert.equal(eligible({ status: 'reserved' }), false);
+  for (const status of ['reserved', 'unavailable', 'stale', 'adopted']) {
+    assert.equal(eligible({ status }), false, status);
+  }
+  assert.equal(eligible({ status: 'unknown' }), true);
   const roster = shelterPets([{ shelter: { id: 'a' }, status: 'reserved' }, { shelter: { id: 'b' } }], 'a');
   assert.equal(roster.length, 1);
   assert.equal(roster[0].status, 'reserved');
