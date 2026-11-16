@@ -21,7 +21,7 @@ export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter
  const bio=lang==='lt'?pet.bioLt:pet.bioEn;
  const rows=facts(pet,lang);
  const questions=openQuestions(pet,lang);
- return <Sheet full title={pet.name} reduced={reduced} onClose={onClose} footer={<View style={s.row}>
+ return <Sheet full lang={lang} title={pet.name} reduced={reduced} onClose={onClose} footer={<View style={s.row}>
    <Button style={{flex:1}} icon={saved?'heart':'heart-outline'} selected={saved} label={saved?t('Išsaugota','Saved'):t('Išsaugoti','Save')}
     accessibilityLabel={saved?t('Išsaugota','Saved'):t('Išsaugoti','Save')} disabled={!saved&&!eligible(pet)} onPress={()=>saved?onRemove(pet):onSave(pet)}/>
    <Button style={{flex:1}} primary label={t('Susisiekti','Contact')} icon="call-outline" onPress={()=>onContact(pet)}/>
@@ -53,10 +53,10 @@ export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter
   </View>:null}
   <View style={s.section}>
    <Text style={s.sectionTitle}>{t('Šaltinis','Source')}</Text>
-   <SourceLink url={pet.url} onError={onError}/>
+   <SourceLink lang={lang} url={pet.url} onError={onError}/>
    {date?<Text style={s.muted}>{t('Stebėta','Observed')}: {date.toLocaleString(lang==='lt'?'lt-LT':'en-GB')}</Text>:<Text style={s.muted}>{t('Stebėjimo laikas nežinomas.','Observation time unknown.')}</Text>}
   </View>
-  <Button label={t('Dalintis skelbimu','Share listing')} icon="share-outline" onPress={()=>Share.share({message:`${pet.name} — ${pet.url}`}).catch(()=>onError('Nepavyko pasidalinti.'))}/>
+  <Button label={t('Dalintis skelbimu','Share listing')} icon="share-outline" onPress={()=>Share.share({message:`${pet.name} — ${pet.url}`}).catch(()=>onError(t('Nepavyko pasidalinti.','Could not share.')))}/>
  </Sheet>;
 }
 
@@ -73,17 +73,17 @@ export function ContactSheet({pet,onClose,reduced,onError,lang}) {
  const trusted=Boolean(shelter.contactEvidence);
  const tel=trusted?phone(shelter.phone):null,mail=trusted?email(shelter.email):null;
  const t=(lt,en)=>lang==='lt'?lt:en;
- return <Sheet title={t('Susisiekti su prieglauda','Contact shelter')} onClose={onClose} reduced={reduced}>
+ return <Sheet lang={lang} title={t('Susisiekti su prieglauda','Contact shelter')} onClose={onClose} reduced={reduced}>
   <View style={[s.org,{backgroundColor:C.surface2,borderColor:C.surface2}]}>
    <Avatar name={shelter.name}/>
    <View style={{flex:1,minWidth:0}}><Text style={s.title}>{shelter.name}</Text><Text style={s.muted}>{t('Dėl gyvūno','About')}: {pet.name}</Text></View>
   </View>
   <StatusNote pet={pet} lang={lang}/>
   {shelter.address?<Text selectable style={s.body}>{shelter.address}</Text>:null}
-  {tel?<ContactRow primary icon="call-outline" title={t('Skambinti','Call')} value={tel} onPress={()=>Linking.openURL(`tel:${tel}`).catch(()=>onError('Nepavyko pradėti skambučio.'))}/>:null}
-  {mail?<ContactRow primary={!tel} icon="mail-outline" title={t('Rašyti el. laišką','Email')} value={mail} onPress={()=>Linking.openURL(`mailto:${mail}?subject=${encodeURIComponent(`GLOBIS: ${pet.name}`)}`).catch(()=>onError('Nepavyko atidaryti pašto.'))}/>:null}
+  {tel?<ContactRow primary icon="call-outline" title={t('Skambinti','Call')} value={tel} onPress={()=>Linking.openURL(`tel:${tel}`).catch(()=>onError(t('Nepavyko pradėti skambučio.','Could not start the call.')))}/>:null}
+  {mail?<ContactRow primary={!tel} icon="mail-outline" title={t('Rašyti el. laišką','Email')} value={mail} onPress={()=>Linking.openURL(`mailto:${mail}?subject=${encodeURIComponent(`GLOBIS: ${pet.name}`)}`).catch(()=>onError(t('Nepavyko atidaryti pašto.','Could not open email.')))}/>:null}
   {!tel&&!mail?<Text style={s.body}>{t('Patvirtintų telefono ir el. pašto duomenų nėra. Kreipkitės per originalų šaltinį.','Verified phone and email are unavailable. Contact through the original source.')}</Text>:null}
-  <SourceLink url={pet.url} onError={onError}/><SourceLink url={shelter.url} label={t('Prieglaudos šaltinis','Shelter source')} onError={onError}/>
+  <SourceLink lang={lang} url={pet.url} onError={onError}/><SourceLink lang={lang} url={shelter.url} label={t('Prieglaudos šaltinis','Shelter source')} onError={onError}/>
   <Text style={s.muted}>{t('Rodomi tik prieglaudos paskelbti kontaktai.','Only contacts published by the shelter are shown.')}</Text>
  </Sheet>;
 }

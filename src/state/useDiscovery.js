@@ -1,11 +1,16 @@
 import { useEffect, useReducer, useState } from 'react';
-import { decode, emptyState, reducer } from './discovery.cjs';
+import { decode, emptyState, langFromLocale, reducer } from './discovery.cjs';
 import { read, write } from './storage';
 const KEY='globis.choices.v1';
+function deviceLocale() {
+  try { return (typeof navigator!=='undefined'&&navigator.language) || Intl.DateTimeFormat().resolvedOptions().locale; }
+  catch { return ''; }
+}
+// Errors are returned as codes so the screen can show them in the current language.
 export default function useDiscovery() {
   const [initial] = useState(()=>{
-    try { return {state:decode(read(KEY)),error:null}; }
-    catch { return {state:emptyState(),error:'Nepavyko perskaityti pasirinkimų. Esami duomenys neperrašyti.'}; }
+    try { const raw=read(KEY); return {state:raw==null?emptyState(langFromLocale(deviceLocale())):decode(raw),error:null}; }
+    catch { return {state:emptyState(langFromLocale(deviceLocale())),error:'read'}; }
   });
   const [state,dispatch]=useReducer(reducer,initial.state);
   const [error,setError]=useState(initial.error);
@@ -13,7 +18,7 @@ export default function useDiscovery() {
   useEffect(()=>{
     if(blocked) return;
     try { write(KEY,JSON.stringify(state)); setError(null); }
-    catch { setError('Nepavyko išsaugoti pasirinkimų šiame įrenginyje.'); }
+    catch { setError('write'); }
   },[state,blocked]);
   const retry=()=>{
     try {
@@ -24,7 +29,7 @@ export default function useDiscovery() {
         setBlocked(false);
       } else write(KEY,JSON.stringify(state));
       setError(null);
-    } catch {setError('Vietinė saugykla vis dar nepasiekiama arba duomenys netinkami. Esami duomenys neperrašyti.');}
+    } catch {setError('retry');}
   };
   return {state,dispatch,error,retry};
 }

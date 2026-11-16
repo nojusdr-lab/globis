@@ -29,7 +29,7 @@ Patikrinta pagal Apple taisyklių sąrašą („app-store-preflight“) ir Googl
 
 ## Prieinamumo ir vertimų spragos (perduoti UI perkėlimo darbui)
 
-Kodas šiame darbe nekeistas, nes ekranus dabar perrašo kitas darbas.
+**Sutaisyta 2026-11-16** (vertimų ir prieinamumo PR): visos lentelės eilutės, taip pat 4 ir 5 įspėjimai. „Apie“ lange nebėra žodžio „beta“. Šriftų ribos: mygtukai, žymos ir apatinė navigacija auga iki 1,3–1,4 karto, kad netrūktų 375 × 667 ekrane. Kalba pirmą kartą parenkama pagal telefoną: lietuviška arba nežinoma kalba reiškia LT, kita kalba reiškia EN.
 
 | Vieta | Problema |
 |---|---|

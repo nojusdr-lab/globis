@@ -9,7 +9,7 @@ export function Button({label,icon,onPress,primary=false,soft=false,disabled=fal
  return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={accessibilityLabel||label} accessibilityState={{disabled,selected}} disabled={disabled} onPress={onPress}
   style={({pressed})=>[s.button,soft&&s.soft,primary&&s.primary,selected&&s.selected,disabled&&s.disabled,pressed&&{opacity:0.8,transform:[{scale:0.97}]},style]}>
   {icon?<Ionicons name={icon} size={20} color={light?C.white:C.green}/>:null}
-  {label&&!compact?<Text style={[s.buttonText,light&&s.primaryText]}>{label}</Text>:null}
+  {label&&!compact?<Text maxFontSizeMultiplier={1.4} style={[s.buttonText,light&&s.primaryText]}>{label}</Text>:null}
  </Pressable>;
 }
 
@@ -23,8 +23,8 @@ export function IconButton({icon,label,onPress,style,color=C.ink,size=22,disable
 export function Chip({label,count,selected,onPress}) {
  return <Pressable accessibilityRole="button" accessibilityLabel={label} accessibilityState={{selected:!!selected}} onPress={onPress}
   style={({pressed})=>[s.chip,selected&&s.chipOn,pressed&&{opacity:0.8}]}>
-  <Text style={[s.chipText,selected&&s.chipTextOn]}>{label}</Text>
-  {count!=null?<Text style={[s.chipCount,selected&&s.chipCountOn]}>{count}</Text>:null}
+  <Text maxFontSizeMultiplier={1.4} style={[s.chipText,selected&&s.chipTextOn]}>{label}</Text>
+  {count!=null?<Text maxFontSizeMultiplier={1.4} style={[s.chipCount,selected&&s.chipCountOn]}>{count}</Text>:null}
  </Pressable>;
 }
 
@@ -81,7 +81,7 @@ export function Status({pet,lang='lt',small=false}) {
  const st=statusInfo(pet,lang);const [bg,ink]=TONES[st.tone];
  return <View style={[s.status,{backgroundColor:bg},small&&{height:24}]}>
   <Ionicons name={st.icon} size={small?12:14} color={ink}/>
-  <Text style={[s.statusText,{color:ink},small&&{fontSize:11.5}]} numberOfLines={1}>{st.label}</Text>
+  <Text maxFontSizeMultiplier={1.3} style={[s.statusText,{color:ink},small&&{fontSize:11.5}]} numberOfLines={1}>{st.label}</Text>
  </View>;
 }
 export function StatusNote({pet,lang='lt'}) {
@@ -102,16 +102,17 @@ export function Empty({title,body,action,onAction,icon='paw-outline',secondary,o
  </View>;
 }
 
-export function Sheet({title,children,footer,onClose,reduced=false,full=false}) {
+export function Sheet({title,children,footer,onClose,reduced=false,full=false,lang='lt'}) {
  const insets=useSafeAreaInsets();
+ const lt=lang==='lt';
  return <Modal visible transparent animationType={reduced?'none':'slide'} onRequestClose={onClose}>
   <View style={[s.modal,{paddingTop:insets.top}]}>
-   <Pressable accessibilityLabel="Uždaryti skydelį" accessibilityRole="button" onPress={onClose} style={s.backdrop}/>
+   <Pressable accessibilityLabel={lt?'Uždaryti skydelį':'Close panel'} accessibilityRole="button" onPress={onClose} style={s.backdrop}/>
    <View accessibilityViewIsModal style={[s.sheet,full&&{height:'94%'}]}>
     <View style={s.grab}/>
     <View style={s.sheetHeader}>
-     <Text accessibilityRole="header" style={s.sheetTitle} numberOfLines={2}>{title}</Text>
-     <Pressable accessibilityRole="button" accessibilityLabel="Uždaryti" onPress={onClose} style={({pressed})=>[s.iconButton,{backgroundColor:C.surface2,width:44,height:44},pressed&&{opacity:0.7}]}>
+     <Text accessibilityRole="header" maxFontSizeMultiplier={1.6} style={s.sheetTitle} numberOfLines={2}>{title}</Text>
+     <Pressable accessibilityRole="button" accessibilityLabel={lt?'Uždaryti':'Close'} onPress={onClose} style={({pressed})=>[s.iconButton,{backgroundColor:C.surface2,width:44,height:44},pressed&&{opacity:0.7}]}>
       <Ionicons name="close" size={20} color={C.ink}/>
      </Pressable>
     </View>
@@ -122,8 +123,10 @@ export function Sheet({title,children,footer,onClose,reduced=false,full=false}) 
  </Modal>;
 }
 
-export function SourceLink({url,label='Originalus skelbimas',onError}) {
- return url&&/^https?:\/\//.test(url)?<Pressable accessibilityRole="link" accessibilityLabel={label} onPress={()=>Linking.openURL(url).catch(()=>onError?.('Nepavyko atidaryti nuorodos.'))} style={{minHeight:48,justifyContent:'center'}}><Text selectable style={s.link}>{label} ↗</Text></Pressable>:null;
+export function SourceLink({url,label,onError,lang='lt'}) {
+ const lt=lang==='lt';
+ label=label||(lt?'Originalus skelbimas':'Original listing');
+ return url&&/^https?:\/\//.test(url)?<Pressable accessibilityRole="link" accessibilityLabel={label} onPress={()=>Linking.openURL(url).catch(()=>onError?.(lt?'Nepavyko atidaryti nuorodos.':'Could not open the link.'))} style={{minHeight:48,justifyContent:'center'}}><Text selectable style={s.link}>{label} ↗</Text></Pressable>:null;
 }
 
 export const initials=name=>String(name||'').replace(/[„“"()]/g,'').replace(/^(VšĮ|Asociacija|Gyvūnų globos draugija)\s+/i,'')
