@@ -1,5 +1,7 @@
 # GLOBIS beta leidimo paruošimas
 
+> Naujausia parduotuvių būsena ir sąrašas, ko reikia iš savininko: [docs/store/README.md](store/README.md).
+
 Paruošta vietinė versija: package `1.1.0-beta.1`, native marketing version `1.1.0`. Native versijoje naudojama tik skaitinė forma, tinkama vėlesniam store pateikimui. Tai nėra parduotuvėje paskelbtas leidimas. EAS projektas, viešas kanalas, paskyros ir produkcinė paslauga nesukurti.
 
 ## Tapatybė
@@ -8,7 +10,7 @@ Display name ir npm package pavadinimas pakeisti į GLOBIS / globis. UI, laišk�
 
 ## Originalūs failai
 
-Vizualiai patikrinti repo failai: `Code_Generated_Image.png` — 512×160 wordmark; `(1).png` — 512×512 programėlės ženklas; `(2)`, `(3)`, `(4)` — 400×333 ženklai. Naudojami originalai, ne generuota kopija. iOS naudoja [1024 × 1024 RGB ikoną](../assets/ios-app-icon.png). Ji paruošta iš originalaus `(1).png` ženklo, skaidrius kampus užpildžius originalia #245B46 spalva. iOS pritaiko sistemos kampų formą. Galutinę išvaizdą dar reikia peržiūrėti pasirašytame build’e. Android ir web naudoja originalų 512 px failą. Prieš Android leidimą dar reikia patikrinti adaptuojamos ikonos ir monochrominės versijos saugias zonas.
+Vizualiai patikrinti repo failai: `Code_Generated_Image.png` — 512×160 wordmark; `(1).png` — 512×512 programėlės ženklas; `(2)`, `(3)`, `(4)` — 400×333 ženklai. Naudojami originalai, ne generuota kopija. iOS naudoja [1024 × 1024 RGB ikoną](../assets/ios-app-icon.png). Ji paruošta iš originalaus `(1).png` ženklo, skaidrius kampus užpildžius originalia #245B46 spalva. iOS pritaiko sistemos kampų formą. Galutinę išvaizdą dar reikia peržiūrėti pasirašytame build’e. Android adaptuojama ikona (su monochromine versija), paleidimo ekranas ir web favicon sugeneruoti iš to paties originalaus ženklo (2026-11-16); saugias zonas dar patikrinti įrenginyje.
 
 ## Prieš viešą beta
 

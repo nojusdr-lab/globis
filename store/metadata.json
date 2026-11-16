@@ -1,0 +1,35 @@
+{
+  "_note": "Parduotuvių tekstų juodraštis. Prieš pateikiant peržiūri savininkas. Skaičiai, atsiliepimai ar neįrodyti teiginiai čia nerašomi. Ribas tikrina tests/store-metadata.test.cjs.",
+  "apple": {
+    "primaryCategory": "LIFESTYLE",
+    "secondaryCategory": "REFERENCE",
+    "ageRating": "4+",
+    "locales": {
+      "en-GB": {
+        "name": "GLOBIS",
+        "subtitle": "Adopt a pet in Lithuania",
+        "promotionalText": "Find dogs and cats waiting in Lithuanian shelters. Save the ones you like on your phone and open the shelter's original listing to ask about adoption.",
+        "keywords": "adoption,rescue,shelter,dog,cat,puppy,kitten,Lithuania,animal,gyvūnai,prieglauda,šuo,katė,globa",
+        "description": "GLOBIS helps you find a dog or cat to adopt from shelters in Lithuania.\n\nBROWSE YOUR WAY\nSwipe through pet cards one by one, or switch to a grid and see many at once. Filter by animal type and city.\n\nSAVE A SHORTLIST\nSave the pets you like. Your shortlist stays on your phone, and you do not need an account.\n\nHONEST INFORMATION\nGLOBIS shows only what the shelter's listing says. When a detail such as age or health is not stated, GLOBIS does not guess it. Reserved pets are marked, and availability that has not been confirmed is labelled as such.\n\nFIND SHELTERS\nSearch the shelter directory and see the listings linked to each shelter.\n\nCONTACT THE SHELTER\nOpen the original listing to ask about a pet. Adoption is arranged directly with the shelter, outside the app.\n\nThe app is in Lithuanian and English.",
+        "whatsNew": "First release.",
+        "reviewNotes": "See docs/store/review-notes.md"
+      }
+    }
+  },
+  "google": {
+    "category": "LIFESTYLE",
+    "contentRating": "Everyone (IARC questionnaire to be completed by owner)",
+    "locales": {
+      "lt-LT": {
+        "title": "GLOBIS: gyvūnų globa",
+        "shortDescription": "Šunys ir katės iš Lietuvos prieglaudų. Išsisaugok ir susisiek su prieglauda.",
+        "fullDescription": "GLOBIS padeda rasti šunį ar katę, kurį galima globoti ar įsivaikinti iš Lietuvos prieglaudų.\n\nNARŠYK, KAIP PATOGU\nVartyk gyvūnų korteles po vieną arba perjunk į tinklelį ir matyk daug iš karto. Rinkis gyvūno rūšį ir miestą.\n\nIŠSISAUGOK PATIKUSIUS\nPatikę gyvūnai lieka tavo telefone. Paskyros kurti nereikia.\n\nTIK TIKRA INFORMACIJA\nGLOBIS rodo tik tai, kas parašyta prieglaudos skelbime. Jei amžius ar sveikata nenurodyti, GLOBIS jų nespėlioja. Rezervuoti gyvūnai pažymėti, o nepatvirtintas prieinamumas taip ir parašytas.\n\nRASK PRIEGLAUDĄ\nIeškok prieglaudų sąraše ir matyk su kiekviena susijusius skelbimus.\n\nSUSISIEK SU PRIEGLAUDA\nAtidaryk originalų skelbimą ir paklausk apie gyvūną. Dėl įvaikinimo tariamasi tiesiogiai su prieglauda, ne programėlėje.\n\nProgramėlė veikia lietuvių ir anglų kalbomis."
+      },
+      "en-GB": {
+        "title": "GLOBIS: adopt a pet",
+        "shortDescription": "Dogs and cats from Lithuanian shelters. Save a shortlist, contact the shelter.",
+        "fullDescription": "GLOBIS helps you find a dog or cat to adopt from shelters in Lithuania.\n\nBROWSE YOUR WAY\nSwipe through pet cards one by one, or switch to a grid and see many at once. Filter by animal type and city.\n\nSAVE A SHORTLIST\nSave the pets you like. Your shortlist stays on your phone, and you do not need an account.\n\nHONEST INFORMATION\nGLOBIS shows only what the shelter's listing says. When a detail such as age or health is not stated, GLOBIS does not guess it. Reserved pets are marked, and availability that has not been confirmed is labelled as such.\n\nFIND SHELTERS\nSearch the shelter directory and see the listings linked to each shelter.\n\nCONTACT THE SHELTER\nOpen the original listing to ask about a pet. Adoption is arranged directly with the shelter, outside the app.\n\nThe app is in Lithuanian and English."
+      }
+    }
+  }
+}
