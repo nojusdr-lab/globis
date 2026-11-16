@@ -18,15 +18,17 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "node --test tests/*.test.cjs scripts/discovery-engine/*.test.cjs",
+    "test": "node --test tests/*.test.cjs scripts/discovery-engine/*.test.cjs scripts/scrapers/tests/*.test.cjs",
     "check:data": "node --test tests/*.test.cjs",
-    "build": "expo export --platform all"
+    "build": "expo export --platform all",
+    "scrape": "node scripts/scrapers/run.cjs"
   },
   "private": true,
   "engines": {
     "node": ">=22.13.0"
   },
   "devDependencies": {
-    "@electric-sql/pglite": "^0.2.17"
+    "@electric-sql/pglite": "^0.2.17",
+    "cheerio": "^1.2.0"
   }
 }

@@ -25,3 +25,6 @@ yarn-error.log*
 # Environment variables
 .env
 .env*.local
+
+# Scraper output (published to Supabase/artifacts, not to git)
+data/scraped/
