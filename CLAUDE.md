@@ -25,6 +25,8 @@ Dizainas ir prekės ženklas yra keičiami. Dabartinė kryptis: žalia `#245B46`
 
 ## Darbo tvarka
 
+„Claude Code“ vadovauja GLOBIS techniniam įgyvendinimui. „Codex“ yra antrasis kūrėjas, kuris tęsia savininko paskirtas užduotis, kai „Claude Code“ pasiekia naudojimo limitą. Grįžęs į darbą, „Claude Code“ patikrina naujus commitus, atvirus PR ir [koordinavimo temą #1](https://github.com/nojusdr-lab/globis/issues/1), kad perimtų naujausią būseną ir nedubliuotų pakeitimų. „Codex“ ten palieka nuorodą į savo PR, pakeitimų santrauką ir testų rezultatus.
+
 - Niekada tiesiai į `main`. Atskira šaka ir PR. Jungti tik kai testai žali ir pakeitimas peržiūrėtas.
 - Savininko sprendimo reikia: mokamoms paslaugoms, išorinių paskyrų kūrimui, raktams ir slaptažodžiams, leidimui į gamybą ar parduotuves, destruktyviems repo veiksmams.
 - Ataskaitos savininkui trumpos, lietuviškai, be žargono.
