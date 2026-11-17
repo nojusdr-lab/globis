@@ -169,3 +169,9 @@ test('fetcher: follows robots.txt redirect http -> https on a declared host', as
   assert.equal((await f.get('http://a.lt/page')).body, 'ok');
   await assert.rejects(f.get('http://a.lt/x'), e => e.code === 'robots');
 });
+
+test('cleanText decodes numeric and named HTML entities in one pass', () => {
+  const { cleanText } = require('../lib/normalize.cjs');
+  assert.equal(cleanText('naujokus&#8230; &#x41;&scaron;&nbsp;&amp;#8230;'), 'naujokus… Aš &#8230;');
+  assert.equal(cleanText('a &bogus; b &#0; c'), 'a &bogus; b &#0; c');
+});

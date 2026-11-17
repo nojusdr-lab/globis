@@ -4,13 +4,19 @@
 
 const fold = s => String(s ?? '').toLowerCase().normalize('NFC').replace(/\s+/g, ' ').trim();
 
+const NAMED = { nbsp: ' ', amp: '&', quot: '"', lt: '<', gt: '>', apos: "'", ndash: '–', mdash: '—', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', laquo: '«', raquo: '»', hellip: '…', scaron: 'š', Scaron: 'Š' };
+// One pass, so "&amp;#8230;" stays literal text instead of being decoded twice.
+function decodeEntities(text) {
+  return text.replace(/&(?:#(\d{1,7})|#[xX]([0-9a-fA-F]{1,6})|([a-zA-Z]+));/g, (m, dec, hex, name) => {
+    if (name) return Object.hasOwn(NAMED, name) ? NAMED[name] : m;
+    const cp = dec ? Number(dec) : parseInt(hex, 16);
+    return cp > 0 && cp <= 0x10ffff && !(cp >= 0xd800 && cp <= 0xdfff) ? String.fromCodePoint(cp) : m;
+  });
+}
+
 function cleanText(value) {
   if (value == null) return null;
-  const text = String(value)
-    .replace(/<[^>]*>/g, ' ')
-    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#8211;|&ndash;/g, '–')
-    .replace(/&#8217;|&rsquo;/g, '’').replace(/&quot;/g, '"').replace(/&#0?39;/g, "'")
-    .replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  const text = decodeEntities(String(value).replace(/<[^>]*>/g, ' '))
     .replace(/\s+/g, ' ').trim();
   return text || null;
 }
