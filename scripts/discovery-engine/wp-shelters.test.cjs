@@ -1,7 +1,9 @@
-// Synthetic WordPress REST responses only. No network: fetch is injected.
+// WordPress shelter adapters. Synthetic WordPress REST responses only. No network: fetch is injected.
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { parsePost, collect, SOURCE } = require('./lietuva-gyvunams.cjs');
+const kggn = require('./kggn.cjs');
+const sos = require('./sos-gyvunai.cjs');
 
 const post = (id, slug, over = {}) => ({
   id, slug, link: `https://lietuvagyvunams.com/${slug}/`,
@@ -109,4 +111,53 @@ test('waits between requests', async () => {
   const { fetch } = fakeFetch([[post(1, 'a')], [post(2, 'b')]]);
   await collect(opts({ fetch, perPage: 1, sleep: async ms => { waits.push(ms); } }));
   assert.ok(waits.length >= 2 && waits.every(ms => ms >= 2000));
+});
+
+// KGGN and SOS gyvūnai use the same reader; their facts come from the site's own categories.
+const embedded = (terms, photo) => ({
+  'wp:term': terms.map(([taxonomy, slug, name]) => [{ taxonomy, slug, name }]),
+  ...(photo ? { 'wp:featuredmedia': [{ source_url: photo }] } : {}),
+});
+const kggnPost = (terms, over = {}) => ({
+  id: 2640, link: 'https://kggn.lt/globotiniai/kovas/', modified: '2025-02-05T09:38:59',
+  title: { rendered: 'KOVAS' }, content: { rendered: '<p>Draugiškas.</p>' },
+  _embedded: embedded(terms, 'https://kggn.lt/wp-content/uploads/2025/02/kovas-scaled.jpg'), ...over,
+});
+
+test('KGGN: species, sex, age and status come from the site categories', () => {
+  const pet = kggn.parsePost(kggnPost([['gyvunas', 'suo', 'Šuo'], ['lytis', 'patinas', 'Patinas'],
+    ['statusas', 'dovanojamas', 'Dovanojamas'], ['amzius', '2-3metai', '2-3metai']]), 'x');
+  assert.deepEqual([pet.id, pet.species, pet.sex, pet.ageText, pet.status, pet.shelter.id],
+    ['kggn:2640', 'dog', 'male', '2-3metai', 'available', 'kggnlt']);
+  assert.deepEqual(pet.photos, ['https://kggn.lt/wp-content/uploads/2025/02/kovas-scaled.jpg']);
+  const bare = kggn.parsePost(kggnPost([['statusas', 'dovanojamas', 'Dovanojamas']]), 'x');
+  assert.deepEqual([bare.species, bare.sex, bare.ageText], [null, null, null]);
+  assert.throws(() => kggn.parsePost(kggnPost([['statusas', 'rado-namus', 'Rado namus']]), 'x'), /Dovanojamas/);
+  assert.throws(() => kggn.parsePost(kggnPost([]), 'x'), /Dovanojamas/);
+});
+
+test('SOS gyvūnai: species and age group only; status stays unknown', () => {
+  const sosPost = terms => ({
+    id: 4468, link: 'https://sos-gyvunai.lt/imbieras/', modified: '2026-11-13T16:46:54',
+    title: { rendered: 'Imbieras' }, content: { rendered: '<p>Atvyko jau kastruotas.</p>' },
+    _embedded: embedded(terms, 'https://evil.example/x.jpg'),
+  });
+  const pet = sos.parsePost(sosPost([['gyvunai', 'visi-gyvunai', 'Visi gyvūnai'], ['gyvunai', 'kates', 'Katės'],
+    ['gyvunai', 'kates-suaugusios', 'Katės suaugusios']]), 'x');
+  assert.deepEqual([pet.species, pet.ageText, pet.sex, pet.status, pet.statusEvidence, pet.medical.neutered],
+    ['cat', 'Suaugęs', null, 'unknown', null, null]);
+  assert.deepEqual(pet.photos, []);
+  const mixed = sos.parsePost(sosPost([['gyvunai', 'kates', 'Katės'], ['gyvunai', 'sunys-jauni', 'Šunys jauni']]), 'x');
+  assert.equal(mixed.species, null);
+});
+
+test('honours Crawl-delay from robots.txt', async () => {
+  const waits = [];
+  const fetch = async url => url.endsWith('/robots.txt')
+    ? { status: 200, text: async () => 'User-agent: *\nCrawl-delay: 10\n' }
+    : { status: 200, headers: new Map([['x-wp-total', '1'], ['x-wp-totalpages', '1']]),
+        json: async () => [kggnPost([['statusas', 'dovanojamas', 'Dovanojamas']])] };
+  const run = await kggn.collect(opts({ fetch, sleep: async ms => { waits.push(ms); } }));
+  assert.equal(run.state, 'complete');
+  assert.deepEqual(waits, [10000]);
 });

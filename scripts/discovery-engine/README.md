@@ -1,15 +1,19 @@
 # Discovery Engine B1
 
-## Lietuva gyvūnams adapteris
+## Prieglaudų svetainių adapteriai
 
-`lietuva-gyvunams.cjs` skaito viešą „Lietuva gyvūnams“ katalogą (WordPress REST, kategorija „Ieško namų“). Prieš tai patikrina `robots.txt`, tarp užklausų laukia 2 s, kreipiasi tik į tą pačią svetainę. Svetainėje nėra lyties, dydžio ar rūšies laukų, todėl jie lieka `null`. Bet kokia klaida ar įrašų skaičiaus neatitikimas atmeta visą paleidimą. Adapteris tik atspausdina JSON ir nieko nerašo į programėlės duomenis.
+Trys adapteriai skaito viešus prieglaudų katalogus per WordPress REST. Bendra dalis yra `wp-rest.cjs`: prieš skaitymą patikrina `robots.txt` (ir jo `Crawl-delay`), tarp užklausų laukia bent 2 s, kreipiasi tik į tą pačią svetainę. Bet kokia klaida ar įrašų skaičiaus neatitikimas atmeta visą paleidimą. Adapteriai tik atspausdina JSON ir nieko nerašo į programėlės duomenis.
+
+- `lietuva-gyvunams.cjs`: kategorija „Ieško namų“. Lyties, dydžio ir rūšies laukų nėra, jie lieka `null`.
+- `kggn.cjs`: tik gyvūnai su svetainės statusu „Dovanojamas“. Rūšis, lytis ir amžius iš svetainės kategorijų.
+- `sos-gyvunai.cjs`: rūšis ir amžiaus grupė iš kategorijų. Statuso svetainėje nėra, todėl lieka „nežinoma“.
 
 ```sh
-node --test scripts/discovery-engine/lietuva-gyvunams.test.cjs   # be tinklo
-node scripts/discovery-engine/lietuva-gyvunams.cjs               # tikras skaitymas
+node --test scripts/discovery-engine/wp-shelters.test.cjs   # be tinklo
+node scripts/discovery-engine/collect.cjs kggn              # tikras skaitymas
 ```
 
-GitHub: Actions → „Collect Lietuva gyvunams (preview only)“ → Run workflow. Rezultatas pridedamas kaip failas peržiūrai.
+GitHub: Actions → „Collect shelter source (preview only)“ → Run workflow. Rezultatas pridedamas kaip failas peržiūrai.
 
 ## C1. Meta Page adapterio karkasas
 
