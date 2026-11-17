@@ -10,8 +10,9 @@ import {PETS} from '../data/pets';
 import organizations from '../data/shelters.json';
 import {defaults,selectPets,roster,activeFilters,pl} from './selectors.cjs';
 import {C,styles as s} from './theme';
-import {Avatar,Button,Chip,Empty,HeartButton,IconButton,Photo,Sheet,SourceLink,Status} from './ui';
+import {Avatar,Button,Empty,HeartButton,Photo,Sheet,SourceLink,Status} from './ui';
 import FilterSheet from './FilterSheet';
+import {expo as config} from '../../app.json';
 import AboutSheet from './AboutSheet';
 import {PetProfile,ContactSheet} from './Profiles';
 
@@ -52,7 +53,6 @@ function AppContent() {
  const filtered=useMemo(()=>selectPets(PETS,filters),[filters]);
  const pending=useMemo(()=>filtered.filter(p=>!state.saved.includes(p.id)&&!state.passed.includes(p.id)),[filtered,state.saved,state.passed]);
  const saved=useMemo(()=>state.saved.map(id=>PETS.find(p=>p.id===id)).filter(Boolean),[state.saved]);
- const speciesCount=useMemo(()=>{const base=selectPets(PETS,{...filters,species:'all'});return {all:base.length,dog:base.filter(p=>p.species==='dog').length,cat:base.filter(p=>p.species==='cat').length};},[filters]);
  const notify=value=>{clearTimeout(timer.current);setToast(typeof value==='string'?{text:value}:value);timer.current=setTimeout(()=>setToast(null),5000);};
  const isSaved=id=>state.saved.includes(id);
  const save=pet=>{if(!eligible(pet))return;dispatch({type:'save',id:pet.id});notify({text:t(`Išsaugota: ${pet.name}`,`Saved: ${pet.name}`),action:t('Atšaukti','Undo'),actionLabel:t('Atšaukti išsaugojimą','Undo save'),run:()=>dispatch({type:'undo'})});};
@@ -60,7 +60,6 @@ function AppContent() {
  const pass=pet=>{dispatch({type:'pass',id:pet.id});};
  const columns=width>900?4:width>600?3:2;
  const nf=activeFilters(filters);
- const setQuery=query=>setFilters(f=>({...f,query}));
  const resetAll=()=>{setFilters({...defaults});dispatch({type:'resetPassed'});};
 
  const petItem=(pet,inSaved=false)=><View style={s.gcard}>
@@ -86,7 +85,7 @@ function AppContent() {
   contentContainerStyle={{paddingHorizontal:10,paddingBottom:24}} renderItem={({item})=>petItem(item,inSaved)} ListEmptyComponent={noMatches}
   initialNumToRender={8} windowSize={7} removeClippedSubviews/>;
 
- const shelters=useMemo(()=>organizations.map(org=>{const pets=roster(PETS,org.id),active=pets.filter(eligible);return {...org,pets,active:active.length,matching:active.filter(p=>filters.species==='all'||p.species===filters.species).length};}).filter(org=>org.name.toLocaleLowerCase('lt').includes(search.toLocaleLowerCase('lt'))&&(filters.species==='all'||org.matching>0)&&(filters.city==='all'||org.city===filters.city)).sort((a,b)=>b.active-a.active),[search,filters]);
+ const shelters=useMemo(()=>organizations.map(org=>{const pets=roster(PETS,org.id),active=pets.filter(eligible);return {...org,pets,active:active.length,matching:active.filter(p=>filters.species==='all'||p.species===filters.species).length};}).filter(org=>[org.name,org.city].join(' ').toLocaleLowerCase('lt').includes(search.toLocaleLowerCase('lt'))&&(filters.species==='all'||org.matching>0)&&(filters.city==='all'||org.city===filters.city)).sort((a,b)=>b.active-a.active),[search,filters]);
  const shelter=shelterId?(()=>{const org=organizations.find(o=>o.id===shelterId);if(!org)return null;const pets=roster(PETS,org.id);return {...org,pets,active:pets.filter(eligible).length};})():null;
 
  const top=pending[0];
@@ -97,32 +96,11 @@ function AppContent() {
    <Pressable accessibilityRole="button" accessibilityLabel={t('Apie GLOBIS','About GLOBIS')} onPress={()=>setAbout(true)} style={{minHeight:48,justifyContent:'center'}}>
     <Image source={require('../../Code_Generated_Image.png')} accessibilityLabel="GLOBIS" style={[s.logo,width<360&&{width:100}]} resizeMode="contain"/>
    </Pressable>
-   <View style={s.row}>
-    <Button label={lang.toUpperCase()} accessibilityLabel={t('Kalba: lietuvių. Perjungti į anglų','Language: English. Switch to Lithuanian')} onPress={()=>dispatch({type:'language',lang:lang==='lt'?'en':'lt'})} style={{minWidth:52,paddingHorizontal:12}}/>
-    <IconButton icon="information-circle-outline" label={t('Apie programėlę','About the app')} onPress={()=>setAbout(true)}/>
-   </View>
   </View>
 
   {error?<View style={s.banner}><Text accessibilityRole="alert" style={[s.body,{color:C.warnInk}]}>{{read:t('Nepavyko perskaityti pasirinkimų. Esami duomenys neperrašyti.','Could not read your saved choices. Existing data was not overwritten.'),write:t('Nepavyko išsaugoti pasirinkimų šiame įrenginyje.','Could not save your choices on this device.'),retry:t('Vietinė saugykla vis dar nepasiekiama arba duomenys netinkami. Esami duomenys neperrašyti.','Local storage is still unavailable or the data is invalid. Existing data was not overwritten.')}[error]||error}</Text><Button label={t('Bandykite dar kartą','Retry')} onPress={retry} style={{alignSelf:'flex-start'}}/></View>:null}
 
   {tab==='discover'?<>
-   <View style={s.toolbar}>
-    <View style={s.search}>
-     <Ionicons name="search" size={19} color={C.muted}/>
-     <TextInput accessibilityLabel={t('Ieškoti gyvūnų','Search animals')} placeholder={t('Vardas, miestas, prieglauda','Name, city, shelter')} placeholderTextColor={C.muted}
-      value={filters.query} onChangeText={setQuery} style={s.searchInput} returnKeyType="search" autoCorrect={false}/>
-     {filters.query?<IconButton icon="close" size={18} color={C.muted} label={t('Išvalyti paiešką','Clear search')} onPress={()=>setQuery('')} style={{width:40,height:40}}/>:null}
-    </View>
-    <Pressable accessibilityRole="button" accessibilityLabel={t('Filtrai','Filters')} accessibilityHint={nf?t(`Aktyvūs filtrai: ${nf}`,`Active filters: ${nf}`):undefined} onPress={()=>setFilterOpen(true)} style={({pressed})=>[s.filterBtn,nf&&s.filterBtnOn,pressed&&{opacity:0.8}]}>
-     <Ionicons name="options-outline" size={21} color={nf?C.white:C.ink}/>
-     {nf?<View style={s.countBadge}><Text style={s.countBadgeText}>{nf}</Text></View>:null}
-    </Pressable>
-   </View>
-   <View style={[s.toolbar,{paddingBottom:10}]}>
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{gap:6,paddingRight:4}} style={{flex:1}}>
-     {[['all',t('Visi','All')],['dog',t('Šunys','Dogs')],['cat',t('Katės','Cats')]].map(([id,label])=><Chip key={id} label={label} count={speciesCount[id]} selected={filters.species===id} onPress={()=>setFilters(f=>({...f,species:id}))}/>)}
-    </ScrollView>
-   </View>
 
    {top?<ScrollView contentContainerStyle={{paddingHorizontal:16,paddingBottom:16,width:'100%',maxWidth:480,alignSelf:'center'}}>
      <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
@@ -165,14 +143,14 @@ function AppContent() {
    <View style={s.toolbar}>
     <View style={s.search}>
      <Ionicons name="search" size={19} color={C.muted}/>
-     <TextInput accessibilityLabel={t('Ieškoti prieglaudos','Search shelters')} placeholder={t('Ieškoti pagal pavadinimą','Search by name')} placeholderTextColor={C.muted} value={search} onChangeText={setSearch} style={s.searchInput} autoCorrect={false}/>
+     <TextInput accessibilityLabel={t('Ieškoti prieglaudos','Search shelters')} placeholder={t('Pavadinimas arba miestas','Name or city')} placeholderTextColor={C.muted} value={search} onChangeText={setSearch} style={s.searchInput} autoCorrect={false}/>
     </View>
    </View>
    <FlatList keyboardShouldPersistTaps="handled" data={shelters} keyExtractor={org=>org.id} contentContainerStyle={{paddingHorizontal:16,paddingBottom:24,gap:10}}
     renderItem={({item,index})=><View style={{gap:10}}>
      {item.active===0&&(index===0||shelters[index-1].active>0)?<Text style={[s.sectionTitle,{marginTop:8}]}>{t('Be aktyvių Globis skelbimų','No active Globis listings')}</Text>:null}
      <Pressable accessibilityRole="button" accessibilityLabel={`${item.name}, ${item.city||''}`} onPress={()=>setShelterId(item.id)} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]}>
-      <Avatar name={item.name}/>
+      <Avatar name={item.name} logo={item.logo}/>
       <View style={{flex:1,minWidth:0,gap:4}}>
        <Text style={s.title}>{item.name}</Text>
        {item.city?<Text style={s.muted}>{item.city}</Text>:null}
@@ -184,13 +162,40 @@ function AppContent() {
     ListEmptyComponent={<Empty icon="home-outline" title={t('Prieglaudų nerasta','No shelters found')} action={t('Išvalyti paiešką ir filtrus','Clear search and filters')} onAction={()=>{setSearch('');setFilters({...defaults});}}/>}/>
   </>:null}
 
+  {tab==='account'?<ScrollView contentContainerStyle={{paddingHorizontal:16,paddingBottom:24,gap:12,width:'100%',maxWidth:560,alignSelf:'center'}}>
+   <Text accessibilityRole="header" style={[s.heading,{paddingTop:4}]}>{t('Paskyra','Account')}</Text>
+   <Text style={s.sectionTitle}>{t('Kalba','Language')}</Text>
+   <View accessibilityRole="radiogroup" style={{gap:8}}>
+    {[['lt','🇱🇹','Lietuvių'],['en','🇬🇧','English']].map(([id,flag,label])=><Pressable key={id} accessibilityRole="radio" accessibilityLabel={label} accessibilityState={{checked:lang===id}} onPress={()=>dispatch({type:'language',lang:id})} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]}>
+     <Text style={{fontSize:24}} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">{flag}</Text>
+     <Text style={[s.title,{flex:1}]}>{label}</Text>
+     {lang===id?<Ionicons name="checkmark-circle" size={22} color={C.green}/>:null}
+    </Pressable>)}
+   </View>
+   <Text style={s.sectionTitle}>{t('Nustatymai','Settings')}</Text>
+   <Pressable accessibilityRole="button" accessibilityLabel={t('Rodomi gyvūnai','Animals shown')} accessibilityHint={nf?t(`Aktyvūs filtrai: ${nf}`,`Active filters: ${nf}`):undefined} onPress={()=>setFilterOpen(true)} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]}>
+    <Ionicons name="options-outline" size={22} color={C.ink}/>
+    <Text style={[s.title,{flex:1}]}>{t('Rodomi gyvūnai','Animals shown')}{nf?` (${nf})`:''}</Text>
+    <Ionicons name="chevron-forward" size={18} color={C.muted}/>
+   </Pressable>
+   <Pressable accessibilityRole="button" accessibilityLabel={t('Apie GLOBIS','About GLOBIS')} onPress={()=>setAbout(true)} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]}>
+    <Ionicons name="information-circle-outline" size={22} color={C.ink}/>
+    <Text style={[s.title,{flex:1}]}>{t('Apie GLOBIS','About GLOBIS')}</Text>
+    <Ionicons name="chevron-forward" size={18} color={C.muted}/>
+   </Pressable>
+   <View style={{marginTop:24,gap:4}}>
+    {config.extra?.termsUrl?<SourceLink lang={lang} url={config.extra.termsUrl} label={t('Naudojimo sąlygos','Terms of use')} onError={notify}/>:<Text style={s.muted}>{t('Naudojimo sąlygos dar nepaskelbtos.','Terms of use have not been published yet.')}</Text>}
+    {config.extra?.privacyPolicyUrl?<SourceLink lang={lang} url={config.extra.privacyPolicyUrl} label={t('Privatumo politika','Privacy policy')} onError={notify}/>:<Text style={s.muted}>{t('Privatumo politika dar nepaskelbta.','The privacy policy has not been published yet.')}</Text>}
+   </View>
+  </ScrollView>:null}
+
   {toast?<View accessibilityLiveRegion="polite" style={s.toast}>
    <Text style={s.toastText}>{toast.text}</Text>
    {toast.action?<Pressable accessibilityRole="button" accessibilityLabel={toast.actionLabel||toast.action} onPress={()=>{toast.run();setToast(null);}} style={s.toastAction}><Text style={s.toastActionText}>{toast.action}</Text></Pressable>:null}
   </View>:null}
 
   <View style={s.tabsWrap}><View accessibilityRole="tablist" style={s.tabs}>
-   {[['discover','paw',t('Globoti','Discover')],['shelters','home',t('Prieglaudos','Shelters')],['saved','heart',t('Išsaugoti','Saved')]].map(([id,icon,label])=>{
+   {[['discover','paw',t('Globoti','Discover')],['shelters','home',t('Prieglaudos','Shelters')],['saved','heart',t('Išsaugoti','Saved')],['account','person',t('Paskyra','Account')]].map(([id,icon,label])=>{
     const on=tab===id,a11y=id==='saved'&&saved.length?`${label} (${saved.length})`:label;
     return <Pressable key={id} accessibilityRole="tab" accessibilityLabel={a11y} accessibilityState={{selected:on}} onPress={()=>setTab(id)} style={[s.tab,on&&s.tabActive]}>
      <Ionicons name={on?icon:`${icon}-outline`} size={22} color={on?C.green:C.muted}/>

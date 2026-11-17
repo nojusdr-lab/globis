@@ -130,6 +130,9 @@ export function SourceLink({url,label,onError,lang='lt'}) {
 
 export const initials=name=>String(name||'').replace(/[„“"()]/g,'').replace(/^(VšĮ|Asociacija|Gyvūnų globos draugija)\s+/i,'')
  .split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('')||'?';
-export function Avatar({name,size=46}) {
- return <View style={[s.avatar,{width:size,height:size,borderRadius:size/2}]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants"><Text style={[s.avatarText,size>50&&{fontSize:19}]}>{initials(name)}</Text></View>;
+export function Avatar({name,logo,size=46}) {
+ const [broken,setBroken]=useState(false);
+ const box={width:size,height:size,borderRadius:size/2};
+ if(logo&&!broken) return <Image source={{uri:logo}} onError={()=>setBroken(true)} resizeMode="contain" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[box,{backgroundColor:C.white}]}/>;
+ return <View style={[s.avatar,box]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants"><Text style={[s.avatarText,size>50&&{fontSize:19}]}>{initials(name)}</Text></View>;
 }
