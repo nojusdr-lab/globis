@@ -1,5 +1,5 @@
 {
-  "_about": "Shelter websites from the VMVT guardian registry (docs/discovery-engine/vmvt-guardian-inventory.tsv). Facebook-only rows are not listed here: we do not collect from Facebook. decision: adapter = collector exists; probe = robots/terms/listing must be checked from GitHub Actions (cloud sandbox could not read it); no_listing = site has no animal list; blocked = robots.txt or terms forbid; other_thread = handled elsewhere; paused = site down or under maintenance. checked = date of the manual check.",
+  "_about": "Shelter websites from the VMVT guardian registry (docs/discovery-engine/vmvt-guardian-inventory.tsv). Facebook rows are not listed here: public page profiles are read by scripts/scrapers/facebook-pages.cjs (owner decision 2026-11-17); animals are not read from Facebook. decision: adapter = collector exists; probe = robots/terms/listing must be checked from GitHub Actions (cloud sandbox could not read it); no_listing = site has no animal list; blocked = robots.txt or terms forbid; other_thread = handled elsewhere; paused = site down or under maintenance. checked = date of the manual check.",
   "sources": [
     {
       "id": "kggn",
