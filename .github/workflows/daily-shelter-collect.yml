@@ -32,6 +32,13 @@ jobs:
           # Empty until the owner adds the secret; then each run is also loaded into Supabase.
           SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: node scripts/scrapers/run.cjs data/scraped > scrape.log 2>&1 || { echo "failed=1" >> "$GITHUB_OUTPUT"; tail -20 scrape.log; }
+      - name: Warn on empty or unpublished sources
+        if: always()
+        run: |
+          node -e 'const r=require("./data/scraped/report.json");for(const s of r){
+            if(s.animals===0)console.log(`::warning title=${s.source}::0 animals (site changed or empty)`);
+            else if(!s.published)console.log(`::warning title=${s.source}::not published: ${s.reason||s.state}`);
+            if(s.db&&s.db!=="published")console.log(`::warning title=${s.source}::database: ${s.db}`);}' || true
       - uses: actions/cache/save@v4
         if: always()
         with:
