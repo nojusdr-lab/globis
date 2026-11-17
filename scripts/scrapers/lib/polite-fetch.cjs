@@ -76,7 +76,15 @@ function createFetcher({
     if (robotsByOrigin.has(origin)) return robotsByOrigin.get(origin);
     let robots;
     try {
-      const res = await rawGet(new URL('/robots.txt', origin));
+      // RFC 9309: follow up to 5 redirects (e.g. http -> https), only to declared hosts.
+      let url = new URL('/robots.txt', origin);
+      let res = await rawGet(url);
+      for (let i = 0; i < 5 && [301, 302, 303, 307, 308].includes(res.status); i++) {
+        const next = new URL(res.headers.get('location') || '', url);
+        if (!hosts.has(next.hostname.toLowerCase())) break;
+        url = next;
+        res = await rawGet(url);
+      }
       if (res.status >= 200 && res.status < 300) robots = parseRobots(res.body);
       else if (res.status === 404 || res.status === 410) robots = ALLOW_ALL;
       else robots = DENY_ALL;

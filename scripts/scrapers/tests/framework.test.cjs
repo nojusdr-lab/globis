@@ -159,3 +159,13 @@ test('runSource: adapter error = failed run; invalid animal = partial run', asyn
   const notDone = await runSource({ id: 'x', collect: async () => ({ complete: false, animals: [{ nativeId: '1', sourceUrl: 'https://a.lt/1' }] }) }, {});
   assert.equal(notDone.state, 'partial');
 });
+
+test('fetcher: follows robots.txt redirect http -> https on a declared host', async () => {
+  const f = createFetcher({ allowedHosts: ['a.lt'], ...fakeClock(), fetchImpl: fakeFetch({
+    'http://a.lt/robots.txt': { status: 301, body: '', headers: { location: 'https://a.lt/robots.txt' } },
+    'https://a.lt/robots.txt': { body: 'User-agent: *\nDisallow: /x' },
+    'http://a.lt/page': { body: 'ok' },
+  }) });
+  assert.equal((await f.get('http://a.lt/page')).body, 'ok');
+  await assert.rejects(f.get('http://a.lt/x'), e => e.code === 'robots');
+});
