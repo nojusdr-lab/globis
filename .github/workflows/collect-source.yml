@@ -1,0 +1,47 @@
+name: Collect shelter source (preview only)
+# Manual run. Reads one shelter's public catalogue and uploads the result as a file to review.
+# It does not change app data, the repository or any database.
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: Which shelter site to read
+        required: true
+        type: choice
+        options: [lietuva-gyvunams, kggn, sos-gyvunai]
+permissions:
+  contents: read
+concurrency:
+  group: collect-${{ inputs.source }}
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - env:
+          SOURCE: ${{ inputs.source }}
+        run: node scripts/discovery-engine/collect.cjs "$SOURCE" > "$SOURCE.json"
+      # Short summary in the log: counts only, so the run can be checked without the file.
+      - if: always()
+        env:
+          SOURCE: ${{ inputs.source }}
+        run: |
+          node -e '
+            const run = JSON.parse(require("fs").readFileSync(process.env.SOURCE + ".json", "utf8"));
+            const count = key => run.pets.reduce((all, pet) => ({ ...all, [pet[key]]: (all[pet[key]] ?? 0) + 1 }), {});
+            console.log(JSON.stringify({ state: run.state, total: run.total, error: run.error,
+              species: count("species"), sex: count("sex"), status: count("status"), age: count("ageText"),
+              withPhoto: run.pets.filter(pet => pet.photos.length).length,
+              withBio: run.pets.filter(pet => pet.bioLt).length }, null, 1));'
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.source }}-preview
+          path: ${{ inputs.source }}.json
+          retention-days: 7
