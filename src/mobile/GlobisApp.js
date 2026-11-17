@@ -165,7 +165,7 @@ function AppContent() {
   </>:null}
 
   {tab==='saved'?<>
-   <View style={[s.toolbar,{paddingTop:4}]}><View style={{flex:1}}><Text accessibilityRole="header" style={s.heading}>{t('Išsaugoti','Saved')}</Text><Text style={s.muted}>{saved.length?t(`${saved.length} ${pl(saved.length,'gyvūnas','gyvūnai','gyvūnų')} · laikoma šiame įrenginyje`,`${saved.length} ${saved.length===1?'animal':'animals'} · stored on this device`):t('Paskyros nereikia','No account needed')}</Text></View></View>
+   <View style={[s.toolbar,{paddingTop:4}]}><View style={{flex:1}}><Text accessibilityRole="header" style={s.heading}>{t('Išsaugoti','Saved')}</Text><Text style={s.muted}>{saved.length?t(`${saved.length} ${pl(saved.length,'gyvūnas','gyvūnai','gyvūnų')} · ${account.email?'sinchronizuojama su paskyra':'laikoma šiame įrenginyje'}`,`${saved.length} ${saved.length===1?'animal':'animals'} · ${account.email?'synced to your account':'stored on this device'}`):t('Paskyros nereikia','No account needed')}</Text></View></View>
    {saved.length?list(saved,true):<Empty icon="heart-outline" title={t('Dar nieko neišsaugojote','No saved pets yet')} body={t('Spauskite „Išsaugoti“ arba perbraukite kortelę dešinėn. Išsaugoti gyvūnai liks šiame įrenginyje.','Tap Save or swipe a card right. Saved pets stay on this device.')} action={t('Globoti','Discover')} onAction={()=>setTab('discover')}/>}
   </>:null}
 
