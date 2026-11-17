@@ -7,13 +7,17 @@
 // NOT in the REST API (/wp-json/wp/v2/types lists only post/page/media/...; posts are two "Hello world!").
 // So we read HTML:
 //   1. /iesko-namu-gyvunai/  (h1 "Ieško namų gyvūnai" = page status; links to sunys/kates/kiti)
-//   2. /iesko-namu-gyvunai/{sunys,kates,kiti}/ : Qode portfolio list, one <article> per animal:
+//   2. /iesko-namu-gyvunai/{sunys,kates,kiti}/ : h1 "Šunys" / "Katės" / "Kiti gyvūnai" (= species of the list),
+//      Qode portfolio grid (checked on real pages 2026-11-17), one <article class='mix ...'> per animal:
+//        <a class="portfolio_link_class" title="NAME" href=".../portfolio_page/<slug>/">
+//        <div class="image_holder"><img src=...> (sometimes no image)
 //        <h4 class="portfolio_title"><a href=".../portfolio_page/<slug>/">NAME</a></h4>
-//        <span class="project_category">Katės</span> ... <div class="image_holder"><img src=...>
-//      Pagination: <div class="portfolio_paging"><span rel="MAXPAGES" class="load_more"><a href=".../page/N/">
+//      All animals are on one page (no paging block seen). If the theme's "Show more" block
+//      (<div class="portfolio_paging"><span rel="MAXPAGES" class="load_more"><a href=...>, seen on the
+//      home page) ever appears, we follow it to the end.
 // We do not read /iesko-namu-gyvunai/rade-namus/ (adopted) or /islydeti/ (died).
-// The list shows only name, category and one photo. Detail pages (portfolio_page/<slug>/) were not
-// probed, so we do not read them; sex/age/health stay null until a real detail page is seen.
+// Detail pages (portfolio_page/<slug>/) only have free text (e.g. "Pusmetinis, kastruotas, čipuotas"),
+// no labelled facts, so we do not read them (would be one extra request per animal).
 const html = require('../lib/html.cjs');
 const N = require('../lib/normalize.cjs');
 
@@ -49,11 +53,13 @@ function parseList(body, url) {
   const more = $('.portfolio_paging .load_more').first();
   const next = html.abs(more.find('a').attr('href') || '', url);
   const maxPages = Number.parseInt(more.attr('rel'), 10);
-  return { items: [...items.values()], next: more.length && next ? next : null, maxPages: maxPages > 0 ? maxPages : null };
+  const heading = N.cleanText($('h1').first().text());
+  return { heading, items: [...items.values()], next: more.length && next ? next : null, maxPages: maxPages > 0 ? maxPages : null };
 }
 
 async function readListing(fetcher, listing, log) {
   const items = [];
+  let heading = null;
   const seenUrls = new Set();
   let url = listing.url;
   for (let page = 1; page <= MAX_PAGES; page++) {
@@ -62,12 +68,13 @@ async function readListing(fetcher, listing, log) {
     const res = await fetcher.get(url); // throws on any failure: run becomes 'failed'
     const out = parseList(res.body, res.url);
     log(`${res.url}: ${out.items.length} items`);
+    if (page === 1) heading = out.heading;
     items.push(...out.items);
-    if (!out.next) return { items, complete: true };
-    if (out.maxPages != null && page >= out.maxPages) return { items, complete: true };
+    if (!out.next) return { heading, items, complete: true };
+    if (out.maxPages != null && page >= out.maxPages) return { heading, items, complete: true };
     url = out.next;
   }
-  return { items, complete: false }; // more pages than we allow: do not trust as complete
+  return { heading, items, complete: false }; // more pages than we allow: do not trust as complete
 }
 
 module.exports = {
@@ -102,7 +109,9 @@ module.exports = {
           if (s.status !== 'unknown') { st = s; break; }
         }
         if (st.status === 'excluded') { skipped.push({ nativeId: it.slug, reason: st.statusEvidence }); continue; }
-        const species = it.categories.map(c => N.species(c)).filter(Boolean);
+        // Species: the item's own category label if shown, else the list heading ("Šunys", "Katės", "Kiti gyvūnai").
+        let species = it.categories.map(c => N.species(c)).filter(Boolean);
+        if (!species.length && N.species(r.heading)) species = [N.species(r.heading)];
         animals.push({
           nativeId: it.slug,
           sourceUrl: it.href,

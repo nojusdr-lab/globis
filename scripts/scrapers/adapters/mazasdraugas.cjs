@@ -15,7 +15,7 @@
 // are the <img> tags inside it.
 //
 // Facts come only from page text (Lithuanian part of each post):
-// - "♥ Gimė: 2018-06" -> age_text;
+// - "♥ Gimė: 2018-06" (or "♥ Apie 2 metus") -> age_text;
 // - "♥ Kastruotas, skiepytas, čipuotas." -> neutered / vaccinated / chipped (a word that is not
 //   written stays null, never false);
 // - species from the category ("Dovanojami Šunys" -> dog, "Dovanojamos Katės" -> cat);
@@ -79,14 +79,18 @@ function parseContent(html) {
   const lt = end === -1 ? lines : lines.slice(0, end);
   const aboutAt = lt.findIndex(l => /^apie\s.{1,40}:$/i.test(l));
   const head = aboutAt === -1 ? lt.filter(l => l.startsWith('♥')) : lt.slice(0, aboutAt);
-  const body = aboutAt === -1 ? lt.filter(l => !l.startsWith('♥')) : lt.slice(aboutAt + 1);
+  // Without an "Apie X:" header the story is the lines that are not "♥ ..." facts or a "♠ <town>" note.
+  const body = aboutAt === -1 ? lt.filter(l => !/^[♥♠]/.test(l)) : lt.slice(aboutAt + 1);
 
   let age_text = null;
   const tokens = [];
   for (const line of head) {
     const l = line.replace(/^♥\s*/, '');
-    const age = l.match(/^(gimė|gimęs|gimusi)\s*:\s*(.+)$/i);
+    const age = l.match(/^(gimė|gimęs|gimusi)\s*:\s*(.+?)[\s,;.]*$/i);
     if (age) { age_text ??= N.cleanText(`${age[1]}: ${age[2]}`); continue; }
+    // "♥ Apie 2 metus" / "♥ Apie 3 metai" (page 2 of the list, 2026-11-16 probe).
+    const about = l.match(/^apie\s+\d+([.,]\d+)?\s*(metus|metai|metų|mėn\.?|mėnesius|mėnesiai|mėnesių)(?!\p{L})/iu);
+    if (about) { age_text ??= N.cleanText(about[0]); continue; }
     tokens.push(...l.split(/[.,;]\s*/).map(s => s.trim()).filter(Boolean));
   }
 

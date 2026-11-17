@@ -14,4 +14,8 @@ module.exports = [
   require('./mazijausmai.cjs'),
   require('./siauliuletenele.cjs'),
   require('./mazasdraugas.cjs'),
+  require('./linksmosiospedutes.cjs'),
+  require('./rozinepedute.cjs'),
+  require('./gyvunugloba.cjs'),
+  require('./padekman.cjs'),
 ];

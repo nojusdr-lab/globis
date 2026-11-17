@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const adapter = require('../adapters/mazasdraugas.cjs');
-const { createMazasdraugasAdapter, parseTitle } = adapter;
+const { createMazasdraugasAdapter, parseTitle, parseContent } = adapter;
 const { createFetcher } = require('../lib/polite-fetch.cjs');
 const { createParseCache } = require('../lib/parse-cache.cjs');
 const { runSource } = require('../lib/run-source.cjs');
@@ -93,9 +93,9 @@ test('mazasdraugas: status comes from the category name, with evidence', async (
   const { run } = await collect(routes());
   const byId = Object.fromEntries(run.animals.map(a => [a.id, a]));
   assert.equal(byId['mazasdraugas:13856'].status, 'available');
-  assert.equal(byId['mazasdraugas:13856'].statusEvidence, 'Dovanojami Šunys');
+  assert.equal(byId['mazasdraugas:13856'].statusEvidence, 'Dovanojami šunys');
   assert.equal(byId['mazasdraugas:13841'].status, 'available');
-  assert.equal(byId['mazasdraugas:13841'].statusEvidence, 'Dovanojamos Katės');
+  assert.equal(byId['mazasdraugas:13841'].statusEvidence, 'Dovanojamos katės');
 });
 
 test('mazasdraugas: a status word after the name in a title is split off as evidence', () => {
@@ -126,7 +126,7 @@ test('mazasdraugas: page limit reached means not complete', async () => {
 
 test('mazasdraugas: missing listing category means not complete', async () => {
   const r = routes();
-  r[CAT_URL] = cats.slice(0, 1);
+  r[CAT_URL] = cats.filter(c => c.id === 34);
   r[`${API}posts?categories=34&per_page=100&page=1&_fields=${FIELDS}`] = posts.filter(p => p.categories.includes(34));
   const { run } = await collect(r);
   assert.equal(run.state, 'partial');
@@ -140,4 +140,14 @@ test('mazasdraugas: a failing page makes the run failed', async () => {
   const r2 = routes();
   r2[CAT_URL] = { status: 503, body: 'down' };
   assert.equal((await collect(r2)).run.state, 'failed');
+});
+
+test('mazasdraugas: header variants seen on list page 2 (real excerpt text, reshaped into <p> lines)', () => {
+  const saiksas = parseContent('<p>♥ Gimė: 2012-08-08,</p><p>♥Kastruotas, skiepytas, čipuotas.</p><p><strong>Apie Saiksą:</strong></p><p>Saiksas yra labai ramus, draugiškas ir</p>');
+  assert.equal(saiksas.age_text, 'Gimė: 2012-08-08');
+  assert.deepEqual(saiksas.facts, { neutered: true, vaccinated: true, chipped: true });
+  const fiona = parseContent('<p>♥ Apie 2 metus</p><p>♥ Sterilizuota, skiepyta, čipuota</p><p>♠ Panevėžys</p><p>Jauna, švelni ir kukli katytė,</p>');
+  assert.equal(fiona.age_text, 'Apie 2 metus');
+  assert.deepEqual(fiona.facts, { neutered: true, vaccinated: true, chipped: true });
+  assert.equal(fiona.bio, 'Jauna, švelni ir kukli katytė,');
 });

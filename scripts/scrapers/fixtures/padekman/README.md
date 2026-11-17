@@ -1,11 +1,18 @@
 # padekman fixtures
 
-From the polite probe on 2026-11-16 (`probe-output/padekman/`, GlobisBot/0.1).
+All real data comes from polite probes (GlobisBot/0.1): `probe-output/padekman/` (2026-11-16) and
+`probe-output/padekman/extra/` (follow-up probe, saved 2026-11-17). Removed everywhere: phone numbers,
+volunteers' names (`dc:creator` and the contact line after "Daugiau informacija:"), scripts, menus, footer.
 
-- `home.html`: real page `https://padekman.lt/` (probe file `01-padekman-lt-.gz`, 2026-11-16T22:07Z),
-  trimmed to the "Ieško namų" portfolio list (`data-category=ishchut-dom`, 20 cards, page 1 of 5)
-  and its pagination block. Removed: header, menus, footer, scripts, `srcset`/`sizes` attributes and
-  pagination SVG icons. No phones, emails or people's names left.
-- `robots.txt`: real robots.txt text from `probe-output/padekman/index.json` (same probe).
-- SYNTHETIC (built in the test, not a file): `home.html` with `data-max-num-pages=5` changed to `1`,
-  used only to check that a single-page list is treated as complete. No animal facts changed.
+- `robots.txt`: real robots.txt text (`probe-output/padekman/index.json`, 2026-11-16).
+- `feed-1.xml`: real `https://padekman.lt/portfolio-category/ishchut-dom/feed/` (extra/02), trimmed
+  to 2 of its 10 items (post 7440 Moisej, 7311 Bocman). Trimming makes this page "full" at 2 items.
+- `feed-2.xml`: real `https://padekman.lt/portfolio-category/ishchut-dom/feed/?paged=2` (extra/03),
+  trimmed to 1 of its 10 items (post 7298 Viola), so it is the short last page in the test.
+- `detail-lika.html`: real `https://padekman.lt/portfolio-item/lika/` (extra/05), trimmed to the
+  portfolio-single block (photo, description, categories, date).
+- SYNTHETIC `detail-nr-121-moisej.html`, `detail-nr-99-bocman.html`, `detail-nr-94-viola.html`:
+  the Lika page structure filled with that animal's real feed content (`content:encoded`), its real
+  photo and its real category labels from the 2026-11-16 list pages (Moisej: /koty/; Bocman and
+  Viola: home page, where Viola is shown with both "Ieško namų" and "Rado namus"). Their real pages
+  were not probed. Nothing invented.

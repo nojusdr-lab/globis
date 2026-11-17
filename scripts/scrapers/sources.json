@@ -85,11 +85,11 @@
         "https://www.linksmosiospedutes.lt/lt/kaciukai/"
       ],
       "robots": "Allow: / for *; Content-Signal ai-train=no; AI crawlers disallowed",
-      "terms": "unverified",
+      "terms": "none found (privacy policy only); robots Content-Signal search=yes, ai-train=no, use=reference",
       "cms": "easywebmanager",
-      "decision": "probe",
-      "checked": "2026-11-16",
-      "note": "Blocks AI training crawlers. We are not one (no AI training), but respect the spirit: facts only, no bulk text copying."
+      "decision": "adapter",
+      "checked": "2026-11-17",
+      "note": "Keeps facts, photo and link only (no description text) to respect use=reference."
     },
     {
       "id": "keturkojodraugas",
@@ -233,14 +233,16 @@
       "name": "Utenos rajono gyvūnų mylėtojų draugija",
       "website": "https://gyvunugloba.com/",
       "listing": [
-        "https://gyvunugloba.com/iesko-namu-gyvunai/"
+        "https://gyvunugloba.com/iesko-namu-gyvunai/sunys/",
+        "https://gyvunugloba.com/iesko-namu-gyvunai/kates/",
+        "https://gyvunugloba.com/iesko-namu-gyvunai/kiti/"
       ],
       "robots": "Disallow: /wp-admin/",
       "terms": "none found",
       "cms": "wordpress-portfolio",
-      "decision": "probe",
+      "decision": "adapter",
       "checked": "2026-11-17",
-      "note": "Adapter written but not enabled: list page fixtures are synthetic; probe sunys/kates/kiti pages first."
+      "note": "List pages only (one page each). Detail pages are free text with contacts; not read."
     },
     {
       "id": "tautmilesgloba",
@@ -328,11 +330,15 @@
       "vmvtRow": 35,
       "name": "VšĮ „Beglobis“",
       "website": "http://www.beglobis.com/",
-      "listing": [],
-      "robots": "unverified",
-      "terms": "unverified",
-      "cms": "unverified",
-      "decision": "probe"
+      "listing": [
+        "http://www.beglobis.com/Dovanojami-684.html"
+      ],
+      "robots": "404 (no rules)",
+      "terms": "none found; footer only",
+      "cms": "custom PHP",
+      "decision": "probe",
+      "note": "Adapter draft reads home page featured block only (always partial, not enabled). Probe full list page.",
+      "checked": "2026-11-17"
     },
     {
       "id": "kaimograndine",
@@ -379,15 +385,14 @@
       "name": "VšĮ Gyvūnų prieglauda „Padėk man“ / „Gyvūnų šansas“, Visaginas",
       "website": "https://padekman.lt/",
       "listing": [
-        "https://padekman.lt/sobaki/",
-        "https://padekman.lt/koty/"
+        "https://padekman.lt/portfolio-category/ishchut-dom/feed/"
       ],
       "robots": "Disallow: /wp-admin/",
       "terms": "none found",
       "cms": "wordpress-portfolio",
-      "decision": "probe",
+      "decision": "adapter",
       "checked": "2026-11-17",
-      "note": "Adapter written but not enabled: list pages 2..5 load only via POST admin-ajax; runs would always be partial. Site looks stale (newest cards 2022-2023). Probe category feed/page URLs."
+      "note": "Category feed (GET, ?paged=N) + one detail page per animal (~107 requests, ~9 min). Site looks unmaintained: newest animal Oct 2022."
     },
     {
       "id": "mgma",
@@ -544,10 +549,10 @@
         "https://rozinepedute.lt/gyvunai/"
       ],
       "robots": "Allows *; disallows AI crawlers (ClaudeBot, GPTBot...)",
-      "terms": "\"Visos teisės saugomos\"",
-      "cms": "wordpress",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "terms": "none found (privacy page empty)",
+      "cms": "wordpress-bricks",
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "linksmauodegele",
