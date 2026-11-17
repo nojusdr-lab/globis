@@ -1,0 +1,59 @@
+# Daily: read every enabled shelter website, rebuild src/data/directPets.json and open a PR with
+# the change. No model calls, no secrets. Scraper state (last good snapshot, history) is kept in the
+# Actions cache so the publish guard can compare runs. A failed source keeps its previous rows.
+name: Daily shelter collect
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency: daily-shelter-collect
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/scraped
+          key: scraped-${{ github.run_id }}
+          restore-keys: scraped-
+      - id: run
+        run: node scripts/scrapers/run.cjs data/scraped > scrape.log 2>&1 || echo "failed=1" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/scraped
+          key: scraped-${{ github.run_id }}
+      - run: node scripts/scrapers/to-app-data.cjs data/scraped | tee bridge.log
+      - name: Summary
+        if: always()
+        run: |
+          { echo '### Rinkimas'; echo '```'; grep '^{"source"' scrape.log || tail -5 scrape.log; echo '```';
+            echo '### Programėlės duomenys'; echo '```'; cat bridge.log 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Open PR with data change
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git diff --quiet src/data/directPets.json && { echo "No data change"; exit 0; }
+          b="data/shelter-collect-$(date -u +%F)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$b"
+          git commit -m "data: prieglaudų svetainių atnaujinimas $(date -u +%F)" src/data/directPets.json
+          git push -f origin "$b"
+          gh pr create --base main --head "$b" --title "Duomenys: prieglaudų svetainės $(date -u +%F)" \
+            --body "Automatinis kasdienis rinkimas. Ataskaita: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            || echo "PR not created (already open or Actions may not create PRs); branch $b pushed."
+      - if: steps.run.outputs.failed == '1'
+        run: |
+          echo "At least one source failed. See summary."
+          exit 1
