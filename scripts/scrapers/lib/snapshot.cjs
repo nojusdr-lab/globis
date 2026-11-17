@@ -8,7 +8,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { sha256 } = require('./hash.cjs');
 
-const DEFAULT_GUARD = { maxLostRatio: 0.2, maxLostAbsolute: 3, confirmRuns: 3 };
+// Same rule as public.publish_source_run (supabase/migrations/20261117000000_publish_guard_small_sources.sql).
+const DEFAULT_GUARD = { maxLostRatio: 0.05, maxLostAbsolute: 3, confirmRuns: 3 };
 
 function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return fallback; }
