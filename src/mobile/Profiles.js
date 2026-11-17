@@ -15,7 +15,7 @@ function Fact({label,value,note}) {
  </View>;
 }
 
-export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter,saved,reduced,onError,contactInline=false}) {
+export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter,saved,reduced,onError}) {
  const t=(lt,en)=>lang==='lt'?lt:en;
  const date=pet.observedAt&&Number.isFinite(Date.parse(pet.observedAt))?new Date(pet.observedAt):null;
  const bio=lang==='lt'?pet.bioLt:pet.bioEn;
@@ -24,7 +24,7 @@ export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter
  return <Sheet full lang={lang} title={pet.name} reduced={reduced} onClose={onClose} footer={<View style={s.row}>
    <Button style={{flex:1}} icon={saved?'heart':'heart-outline'} selected={saved} label={saved?t('Išsaugota','Saved'):t('Išsaugoti','Save')}
     accessibilityLabel={saved?t('Išsaugota','Saved'):t('Išsaugoti','Save')} disabled={!saved&&!eligible(pet)} onPress={()=>saved?onRemove(pet):onSave(pet)}/>
-   {contactInline?null:<Button style={{flex:1}} primary label={t('Susisiekti','Contact')} icon="call-outline" onPress={()=>onContact(pet)}/>}
+   <Button style={{flex:1}} primary label={t('Susisiekti','Contact')} icon="call-outline" onPress={()=>onContact(pet)}/>
   </View>}>
   <View style={{borderRadius:22,overflow:'hidden'}}><Photo lang={lang} pet={pet} height={300} gallery/></View>
   <View style={{gap:4}}>
@@ -32,7 +32,6 @@ export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter
    <Text style={s.body}>{[pet.species==='dog'?t('Šuo','Dog'):pet.species==='cat'?t('Katė','Cat'):null,pet.city].filter(Boolean).join(' · ')}</Text>
   </View>
   <StatusNote pet={pet} lang={lang}/>
-  {contactInline?<View style={s.section}><Text style={s.sectionTitle}>{t('Susisiekti su prieglauda','Contact shelter')}</Text><ContactBody pet={pet} lang={lang} onError={onError}/></View>:null}
   <View style={s.facts}>{rows.map(r=><Fact key={r.key} label={r.label} value={r.value} note={r.note}/>)}</View>
   <View style={s.section}>
    <Text style={s.sectionTitle}>{t('Aprašymas','Description')}</Text>
@@ -69,12 +68,12 @@ function ContactRow({icon,title,value,onPress,primary}) {
  </Pressable>;
 }
 
-function ContactBody({pet,onError,lang}) {
+export function ContactSheet({pet,onClose,reduced,onError,lang}) {
  const shelter=pet.shelter||{};
  const trusted=Boolean(shelter.contactEvidence);
  const tel=trusted?phone(shelter.phone):null,mail=trusted?email(shelter.email):null;
  const t=(lt,en)=>lang==='lt'?lt:en;
- return <View style={{gap:12}}>
+ return <Sheet lang={lang} title={t('Susisiekti su prieglauda','Contact shelter')} onClose={onClose} reduced={reduced}>
   <View style={[s.org,{backgroundColor:C.surface2,borderColor:C.surface2}]}>
    <Avatar name={shelter.name}/>
    <View style={{flex:1,minWidth:0}}><Text style={s.title}>{shelter.name}</Text><Text style={s.muted}>{t('Dėl gyvūno','About')}: {pet.name}</Text></View>
@@ -86,10 +85,5 @@ function ContactBody({pet,onError,lang}) {
   {!tel&&!mail?<Text style={s.body}>{t('Patvirtintų telefono ir el. pašto duomenų nėra. Kreipkitės per originalų šaltinį.','Verified phone and email are unavailable. Contact through the original source.')}</Text>:null}
   <SourceLink lang={lang} url={pet.url} onError={onError}/><SourceLink lang={lang} url={shelter.url} label={t('Prieglaudos šaltinis','Shelter source')} onError={onError}/>
   <Text style={s.muted}>{t('Rodomi tik prieglaudos paskelbti kontaktai.','Only contacts published by the shelter are shown.')}</Text>
- </View>;
-}
-
-export function ContactSheet({pet,onClose,reduced,onError,lang}) {
- const t=(lt,en)=>lang==='lt'?lt:en;
- return <Sheet lang={lang} title={t('Susisiekti su prieglauda','Contact shelter')} onClose={onClose} reduced={reduced}><ContactBody pet={pet} lang={lang} onError={onError}/></Sheet>;
+ </Sheet>;
 }
