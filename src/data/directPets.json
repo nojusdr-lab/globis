@@ -38606,5 +38606,879 @@
    "address": "Pagojis 5, 13167 Vilniaus r. sav.",
    "url": "https://globok.lt/prieglaudos/tautmilesglobalt"
   }
+ },
+ {
+  "id": "naminukai:zyle",
+  "url": "https://naminukai.com/zyle/",
+  "source": "naminukai",
+  "name": "Zylė",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/11/ZYLE-1.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~6 metų",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Katinėlio dydžio, bet tikra šunytė – Zylutė ieško namų! Jeigu esate mažų šunelių gerbėjai, turime jums kandidatę! Zylutė – vos katinėlio dydžio, bet, neabejojame, širdelėje telpa labai daug meilės ir noras turėti savo žmogų. Šiai mažylei apie 5–6 metus. Ji sterilizuota, skiepyta, ženklinta, labai miela ir smagi. Tiesa, iš pradžių gali būti šiek tiek atsargesnė ir ne iš karto pulti į glėbį, bet susipažinus ir įgavus pasitikėjimo, nauji žmonės jai tampa vis mažiau svetimi. Zylutė norėtų ne tik turėti savo jaukią vietelę namuose, bet ir kartu su šeimininkais leistis į pasivaikščiojimus, žaisti, patirti mažų kasdienių nuotykių, o po jų jaukiai įsitaisyti šalia ir saldžiai snausti. Ieškome žmogaus, kuris įsimylėtų ne tik tas dideles akis ir mažą nosytę, bet ir pačią Zylutę. Galbūt būtent jūsų namuose jai atsirastų vietos? Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-10T12:50:06Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:indi",
+  "url": "https://naminukai.com/indi/",
+  "source": "naminukai",
+  "name": "Indi",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/10/IMG_0385-scaled-e1791462518482.png"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~10 metų",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-08T13:02:39Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:torune",
+  "url": "https://naminukai.com/torune/",
+  "source": "naminukai",
+  "name": "Torūnė",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/10/IMG_0191-scaled.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~10 metų",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-08T12:25:30Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:otas",
+  "url": "https://naminukai.com/otas/",
+  "source": "naminukai",
+  "name": "Otas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/06/OTAS-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~5 metai",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Naujų NAMŲ PAIEŠKAS pradeda Otas! O tai tau šuo! Nors diplomo Otas neturi, jis labai gerai išmano šuns būtį. Tai profesionalus kompanionas visur ir visada, greitai prisitaikantis prie žmogaus bei aplinkos ir tiesiog labai geras šuo. Otas pavydėtinas šuo, tokio kaip jis nori visi, žmonės sunkiai dirba dresūros mokyklose, kad turėtų kažką panašaus – greitai besiadaptuojančio, protingo, savimi pasitinkinčio, bet savo vietą puikiai suprantančio šuns, kuris neprašytas žino ką daryti. Todėl esame labai dėkingos likimui už galimybę pasidžiaugti juo, tačiau suprantame, jog Otas laukia savo tikrųjų namų. Jau ne vienoje situacija Otas mums ištiesė pagalbos ranką. Būdamas mūsų globoje pats globojo kitus: Mimi, Džiną, Gilę bei mus… Nei tėvuko, nei kambarioko, nei nuostabaus draugo vaidmuo jam nėra svetimas, tačiau atėjo eilė kitam, pagrindiniui – būti kažkieno šunimi. O žmones Otas mėgsta visus. Didelius ir mažus, linksmus ir ramius – kantrybės jam užtenka, kuo daugiau, tuo smagiau, jo užteks visiems. Savo meile jis dalija neprašytas, o jos per tuos metus yra nemažai prikaupęs ir prašo labai nedaug – artumo ir namų. Otui jau apie 7 metus, jis kastruotas, ženklintas ir paskiepytas. Dabar, kai sveikatėlė sutvarkyta, duoklė prieglaudai atiduota, ieškome žmogaus kuris suteiktų Otui sceną atlikti savo jau seniai užsitarnautą pagrindinį vaidmenį bei kartu norėtų dalintis savo ištikimybe ir kasdienybe. Todėl jei ieškote beveik tobulo vidutinio dydžio šuns iš vadovėlio, susiekite, mes jam pranešime! Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-08T13:02:20Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:seras",
+  "url": "https://naminukai.com/seras/",
+  "source": "naminukai",
+  "name": "Seras",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/03/IMG_2659-scaled.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~5 metai",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Naujų NAMŲ PRADEDA Seras! Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: +3706 70 27275 (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-02T12:45:37Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:dipsis",
+  "url": "https://naminukai.com/dipsis/",
+  "source": "naminukai",
+  "name": "Dipsis",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/03/NAMINUKAI27308-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI26815-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI27218-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI27208-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~7 metai",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Naujų NAMŲ PRADEDA Dipsis, kurį norisi tiesiog prie širdies dėti! Dipsis – tėtis/dėdė, o gal vyresnysis teletabių broils ieško namų! Ir nors metų jam gal vos daugiau nei kitiems, pasaulio jis matęs ir pažinęs lygiai tiek pat, kiek ir mažieji. Dipsis – labai gero būdo, švelnus šunelis. Jo kūnelį puošia mažos garbanėlės, kurios, panašu, visą tą laiką ištikimai šildė jį per šaltas žiemas. Jis kuklus, bet kartu ir labai juokingas. Iš tų šunų, kurie nesiveržia į pirmą planą, bet kažkaip vis tiek priverčia nusišypsoti ir atsiduria dėmesio centre. Dipsį puošia ir jo didelės ausys. Jos gal ne visada puikiai girdi, bet tikrai labai gražiai atrodo. O jam pačiam svarbiausia ne tai, ką išgirsta, o tai, ką pajunta. Ieškome atsakingų žmonių, kurie priims Dipsį tokį, koks jis yra – su jo istorija, su jo meilumu ir tuo ramiai geru charakteriu. Žmonių, kurie džiaugsis jo garbanėlėmis, jo ausimis ir padės atsiskleisti dar labiau. Jei jūsų namuose yra vietos vienam švelniam, labai šiltos širdies teletabiui – Dipsis laukia. Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: +3706 70 27275 (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-06-05T15:25:39Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:bonita",
+  "url": "https://naminukai.com/bonita/",
+  "source": "naminukai",
+  "name": "Bonita",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/03/IMG_2631-scaled.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~6 metai",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Norime jums pristatyti ypatingą kalytę Bonitą, kuri IEŠKO NAMŲ! Bonita – tikra dama, kuri savo namuose norėtų būti vienintelė valdovė. Jos pavydo jausmas gana stiprus, todėl kol kas ji nėra pasiruošusi dalintis dėmesiu su kitais gyvūnais. Tačiau pati Bonita yra labai gera, miela, aktyvi ir be galo trokštanti žmogaus dėmesio bei artumo. Ilgą laiką ji gyveno uždaryta voljere, todėl dabar ypač vertina bendravimą ir buvimą šalia žmogaus. Manome, kad jai geriausia būtų gyventi namuose be mažų vaikų – dėl to paties pavydo, tačiau kategoriškai to neteigiame – galbūt Bonita kaip tik juos labai pamiltų. Jeigu ieškote brandesnio šuns, kuris vis dar pilnas gyvenimo džiaugsmo ir noro veikti – kviečiame susipažinti su Bonita. Jai apie 6–7 metai, sveria apie 10kg. Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: +3706 70 27275 (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T10:45:39Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:namukas",
+  "url": "https://naminukai.com/namukas/",
+  "source": "naminukai",
+  "name": "Namukas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/03/IMG_2689-scaled.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~7 metai",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Naujų NAMŲ PAIEŠKAS tęsia ukrainietis Artis! Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: +3706 70 27275 (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-02T12:42:13Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:elara",
+  "url": "https://naminukai.com/elara/",
+  "source": "naminukai",
+  "name": "Elara",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI26654-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI26734-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI26644-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI26624-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~5 metų",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Norime jums pristatyti ypatingą kalytę Elarą, kuri IEŠKO NAMŲ! Dar visai neseniai Elaros gyvenimas buvo apie išgyvenimą, ne apie džiaugsmą. Apie nesibaigiančias šuniukų vadas, nuovargį, randus ir atsakomybę, kurios niekas su ja nesidalijo. Ji buvo ta, kuri augino, saugojo, nešė, tyliai kentėjo ir ilgą laiką liko… niekieno. Šiandien visi jos šuniukai jau saugūs, iškeliavę į savo namus, o Elara pagaliau gali atsikvėpti. Atėjo metas pasirūpinti ja pačia – ne kaip mama, ne kaip problema, o kaip šunimi, kuris nusipelnė ramybės. Ir stebėti, kaip ji keičiasi, yra tikras stebuklas. Elara šiandien – neatpažįstama. Ji šoka, pokštauja, sukasi kaip cepelinas lėkštėje ir su pasimėgavimu atsiduria dėmesio centre. Kartais pačioms sunku patikėti, kiek nedaug reikia, kad kažkas pasijaustų pačiu laimingiausiu ir mylimiausiu – saugios vietos, pilno dubenėlio ir žmogaus, kuris žiūri ne pro šalį, o į ją. Nors Elara ne pirmos jaunystės dama, jaunatviškumo jai netrūksta. Prie jo ji prideda brandą, ramybę ir tą ypatingą išmintį, kuri ateina iš patirčių. Ji moka džiaugtis ir labai nuoširdžiai. Atėjus pas Elarą, nejučia pats pasijauti kažkuo geresniu – kai kažkas taip atvirai tavimi džiaugiasi, tai palieka pėdsaką. Tokios akimirkos nepamirštamos, juk dar visai neseniai jokiais dažais tokio Elaros portreto nebūtume nupiešusios. Iš tikrųjų Elarai daug nereikia. Ne prabangos, ne stebuklų. Tik savo žmogaus – to paprasto, kasdienio dėmesio, švelnumo, buvimo kartu. To jausmo, kad dabar ji jau ne laikinai, ne pakeliui, kad dabar ji – kažkieno. Ir mes labai norime, kad šis jos gyvenimo skyrius būtų būtent toks, ramus, šviesus, tikras. Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: (0-[kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-06-05T15:20:55Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:labubas",
+  "url": "https://naminukai.com/labubas/",
+  "source": "naminukai",
+  "name": "Labubas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI31149-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/10/LABUB.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI31480-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI31167-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~10 metų",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Labubu – seneliukas su charakteriu, kuris žino, kaip turi būti. Labubu atkeliavo iš Anykščių gatvių, kur ilgai klaidžiojo niekieno nepastebėtas, pavojingai lakstydamas tarp automobilių ir nebijodamas nei triukšmo, nei judesio. Atrodė, lyg visas pasaulis jam būtų nebylus — ir pasirodė, kad taip ir yra. Labubu yra kurčias. Senas kūnelis, susilpnėjusios kojytės, širdies problemos, odos bėdos, dantų skausmai — ne tas gyvenimo krūvis, kurį norėtų nešioti bet kuris šuo, tačiau nepaisant visko, jo akys vis dar švyti. Lyg juose būtų likusi maža, bet labai ryški kibirkštis, kuri sako: „Aš dar čia. Aš dar noriu gyventi.“ Ir gyventi Labubu tikrai moka — savaip. Jis yra tipiškas senas ponas, kuriam visi turi paklusti. Jis paniurzga jei pagalvė nepakankamai minkšta, per lėtai atnešamas maistas. O kartais burbteli visiškai be priežasties — tiesiog tam, kad pasaulis žinotų, jog jis turi nuomonę. Net juokas ima matant, kaip dėl mažiausia smulkmena Labubu nepraleis progos paniurzgėti. Mes sakom — čia tiesiog Labubu kalba. Jis pagaliau turi teisę reikšti, kas nepatinka. Gal niekas anksčiau jo neišklausė? Gal niekam nebuvo svarbu, kad jam šalta, skauda ar nemalonu? O dabar turi mus — žmones, kurie stengiasi apsaugoti jį nuo kiekvieno diskomforto, nuo per kietos guolio kraštinės ir nuo nereikalingo triukšmo. Jei jam kažkas netinka, mes juk turime žinoti? Labubu draugiškas su žmogumi ir šunimis, tik viską daro savo ritmu — lėtai, apgalvotai, kaip tikras senas džentelmenas. Procedūrų jis nemėgsta, net jei po jų būtų lengviau — galvoje jam viskas paprasta: jei šiandien galiu be to gyventi, kam kentėti? Jo charakteris stiprus, atviras ir labai žmogiškas — toks niurzgėjimas, kuris nenuvargina, o priešingai, prajuokina. Tokius šunis mums lengva mylėti iš visos širdies, tai asmenybė, kuri dabar iš visų jėgų stengiasi pasakyti, jog ji čia. Mes ieškome žmonių, kurie pamiltų ne tik gražią istorijos pabaigą, bet ir Labubu tokį, koks jis yra — su užsispyrusiu charakteriu, su lėtu žingsniu, su poreikiu būti suprastam ir gerbiamam. Jam reikia namų, kur senatvė nebūtų kova, o minkšta, rami, tyli diena ant pagalvės su žmogumi šalia. Ieškome tų, kuriuos jis džiugins savo niurzgėjimu ir matys jame visą jo gyvenimo svorį, švelnumą ir kovingą širdį. Jeigu tavo namuose yra vietos seniukui, kuris kalba niurzgesiu, myli iš lėto, bet labai nuoširdžiai — galbūt Labubu bus tavo šeimos narys. ❤️ Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-06-05T15:19:35Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:pepe",
+  "url": "https://naminukai.com/pepe/",
+  "source": "naminukai",
+  "name": "Pepė",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2025/06/e5285358-6013-421a-90f4-a69cc07cb2f9.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~1 metų",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2025-06-02T20:40:35Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:zaneta",
+  "url": "https://naminukai.com/zaneta/",
+  "source": "naminukai",
+  "name": "Žaneta",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2025/06/fc150fed-c9ea-4bbf-b6d6-1f34c0906964.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~8 metų",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Žaneta – kai gyvenimas prasideda ne iš pradžių, o pagaliau Žanetai ilgą laiką užteko tiesiog būti. Ne gyventi, ne džiaugtis, ne liūdėti – o tiesiog egzistuoti. Prieglaudoje ji rymojo tyliai, tarsi nenorėdama trukdyti, nenorėdama matytis. Nuo nieko nebėgo, bet ir niekur neskubėjo, nelabai kas džiugino, bet ir nelabai kas liūdino. Mama Žaklina, su kuria jos istorija ir prasidėjo, vis dar šalia. Net suaugusią dukrą globoja kaip gali: palaiko, prausia, būna kartu. Bet dabar jau Žaneta pati žengia pirmus savo žingsnius į gyvenimą – savarankiškai. Tyrinėja kiemą, mokosi džiaugtis pasivaikščiojimais, įgauna pasitikėjimo savimi ir žmogumi. Pradėjo leisti prisiliesti – ir jai tai patinka. Ne staiga, ne iš karto, bet nuoširdžiai. Tokioms kaip Žaneta reikia daugiau nei skanėstų ar gražių žodžių. Joms reikia žmonių, kurie supras, kad meilė kartais neatrodo kaip džiaugsmo šuoliai – kartais ji tyli, sėdi šalia ir tiesiog laukia, kol prisiliesi ne tik ranka, bet ir širdimi. Ir mes laukėme. Laukėme ilgai – kada tas žvilgsnis taps gyvesnis, kada šuniukas ne tik kentės žmogaus buvimą, bet pradės jo norėti. Ši diena atėjo. Žaneta dar turi, ką išmokti. Pavadėlis – kol kas dar misija. Drąsa – auganti. Bet noras būti šalia, noras pažinti pasaulį – tikras ir nuoširdus. Ir jei iki šiol gyvenimas ją tiesiog nešė, dabar pagaliau ji jį pradeda gyventi. Ji sterilizuota, čipuota, paskiepyta, vyresnio amžiaus, bet atrodo, tarsi būtų gimusi iš naujo. Ir labai labai nusipelno, kad šitas antrasis jos gyvenimas būtų gražus. Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2025-06-02T21:35:34Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:rimo",
+  "url": "https://naminukai.com/rimo/",
+  "source": "naminukai",
+  "name": "Rimo",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2025/06/514213e8-1ba5-4a1b-89e5-b0e1f24a2782.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/06/3fa8baf3-7e5b-47e3-88ef-6223c23558e5.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/06/9061402c-460a-44d3-8f28-715e544d70ff.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/03/IMG_8821-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/03/IMG_8819-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~4-5 metai",
+  "ageEn": null,
+  "size": "large",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "NAUJŲ NAMŲ PAIEŠKAS tęsia Rimo!Kai Rimo atkeliavo į prieglaudą, jo akyse buvo daug nerimo – nepažįstami žmonės, neaišku, kas laukia toliau, keista vieta… Iš pradžių jis nerado sau vietos, bet pakako kelių dienų, kad suprastų: čia jis saugus. Suteikus jam dėmesio, švelnumo ir laiko, jo širdelė rimo, rimo… ir mūsų Rimo pagaliau – nurimo!Dabar jis pasiruošęs savo meilę dovanoti naujiems namams. Rimukui yra 4-5 metai, sveria 24 kg, kastruotas, ženklintas mikroschema, skiepytas ir nukirmintas. Nepaisant nemažo dydžio, su žmogumi jis itin švelnus ir atsidavęs. Rimo myli ir suaugusius, ir vaikus, yra draugiškas su kitais šunimis, o prieglaudoje, Mūzos ir Koros nuomone, tapo vienu mėgstamiausių žaidimų draugų. Jis žaidžia švelniai, sąmoningai pristabdo save saugodamas savo mylimą žmogų, kad neužgautų.Tačiau kartais Rimo vis dar laiko save savo gyvenimo kapitonu – nors mokosi režimo ir taisyklių, kartais vis dar pats nusprendžia, kada baigiasi pasivaikščiojimas ar žaidimų laikas. Bet kasdien jis vis stipriau atranda ryšį su žmogumi, jaučiasi saugesnis, labiau užtikrintas bei mokosi vaikščioti su pavadėliu – ir jam sekasi puikiai!Rimo ieško namų, kuriuose jam būtų vietos ne tik fiziškai, bet ir širdyje. Jis pasiruošęs tapti ištikimu draugu, kuris mielai leis laiką su jumis ir dalinsis savo meile. Galbūt būtent jūs esate tie, kurių gyvenime trūksta šio žavingo ir širdžiai mielo bičiulio? Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2025-06-02T20:46:36Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:burbonas",
+  "url": "https://naminukai.com/burbonas/",
+  "source": "naminukai",
+  "name": "Burbonas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2025/03/IMG_9625-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI26505-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2026/06/NAMINUKAI26555-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/06/9e0d8467-f1fe-44a8-ac9d-c2cfa6e16989.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/03/IMG_9159-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/03/IMG_9631-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/03/IMG_9151-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/06/8e6efe62-f019-4047-9be9-3762f3ed548a.jpg",
+   "https://naminukai.com/wp-content/uploads/2025/06/b92664bc-9f0c-457f-82e1-201adbc4e97c.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~5 metai",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Burbonas – prabangus kaip gėrimas, minkštas kaip pagalvė! Jeigu prieglaudoje vyktų asmenybių konkursas, Burbonas neabejotinai laimėtų – pavydėtina charizma, o pasitikėjimo savimi užtektų visiems. Tai ne bet koks šuo – tai ponas šuo, aiškiai suprantantis komforto vertę. Jeigu manote, kad šunys tiesiog miega ten, kur atsigula, klystate – Burbono poilsis tai ištisas menas. Jo keturios pagalvės išdėstytos strategiškai, prisitaikant prie kūno apvalumų, o jeigu kas nors ne taip – sprendimas pats randa akimirksniu. Tačiau nereikia apsigauti – nors Burbonas meistras taupyti energiją, ją brandina, jis moka džiaugtis gyvenimu. Jeigu glostote per trumpai – burba. Jeigu tingiai voliojasi ir nusprendžia parodyti savo meilę – tiesiog krenta į rankas, savo visais apvalumais, visa esybe. Jis ne tik nori būti mylimas, bet ir puikiai moka tą parodyti: raitosi, šypsosi, skleidžia įvairius burboniškus garsus, bendrauja ir džiaugiasi visais būdais. Atvykęs kartu su kitais likimo draugais, Burbonas ilgai dvejojo – juk tie „namai“, kuriuose niekas nebegyveno, vis tiek buvo jo. Ir jis jų nepaliko, net kai nieko iš jų neliko, nes Burbonas yra ištikimas. Bet vos pajutęs tikrą meilę, šilumą, greitai suprato, kad komfortas nėra nuodėmė, o namai gali būti ir kitokie – tokie, kuriuose jo tikrai laukia jo žmonės ir jo pagalvės. Dabar jis pasiruošęs susirasti savo šeimą – tokią, kuri priims jį su visais jo principingais poilsio įpročiais, švelnumu, išskirtiniu vokalizavimu ir meile. Nes, sutikime, kas gi nenorėtų turėti šuns, kuris ne tik myli, bet ir – burba, kai meilės gauna per mažai? Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-06-05T15:18:14Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:uma",
+  "url": "https://naminukai.com/uma/",
+  "source": "naminukai",
+  "name": "Uma",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2024/11/IMG_7451-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/11/IMG_7452-scaled.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~3 metai",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-11-25T21:15:00Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:troja",
+  "url": "https://naminukai.com/troja/",
+  "source": "naminukai",
+  "name": "Troja",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2024/10/Naminukai_30-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/10/Naminukai_29-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/10/Naminukai_27-scaled.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/10/Naminukai_32-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~2 mėn.",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "NAUJŲ NAMŲ PAIEŠKAS skelbia sesutė Troja! Tai dar viena mažylė iš gausios Šalčininkų šeimynėlės, kuri jau dairosi naujų namų. Troja tikra meškutė, kuri augs vidutinio ūgio, kiek ilgesnio plauko, ji jau skiepyta, ženklinta mikroschema. Mažylė labai drąsi, sociali, žaisminga, išdykusi, tad, kaip visada, ieškome rimtai ir atsakingai nusiteikusių žmonių, kurie norės užauginti šią gražuolę. Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-10-21T19:55:58Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:hera",
+  "url": "https://naminukai.com/hera/",
+  "source": "naminukai",
+  "name": "Hera",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2024/09/IMG_4684-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/09/IMG_4697-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/09/IMG_4693-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/09/IMG_4691-scaled.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~2 metų",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "NAUJŲ NAMŲ PAIEŠKAS skelbia Hera! Jau norime jums pristatyti mūsų žaviąją Herą, kuri mūsų globos duris pravėrė tuomet, kai pavyko ją pagauti žiemą su neseniai gimusiais mažyliais Graičiūno gatvėje. Nors Hera gimusi toje pačioje gatvėje, tačiau mums gerokai pavyko su ja susikalbėti ir susidraugauti. Tiesa, socializacijos ir darbo dar laukia labai daug, tačiau tikim, kad ši žavi, nedidelė, jauna kalytė tikrai pavergs kieno nors širdį. Herai reikės laiko susipažinti su naujais žmonėmis, bet su laiku ji negali atsispirti norui būti mylima, gauti daug paglostukų ir dėmesio. Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-09-15T19:02:23Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:amuras",
+  "url": "https://naminukai.com/amuras/",
+  "source": "naminukai",
+  "name": "Amūras",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-39-1.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-41.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-42.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-43.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-44.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-45.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-40.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "4 metai",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "AMŽIUS DYDIS KASTRACIJA 4 metai Vidutinis Atlikta NAUJŲ NAMŲ PAIEŠKAS skelbia Amūras! Šio šunelio istorija liūdna tuo, kad dėl nepriežiūros gyvūnas jau yra kitoks, nei buvo. Šiuo metu vyksta tyrimas, bet Amūras nesiruošia dairytis atgal ir visiškai pasveikęs, atsigavęs dairosi naujų, laikinų šeimininkų, kurie svarstytų priglausti šį nuostabų šunelį. Amūras labai geras, draugiškas, socialus, prieraišus, jautrus, tačiau turi ir baimių, bet tai nė kiek nestebina, juk gyvenimas gatvėje nebuvo lengvas… Šunelis puikiai jaučiasi važiuodamas automobiliu, prašo paglostymų, mėgsta daug vaikščioti, o jo kitoniškumas neturi jokios neigiamos įtakos jo įprastam gyvenimui, tad tikrai tikim, kad atsiras žmogus, kuris pamils jį tokį, koks jis yra. Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-05-31T12:00:03Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:timis",
+  "url": "https://naminukai.com/timis/",
+  "source": "naminukai",
+  "name": "Timis",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-101.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-102.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-103.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-104.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-100.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~1 metai",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "AMŽIUS DYDIS KASTRACIJA ~1 metai Vidutinis Atlikta Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-06-27T14:50:05Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:zakas",
+  "url": "https://naminukai.com/zakas/",
+  "source": "naminukai",
+  "name": "Žakas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-162-1.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-161.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-140.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-146.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-145.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "male",
+  "ageLt": "~2 mėn.",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "AMŽIUS DYDIS KASTRACIJA ~2 mėn. Vidutinis Neatlikta NAUJŲ NAMŲ PAIEŠKAS skelbia broliukas Žakas! Tai dar vienas mažylis iš Joniškio šeimynos, kuris su savo šeima buvo rastas negyvenamoje sodyboje. Žakui šiuo metu 2 mėnesiai, skiepytas, ženklintas mikroschema, turėtų didelis neaugti. Mažylis pakankamai socialus, bendraujantis, tad ieškome rimtų naujų šeimininkų kurie padėtų jam užaugti! Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-05-31T10:46:27Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:mike",
+  "url": "https://naminukai.com/mike/",
+  "source": "naminukai",
+  "name": "Mikė",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-83.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-86-1.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-85.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-84.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7654-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7666-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7671-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7673-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7674-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7675-scaled.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~10 metų",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Sveiki, aš esu Mikė! Ir IEŠKAU NAUJŲ NAMŲ! Norėčiau prisistatyti ir surasti savo naują šeimą, nes iki tos dienos, kai į mano kiemą įžengė prieglaudos merginos, gyvenau pati sau kieme, turėjau šiokią tokią būdelę, tvorą, per kurią pavykdavo išlįsti ir nesaugiai bėgioti gatvėmis, o kur dar nuolatinės mažylių vados, nors ne visada jų jau ir norėjosi, bet kas mūsų klausia… Bet po 10 metų nelabai linksmo gyvenimo, aš išvažiavau iš savo buvusių namų, kur manęs net niekas negailėjo ir dėl manęs nėliūdėjo, o dar su malonu pasodino į mašiną. Ir aš visai nesiskundžiu ir nieko nesiilgiu, nes dabar mane supa nuostabūs žmonės! Aš pagaliau miegu šiltai, jaukiai, gaunu reguliariai skaniai valgyti, mano vedžioja su pavadėliu (nors pirmas dienas tai buvo siaubinga), mane glosto, myli, lepina, nuolat giria, su manimi žaidžia! Dar sako, kad esu labai rami, kukli, puikiai tikčiau ramesniems žmonėms, tikrai nieko namie nesugadinsiu, būsiu tvarkinga, norėsiu tik būti toliau tokia mylima, kaip dabar. Ir prašau nebijoti mano amžiaus, nes iš merginų girdėjau, kad žmonės bijo imti vyresnius šunelius, bet mano naujas gyvenimas dar tik prasidėjo! Esu net paskiepyta, suženklinta mikroschema, sterilizuota, gavusi vaistukų nuo visų visų parazitų ir ne tokia ir didelė, primenu pagal kūnelį šiek tiek spanielį, bet nosytė mano sako panaši į peliuko Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-08-03T17:13:52Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
+ },
+ {
+  "id": "naminukai:senjorita",
+  "url": "https://naminukai.com/senjorita/",
+  "source": "naminukai",
+  "name": "Senjorita",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-47.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-51.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-50.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-49.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-48.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-46-1.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/05/Priegauda-suniukai-pavasaris-2024-web-52.jpg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7443-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7450-scaled.jpeg",
+   "https://naminukai.com/wp-content/uploads/2024/03/IMG_7437-scaled.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "listed on /sunys/",
+  "sex": "female",
+  "ageLt": "~10 metų",
+  "ageEn": null,
+  "size": "medium",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "NAUJŲ NAMŲ PAIEŠKOMS jau pasiruošusi Senjorita! Nors tai viena iš vyresnio amžiaus mūsų globotinių, tačiau nei kiek nemažiau verta jūsų dėmesio. Senjorita daug metų gyveno prastose sąlygose, neturėjo kur slėptis nuo lietaus, valgė atliekas, vedė nuolatines vadas, tačiau dabar ji nusipelnė pačių geriausių naujų namų. Kalytė labai nuolanki, gera, švelni, nuostabiomis savo giliomis akimis, kurios pavergė mūsų širdis. Jose tiek daug gyvenimo patirties, išminties, skausmo, nerimo, bet dabar jau pagaliau ir džiaugsmo! Senjorita pas mus sužydėjo, pradėjo savimi pasitikėti, draugauti su kitais šunimis, su jais žaisti, vizginti uodegą ir mėgautis glostymais. Nors jai jau virš 10 metų ir ji vidutinio ūgio, tačiau puiki pasivaikščiojimų draugė ir ieškome žmonių, kurie nebijos priglausti vyresnį gyvūną, kuris iki gyvenimo galo apsups jus savo ištikimybe, meile, draugyste. Jeigu susidomėjote, lauksime jūsų skambučio šiuo numeriu: ([kontaktas pašalintas] (Simona)",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-08-03T17:23:45Z",
+  "shelter": {
+   "id": "naminukailt",
+   "name": "VšĮ Naminukai",
+   "city": "Vilnius",
+   "address": "Rukainiai, Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/naminukailt"
+  }
  }
 ]

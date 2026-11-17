@@ -19,4 +19,5 @@ module.exports = [
   require('./gyvunugloba.cjs'),
   require('./padekman.cjs'),
   require('./beglobis.cjs'),
+  require('./naminukai.cjs'),
 ];
