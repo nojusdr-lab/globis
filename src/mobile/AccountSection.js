@@ -60,7 +60,7 @@ export default function AccountSection({account,lang}) {
    {emailField}{pwField(t('Slaptažodis','Password'),false)}
    <Button primary label={t('Prisijungti','Sign in')} icon="log-in-outline" disabled={busy||!ok||!password} onPress={()=>run(()=>account.signIn(email.trim(),password),()=>setPassword(''))}/>
    {link(t('Neturite paskyros? Susikurkite','No account? Create one'),'signup')}
-   {link(t('Pamiršau slaptažodį','Forgot password'),'reset')}
+   {/* shortcut: hidden until custom SMTP lets the Reset Password email carry {{ .Token }}; flow below is ready */}
   </>:step==='signup'?<>
    {emailField}{pwField(t('Naujas slaptažodis','New password'),true)}{pwHint}
    <Button primary label={t('Sukurti paskyrą','Create account')} icon="person-add-outline" disabled={busy||!ok||!pwOk} onPress={()=>run(()=>account.signUp(email.trim(),password),()=>setPassword(''))}/>
