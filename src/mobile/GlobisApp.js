@@ -94,7 +94,8 @@ function AppContent() {
  useEffect(()=>{dispatch({type:'filters',filters});},[filters]);
  // Warm the disk cache for the next cards so a swipe shows the photo at once.
  useEffect(()=>{const next=pending.slice(1,4).map(p=>p.photos?.[0]).filter(Boolean);if(next.length)CachedImage.prefetch(next,'memory-disk').catch(()=>{});},[pending]);
- const photoH=Math.round(Math.min(440,Math.max(200,height*0.40)));
+ // Photo takes the height left after header, card info, buttons and tab bar (about 335px).
+ const photoH=Math.round(Math.min(640,Math.max(220,height-335)));
 
  if(!state.onboarded) return <Onboarding lang={lang} reduced={reduced} pets={PETS.filter(eligible)} shelters={organizations.length} onLang={l=>dispatch({type:'language',lang:l})} onDone={f=>{setFilters({...defaults,...f});dispatch({type:'onboarded',filters:{...defaults,...f}});}}/>;
  return <SafeAreaView style={s.root} edges={['top','bottom']}><StatusBar barStyle="dark-content" backgroundColor={C.bg}/><View style={s.shell}>
