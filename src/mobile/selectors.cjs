@@ -11,7 +11,7 @@ function selectPets(pets,filters=defaults) {
  return pets.filter(p=>eligible(p) && (filters.species==='all'||p.species===filters.species) && (filters.city==='all'||p.city===filters.city) && (!filters.urgent || (p.urgent===true && Boolean(p.urgentEvidence))) && matchesQuery(p,filters.query));
 }
 function activeFilters(filters) {
- return (filters.city!=='all'?1:0)+(filters.urgent?1:0);
+ return (filters.species!=='all'?1:0)+(filters.city!=='all'?1:0)+(filters.urgent?1:0);
 }
 // Lithuanian plural form: one (1, 21), few (2-9, 22), many (0, 10-20, 30)
 function pl(n,one,few,many) {

@@ -17,7 +17,7 @@ test('search matches name, city and shelter without accents and keeps eligibilit
  assert.deepEqual(selectPets(pets,{...defaults,query:'kate kaunas'}).map(p=>p.id),['b']);
  assert.equal(selectPets(pets,{...defaults,query:'zzz'}).length,0);
  assert.equal(activeFilters(defaults),0);
- assert.equal(activeFilters({...defaults,city:'Kaunas',urgent:true,query:'x',species:'cat'}),2);
+ assert.equal(activeFilters({...defaults,city:'Kaunas',urgent:true,query:'x',species:'cat'}),3);
 });
 test('Lithuanian plural forms',()=>{
  const f=n=>pl(n,'skelbimas','skelbimai','skelbimų');

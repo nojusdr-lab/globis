@@ -42,3 +42,12 @@ test('first launch language follows the phone, unknown stays Lithuanian',()=>{
  assert.equal(emptyState().lang,'lt');
  assert.equal(emptyState('fr').lang,'lt');
 });
+
+test('onboarding and filters persist, bad filter values fall back to defaults',()=>{
+ let s=reducer(emptyState(),{type:'onboarded',filters:{species:'dog',city:'Kaunas',urgent:false,query:''}});
+ assert.equal(s.onboarded,true);
+ assert.deepEqual(decode(JSON.stringify(s)),s);
+ s=reducer(s,{type:'filters',filters:{species:'fish',city:5,urgent:'yes',extra:1}});
+ assert.deepEqual(s.filters,{species:'all',city:'all',urgent:false,query:''});
+ assert.equal(decode(JSON.stringify(emptyState())).onboarded,undefined);
+});

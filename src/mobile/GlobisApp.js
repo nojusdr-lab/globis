@@ -13,6 +13,7 @@ import {defaults,selectPets,roster,activeFilters,pl} from './selectors.cjs';
 import {C,styles as s} from './theme';
 import {Avatar,Button,Directions,Empty,HeartButton,Photo,Sheet,SourceLink,Status} from './ui';
 import FilterSheet from './FilterSheet';
+import Onboarding from './Onboarding';
 import {expo as config} from '../../app.json';
 import AboutSheet from './AboutSheet';
 import {PetProfile,ContactSheet} from './Profiles';
@@ -47,7 +48,7 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
 
 function AppContent() {
  const {state,dispatch,error,retry}=useDiscovery(), reduced=useReducedMotion();
- const [about,setAbout]=useState(false),[tab,setTab]=useState('discover'),[filters,setFilters]=useState({...defaults}),[filterOpen,setFilterOpen]=useState(false),[profile,setProfile]=useState(null),[contact,setContact]=useState(null),[shelterId,setShelterId]=useState(null),[search,setSearch]=useState(''),[toast,setToast]=useState(null);
+ const [about,setAbout]=useState(false),[tab,setTab]=useState('discover'),[filters,setFilters]=useState(()=>({...defaults,...state.filters})),[filterOpen,setFilterOpen]=useState(false),[profile,setProfile]=useState(null),[contact,setContact]=useState(null),[shelterId,setShelterId]=useState(null),[search,setSearch]=useState(''),[toast,setToast]=useState(null);
  const timer=useRef(null);
  const {height,width}=useWindowDimensions();
  const lang=state.lang,t=(lt,en)=>lang==='lt'?lt:en;
@@ -90,10 +91,12 @@ function AppContent() {
  const shelter=shelterId?(()=>{const org=organizations.find(o=>o.id===shelterId);if(!org)return null;const pets=roster(PETS,org.id);return {...org,pets,active:pets.filter(eligible).length};})():null;
 
  const top=pending[0];
+ useEffect(()=>{dispatch({type:'filters',filters});},[filters]);
  // Warm the disk cache for the next cards so a swipe shows the photo at once.
  useEffect(()=>{const next=pending.slice(1,4).map(p=>p.photos?.[0]).filter(Boolean);if(next.length)CachedImage.prefetch(next,'memory-disk').catch(()=>{});},[pending]);
  const photoH=Math.round(Math.min(440,Math.max(200,height*0.40)));
 
+ if(!state.onboarded) return <Onboarding lang={lang} reduced={reduced} pets={PETS.filter(eligible)} shelters={organizations.length} onLang={l=>dispatch({type:'language',lang:l})} onDone={f=>{setFilters({...defaults,...f});dispatch({type:'onboarded',filters:{...defaults,...f}});}}/>;
  return <SafeAreaView style={s.root} edges={['top','bottom']}><StatusBar barStyle="dark-content" backgroundColor={C.bg}/><View style={s.shell}>
   <View style={s.header}>
    <Pressable accessibilityRole="button" accessibilityLabel={t('Apie GLOBIS','About GLOBIS')} onPress={()=>setAbout(true)} style={{minHeight:48,justifyContent:'center'}}>
