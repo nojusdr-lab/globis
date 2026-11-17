@@ -1,0 +1,20 @@
+[
+  {
+    "url": "http://sggn.lt/musu-gyvunai/",
+    "finalUrl": "http://sggn.lt/musu-gyvunai/",
+    "status": 200,
+    "bytes": 23527
+  },
+  {
+    "url": "http://sggn.lt/?rest_route=/",
+    "finalUrl": "http://sggn.lt/?rest_route=/",
+    "status": 200,
+    "bytes": 1469
+  },
+  {
+    "url": "http://www.sggn.lt/",
+    "finalUrl": "http://sggn.lt/",
+    "status": 200,
+    "bytes": 39340
+  }
+]
