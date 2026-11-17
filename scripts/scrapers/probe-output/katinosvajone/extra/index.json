@@ -1,26 +1,8 @@
 [
   {
-    "url": "https://www.katinosvajone.lt/musu-globotiniai?pet_status=for_adoption",
-    "finalUrl": "https://www.katinosvajone.lt/musu-globotiniai?pet_status=for_adoption",
+    "url": "https://www.katinosvajone.lt/musu-globotiniai?pet_status=for_adoption&pg=2",
+    "finalUrl": "https://www.katinosvajone.lt/musu-globotiniai?pet_status=for_adoption&pg=2",
     "status": 200,
-    "bytes": 41670
-  },
-  {
-    "url": "https://www.katinosvajone.lt/musu-globotiniai?pg=2",
-    "finalUrl": "https://www.katinosvajone.lt/musu-globotiniai?pg=2",
-    "status": 200,
-    "bytes": 70251
-  },
-  {
-    "url": "https://www.katinosvajone.lt/musu-globotiniai?pg=175",
-    "finalUrl": "https://www.katinosvajone.lt/musu-globotiniai?pg=175",
-    "status": 200,
-    "bytes": 66470
-  },
-  {
-    "url": "https://www.katinosvajone.lt/musu-globotinis/tankas",
-    "finalUrl": "https://www.katinosvajone.lt/musu-globotinis/tankas",
-    "status": 200,
-    "bytes": 31680
+    "bytes": 41675
   }
 ]

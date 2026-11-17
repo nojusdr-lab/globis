@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.mazasdraugas.lt/wp-json/wp/v2/categories?slug=dovanojami-sunys,dovanojamos-kates&_fields=id,name,slug",
+    "finalUrl": "https://www.mazasdraugas.lt/wp-json/wp/v2/categories?slug=dovanojami-sunys,dovanojamos-kates&_fields=id,name,slug",
+    "status": 200,
+    "bytes": 137
+  },
+  {
+    "url": "https://www.mazasdraugas.lt/dovanojami-gyvunai/page/2/",
+    "finalUrl": "https://www.mazasdraugas.lt/dovanojami-gyvunai/page/2/",
+    "status": 200,
+    "bytes": 326102
+  }
+]

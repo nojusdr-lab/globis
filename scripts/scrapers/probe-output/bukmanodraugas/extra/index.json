@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://bukmanodraugas.lt/wp-json/wp/v2/categories?slug=sunys-iesko-namu,kates-iesko-namu,rado-namus&per_page=100&_fields=id,name,slug",
+    "finalUrl": "https://bukmanodraugas.lt/wp-json/wp/v2/categories?slug=sunys-iesko-namu,kates-iesko-namu,rado-namus&per_page=100&_fields=id,name,slug",
+    "status": 200,
+    "bytes": 205
+  },
+  {
+    "url": "https://bukmanodraugas.lt/wp-json/wp/v2/posts?categories=38,39&per_page=100&page=1&_fields=id,link,title,modified_gmt,featured_media,content,categories",
+    "finalUrl": "https://bukmanodraugas.lt/wp-json/wp/v2/posts?categories=38,39&per_page=100&page=1&_fields=id,link,title,modified_gmt,featured_media,content,categories",
+    "status": 200,
+    "bytes": 35201
+  }
+]
