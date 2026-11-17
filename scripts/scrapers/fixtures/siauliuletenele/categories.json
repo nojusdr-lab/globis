@@ -1,0 +1,82 @@
+[
+ {
+  "id": 3,
+  "slug": "sunys",
+  "name": "MŪSŲ ŠUNYS"
+ },
+ {
+  "id": 7,
+  "slug": "kates",
+  "name": "MŪSŲ KATĖS"
+ },
+ {
+  "id": 41,
+  "slug": "draugai-senjorams",
+  "name": "DRAUGAI SENJORAMS"
+ },
+ {
+  "id": 42,
+  "slug": "mazyliai-suniukai",
+  "name": "ŠUNIUKAI IKI 6 MĖN."
+ },
+ {
+  "id": 44,
+  "slug": "sunys-gime-2017-2023-m",
+  "name": "ŠUNYS, GIMĘ 2017-2023 M."
+ },
+ {
+  "id": 56,
+  "slug": "gyvunai-is-radviliskio-rajono-2026-m",
+  "name": "GYVŪNAI IŠ RADVILIŠKIO RAJONO (2026 M.)"
+ },
+ {
+  "id": 57,
+  "slug": "gyvunai-is-siauliu-rajono-2026-m",
+  "name": "GYVŪNAI IŠ ŠIAULIŲ RAJONO (2026 M.)"
+ },
+ {
+  "id": 58,
+  "slug": "sunys-gime-2024-2026-m",
+  "name": "ŠUNYS, GIMĘ 2024-2026 M."
+ },
+ {
+  "id": 9001,
+  "slug": "sunys-gime-iki-2016-m",
+  "name": "ŠUNYS, GIMĘ IKI 2016 M."
+ },
+ {
+  "id": 9002,
+  "slug": "kates-gimusios-iki-2016-m",
+  "name": "KATĖS, GIMUSIOS IKI 2016 M."
+ },
+ {
+  "id": 9003,
+  "slug": "kates-gimusios-2017-2023-m",
+  "name": "KATĖS, GIMUSIOS 2017-2023 M."
+ },
+ {
+  "id": 9004,
+  "slug": "kates-gimusios-2024-2026-m",
+  "name": "KATĖS, GIMUSIOS 2024-2026 M."
+ },
+ {
+  "id": 9005,
+  "slug": "mazyliai-kaciukai",
+  "name": "KAČIUKAI IKI 6 MĖN."
+ },
+ {
+  "id": 9006,
+  "slug": "netektys",
+  "name": "NETEKTYS"
+ },
+ {
+  "id": 9007,
+  "slug": "padovanoti-gyvunai",
+  "name": "RADO NAMUS"
+ },
+ {
+  "id": 9008,
+  "slug": "dinge",
+  "name": "DINGĘ"
+ }
+]

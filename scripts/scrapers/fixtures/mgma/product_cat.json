@@ -1,0 +1,37 @@
+[
+ {
+  "id": 20,
+  "name": "Kačiukai Dovanojami",
+  "slug": "kaciukai"
+ },
+ {
+  "id": 21,
+  "name": "Kačiukai naujokai",
+  "slug": "kaciukai-naujokai"
+ },
+ {
+  "id": 22,
+  "name": "Kačiukai Rado namus",
+  "slug": "rado-namus"
+ },
+ {
+  "id": 23,
+  "name": "Šuniukai dovanojami",
+  "slug": "suniukai"
+ },
+ {
+  "id": 24,
+  "name": "Šuniukai naujokai",
+  "slug": "suniukai-naujokai"
+ },
+ {
+  "id": 25,
+  "name": "Šuniukai rado namus",
+  "slug": "suniukai-rado-namus"
+ },
+ {
+  "id": 15,
+  "name": "Uncategorized",
+  "slug": "uncategorized"
+ }
+]

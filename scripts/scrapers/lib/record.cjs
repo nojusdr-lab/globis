@@ -1,0 +1,46 @@
+'use strict';
+// One animal as seen on a source page. Mirrors public.snapshot_animals.
+// Every fact is nullable; null means "the page did not say".
+const { cleanText, stripPrivate } = require('./normalize.cjs');
+
+const STATUSES = new Set(['available', 'reserved', 'unknown', 'confirmed_adopted']);
+const FIELDS = ['name', 'species', 'sex', 'age_text', 'size', 'chipped', 'vaccinated', 'neutered', 'bio_lt'];
+
+function makeAnimal(sourceId, input) {
+  if (!input || typeof input !== 'object') throw new Error('Animal must be an object');
+  const url = new URL(input.sourceUrl);
+  if (url.protocol !== 'https:' && url.protocol !== 'http:') throw new Error('Bad sourceUrl');
+  const nativeId = String(input.nativeId ?? '').trim();
+  if (!/^[\w.:-]{1,120}$/u.test(nativeId)) throw new Error(`Bad nativeId: ${nativeId}`);
+  const status = input.status ?? 'unknown';
+  if (!STATUSES.has(status)) throw new Error(`Bad status: ${status}`);
+  const statusEvidence = cleanText(input.statusEvidence);
+  if ((status === 'reserved' || status === 'confirmed_adopted') && !statusEvidence) {
+    throw new Error(`Status ${status} needs evidence text from the page`);
+  }
+  const animal = {
+    id: `${sourceId}:${nativeId}`,
+    source: sourceId,
+    sourceUrl: url.href,
+    name: cleanText(input.name),
+    species: oneOf(input.species, ['dog', 'cat', 'other']),
+    sex: oneOf(input.sex, ['male', 'female']),
+    age_text: cleanText(input.age_text),
+    size: oneOf(input.size, ['small', 'medium', 'large']),
+    photos: [...new Set((input.photos || []).filter(Boolean).map(p => new URL(p, url).href))].slice(0, 10),
+    chipped: bool(input.chipped),
+    vaccinated: bool(input.vaccinated),
+    neutered: bool(input.neutered),
+    bio_lt: stripPrivate(cleanText(input.bio_lt)),
+    status,
+    statusEvidence,
+    sourceUpdatedAt: input.sourceUpdatedAt ?? null,
+  };
+  if (animal.bio_lt && animal.bio_lt.length > 4000) animal.bio_lt = animal.bio_lt.slice(0, 4000) + '…';
+  return animal;
+}
+
+const oneOf = (v, allowed) => (allowed.includes(v) ? v : null);
+const bool = v => (v === true || v === false ? v : null);
+
+module.exports = { makeAnimal, FIELDS, STATUSES };

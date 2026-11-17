@@ -1,0 +1,102 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const adapter = require('../adapters/penktakoja.cjs');
+const { createFetcher } = require('../lib/polite-fetch.cjs');
+const { createParseCache } = require('../lib/parse-cache.cjs');
+const { runSource } = require('../lib/run-source.cjs');
+const { fakeFetch, fakeClock } = require('./helpers.cjs');
+const routes = require('../fixtures/penktakoja/routes.json');
+
+const FIELDS = 'id,link,title,modified_gmt,featured_media,content,product_cat,class_list';
+const productUrl = (perPage, page) =>
+  `https://penktakoja.lt/wp-json/wp/v2/product?product_cat=15&per_page=${perPage}&page=${page}&_fields=${FIELDS}`;
+const PRODUCTS = routes[productUrl(100, 1)];
+const MEDIA = 'https://penktakoja.lt/wp-json/wp/v2/media?include=23959,23964,23969,23923,23929&per_page=100&_fields=id,source_url';
+
+async function collect(r = routes, a = adapter) {
+  const calls = [];
+  const fetcher = createFetcher({ allowedHosts: a.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, calls) });
+  const run = await runSource(a, { fetcher, cache: createParseCache(null) });
+  return { run, calls };
+}
+
+test('penktakoja: robots.txt is read first, all requests are GETs to penktakoja.lt', async () => {
+  const { calls } = await collect();
+  assert.equal(calls[0].url, 'https://penktakoja.lt/robots.txt');
+  assert.ok(calls.every(c => c.method === 'GET' && new URL(c.url).hostname === 'penktakoja.lt'));
+  assert.equal(calls.length, 3, 'robots + one product page + one media page');
+});
+
+test('penktakoja: reads name, link, photo, date; unknown facts stay null', async () => {
+  const { run } = await collect();
+  assert.equal(run.state, 'complete');
+  assert.deepEqual(run.animals.map(a => a.name), ['TREPSĖ', 'VOLFAS', 'ZRAZAS', 'ŠACHAS', 'ŠMAKIS']);
+  const t = run.animals[0];
+  assert.equal(t.id, 'penktakoja:23944');
+  assert.equal(t.sourceUrl, 'https://penktakoja.lt/beglobis/trepse/');
+  assert.equal(t.species, 'dog', 'category "Šunys"');
+  assert.deepEqual(t.photos, ['https://penktakoja.lt/wp-content/uploads/2026/10/trepse-3_2-680x920.jpg']);
+  assert.equal(t.sourceUpdatedAt, '2026-10-27T17:41:26Z');
+  for (const a of run.animals) {
+    for (const f of ['sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt']) {
+      assert.equal(a[f], null, `${a.id} ${f}`);
+    }
+    assert.doesNotMatch(JSON.stringify(a), /685/, 'no phone number');
+  }
+  assert.deepEqual(run.animals.find(a => a.name === 'ŠMAKIS').photos, [], 'no media = no photo');
+});
+
+test('penktakoja: no status text on the site = unknown with no evidence', async () => {
+  const { run } = await collect();
+  for (const a of run.animals) {
+    assert.equal(a.status, 'unknown');
+    assert.equal(a.statusEvidence, null);
+  }
+  assert.deepEqual(run.skipped, []);
+});
+
+test('penktakoja: walks pages until a short page', async () => {
+  const r = { ...routes };
+  delete r[productUrl(100, 1)];
+  r[productUrl(2, 1)] = PRODUCTS.slice(0, 2);
+  r[productUrl(2, 2)] = PRODUCTS.slice(2, 4);
+  r[productUrl(2, 3)] = PRODUCTS.slice(4);
+  const { run, calls } = await collect(r, adapter.create({ perPage: 2 }));
+  assert.equal(run.state, 'complete');
+  assert.equal(run.animals.length, 5);
+  assert.ok(!calls.some(c => c.url === productUrl(2, 4)), 'stops after the short page');
+});
+
+test('penktakoja: a full last page then HTTP 400 is the end', async () => {
+  const r = { ...routes };
+  delete r[productUrl(100, 1)];
+  r[productUrl(5, 1)] = PRODUCTS;
+  r[productUrl(5, 2)] = { status: 400, body: { code: 'rest_post_invalid_page_number' } };
+  const { run } = await collect(r, adapter.create({ perPage: 5 }));
+  assert.equal(run.state, 'complete');
+  assert.equal(run.animals.length, 5);
+});
+
+test('penktakoja: page limit reached = partial, never complete', async () => {
+  const r = { ...routes };
+  r[productUrl(2, 1)] = PRODUCTS.slice(0, 2);
+  r['https://penktakoja.lt/wp-json/wp/v2/media?include=23959,23964&per_page=100&_fields=id,source_url'] = routes[MEDIA].slice(0, 2);
+  const { run } = await collect(r, adapter.create({ perPage: 2, maxPages: 1 }));
+  assert.equal(run.animals.length, 2);
+  assert.equal(run.state, 'partial');
+});
+
+test('penktakoja: a failing page makes the run failed', async () => {
+  const noMedia = { ...routes };
+  delete noMedia[MEDIA];
+  assert.equal((await collect(noMedia)).run.state, 'failed');
+  const serverError = { ...routes, [productUrl(100, 1)]: { status: 500, body: 'error' } };
+  assert.equal((await collect(serverError)).run.state, 'failed');
+});
+
+test('penktakoja: a non-dog product (category changed) fails the run', async () => {
+  const merch = PRODUCTS.map((p, i) => (i === 0 ? { ...p, class_list: { 0: 'product', 1: 'product_cat-rubai' } } : p));
+  const { run } = await collect({ ...routes, [productUrl(100, 1)]: merch });
+  assert.equal(run.state, 'failed');
+});

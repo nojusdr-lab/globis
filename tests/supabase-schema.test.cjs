@@ -58,16 +58,47 @@ test('failed and partial runs cannot be published', async () => {
   }
 });
 
+async function addAnimals(pg, n) {
+  const ids = Array.from({ length: n }, (_, i) => `globok:x${i}`);
+  for (const id of ids) {
+    await pg.query('insert into animals (id, source, source_url, shelter_id) values ($1, $2, $3, $4)',
+      [id, 'globok', `https://globok.lt/gyvunai/${id.slice(7)}`, 's1']);
+  }
+  return ids;
+}
+
 test('an incomplete run never replaces the published snapshot', async () => {
   const pg = await db();
-  const good = await run(pg, 'complete', ['globok:a', 'globok:b']);
+  const ids = await addAnimals(pg, 10);
+  const good = await run(pg, 'complete', ids);
   await pg.query('select publish_source_run($1)', [good]);
-  const shrunk = await run(pg, 'complete', ['globok:a']);
+  const shrunk = await run(pg, 'complete', ids.slice(0, 5));
   await assert.rejects(pg.query('select publish_source_run($1)', [shrunk]), /previous snapshot preserved/);
   const empty = await run(pg, 'complete', []);
   await assert.rejects(pg.query('select publish_source_run($1)', [empty]), /no animals/);
-  const rows = await asAnon(pg, 'select animal_id, run_id from published_animals order by animal_id');
-  assert.deepEqual(rows.map(r => [r.animal_id, Number(r.run_id)]), [['globok:a', good], ['globok:b', good]]);
+  const rows = await asAnon(pg, 'select distinct run_id from published_animals');
+  assert.deepEqual(rows.map(r => Number(r.run_id)), [good]);
+});
+
+test('small sources: a few adoptions publish at once; a big drop needs 3 identical runs', async () => {
+  const pg = await db();
+  const ids = await addAnimals(pg, 20);
+  await pg.query('select publish_source_run($1)', [await run(pg, 'complete', ids)]);
+  const twoAdopted = await run(pg, 'complete', ids.slice(2));
+  await pg.query('select publish_source_run($1)', [twoAdopted]);
+  const half = ids.slice(10);
+  const first = await run(pg, 'complete', half);
+  await assert.rejects(pg.query('select publish_source_run($1)', [first]), /previous snapshot preserved/);
+  const other = await run(pg, 'complete', ids.slice(9));
+  await assert.rejects(pg.query('select publish_source_run($1)', [other]), /previous snapshot preserved/);
+  const second = await run(pg, 'complete', half);
+  await assert.rejects(pg.query('select publish_source_run($1)', [second]), /previous snapshot preserved/, 'runs must be consecutive and identical');
+  const third = await run(pg, 'complete', half);
+  await assert.rejects(pg.query('select publish_source_run($1)', [third]), /previous snapshot preserved/);
+  const fourth = await run(pg, 'complete', half);
+  await pg.query('select publish_source_run($1)', [fourth]);
+  const rows = await asAnon(pg, 'select count(*)::int as n from published_animals');
+  assert.equal(rows[0].n, 10);
 });
 
 test('anon reads only published data and cannot write', async () => {

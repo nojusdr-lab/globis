@@ -1,0 +1,173 @@
+{
+ "https://penktakoja.lt/robots.txt": {
+  "body": "User-agent: *\nDisallow: /wp-content/uploads/wc-logs/\nDisallow: /wp-content/uploads/woocommerce_transient_files/\nDisallow: /wp-content/uploads/woocommerce_uploads/\nDisallow: /*?add-to-cart=\nDisallow: /*?*add-to-cart=\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://penktakoja.lt/sitemaps.xml\nSitemap: https://penktakoja.lt/xmlsitemap.xml\n\nAllow: /rsssitemap.xml\nAllow: /rsslatest.xml\nAllow: /htmlsitemap.htm\n\n",
+  "headers": {
+   "content-type": "text/plain; charset=utf-8"
+  }
+ },
+ "https://penktakoja.lt/wp-json/wp/v2/product?product_cat=15&per_page=100&page=1&_fields=id,link,title,modified_gmt,featured_media,content,product_cat,class_list": [
+  {
+   "id": 23944,
+   "link": "https://penktakoja.lt/beglobis/trepse/",
+   "title": {
+    "rendered": "TREPSĖ"
+   },
+   "modified_gmt": "2026-10-27T17:41:26",
+   "featured_media": 23959,
+   "content": {
+    "rendered": "",
+    "protected": false
+   },
+   "product_cat": [
+    15
+   ],
+   "class_list": {
+    "0": "post-23944",
+    "1": "product",
+    "2": "type-product",
+    "3": "status-publish",
+    "4": "has-post-thumbnail",
+    "6": "product_cat-sunys",
+    "8": "first",
+    "9": "instock",
+    "10": "shipping-taxable",
+    "11": "purchasable",
+    "12": "product-type-simple"
+   }
+  },
+  {
+   "id": 23943,
+   "link": "https://penktakoja.lt/beglobis/volfas/",
+   "title": {
+    "rendered": "VOLFAS"
+   },
+   "modified_gmt": "2026-10-27T17:41:05",
+   "featured_media": 23964,
+   "content": {
+    "rendered": "",
+    "protected": false
+   },
+   "product_cat": [
+    15
+   ],
+   "class_list": {
+    "0": "post-23943",
+    "1": "product",
+    "2": "type-product",
+    "3": "status-publish",
+    "4": "has-post-thumbnail",
+    "6": "product_cat-sunys",
+    "8": "",
+    "9": "instock",
+    "10": "shipping-taxable",
+    "11": "purchasable",
+    "12": "product-type-simple"
+   }
+  },
+  {
+   "id": 23942,
+   "link": "https://penktakoja.lt/beglobis/zrazas/",
+   "title": {
+    "rendered": "ZRAZAS"
+   },
+   "modified_gmt": "2026-10-27T17:40:25",
+   "featured_media": 23969,
+   "content": {
+    "rendered": "",
+    "protected": false
+   },
+   "product_cat": [
+    15
+   ],
+   "class_list": {
+    "0": "post-23942",
+    "1": "product",
+    "2": "type-product",
+    "3": "status-publish",
+    "4": "has-post-thumbnail",
+    "6": "product_cat-sunys",
+    "8": "last",
+    "9": "instock",
+    "10": "shipping-taxable",
+    "11": "purchasable",
+    "12": "product-type-simple"
+   }
+  },
+  {
+   "id": 23912,
+   "link": "https://penktakoja.lt/beglobis/sachas/",
+   "title": {
+    "rendered": "ŠACHAS"
+   },
+   "modified_gmt": "2026-10-27T17:39:12",
+   "featured_media": 23923,
+   "content": {
+    "rendered": "",
+    "protected": false
+   },
+   "product_cat": [
+    15
+   ],
+   "class_list": {
+    "0": "post-23912",
+    "1": "product",
+    "2": "type-product",
+    "3": "status-publish",
+    "4": "has-post-thumbnail",
+    "6": "product_cat-sunys",
+    "8": "first",
+    "9": "instock",
+    "10": "shipping-taxable",
+    "11": "purchasable",
+    "12": "product-type-simple"
+   }
+  },
+  {
+   "id": 23911,
+   "link": "https://penktakoja.lt/beglobis/smakis/",
+   "title": {
+    "rendered": "ŠMAKIS"
+   },
+   "modified_gmt": "2026-10-27T17:34:25",
+   "featured_media": 23929,
+   "content": {
+    "rendered": "",
+    "protected": false
+   },
+   "product_cat": [
+    15
+   ],
+   "class_list": {
+    "0": "post-23911",
+    "1": "product",
+    "2": "type-product",
+    "3": "status-publish",
+    "4": "has-post-thumbnail",
+    "6": "product_cat-sunys",
+    "8": "",
+    "9": "instock",
+    "10": "shipping-taxable",
+    "11": "purchasable",
+    "12": "product-type-simple"
+   }
+  }
+ ],
+ "https://penktakoja.lt/wp-json/wp/v2/media?include=23959,23964,23969,23923,23929&per_page=100&_fields=id,source_url": [
+  {
+   "id": 23959,
+   "source_url": "https://penktakoja.lt/wp-content/uploads/2026/10/trepse-3_2-680x920.jpg"
+  },
+  {
+   "id": 23964,
+   "source_url": "https://penktakoja.lt/wp-content/uploads/2026/10/volfas-4_2-680x920.jpg"
+  },
+  {
+   "id": 23969,
+   "source_url": "https://penktakoja.lt/wp-content/uploads/2026/10/zrazas-5_2-680x920.jpg"
+  },
+  {
+   "id": 23923,
+   "source_url": "https://penktakoja.lt/wp-content/uploads/2026/10/sachas-1_2-680x920.jpg"
+  }
+ ]
+}
