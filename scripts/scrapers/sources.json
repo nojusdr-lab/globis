@@ -140,18 +140,24 @@
       "robots": "unverified",
       "terms": "unverified",
       "cms": "unverified",
-      "decision": "probe"
+      "decision": "no_listing",
+      "note": "Home page (menu: Klinika, Apie mus, Paremti, Kontaktai) has no animal list; only totals.",
+      "checked": "2026-11-17"
     },
     {
       "id": "sggn",
       "vmvtRow": 16,
       "name": "Lietuvos gyvūnų globos draugijos Šiaulių skyrius",
       "website": "http://sggn.lt/",
-      "listing": [],
-      "robots": "unverified",
-      "terms": "unverified",
-      "cms": "unverified",
-      "decision": "probe"
+      "listing": [
+        "http://sggn.lt/musu-gyvunai/"
+      ],
+      "robots": "User-agent: * / Crawl-delay: 10",
+      "terms": "footer \"Visos teisės saugomos\" only",
+      "cms": "WordPress 4.6.5 (no core REST), theme pet-rescue",
+      "decision": "probe",
+      "note": "List page not yet probed.",
+      "checked": "2026-11-17"
     },
     {
       "id": "kursenai",
@@ -192,7 +198,8 @@
       "terms": "unverified",
       "cms": "unverified",
       "decision": "probe",
-      "checked": "2026-11-17"
+      "checked": "2026-11-17",
+      "note": "First probe blocked only because robots.txt redirect (http->https) was not followed then; robots is just \"User-agent: *\". Re-probe."
     },
     {
       "id": "kompak",
@@ -200,10 +207,12 @@
       "name": "UAB „Pakruojo komunalininkas“",
       "website": "http://www.kompak.lt/index.php/gyvunai",
       "listing": [],
-      "robots": "unverified",
-      "terms": "unverified",
-      "cms": "unverified",
-      "decision": "probe"
+      "robots": "Joomla default; /index.php/gyvunai allowed",
+      "terms": "none found",
+      "cms": "joomla",
+      "decision": "no_listing",
+      "note": "Municipal quarantine page: \"ŠIUO METU GYVŪNŲ NETURIME\"; no adoption list, only yearly PDF reports.",
+      "checked": "2026-11-17"
     },
     {
       "id": "binada",
@@ -284,7 +293,9 @@
       "robots": "unverified",
       "terms": "unverified",
       "cms": "unverified",
-      "decision": "probe"
+      "decision": "no_listing",
+      "note": "Menu has only about, adoption form, reports, support; no animal list.",
+      "checked": "2026-11-17"
     },
     {
       "id": "akeso",
@@ -333,7 +344,8 @@
       "terms": "unverified",
       "cms": "unverified",
       "decision": "probe",
-      "checked": "2026-11-17"
+      "checked": "2026-11-17",
+      "note": "robots.txt redirects to www host (404 = no rules). Re-probe with www host."
     },
     {
       "id": "dogspotas",
@@ -402,9 +414,9 @@
       "robots": "Disallow: /wp-admin/",
       "terms": "/autoriniu-teisiu-politika/ unverified",
       "cms": "wordpress",
-      "decision": "probe",
-      "checked": "2026-11-16",
-      "note": "Horse sanctuary; may be sponsorship only, not adoption."
+      "decision": "no_listing",
+      "checked": "2026-11-17",
+      "note": "Horse sanctuary; horses stay permanently; only paid remote sponsorship \"Globok mane\" (100 EUR/month contract), no adoption list."
     },
     {
       "id": "mazasdraugas",
@@ -506,8 +518,9 @@
       "robots": "Disallow: /wp-admin/",
       "terms": "none found",
       "cms": "wordpress",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "no_listing",
+      "checked": "2026-11-17",
+      "note": "Menu has blog/services only; REST portfolio is empty; no animal list found."
     },
     {
       "id": "nuaras",
@@ -549,7 +562,7 @@
       "cms": "javascript app",
       "decision": "probe",
       "checked": "2026-11-17",
-      "note": "Next.js site; listing renders by JavaScript (maybe from /api/, which robots.txt disallows). Try sitemap.xml and server-rendered detail pages instead; never call /api/."
+      "note": "Next.js; list is client-rendered from /api/ (robots disallows, never call). Probe sitemap.xml and server-rendered detail pages; else no_listing."
     },
     {
       "id": "rasugloba",
