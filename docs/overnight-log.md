@@ -13,6 +13,9 @@
 - **Paskyra el. paštu** (savininko sprendimas): migracija `20261117000300_accounts_saved.sql` (RLS, ištrynimas), programėlė: kodas iš laiško, sinchronizacija, „Ištrinti paskyrą“. `2f7645d`. Laukia: migracija + Magic Link šablonas su `{{ .Token }}`.
 - **Laukų pilnumas** (7 žingsnis): `scripts/scrapers/completeness.cjs`, lentelė CI santraukoje. Silpniausi: penktakoja (240, beveik tik nuotraukos), sos-gyvunai (117), siauliuletenele (186, be lyties). Kandidatai detalių puslapių skaitymui kaip Lesė.
 - **Prisijungimas perdarytas** į el. paštą + slaptažodį (savininko pasirinkimas B), atkūrimas kodu iš laiško. `f23bf2c`. Laukia: migracija 0300, „Confirm email“ išjungti, min. slaptažodis 8, Reset Password šablonas su `{{ .Token }}`.
+- **keturkojodraugas DB klaida**: visi gyvūnai viename puslapyje, URL dabar su `#vardas`. `069d003`.
+- **Penktakoja**: puslapiuose tik vardas ir telefonas, faktų nėra. Tušti laukai teisingi, adapterio nekeičiu.
+- **Nebeskelbiami išsaugoti** (5, 27 žingsniai): išsaugant įsimenama kortelė; dingęs iš šaltinio gyvūnas lieka „Išsaugoti“ su žyme „Nebeskelbiamas“ (ne „įvaikintas“). Patikrinta web.
 
 ## Laukia savininko
 

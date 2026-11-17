@@ -72,6 +72,8 @@ export function statusInfo(pet,lang='lt') {
  const lt=lang==='lt';
  if(pet.status==='reserved') return {tone:'warn',icon:'time-outline',label:lt?'Rezervuotas':'Reserved',
   note:lt?'Prieglauda nurodė, kad gyvūnas rezervuotas. Jei rezervacija nepavyks, jis vėl gali ieškoti namų.':'The shelter marked this animal as reserved. If the reservation falls through, it may look for a home again.'};
+ if(pet.status==='no_longer_listed') return {tone:'muted',icon:'eye-off-outline',label:lt?'Nebeskelbiamas':'No longer listed',
+  note:lt?'Prieglauda šio gyvūno nebeskelbia. Tai nereiškia, kad jis įvaikintas. Paklauskite prieglaudos.':'The shelter no longer lists this animal. That does not mean it was adopted. Ask the shelter.'};
  if(pet.status==='available') return {tone:'ok',icon:'checkmark',label:lt?'Ieško namų':'Looking for a home',
   note:lt?'Prieglauda šiuo metu skelbia šį gyvūną.':'The shelter currently lists this animal.'};
  return {tone:'muted',icon:'help-circle-outline',label:lt?'Prieinamumas nepatvirtintas':'Availability unconfirmed',

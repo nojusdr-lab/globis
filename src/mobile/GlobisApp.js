@@ -24,6 +24,10 @@ import {PetProfile,ContactSheet} from './Profiles';
 
 const THRESHOLD=80;
 
+// A saved animal the shelter no longer lists: shown from its last seen card. Not a claim that it was adopted.
+const ghost=(id,snap)=>snap?{id,name:snap.name,photos:snap.photo?[snap.photo]:[],city:snap.city??null,species:snap.species??null,url:snap.url??null,
+ status:'no_longer_listed',medical:{},shelter:snap.shelter?{name:snap.shelter}:null}:null;
+
 function SwipeSurface({pet,onSave,onPass,reduced,children}) {
  const x=useRef(new Animated.Value(0)).current;
  const callbacks=useRef({});callbacks.current={pet,onSave,onPass,reduced};
@@ -60,10 +64,10 @@ function AppContent() {
  const lang=state.lang,t=(lt,en)=>lang==='lt'?lt:en;
  const filtered=useMemo(()=>selectPets(PETS,filters),[PETS,filters]);
  const pending=useMemo(()=>filtered.filter(p=>!state.saved.includes(p.id)&&!state.passed.includes(p.id)),[filtered,state.saved,state.passed]);
- const saved=useMemo(()=>state.saved.map(id=>PETS.find(p=>p.id===id)).filter(Boolean),[PETS,state.saved]);
+ const saved=useMemo(()=>state.saved.map(id=>PETS.find(p=>p.id===id)||ghost(id,state.snaps?.[id])).filter(Boolean),[PETS,state.saved,state.snaps]);
  const notify=value=>{clearTimeout(timer.current);setToast(typeof value==='string'?{text:value}:value);timer.current=setTimeout(()=>setToast(null),5000);};
  const isSaved=id=>state.saved.includes(id);
- const save=pet=>{if(!eligible(pet))return;dispatch({type:'save',id:pet.id});notify({text:t(`Išsaugota: ${pet.name}`,`Saved: ${pet.name}`),action:t('Atšaukti','Undo'),actionLabel:t('Atšaukti išsaugojimą','Undo save'),run:()=>dispatch({type:'undo'})});};
+ const save=pet=>{if(!eligible(pet))return;dispatch({type:'save',id:pet.id,snap:{name:pet.name,photo:pet.photos?.[0],city:pet.city,shelter:pet.shelter?.name,url:pet.url,species:pet.species}});notify({text:t(`Išsaugota: ${pet.name}`,`Saved: ${pet.name}`),action:t('Atšaukti','Undo'),actionLabel:t('Atšaukti išsaugojimą','Undo save'),run:()=>dispatch({type:'undo'})});};
  const remove=pet=>{dispatch({type:'remove',id:pet.id});notify({text:t(`Pašalinta: ${pet.name}`,`Removed: ${pet.name}`),action:t('Grąžinti','Restore'),run:()=>dispatch({type:'save',id:pet.id})});};
  const pass=pet=>{dispatch({type:'pass',id:pet.id});};
  const columns=width>900?4:width>600?3:2;
@@ -74,7 +78,7 @@ function AppContent() {
   <View style={s.gphoto}>
    <Pressable accessibilityRole="button" accessibilityLabel={`${t('Atidaryti profilį','Open profile')}: ${pet.name}`} onPress={()=>setProfile(pet)}>
     <Photo lang={lang} pet={pet} height={Math.round(Math.min(260,Math.max(150,(width-24)/columns*1.15)))}>
-     {pet.status==='reserved'?<View style={[s.onPhoto,{left:8,bottom:8}]}><Status pet={pet} lang={lang} small/></View>:null}
+     {['reserved','no_longer_listed'].includes(pet.status)?<View style={[s.onPhoto,{left:8,bottom:8}]}><Status pet={pet} lang={lang} small/></View>:null}
     </Photo>
    </Pressable>
    <HeartButton saved={isSaved(pet.id)} name={pet.name} lang={lang} disabled={!isSaved(pet.id)&&!eligible(pet)} onPress={()=>isSaved(pet.id)?remove(pet):save(pet)}/>

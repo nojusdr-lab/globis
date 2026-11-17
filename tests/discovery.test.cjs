@@ -60,3 +60,12 @@ test('account sync: server saves merge into the device list; plan mirrors device
   assert.deepEqual(s.saved, ['b', 'a', 'c']);
   assert.deepEqual(syncPlan(['a', 'c'], new Set(['c', 'x'])), { add: ['a'], drop: ['x'] });
 });
+
+test('saved snapshot: kept for saved animals, cleaned, and survives encode/decode', () => {
+  const { reducer: r, emptyState: e, decode: d } = require('../src/state/discovery.cjs');
+  let s = r(e(), { type: 'save', id: 'a', snap: { name: 'Rex', photo: 'https://x/1.jpg', evil: '<x>', city: 7 } });
+  s = r(s, { type: 'save', id: 'b', snap: { photo: 'https://x/2.jpg' } }); // no name: no snapshot
+  assert.deepEqual(s.snaps, { a: { name: 'Rex', photo: 'https://x/1.jpg' } });
+  s = r(s, { type: 'remove', id: 'a' });
+  assert.equal(d(JSON.stringify(s)).snaps, undefined); // snapshot of a removed animal is dropped on reload
+});

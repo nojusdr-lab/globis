@@ -2,6 +2,14 @@ const emptyState = (lang='lt') => ({version:1, saved:[], passed:[], history:[], 
 // First launch only: a phone set to a known non-Lithuanian language starts in English. Unknown stays Lithuanian.
 const langFromLocale = locale => { const tag=String(locale||'').trim().toLowerCase(); return tag && !/^lt\b/.test(tag) ? 'en' : 'lt'; };
 const without = (ids,id) => ids.filter(value=>value!==id);
+// A saved animal's last seen card, so it stays recognisable in Saved after the shelter stops listing it.
+const SNAP_KEYS=['name','photo','city','shelter','url','species'];
+function cleanSnap(x) {
+  if(!x||typeof x!=='object') return null;
+  const out={};
+  for(const k of SNAP_KEYS) if(typeof x[k]==='string'&&x[k]&&x[k].length<=500) out[k]=x[k];
+  return out.name?out:null;
+}
 function restore(ids,id,index) {
   const result=without(ids,id);
   if(index>=0) result.splice(Math.min(index,result.length),0,id);
@@ -25,6 +33,8 @@ function reducer(state,action) {
   if(action.type==='save' && state.saved.includes(action.id)) return state;
   if(action.type==='pass' && state.passed.includes(action.id)) return state;
   const entry={id:action.id,savedIndex:state.saved.indexOf(action.id),passedIndex:state.passed.indexOf(action.id)};
+  const snap=action.type==='save'?cleanSnap(action.snap):null;
+  if(snap) state={...state,snaps:{...state.snaps,[action.id]:snap}};
   return {...state,saved:action.type==='save'?[action.id,...without(state.saved,action.id)]:without(state.saved,action.id),passed:action.type==='pass'?[action.id,...without(state.passed,action.id)]:without(state.passed,action.id),history:[...state.history,entry].slice(-100)};
 }
 // Only the four known filter keys with valid types survive; anything else falls back to the default.
@@ -41,6 +51,10 @@ function decode(raw) {
   const out={version:1,saved:value.saved,passed:value.passed,history:value.history,lang:value.lang};
   if(value.onboarded===true) out.onboarded=true;
   if(value.filters) out.filters=cleanFilters(value.filters);
+  if(value.snaps&&typeof value.snaps==='object') {
+    const snaps=Object.fromEntries(Object.entries(value.snaps).filter(([id])=>value.saved.includes(id)).map(([id,v])=>[id,cleanSnap(v)]).filter(([,v])=>v));
+    if(Object.keys(snaps).length) out.snaps=snaps;
+  }
   return out;
 }
 const shouldClaim = ({dx,dy}) => Math.abs(dx)>8 && Math.abs(dx)>Math.abs(dy)*1.3;
