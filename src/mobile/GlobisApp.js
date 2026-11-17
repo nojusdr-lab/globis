@@ -4,6 +4,7 @@ import {SafeAreaProvider,SafeAreaView} from 'react-native-safe-area-context';
 import {Image as CachedImage} from 'expo-image';
 import {Ionicons} from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient';
+import * as Haptics from 'expo-haptics';
 import {useFonts,Fraunces_600SemiBold} from '@expo-google-fonts/fraunces';
 import useDiscovery from '../state/useDiscovery';
 import useReducedMotion from '../state/useReducedMotion';
@@ -67,7 +68,7 @@ function AppContent() {
  const saved=useMemo(()=>state.saved.map(id=>PETS.find(p=>p.id===id)||ghost(id,state.snaps?.[id])).filter(Boolean),[PETS,state.saved,state.snaps]);
  const notify=value=>{clearTimeout(timer.current);setToast(typeof value==='string'?{text:value}:value);timer.current=setTimeout(()=>setToast(null),5000);};
  const isSaved=id=>state.saved.includes(id);
- const save=pet=>{if(!eligible(pet))return;dispatch({type:'save',id:pet.id,snap:{name:pet.name,photo:pet.photos?.[0],city:pet.city,shelter:pet.shelter?.name,url:pet.url,species:pet.species}});notify({text:t(`Išsaugota: ${pet.name}`,`Saved: ${pet.name}`),action:t('Atšaukti','Undo'),actionLabel:t('Atšaukti išsaugojimą','Undo save'),run:()=>dispatch({type:'undo'})});};
+ const save=pet=>{if(!eligible(pet))return;Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(()=>{});dispatch({type:'save',id:pet.id,snap:{name:pet.name,photo:pet.photos?.[0],city:pet.city,shelter:pet.shelter?.name,url:pet.url,species:pet.species}});notify({text:t(`Išsaugota: ${pet.name}`,`Saved: ${pet.name}`),action:t('Atšaukti','Undo'),actionLabel:t('Atšaukti išsaugojimą','Undo save'),run:()=>dispatch({type:'undo'})});};
  const remove=pet=>{dispatch({type:'remove',id:pet.id});notify({text:t(`Pašalinta: ${pet.name}`,`Removed: ${pet.name}`),action:t('Grąžinti','Restore'),run:()=>dispatch({type:'save',id:pet.id})});};
  const pass=pet=>{dispatch({type:'pass',id:pet.id});};
  const columns=width>900?4:width>600?3:2;
