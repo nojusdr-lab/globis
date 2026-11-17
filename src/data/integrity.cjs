@@ -25,8 +25,47 @@ function email(value) {
   return typeof value === 'string' && /^[\w.+-]+@[\w.-]+\.[a-z]{2,}$/i.test(value) ? value : null;
 }
 
+// Use the same conservative origin check in Node and React Native. The stored
+// website is a bare HTTPS origin; the evidence may point at a page on it.
+function contactOrigin(value) {
+  if (typeof value !== 'string' || /[\s\\\u0000-\u001f\u007f]/u.test(value)) return null;
+  const match = /^(https:\/\/([a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}))(?=[/?#]|$)/i.exec(value);
+  if (!match) return null;
+  const host = match[2].toLowerCase();
+  if (['globok.lt', 'facebook.com', 'fb.com', 'fb.me'].some(site => host === site || host.endsWith('.' + site))) {
+    return null;
+  }
+  return match[1].toLowerCase();
+}
+
+function checkedDate(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const time = Date.parse(value + 'T00:00:00Z');
+  return Number.isFinite(time) && new Date(time).toISOString().slice(0, 10) === value;
+}
+
+function withOfficialContacts(shelter) {
+  const { contactEvidence, ...record } = shelter;
+  const website = contactOrigin(record.website);
+  if (!website || website !== record.website || website !== contactOrigin(contactEvidence?.url) ||
+      !checkedDate(contactEvidence?.checkedAt)) {
+    return { ...record, phone: null, email: null, website: null };
+  }
+  return { ...record, contactEvidence, phone: phone(record.phone), email: email(record.email), website };
+}
+
+function joinListingShelters(pets, shelters) {
+  const byId = new Map(shelters.map(shelter => [shelter.id, withOfficialContacts(shelter)]));
+  return pets.map(pet => {
+    const { id, name, city, address, url } = pet.shelter;
+    return { ...pet, shelter: byId.get(id) ?? { id, name, city, address, url } };
+  });
+}
+
+const inactiveStatuses = new Set(['reserved', 'unavailable', 'stale', 'adopted', 'no_longer_listed', 'confirmed_adopted']);
+
 function eligible(pet) {
-  return !['reserved', 'unavailable', 'stale', 'adopted'].includes(pet.status);
+  return !inactiveStatuses.has(pet.status);
 }
 
 function shelterPets(pets, id) {
@@ -53,4 +92,4 @@ function validateImport(pets, shelters, previousPets, previousShelters) {
   }
 }
 
-module.exports = { listingId, statusFromText, phone, email, eligible, shelterPets, validateImport };
+module.exports = { listingId, statusFromText, phone, email, withOfficialContacts, joinListingShelters, eligible, shelterPets, validateImport };
