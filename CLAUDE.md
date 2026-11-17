@@ -30,3 +30,19 @@ Dizainas ir prekės ženklas yra keičiami. Dabartinė kryptis: žalia `#245B46`
 - Niekada tiesiai į `main`. Atskira šaka ir PR. Jungti tik kai testai žali ir pakeitimas peržiūrėtas.
 - Savininko sprendimo reikia: mokamoms paslaugoms, išorinių paskyrų kūrimui, raktams ir slaptažodžiams, leidimui į gamybą ar parduotuves, destruktyviems repo veiksmams.
 - Ataskaitos savininkui trumpos, lietuviškai, be žargono.
+
+## Claude Code darbo režimas
+
+Išsami eiga: [docs/handoff/CLAUDE_CODE_SETUP.md](docs/handoff/CLAUDE_CODE_SETUP.md).
+
+- Ponytail Ultra ir Caveman Ultra: mažiausias pilnas pakeitimas, trumpi pranešimai; kodas, komandos, klaidos ir testų rezultatai tikslūs. Jei įskiepiai neveikia, laikykis to paties be jų.
+- Modelis: Sonnet, vidutinė ar mažesnė pastanga. Aukštesnė tik architektūrai, duomenų saugai, migracijoms, sunkiai atkuriamoms klaidoms.
+- Viena užduotis vienai gijai. Naujai užduočiai nauja gija ir `/clear`; ta pačia užduotimi `/compact` su tikslu, PR, šaka, testai, kitas žingsnis.
+- Skaityk tik reikiamą: `grep` (ne `rg`, RTK jį perrašo į neveikiantį `rtk rg`), konkretus failas, PR diff. Didelę išvestį laikyk faile.
+- Vienas specializuotas įgūdis užduočiai. Rinkimo skriptai veikia be modelio.
+- Testai: Node ≥ 22.13. Su Node 20 lūžta `node:sqlite` testai.
+- Prie ~80 % 5 val. ar savaitės kvotos: vienas mažas patikrintas žingsnis; ~90 %: commit, testai, perdavimas Issue #1 (tikslas, šaka, commit, PR, kas patikrinta, blokatoriai, kitas žingsnis).
+
+## Compact instructions
+
+Išsaugok: tikslą, Issue ir PR, šaką ir commit, pakeistus failus, testų rezultatus, blokatorius, kitą žingsnį.
