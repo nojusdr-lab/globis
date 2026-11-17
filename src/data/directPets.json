@@ -39480,5 +39480,2867 @@
    "address": "Rukainiai, Vilniaus r. sav.",
    "url": "https://globok.lt/prieglaudos/naminukailt"
   }
+ },
+ {
+  "id": "lese:en-urve",
+  "url": "https://lese.lt/globotiniai/en-urve/",
+  "source": "lese",
+  "name": "Urvė",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/ae872ad717ce86e7de61c7df5e2b8a8f-768x1024.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-16T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:en-ola",
+  "url": "https://lese.lt/globotiniai/en-ola/",
+  "source": "lese",
+  "name": "Ola",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/ff50a1bff9b8d05ef8b121a15c8a4ff3-768x1024.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-16T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:en-urvis",
+  "url": "https://lese.lt/globotiniai/en-urvis/",
+  "source": "lese",
+  "name": "Urvis",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/77ea4062b911216fa959747d869b338a-768x1024.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-16T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51862-2",
+  "url": "https://lese.lt/globotiniai/51862-2/",
+  "source": "lese",
+  "name": "Batilda",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/6908bd84b039d15f3a5b34c76802384b-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/221f82dc719c0e6cad85b9b4c58863b0.jpeg"
+  ],
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "female",
+  "ageLt": "2 m. 2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Katytė kartu su 3 savo mažyliais atvykusi iš Rokantiškių sodų Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-17T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51859-2",
+  "url": "https://lese.lt/globotiniai/51859-2/",
+  "source": "lese",
+  "name": "Kiva",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/8ab6a836836f0598b004ebfe53bf8e0e-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/0b1b71a9565bf5764bb6cbee272623e0.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Katytė rasta Rokantiškių soduose Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-17T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51856-2",
+  "url": "https://lese.lt/globotiniai/51856-2/",
+  "source": "lese",
+  "name": "Garlis",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/34d96457c20e27684cf1bba46ec4aed8-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/b48dc9d70707ddb76c67d0b7f1abc372.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Kačiukas rastas Rokantiškių soduose Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-17T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51853-2",
+  "url": "https://lese.lt/globotiniai/51853-2/",
+  "source": "lese",
+  "name": "Greimas",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/b4a814b718bad99f1b77c587d2defbc6-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/119b09609ae1c5bc009bfcf10cffaffe.jpeg"
+  ],
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
+  "ageLt": "2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Kačiukas rastas Rokantiškių soduose Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-17T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51842-2",
+  "url": "https://lese.lt/globotiniai/51842-2/",
+  "source": "lese",
+  "name": "Talula",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/att.ElkQU9Wjd42M9uRKGbfQt5cH4pgFcVCOZfTZBB90wn8-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/att.06I8ggh344otLyX1Pfk_eByzWDDA4K7WqdUh8ScB8PE.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "7 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Talula rasta Salotės gatvėje. Ją radęs žmogus rūpinosi katyte, tačiau namuose gyvenantis šuo ir Talula nelabai sutarė, todėl mažylė atkeliavo pas mus. Talula – tikras meilumo įsikūnijimas. Vos priėjus prie jos narvelio, katytė iškiša savo mažą letenėlę ir prašo paglostukų. Ji labai draugiška, mėgstanti žmogaus dėmesį ir švelnumą. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-14T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:arija-3",
+  "url": "https://lese.lt/globotiniai/arija-3/",
+  "source": "lese",
+  "name": "Arija",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/att.zTQFvPbMmiRcE5sdA61DMcLOeTmdwj4WQVsv2bIFyBE-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/att.rlPlqHKS34ZEHtURfn4rdOO4UXhU741gRwx3tE-HnOY.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/att.JRV46cfKplIcImIN9z_e43SVtPMznCZ7NDB6jpug5Sc.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/att.xDXf_CVDPf4quT6zfZh8c4d67oAWsmp0jLRbbGDdCGQ.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "9 m. 6 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Arija dar visai mažytė buvo rasta Pabradės miškuose. Vėliau ji užaugo vienos įmonės, esančios Eišiškių plente, teritorijoje. Ten jos namais tapo voljeras, o kasdien ja rūpinosi įmonės sargas. Deja, įmonei pardavus teritoriją, Ariją teko iš ten išvežti. Taip ji atsidūrė pas mus. Arija – be galo draugiška, švelni ir žmogaus dėmesio trokštanti šunytė. Ji mielai bendrauja su žmonėmis, draugiška kitiems šunims, o mus pasitiko vizgindama uodegytę. Jai labai norisi žmogaus artumo, dėmesio ir šilumos. Arija jau nemažą savo gyvenimo dalį praleido voljere, atlikdama sargės vaidmenį. Tačiau juk ji nusipelno kur kas daugiau nei būti tik kažkieno teritorijos sarge. Ji nusipelno šiltų namų, minkšto guolio, mylinčios šeimos ir žmogaus, kuriam galėtų būti ne sargė, o tikra draugė.❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-14T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51832-2",
+  "url": "https://lese.lt/globotiniai/51832-2/",
+  "source": "lese",
+  "name": "Romanas",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/f3501159c0f1f722ee3c8bfde2fc68b1-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/2b2d4f25baacf33d4e31258841de0cc4.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "4 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Markutiškių kaime rastas nuostabus didžkis Romanas. Labai gražus, mielas ir draugiškas katinėlis, kuris, vos pamatęs žmogų, tarsi visa savo širdimi prašo: „Pasiimk mane… aš būsiu tavo geriausias draugas.“ O gal Romanui tiesiog lemta tapti kažkieno didžiąja meile? Juk ne veltui jo vardas ROMANAS – galbūt kažkur laukia pati gražiausia gyvenimo meilė ir šeima?❤ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-08T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51826-2",
+  "url": "https://lese.lt/globotiniai/51826-2/",
+  "source": "lese",
+  "name": "Pompėjus",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/02f5ef5d443ca10b4a9bd71f5e885679-768x1024.jpeg"
+  ],
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
+  "ageLt": "3 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Pompėjus kartu su savo broliais ir sesėmis į prieglaudą atkeliavo iš Alytaus rajono. Kol kas prieglauda ir jos aplinka šiam gražuoliui dar kelia šiokį tokį nerimą, tačiau po truputį jis drąsėja ir vis labiau atsiskleidžia tikrasis jo charakteris. ❤ Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-11T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:ravas-2",
+  "url": "https://lese.lt/globotiniai/ravas-2/",
+  "source": "lese",
+  "name": "Ravas",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/3a85f5d49e392afe6ee7d8ce1ed066c3-1-768x1024.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "1 m. 5 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Ravas į prieglaudą atkeliavo dar visai mažytis, vos 2 mėnesių kačiukas. Nespėjus jam čia pabūti nė dienos, atsirado tikrieji šeimininkai – paaiškėjo, kad mažylis buvo pabėgęs iš namų. Vėliau pasiteiravome, kaip Ravui sekasi, ir sužinojome, kad jis ir vėl pabėgo iš namų, tik šį kartą dingo be žinios. Praėjus kuriam laikui sulaukėme žinutės, kad katinas pagaliau grįžo, tačiau šeimininkai nebegali juo rūpintis, nes išvyksta į užsienį. Taigi, šiandien Ravas vėl pas mus, tik šį kartą jau gerokai paaugęs katinas. Bet tai nė kiek nesumažina jo noro mylėti ir būti mylimam. Ravas draugiškas, mėgsta žmogaus dėmesį, noriai glaudžiasi ir tikrai norėtų turėti žmogų, kuriam galėtų dovanoti savo murkimą. Ieškome Ravui ne laikinų, o tikrų ir atsakingų namų. Tokių, kuriuose jis būtų šeimos narys, o ne augintinis tik tol, kol patogu. ❤ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-08T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51807-2",
+  "url": "https://lese.lt/globotiniai/51807-2/",
+  "source": "lese",
+  "name": "Brailis",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/e4bf8485751eada23cecff20d759e39c-768x1024.jpeg"
+  ],
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
+  "ageLt": "1 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Brailis rastas Trakų Vokėje, šalia greitkelio. Šio kačiuko neįmanoma nepastebėti – savo ilgais ūsais ir mielu balseliu sustabdo kiekvieną praeinantį. Kol kas jis dar šiek tiek prisibijo prieglaudos aplinkos, tačiau su laiku vis labiau drąsėja ir tikimės, kad atsiskleis jo mielas charakteris.❤️ Kačiukui įtariamas neurologinis susirgimas. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-14T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:pliukse",
+  "url": "https://lese.lt/globotiniai/pliukse/",
+  "source": "lese",
+  "name": "Pliuksė",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/bbd860e088ae4fab743ad8c55d5af6c5-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/dc283ea1ae852fec80051eb37cf3df34.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/fa47b1c3368dd214c0fff6fc29b68485.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "1 m.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Pliuksė atkeliavo pas mus iš Vetrungių g. 87. Katytė priklydo prie žmonių namų, žaidė su rankomis, tačiau neleido savęs paimti ant rankų. Galiausiai ją pavyko pagauti su gaudykle ir atvežti į kliniką. Iš pradžių Pliuksė kiek bailesnė, ne iš karto puola į glėbį prašyti glostukų. Tačiau skyrus jai šiek tiek laiko ir kantrybės, katytė pamažu atsiskleidžia – leidžiasi glostoma, mėgaujasi dėmesiu ir, rodos, galėtų taip praleisti visą dieną. ❤️ Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-14T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:reivas",
+  "url": "https://lese.lt/globotiniai/reivas/",
+  "source": "lese",
+  "name": "Reivas",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/att.4rBELUtVUXVe1yuMlHMBmRyIK-8F_gnu2KFY7hJZ-c4-1-768x1024.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "1 m.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Reivas – atvyko iš Šalčininkų raj. Obeliškių km. nuo rudens pradžios gyveno prie žmonių sodybos. Jie greitai sezonui išvažiuos atgal į Vilnių ir nenori katino palikti be maisto, todėl atvežė mums. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-05T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:barlis",
+  "url": "https://lese.lt/globotiniai/barlis/",
+  "source": "lese",
+  "name": "Barlis",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/10/received_2869389583503139-768x1024.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "male",
+  "ageLt": "2 m.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Barlis rastas Pilaitėje – atklydo į ofisą. Atvykęs buvo gana nusilpęs ir dehidratavęs, tačiau dabar jau jaučiasi kur kas geriau. O vos tik sustiprėjo, iškart atsiskleidė tikrasis jo charakteris – Barlis yra be galo meilus katinas, mėgstantis žmogaus draugiją, paglostukus ir dėmesį.❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:siera",
+  "url": "https://lese.lt/globotiniai/siera/",
+  "source": "lese",
+  "name": "Siera",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/10/20261026_210914-768x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "4 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Siera atvyko iš Trakų rajono, kur dienas leido lauke su nuolat kraujuojančiu dariniu ant pilvuko. Katytė taip pat slogavo ir sirgo anemija. Darinys buvo skubiai pašalintas, ir Siera iškart pasijuto geriau. Senojo gyvenimo žaizdos jau užgijo, o sunkios dienos lauke liko praeityje. Šiandien Siera saugi pas mus ir savo švelnumu džiugina savanorius – dovanoja jiems švelnų murkimą, glaustosi ir mėgaujasi dėmesiu. Tikimės, kad pagaliau jai nusišypsos sėkmė ir ši gražuolė atras tikrus namus bei žmogų, kuriam galės dovanoti visą savo meilę. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:miauksiune",
+  "url": "https://lese.lt/globotiniai/miauksiune/",
+  "source": "lese",
+  "name": "Miauksiūnė",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/10/att.gIw3kmKeZORGFnAFV_LhoX0GxI0ywM8dkhOKBQNtyC0-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/att.yku1IvC1aPPCgFfbYrExHXswW9-xxyQhvAcKbuuH0WY.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "2 m. 1 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Miauksiūnė buvo rasta partrenkta kelyje Aukštadvaris–Trakai.Katytė patyrė rimtų sužalojimų: lūžo žandikaulis ir dubens kaulai su dislokacija, taip pat buvo sužalota lūpa. Šiuo metu Miauksiūnė gydoma prieglaudoje. Tai be galo draugiška katytė, kuri mielai priima žmogaus dėmesį. Jos laukia gydymas ir sveikimas, o mes labai tikimės, kad visus sunkumus pavyks įveikti ir vieną dieną ji galės džiaugtis gyvenimu savo namuose. Galbūt būtent Jūs tapsite tuo žmogumi, kuriam Miauksiūnė patikės savo mažą širdelę? 💗 Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-27T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:sardas",
+  "url": "https://lese.lt/globotiniai/sardas/",
+  "source": "lese",
+  "name": "Sardas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/10/6b70a1e3479692e0605fa61b846cec74-768x1024.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "4 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Sardas kartu su savo mamyte, broliais ir sesėmis atvyko iš namų, kuriuose jais nebuvo tinkamai rūpinamasi.Dabar jie po truputį mokosi, ką reiškia turėti šiltą guoliuką ir sulaukti meilės ne tik iš savo mamos, bet ir iš žmonių.Kol kas Sardui dar viskas nauja ir šiek tiek baisu, tačiau po truputį atsiskleidžia ir jo žaismingoji pusė.🩷 Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-16T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:lakis-9",
+  "url": "https://lese.lt/globotiniai/lakis-9/",
+  "source": "lese",
+  "name": "Lakis",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/10/att.W-8hnAQM68IfzeLDsl50CW2pIEWVzLs7koI8HqMhkZE-683x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/att.7_-opBp3EQkzTLLKREPr3USr6AgsPyDsJ9Wy1cStEDc.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/att.XnmOH2vLk3wxncIxErHjskf8SsMu-ObyFfmnkiTgk9U.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "1 m. 9 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Lakis pas mus atkeliavo iš Ukmergės rajono, iš žmonių, kurie, deja, juo visai nesirūpino. Tai be galo geranoriškas, mielas ir aktyvus dičkis, kuriam tikrai netrūksta nei energijos, nei noro dalyvauti visuose reikaluose! Jis smalsus, mėgstantis bendrauti ir visada pasiruošęs įsitraukti į tai, kas vyksta aplinkui. Su tokiu linksmu bičiuliu tikrai nenuobodžiausi! Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-26T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:onute",
+  "url": "https://lese.lt/globotiniai/onute/",
+  "source": "lese",
+  "name": "Onutė",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/10/bded799a12438d54ba8279535f6f2f65-768x1024.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "11 m. 9 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Onutė buvo rasta klaidžiojanti Akmenos kaime, Trakų rajone. Pas mus ji atvyko nekokios būklės – išsekusi, sunkiai vaikštanti, prastai girdinti, o jos kūnelis nusėtas augliukais. Taip pat jai labai skauda sąnarius. Onutė jau apsilankė klinikoje – kraujo tyrimai parodė nedidelį uždegimą ir padidėjusius kepenų rodiklius. Ji taip pat lankėsi pas onkologus dėl kūnelį nusėjusių darinių. Gera žinia ta, kad jie nėra piktybiniai, nors kai kurie yra uždegiminiai. Mes padarysime viską, kad ši senjorė pasijustų kuo geriau. Pati ponia Onutė yra be galo draugiška ir miela šunytė, kuri tiesiog nori būti šalia žmogaus. Ji puikiai palaikytų kompaniją tiek ramiai vaikštinėjant, tiek jaukiai ilsintis ant sofos. Tik pažiūrėkite į tą snukutį… Neįmanoma neištirpti! ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-08T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:baseinyte",
+  "url": "https://lese.lt/globotiniai/baseinyte/",
+  "source": "lese",
+  "name": "Baseinytė",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/10/f07323f8d0e64b751c49e8ec53d2b613-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/7a38860359d8f1987952248e97f0d506.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/IMG_5192-scaled.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "1 m. 1 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Baseinytė buvo rasta Fabijoniškėse, netoli baseino. Ją radę žmonės pastebėjo, kad katytė serga, todėl iš karto nuvežė į kliniką. Iš klinikos toliau gydytis Baseinytė atkeliavo pas mus. Tai labai graži, jaunutė katytė, kuri tik pasveikusi labai norės keliauti į tikruosius savo namus – ten, kur jos lauks meilė, šiluma ir saugumas. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-04T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:zirnis-3",
+  "url": "https://lese.lt/globotiniai/zirnis-3/",
+  "source": "lese",
+  "name": "Žirnis",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/10/att.qtTqQKceZv7Q3h0Rc-mPp_qBBbm9n1RQrjWdXxbHHf8-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/att.l71TACw2LCV7_uTDsF5SiNzGmAjZOIo3SIb9owe-1fM.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/att.lI3uc5RFYrQ7v1FAkdjvhXpUmQkQgwYSbN-gV4N1cik.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "1 m. 3 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Žirnis pas mus atkeliavo iš namų, nes jo šeimininkų dukrai pasireiškė alergija. Tai jaunas, energingas ir labai aktyvus šuniukas, kuriam reikia veiklos, pasivaikščiojimų ir užsiėmimų. Su tinkama dresūra ir kantrybe jo energiją tikrai galima nukreipti tinkama linkme. O kai Žirnis nurimsta, atsiskleidžia visai kita jo pusė – jis labai mielas, draugiškas ir mėgsta jaukiai įsitaisyti ant sofos šalia savo žmogaus. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-02T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:coda",
+  "url": "https://lese.lt/globotiniai/coda/",
+  "source": "lese",
+  "name": "Coda",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/09/att.qmnyc5O1T-0BWviOMMSLitJriIbeUMQVCeTbHEOZn_k-683x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/09/att._DfE8HqmYAkic4bY_jho8ylifjDda6elp5ulEP4QTWM.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/09/att.9al-s5_9i_JWwwyid2aYAhGGh0rdyuAl-o41RivKKoQ.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "2 m. 2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Coda atklydo pas žmones į namus ir taip atsidūrė mūsų globoje. O kokia ji katytė! Draugiška, švelni ir be galo mėgstanti žmogaus dėmesį. Coda mielai glaustosi, prašo paglostukų ir, rodos, galėtų taip leisti ištisas valandas. Jos uodegėlės dalis yra paralyžiuota, tačiau šiuo metu amputacija neplanuojama. Coda taip pat turi FIV. Ši pūkuota gražuolė pasiruošusi pripildyti savo būsimų namų dienas murkimo, švelnumo ir džiaugsmo!❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-25T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:tobis-11",
+  "url": "https://lese.lt/globotiniai/tobis-11/",
+  "source": "lese",
+  "name": "Tobis",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/07/Tobisnaujospagr-1024x683.jpg",
+   "https://lese.lt/wp-content/uploads/2026/07/Tobisnaujos2.jpg",
+   "https://lese.lt/wp-content/uploads/2026/07/Tobisnaujos3.jpg",
+   "https://lese.lt/wp-content/uploads/2026/07/Tobisnaujos4.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "13 m. 5 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Senjoras Tobis atvyko pas mus po šeimininkų mirties. Buvo su peraugusiais nagais, blogu kvapu, tačiau tai sutvarkoma – atliekamos veterinarinės ir grožio procedūros. Deja, dažniausiai senjorai lieka nepastebėti ir paskutinius savo gyvenimo metus praleidžia prieglaudoje. Tobis yra labai mielas, draugiškas ir ramus šuo, kuris labai norėtų savo gyvenimą pabaigti šiltuose namuose, o ne prieglaudos narve. Jis mėgsta pasivaikščioti, pabūti šalia žmogaus ir meiliai prisiglausti. O dėl skanuko padarys viską – net atsistos ant dviejų kojyčių! Šis mielas senjoras dar turi tiek meilės, kuria nori pasidalyti, ir taip norėtų paskutinius savo gyvenimo metus praleisti apsuptas rūpesčio, šilumos ir žmogaus artumo. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-10T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:perlas",
+  "url": "https://lese.lt/globotiniai/perlas/",
+  "source": "lese",
+  "name": "Perlas",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/06/Perlaspagr-768x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2026/06/Perlas2-1.jpg",
+   "https://lese.lt/wp-content/uploads/2026/06/Perlas3-1.jpg",
+   "https://lese.lt/wp-content/uploads/2026/06/Perlas4.jpg",
+   "https://lese.lt/wp-content/uploads/2026/06/Perlas5.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "8 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Brandaus amžiaus Perlas (8 metų), gyvenimą leidęs namuose, nesenai išgyveno dramą. Mirė jį globojusi senjorė, o paveldėtojams perėmus namus, Perlui ten neliko vietos. Jį tiesiog išmetė į gatvę – tegu pats prasimano maisto. Badauja? Jo problemos. Perlo kaimynas, „Lesės“ savanoris, išsiaiškinęs liūdną katino padėtį, atvežė jį į prieglaudą. Atsigavęs po patirtų negandų, Perlas tirpdo širdis savo patiklumu, švelnumu. Tinkamiausia ateitis jam būtų tai, prie ko jis pratęs – duete su ramiu žmogumi ramiuose namuose. Šiuo metu svečiuojasi namų globoje. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-09-23T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:goku-2",
+  "url": "https://lese.lt/globotiniai/goku-2/",
+  "source": "lese",
+  "name": "Goku",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/04/Gokupagr-768x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2026/04/Goku22-1.jpg",
+   "https://lese.lt/wp-content/uploads/2026/04/Goku33.jpg",
+   "https://lese.lt/wp-content/uploads/2026/04/Goku44.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "6 m. 5 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Goku buvo paliktas veterinarijos klinikoje gydymui, tačiau jo niekas taip ir neatsiėmė, todėl jis atkeliavo pas mus. Jau kurį laiką Goku gyvena prieglaudoje ir per šį laiką spėjome jį gerai pažinti. O pažinę galime drąsiai pasakyti – tai be galo mielas katinas! Vos įėjus į kambarį jis jau pasitinka prie durų, o atsisėdus ant sofkutės, netrukus įsitaiso ant kelių ir laukia paglostukų. Goku taip pat mėgsta pažaisti, stebėti pro langą, kas vyksta lauke, ir, žinoma, atlieka labai svarbias pareigas – dirba prieglaudos prižiūrėtoju! Visada reikia žinoti, kas vyksta aplinkui. Atrodo, toks nuostabus katinas turėtų seniai mėgautis namais, tačiau Goku vis dar laukia savo žmogaus. ❤️ Goku taip pat turi FIV. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-31T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:lordas-5",
+  "url": "https://lese.lt/globotiniai/lordas-5/",
+  "source": "lese",
+  "name": "Lordas",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/04/Lordas-768x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "15 m. 7 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Didžiąją savo gyvenimo dalį Lordas praleido taip, kaip neturėtų gyventi nė vienas šuo… Lordas niekada nebuvo vedamas į lauką, reikalus atlikdavo namuose, o vanduo jam buvo ribojamas, kad tik „mažiau būtų rūpesčių“. Po šeimininkės mirties Lordu susirūpino geros širdies žmogus. Jis nuvežė šunį pas veterinarus, kur buvo nustatyta anemija ir bendra prasta būklė. Lordui buvo paskirtas gydymas, antibiotikai, o svarbiausia – pradėtas duoti tai, ko jis visada turėjo turėti: pakankamai vandens, maisto ir rūpesčio. Gyvendamas pas laikiną globėją Lordas atsigavo, net priaugo apie 4 kilogramus… Ir tai tik parodo, kokios būklės jis buvo prieš tai. Deja, jį išgelbėjęs žmogus negalėjo pasilikti Lordo sau, todėl, kai tik šuniukas sustiprėjo, jis atkeliavo į mūsų globą. Šiandien Lordas jau saugus. Jis kasdien turi švaraus vandens, maisto ir, svarbiausia – meilės Tai ramus, gyvenimo matęs senjoras, kuriam dabar labiausiai reikia stabilumo, šilumos ir žmogaus šalia. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:selas-2",
+  "url": "https://lese.lt/globotiniai/selas-2/",
+  "source": "lese",
+  "name": "Selas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Selas3-1024x683.jpg",
+   "https://lese.lt/wp-content/uploads/2026/03/Selas2-1.jpg",
+   "https://lese.lt/wp-content/uploads/2026/03/Selas4-1.jpg",
+   "https://lese.lt/wp-content/uploads/2026/03/Selas-1.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "10 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Selas buvo rastas prie nuo alkoholio priklausomo žmogaus namų – išsekęs, alkanas, ištroškęs, su peraugusiais nagais ir ilgą laiką negavęs jokio rūpesčio. Dabar jo kailiukas jau sutvarkytas ir prižiūrėtas – purus ir švelnus, kaip tikro meškiuko! O kai Selas nusišypso, jo pūkuotas snukutis ir ta nuoširdi šypsena iškart užburia ir priverčia šypsotis kartu. Nepaisant visko, Selas išliko nuostabus šuo. Jis labai draugiškas, meilus ir ramus, mėgsta būti šalia žmogaus ir džiaugiasi dėmesiu. Selui labai patinka pasivaikščiojimai ir naujų vietų tyrinėjimas. Tai šuo, kuris tiesiog nori būti šeimos dalimi, kartu leisti dienas, mėgautis paprastais gyvenimo džiaugsmais ir kasdien džiuginti savo gerumu. Jam nereikia nieko ypatingo – tik mylinčio žmogaus, jaukių namų ir saugumo, kurio taip ilgai trūko. Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-10T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:maestro",
+  "url": "https://lese.lt/globotiniai/maestro/",
+  "source": "lese",
+  "name": "Maestro",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/att.Hd_9FNPxcwPGhEW-RrWX7KUVWaUmbBOcP8PdYnH7GpU-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/03/Maestronauja2.jpg",
+   "https://lese.lt/wp-content/uploads/2026/03/att.kyVyIhc97bou2TDi8JSWIPpzA2Thv9Om7NdvQrkoE-w.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/03/att.Hqaq34o9rFVDU9oLbYcMeU01ZRXeY891AnchAKZIXmc.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "7 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Maestro į mūsų prieglaudą atkeliavo 2019 metais, dar būdamas visai mažyliukas, ir greitai rado namus. Tačiau po daugelio metų jis vėl sugrįžo pas mus, nes per stipriai myli ir saugo savo žmogų. Sugrįžus į prieglaudą Maestro iš pradžių buvo labai nedrąsu – bijojo aplinkos, žmonių ir visko, kas buvo nauja. Tačiau laikui bėgant jis pamažu atsiskleidė ir parodė, koks iš tiesų yra mielas šuo. Dabar prieglaudoje turi savo mėgstamų žmonių ir draugų šunų, nors nepažįstamaisiais vis dar nepasitiki iš karto. Maestro – ypatingas šuo, kuriam reikia šiek tiek laiko, kantrybės ir galimybės pačiam užmegzti ryšį. Kai pajunta saugumą, tampa be galo meilus ir ištikimas draugas. Jis mėgsta pasivaikščiojimus, o po aktyvios dienos mieliausiai įsitaiso šalia savo žmogaus ant sofkutės ir mėgaujasi paglostukais. ❤️ Bruožai: bailus, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-31T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:zoris",
+  "url": "https://lese.lt/globotiniai/zoris/",
+  "source": "lese",
+  "name": "Zoris",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Zoris-2-683x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2026/02/received_961977326391390.jpeg"
+  ],
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
+  "ageLt": "8 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Zoris pas mus atvyko kartu su savo broliu iš Panevėžio rajono. Jo brolis jau seniai mėgaujasi namais, o Zoris dar vis laukia… Tai tikras džentelmenas – draugiškas, ramus ir puikiai bendraujantis šuo, kuris labai mėgsta žmogaus draugiją. Zoris dievina dėmesį,pasivaikščiojimus ir keliones automobiliu! Jam patinka pažinti naujas vietas ir tyrinėti pasaulį. Svarbiausia, kad tik būtų su kuo dalintis nuotykiais! O kai nuotykiai baigiasi, juk taip gera tiesiog pabūti šalia savo žmogaus ir pasimėgauti jo draugija. Šis nuostabus šunelis tikrai turi kuo pavergti širdį. Dabar Zoris svajoja sutikti žmogų, kuris pakvies jį į naują gyvenimo kelionę Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-25T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:micius-6",
+  "url": "https://lese.lt/globotiniai/micius-6/",
+  "source": "lese",
+  "name": "Micius",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Micius2-768x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2026/03/Micius-1-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "10 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Micius net 10 metų gyveno biure. Dar būdamas mažas kačiukas jis priklydo prie įmonės durų, o darbuotojai pradėjo juo rūpintis – šėrė, glostė ir taip jis tapo tikru kolektyvo nariu. Deja, įmonei užsidarius, Micius liko be savo vietos. Darbuotojai bandė surasti jam namus, tačiau norinčių priimti katiną neatsirado. Taip jis atsidūrė prieglaudoje. Micius – labai draugiškas, smalsus ir meilus katinas. Puikiai sutaria su žmonėmis ir kitais gyvūnais. O kadangi daug metų „dirbo“ ofise, labai mėgsta įsitaisyti šalia žmogaus – ypač prie kompiuterio, tarsi padėdamas tvarkyti visus svarbiausius reikalus. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:pukis",
+  "url": "https://lese.lt/globotiniai/pukis/",
+  "source": "lese",
+  "name": "Pūkis",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Pukis-768x1024.png",
+   "https://lese.lt/wp-content/uploads/2026/02/Pukis.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "10 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Pūkis atklydo pas geros širdies moterį, kuri maitina benames kates. Kurį laiką Pūkis laikėsi šalia, tačiau po kelių dienų netikėtai dingo. Praėjus dviem savaitėms, jis sugrįžo – sužeistas ir išsigandęs. Galime tik spėti, kas nutiko… tikėtina, kad kiemo katės jo nepriėmė ir nuskriaudė. Taip Pūkis atsidūrė mūsų prieglaudoje, kur pagaliau gali jaustis saugus. Nors kitų gyvūnų jis dar bijo, žmogui Pūkis yra be galo meilus – ieško artumo, šilumos ir savo tikrųjų namų ♥ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:kaziukas",
+  "url": "https://lese.lt/globotiniai/kaziukas/",
+  "source": "lese",
+  "name": "Kaziukas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/01/Kaziukasnaujaspagr-683x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2026/01/Kaziukasnaujas2.jpg",
+   "https://lese.lt/wp-content/uploads/2026/01/Kaziukasnaujas3.jpg",
+   "https://lese.lt/wp-content/uploads/2026/01/Kaziukasnaujas4.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "2 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Kaziuko gyvenimas apsivertė aukštyn kojomis šeimininkei patekus į globos namus. Iki tol jis buvo laikomas pririštas grandine, todėl iš pradžių urzgė ir laikėsi atstumo. Su naujais žmonėmis jis gali būti atsargesnis ir ne iš karto prisileisti, tačiau skyrus jam laiko, pamažu atsiveria. O tada pamatai visai kitą šuniuką – draugišką, mielą ir be galo žaismingą! Kaziukas labai mėgsta žaisti ir dūkti, o smagiai praleidęs laiką lauke mielai būna šalia žmogaus, džiaugiasi dėmesiu ir taip meiliai glaudžiasi. O tas žavus, kyštelėjęs dantukas! Jis toks unikalus, kad tiesiog neįmanoma jo nepastebėti. Kaziukas turi savito žavesio, kuris pamažu užkariauja širdį. Tai šuo, kuris atsirenka žmones, kuriems gali patikėti savo širdelę. Tačiau būtent todėl būti Kaziuko draugu – ypatinga dovana. Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-10T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:badis-5",
+  "url": "https://lese.lt/globotiniai/badis-5/",
+  "source": "lese",
+  "name": "Badis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Badis.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "7 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Badis – labai draugiškas, be galo į žmogų orientuotas šuo, kurio akytės privers atiduoti skanuką dar net nespėjus pagalvoti… Jam svarbiausia būti kartu – dalyvauti, stebėti, lydėti ir, žinoma, nepamiršti priminti, kad paglostymų niekada nebūna per daug. Sunku patikėti, kad kažkada Badžio pasaulis buvo labai mažas – gyvenimas prie būdos, pririštam grandine… Bet net ir tada jis neprarado meilės žmogui. Šiandien Badis nori tik vieno – būti tikru šeimos nariu, o ne šunimi kiemo gale. Jei ieškote linksmo, draugiško, gyvybingo kompaniono – Badis pasiruošęs užimti šią vietą jūsų namuose Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:morkus",
+  "url": "https://lese.lt/globotiniai/morkus/",
+  "source": "lese",
+  "name": "Morkus",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/IMG_5461-683x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "9 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Į prieglaudą Morkus atkeliavo kartu su savo sesute Nindze po to, kai mirė jų šeimininkas. Nindzė jau rado naujus namus, o Morkus vis dar laukia. Ir laukia jis tiesiogine prasme – prie durų. Ten jį beveik visada ir rasite: sėdintį, stebintį kiekvieną įeinantį ir tyliai tikintį, kad galbūt šiandien ateis žmogus būtent jo pasiimti. Morkus labai mėgsta žmogaus dėmesį, mielai leidžiasi glostomas, tačiau kaip tikras katinas kartais parodo ir savo ribas. Gavęs meilės ir dėmesio, jis ramiai grįžta į savo „postą“ prie durų – laukti. Tikimės, kad vieną dieną tos durys Morkui atsivertų ne į prieglaudos koridorių, o į tikrus namus. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:beila",
+  "url": "https://lese.lt/globotiniai/beila/",
+  "source": "lese",
+  "name": "Beila",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/IMG_5399-768x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "6 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Beila atvyko pas mus iš namų – buvęs šeimininkas teigė, kad katytė pradėjo šlapintis ne į tualetą. Tačiau prieglaudoje jokių problemų nėra – Beila savo reikalus atlieka tvarkingai, tik į kraiko dėžutę Tai labai meili, žmogų mylinti katytė, kuri mielai leidžiasi imama ant rankų, turi puikų apetitą ir yra žaisminga. Beila ieško ramių namų ir savo žmogaus, su kuriuo galėtų dalintis kasdienybe Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:foksis-3",
+  "url": "https://lese.lt/globotiniai/foksis-3/",
+  "source": "lese",
+  "name": "Foksis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/11/Fokas12-1-790x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2025/11/Foksas12.jpg",
+   "https://lese.lt/wp-content/uploads/2025/11/Foksas12-3.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "13 m. 7 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:burgeris",
+  "url": "https://lese.lt/globotiniai/burgeris/",
+  "source": "lese",
+  "name": "Burgeris",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/11/c87b03c9fc01ddf80212218ecfa16d97-683x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2025/11/db66fcdb427d820f461ee53095c586ea.jpeg",
+   "https://lese.lt/wp-content/uploads/2025/11/a74c50bc49883110eb7dee3c3f6a01aa.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "6 m. 2 mėn.",
+  "ageEn": null,
+  "size": "large",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Burgeris rastas Šalčininkuose. Lakstė paskui žmones, lipo į automobilius, tarsi bandydamas pasakyti, kad nori važiuoti kartu. Burgeris – aktyvus ir smalsus šuo, kuriam labai patinka ilgi pasivaikščiojimai, naujų vietų tyrinėjimas ir įvairūs nuotykiai. Jis mėgsta žaisti, kasti duobes ir turi laaabai daug energijos! Tad aktyviam žmogui tikrai netrūktų kompanijos nei išvykose, nei kieme. Tiesa, Burgeris ne visada mėgsta būti liečiamas, ypač veterinarinių procedūrų metu. Jis vertina savo asmeninę erdvę, ne kiekvieną paglostuką priima su džiaugsmu ir tikrai nedvejoja parodyti, kai jam jau gana. Todėl jam labai svarbu rasti žmogų, kuris suprastų jo poreikius, gerbtų ribas ir leistų pačiam pasirinkti, kada norisi artumo. Burgeriui reikia kantraus ir supratingo žmogaus, su kuriuo galėtų kurti pasitikėjimu grįstą draugystę. O galbūt būtent pas tave jo laukia nauji nuotykiai ir tikrieji namai? ❤️ Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-30T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:haris-3",
+  "url": "https://lese.lt/globotiniai/haris-3/",
+  "source": "lese",
+  "name": "Haris",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/10/Haris12-1-1-801x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2025/10/Haris12-2.jpg",
+   "https://lese.lt/wp-content/uploads/2025/10/Haris12-3.jpg",
+   "https://lese.lt/wp-content/uploads/2025/10/Haris12.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "12 m. 8 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:garfildas-5",
+  "url": "https://lese.lt/globotiniai/garfildas-5/",
+  "source": "lese",
+  "name": "Garfildas",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Garfildas-683x1024.png",
+   "https://lese.lt/wp-content/uploads/2025/09/Garfildas-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "10 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-03-26T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:faustas-3",
+  "url": "https://lese.lt/globotiniai/faustas-3/",
+  "source": "lese",
+  "name": "Faustas",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/09/Faustas12-3-1-792x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2025/09/Faustas12-1.jpg",
+   "https://lese.lt/wp-content/uploads/2025/09/Faustas12.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "12 m. 8 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:braunis-2",
+  "url": "https://lese.lt/globotiniai/braunis-2/",
+  "source": "lese",
+  "name": "Braunis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/08/Braunis7-789x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "7 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Braunis – 7 metų energingas ir labai žaismingas berniukas. Jis kupinas gyvybės, mėgsta judėti, žaisti ir būti šalia žmogaus. Tai meilus, draugiškas ir dėmesį labai vertinantis šuo. Braunis mėgsta bendravimą, žaidimus ir laiką su žmogumi, todėl jam labai svarbi artima draugystė su savo šeimininku. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:burbuliuke",
+  "url": "https://lese.lt/globotiniai/burbuliuke/",
+  "source": "lese",
+  "name": "Burbuliukė",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/IMG_51461-768x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "11 m. 9 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Burbuliukė ilgai gyveno lauke, kol ją maitinusi moteris pastebėjo, kad katytė akivaizdžiai jaučia diskomfortą – taip ji pateko pas mus ir gavo reikalingą pagalbą. Po gydymo ir rūpestingos priežiūros šiandien Burbuliukė jaučiasi gerai ir yra pasiruošusi keliauti į savo tikruosius namus Burbuliukei apie 11 metų, ji labai meili, bendraujanti ir žmogų mylinti katė, mielai leidžiasi glostoma ir nori būti šalia. Kitų kačių draugijos nemėgsta, todėl ieško namų, kuriuose galėtų būti vienintele karaliene Bruožai: bailus, draugiškas, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:odis-2",
+  "url": "https://lese.lt/globotiniai/odis-2/",
+  "source": "lese",
+  "name": "Odis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Odis.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "14 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Aklas Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-03-03T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:runa-5",
+  "url": "https://lese.lt/globotiniai/runa-5/",
+  "source": "lese",
+  "name": "Runa",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/09/Messenger_creation_CE2ADD04-531B-46C1-8EFF-154F633E1A09-786x1024.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "16 m. 2 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2025-09-06T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:reksas-15",
+  "url": "https://lese.lt/globotiniai/reksas-15/",
+  "source": "lese",
+  "name": "Reksas",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/05/DSC_7100-683x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2025/05/DSC_7126-scaled.jpg",
+   "https://lese.lt/wp-content/uploads/2025/05/DSC_7118-scaled.jpg",
+   "https://lese.lt/wp-content/uploads/2025/05/DSC_7096-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "11 m. 6 mėn.",
+  "ageEn": null,
+  "size": "large",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Reksas pas mus atkeliavo, kai jo ankstesni šeimininkai išsikraustė ir nusprendė, kad toks didelis šuo netinka gyvenimui bute. Reksas prisileidžia ne visus, tačiau kai susipažįsta su žmogumi ir juo pasitiki, tampa pačiu mieliausiu šunimi, kokį tik gali sutikti. Tai tarsi mažas vaikutis suaugusio šuns kūne. Išvestas pasivaikščioti, jis džiaugsmingai užšoka ant žmogaus (turbūt pats nesuprasdamas savo dydžio ir jėgos, bet tai vis tiek be galo miela ), prašo paglostymų ir laksto po pievas kaip vaikas, kuriam nerūpi niekas kitas, tik ta akimirka. Jam labai patinka ilgi pasivaikščiojimai su žmogumi, kuriam galėtų padovanoti bučinuką, o gal net paprašyti pakasyti nugarytę. Visą savo gyvenimą jis praleido kaip sarginis šuo, todėl su kitais šunimis nelabai sutaria – jam labiausiai tiktų namai, kur jis būtų vienintelis augintinis. Už jo rimtos išvaizdos slypi be galo mielas, žaismingas ir meilės trokštantis šuo. Jis nusipelnė mylinčių namų, kur galėtų saugiai praleisti likusius metus. Bruožai: neišauklėtas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-10T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:bobas-3",
+  "url": "https://lese.lt/globotiniai/bobas-3/",
+  "source": "lese",
+  "name": "Bobas",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/04/Bobas10-797x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "10 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bobas rastas vienas laukuose, su didžiuliu grandinės gabalu ant kaklo. Visiškai aklas… paliktas ten, kur jo laukė tik viena baigtis. Jis sukosi ratu, pasimetęs, bejėgis, apsuptas tik tylos ir miškų. Palikti jį būtų reiškę mirtį. Laimei, jis buvo pastebėtas ir neliko vienas. Nors gyvenimas jo nepagailėjo, Bobas neprarado svarbiausio – meilės žmogui. Kiekvienas prisilietimas jam vis dar yra stebuklas. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:aras-5",
+  "url": "https://lese.lt/globotiniai/aras-5/",
+  "source": "lese",
+  "name": "Aras",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2025/02/Aras13-806x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2025/02/Aras13-1.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "13 m. 8 mėn.",
+  "ageEn": null,
+  "size": "large",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Aras – rimtas senjoras su savitu požiūriu į gyvenimą. Tikras šunų pasaulio senolis, kuris mėgsta ramybę ir tvarką aplink save. Su žmonėmis jis sutaria, tačiau turi savo ribas – pavyzdžiui, bandymai „be susitarimo“ tvarkyti nagus gali sulaukti aiškaus protesto Su kitais šunimis Arui taip pat ne pakeliui, jis vertina savo erdvę ir ramų gyvenimo ritmą. Tai savarankiškas, bet vis dar gyvybingas bičiulis, kuris ieško suprantančių šeimininkų. Aras nebus tas, kuris nuolat lipa ant kelių, bet tikrai vertins žmogaus draugiją ir atsakys į ją sava, tikra draugyste Bruožai: bailus, draugiškas, neišauklėtas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:dzekis-7",
+  "url": "https://lese.lt/globotiniai/dzekis-7/",
+  "source": "lese",
+  "name": "Džekis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Dzekis.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "9 m. 8 mėn.",
+  "ageEn": null,
+  "size": "large",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-03-03T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:snaige-4",
+  "url": "https://lese.lt/globotiniai/snaige-4/",
+  "source": "lese",
+  "name": "Snaigė",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/IMG_5172-768x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "14 m. 2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: bailus, draugiškas, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-03-03T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:49293-2",
+  "url": "https://lese.lt/globotiniai/49293-2/",
+  "source": "lese",
+  "name": "Liepa",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/IMG_5144-768x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "8 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "LIEPA. Prieglauda kadaise sulaukė pagalbos šauksmo dėl trijų mažų kačiukų. Jie buvo visiškai laukinukai – bijojo žmonių, šnypštė ir gynėsi. Žmonės labai nerimavo, kad tokie mažyliai gali nukentėti lauke ar net būti nunuodyti, todėl kreipėsi pagalbos į prieglaudą. Kačiukai buvo priglausti ir pradėjo savo kelią link saugesnio gyvenimo. Per kelerius metus du iš jų rado mylinčius namus. O Liepa – pati droviausia ir jautriausia iš trijulės – iki šiol vis dar laukia savo žmogaus. Anksčiau, vos žmogui įėjus į kambarį, Liepa iškart pasislėpdavo. Dabar ji jau daug drąsesnė – nedrąsiai prieina arčiau, smalsiai stebi. Tiesa, glostymų dar prisibijo ir kol kas jų vengia. Tačiau yra viena išimtis – kai Liepa valgo. Tada ji ne tik leidžiasi paglostoma, bet ir garsiai murkia, tarsi trumpam pamiršdama savo baimes. Liepa dar mokosi pasitikėti žmogumi. Jai reikia kantraus, švelnaus žmogaus, kuris suteiktų laiko ir saugumo jausmą. Tikime, kad kažkur yra žmogus, kuris pamatys jos tylų grožį ir suteiks jai namus, kurių ji taip laukia. Bruožai: bailus, neišauklėtas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-03-14T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:taja-2",
+  "url": "https://lese.lt/globotiniai/taja-2/",
+  "source": "lese",
+  "name": "Taja",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/IMG_5160-768x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2023/07/received_823054728975253.jpeg",
+   "https://lese.lt/wp-content/uploads/2022/07/Messenger_creation_EDB7A313-3AE9-4E47-B986-2236B2DEC6AF.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "9 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Šilainiuose rasta bengalų veislės katė (ar jos mišrūnė) buvo labai prastos būklės… Jos sveikata kėlė didelį nerimą, reikėjo ilgo gydymo, kantrybės ir daug pastangų, kad katytė galėtų vėl jaustis gerai. Šiandien TAJA – tiesiog neatpažįstama Po ilgos reabilitacijos ji atsiskleidė visu savo grožiu ir charakteriu. Ir taip, ji tikrai turi to „bengališko“ žavesio – išdidi, grakšti, savarankiška… ir meili tada, kada pati nusprendžia, kad jau laikas paglostymams. Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:reksas-14",
+  "url": "https://lese.lt/globotiniai/reksas-14/",
+  "source": "lese",
+  "name": "Reksas",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2024/02/Reksas14-784x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2024/02/Reksas14-2.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "14 m. 9 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:pupa-3",
+  "url": "https://lese.lt/globotiniai/pupa-3/",
+  "source": "lese",
+  "name": "Pupa",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2024/02/received_1152001922632810-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2024/02/received_401765145658421.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "18 m. 9 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-02-10T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:reksas-13",
+  "url": "https://lese.lt/globotiniai/reksas-13/",
+  "source": "lese",
+  "name": "Reksas-Klišiukas",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2023/10/Reksas-Klisiukas15-1-1-797x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2023/10/Reksas-Klisiukas.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "15 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:muse-4",
+  "url": "https://lese.lt/globotiniai/muse-4/",
+  "source": "lese",
+  "name": "Musė",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2023/07/Muse15-790x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2023/07/Muse15-2.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "15 m.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: bailus, draugiškas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:mukutis",
+  "url": "https://lese.lt/globotiniai/mukutis/",
+  "source": "lese",
+  "name": "Mukutis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2023/07/received_1314797389245362.jpeg",
+   "https://lese.lt/wp-content/uploads/2023/07/received_952450639360721.jpeg",
+   "https://lese.lt/wp-content/uploads/2023/07/received_1006534180539730.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "16 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-02-28T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:lapa",
+  "url": "https://lese.lt/globotiniai/lapa/",
+  "source": "lese",
+  "name": "Lapa",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2023/07/received_645941484086231.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "6 m. 7 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: bailus, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-02-28T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:maska",
+  "url": "https://lese.lt/globotiniai/maska/",
+  "source": "lese",
+  "name": "Maska",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2023/07/received_213503357846619.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "6 m. 7 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: bailus, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-02-28T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:bimas-6",
+  "url": "https://lese.lt/globotiniai/bimas-6/",
+  "source": "lese",
+  "name": "Bimas",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2023/06/Bimas17-794x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2023/06/DSC_1221-scaled.jpg",
+   "https://lese.lt/wp-content/uploads/2023/06/DSC_1213-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "18 m. 5 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Aklas Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:burokelis",
+  "url": "https://lese.lt/globotiniai/burokelis/",
+  "source": "lese",
+  "name": "Burokėlis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2023/06/Burokelis15-787x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2023/06/Burokelis15-1.jpg",
+   "https://lese.lt/wp-content/uploads/2023/06/355663331_129205670197094_1607964999828765745_n.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "13 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:puke",
+  "url": "https://lese.lt/globotiniai/puke/",
+  "source": "lese",
+  "name": "Pukė",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Puke-768x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2023/06/IMG_5480.jpg",
+   "https://lese.lt/wp-content/uploads/2023/06/IMG_5479.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "20 m. 7 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:maja-16",
+  "url": "https://lese.lt/globotiniai/maja-16/",
+  "source": "lese",
+  "name": "Maja",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/IMG_5460-683x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "19 m. 10 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-15T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:rokis-3",
+  "url": "https://lese.lt/globotiniai/rokis-3/",
+  "source": "lese",
+  "name": "Rokis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2023/01/Rokis9-801x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2023/01/Rokis9-1.jpg",
+   "https://lese.lt/wp-content/uploads/2023/01/Rokis9-2.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "9 m. 1 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:kamane-2",
+  "url": "https://lese.lt/globotiniai/kamane-2/",
+  "source": "lese",
+  "name": "Kamanė",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/IMG_5464-683x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "5 m. 2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bruožai: bailus, draugiškas, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-03-03T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:svaras-2",
+  "url": "https://lese.lt/globotiniai/svaras-2/",
+  "source": "lese",
+  "name": "Svaras",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2022/08/13-931A4164-2-1024x731.jpg",
+   "https://lese.lt/wp-content/uploads/2022/08/312933495_5981374268549049_1605495846974319225_n.jpg",
+   "https://lese.lt/wp-content/uploads/2022/08/Svaras.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "12 m.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Svaras atkeliavo iš Sidabrinių kaimo kartu su savo drauge Meška. Kol Meška jau džiaugiasi naujais namais, mūsų Svaras vis dar tikisi, kad vieną dieną ateis ir jo eilė. Būdos gyvenimas įaugęs į kraują, todėl Svaras kartais būna triukšmingas, ypač lauke sutikęs kitus šunis. Tačiau žmonėms jis jokių nuoskaudų neturi – po pasivaikščiojimo mielai prašosi paglostymų, verčiasi ant nugaros ir parodo savo švelniąją pusę. Svaras dar nežino, ką reiškia šilti namai. Tiesa, dabar jis jau žino, ką reiškia miegoti guolyje prieglaudoje, tačiau kaip būtų gera jam patirti ir tikrų namų jaukumą – turėti savo kampelį, savo žmogų ir vietą, į kurią visada norėtųsi sugrįžti. Svaras nori būti šeimos šuo. Nori ilgų pasivaikščiojimų, paglostymų ir žmogaus, kuriam būtų savas. Galbūt jam dar teks mokytis naujo gyvenimo taisyklių, tačiau kiekvienas nusipelno galimybės išmokti, ką reiškia būti mylimam. Bruožai: draugiškas, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-10T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:mikis-7",
+  "url": "https://lese.lt/globotiniai/mikis-7/",
+  "source": "lese",
+  "name": "Mikis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2021/04/Mikis14-796x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2021/04/357429119_625013089587588_2553420307654936961_n.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "15 m. 2 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Mirus Mikio šeimininkei, buvo planuota šunį eutanazuoti, tačiau likimas visgi sudėliojo kortas kitaip ir jis atkeliavo į mūsų globą. Taip Mikis išsilaisvino ne tik iš mirties gniaužtų, bet ir gyvenimo prie būdos. Vos atkeliavęs pas mus, mažasis ponas visiems savo nuomonę išsakė urzgimu. Kadangi aplinka nauja, o šuo aklas, pirmiausi pykčiai pasirodė kuomet pats už ko nors užkliūdavo, tuomet visiems išaiškino, kad prisilietimų jis taip pat nepageidauja, o dar labiau nepageidauja, kad kas nors būtų šalimais, kai jis valgo. Ir visgi, kiek apsipratęs su nauja vieta, Mikutis parodė, kad širdyje jis visai ne žvėris. Dabar pakalbintas sekioja iš paskos, o pajutęs, kad žmogus pritūpė šalimais, priekinėmis letenėlėmis pasilipa ant kelių ir taikosi lyžtelt veidą. Toks tas mūsų Mikis – kartais piktas ant pasaulio, kartais labai švelnus. Bruožai: draugiškas, neišauklėtas, tinka gyventi lauke, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:vilte-2",
+  "url": "https://lese.lt/globotiniai/vilte-2/",
+  "source": "lese",
+  "name": "Viltė",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2021/02/Vilte7-806x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2021/02/356994962_3554081988174302_7085327164511491477_n.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "7 m.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Viltė po patirtos stuburo traumos nebevaldo užpakalinės kūno dalies. Istoriją su visomis detalėmis rasite čia – https://m.facebook.com/story.php?story_fbid=304212[kontaktas pašalintas]&id=10000[kontaktas pašalintas] Na, o apie pačią Viltę galėtume pasakot daug ir ilgai! Pro ją nepraeis nei vienas savanoris ar lankytojas, nes ji pati pirma pasiprašys paglostymų ir garsiai išreikš nepasitenkinimą, jeigu jos akivaizdoje bus glostomas kitas šuo. Ji – mūsų prieglaudos tankas. Jeigu užklius su ratukais už kėdės, tai važiuos su visa kėde. Jeigu pasipainiosi po kojom, Viltė be jokio gėdos jausmo pervažiuos per kojas. Tanko vaidmeniu Viltė gyvena ne tik prieglaudoje, bet ir išėjus pasivaikščioti. Jos kelyje kliūtys tarsi neegzistuoja, nes ratukų pagalba lekia kiaurai balas, kalnus, krūmus ir žolynus. Viltė tikra kovotoja, kuri su veterinarų pagalba pergudravo likimą ir šiandien gali džiaugtis gyvenimu. Dabar teliko rasti žmogų, kurio negąsdintų Viltės negalia ir kuris sutiktų įsileisti ją ne tik į savo širdį, bet ir į namus. Bruožai: draugiškas, reikalauja daug dėmesio, skiepytas, tinka gyventi tik namuose, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:ciarlis-3",
+  "url": "https://lese.lt/globotiniai/ciarlis-3/",
+  "source": "lese",
+  "name": "Čiarlis",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2021/02/Carlis15-792x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2021/02/Carlis15-1.jpg",
+   "https://lese.lt/wp-content/uploads/2021/02/356998130_7205724829442459_7620546611703330141_n.jpg",
+   "https://lese.lt/wp-content/uploads/2021/02/356965008_284486824062446_3451993789641125687_n.jpg",
+   "https://lese.lt/wp-content/uploads/2021/02/357429117_2865211690275960_2447421985896821383_n.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "12 m. 9 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Čiarlis pas mus pateko iš kitos organizacijos. Kiek žinome, Čiarlis buvo partrenktas ir nors praėjo daug laiko po autoįvykio, šuo šiek tiek šlubuoja. Čiarlis sutaria su kalytėmis, tačiau su patinais linkęs pasiaiškinti santykius. Kaip tokio amžiaus, yra labai gūvus ir visuomet mielai leidžiasi į pasivaikščiojimus. Tiesa, Čiarlis prisibijo lipti laiptais ir kartais reikia parodyti kur tiksliai eiti, nes šunelis viena akimi yra aklas. Nors yra gūvus, Čiarlis mielai laiką leidžia įsitaisęs prie žmogaus ir nepraleidžia progos būti paglostytas. Ypač dievina ausies ir pilvo pakasymus. Šis šuo tiktų tiek vyresnio amžiaus, tiek jaunam žmogui, nes geba prisitaikyti ir nebereikalauja tiek daug fizinės ir protinės iškrovos kaip itin jauni šunys. Bruožai: draugiškas, skiepytas, tinka gyventi tik namuose, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-05-21T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:siuzi-2",
+  "url": "https://lese.lt/globotiniai/siuzi-2/",
+  "source": "lese",
+  "name": "Siuzi",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2020/12/Siuzi3-819x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2020/12/Siuzi.jpg",
+   "https://lese.lt/wp-content/uploads/2020/12/Siuzic.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "8 m. 3 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Siuzi kartu su dar viena kalyte pas mus atkeliavo iš kitos organizacijos. Pirmoji savaitė kalytėm buvo išties sunki – bijojo kiekvieno krepštelėjimo, judesio, maitinosi tik žmogui nematant. Apie prisilietimus nebuvo jokios kalbos, nes abi kalytės taip įsisprausdavo į kampą ir drebėdavo, jog atrodė, kad prie gyvenino pokyčių jos niekada nepripras. Jaukinimosi procesas buvo be proto lėtas. Turbūt nesame turėję arba nepamename tokių bailių šunų savo prieglaudoje. Šiai dienai abi kalytės atsigavusios, nebebėga slėptis nuo savanorių, išeina pasivaikščioti į kiemelį. Labai nedrąsiai, bet ima maistą iš rankos. Prisilietimai jas vis dar gąsdina, bet kalytės jau nebepuola į paniką. Siuzi yra bailesnė. Jai reikia daugiau laiko priprasti prie aplinkos, prie žmonių, prie kitų pokyčių. Ji labai kopijuoja savo draugę su kuria kartu atkeliavo, tad būtų puiku, kad naujuose namuose Siuzi turėtų draugą ar draugę, kurie būtų drąsesni už ją ir parodytų jai pavyzdį. Siuzi dar jauna, jai dar viskas prieš akis. Tereikia rasti žmogų, kuris ne tik mylėtų, bet ir kantriai užsiimtų socializacijos klausimu. Žmogų, kuris parodytų, jog pasaulis yra gražus. Bruožai: bailus, neišauklėtas, reikalauja daug dėmesio, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-04-25T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:dina-7",
+  "url": "https://lese.lt/globotiniai/dina-7/",
+  "source": "lese",
+  "name": "Dina",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Dina.jpg",
+   "https://lese.lt/wp-content/uploads/2020/07/357016430_1003467074021247_6272920090389562663_n.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "17 m. 8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Ši kalytė pragyveno gražų gyvenimą su savo šeimininke. Deja, jų draugystę išskyrė tai, ko negali nuspėti ir nuo ko negali apsisaugoti – šeimininkės mirtis. Dina yra sofinis – lovinis šuo. Ji dievina šilumą ir su šitu pomėgiu yra mus ne juokais išgąsdinusi. Sykį atėję į kambarėlį jos neradome. Puolėme ieškoti per visus kiemus, prieglaudos patalpas – nėra. Galiausiai Diną radome susisukusią po pledu taip, kad net nosies nesimatė. Panelė tiesiog taip snaudė, kad nereagavo į kvietimą vardu. Dina myli ne tik sofas, bet ir žmones. Tarsi mažas vaikas susikrausto ant kelių, tuomet atkiša pilvuką paglostymams, o jeigu žmogus nereaguoja į jos siunčiamus signalus, lyžteli veidą ir suloja. Mėgsta pasivaikščiojimus, tačiau blogu oru į kiemą eina tik šiltai aprengta. Kitaip šios panelės neįmanoma išvilioti į kiemą. Dina turi darinuką ant kaklo, kuris kol kas nėra pyktybinis, tačiau reikia nuolat stebėti dėl pakitimų galimybės. Bruožai: draugiškas, reikalauja daug dėmesio, skiepytas, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-03-03T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "lese:38010-2",
+  "url": "https://lese.lt/globotiniai/38010-2/",
+  "source": "lese",
+  "name": "Petra",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2020/01/IMG_6982-1024x683.jpg",
+   "https://lese.lt/wp-content/uploads/2020/01/Petra.png",
+   "https://lese.lt/wp-content/uploads/2020/01/received_1966953493666965.jpeg",
+   "https://lese.lt/wp-content/uploads/2020/01/Petra.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "9 m. 10 mėn.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Petra pas mus pateko šaltą žiemos dieną, kai atklydo į žmonių namus, ir nuo tada gyvena prieglaudoje. Dabar ji senjorė, todėl jos gyvenimas reikalauja šiek tiek daugiau priežiūros: serga autoimunine liga, sukeliančia dantenų uždegimus, kuriai reikalingos specialios injekcijos, turi inkstų veiklos problemų, todėl maitinama specialiu pašaru su papildais. Nepaisant amžiaus, Petra rami ir meili, mėgsta savo erdvę ir stebėti pasaulį pro langą. Kitos katės jai kelia stresą, todėl geriausia gyventi vienai arba su tokio pat ramaus būdo katyte. Bruožai: draugiškas, neišauklėtas, tinka gyventi tik namuose, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-04T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:mufasa",
+  "url": "https://lese.lt/globotiniai/mufasa/",
+  "source": "lese",
+  "name": "Mufasa",
+  "species": "dog",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/03/Mufasa-768x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2016/06/17148.png"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "11 m. 8 mėn.",
+  "ageEn": null,
+  "size": "large",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Nedovanojamas Bruožai: reikalauja daug dėmesio, skiepytas, tinka gyventi tik namuose.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-03-19T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:jagas-bartas",
+  "url": "https://lese.lt/globotiniai/jagas-bartas/",
+  "source": "lese",
+  "name": "Bartas",
+  "species": "dog",
+  "city": "Kaunas",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2016/04/357411042_288304226911636_7729444411132575727_n-683x1024.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "12 m. 6 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bartas pas mus pateko iš Kaišiadorių veterinarijos klinikos, o ten papuolė po avarijos. Akivaizdu, kad labiausiai nukentėjo koja, kurią teko amputuoti, bet tai tikrai netapo Barto minusu. Anaiptol, Bartas taip gerai prisitaikė gyventi su negalia, kad rodos, jog kitaip niekada ir nebuvo! Kas pas mus lankėsi, tikrai pastebėjo šį šunį, mat jis lankytojus pasitinka pats pirmasis ir išlydi pats paskutinis. Tiesa, pasitinka skardžiu ir aktyviu lojimu, kuris gąsdina svečius, tačiau taip Bartas tik reikalauja dėmesio. Išsireikalavęs savo šlovės valandos, Bartas atsineša žaislą ir bruka į rankas tol, kol pradedamas žaisti mylimiausias jo žaidimas – žaislo atnešimas. Ir nors Bartas mums tikrai geras šuo, jis turi trūkumų, tokių kaip: agresija kitiems gyvūnams, maisto saugojimas ir agresija svetimiems žmonėms. Barto meilę reikią užsitarnauti per ilgą laiką. Tad pasikliauti vien jo mielu snukeliu, tikrai nevertėtų. Tai stipraus charakterio šuo, kuris nuolatos išbando ribas su jį prižiūrinčiais žmonėmis",
+  "bioEn": null,
+  "sourceUpdatedAt": "2024-02-28T00:00:00Z",
+  "shelter": {
+   "id": "leseltkaunas",
+   "name": "Viešoji įstaiga Lesė (Kaunas)",
+   "city": "Kaunas",
+   "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
  }
 ]

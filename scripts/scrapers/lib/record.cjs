@@ -35,6 +35,8 @@ function makeAnimal(sourceId, input) {
     status,
     statusEvidence,
     sourceUpdatedAt: input.sourceUpdatedAt ?? null,
+    // Which shelter record of a multi-branch source this animal belongs to (to-app-data.cjs).
+    shelterHint: cleanText(input.shelterHint),
   };
   if (animal.bio_lt && animal.bio_lt.length > 4000) animal.bio_lt = animal.bio_lt.slice(0, 4000) + '…';
   return animal;
