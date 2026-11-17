@@ -72,7 +72,7 @@ jobs:
       - if: steps.changed.outputs.run == '1'
         run: npm ci
       - if: steps.changed.outputs.run == '1'
-        run: node scripts/scrapers/run.cjs /tmp/scraped "$(head -1 scripts/scrapers/live-run-request.txt | sed 's/^all$//')" || true
+        run: node scripts/scrapers/run.cjs /tmp/scraped "$(head -1 scripts/scrapers/live-run-request.txt | awk '{print $1}' | sed 's/^all$//')" || true
       - if: steps.changed.outputs.run == '1'
         run: node scripts/scrapers/live-summary.cjs /tmp/scraped scripts/scrapers/live-output
       - if: steps.changed.outputs.run == '1'

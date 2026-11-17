@@ -13,7 +13,10 @@ async function main() {
   const outDir = path.resolve(process.argv[2] || 'data/scraped');
   const only = process.argv[3] ? new Set(process.argv[3].split(',')) : null;
   const cache = createParseCache(path.join(outDir, '.parse-cache'));
+  const unknown = only ? [...only].filter(id => !adapters.some(a => a.id === id)) : [];
+  if (unknown.length) throw new Error(`Unknown source id(s): ${unknown.join(', ')}`);
   const todo = adapters.filter(a => !only || only.has(a.id));
+  require('node:fs').mkdirSync(outDir, { recursive: true });
   const report = [];
   const workers = Array.from({ length: Math.min(4, todo.length) }, async () => {
     while (todo.length) {
@@ -30,4 +33,4 @@ async function main() {
   if (report.some(r => r.state === 'failed')) process.exitCode = 1;
 }
 
-main();
+main().catch(e => { console.error(e.message); process.exitCode = 1; });

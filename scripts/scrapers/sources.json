@@ -353,9 +353,9 @@
       "robots": "404 (no rules); http redirects to https://www.kaimograndine.lt",
       "terms": "none found",
       "cms": "Google Sites",
-      "decision": "probe",
+      "decision": "no_listing",
       "checked": "2026-11-17",
-      "note": "robots.txt 404 (no rules). Probe the listing page next."
+      "note": "Listing page says \"Šiuo metu dovanojamų gyvūnų neturime\"; fosters only occasionally, posts on Facebook. Re-check periodically."
     },
     {
       "id": "dogspotas",

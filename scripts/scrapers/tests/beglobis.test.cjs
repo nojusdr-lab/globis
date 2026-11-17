@@ -12,8 +12,9 @@ const { fakeFetch, fakeClock } = require('./helpers.cjs');
 const dir = path.join(__dirname, '../fixtures/beglobis');
 const read = f => fs.readFileSync(path.join(dir, f), 'utf8');
 const page1 = read('list-page1.html');
-const page2 = read('list-page2.SYNTHETIC.html'); // SYNTHETIC: see fixtures README
+const page2 = read('list-page2.html');
 const mylia = read('detail-3084.html');
+const lota = read('detail-4101.html');
 const O = 'http://www.beglobis.com';
 const html = { 'content-type': 'text/html; charset=UTF-8' };
 
@@ -35,6 +36,7 @@ function routesFor({ details = {} } = {}) {
     }
   }
   routes[`${O}/Mylia-684.html?productpage=1&productid=3084`] = { body: mylia, headers: html };
+  routes[`${O}/Lota-684.html?productpage=0&productid=4101`] = { body: lota, headers: html };
   Object.assign(routes, details);
   return routes;
 }
@@ -52,8 +54,8 @@ test('beglobis: robots.txt first, then list pages, then one detail page per card
   assert.equal(calls[0].url, `${O}/robots.txt`);
   assert.equal(calls[1].url, `${O}/Dovanojami-684.html`);
   assert.equal(calls[2].url, `${O}/Dovanojami-684.html?productpage=1`);
-  assert.equal(calls.length, 3 + 19, 'robots + 2 list pages + 19 details');
-  assert.equal(run.requests, 22);
+  assert.equal(calls.length, 3 + 27, 'robots + 2 list pages + 27 details');
+  assert.equal(run.requests, 30);
   assert.ok(calls.every(c => c.method === 'GET' && new URL(c.url).hostname === 'www.beglobis.com'));
 });
 
@@ -74,16 +76,30 @@ test('beglobis: real detail page facts; contacts not read; unknown stays null', 
   assert.doesNotMatch(JSON.stringify(m), /Vilnius|Skydo|@/);
 });
 
+test('beglobis: second real detail page (Lota): guardian Beglobis kept, health only in bio', async () => {
+  const { run } = await collect();
+  const l = run.animals.find(a => a.id === 'beglobis:4101');
+  assert.equal(l.name, 'Lota');
+  assert.equal(l.species, 'cat');
+  assert.equal(l.sex, 'female');
+  assert.equal(l.age_text, '7 metai');
+  assert.equal(l.status, 'available');
+  assert.match(l.bio_lt, /sterilizuota, skiepyta/);
+  for (const f of ['vaccinated', 'neutered', 'chipped']) assert.equal(l[f], null, `${f}: only in free text, not a labelled fact`);
+  assert.deepEqual(run.skipped, []);
+});
+
 test('beglobis: list-only cards keep real list name (with Lithuanian letters) and thumbnail; rest null', async () => {
   const { run } = await collect();
-  assert.equal(run.animals.length, 19);
-  assert.equal(run.animals.filter(a => a.status === 'available').length, 19);
+  assert.equal(run.animals.length, 27);
+  assert.equal(run.animals.filter(a => a.status === 'available').length, 27);
   const r = run.animals.find(a => a.id === 'beglobis:4068');
   assert.equal(r.name, 'Ryžu');
   assert.equal(r.sourceUrl, `${O}/Ryzu-684.html?productpage=0&productid=4068`);
   assert.deepEqual(r.photos, [`${O}/page/upload/modproduct_6a4140a131170_s1.jpg`]);
   for (const f of ['species', 'sex', 'age_text', 'bio_lt']) assert.equal(r[f], null, f);
   assert.equal(run.animals.find(a => a.id === 'beglobis:3828').name, 'Činas');
+  assert.equal(run.animals.find(a => a.id === 'beglobis:4046').name, 'Šeltis', 'page 2 card');
 });
 
 test('beglobis: status rules (contradiction = unknown; reserved keeps evidence)', () => {
@@ -106,6 +122,7 @@ test('beglobis: pagination follows "»" and stops on the page without it', async
   assert.equal(adapter._parseList(page1, `${O}/Dovanojami-684.html`).next, `${O}/Dovanojami-684.html?productpage=1`);
   assert.equal(adapter._parseList(page2, `${O}/Dovanojami-684.html?productpage=1`).next, null);
   assert.equal(adapter._parseList(page1, `${O}/Dovanojami-684.html`).cards.length, 18);
+  assert.equal(adapter._parseList(page2, `${O}/Dovanojami-684.html?productpage=1`).cards.length, 9);
 });
 
 test('beglobis: page limit reached -> partial, never published', async () => {
