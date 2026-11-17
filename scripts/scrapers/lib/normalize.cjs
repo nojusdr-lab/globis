@@ -48,11 +48,11 @@ function yesNo(value) {
 
 // Status words as Lithuanian shelters write them. Evidence is the exact text seen.
 const STATUS_RULES = [
-  { status: 'reserved', re: /^(rezervuot(as|a|i|os)|rezervacija)(\s|$)/ },
-  { status: 'confirmed_adopted', re: /^(padovanot(as|a|i|os)(\(-as\))?|rado namus|radę namus|rade namus|įvaikint(as|a|i|os))(\s|$)/ },
+  { status: 'reserved', re: /^(rezervuot(as|a|i|os)|rezervacija)([\s.,!;:]|$)/ },
+  { status: 'confirmed_adopted', re: /^(padovanot(as|a|i|os)(\(-as\))?|rado namus|radę namus|rade namus|įvaikint(as|a|i|os))([\s.,!;:]|$)/ },
   // Not adoptable and not an adoption either (returned to owner, lost/found, died). Adapters drop these.
-  { status: 'excluded', re: /^(grįžo namo|mir(ė|us|ęs)|liks atmintyje|ding(o|us|ęs)|rast(a|as)|likimas nežinomas)/ },
-  { status: 'available', re: /^(dovanojam(as|a|i|os)(\(-as\))?|ieško namų|ieskantys namu|ieškantys namų|namų ieškantys( gyvūnai)?|namų ieškantis|prieglaudoje|laukia šeimininkų)(\s|$)/ },
+  { status: 'excluded', re: /^(grįžo namo|mir(ė|us|ęs)|liks atmintyje|ding(o|us|ęs)|rast(a|as)|likimas nežinomas)([\s.,!;:]|$)/ },
+  { status: 'available', re: /^(dovanojam(as|a|i|os)(\(-as\))?|ieško namų|ieskantys namu|ieškantys namų|namų ieškantys( gyvūnai)?|namų ieškantis|prieglaudoje|laukia šeimininkų)([\s.,!;:]|$)/ },
 ];
 
 function status(value) {

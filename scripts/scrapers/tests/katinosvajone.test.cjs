@@ -10,93 +10,127 @@ const { runSource } = require('../lib/run-source.cjs');
 const { fakeFetch, fakeClock } = require('./helpers.cjs');
 
 const dir = path.join(__dirname, '../fixtures/katinosvajone');
-const PAGE1 = fs.readFileSync(path.join(dir, 'page-1.html'), 'utf8');
-const PAGE2 = fs.readFileSync(path.join(dir, 'page-2-synthetic.html'), 'utf8');
-const LIST = 'https://www.katinosvajone.lt/musu-globotiniai';
-const ROBOTS = { 'https://www.katinosvajone.lt/robots.txt': { body: 'User-agent: *\nCrawl-delay: 10\n', headers: { 'content-type': 'text/plain' } } };
+const read = f => fs.readFileSync(path.join(dir, f), 'utf8');
+const F1 = read('list-filtered-1.html');
+const F2 = read('list-filtered-2-synthetic.html');
+const L175 = read('list-175.html');
+const TANKAS = read('detail-tankas.html');
+const EMPTY = read('detail-empty-synthetic.html');
 
-// Real page 1 reshaped into a 2-page list: drop its last card row (it is on page 2) and
-// pagination items 3..175.
-const rows = PAGE1.match(/<div class="row clear-fix">.*?<\/div>/g);
-const PAGE1_OF_2 = PAGE1
-  .replace(rows[rows.length - 1], '')
-  .replace(/<li class="pagination-item"><a href="[^"]*\?pg=(\d+)">\d+<\/a><\/li>/g, (m, n) => (Number(n) >= 3 ? '' : m));
+const HOST = 'https://www.katinosvajone.lt';
+const P1 = `${HOST}/musu-globotiniai?pet_status=for_adoption`;
+const P2 = `${HOST}/musu-globotiniai?pet_status=for_adoption&pg=2`;
+const ROBOTS = `${HOST}/robots.txt`;
 
-const twoPages = { ...ROBOTS, [LIST]: { body: PAGE1_OF_2 }, [`${LIST}?pg=2`]: { body: PAGE2 } };
+// Real filtered page 1 reshaped into "page 1 of 2": its last row moves to page 2, item 3 dropped.
+const rows = F1.match(/<div class="row clear-fix">.*?<\/div>/g);
+const F1_OF_2 = F1.replace(rows[rows.length - 1], '').replace(/<li class="pagination-item"><a href="[^"]*pg=3">3<\/a><\/li>/, '');
 
-async function collect(routes) {
+function routes({ p1 = F1_OF_2, p2 = F2, detail = {} } = {}) {
+  return url => {
+    if (url === ROBOTS) return { body: 'User-agent: *\nCrawl-delay: 10\n', headers: { 'content-type': 'text/plain' } };
+    if (url === P1) return { body: p1 };
+    if (url === P2) return p2 instanceof Object ? p2 : { body: p2 };
+    if (url in detail) return detail[url];
+    if (url === `${HOST}/musu-globotinis/tankas`) return { body: TANKAS };
+    if (url.startsWith(`${HOST}/musu-globotinis/`)) return { body: EMPTY };
+    return null;
+  };
+}
+
+async function collect(r = routes()) {
   const calls = [];
   const clock = fakeClock();
-  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...clock, fetchImpl: fakeFetch(routes, calls) });
+  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...clock, fetchImpl: fakeFetch(r, calls) });
   const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
   return { run, calls, clock };
 }
 
-test('katinosvajone: robots.txt first, GET only, own host, 10 s crawl-delay respected', async () => {
-  const { calls, clock } = await collect(twoPages);
-  assert.equal(calls[0].url, 'https://www.katinosvajone.lt/robots.txt');
-  assert.deepEqual(calls.map(c => c.url).slice(1), [LIST, `${LIST}?pg=2`]);
+test('katinosvajone: robots first, filtered list only, one detail per listed animal, crawl-delay', async () => {
+  const { run, calls, clock } = await collect();
+  assert.equal(run.state, 'complete');
+  const urls = calls.map(c => c.url);
+  assert.equal(urls[0], ROBOTS);
+  assert.deepEqual(urls.slice(1, 3), [P1, P2]);
+  assert.equal(urls.length, 1 + 2 + 16);
+  assert.ok(urls.slice(3).every(u => u.startsWith(`${HOST}/musu-globotinis/`)));
+  assert.ok(!urls.some(u => /musu-globotiniai\?pg=/.test(u)), 'never walks the unfiltered archive');
   assert.ok(calls.every(c => c.method === 'GET' && new URL(c.url).hostname === 'www.katinosvajone.lt'));
   assert.ok(clock.sleeps.every(ms => ms >= 10000));
 });
 
-test('katinosvajone: parses real list cards; unknown facts stay null', async () => {
-  const { run } = await collect(twoPages);
-  assert.equal(run.state, 'complete');
-  assert.equal(run.animals.length, 16 + 1); // 16 real cards + TESTAS2 (TESTAS is skipped)
+test('katinosvajone: detail facts filled from the labelled list; unknown stays null', async () => {
+  const { run } = await collect();
+  assert.equal(run.animals.length, 16);
   const byId = Object.fromEntries(run.animals.map(a => [a.id, a]));
   const t = byId['katinosvajone:tankas'];
   assert.equal(t.name, 'Tankas');
-  assert.equal(t.sourceUrl, 'https://www.katinosvajone.lt/musu-globotinis/tankas');
-  assert.deepEqual(t.photos, ['https://www.katinosvajone.lt/wp-content/uploads/2026/11/IMG_8291-scaled-142x142-c-center.jpeg']);
-  assert.equal(byId['katinosvajone:katyte-340'].name, 'Karvutė', 'nativeId is the slug, name is the visible text');
-  assert.equal(byId['katinosvajone:abis-ir-nubis'].name, 'Abis ir Nubis');
-  for (const a of run.animals) {
-    for (const f of ['species', 'sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt', 'sourceUpdatedAt']) {
-      assert.equal(a[f], null, `${a.id}.${f} must stay unknown`);
-    }
-  }
+  assert.equal(t.sourceUrl, `${HOST}/musu-globotinis/tankas`);
+  assert.equal(t.sex, 'male');
+  assert.equal(t.age_text, '6-12 Mėnesiai');
+  assert.equal(t.neutered, false);
+  assert.deepEqual(t.photos, [`${HOST}/wp-content/uploads/2026/11/IMG_8291-scaled-703x800-c-center.jpeg`]);
+  for (const f of ['species', 'size', 'vaccinated', 'chipped', 'bio_lt', 'sourceUpdatedAt']) assert.equal(t[f], null, f);
+  const k = byId['katinosvajone:katyte-340'];
+  assert.equal(k.name, 'Karvutė');
+  for (const f of ['species', 'sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt']) assert.equal(k[f], null, f);
+  assert.deepEqual(k.photos, [`${HOST}/wp-content/uploads/2026/11/IMG_8332-scaled-142x142-c-center.jpeg`], 'list thumbnail when gallery is empty');
 });
 
-test('katinosvajone: status only from the page word, with evidence', async () => {
-  const { run } = await collect(twoPages);
+test('katinosvajone: status from page words with evidence; detail status wins over list', async () => {
+  const { run } = await collect();
   const byId = Object.fromEntries(run.animals.map(a => [a.id, a]));
   assert.equal(byId['katinosvajone:tankas'].status, 'available');
   assert.equal(byId['katinosvajone:tankas'].statusEvidence, 'Dovanojamas');
-  assert.equal(byId['katinosvajone:sirena'].status, 'available');
-  assert.equal(byId['katinosvajone:mona'].status, 'confirmed_adopted');
-  assert.equal(byId['katinosvajone:mona'].statusEvidence, 'Padovanota');
-  assert.equal(byId['katinosvajone:balu-3'].statusEvidence, 'Padovanotas');
-  assert.equal(byId['katinosvajone:testas-be-statuso'].status, 'unknown');
-  assert.equal(byId['katinosvajone:testas-be-statuso'].statusEvidence, null);
-  assert.equal(byId['katinosvajone:testas-be-statuso'].photos.length, 0);
-  assert.deepEqual(run.skipped, [{ nativeId: 'testas-grizo', reason: 'Grįžo namo' }]);
-  const counts = run.animals.reduce((m, a) => ({ ...m, [a.status]: (m[a.status] || 0) + 1 }), {});
-  assert.deepEqual(counts, { confirmed_adopted: 7, available: 9, unknown: 1 });
+  assert.equal(byId['katinosvajone:sirena'].statusEvidence, 'Dovanojama');
+  assert.ok(run.animals.every(a => a.status === 'available'));
+
+  // Tankas's own page says it is adopted now (real status word from the site), list still says available.
+  const adopted = TANKAS.replace('<dd>Dovanojamas</dd>', '<dd>Padovanotas</dd>');
+  const r2 = await collect(routes({ detail: { [`${HOST}/musu-globotinis/tankas`]: { body: adopted } } }));
+  const t = r2.run.animals.find(a => a.id === 'katinosvajone:tankas');
+  assert.equal(t.status, 'confirmed_adopted');
+  assert.equal(t.statusEvidence, 'Padovanotas');
+
+  const returned = TANKAS.replace('<dd>Dovanojamas</dd>', '<dd>Grįžo namo</dd>');
+  const r3 = await collect(routes({ detail: { [`${HOST}/musu-globotinis/tankas`]: { body: returned } } }));
+  assert.deepEqual(r3.run.skipped, [{ nativeId: 'tankas', reason: 'Grįžo namo' }]);
 });
 
-test('katinosvajone: real page 1 announces 175 pages; stopping early is never complete', async () => {
-  // Page 2 (synthetic) claims to be last, but page 1 said 175 pages exist.
-  const routes = { ...ROBOTS, [LIST]: { body: PAGE1 }, [`${LIST}?pg=2`]: { body: PAGE2 } };
-  const { run } = await collect(routes);
+test('katinosvajone: contacts list on the detail page is never read', () => {
+  const withContacts = TANKAS.replace('</dl>', '</dl><br><h3>Kontaktai</h3><dl class="pet-details-list"><dt>Tel.</dt><dd>[pašalinta]</dd><dt>Lytis</dt><dd>Patelė</dd></dl>');
+  const d = adapter.parseDetailPage(withContacts, `${HOST}/musu-globotinis/tankas`);
+  assert.equal(d.facts.sex, 'male');
+  assert.ok(!JSON.stringify(d).includes('pašalinta'));
+});
+
+test('katinosvajone: real last page markup proves the end', () => {
+  const p = adapter.parseListPage(L175, `${HOST}/musu-globotiniai?pg=175`);
+  assert.deepEqual(p.pagination, { current: 175, last: 175, hasNextItem: true, next: null });
+  assert.equal(p.cards.length, 9);
+  assert.equal(p.filterSelected, false);
+  const real1 = adapter.parseListPage(F1, P1);
+  assert.equal(real1.filterSelected, true);
+  assert.deepEqual(real1.pagination, { current: 1, last: 3, hasNextItem: true, next: P2 });
+});
+
+test('katinosvajone: stopping before the announced last page is never complete', async () => {
+  const { run } = await collect(routes({ p1: F1 })); // page 1 announces 3, page 2 claims to be last
   assert.equal(run.state, 'partial');
+  const noNext = F2.replace('<li class="next"><span>Pirmyn</span></li>', '');
+  assert.equal((await collect(routes({ p2: noNext }))).run.state, 'partial');
 });
 
-test('katinosvajone: missing "Pirmyn" item means the end is not proven', async () => {
-  const noNext = PAGE2.replace('<li class="next"><span>Pirmyn</span></li>', '');
-  const { run } = await collect({ ...twoPages, [`${LIST}?pg=2`]: { body: noNext } });
-  assert.equal(run.state, 'partial');
-});
-
-test('katinosvajone: a failing page makes the run failed', async () => {
-  const broken = { ...twoPages, [`${LIST}?pg=2`]: { status: 500, body: 'error' } };
-  const { run } = await collect(broken);
+test('katinosvajone: unfiltered page served for the filter URL fails the run', async () => {
+  const { run } = await collect(routes({ p1: F1_OF_2.replace(' selected', '') }));
   assert.equal(run.state, 'failed');
-  assert.equal(run.animals.length, 0);
 });
 
-test('katinosvajone: a page with no animal cards (layout change) fails the run', async () => {
-  const empty = PAGE2.replace(/<div class="row clear-fix">.*?<\/div>/g, '');
-  const { run } = await collect({ ...twoPages, [`${LIST}?pg=2`]: { body: empty } });
-  assert.equal(run.state, 'failed');
+test('katinosvajone: a failing list or detail page makes the run failed', async () => {
+  assert.equal((await collect(routes({ p2: { status: 500, body: 'error' } }))).run.state, 'failed');
+  const r = await collect(routes({ detail: { [`${HOST}/musu-globotinis/moka`]: { status: 503, body: 'x' } } }));
+  assert.equal(r.run.state, 'failed');
+  assert.equal(r.run.animals.length, 0);
+  const noDl = await collect(routes({ detail: { [`${HOST}/musu-globotinis/moka`]: { body: '<html><body>kita</body></html>' } } }));
+  assert.equal(noDl.run.state, 'failed');
 });

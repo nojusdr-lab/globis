@@ -21,13 +21,14 @@
       "name": "VšĮ „Katino svajonė“, Kaunas",
       "website": "https://www.katinosvajone.lt/",
       "listing": [
-        "https://www.katinosvajone.lt/musu-globotiniai"
+        "https://www.katinosvajone.lt/musu-globotiniai?pet_status=for_adoption"
       ],
       "robots": "User-agent: * / Crawl-delay: 10",
       "terms": "none found",
       "cms": "wordpress-html",
       "decision": "adapter",
-      "checked": "2026-11-17"
+      "checked": "2026-11-17",
+      "note": "Reads only the for_adoption filter (3 pages) plus one detail page per animal (~50 requests, ~8 min at Crawl-delay 10)."
     },
     {
       "id": "lese",
@@ -35,13 +36,14 @@
       "name": "VšĮ „Lesė“, Vilnius ir Kaunas",
       "website": "https://lese.lt/",
       "listing": [
-        "https://lese.lt/lese-globotiniai/"
+        "https://lese.lt/lese-globotiniai/?stat=1"
       ],
       "robots": "Disallow: /wp-admin/",
       "terms": "none found",
       "cms": "wordpress-html",
       "decision": "adapter",
-      "checked": "2026-11-17"
+      "checked": "2026-11-17",
+      "note": "stat=1 holds available, reserved and quarantined; species from one walk per type filter. Detail pages not read yet (would add sex/size/health, ~70 requests)."
     },
     {
       "id": "penktakoja",
@@ -176,8 +178,9 @@
       "robots": "Disallow: /wp-admin/",
       "terms": "unverified",
       "cms": "wordpress-posts",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17",
+      "note": "No per-animal available marker; most animals stay unknown status. Posts can describe several animals."
     },
     {
       "id": "jbu",
@@ -227,7 +230,8 @@
       "terms": "none found",
       "cms": "wordpress-portfolio",
       "decision": "probe",
-      "checked": "2026-11-16"
+      "checked": "2026-11-17",
+      "note": "Adapter written but not enabled: list page fixtures are synthetic; probe sunys/kates/kiti pages first."
     },
     {
       "id": "tautmilesgloba",
@@ -367,10 +371,11 @@
         "https://padekman.lt/koty/"
       ],
       "robots": "Disallow: /wp-admin/",
-      "terms": "unverified",
+      "terms": "none found",
       "cms": "wordpress-portfolio",
       "decision": "probe",
-      "checked": "2026-11-16"
+      "checked": "2026-11-17",
+      "note": "Adapter written but not enabled: list pages 2..5 load only via POST admin-ajax; runs would always be partial. Site looks stale (newest cards 2022-2023). Probe category feed/page URLs."
     },
     {
       "id": "mgma",
@@ -410,10 +415,10 @@
         "https://www.mazasdraugas.lt/dovanojami-gyvunai/"
       ],
       "robots": "Yoast, nothing disallowed",
-      "terms": "unverified",
-      "cms": "wordpress",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "terms": "none found (privacy page only)",
+      "cms": "wordpress-rest",
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "makatukai",
