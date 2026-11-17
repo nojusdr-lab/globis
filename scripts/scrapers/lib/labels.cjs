@@ -39,7 +39,7 @@ function fromPairs(pairs) {
 
 // Splits plain text lines like "Lytis: patinas".
 function pairsFromText(text) {
-  return String(text || '').split(/\n|<br\s*\/?>|<\/p>|<\/li>/i)
+  return String(text || '').split(/\n|<br\b[^>]*>|<\/p>|<\/li>/i)
     .map(line => N.cleanText(line))
     .filter(Boolean)
     .map(line => line.match(/^([^:：]{2,40})[:：]\s*(.+)$/))

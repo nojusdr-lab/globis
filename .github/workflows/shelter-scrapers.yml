@@ -40,7 +40,6 @@ jobs:
           node-version: '22.13.0'
       - if: steps.changed.outputs.run == '1'
         run: |
-          rm -rf scripts/scrapers/probe-output
           node scripts/scrapers/probe.cjs scripts/scrapers/probe-output "$(head -1 scripts/scrapers/probe-request.txt | sed 's/^all$//')"
       - if: steps.changed.outputs.run == '1'
         run: |

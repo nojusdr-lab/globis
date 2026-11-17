@@ -70,7 +70,36 @@ async function probe(src) {
 
 const slug = url => url.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '-').slice(0, 80);
 
+// Targeted mode: probe-request.txt lines "<id> <url>" fetch exactly those URLs (polite fetcher).
+async function probeUrls(lines) {
+  const byId = new Map();
+  for (const line of lines) {
+    const [id, url] = line.trim().split(/\s+/);
+    if (!id || !url) continue;
+    if (!byId.has(id)) byId.set(id, []);
+    byId.get(id).push(url);
+  }
+  await Promise.all([...byId].map(async ([id, urls]) => {
+    const dir = path.join(out, id, 'extra');
+    fs.mkdirSync(dir, { recursive: true });
+    const f = createFetcher({ allowedHosts: hostsFor(urls[0]), minDelayMs: 5000 });
+    const index = [];
+    for (const [i, url] of urls.entries()) {
+      try {
+        const page = await f.get(url);
+        fs.writeFileSync(path.join(dir, `${String(i + 1).padStart(2, '0')}-${slug(url)}.gz`), zlib.gzipSync(page.body));
+        index.push({ url, finalUrl: page.url, status: page.status, bytes: page.body.length });
+      } catch (e) { index.push({ url, error: e.message, code: e.code ?? null, status: e.status ?? null }); }
+    }
+    fs.writeFileSync(path.join(dir, 'index.json'), JSON.stringify(index, null, 2));
+    console.log(id, JSON.stringify(index.map(x => x.status ?? x.code)));
+  }));
+}
+
 async function main() {
+  const reqFile = path.join(__dirname, 'probe-request.txt');
+  const lines = fs.existsSync(reqFile) ? fs.readFileSync(reqFile, 'utf8').split('\n').filter(l => /^\S+\s+https?:\/\//.test(l)) : [];
+  if (lines.length) return probeUrls(lines);
   const { sources } = require('./sources.json');
   const todo = sources.filter(s => s.decision !== 'other_thread' && (!only || only.has(s.id)));
   // Different sites in parallel (each site still gets one slow request at a time).

@@ -26,8 +26,8 @@
       "robots": "User-agent: * / Crawl-delay: 10",
       "terms": "none found",
       "cms": "wordpress-html",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "lese",
@@ -40,8 +40,8 @@
       "robots": "Disallow: /wp-admin/",
       "terms": "none found",
       "cms": "wordpress-html",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "penktakoja",
@@ -100,8 +100,8 @@
       "robots": "Disallow: /wp-admin/",
       "terms": "none found",
       "cms": "html-tables",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "mazeikiugyvunai",
@@ -254,8 +254,8 @@
       "robots": "Yoast, nothing disallowed",
       "terms": "/tinklapio-taisykles/ unverified",
       "cms": "wordpress-rest:gyvunas",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "grinda",
@@ -382,8 +382,8 @@
       "robots": "Yoast, nothing disallowed",
       "terms": "unverified",
       "cms": "wordpress-rest:product",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "zga",
@@ -554,10 +554,11 @@
         "https://www.rasugloba.lt/dovanojami/"
       ],
       "robots": "User-agent: * / Crawl-delay: 10",
-      "terms": "/taisykles-ir-salygos/ unverified",
+      "terms": "/taisykles-ir-salygos/ 4.2: \"Jūs negalite kopijuoti, platinti ar naudoti turinio be išankstinio raštiško sutikimo.\"",
       "cms": "wordpress-html",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "blocked",
+      "checked": "2026-11-17",
+      "note": "Needs written consent from the shelter. HTML adapter would be easy (/dovanojami/?paged=N, custom type pet)."
     },
     {
       "id": "keturkojoviltis",

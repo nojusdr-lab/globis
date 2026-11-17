@@ -12,7 +12,7 @@ function createWordpressAdapter(config) {
   const origin = new URL(base).origin;
   const api = p => `${origin}/wp-json/wp/v2/${p}`;
 
-  async function pageThrough(fetcher, makeUrl) {
+  async function pageThrough(fetcher, makeUrl, size = perPage) {
     const items = [];
     for (let page = 1; page <= maxPages; page++) {
       let res;
@@ -23,7 +23,7 @@ function createWordpressAdapter(config) {
       }
       if (!Array.isArray(res.json)) throw new Error(`Unexpected JSON from ${res.url}`);
       items.push(...res.json);
-      if (res.json.length < perPage) return { items, complete: true };
+      if (res.json.length < size) return { items, complete: true };
     }
     return { items, complete: false }; // hit maxPages: do not trust as complete
   }
@@ -32,7 +32,7 @@ function createWordpressAdapter(config) {
     const termNames = {};
     let complete = true;
     for (const tax of Object.keys(taxonomies)) {
-      const r = await pageThrough(fetcher, p => api(`${tax}?per_page=100&page=${p}&_fields=id,name`));
+      const r = await pageThrough(fetcher, p => api(`${tax}?per_page=100&page=${p}&_fields=id,name`), 100);
       complete &&= r.complete;
       termNames[tax] = new Map(r.items.map(t => [t.id, N.cleanText(t.name)]));
     }

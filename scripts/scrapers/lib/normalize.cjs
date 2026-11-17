@@ -41,7 +41,7 @@ function size(value) {
 
 function yesNo(value) {
   const v = fold(value);
-  if (/^(taip|yra|atlikta|atliktas|skiepytas|skiepyta|sterilizuotas|sterilizuota|kastruotas|kastruota|čipuotas|čipuota|paženklintas|paženklinta|ženklintas|ženklinta)$/.test(v)) return true;
+  if (/^(taip|yra|atlikta|atliktas|skiepytas|skiepyta|paskiepytas|paskiepyta|sterilizuotas|sterilizuota|kastruotas|kastruota|čipuotas|čipuota|paženklintas|paženklinta|ženklintas|ženklinta)$/.test(v)) return true;
   if (/^(ne|nėra|neatlikta|neatliktas|neskiepytas|neskiepyta|nesterilizuotas|nesterilizuota|nekastruotas|nekastruota)$/.test(v)) return false;
   return null;
 }
