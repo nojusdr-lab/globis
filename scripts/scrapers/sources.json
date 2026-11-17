@@ -604,14 +604,17 @@
     {
       "id": "naminukai",
       "vmvtRow": 34,
-      "name": "VšĮ „Naminukai“, Vilnius (VMVT lists only Facebook)",
-      "website": "https://naminukai.lt/",
-      "listing": [],
-      "robots": "unverified",
-      "terms": "unverified",
-      "cms": "unverified",
-      "decision": "unreachable",
-      "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
+      "name": "VšĮ „Naminukai“, Vilnius",
+      "website": "https://naminukai.com/",
+      "listing": [
+        "https://naminukai.com/sunys/",
+        "https://naminukai.com/kates/"
+      ],
+      "robots": "User-agent: * / Disallow: /wp-admin/",
+      "terms": "none found",
+      "cms": "wordpress-rest:pages",
+      "decision": "adapter",
+      "note": "naminukai.lt is dead; the shelter moved to naminukai.com (checked 2026-11-17).",
       "checked": "2026-11-17"
     },
     {

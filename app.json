@@ -81,7 +81,9 @@
           "resizeMode": "contain",
           "backgroundColor": "#F5F8F7"
         }
-      ]
+      ],
+      "expo-image",
+      "expo-font"
     ],
     "extra": {
       "betaStatus": "unpublished",

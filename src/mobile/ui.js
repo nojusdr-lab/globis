@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
-import {View,Text,Image,Pressable,Modal,ScrollView,Linking} from 'react-native';
+import {View,Text,Image,Pressable,Modal,ScrollView,Linking,Platform} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
+import {Image as CachedImage} from 'expo-image';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {C,styles as s} from './theme';
 
@@ -39,7 +40,7 @@ export function HeartButton({saved,onPress,name,lang='lt',disabled=false}) {
 function PhotoImage({uri,label,height,lang}) {
  const [failed,setFailed]=useState(false);
  if(uri&&!failed){
-  return <Image accessibilityLabel={label} source={{uri}} onError={()=>setFailed(true)} style={{width:'100%',height:'100%'}} resizeMode="cover"/>;
+  return <View pointerEvents="none" style={{width:'100%',height:'100%'}}><CachedImage accessibilityLabel={label} source={{uri}} onError={()=>setFailed(true)} style={{width:'100%',height:'100%'}} contentFit="cover" cachePolicy="memory-disk" transition={150}/></View>;
  }
  return <View style={[s.photo,s.placeholder,{height}]}>
   <Ionicons name="paw-outline" size={40} color={C.green}/>
@@ -92,13 +93,12 @@ export function StatusNote({pet,lang='lt'}) {
  </View>;
 }
 
-export function Empty({title,body,action,onAction,icon='paw-outline',secondary,onSecondary}) {
+export function Empty({title,body,action,onAction,icon='paw-outline'}) {
  return <View style={s.empty}>
   <View style={s.emptyArt}><Ionicons name={icon} size={34} color={C.green}/></View>
   <Text accessibilityRole="header" style={s.emptyTitle}>{title}</Text>
   {body?<Text style={[s.body,{textAlign:'center',maxWidth:320}]}>{body}</Text>:null}
   {action?<Button primary label={action} onPress={onAction} style={{minWidth:220}}/>:null}
-  {secondary?<Button label={secondary} onPress={onSecondary} style={{minWidth:220}}/>:null}
  </View>;
 }
 
@@ -131,6 +131,21 @@ export function SourceLink({url,label,onError,lang='lt'}) {
 
 export const initials=name=>String(name||'').replace(/[„“"()]/g,'').replace(/^(VšĮ|Asociacija|Gyvūnų globos draugija)\s+/i,'')
  .split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('')||'?';
-export function Avatar({name,size=46}) {
- return <View style={[s.avatar,{width:size,height:size,borderRadius:size/2}]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants"><Text style={[s.avatarText,size>50&&{fontSize:19}]}>{initials(name)}</Text></View>;
+export function Avatar({name,logo,size=46}) {
+ const [broken,setBroken]=useState(false);
+ const box={width:size,height:size,borderRadius:size/2};
+ if(logo&&!broken) return <CachedImage source={{uri:logo}} onError={()=>setBroken(true)} contentFit="contain" cachePolicy="memory-disk" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[box,{backgroundColor:C.white}]}/>;
+ return <View style={[s.avatar,box]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants"><Text style={[s.avatarText,size>50&&{fontSize:19}]}>{initials(name)}</Text></View>;
+}
+
+// Universal links open the installed app, otherwise the web map, which offers the app download.
+export function Directions({place,onError,lang='lt'}) {
+ const q=encodeURIComponent(place),lt=lang==='lt';
+ const apps=[['Google Maps',`https://www.google.com/maps/dir/?api=1&destination=${q}`],['Waze',`https://waze.com/ul?q=${q}&navigate=yes`],...(Platform.OS==='ios'?[['Apple Maps',`https://maps.apple.com/?daddr=${q}`]]:[])];
+ return <View style={{gap:8}}>
+  <Text style={s.sectionTitle}>{lt?'Kaip nuvykti':'Directions'}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',gap:8}}>
+   {apps.map(([name,url])=><Button key={name} label={name} icon="navigate-outline" accessibilityLabel={`${lt?'Kaip nuvykti su':'Directions in'} ${name}`} onPress={()=>Linking.openURL(url).catch(()=>onError?.(lt?'Nepavyko atidaryti nuorodos.':'Could not open the link.'))}/>)}
+  </View>
+ </View>;
 }

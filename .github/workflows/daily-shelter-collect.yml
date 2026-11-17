@@ -4,7 +4,8 @@
 name: Daily shelter collect
 on:
   schedule:
-    - cron: '17 3 * * *'
+    # 02:07 UTC = 04:07 Lithuanian winter time, 05:07 summer time. Off the hour: GitHub delays :00 runs.
+    - cron: '7 2 * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -27,7 +28,17 @@ jobs:
           key: scraped-${{ github.run_id }}
           restore-keys: scraped-
       - id: run
-        run: node scripts/scrapers/run.cjs data/scraped > scrape.log 2>&1 || echo "failed=1" >> "$GITHUB_OUTPUT"
+        env:
+          # Empty until the owner adds the secret; then each run is also loaded into Supabase.
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: node scripts/scrapers/run.cjs data/scraped > scrape.log 2>&1 || { echo "failed=1" >> "$GITHUB_OUTPUT"; tail -20 scrape.log; }
+      - name: Warn on empty or unpublished sources
+        if: always()
+        run: |
+          node -e 'const r=require("./data/scraped/report.json");for(const s of r){
+            if(s.animals===0)console.log(`::warning title=${s.source}::0 animals (site changed or empty)`);
+            else if(!s.published)console.log(`::warning title=${s.source}::not published: ${s.reason||s.state}`);
+            if(s.db&&s.db!=="published")console.log(`::warning title=${s.source}::database: ${s.db}`);}' || true
       - uses: actions/cache/save@v4
         if: always()
         with:
@@ -38,7 +49,8 @@ jobs:
         if: always()
         run: |
           { echo '### Rinkimas'; echo '```'; grep '^{"source"' scrape.log || tail -5 scrape.log; echo '```';
-            echo '### Programėlės duomenys'; echo '```'; cat bridge.log 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+            echo '### Programėlės duomenys'; echo '```'; cat bridge.log 2>/dev/null; echo '```';
+            echo '### Laukų pilnumas'; node scripts/scrapers/completeness.cjs || true; } >> "$GITHUB_STEP_SUMMARY"
       - name: Open PR with data change
         env:
           GH_TOKEN: ${{ github.token }}
