@@ -26,7 +26,13 @@
 - **Išsaugoti antraštė**: prisijungus „sinchronizuojama su paskyra“.
 - **Didelis šriftas** (23): etiketės ir mygtukai auga kartu su tekstu (`minHeight`), nebekerpa. Native neišbandyta.
 - **Offline** (24): peržiūrėta. Be interneto rodoma įtaisyta kopija, nuotraukoms „Nuotraukos nėra“, paskyrai klaidos tekstas apie ryšį. Keisti nereikėjo.
+- **Dublikatai** (6): jau tvarkoma, `mergeDirect` nerodo globok.lt kopijų prieglaudoms, kurias skaitome tiesiai.
+- **LT/EN** (28): lietuviškų užrašų be vertimo nerasta.
+- **Parduotuvių dokumentai**: privatumo politika LT/EN, Data Safety / App Privacy ir App Review pastabos atnaujintos dėl neprivalomos paskyros. Reikia savininko peržiūros.
+- **Roadmap** atnaujintas: 19 iš 50 padaryta, dabar etapas D.
 
 ## Laukia savininko
 
 - Palaikymo el. paštas, privatumo politikos URL, bundle id, Apple Developer paskyra.
+- Demo paskyra App Review'ui; ištrynimo nuoroda internete (Google Play reikalauja).
+- Privatumo politikos peržiūra ir paskelbimas.
