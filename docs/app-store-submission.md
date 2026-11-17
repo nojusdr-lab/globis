@@ -1,5 +1,7 @@
 # GLOBIS · App Store Connect
 
+> Naujausia parduotuvių būsena ir sąrašas, ko reikia iš savininko: [docs/store/README.md](store/README.md).
+
 **Būsena** · Metaduomenų ir „App Review“ pastabų projektas. Pateikimui reikia patikrinto pasirašyto iOS build’o ir apačioje nurodytų patvirtinimų.
 
 ## Parduotuvės tekstas

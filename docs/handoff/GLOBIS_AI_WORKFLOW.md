@@ -1,19 +1,18 @@
 # GLOBIS — AI TEAM & WORKFLOW
 
-_Last consolidated: 2026-11-15._
+_Roles updated 2026-11-17._
 
 ## Roles
 
 | Tool | Intended role | Important limitation / rule |
 |---|---|---|
 | **ChatGPT** | Product thinking, architecture, task breakdown, UX reasoning, code review and coordination. | Use GitHub as durable handoff; do not assume another account shares chat history. |
-| **Codex CLI** | Repository-aware coding and implementation in the local project. | Confirm the CLI is authenticated to the intended ChatGPT account; its login state is separate from simply opening ChatGPT in a browser. |
+| **Claude Code** | Leads technical implementation for GLOBIS. | On return, check recent commits, open PRs and Issue #1 before resuming work. |
+| **Codex** | Supporting co-developer. Continues owner-assigned work when Claude Code reaches its usage limit. | Use a feature branch and PR. Leave the PR link, change summary and test results in Issue #1 for Claude Code. |
 | **Google Antigravity** | Main IDE / local agent environment when available. | Treat as the coding workspace, not a shared conversation memory across tools. |
 | **Gemini Work Pro** | Large research, competitor analysis, UX/UI audits, second opinions and ideas. | In this setup it has not been able to connect directly to GitHub; record useful conclusions in GitHub. |
 | **Manus AI** | Autonomous research, competitor analysis, data collection and broader exploratory work. | Record decisions/findings in GitHub so they persist. |
 | **Figma + Mobbin** | Design exploration, reference gathering and interface design. | Final approved decisions should be documented in repo/issues. |
-
-Claude Code is **not** part of the owner's available toolset; do not assume access.
 
 ## Shared source of truth
 

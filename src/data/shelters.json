@@ -21,9 +21,13 @@
     "logo": "https://globok.lt/shelter-logos/keturkojodraugaslt.png",
     "url": "https://globok.lt/prieglaudos/keturkojodraugaslt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37068345602",
+    "email": "info@keturkojodraugas.lt",
+    "website": "https://keturkojodraugas.lt",
+    "contactEvidence": {
+      "url": "https://keturkojodraugas.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "keturkojo-viltislt",
@@ -34,9 +38,13 @@
     "logo": "https://globok.lt/shelter-logos/keturkojo-viltislt.gif",
     "url": "https://globok.lt/prieglaudos/keturkojo-viltislt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37065782030",
+    "email": "keturkojoviltis@gmail.com",
+    "website": "https://keturkojo-viltis.lt",
+    "contactEvidence": {
+      "url": "https://keturkojo-viltis.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "fb-asociacija-musu-mazieji",
@@ -86,9 +94,13 @@
     "logo": "https://globok.lt/shelter-logos/kggnlt.png",
     "url": "https://globok.lt/prieglaudos/kggnlt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37068750885",
+    "email": "info@kggn.lt",
+    "website": "https://kggn.lt",
+    "contactEvidence": {
+      "url": "https://kggn.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "sggnlt",
@@ -112,9 +124,13 @@
     "logo": "https://globok.lt/shelter-logos/mgmalt.jpg",
     "url": "https://globok.lt/prieglaudos/mgmalt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37064064466",
+    "email": "mgmasociacija@gmail.com",
+    "website": "https://mgma.lt",
+    "contactEvidence": {
+      "url": "https://mgma.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "mazeikiugyvunailt",
@@ -152,8 +168,12 @@
     "url": "https://globok.lt/prieglaudos/gyvunuglobacom",
     "source": "globok",
     "phone": null,
-    "email": null,
-    "website": null
+    "email": "info@gyvunugloba.com",
+    "website": "https://gyvunugloba.com",
+    "contactEvidence": {
+      "url": "https://gyvunugloba.com/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "leseltkaunas",
@@ -164,9 +184,13 @@
     "logo": "",
     "url": "https://globok.lt/prieglaudos/leseltkaunas",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37060426451",
+    "email": "kaunas@lese.lt",
+    "website": "https://lese.lt",
+    "contactEvidence": {
+      "url": "https://lese.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "leseltvilnius",
@@ -177,9 +201,13 @@
     "logo": "",
     "url": "https://globok.lt/prieglaudos/leseltvilnius",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37060533452",
+    "email": "info@lese.lt",
+    "website": "https://lese.lt",
+    "contactEvidence": {
+      "url": "https://lese.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "fb-vsi-airos-katineliai",
@@ -229,9 +257,13 @@
     "logo": "https://globok.lt/shelter-logos/bukmanodraugaslt.png",
     "url": "https://globok.lt/prieglaudos/bukmanodraugaslt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37061436617",
+    "email": "info@bukmanodraugas.lt",
+    "website": "https://bukmanodraugas.lt",
+    "contactEvidence": {
+      "url": "https://bukmanodraugas.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "dogspotaslt",
@@ -242,9 +274,13 @@
     "logo": "https://globok.lt/shelter-logos/dogspotaslt.jpg",
     "url": "https://globok.lt/prieglaudos/dogspotaslt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37060483244",
+    "email": "info@dogspotas.lt",
+    "website": "https://dogspotas.lt",
+    "contactEvidence": {
+      "url": "https://dogspotas.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "dryzuotalaimelt",
@@ -307,9 +343,13 @@
     "logo": "https://globok.lt/shelter-logos/linksmauodegelelt.png",
     "url": "https://globok.lt/prieglaudos/linksmauodegelelt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37065890300",
+    "email": "info@linksmauodegele.lt",
+    "website": "https://linksmauodegele.lt",
+    "contactEvidence": {
+      "url": "https://linksmauodegele.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "linksmosiospeduteslt",
@@ -320,9 +360,13 @@
     "logo": "https://globok.lt/shelter-logos/linksmosiospeduteslt.png",
     "url": "https://globok.lt/prieglaudos/linksmosiospeduteslt",
     "source": "globok",
-    "phone": null,
+    "phone": "+37064073030",
     "email": null,
-    "website": null
+    "website": "https://linksmosiospedutes.lt",
+    "contactEvidence": {
+      "url": "https://linksmosiospedutes.lt/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "mazasdraugaslt",
@@ -333,9 +377,13 @@
     "logo": "https://globok.lt/shelter-logos/mazasdraugaslt.png",
     "url": "https://globok.lt/prieglaudos/mazasdraugaslt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37067846174",
+    "email": "vsi.mazasdraugas@gmail.com",
+    "website": "https://www.mazasdraugas.lt",
+    "contactEvidence": {
+      "url": "https://www.mazasdraugas.lt/kontaktai-2/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "mazijausmailt",
@@ -346,9 +394,13 @@
     "logo": "https://globok.lt/shelter-logos/mazijausmailt.png",
     "url": "https://globok.lt/prieglaudos/mazijausmailt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37060263641",
+    "email": "info@mazijausmai.lt",
+    "website": "https://mazijausmai.lt",
+    "contactEvidence": {
+      "url": "https://mazijausmai.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "fb-vsi-mindraja",
@@ -385,9 +437,13 @@
     "logo": "https://globok.lt/shelter-logos/penktakojalt.jpg",
     "url": "https://globok.lt/prieglaudos/penktakojalt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37068520133",
+    "email": "info@penktakoja.lt",
+    "website": "https://penktakoja.lt",
+    "contactEvidence": {
+      "url": "https://penktakoja.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "fb-vsi-plunges-priglaustukai",
@@ -437,9 +493,13 @@
     "logo": "https://globok.lt/shelter-logos/siauliuletenelelt.png",
     "url": "https://globok.lt/prieglaudos/siauliuletenelelt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37067612231",
+    "email": "siauliu.letenele@gmail.com",
+    "website": "https://siauliuletenele.lt",
+    "contactEvidence": {
+      "url": "https://siauliuletenele.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "fb-vsi-silutes-beglobiai",
@@ -463,9 +523,13 @@
     "logo": "https://globok.lt/shelter-logos/sos-gyvunailt.png",
     "url": "https://globok.lt/prieglaudos/sos-gyvunailt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37068339826",
+    "email": "info@sos-gyvunai.lt",
+    "website": "https://sos-gyvunai.lt",
+    "contactEvidence": {
+      "url": "https://sos-gyvunai.lt/kontaktai/",
+      "checkedAt": "2026-11-17"
+    }
   },
   {
     "id": "tautmilesglobalt",
@@ -476,8 +540,12 @@
     "logo": "https://globok.lt/shelter-logos/tautmilesglobalt.png",
     "url": "https://globok.lt/prieglaudos/tautmilesglobalt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37065071786",
+    "email": "tautmiles.prieglaudele@gmail.com",
+    "website": "https://tautmilesgloba.lt",
+    "contactEvidence": {
+      "url": "https://tautmilesgloba.lt/",
+      "checkedAt": "2026-11-17"
+    }
   }
 ]

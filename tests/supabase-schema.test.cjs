@@ -132,13 +132,35 @@ test('status rules: evidence required, disappearance is not adoption', async () 
     /invalid input value for enum/);
 });
 
-test('history from unpublished runs is hidden from anon', async () => {
+test('public listing identities and history stay private until publication', async () => {
   const pg = await db();
-  const failed = await run(pg, 'failed', []);
-  await pg.query(
-    "insert into animal_status_history (animal_id, status, evidence, source_run_id) values ('globok:a', 'reserved', 'Rezervuotas', $1)",
-    [failed]);
-  await pg.query("insert into animal_status_history (animal_id, status) values ('globok:b', 'unknown')");
-  const rows = await asAnon(pg, 'select animal_id from animal_status_history');
-  assert.deepEqual(rows.map(r => r.animal_id), ['globok:b']);
+  try {
+    const failed = await run(pg, 'failed', ['globok:a']);
+    const complete = await run(pg, 'complete', ['globok:b']);
+    await pg.query(
+      "insert into animal_status_history (animal_id, status, evidence, source_run_id) values ('globok:b', 'reserved', 'Rezervuotas', $1)",
+      [failed]);
+    await pg.query(`
+      insert into animal_status_history (animal_id, status) values
+        ('globok:a', 'unknown'), ('globok:b', 'unknown');
+    `);
+
+    async function checkPublicRows(expectedIds) {
+      for (const role of ['anon', 'authenticated']) {
+        await pg.exec('set role ' + role);
+        try {
+          const identities = await pg.query('select id, source_url from animals order by id');
+          assert.deepEqual(identities.rows, expectedIds.map(id => ({
+            id, source_url: 'https://globok.lt/gyvunai/' + id.split(':')[1],
+          })), role);
+          const history = await pg.query('select animal_id, status from animal_status_history order by id');
+          assert.deepEqual(history.rows, expectedIds.map(id => ({ animal_id: id, status: 'unknown' })), role);
+        } finally { await pg.exec('reset role'); }
+      }
+    }
+
+    await checkPublicRows([]);
+    await pg.query('select publish_source_run($1)', [complete]);
+    await checkPublicRows(['globok:b']);
+  } finally { await pg.close(); }
 });

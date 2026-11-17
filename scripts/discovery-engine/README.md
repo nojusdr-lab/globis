@@ -1,5 +1,20 @@
 # Discovery Engine B1
 
+## Prieglaudų svetainių adapteriai
+
+Trys adapteriai skaito viešus prieglaudų katalogus per WordPress REST. Bendra dalis yra `wp-rest.cjs`: prieš skaitymą patikrina `robots.txt` (ir jo `Crawl-delay`), tarp užklausų laukia bent 2 s, kreipiasi tik į tą pačią svetainę. Bet kokia klaida ar įrašų skaičiaus neatitikimas atmeta visą paleidimą. Adapteriai tik atspausdina JSON ir nieko nerašo į programėlės duomenis.
+
+- `lietuva-gyvunams.cjs`: kategorija „Ieško namų“. Lyties, dydžio ir rūšies laukų nėra, jie lieka `null`.
+- `kggn.cjs`: tik gyvūnai su svetainės statusu „Dovanojamas“. Rūšis, lytis ir amžius iš svetainės kategorijų.
+- `sos-gyvunai.cjs`: rūšis ir amžiaus grupė iš kategorijų. Statuso svetainėje nėra, todėl lieka „nežinoma“.
+
+```sh
+node --test scripts/discovery-engine/wp-shelters.test.cjs   # be tinklo
+node scripts/discovery-engine/collect.cjs kggn              # tikras skaitymas
+```
+
+GitHub: Actions → „Collect shelter source (preview only)“ → Run workflow. Rezultatas pridedamas kaip failas peržiūrai.
+
 ## C1. Meta Page adapterio karkasas
 
 Žr. [rankinį patvirtinimo planą](meta-setup.md). Vietiniam bandymui:

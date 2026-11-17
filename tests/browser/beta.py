@@ -4,7 +4,7 @@ import json
 root=Path(__file__).resolve().parents[2]
 with sync_playwright() as p:
  browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
- ctx=browser.new_context(viewport={'width':390,'height':844},reduced_motion='reduce')
+ ctx=browser.new_context(viewport={'width':390,'height':844},reduced_motion='reduce',locale='lt-LT')
  ctx.route('**/*',lambda route:route.continue_() if route.request.url.startswith('http://127.0.0.1:8765') else route.abort())
  page=ctx.new_page(); errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
  page.goto('http://127.0.0.1:8765',wait_until='networkidle')
@@ -17,7 +17,7 @@ with sync_playwright() as p:
  page.mouse.move(270,290);page.mouse.down();page.mouse.move(130,292,steps=12);page.mouse.up()
  page.wait_for_function("JSON.parse(localStorage.getItem('globis.choices.v1')).passed.length===1")
  page.get_by_role('button',name='Atšaukti',exact=True).click()
- page.get_by_role('button',name='Profilis',exact=True).click()
+ page.get_by_role('button',name='Atidaryti profilį:',exact=False).first.click()
  page.get_by_text('Stebėjimo laikas nežinomas.').wait_for()
  page.get_by_role('button',name='Uždaryti',exact=True).click()
  page.get_by_role('button',name='Uždaryti',exact=True).wait_for(state='hidden')
@@ -41,7 +41,7 @@ with sync_playwright() as p:
  assert json.loads(page.evaluate("localStorage.getItem('globis.choices.v1')"))['passed']==[]
  page.get_by_role('button',name='Tinklelis',exact=True).click()
  page.get_by_role('button',name='Filtrai',exact=True).click()
- page.get_by_role('button',name='Katės',exact=True).click()
+ page.get_by_role('button',name='Katės',exact=True).last.click()
  page.get_by_role('button',name='Vilnius',exact=True).click()
  page.screenshot(path=str(root/'docs/screenshots/filters-mobile.png'),full_page=True)
  page.get_by_role('button',name='Rodyti',exact=False).click()
@@ -49,7 +49,7 @@ with sync_playwright() as p:
  page.get_by_role('button',name='Kortelės',exact=True).click()
  page.get_by_role('button',name='Filtrai',exact=True).click()
  page.get_by_role('switch',name='Skubiai ieško namų',exact=True).click()
- page.get_by_role('button',name='Rodyti 0 skelbimus',exact=True).click()
+ page.get_by_role('button',name='Rodyti 0 skelbimų',exact=True).click()
  page.get_by_text('Nepavyko rasti augintinių',exact=True).wait_for()
  page.get_by_role('button',name='Atstatyti filtrus',exact=True).click()
  page.get_by_role('tab',name='Prieglaudos',exact=True).click()
@@ -78,7 +78,7 @@ with sync_playwright() as p:
  page.get_by_text('Palaikymo kontaktas dar nepaskelbtas.',exact=True).wait_for()
  page.get_by_role('button',name='Uždaryti',exact=True).click()
  # A failed storage read must not be retried by overwriting the original bytes.
- bad=browser.new_context(viewport={'width':390,'height':844})
+ bad=browser.new_context(viewport={'width':390,'height':844},locale='lt-LT')
  bad.route('**/*',lambda route:route.continue_() if route.request.url.startswith('http://127.0.0.1:8765') else route.abort())
  broken=bad.new_page();broken.goto('http://127.0.0.1:8765',wait_until='networkidle')
  broken.evaluate("localStorage.setItem('globis.choices.v1','invalid-original-bytes')")
@@ -91,6 +91,25 @@ with sync_playwright() as p:
  broken.get_by_role('tab',name='Išsaugoti (1)',exact=True).wait_for()
  assert json.loads(broken.evaluate("localStorage.getItem('globis.choices.v1')"))['saved']==[kept]
  bad.close()
+ # A phone in another language starts in English on first launch, and every sheet speaks English.
+ en=browser.new_context(viewport={'width':375,'height':667},reduced_motion='reduce',locale='en-US')
+ ep=en.new_page();ep.on('pageerror',lambda error:errors.append(str(error)))
+ ep.goto('http://127.0.0.1:8765',wait_until='networkidle')
+ ep.get_by_role('button',name='Language: English. Switch to Lithuanian',exact=True).wait_for()
+ ep.get_by_role('button',name='About GLOBIS',exact=True).click()
+ ep.get_by_text('A support contact has not been published yet.',exact=True).wait_for()
+ assert ep.get_by_text('beta',exact=False).count()==0
+ ep.get_by_role('button',name='Close',exact=True).click()
+ ep.get_by_role('button',name='Filters',exact=True).click()
+ ep.get_by_role('button',name='Close panel',exact=True).wait_for()
+ ep.get_by_role('button',name='Close',exact=True).click()
+ ep.get_by_role('button',name='Open profile:',exact=False).first.click()
+ ep.get_by_role('link',name='Original listing',exact=True).wait_for()
+ ep.get_by_role('button',name='Close',exact=True).click()
+ ep.get_by_role('button',name='Language: English. Switch to Lithuanian',exact=True).click()
+ ep.get_by_role('button',name='Kalba: lietuvių. Perjungti į anglų',exact=True).wait_for()
+ ep.get_by_role('button',name='Apie GLOBIS',exact=True).wait_for()
+ en.close()
  assert not errors,errors
  page.wait_for_function('document.documentElement.scrollWidth <= innerWidth')
  print('PASS: profile/contact source, save/reload/undo, pass/undo, card/grid filters, empty search, reserved roster, offline missing image, reduced motion, mobile/desktop no overflow; no page errors')

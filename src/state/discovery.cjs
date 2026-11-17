@@ -1,4 +1,6 @@
-const emptyState = () => ({version:1, saved:[], passed:[], history:[], lang:'lt'});
+const emptyState = (lang='lt') => ({version:1, saved:[], passed:[], history:[], lang:lang==='en'?'en':'lt'});
+// First launch only: a phone set to a known non-Lithuanian language starts in English. Unknown stays Lithuanian.
+const langFromLocale = locale => { const tag=String(locale||'').trim().toLowerCase(); return tag && !/^lt\b/.test(tag) ? 'en' : 'lt'; };
 const without = (ids,id) => ids.filter(value=>value!==id);
 function restore(ids,id,index) {
   const result=without(ids,id);
@@ -29,4 +31,4 @@ function decode(raw) {
   return {version:1,saved:value.saved,passed:value.passed,history:value.history,lang:value.lang};
 }
 const shouldClaim = ({dx,dy}) => Math.abs(dx)>8 && Math.abs(dx)>Math.abs(dy)*1.3;
-module.exports={emptyState,reducer,decode,shouldClaim};
+module.exports={emptyState,langFromLocale,reducer,decode,shouldClaim};

@@ -27,11 +27,11 @@ with sync_playwright() as playwright:
     browser = playwright.chromium.launch(
         executable_path='/usr/bin/chromium', headless=True, args=['--no-sandbox']
     )
-    context = browser.new_context(viewport={'width': 390, 'height': 844}, reduced_motion='reduce')
+    context = browser.new_context(viewport={'width': 390, 'height': 844}, reduced_motion='reduce',locale='lt-LT')
     context.route('**/*', route_request)
     page = context.new_page()
     page.goto(APP_URL)
-    page.get_by_role('button', name='Profilis', exact=True).click()
+    page.get_by_role('button', name='Atidaryti profilį:', exact=False).first.click()
     dialog = page.get_by_role('dialog')
     expect(dialog).to_be_visible()
 
@@ -56,11 +56,11 @@ with sync_playwright() as playwright:
     expect_photo(3)
     dialog.get_by_role('button', name='Uždaryti', exact=True).click()
     expect(dialog).to_have_count(0)
-    page.get_by_role('button', name='Profilis', exact=True).click()
+    page.get_by_role('button', name='Atidaryti profilį:', exact=False).first.click()
     expect_photo(1)
     dialog.get_by_role('button', name='Uždaryti', exact=True).click()
-    page.get_by_role('button', name='LT', exact=True).click()
-    page.get_by_role('button', name='Profile', exact=True).click()
+    page.get_by_role('button', name='Kalba: lietuvių. Perjungti į anglų', exact=True).click()
+    page.get_by_role('button', name='Open profile:', exact=False).first.click()
     expect(dialog.get_by_role('button', name='Previous', exact=True)).to_be_visible()
     dialog.get_by_role('button', name='Next', exact=True).click()
     expect(dialog.get_by_text('Photo unavailable', exact=True)).to_be_visible()

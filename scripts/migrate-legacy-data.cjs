@@ -1,12 +1,11 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { listingId, statusFromText } = require('../src/data/integrity.cjs');
+const { listingId, statusFromText, withOfficialContacts } = require('../src/data/integrity.cjs');
 
 function migrate(pets, shelters) {
-  const organizations = shelters.map(({ phone, email, website, descriptionLt, descriptionEn,
-    totalCount, dogsCount, catsCount, count, ...shelter }) => ({
-    ...shelter, source: 'globok', phone: null, email: null, website: null,
-  }));
+  const organizations = shelters.map(({ descriptionLt, descriptionEn,
+    totalCount, dogsCount, catsCount, count, ...shelter }) =>
+    withOfficialContacts({ ...shelter, source: 'globok' }));
   const byId = new Map(organizations.map(org => [org.id, org]));
   const mapping = [];
   const seen = new Set();
