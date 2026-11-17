@@ -11,7 +11,7 @@ import {PETS} from '../data/pets';
 import organizations from '../data/shelters.json';
 import {defaults,selectPets,roster,activeFilters,pl} from './selectors.cjs';
 import {C,styles as s} from './theme';
-import {Avatar,Button,Chip,Directions,Empty,HeartButton,Photo,Sheet,SourceLink,Status} from './ui';
+import {Avatar,Button,Directions,Empty,HeartButton,Photo,Sheet,SourceLink,Status} from './ui';
 import FilterSheet from './FilterSheet';
 import {expo as config} from '../../app.json';
 import AboutSheet from './AboutSheet';
@@ -61,7 +61,6 @@ function AppContent() {
  const pass=pet=>{dispatch({type:'pass',id:pet.id});};
  const columns=width>900?4:width>600?3:2;
  const nf=activeFilters(filters);
- const speciesCount=useMemo(()=>{const base=selectPets(PETS,{...filters,species:'all'});return {all:base.length,dog:base.filter(p=>p.species==='dog').length,cat:base.filter(p=>p.species==='cat').length};},[filters]);
  const resetAll=()=>{setFilters({...defaults});dispatch({type:'resetPassed'});};
 
  const petItem=(pet,inSaved=false)=><View style={s.gcard}>
@@ -100,20 +99,17 @@ function AppContent() {
    <Pressable accessibilityRole="button" accessibilityLabel={t('Apie GLOBIS','About GLOBIS')} onPress={()=>setAbout(true)} style={{minHeight:48,justifyContent:'center'}}>
     <Image source={require('../../Code_Generated_Image.png')} accessibilityLabel="GLOBIS" style={[s.logo,width<360&&{width:100}]} resizeMode="contain"/>
    </Pressable>
+   {tab==='discover'?<>
+    <Pressable accessibilityRole="button" accessibilityLabel={t('Filtrai','Filters')} accessibilityHint={nf?t(`Aktyvūs filtrai: ${nf}`,`Active filters: ${nf}`):undefined} onPress={()=>setFilterOpen(true)} style={({pressed})=>[s.filterBtn,nf&&s.filterBtnOn,pressed&&{opacity:0.8}]}>
+     <Ionicons name="options-outline" size={21} color={nf?C.white:C.ink}/>
+     {nf?<View style={s.countBadge}><Text style={s.countBadgeText}>{nf}</Text></View>:null}
+    </Pressable>
+   </>:null}
   </View>
 
   {error?<View style={s.banner}><Text accessibilityRole="alert" style={[s.body,{color:C.warnInk}]}>{{read:t('Nepavyko perskaityti pasirinkimų. Esami duomenys neperrašyti.','Could not read your saved choices. Existing data was not overwritten.'),write:t('Nepavyko išsaugoti pasirinkimų šiame įrenginyje.','Could not save your choices on this device.'),retry:t('Vietinė saugykla vis dar nepasiekiama arba duomenys netinkami. Esami duomenys neperrašyti.','Local storage is still unavailable or the data is invalid. Existing data was not overwritten.')}[error]||error}</Text><Button label={t('Bandykite dar kartą','Retry')} onPress={retry} style={{alignSelf:'flex-start'}}/></View>:null}
 
   {tab==='discover'?<>
-   <View style={[s.toolbar,{paddingBottom:10}]}>
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{gap:6,paddingRight:4}} style={{flex:1}}>
-     {[['all',t('Visi','All')],['dog',t('Šunys','Dogs')],['cat',t('Katės','Cats')]].map(([id,label])=><Chip key={id} label={label} count={speciesCount[id]} selected={filters.species===id} onPress={()=>setFilters(f=>({...f,species:id}))}/>)}
-    </ScrollView>
-    <Pressable accessibilityRole="button" accessibilityLabel={t('Filtrai','Filters')} accessibilityHint={nf?t(`Aktyvūs filtrai: ${nf}`,`Active filters: ${nf}`):undefined} onPress={()=>setFilterOpen(true)} style={({pressed})=>[s.filterBtn,nf&&s.filterBtnOn,pressed&&{opacity:0.8}]}>
-     <Ionicons name="options-outline" size={21} color={nf?C.white:C.ink}/>
-     {nf?<View style={s.countBadge}><Text style={s.countBadgeText}>{nf}</Text></View>:null}
-    </Pressable>
-   </View>
 
    {top?<ScrollView contentContainerStyle={{paddingHorizontal:16,paddingBottom:16,width:'100%',maxWidth:480,alignSelf:'center'}}>
      <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
