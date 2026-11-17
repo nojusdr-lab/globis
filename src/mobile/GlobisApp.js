@@ -18,6 +18,8 @@ import FilterSheet from './FilterSheet';
 import Onboarding from './Onboarding';
 import {expo as config} from '../../app.json';
 import AboutSheet from './AboutSheet';
+import AccountSection from './AccountSection';
+import useAccount from '../state/useAccount';
 import {PetProfile,ContactSheet} from './Profiles';
 
 const THRESHOLD=80;
@@ -51,6 +53,7 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
 function AppContent() {
  const {state,dispatch,error,retry}=useDiscovery(), reduced=useReducedMotion();
  const PETS=usePets();
+ const account=useAccount(state.saved,dispatch);
  const [about,setAbout]=useState(false),[tab,setTab]=useState('discover'),[filters,setFilters]=useState(()=>({...defaults,...state.filters})),[filterOpen,setFilterOpen]=useState(false),[profile,setProfile]=useState(null),[contact,setContact]=useState(null),[shelterId,setShelterId]=useState(null),[search,setSearch]=useState(''),[toast,setToast]=useState(null);
  const timer=useRef(null);
  const {height,width}=useWindowDimensions();
@@ -184,6 +187,7 @@ function AppContent() {
 
   {tab==='account'?<ScrollView contentContainerStyle={{paddingHorizontal:16,paddingBottom:24,gap:12,width:'100%',maxWidth:560,alignSelf:'center'}}>
    <Text accessibilityRole="header" style={[s.heading,{paddingTop:4}]}>{t('Paskyra','Account')}</Text>
+    <AccountSection account={account} lang={lang}/>
    <Text style={s.sectionTitle}>{t('Kalba','Language')}</Text>
    <View accessibilityRole="radiogroup" style={{gap:8}}>
     {[['lt','🇱🇹','Lietuvių'],['en','🇬🇧','English']].map(([id,flag,label])=><Pressable key={id} accessibilityRole="radio" accessibilityLabel={label} accessibilityState={{checked:lang===id}} onPress={()=>dispatch({type:'language',lang:id})} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]}>

@@ -13,6 +13,8 @@ function reducer(state,action) {
   if(action.type==='filters') return {...state,filters:cleanFilters(action.filters)};
   if(action.type==='onboarded') return {...state,onboarded:true,filters:cleanFilters(action.filters||state.filters)};
   if(action.type==='replayOnboarding') { const {onboarded,...rest}=state; return rest; }
+  // Server saves join the device's list (union). Always a new array, so the sync effect runs once after sign-in.
+  if(action.type==='mergeSaved') return {...state,saved:[...state.saved,...(action.ids||[]).filter(id=>typeof id==='string'&&!state.saved.includes(id))]};
   if(action.type==='remove') return {...state,saved:without(state.saved,action.id),history:[]};
   if(action.type==='resetPassed') return {...state,passed:[],history:[]};
   if(action.type==='undo') {
@@ -42,4 +44,9 @@ function decode(raw) {
   return out;
 }
 const shouldClaim = ({dx,dy}) => Math.abs(dx)>8 && Math.abs(dx)>Math.abs(dy)*1.3;
-module.exports={emptyState,langFromLocale,reducer,decode,shouldClaim,cleanFilters};
+// What to send to the server so it matches the device's saved list.
+function syncPlan(saved,remote) {
+  return {add:saved.filter(id=>!remote.has(id)),drop:[...remote].filter(id=>!saved.includes(id))};
+}
+
+module.exports={emptyState,langFromLocale,reducer,decode,shouldClaim,cleanFilters,syncPlan};

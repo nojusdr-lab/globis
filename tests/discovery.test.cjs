@@ -52,3 +52,11 @@ test('onboarding and filters persist, bad filter values fall back to defaults',(
  assert.deepEqual(s.filters,{species:'all',city:'all',urgent:false,query:''});
  assert.equal(decode(JSON.stringify(emptyState())).onboarded,undefined);
 });
+
+test('account sync: server saves merge into the device list; plan mirrors device changes', () => {
+  const { reducer: r, emptyState: e, syncPlan } = require('../src/state/discovery.cjs');
+  let s = r(r(e(), { type: 'save', id: 'a' }), { type: 'save', id: 'b' });
+  s = r(s, { type: 'mergeSaved', ids: ['b', 'c', 7] });
+  assert.deepEqual(s.saved, ['b', 'a', 'c']);
+  assert.deepEqual(syncPlan(['a', 'c'], new Set(['c', 'x'])), { add: ['a'], drop: ['x'] });
+});
