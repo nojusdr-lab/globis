@@ -1,6 +1,7 @@
-import React,{useMemo,useRef,useState} from 'react';
+import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {View,Text,Image,Pressable,ScrollView,FlatList,TextInput,Animated,PanResponder,useWindowDimensions,StatusBar} from 'react-native';
 import {SafeAreaProvider,SafeAreaView} from 'react-native-safe-area-context';
+import {Image as CachedImage} from 'expo-image';
 import {Ionicons} from '@expo/vector-icons';
 import useDiscovery from '../state/useDiscovery';
 import useReducedMotion from '../state/useReducedMotion';
@@ -90,6 +91,8 @@ function AppContent() {
  const shelter=shelterId?(()=>{const org=organizations.find(o=>o.id===shelterId);if(!org)return null;const pets=roster(PETS,org.id);return {...org,pets,active:pets.filter(eligible).length};})():null;
 
  const top=pending[0];
+ // Warm the disk cache for the next cards so a swipe shows the photo at once.
+ useEffect(()=>{const next=pending.slice(1,4).map(p=>p.photos?.[0]).filter(Boolean);if(next.length)CachedImage.prefetch(next,'memory-disk').catch(()=>{});},[pending]);
  const photoH=Math.round(Math.min(440,Math.max(200,height*0.40)));
 
  return <SafeAreaView style={s.root} edges={['top','bottom']}><StatusBar barStyle="dark-content" backgroundColor={C.bg}/><View style={s.shell}>

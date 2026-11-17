@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {View,Text,Image,Pressable,Modal,ScrollView,Linking,Platform} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
+import {Image as CachedImage} from 'expo-image';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {C,styles as s} from './theme';
 
@@ -39,7 +40,7 @@ export function HeartButton({saved,onPress,name,lang='lt',disabled=false}) {
 function PhotoImage({uri,label,height,lang}) {
  const [failed,setFailed]=useState(false);
  if(uri&&!failed){
-  return <Image accessibilityLabel={label} source={{uri}} onError={()=>setFailed(true)} style={{width:'100%',height:'100%'}} resizeMode="cover"/>;
+  return <View pointerEvents="none" style={{width:'100%',height:'100%'}}><CachedImage accessibilityLabel={label} source={{uri}} onError={()=>setFailed(true)} style={{width:'100%',height:'100%'}} contentFit="cover" cachePolicy="memory-disk" transition={150}/></View>;
  }
  return <View style={[s.photo,s.placeholder,{height}]}>
   <Ionicons name="paw-outline" size={40} color={C.green}/>
@@ -133,7 +134,7 @@ export const initials=name=>String(name||'').replace(/[„“"()]/g,'').replace(
 export function Avatar({name,logo,size=46}) {
  const [broken,setBroken]=useState(false);
  const box={width:size,height:size,borderRadius:size/2};
- if(logo&&!broken) return <Image source={{uri:logo}} onError={()=>setBroken(true)} resizeMode="contain" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[box,{backgroundColor:C.white}]}/>;
+ if(logo&&!broken) return <CachedImage source={{uri:logo}} onError={()=>setBroken(true)} contentFit="contain" cachePolicy="memory-disk" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[box,{backgroundColor:C.white}]}/>;
  return <View style={[s.avatar,box]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants"><Text style={[s.avatarText,size>50&&{fontSize:19}]}>{initials(name)}</Text></View>;
 }
 
