@@ -1,5 +1,5 @@
 import React,{useEffect,useMemo,useRef,useState} from 'react';
-import {View,Text,Image,Pressable,ScrollView,FlatList,TextInput,Animated,PanResponder,useWindowDimensions,StatusBar} from 'react-native';
+import {View,Text,Image,Pressable,ScrollView,FlatList,TextInput,Switch,Animated,PanResponder,useWindowDimensions,StatusBar} from 'react-native';
 import {SafeAreaProvider,SafeAreaView} from 'react-native-safe-area-context';
 import {Image as CachedImage} from 'expo-image';
 import {Ionicons} from '@expo/vector-icons';
@@ -15,7 +15,7 @@ import {Avatar,Button,Directions,Empty,HeartButton,Photo,Sheet,SourceLink,Status
 import FilterSheet from './FilterSheet';
 import Onboarding from './Onboarding';
 import {expo as config} from '../../app.json';
-import AboutSheet from './AboutSheet';
+import AboutSection from './AboutSheet';
 import {PetProfile,ContactSheet} from './Profiles';
 
 const THRESHOLD=80;
@@ -48,7 +48,7 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
 
 function AppContent() {
  const {state,dispatch,error,retry}=useDiscovery(), reduced=useReducedMotion();
- const [about,setAbout]=useState(false),[tab,setTab]=useState('discover'),[filters,setFilters]=useState(()=>({...defaults,...state.filters})),[filterOpen,setFilterOpen]=useState(false),[profile,setProfile]=useState(null),[contact,setContact]=useState(null),[shelterId,setShelterId]=useState(null),[search,setSearch]=useState(''),[toast,setToast]=useState(null);
+ const [contactInline,setContactInline]=useState(false),[tab,setTab]=useState('discover'),[filters,setFilters]=useState(()=>({...defaults,...state.filters})),[filterOpen,setFilterOpen]=useState(false),[profile,setProfile]=useState(null),[contact,setContact]=useState(null),[shelterId,setShelterId]=useState(null),[search,setSearch]=useState(''),[toast,setToast]=useState(null);
  const timer=useRef(null);
  const {height,width}=useWindowDimensions();
  const lang=state.lang,t=(lt,en)=>lang==='lt'?lt:en;
@@ -77,7 +77,7 @@ function AppContent() {
    <Text style={s.gname} numberOfLines={2}>{pet.name}</Text>
    <Text style={s.muted} numberOfLines={1}>{[pet.city,pet.shelter?.name].filter(Boolean).join(' · ')}</Text>
   </Pressable>
-  {inSaved?<Button label={t('Susisiekti','Contact')} icon="call-outline" onPress={()=>setContact(pet)} style={{minHeight:44,alignSelf:'flex-start'}}/>:null}
+  {inSaved?<Button label={t('Susisiekti','Contact')} icon="call-outline" onPress={()=>contactInline?setProfile(pet):setContact(pet)} style={{minHeight:44,alignSelf:'flex-start'}}/>:null}
  </View>;
 
  const noMatches=<Empty icon="search-outline" title={t('Nepavyko rasti augintinių','No pets found')}
@@ -100,9 +100,9 @@ function AppContent() {
  if(!state.onboarded) return <Onboarding lang={lang} reduced={reduced} pets={PETS.filter(eligible)} shelters={organizations.length} onLang={l=>dispatch({type:'language',lang:l})} onDone={f=>{setFilters({...defaults,...f});dispatch({type:'onboarded',filters:{...defaults,...f}});}}/>;
  return <SafeAreaView style={s.root} edges={['top','bottom']}><StatusBar barStyle="dark-content" backgroundColor={C.bg}/><View style={s.shell}>
   <View style={s.header}>
-   <Pressable accessibilityRole="button" accessibilityLabel={t('Apie GLOBIS','About GLOBIS')} onPress={()=>setAbout(true)} style={{minHeight:48,justifyContent:'center'}}>
+   <View style={{minHeight:48,justifyContent:'center'}}>
     <Image source={require('../../Code_Generated_Image.png')} accessibilityLabel="GLOBIS" style={[s.logo,width<360&&{width:100}]} resizeMode="contain"/>
-   </Pressable>
+   </View>
    {tab==='discover'?<>
     <Pressable accessibilityRole="button" accessibilityLabel={t('Filtrai','Filters')} accessibilityHint={nf?t(`Aktyvūs filtrai: ${nf}`,`Active filters: ${nf}`):undefined} onPress={()=>setFilterOpen(true)} style={({pressed})=>[s.filterBtn,nf&&s.filterBtnOn,pressed&&{opacity:0.8}]}>
      <Ionicons name="options-outline" size={21} color={nf?C.white:C.ink}/>
@@ -186,11 +186,12 @@ function AppContent() {
     </Pressable>)}
    </View>
    <Text style={s.sectionTitle}>{t('Nustatymai','Settings')}</Text>
-   <Pressable accessibilityRole="button" accessibilityLabel={t('Apie GLOBIS','About GLOBIS')} onPress={()=>setAbout(true)} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]}>
-    <Ionicons name="information-circle-outline" size={22} color={C.ink}/>
-    <Text style={[s.title,{flex:1}]}>{t('Apie GLOBIS','About GLOBIS')}</Text>
-    <Ionicons name="chevron-forward" size={18} color={C.muted}/>
-   </Pressable>
+   {/* shortcut: temporary A/B switch for where contacts live, remove once the owner picks one */}
+   <View style={[s.listCard,{justifyContent:'space-between'}]}>
+    <Text style={[s.title,{flex:1}]}>{t('Bandymas: kontaktai gyvūno profilyje','Test: contacts inside the pet profile')}</Text>
+    <Switch accessibilityLabel={t('Kontaktai gyvūno profilyje','Contacts inside the pet profile')} value={contactInline} onValueChange={setContactInline} trackColor={{true:C.green}}/>
+   </View>
+   <AboutSection lang={lang}/>
    <View style={{marginTop:24,gap:4}}>
     {config.extra?.termsUrl?<SourceLink lang={lang} url={config.extra.termsUrl} label={t('Naudojimo sąlygos','Terms of use')} onError={notify}/>:<Text style={s.muted}>{t('Naudojimo sąlygos dar nepaskelbtos.','Terms of use have not been published yet.')}</Text>}
     {config.extra?.privacyPolicyUrl?<SourceLink lang={lang} url={config.extra.privacyPolicyUrl} label={t('Privatumo politika','Privacy policy')} onError={notify}/>:<Text style={s.muted}>{t('Privatumo politika dar nepaskelbta.','The privacy policy has not been published yet.')}</Text>}
@@ -212,7 +213,6 @@ function AppContent() {
     </Pressable>;})}
   </View></View>
  </View>
- {about?<AboutSheet lang={lang} onClose={()=>setAbout(false)} reduced={reduced}/>:null}
  {filterOpen?<FilterSheet filters={filters} pets={PETS} lang={lang} reduced={reduced} onClose={()=>setFilterOpen(false)} onApply={next=>{setFilters(next);setFilterOpen(false);}}/>:null}
  {shelter?<Sheet full lang={lang} title={shelter.name} reduced={reduced} onClose={()=>setShelterId(null)}>
   {shelter.city||shelter.address?<View style={[s.row,{alignItems:'flex-start'}]}><Ionicons name="location-outline" size={17} color={C.muted} style={{marginTop:3}}/><Text selectable style={[s.body,{flex:1}]}>{shelter.address||shelter.city}</Text></View>:null}
@@ -226,7 +226,7 @@ function AppContent() {
    <Ionicons name="chevron-forward" size={18} color={C.muted}/>
   </Pressable>):<Empty icon="home-outline" title={t('Skelbimų nėra','No listings')} body={t('Šios prieglaudos skelbimų kopijoje nėra. Tai nereiškia, kad gyvūnų nėra, todėl pasiteiraukite prieglaudos.','No listings for this shelter in the snapshot. That does not mean it has no animals, so ask the shelter.')}/>}
  </Sheet>:null}
- {profile?<PetProfile key={profile.id} pet={profile} lang={lang} reduced={reduced} saved={isSaved(profile.id)} onClose={()=>setProfile(null)} onSave={save} onRemove={remove}
+ {profile?<PetProfile key={profile.id} pet={profile} contactInline={contactInline} lang={lang} reduced={reduced} saved={isSaved(profile.id)} onClose={()=>setProfile(null)} onSave={save} onRemove={remove}
   onShelter={id=>{setProfile(null);setShelterId(id);}} onContact={pet=>{setProfile(null);setContact(pet);}} onError={notify}/>:null}
  {contact?<ContactSheet pet={contact} lang={lang} reduced={reduced} onClose={()=>setContact(null)} onError={notify}/>:null}
  </SafeAreaView>;
