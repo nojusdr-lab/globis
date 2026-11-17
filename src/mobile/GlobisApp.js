@@ -193,6 +193,11 @@ function AppContent() {
     <Text style={[s.title,{flex:1}]}>{t('Apie GLOBIS','About GLOBIS')}</Text>
     <Ionicons name="chevron-forward" size={18} color={C.muted}/>
    </Pressable>
+   <Pressable accessibilityRole="button" accessibilityLabel={t('Rodyti pristatymą iš naujo','Show the introduction again')} onPress={()=>{setTab('discover');dispatch({type:'replayOnboarding'});}} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]}>
+    <Ionicons name="play-circle-outline" size={22} color={C.ink}/>
+    <Text style={[s.title,{flex:1}]}>{t('Rodyti pristatymą iš naujo','Show the introduction again')}</Text>
+    <Ionicons name="chevron-forward" size={18} color={C.muted}/>
+   </Pressable>
    <View style={{marginTop:24,gap:4}}>
     {config.extra?.termsUrl?<SourceLink lang={lang} url={config.extra.termsUrl} label={t('Naudojimo sąlygos','Terms of use')} onError={notify}/>:<Text style={s.muted}>{t('Naudojimo sąlygos dar nepaskelbtos.','Terms of use have not been published yet.')}</Text>}
     {config.extra?.privacyPolicyUrl?<SourceLink lang={lang} url={config.extra.privacyPolicyUrl} label={t('Privatumo politika','Privacy policy')} onError={notify}/>:<Text style={s.muted}>{t('Privatumo politika dar nepaskelbta.','The privacy policy has not been published yet.')}</Text>}

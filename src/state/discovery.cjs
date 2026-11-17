@@ -12,6 +12,7 @@ function reducer(state,action) {
   if(action.type==='language') return {...state,lang:action.lang==='en'?'en':'lt'};
   if(action.type==='filters') return {...state,filters:cleanFilters(action.filters)};
   if(action.type==='onboarded') return {...state,onboarded:true,filters:cleanFilters(action.filters||state.filters)};
+  if(action.type==='replayOnboarding') { const {onboarded,...rest}=state; return rest; }
   if(action.type==='remove') return {...state,saved:without(state.saved,action.id),history:[]};
   if(action.type==='resetPassed') return {...state,passed:[],history:[]};
   if(action.type==='undo') {
