@@ -21,6 +21,7 @@
 - **Rinkimas** run 44165033470: žalias, be įspėjimų (keturkojodraugas DB klaida išspręsta).
 - **Šilta spalva** (dizainas 4): „Išsaugoti“ mygtukas, širdelė ir antspaudas abrikosiniai `#B85A1E` (baltas tekstas 4.6:1, AA).
 - **Kortelių kaladė** (dizainas 5): po kortele matosi kitos kraštas. Patikrinta web.
+- **Prieglaudų sąrašas** (26): „X laukia namų“, 3 gyvūnų nuotraukų juosta kiekvienoje kortelėje. Patikrinta web.
 
 ## Laukia savininko
 

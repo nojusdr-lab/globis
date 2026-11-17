@@ -180,14 +180,18 @@ function AppContent() {
    <FlatList keyboardShouldPersistTaps="handled" data={shelters} keyExtractor={org=>org.id} contentContainerStyle={{paddingHorizontal:16,paddingBottom:24,gap:10}}
     renderItem={({item,index})=><View style={{gap:10}}>
      {item.active===0&&(index===0||shelters[index-1].active>0)?<Text style={[s.sectionTitle,{marginTop:8}]}>{t('Be aktyvių Globis skelbimų','No active Globis listings')}</Text>:null}
-     <Pressable accessibilityRole="button" accessibilityLabel={`${item.name}, ${item.city||''}`} onPress={()=>setShelterId(item.id)} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]}>
+     <Pressable accessibilityRole="button" accessibilityLabel={`${item.name}, ${item.city||''}, ${t(`laukia ${item.active}`,`${item.active} waiting`)}`} onPress={()=>setShelterId(item.id)} style={({pressed})=>[s.listCard,{flexDirection:'column',alignItems:'stretch'},pressed&&{opacity:0.85}]}>
+      <View style={[s.row,{gap:12}]}>
       <Avatar name={item.name} logo={item.logo}/>
       <View style={{flex:1,minWidth:0,gap:4}}>
        <Text style={s.title}>{item.name}</Text>
-       {item.city?<Text style={s.muted}>{item.city}</Text>:null}
-       <View style={s.tag}><Text style={s.tagText}>{t('Aktyvūs Globis skelbimai','Active Globis listings')}: {item.active}</Text></View>
+       <Text style={s.muted}>{[item.city,item.active?t(`${item.active} laukia namų`,`${item.active} waiting for a home`):t('Šiuo metu skelbimų nėra','No current listings')].filter(Boolean).join(' · ')}</Text>
       </View>
       <Ionicons name="chevron-forward" size={18} color={C.muted}/>
+      </View>
+      {item.active?<View style={{flexDirection:'row',gap:6}} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+       {item.pets.filter(p=>eligible(p)&&p.photos?.[0]).slice(0,3).map(p=><CachedImage key={p.id} source={{uri:p.photos[0]}} cachePolicy="disk" contentFit="cover" style={{flex:1,aspectRatio:1,maxWidth:'33%',borderRadius:12,backgroundColor:C.surface2}}/>)}
+      </View>:null}
      </Pressable>
     </View>}
     ListEmptyComponent={<Empty icon="home-outline" title={t('Prieglaudų nerasta','No shelters found')} action={t('Išvalyti paiešką ir filtrus','Clear search and filters')} onAction={()=>{setSearch('');setFilters({...defaults});}}/>}/>
