@@ -1,38 +1,8 @@
 [
   {
-    "url": "https://lese.lt/lese-globotiniai/?stat=1",
-    "finalUrl": "https://lese.lt/lese-globotiniai/?stat=1",
+    "url": "https://lese.lt/lese-globotiniai/?stat=1&type=kate",
+    "finalUrl": "https://lese.lt/lese-globotiniai/?stat=1&type=kate",
     "status": 200,
-    "bytes": 62011
-  },
-  {
-    "url": "https://lese.lt/lese-globotiniai/page/2/?stat=1",
-    "finalUrl": "https://lese.lt/lese-globotiniai/page/2/?stat=1",
-    "status": 200,
-    "bytes": 61825
-  },
-  {
-    "url": "https://lese.lt/lese-globotiniai/?stat=7",
-    "finalUrl": "https://lese.lt/lese-globotiniai/?stat=7",
-    "status": 200,
-    "bytes": 61224
-  },
-  {
-    "url": "https://lese.lt/globotiniai/ravas-2/",
-    "finalUrl": "https://lese.lt/globotiniai/ravas-2/",
-    "status": 200,
-    "bytes": 56484
-  },
-  {
-    "url": "https://lese.lt/globotiniai/51862-2/",
-    "finalUrl": "https://lese.lt/globotiniai/51862-2/",
-    "status": 200,
-    "bytes": 56361
-  },
-  {
-    "url": "https://lese.lt/lese-globotiniai/?stat=1&type=suo",
-    "finalUrl": "https://lese.lt/lese-globotiniai/?stat=1&type=suo",
-    "status": 200,
-    "bytes": 61821
+    "bytes": 61880
   }
 ]

@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://siauliuletenele.lt/wp-json/wp/v2/categories?per_page=100&page=1&_fields=id,slug,name",
+    "finalUrl": "https://siauliuletenele.lt/wp-json/wp/v2/categories?per_page=100&page=1&_fields=id,slug,name",
+    "status": 200,
+    "bytes": 2804
+  }
+]
