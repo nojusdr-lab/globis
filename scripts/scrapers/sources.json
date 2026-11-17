@@ -155,8 +155,8 @@
       "robots": "User-agent: * / Crawl-delay: 10",
       "terms": "footer \"Visos teisės saugomos\" only",
       "cms": "WordPress 4.6.5 (no core REST), theme pet-rescue",
-      "decision": "probe",
-      "note": "List page not yet probed.",
+      "decision": "no_listing",
+      "note": "Mūsų gyvūnai page only embeds Facebook; animals are published only on Facebook (not collected).",
       "checked": "2026-11-17"
     },
     {
@@ -192,14 +192,16 @@
       "id": "jbu",
       "vmvtRow": 19,
       "name": "UAB „Joniškio butų ūkis“",
-      "website": "http://jbu.lt/beglobiai-gyvunai",
-      "listing": [],
+      "website": "https://jbu.lt/",
+      "listing": [
+        "https://jbu.lt/beglobiai-gyvunai/"
+      ],
       "robots": "User-agent: * (nothing disallowed); http redirects to https",
-      "terms": "unverified",
-      "cms": "unverified",
+      "terms": "footer only; /taisykles/ not yet read",
+      "cms": "WordPress + portfolio theme",
       "decision": "probe",
       "checked": "2026-11-17",
-      "note": "First probe blocked only because robots.txt redirect (http->https) was not followed then; robots is just \"User-agent: *\". Re-probe."
+      "note": "Municipal catch-and-hold service; 1 card, no name or status text. Adapter written, not enabled until terms + detail page are checked."
     },
     {
       "id": "kompak",
@@ -337,21 +339,23 @@
       "terms": "none found; footer only",
       "cms": "custom PHP",
       "decision": "probe",
-      "note": "Adapter draft reads home page featured block only (always partial, not enabled). Probe full list page.",
+      "note": "Adapter: full list + detail pages (~39 requests); skips animals of other guardians. Not enabled until list page 2 is probed.",
       "checked": "2026-11-17"
     },
     {
       "id": "kaimograndine",
       "vmvtRow": 36,
       "name": "VšĮ „Kaimo grandinė“",
-      "website": "http://kaimograndine.lt/",
-      "listing": [],
+      "website": "https://www.kaimograndine.lt/",
+      "listing": [
+        "https://www.kaimograndine.lt/dovanojami-gyv%C5%ABnai"
+      ],
       "robots": "404 (no rules); http redirects to https://www.kaimograndine.lt",
-      "terms": "unverified",
-      "cms": "unverified",
+      "terms": "none found",
+      "cms": "Google Sites",
       "decision": "probe",
       "checked": "2026-11-17",
-      "note": "robots.txt redirects to www host (404 = no rules). Re-probe with www host."
+      "note": "robots.txt 404 (no rules). Probe the listing page next."
     },
     {
       "id": "dogspotas",
@@ -565,9 +569,9 @@
       "robots": "Allow: /; Disallow: /admin/ /api/ /login/",
       "terms": "none found",
       "cms": "javascript app",
-      "decision": "probe",
+      "decision": "blocked",
       "checked": "2026-11-17",
-      "note": "Next.js; list is client-rendered from /api/ (robots disallows, never call). Probe sitemap.xml and server-rendered detail pages; else no_listing."
+      "note": "Next.js; animal list loads only from /api/, which robots.txt disallows. Sitemap has no per-animal pages. Would need the shelter's permission or a public feed."
     },
     {
       "id": "rasugloba",
