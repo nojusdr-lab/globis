@@ -45,7 +45,7 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
 
 function AppContent() {
  const {state,dispatch,error,retry}=useDiscovery(), reduced=useReducedMotion();
- const [about,setAbout]=useState(false),[tab,setTab]=useState('discover'),[mode,setMode]=useState('cards'),[filters,setFilters]=useState({...defaults}),[filterOpen,setFilterOpen]=useState(false),[profile,setProfile]=useState(null),[contact,setContact]=useState(null),[shelterId,setShelterId]=useState(null),[search,setSearch]=useState(''),[toast,setToast]=useState(null);
+ const [about,setAbout]=useState(false),[tab,setTab]=useState('discover'),[filters,setFilters]=useState({...defaults}),[filterOpen,setFilterOpen]=useState(false),[profile,setProfile]=useState(null),[contact,setContact]=useState(null),[shelterId,setShelterId]=useState(null),[search,setSearch]=useState(''),[toast,setToast]=useState(null);
  const timer=useRef(null);
  const {height,width}=useWindowDimensions();
  const lang=state.lang,t=(lt,en)=>lang==='lt'?lt:en;
@@ -122,14 +122,9 @@ function AppContent() {
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{gap:6,paddingRight:4}} style={{flex:1}}>
      {[['all',t('Visi','All')],['dog',t('Šunys','Dogs')],['cat',t('Katės','Cats')]].map(([id,label])=><Chip key={id} label={label} count={speciesCount[id]} selected={filters.species===id} onPress={()=>setFilters(f=>({...f,species:id}))}/>)}
     </ScrollView>
-    <View style={s.seg} accessibilityRole="radiogroup">
-     <Pressable accessibilityRole="button" accessibilityLabel={t('Kortelės','Cards')} accessibilityState={{selected:mode==='cards'}} onPress={()=>setMode('cards')} style={[s.segBtn,mode==='cards'&&s.segOn]}><Ionicons name="albums-outline" size={19} color={mode==='cards'?C.green:C.muted}/></Pressable>
-     <Pressable accessibilityRole="button" accessibilityLabel={t('Tinklelis','Grid')} accessibilityState={{selected:mode==='grid'}} onPress={()=>setMode('grid')} style={[s.segBtn,mode==='grid'&&s.segOn]}><Ionicons name="grid-outline" size={19} color={mode==='grid'?C.green:C.muted}/></Pressable>
-    </View>
    </View>
 
-   {mode==='grid'?<>{pending.length?<Text style={[s.muted,{paddingHorizontal:16,paddingBottom:4}]}>{t(`${pending.length} ${pl(pending.length,'skelbimas','skelbimai','skelbimų')} pagal filtrus`,`${pending.length} ${pending.length===1?'listing matches':'listings match'}`)}</Text>:null}{list(pending)}</>
-   :top?<ScrollView contentContainerStyle={{paddingHorizontal:16,paddingBottom:16,width:'100%',maxWidth:480,alignSelf:'center'}}>
+   {top?<ScrollView contentContainerStyle={{paddingHorizontal:16,paddingBottom:16,width:'100%',maxWidth:480,alignSelf:'center'}}>
      <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
       <View style={s.card}>
        <Photo lang={lang} pet={top} height={photoH} gallery>
@@ -156,8 +151,7 @@ function AppContent() {
     </ScrollView>
    :filtered.length?<Empty icon="checkmark-done-outline" title={t('Peržiūrėjote visus skelbimus','You have seen every listing')}
      body={t('Išsaugotus gyvūnus rasite skiltyje „Išsaugoti“.','Saved animals are in the Saved tab.')}
-     action={state.history.length?t('Atšaukti','Undo'):t('Peržiūrėti praleistus','Review passed')} onAction={()=>state.history.length?dispatch({type:'undo'}):dispatch({type:'resetPassed'})}
-     secondary={t('Rodyti tinkleliu','Show grid')} onSecondary={()=>setMode('grid')}/>
+     action={state.history.length?t('Atšaukti','Undo'):t('Peržiūrėti praleistus','Review passed')} onAction={()=>state.history.length?dispatch({type:'undo'}):dispatch({type:'resetPassed'})}/>
    :noMatches}
   </>:null}
 

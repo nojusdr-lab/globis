@@ -92,13 +92,12 @@ export function StatusNote({pet,lang='lt'}) {
  </View>;
 }
 
-export function Empty({title,body,action,onAction,icon='paw-outline',secondary,onSecondary}) {
+export function Empty({title,body,action,onAction,icon='paw-outline'}) {
  return <View style={s.empty}>
   <View style={s.emptyArt}><Ionicons name={icon} size={34} color={C.green}/></View>
   <Text accessibilityRole="header" style={s.emptyTitle}>{title}</Text>
   {body?<Text style={[s.body,{textAlign:'center',maxWidth:320}]}>{body}</Text>:null}
   {action?<Button primary label={action} onPress={onAction} style={{minWidth:220}}/>:null}
-  {secondary?<Button label={secondary} onPress={onSecondary} style={{minWidth:220}}/>:null}
  </View>;
 }
 

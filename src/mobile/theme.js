@@ -41,8 +41,6 @@ export const styles=StyleSheet.create({
  chip:{minHeight:40,paddingHorizontal:14,borderRadius:20,borderWidth:1,borderColor:C.line,backgroundColor:C.white,flexDirection:'row',alignItems:'center',gap:6},
  chipOn:{backgroundColor:C.green,borderColor:C.green},
  chipText:{fontSize:14,fontWeight:'500',color:C.ink2},chipTextOn:{color:C.white},chipCount:{fontSize:12,color:C.muted},chipCountOn:{color:'rgba(255,255,255,0.75)'},
- seg:{flexDirection:'row',backgroundColor:C.surface2,borderRadius:22,padding:3},
- segBtn:{width:44,height:42,borderRadius:20,alignItems:'center',justifyContent:'center'},segOn:{backgroundColor:C.white},
 
  card:{backgroundColor:C.white,borderRadius:26,overflow:'hidden',borderWidth:1,borderColor:C.line,...shadow},
  cardInfo:{paddingHorizontal:16,paddingTop:14,paddingBottom:16,gap:6,borderTopWidth:1,borderTopColor:C.line,backgroundColor:C.white},
