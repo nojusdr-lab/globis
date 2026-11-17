@@ -5,7 +5,9 @@ const { listingId, statusFromText } = require('../src/data/integrity.cjs');
 function migrate(pets, shelters) {
   const organizations = shelters.map(({ phone, email, website, descriptionLt, descriptionEn,
     totalCount, dogsCount, catsCount, count, ...shelter }) => ({
-    ...shelter, source: 'globok', phone: null, email: null, website: null,
+    // Contacts survive only when they carry evidence (page URL and check date).
+    ...shelter, source: 'globok', ...(shelter.contactEvidence ? { phone, email, website }
+      : { phone: null, email: null, website: null }),
   }));
   const byId = new Map(organizations.map(org => [org.id, org]));
   const mapping = [];

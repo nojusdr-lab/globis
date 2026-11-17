@@ -67,3 +67,17 @@ test('snapshot validation rejects missing, blank and duplicate organization IDs'
   }
   assert.throws(() => validateImport(pets, [...shelters, shelters[0]], pets, shelters));
 });
+
+test('contacts are stored only with evidence from the shelter\'s own site', () => {
+  const withContacts = shelters.filter(row => row.phone || row.email || row.website);
+  assert.ok(withContacts.length > 0);
+  for (const row of withContacts) {
+    assert.match(row.contactEvidence?.checkedAt ?? '', /^\d{4}-\d{2}-\d{2}$/, row.id);
+    const evidence = new URL(row.contactEvidence.url);
+    assert.equal(evidence.protocol, 'https:');
+    assert.equal(evidence.origin, row.website, row.id);
+    assert.doesNotMatch(evidence.hostname, /globok|facebook/);
+  }
+  const stripped = migrate([], [{ ...shelters[0], phone: '+37061234567', contactEvidence: undefined }]);
+  assert.equal(stripped.organizations[0].phone, null);
+});
