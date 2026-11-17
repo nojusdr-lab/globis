@@ -28,3 +28,16 @@ Dizainas ir prekės ženklas yra keičiami. Dabartinė kryptis: žalia `#245B46`
 - Niekada tiesiai į `main`. Atskira šaka ir PR. Jungti tik kai testai žali ir pakeitimas peržiūrėtas.
 - Savininko sprendimo reikia: mokamoms paslaugoms, išorinių paskyrų kūrimui, raktams ir slaptažodžiams, leidimui į gamybą ar parduotuves, destruktyviems repo veiksmams.
 - Ataskaitos savininkui trumpos, lietuviškai, be žargono.
+
+## Darbo režimai ir perdavimas
+
+- Režimai: Ponytail ultra (mažiausias pilnas pakeitimas) ir Caveman (trumpi pranešimai; kodas, klaidos, keliai tikslūs). Jei įskiepių nėra, laikykis to paties be jų. Šiuos du režimus tikrina kiekviena nauja gija.
+- Modelis: Sonnet, vidutinė ar mažesnė pastanga. Stipresnis modelis tik architektūrai, duomenų saugai, migracijoms, sunkiai atkuriamai klaidai.
+- Viena užduotis vienu metu. Prieš pradėdamas: `git status`, `git fetch`, esamą PR tęsk jo šakoje, naujai užduočiai nauja šaka.
+- Rinkimo skriptai (`scripts/scrapers/`) veikia be modelio. Į kontekstą duok santrauką ir klaidos fragmentą, pilną žurnalą laikyk faile. Išsaugok komandos baigties kodą.
+- Artėjant prie ~80 % 5 val. ar savaitės kvotos: vienas mažas patikrintas žingsnis, tada commit ir perdavimas. ~90 %: tik commit, testų rezultatas, perdavimas.
+- Perdavimas (Claude ↔ Codex) per [Issue #1](https://github.com/nojusdr-lab/globis/issues/1) ir PR komentarą: tikslas, šaka, commit, kas pakeista, kas išbandyta, blokatoriai, vienas kitas žingsnis.
+
+## Compact instructions
+
+Suspaudžiant išsaugok: tikslą, Issue ir PR, šaką ir commit, pakeistus failus, testų rezultatus, blokatorius, kitą konkretų žingsnį.
