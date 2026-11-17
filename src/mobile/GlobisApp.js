@@ -7,7 +7,7 @@ import useDiscovery from '../state/useDiscovery';
 import useReducedMotion from '../state/useReducedMotion';
 import {shouldClaim} from '../state/discovery.cjs';
 import {eligible} from '../data/integrity.cjs';
-import {PETS} from '../data/pets';
+import {usePets} from '../data/pets';
 import organizations from '../data/shelters.json';
 import {defaults,selectPets,roster,activeFilters,pl} from './selectors.cjs';
 import {C,styles as s} from './theme';
@@ -48,13 +48,14 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
 
 function AppContent() {
  const {state,dispatch,error,retry}=useDiscovery(), reduced=useReducedMotion();
+ const PETS=usePets();
  const [about,setAbout]=useState(false),[tab,setTab]=useState('discover'),[filters,setFilters]=useState(()=>({...defaults,...state.filters})),[filterOpen,setFilterOpen]=useState(false),[profile,setProfile]=useState(null),[contact,setContact]=useState(null),[shelterId,setShelterId]=useState(null),[search,setSearch]=useState(''),[toast,setToast]=useState(null);
  const timer=useRef(null);
  const {height,width}=useWindowDimensions();
  const lang=state.lang,t=(lt,en)=>lang==='lt'?lt:en;
- const filtered=useMemo(()=>selectPets(PETS,filters),[filters]);
+ const filtered=useMemo(()=>selectPets(PETS,filters),[PETS,filters]);
  const pending=useMemo(()=>filtered.filter(p=>!state.saved.includes(p.id)&&!state.passed.includes(p.id)),[filtered,state.saved,state.passed]);
- const saved=useMemo(()=>state.saved.map(id=>PETS.find(p=>p.id===id)).filter(Boolean),[state.saved]);
+ const saved=useMemo(()=>state.saved.map(id=>PETS.find(p=>p.id===id)).filter(Boolean),[PETS,state.saved]);
  const notify=value=>{clearTimeout(timer.current);setToast(typeof value==='string'?{text:value}:value);timer.current=setTimeout(()=>setToast(null),5000);};
  const isSaved=id=>state.saved.includes(id);
  const save=pet=>{if(!eligible(pet))return;dispatch({type:'save',id:pet.id});notify({text:t(`Išsaugota: ${pet.name}`,`Saved: ${pet.name}`),action:t('Atšaukti','Undo'),actionLabel:t('Atšaukti išsaugojimą','Undo save'),run:()=>dispatch({type:'undo'})});};
@@ -87,7 +88,7 @@ function AppContent() {
   contentContainerStyle={{paddingHorizontal:10,paddingBottom:24}} renderItem={({item})=>petItem(item,inSaved)} ListEmptyComponent={noMatches}
   initialNumToRender={8} windowSize={7} removeClippedSubviews/>;
 
- const shelters=useMemo(()=>organizations.map(org=>{const pets=roster(PETS,org.id),active=pets.filter(eligible);return {...org,pets,active:active.length,matching:active.filter(p=>filters.species==='all'||p.species===filters.species).length};}).filter(org=>[org.name,org.city].join(' ').toLocaleLowerCase('lt').includes(search.toLocaleLowerCase('lt'))&&(filters.species==='all'||org.matching>0)&&(filters.city==='all'||org.city===filters.city)).sort((a,b)=>b.active-a.active),[search,filters]);
+ const shelters=useMemo(()=>organizations.map(org=>{const pets=roster(PETS,org.id),active=pets.filter(eligible);return {...org,pets,active:active.length,matching:active.filter(p=>filters.species==='all'||p.species===filters.species).length};}).filter(org=>[org.name,org.city].join(' ').toLocaleLowerCase('lt').includes(search.toLocaleLowerCase('lt'))&&(filters.species==='all'||org.matching>0)&&(filters.city==='all'||org.city===filters.city)).sort((a,b)=>b.active-a.active),[PETS,search,filters]);
  const shelter=shelterId?(()=>{const org=organizations.find(o=>o.id===shelterId);if(!org)return null;const pets=roster(PETS,org.id);return {...org,pets,active:pets.filter(eligible).length};})():null;
 
  const top=pending[0];
