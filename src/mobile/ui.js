@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import {View,Text,Image,Pressable,Modal,ScrollView,Linking} from 'react-native';
+import {View,Text,Image,Pressable,Modal,ScrollView,Linking,Platform} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {C,styles as s} from './theme';
@@ -135,4 +135,16 @@ export function Avatar({name,logo,size=46}) {
  const box={width:size,height:size,borderRadius:size/2};
  if(logo&&!broken) return <Image source={{uri:logo}} onError={()=>setBroken(true)} resizeMode="contain" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[box,{backgroundColor:C.white}]}/>;
  return <View style={[s.avatar,box]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants"><Text style={[s.avatarText,size>50&&{fontSize:19}]}>{initials(name)}</Text></View>;
+}
+
+// Universal links open the installed app, otherwise the web map, which offers the app download.
+export function Directions({place,onError,lang='lt'}) {
+ const q=encodeURIComponent(place),lt=lang==='lt';
+ const apps=[['Google Maps',`https://www.google.com/maps/dir/?api=1&destination=${q}`],['Waze',`https://waze.com/ul?q=${q}&navigate=yes`],...(Platform.OS==='ios'?[['Apple Maps',`https://maps.apple.com/?daddr=${q}`]]:[])];
+ return <View style={{gap:8}}>
+  <Text style={s.sectionTitle}>{lt?'Kaip nuvykti':'Directions'}</Text>
+  <View style={{flexDirection:'row',flexWrap:'wrap',gap:8}}>
+   {apps.map(([name,url])=><Button key={name} label={name} icon="navigate-outline" accessibilityLabel={`${lt?'Kaip nuvykti su':'Directions in'} ${name}`} onPress={()=>Linking.openURL(url).catch(()=>onError?.(lt?'Nepavyko atidaryti nuorodos.':'Could not open the link.'))}/>)}
+  </View>
+ </View>;
 }
