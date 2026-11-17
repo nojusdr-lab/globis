@@ -1,4 +1,6 @@
-// Real scraped data of animals from Lithuanian shelters across Lithuania
+// Listings joined with their shelter record, so verified contacts live only in shelters.json.
 import allPets from './allPets.json';
+import shelters from './shelters.json';
 
-export const PETS = allPets;
+const byId = new Map(shelters.map(shelter => [shelter.id, shelter]));
+export const PETS = allPets.map(pet => ({ ...pet, shelter: byId.get(pet.shelter.id) ?? pet.shelter }));
