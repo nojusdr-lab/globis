@@ -1,4 +1,4 @@
-// Optional account (email code). Signed in: saved animals sync both ways with public.saved.
+// Optional account (email + password). Signed in: saved animals sync both ways with public.saved.
 // Signed out: nothing changes, saving stays on the device.
 import {useEffect,useRef,useState} from 'react';
 import {supabase} from '../data/supabase';
@@ -42,8 +42,15 @@ export default function useAccount(saved, dispatch) {
   return {
     available: !!supabase,
     email: user?.email ?? null,
-    sendCode: email => supabase.auth.signInWithOtp({email, options: {shouldCreateUser: true}}),
-    verify: (email, token) => supabase.auth.verifyOtp({email, token, type: 'email'}),
+    signIn: (email, password) => supabase.auth.signInWithPassword({email, password}),
+    // Works in one step when "Confirm email" is off in Supabase (owner setting).
+    signUp: (email, password) => supabase.auth.signUp({email, password}),
+    // Forgotten password: a 6-digit code by email ({{ .Token }} in the Reset Password template), then a new password.
+    sendReset: email => supabase.auth.resetPasswordForEmail(email),
+    resetWithCode: async (email, token, password) => {
+      const r = await supabase.auth.verifyOtp({email, token, type: 'recovery'});
+      return r.error ? r : supabase.auth.updateUser({password});
+    },
     signOut: () => supabase.auth.signOut(),
     deleteAccount: async () => {
       const {error} = await supabase.rpc('delete_own_account');
