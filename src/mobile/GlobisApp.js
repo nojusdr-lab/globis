@@ -75,7 +75,7 @@ function AppContent() {
  const nf=activeFilters(filters);
  const resetAll=()=>{setFilters({...defaults});dispatch({type:'resetPassed'});};
 
- const petItem=(pet,inSaved=false)=><View style={s.gcard}>
+ const petItem=(pet,inSaved=false)=><View style={[s.gcard,{maxWidth:`${100/columns}%`}]}>
   <View style={s.gphoto}>
    <Pressable accessibilityRole="button" accessibilityLabel={`${t('Atidaryti profilį','Open profile')}: ${pet.name}`} onPress={()=>setProfile(pet)}>
     <Photo lang={lang} pet={pet} height={Math.round(Math.min(260,Math.max(150,(width-24)/columns*1.15)))}>
