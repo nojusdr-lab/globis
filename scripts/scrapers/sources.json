@@ -199,9 +199,9 @@
       "robots": "User-agent: * (nothing disallowed); http redirects to https",
       "terms": "footer only; /taisykles/ not yet read",
       "cms": "WordPress + portfolio theme",
-      "decision": "probe",
+      "decision": "no_listing",
       "checked": "2026-11-17",
-      "note": "Municipal catch-and-hold service; 1 card, no name or status text. Adapter written, not enabled until terms + detail page are checked."
+      "note": "Municipal catch-and-hold service: found animals (status \"Beglobis\", found place/date), no statement they are offered for adoption; may be awaiting owners. Adapter kept but not enabled."
     },
     {
       "id": "kompak",
