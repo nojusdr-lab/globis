@@ -8,6 +8,8 @@ export const C={
  ink:'#0F1F19',ink2:'#364640',muted:'#5C6D65',
  okBg:'#E3F1EA',okInk:'#1C4A38',warnBg:'#FBEFD4',warnInk:'#744A08',mutBg:'#ECF0EE',mutInk:'#46564F',
  amber:'#744A08',danger:'#B4412F',
+ // Warm accent for saving (heart). White text on it: 4.6:1 (AA).
+ warm:'#B85A1E',
  // legacy aliases kept for older call sites
  soft:'#E7F0EB',
 };
@@ -60,7 +62,7 @@ export const styles=StyleSheet.create({
  actions:{flexDirection:'row',alignItems:'center',gap:12,paddingVertical:12},
  act:{height:56,borderRadius:28,alignItems:'center',justifyContent:'center',backgroundColor:C.white,borderWidth:1,borderColor:C.line2},
  actRound:{width:56},actSmall:{width:48,height:48,borderRadius:24},
- actSave:{flex:1,flexDirection:'row',gap:8,backgroundColor:C.green,borderColor:C.green},
+ actSave:{flex:1,flexDirection:'row',gap:8,backgroundColor:C.warm,borderColor:C.warm},
  actSaveText:{color:C.white,fontSize:16,fontWeight:'600'},
  hint:{fontSize:12,lineHeight:16,color:C.muted,textAlign:'center'},
 

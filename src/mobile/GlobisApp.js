@@ -50,7 +50,7 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
  const passOpacity=x.interpolate({inputRange:[-THRESHOLD,0],outputRange:[1,0],extrapolate:'clamp'});
  return <Animated.View {...responder.panHandlers} style={{flex:1,transform:[{translateX:x},{rotate}]}}>
   {children}
-  <Animated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{left:16,borderColor:C.green,opacity:saveOpacity,transform:[{rotate:'-8deg'}]}]}><Text style={[s.stampText,{color:C.green}]}>IŠSAUGOTI</Text></Animated.View>
+  <Animated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{left:16,borderColor:C.warm,opacity:saveOpacity,transform:[{rotate:'-8deg'}]}]}><Text style={[s.stampText,{color:C.warm}]}>IŠSAUGOTI</Text></Animated.View>
   <Animated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{right:16,borderColor:C.ink2,opacity:passOpacity,transform:[{rotate:'8deg'}]}]}><Text style={[s.stampText,{color:C.ink2}]}>PRALEISTI</Text></Animated.View>
  </Animated.View>;
 }
@@ -127,6 +127,9 @@ function AppContent() {
   {tab==='discover'?<>
 
    {top?<View style={{flex:1,paddingHorizontal:16,paddingBottom:8,width:'100%',maxWidth:480,alignSelf:'center'}}>
+     {/* The next card's edge peeks out below: there are more to see. */}
+     <View style={{flex:1,marginBottom:8}}>
+     {pending.length>1?<View pointerEvents="none" style={[s.card,{position:'absolute',left:16,right:16,top:16,bottom:-12,backgroundColor:C.line2,borderColor:C.line2}]}/>:null}
      <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
       <View style={[s.card,{flex:1}]}>
        <View style={{flex:1}} onLayout={e=>setPhotoH(Math.round(e.nativeEvent.layout.height))}>
@@ -147,6 +150,7 @@ function AppContent() {
        </View>
       </View>
      </SwipeSurface>
+     </View>
      <View style={s.actions}>
       <Pressable accessibilityRole="button" accessibilityLabel={t('Atšaukti','Undo')} accessibilityState={{disabled:!state.history.length}} disabled={!state.history.length} onPress={()=>dispatch({type:'undo'})} style={({pressed})=>[s.act,s.actSmall,!state.history.length&&s.disabled,pressed&&{transform:[{scale:0.95}]}]}><Ionicons name="arrow-undo-outline" size={20} color={C.ink2}/></Pressable>
       <Pressable accessibilityRole="button" accessibilityLabel={t('Praleisti','Pass')} onPress={()=>pass(top)} style={({pressed})=>[s.act,s.actRound,pressed&&{transform:[{scale:0.95}]}]}><Ionicons name="close" size={26} color={C.ink2}/></Pressable>

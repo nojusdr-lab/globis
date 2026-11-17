@@ -18,6 +18,9 @@
 - **Nebeskelbiami išsaugoti** (5, 27 žingsniai): išsaugant įsimenama kortelė; dingęs iš šaltinio gyvūnas lieka „Išsaugoti“ su žyme „Nebeskelbiamas“ (ne „įvaikintas“). Patikrinta web.
 - **Haptics** (29): lengvas atsakas išsaugant. `c0c3134`.
 - **Galerija kortelėje** (25): paliesk kairę/dešinę nuotraukos pusę, viršuje juostelės; amžius atskiroje eilutėje, vardas iki 2 eilučių. Patikrinta web.
+- **Rinkimas** run 44165033470: žalias, be įspėjimų (keturkojodraugas DB klaida išspręsta).
+- **Šilta spalva** (dizainas 4): „Išsaugoti“ mygtukas, širdelė ir antspaudas abrikosiniai `#B85A1E` (baltas tekstas 4.6:1, AA).
+- **Kortelių kaladė** (dizainas 5): po kortele matosi kitos kraštas. Patikrinta web.
 
 ## Laukia savininko
 

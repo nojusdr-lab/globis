@@ -33,7 +33,7 @@ export function HeartButton({saved,onPress,name,lang='lt',disabled=false}) {
  const label=saved?(lang==='lt'?`Pašalinti iš išsaugotų: ${name}`:`Remove from saved: ${name}`):(lang==='lt'?`Išsaugoti: ${name}`:`Save: ${name}`);
  return <Pressable accessibilityRole="button" accessibilityLabel={label} accessibilityState={{selected:!!saved,disabled}} disabled={disabled} onPress={onPress}
   style={({pressed})=>[s.heart,disabled&&s.disabled,pressed&&{transform:[{scale:0.92}]}]}>
-  <Ionicons name={saved?'heart':'heart-outline'} size={20} color={saved?C.green:C.ink2}/>
+  <Ionicons name={saved?'heart':'heart-outline'} size={20} color={saved?C.warm:C.ink2}/>
  </Pressable>;
 }
 
