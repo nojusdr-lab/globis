@@ -338,8 +338,8 @@
       "robots": "404 (no rules)",
       "terms": "none found; footer only",
       "cms": "custom PHP",
-      "decision": "probe",
-      "note": "Adapter: full list + detail pages (~39 requests); skips animals of other guardians. Not enabled until list page 2 is probed.",
+      "decision": "adapter",
+      "note": "Full list (2 pages) + one detail page per animal (~30 requests). Animals whose detail page names another guardian are skipped.",
       "checked": "2026-11-17"
     },
     {

@@ -3,9 +3,11 @@
 // for Joniškio r. VMVT row 19.
 // robots.txt (probe 2026-11-16, https://jbu.lt/robots.txt): "User-agent: *" only, nothing
 // disallowed, no Crawl-delay. http:// redirects to https://.
-// Terms: no terms page in the probe; footer says only "© 2024 Joniškio butų ūkis. Visos teisės
-// saugomos." (generic copyright line, nothing about copying or automated collection). We keep
-// facts and photo links, not their texts.
+// Terms: /taisykles/ is the municipal cleanliness rules (Joniškio r. tvarkymo ir švaros taisyklės),
+// /asmens-duomenu-apsauga/ only links two PDFs (personal-data rules, GDPR notice); neither says
+// anything about copying content or automated collection (checked 2026-11-16). Footer:
+// "© 2024 Joniškio butų ūkis. Visos teisės saugomos." (generic copyright line). We keep facts
+// and photo links, not their texts.
 //
 // WordPress 7.1 + WPBakery + the theme's "portfolio" grid. The page /beglobiai-gyvunai/ shows a
 // <ul class="portfolio" data-category="44" data-per-page="20"> with one <li class="isotope-item">
