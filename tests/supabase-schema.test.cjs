@@ -10,7 +10,7 @@ async function db() {
   const { PGlite } = await import('@electric-sql/pglite');
   const pg = new PGlite();
   // Supabase creates these roles; plain Postgres does not.
-  await pg.exec('create role anon; create role authenticated;');
+  await pg.exec(fs.readFileSync(path.join(__dirname, 'supabase-stub.sql'), 'utf8'));
   for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.sql')).sort()) {
     await pg.exec(fs.readFileSync(path.join(dir, file), 'utf8'));
   }
@@ -162,5 +162,28 @@ test('public listing identities and history stay private until publication', asy
     await checkPublicRows([]);
     await pg.query('select publish_source_run($1)', [complete]);
     await checkPublicRows(['globok:b']);
+  } finally { await pg.close(); }
+});
+
+test('saved: a user sees and changes only their own rows; anon has no access; account deletion cascades', async () => {
+  const pg = await db();
+  const A = '00000000-0000-0000-0000-00000000000a', B = '00000000-0000-0000-0000-00000000000b';
+  await pg.exec(`insert into auth.users (id) values ('${A}'), ('${B}')`);
+  const as = async (user, sql) => {
+    await pg.exec(`set role authenticated; set request.jwt.claim.sub = '${user}'`);
+    try { return (await pg.query(sql)).rows; } finally { await pg.exec("reset role; set request.jwt.claim.sub = ''"); }
+  };
+  try {
+    await as(A, "insert into saved (user_id, animal_id) values ('" + A + "', 'lese:1')");
+    await as(B, "insert into saved (user_id, animal_id) values ('" + B + "', 'lese:2')");
+    assert.deepEqual((await as(A, 'select animal_id from saved')).map(r => r.animal_id), ['lese:1']);
+    await assert.rejects(as(A, "insert into saved (user_id, animal_id) values ('" + B + "', 'lese:3')"), /row-level security/);
+    await as(A, "delete from saved where animal_id = 'lese:2'"); // B's row: invisible to A, not deleted
+    assert.equal((await pg.query("select count(*)::int n from saved where user_id = '" + B + "'")).rows[0].n, 1);
+    await assert.rejects(asAnon(pg, 'select * from saved'), /permission denied/);
+    await assert.rejects(asAnon(pg, 'select delete_own_account()'), /permission denied/);
+    await as(A, 'select delete_own_account()');
+    assert.deepEqual((await pg.query('select id from auth.users')).rows.map(r => r.id), [B]);
+    assert.equal((await pg.query("select count(*)::int n from saved where user_id = '" + A + "'")).rows[0].n, 0);
   } finally { await pg.close(); }
 });
