@@ -16,6 +16,8 @@
 - **keturkojodraugas DB klaida**: visi gyvūnai viename puslapyje, URL dabar su `#vardas`. `069d003`.
 - **Penktakoja**: puslapiuose tik vardas ir telefonas, faktų nėra. Tušti laukai teisingi, adapterio nekeičiu.
 - **Nebeskelbiami išsaugoti** (5, 27 žingsniai): išsaugant įsimenama kortelė; dingęs iš šaltinio gyvūnas lieka „Išsaugoti“ su žyme „Nebeskelbiamas“ (ne „įvaikintas“). Patikrinta web.
+- **Haptics** (29): lengvas atsakas išsaugant. `c0c3134`.
+- **Galerija kortelėje** (25): paliesk kairę/dešinę nuotraukos pusę, viršuje juostelės; amžius atskiroje eilutėje, vardas iki 2 eilučių. Patikrinta web.
 
 ## Laukia savininko
 

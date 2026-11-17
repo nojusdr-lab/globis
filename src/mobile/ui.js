@@ -47,7 +47,7 @@ function PhotoImage({uri,label,height,lang}) {
   <Text style={s.muted}>{lang==='lt'?'Nuotraukos nėra':'Photo unavailable'}</Text>
  </View>;
 }
-export function Photo({pet,height=280,gallery=false,lang='lt',children}) {
+export function Photo({pet,height=280,gallery=false,tapToBrowse=false,lang='lt',children}) {
  const [index,setIndex]=useState(0);
  const photos=(pet.photos||[]).filter(url=>typeof url==='string'&&/^https?:\/\//.test(url));
  useEffect(()=>setIndex(0),[pet.id]);
@@ -57,6 +57,14 @@ export function Photo({pet,height=280,gallery=false,lang='lt',children}) {
  return <View>
   <View style={[s.photo,{height}]}>
    <PhotoImage key={JSON.stringify([pet.id,currentIndex,uri])} uri={uri} label={`${pet.name}, ${lang==='lt'?'nuotrauka':'photo'} ${currentIndex+1}`} height={height} lang={lang}/>
+   {tapToBrowse&&photos.length>1?<>
+    <View pointerEvents="none" style={{position:'absolute',top:8,left:12,right:12,flexDirection:'row',gap:4,zIndex:3}}>
+     {photos.map((_,i)=><View key={i} style={{flex:1,height:3,borderRadius:2,backgroundColor:i===currentIndex?'#FFFFFF':'rgba(255,255,255,0.45)'}}/>)}
+    </View>
+    {/* Top 60% only: the bottom of the card opens the profile. */}
+    <Pressable accessibilityRole="button" accessibilityLabel={lang==='lt'?'Ankstesnė nuotrauka':'Previous photo'} onPress={()=>move(-1)} style={{position:'absolute',left:0,top:0,width:'40%',height:'60%',zIndex:2}}/>
+    <Pressable accessibilityRole="button" accessibilityLabel={lang==='lt'?'Kita nuotrauka':'Next photo'} onPress={()=>move(1)} style={{position:'absolute',right:0,top:0,width:'40%',height:'60%',zIndex:2}}/>
+   </>:null}
    {children}
   </View>
   {gallery&&photos.length>1?<View style={[s.row,{justifyContent:'space-between',padding:8}]}>

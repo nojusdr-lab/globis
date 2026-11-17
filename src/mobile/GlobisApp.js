@@ -130,18 +130,17 @@ function AppContent() {
      <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
       <View style={[s.card,{flex:1}]}>
        <View style={{flex:1}} onLayout={e=>setPhotoH(Math.round(e.nativeEvent.layout.height))}>
-       {photoH?<Photo lang={lang} pet={top} height={photoH}>
-        {['available','reserved'].includes(top.status)?<View style={[s.onPhoto,{top:12,left:12}]}><Status pet={top} lang={lang} small/></View>:null}
-        <View style={[s.onPhoto,{top:12,right:12}]}><View style={s.countChip}><Text style={s.countChipText} accessibilityLabel={t(`Liko peržiūrėti: ${pending.length}`,`Left to review: ${pending.length}`)}>{t(`${pending.length.toLocaleString('lt')} laukia`,`${pending.length.toLocaleString('en')} waiting`)}</Text></View></View>
+       {photoH?<Photo lang={lang} pet={top} height={photoH} tapToBrowse>
+        {['available','reserved'].includes(top.status)?<View style={[s.onPhoto,{top:20,left:12}]}><Status pet={top} lang={lang} small/></View>:null}
+        <View style={[s.onPhoto,{top:20,right:12}]}><View style={s.countChip}><Text style={s.countChipText} accessibilityLabel={t(`Liko peržiūrėti: ${pending.length}`,`Left to review: ${pending.length}`)}>{t(`${pending.length.toLocaleString('lt')} laukia`,`${pending.length.toLocaleString('en')} waiting`)}</Text></View></View>
         <LinearGradient pointerEvents="none" colors={['rgba(12,24,19,0)','rgba(12,24,19,0.88)']} style={s.cardShade}/>
         <Pressable accessibilityRole="button" accessibilityLabel={`${t('Atidaryti profilį','Open profile')}: ${top.name}`} onPress={()=>setProfile(top)} style={({pressed})=>[s.cardOverlay,pressed&&{opacity:0.85}]}>
          <View style={[s.row,{alignItems:'baseline',gap:10}]}>
-          <Text style={s.cardNameLight} numberOfLines={1}>{top.name}</Text>
-          {(lang==='lt'?top.ageLt:top.ageEn)?<Text style={s.cardMetaLight} numberOfLines={1}>{lang==='lt'?top.ageLt:top.ageEn}</Text>:null}
-          <View style={{flex:1}}/>
+          <Text style={[s.cardNameLight,{flex:1}]} numberOfLines={2}>{top.name}</Text>
           <View style={s.cardMore}><Ionicons name="chevron-forward" size={18} color={C.white}/></View>
          </View>
          <View style={[s.row,{gap:6}]}><Ionicons name="location-outline" size={15} color="rgba(255,255,255,0.85)"/><Text style={[s.cardMetaLight,{flex:1}]} numberOfLines={1}>{[top.city||t('Miestas nenurodytas','City not listed'),top.shelter?.name].filter(Boolean).join(' · ')}</Text></View>
+         {(lang==='lt'?top.ageLt:top.ageEn)?<Text style={s.cardMetaLight} numberOfLines={1}>{lang==='lt'?top.ageLt:top.ageEn}</Text>:null}
          {!['available','reserved'].includes(top.status)?<View style={[s.row,{gap:6}]}><Ionicons name="help-circle-outline" size={15} color="rgba(255,255,255,0.75)"/><Text style={[s.cardMetaLight,{flex:1,fontSize:13,opacity:0.85}]} numberOfLines={1}>{t('Ar dar ieško namų, pasitikslink prieglaudoje','Check with the shelter that it is still available')}</Text></View>:null}
         </Pressable>
        </Photo>:null}
