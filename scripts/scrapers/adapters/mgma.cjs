@@ -111,10 +111,19 @@ function createMgmaAdapter({ perPage = 100, maxPages = 20 } = {}) {
     // Only categories named after an animal kind ("Kačiukai", "Šuneliai"...). Others (given away,
     // found animals, shop items) are not read.
     const animalCats = new Map();
+    // Real names (2026-11-17): "Kačiukai Dovanojami", "Kačiukai naujokai", "Kačiukai Rado namus",
+    // "Šuniukai dovanojami", "Šuniukai naujokai", "Šuniukai rado namus", "Uncategorized".
     for (const c of cats.items) {
-      const species = N.species(N.cleanText(c.name));
-      if (species) animalCats.set(c.id, { name: N.cleanText(c.name), species });
-      else log(`mgma: category not read: ${N.cleanText(c.name)}`);
+      const name = N.cleanText(c.name);
+      const species = N.species(name);
+      const rest = N.fold(name).split(' ').slice(1).join(' ');
+      const listStatus = rest ? N.status(rest) : { status: 'unknown', statusEvidence: null };
+      if (!species || listStatus.status === 'confirmed_adopted' || listStatus.status === 'excluded') {
+        log(`mgma: category not read: ${name}`);
+        continue;
+      }
+      // "Dovanojami" in the category name = the shelter lists them as given away for adoption.
+      animalCats.set(c.id, { name, species, status: listStatus.status === 'available' ? { status: 'available', statusEvidence: name } : null });
     }
     if (!animalCats.size) throw new Error('mgma: no animal category found in product_cat');
 
@@ -144,7 +153,9 @@ function createMgmaAdapter({ perPage = 100, maxPages = 20 } = {}) {
         return { t, e };
       });
       const { t, e } = parsed;
-      const st = t.statusText ? N.status(t.statusText) : { status: 'unknown', statusEvidence: null };
+      const listStatuses = [...new Set((post.product_cat || []).map(c => animalCats.get(c)?.status).filter(Boolean).map(x => JSON.stringify(x)))];
+      const fromList = listStatuses.length === 1 ? JSON.parse(listStatuses[0]) : { status: 'unknown', statusEvidence: null };
+      const st = t.statusText ? N.status(t.statusText) : fromList;
       if (st.status === 'excluded') { skipped.push({ nativeId: String(post.id), reason: st.statusEvidence }); continue; }
       const kinds = [...new Set((post.product_cat || []).filter(c => animalCats.has(c)).map(c => animalCats.get(c).species))];
       const fact = f => (t.facts[f] ?? e.facts[f]) ?? null;

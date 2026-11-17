@@ -34,8 +34,8 @@ test('supabase: a complete run is published; nulls stay null; anon sees it', asy
   const { rows } = await pg.query('select animal_id, species, sex, age_text, status, status_evidence, vaccinated from published_animals order by animal_id');
   await pg.exec('reset role');
   assert.deepEqual(rows.map(r => r.animal_id), ['kggn:9001', 'kggn:9002', 'kggn:9004']);
-  assert.equal(rows[1].status, 'reserved');
-  assert.equal(rows[1].status_evidence, 'Rezervuotas');
+  assert.equal(rows[1].status, 'confirmed_adopted');
+  assert.equal(rows[1].status_evidence, 'Rado namus');
   assert.equal(rows[2].species, null);
   assert.equal(rows[0].vaccinated, null);
 });

@@ -1,14 +1,160 @@
 {
-  "https://kggn.lt/robots.txt": { "body": "User-agent: *\nCrawl-delay: 10\n" },
-  "https://kggn.lt/wp-json/wp/v2/gyvunas?per_page=100&page=1&_fields=id,name": { "body": [{ "id": 14, "name": "Šuo" }, { "id": 15, "name": "Katė" }] },
-  "https://kggn.lt/wp-json/wp/v2/lytis?per_page=100&page=1&_fields=id,name": { "body": [{ "id": 16, "name": "Patelė" }, { "id": 17, "name": "Patinas" }] },
-  "https://kggn.lt/wp-json/wp/v2/statusas?per_page=100&page=1&_fields=id,name": { "body": [{ "id": 18, "name": "Ieško namų" }, { "id": 19, "name": "Rezervuotas" }, { "id": 20, "name": "Grįžo namo" }] },
-  "https://kggn.lt/wp-json/wp/v2/amzius?per_page=100&page=1&_fields=id,name": { "body": [{ "id": 61, "name": "2021" }, { "id": 62, "name": "2022" }] },
-  "https://kggn.lt/wp-json/wp/v2/globotiniai?per_page=100&page=1&_fields=id,link,title,modified_gmt,featured_media,content,gyvunas,lytis,statusas,amzius": { "body": [
-    { "id": 9001, "link": "https://kggn.lt/globotiniai/testas/", "title": { "rendered": "TESTAS" }, "modified_gmt": "2025-02-05T09:38:59", "featured_media": 501, "content": { "rendered": "<p>Draugiškas. Skambinkite +370 600 12345.</p>" }, "gyvunas": [14], "lytis": [17], "statusas": [18], "amzius": [62] },
-    { "id": 9002, "link": "https://kggn.lt/globotiniai/bandymas/", "title": { "rendered": "BANDYMĖ" }, "modified_gmt": "2025-02-05T09:06:19", "featured_media": 0, "content": { "rendered": "" }, "gyvunas": [15], "lytis": [16], "statusas": [19], "amzius": [] },
-    { "id": 9003, "link": "https://kggn.lt/globotiniai/pavyzdys/", "title": { "rendered": "PAVYZDYS" }, "modified_gmt": "2025-01-01T00:00:00", "featured_media": 0, "content": { "rendered": "" }, "gyvunas": [14], "lytis": [], "statusas": [20], "amzius": [61] },
-    { "id": 9004, "link": "https://kggn.lt/globotiniai/be-duomenu/", "title": { "rendered": "BE DUOMENŲ" }, "modified_gmt": "2025-01-01T00:00:00", "featured_media": 0, "content": { "rendered": "" }, "gyvunas": [14, 15], "lytis": [], "statusas": [], "amzius": [] }
-  ] },
-  "https://kggn.lt/wp-json/wp/v2/media?include=501&per_page=100&_fields=id,source_url": { "body": [{ "id": 501, "source_url": "https://kggn.lt/wp-content/uploads/2025/02/testas.jpg" }] }
+  "https://kggn.lt/robots.txt": {
+    "body": "User-agent: *\nCrawl-delay: 10\n"
+  },
+  "https://kggn.lt/wp-json/wp/v2/gyvunas?per_page=100&page=1&_fields=id,name": {
+    "body": [
+      {
+        "id": 15,
+        "name": "Katė"
+      },
+      {
+        "id": 14,
+        "name": "Šuo"
+      }
+    ]
+  },
+  "https://kggn.lt/wp-json/wp/v2/lytis?per_page=100&page=1&_fields=id,name": {
+    "body": [
+      {
+        "id": 16,
+        "name": "Patelė"
+      },
+      {
+        "id": 17,
+        "name": "Patinas"
+      }
+    ]
+  },
+  "https://kggn.lt/wp-json/wp/v2/statusas?per_page=100&page=1&_fields=id,name": {
+    "body": [
+      {
+        "id": 18,
+        "name": "Dovanojamas"
+      },
+      {
+        "id": 20,
+        "name": "Grįžo namo"
+      },
+      {
+        "id": 27,
+        "name": "Rado namus"
+      },
+      {
+        "id": 19,
+        "name": "Rastas"
+      }
+    ]
+  },
+  "https://kggn.lt/wp-json/wp/v2/amzius?per_page=100&page=1&_fields=id,name": {
+    "body": [
+      {
+        "id": 61,
+        "name": "2021"
+      },
+      {
+        "id": 62,
+        "name": "2022"
+      }
+    ]
+  },
+  "https://kggn.lt/wp-json/wp/v2/globotiniai?per_page=100&page=1&_fields=id,link,title,modified_gmt,featured_media,content,gyvunas,lytis,statusas,amzius": {
+    "body": [
+      {
+        "id": 9001,
+        "link": "https://kggn.lt/globotiniai/testas/",
+        "title": {
+          "rendered": "TESTAS"
+        },
+        "modified_gmt": "2025-02-05T09:38:59",
+        "featured_media": 501,
+        "content": {
+          "rendered": "<p>Draugiškas. Skambinkite +370 600 12345.</p>"
+        },
+        "gyvunas": [
+          14
+        ],
+        "lytis": [
+          17
+        ],
+        "statusas": [
+          18
+        ],
+        "amzius": [
+          62
+        ]
+      },
+      {
+        "id": 9002,
+        "link": "https://kggn.lt/globotiniai/bandymas/",
+        "title": {
+          "rendered": "BANDYMĖ"
+        },
+        "modified_gmt": "2025-02-05T09:06:19",
+        "featured_media": 0,
+        "content": {
+          "rendered": ""
+        },
+        "gyvunas": [
+          15
+        ],
+        "lytis": [
+          16
+        ],
+        "statusas": [
+          27
+        ],
+        "amzius": []
+      },
+      {
+        "id": 9003,
+        "link": "https://kggn.lt/globotiniai/pavyzdys/",
+        "title": {
+          "rendered": "PAVYZDYS"
+        },
+        "modified_gmt": "2025-01-01T00:00:00",
+        "featured_media": 0,
+        "content": {
+          "rendered": ""
+        },
+        "gyvunas": [
+          14
+        ],
+        "lytis": [],
+        "statusas": [
+          20
+        ],
+        "amzius": [
+          61
+        ]
+      },
+      {
+        "id": 9004,
+        "link": "https://kggn.lt/globotiniai/be-duomenu/",
+        "title": {
+          "rendered": "BE DUOMENŲ"
+        },
+        "modified_gmt": "2025-01-01T00:00:00",
+        "featured_media": 0,
+        "content": {
+          "rendered": ""
+        },
+        "gyvunas": [
+          14,
+          15
+        ],
+        "lytis": [],
+        "statusas": [],
+        "amzius": []
+      }
+    ]
+  },
+  "https://kggn.lt/wp-json/wp/v2/media?include=501&per_page=100&_fields=id,source_url": {
+    "body": [
+      {
+        "id": 501,
+        "source_url": "https://kggn.lt/wp-content/uploads/2025/02/testas.jpg"
+      }
+    ]
+  }
 }

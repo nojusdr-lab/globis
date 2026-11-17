@@ -29,8 +29,8 @@ test('kggn: maps WordPress taxonomies to facts, keeps unknowns null', async () =
   assert.deepEqual(a.photos, ['https://kggn.lt/wp-content/uploads/2025/02/testas.jpg']);
   assert.doesNotMatch(a.bio_lt, /600/, 'phone removed');
   const r = byId['kggn:9002'];
-  assert.equal(r.status, 'reserved');
-  assert.equal(r.statusEvidence, 'Rezervuotas');
+  assert.equal(r.status, 'confirmed_adopted');
+  assert.equal(r.statusEvidence, 'Rado namus');
   assert.equal(r.age_text, null);
   const u = byId['kggn:9004'];
   assert.equal(u.species, null, 'two species terms = ambiguous = unknown');

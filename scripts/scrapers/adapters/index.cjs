@@ -8,4 +8,8 @@ module.exports = [
   require('./lese.cjs'),
   require('./mgma.cjs'),
   require('./keturkojodraugas.cjs'),
+  require('./penktakoja.cjs'),
+  require('./bukmanodraugas.cjs'),
+  require('./tautmilesgloba.cjs'),
+  require('./mazijausmai.cjs'),
 ];

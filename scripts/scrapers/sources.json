@@ -54,8 +54,9 @@
       "robots": "WooCommerce rules, /wp-admin/",
       "terms": "none found",
       "cms": "wordpress-rest:product",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17",
+      "note": "WooCommerce sponsorship products in category Šunys; site states no adoption status, so status stays unknown. VMVT: temporarily not accepting."
     },
     {
       "id": "bukmanodraugas",
@@ -69,8 +70,8 @@
       "robots": "Disallow: /wp-admin/",
       "terms": "unverified",
       "cms": "wordpress-posts",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "linksmosiospedutes",
@@ -239,8 +240,8 @@
       "robots": "Yoast, nothing disallowed",
       "terms": "none found",
       "cms": "wordpress-html",
-      "decision": "probe",
-      "checked": "2026-11-16",
+      "decision": "adapter",
+      "checked": "2026-11-17",
       "note": "Homepage contains injected casino spam links; parse only animal cards."
     },
     {
@@ -460,10 +461,10 @@
         "https://mazijausmai.lt/ieskantys-namu/"
       ],
       "robots": "Disallow: /wp-admin/",
-      "terms": "termshub.io pages unverified",
+      "terms": "termshub.io terms not yet read",
       "cms": "wordpress-elementor",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "decision": "adapter",
+      "checked": "2026-11-17"
     },
     {
       "id": "pukuotasvajone",

@@ -19,16 +19,15 @@ const cats = require('../fixtures/mgma/product_cat.json');
 const API = 'https://mgma.lt/wp-json/wp/v2/';
 const FIELDS = 'id,link,title,modified_gmt,featured_media,excerpt,product_cat';
 const catUrl = (per, page) => `${API}product_cat?per_page=${per}&page=${page}&_fields=id,name,slug`;
-const productUrl = (per, page) => `${API}product?product_cat=20&per_page=${per}&page=${page}&_fields=${FIELDS}`;
+const productUrl = (per, page) => `${API}product?product_cat=20,21,23,24&per_page=${per}&page=${page}&_fields=${FIELDS}`;
 const mediaUrl = ids => `${API}media?include=${ids.join(',')}&per_page=100&_fields=id,source_url`;
 const PAST_END = { status: 400, body: { code: 'rest_post_invalid_page_number' } };
 
 function routes(per = 100, productPages = [products]) {
   const r = {
     'https://mgma.lt/robots.txt': { body: robots, headers: { 'content-type': 'text/plain' } },
-    [catUrl(per, 1)]: per > cats.length ? cats : cats.slice(0, per),
   };
-  if (per <= cats.length) r[catUrl(per, 2)] = cats.slice(per);
+  for (let page = 1; (page - 1) * per <= cats.length; page++) r[catUrl(per, page)] = cats.slice((page - 1) * per, page * per);
   productPages.forEach((items, i) => { r[productUrl(per, i + 1)] = items; });
   const served = productPages.flat().map(p => p.featured_media);
   r[mediaUrl(served)] = media.filter(m => served.includes(m.id));
@@ -66,8 +65,8 @@ test('mgma: parses title, excerpt and photo; unknown stays null; contacts remove
   assert.equal(soja.neutered, null, 'not written anywhere');
   assert.equal(soja.sex, null);
   assert.equal(soja.size, null);
-  assert.equal(soja.status, 'unknown');
-  assert.equal(soja.statusEvidence, null);
+  assert.equal(soja.status, 'available');
+  assert.equal(soja.statusEvidence, 'Kačiukai Dovanojami', 'list name is the evidence');
   assert.deepEqual(soja.photos, ['https://mgma.lt/wp-content/uploads/2026/11/906897828_1128581353360129_1143818050288977103_n.jpg']);
   assert.equal(soja.sourceUpdatedAt, '2026-11-14T10:46:28Z');
   assert.match(soja.bio_lt, /^SOJA – mažas baltas pūkuotas kamuoliukas/);
@@ -108,6 +107,8 @@ test('mgma: pagination treats WordPress 400 after a full page as the end', async
 
 test('mgma: hitting maxPages is reported as not complete', async () => {
   const r = routes(2, [products.slice(0, 2), products.slice(2, 4)]);
+  // Only the first 2 category pages are read, so the product filter has the categories seen so far.
+  for (const [k, v] of Object.entries(r)) if (k.includes('product_cat=20,21,23,24')) r[k.replace('20,21,23,24', '20,21,23')] = v;
   const { run } = await collect(r, { perPage: 2, maxPages: 2 });
   assert.equal(run.state, 'partial');
 });
