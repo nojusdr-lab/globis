@@ -39,7 +39,7 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
  const rotate=x.interpolate({inputRange:[-300,0,300],outputRange:['-14deg','0deg','14deg']});
  const saveOpacity=x.interpolate({inputRange:[0,THRESHOLD],outputRange:[0,1],extrapolate:'clamp'});
  const passOpacity=x.interpolate({inputRange:[-THRESHOLD,0],outputRange:[1,0],extrapolate:'clamp'});
- return <Animated.View {...responder.panHandlers} style={{transform:[{translateX:x},{rotate}]}}>
+ return <Animated.View {...responder.panHandlers} style={{flex:1,transform:[{translateX:x},{rotate}]}}>
   {children}
   <Animated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{left:16,borderColor:C.green,opacity:saveOpacity,transform:[{rotate:'-8deg'}]}]}><Text style={[s.stampText,{color:C.green}]}>IŠSAUGOTI</Text></Animated.View>
   <Animated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{right:16,borderColor:C.ink2,opacity:passOpacity,transform:[{rotate:'8deg'}]}]}><Text style={[s.stampText,{color:C.ink2}]}>PRALEISTI</Text></Animated.View>
@@ -94,8 +94,8 @@ function AppContent() {
  useEffect(()=>{dispatch({type:'filters',filters});},[filters]);
  // Warm the disk cache for the next cards so a swipe shows the photo at once.
  useEffect(()=>{const next=pending.slice(1,4).map(p=>p.photos?.[0]).filter(Boolean);if(next.length)CachedImage.prefetch(next,'memory-disk').catch(()=>{});},[pending]);
- // Photo takes the height left after header, card info, buttons and tab bar (about 335px).
- const photoH=Math.round(Math.min(640,Math.max(220,height-335)));
+ // Photo takes exactly the height left on screen (measured), so the page never scrolls.
+ const [photoH,setPhotoH]=useState(0);
 
  if(!state.onboarded) return <Onboarding lang={lang} reduced={reduced} pets={PETS.filter(eligible)} shelters={organizations.length} onLang={l=>dispatch({type:'language',lang:l})} onDone={f=>{setFilters({...defaults,...f});dispatch({type:'onboarded',filters:{...defaults,...f}});}}/>;
  return <SafeAreaView style={s.root} edges={['top','bottom']}><StatusBar barStyle="dark-content" backgroundColor={C.bg}/><View style={s.shell}>
@@ -115,13 +115,15 @@ function AppContent() {
 
   {tab==='discover'?<>
 
-   {top?<ScrollView contentContainerStyle={{paddingHorizontal:16,paddingBottom:16,width:'100%',maxWidth:480,alignSelf:'center'}}>
+   {top?<View style={{flex:1,paddingHorizontal:16,paddingBottom:8,width:'100%',maxWidth:480,alignSelf:'center'}}>
      <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
-      <View style={s.card}>
-       <Photo lang={lang} pet={top} height={photoH} gallery>
+      <View style={[s.card,{flex:1}]}>
+       <View style={{flex:1}} onLayout={e=>setPhotoH(Math.round(e.nativeEvent.layout.height))}>
+       {photoH?<Photo lang={lang} pet={top} height={photoH} gallery>
         <View style={[s.onPhoto,{top:12,left:12}]}><Status pet={top} lang={lang} small/></View>
         <View style={[s.onPhoto,{top:12,right:12}]}><View style={s.countChip}><Text style={s.countChipText} accessibilityLabel={t(`Liko peržiūrėti: ${pending.length}`,`Left to review: ${pending.length}`)}>{t(`Liko ${pending.length}`,`${pending.length} left`)}</Text></View></View>
-       </Photo>
+       </Photo>:null}
+       </View>
        <Pressable accessibilityRole="button" accessibilityLabel={`${t('Atidaryti profilį','Open profile')}: ${top.name}`} onPress={()=>setProfile(top)} style={({pressed})=>[s.cardInfo,pressed&&{backgroundColor:C.bg}]}>
         <View style={[s.row,{alignItems:'baseline'}]}>
          <Text style={s.cardName} numberOfLines={1}>{top.name}</Text>
@@ -139,7 +141,7 @@ function AppContent() {
       <Pressable accessibilityRole="button" accessibilityLabel={t('Išsaugoti','Save')} onPress={()=>save(top)} style={({pressed})=>[s.act,s.actSave,pressed&&{transform:[{scale:0.97}]}]}><Ionicons name="heart-outline" size={21} color={C.white}/><Text style={s.actSaveText}>{t('Išsaugoti','Save')}</Text></Pressable>
      </View>
      <Text style={s.hint}>{t('Perbraukite dešinėn, kad išsaugotumėte, kairėn, kad praleistumėte','Swipe right to save, left to pass')}</Text>
-    </ScrollView>
+    </View>
    :filtered.length?<Empty icon="checkmark-done-outline" title={t('Peržiūrėjote visus skelbimus','You have seen every listing')}
      body={t('Išsaugotus gyvūnus rasite skiltyje „Išsaugoti“.','Saved animals are in the Saved tab.')}
      action={state.history.length?t('Atšaukti','Undo'):t('Peržiūrėti praleistus','Review passed')} onAction={()=>state.history.length?dispatch({type:'undo'}):dispatch({type:'resetPassed'})}/>
