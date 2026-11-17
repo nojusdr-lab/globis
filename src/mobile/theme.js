@@ -11,7 +11,8 @@ export const C={
  // legacy aliases kept for older call sites
  soft:'#E7F0EB',
 };
-export const serif=Platform.select({ios:'Georgia',android:'serif',web:'Newsreader, Georgia, "Times New Roman", serif',default:undefined});
+// Loaded in GlobisApp via useFonts before the first render.
+export const serif='Fraunces_600SemiBold';
 const shadow=Platform.select({web:{boxShadow:'0 1px 2px rgba(15,31,25,.05), 0 12px 28px -14px rgba(15,31,25,.26)'},default:{shadowColor:'#0F1F19',shadowOpacity:0.12,shadowRadius:14,shadowOffset:{width:0,height:8},elevation:3}});
 
 export const styles=StyleSheet.create({

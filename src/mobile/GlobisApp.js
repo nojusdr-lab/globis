@@ -4,6 +4,7 @@ import {SafeAreaProvider,SafeAreaView} from 'react-native-safe-area-context';
 import {Image as CachedImage} from 'expo-image';
 import {Ionicons} from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient';
+import {useFonts,Fraunces_600SemiBold} from '@expo-google-fonts/fraunces';
 import useDiscovery from '../state/useDiscovery';
 import useReducedMotion from '../state/useReducedMotion';
 import {shouldClaim} from '../state/discovery.cjs';
@@ -242,4 +243,8 @@ function AppContent() {
  {contact?<ContactSheet pet={contact} lang={lang} reduced={reduced} onClose={()=>setContact(null)} onError={notify}/>:null}
  </SafeAreaView>;
 }
-export default function GlobisApp(){return <SafeAreaProvider><AppContent/></SafeAreaProvider>;}
+export default function GlobisApp(){
+ const [fonts,fontError]=useFonts({Fraunces_600SemiBold});
+ if(!fonts&&!fontError) return null; // a font that fails to load falls back to the system face
+ return <SafeAreaProvider><AppContent/></SafeAreaProvider>;
+}

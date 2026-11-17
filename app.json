@@ -82,7 +82,8 @@
           "backgroundColor": "#F5F8F7"
         }
       ],
-      "expo-image"
+      "expo-image",
+      "expo-font"
     ],
     "extra": {
       "betaStatus": "unpublished",
