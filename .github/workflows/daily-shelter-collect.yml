@@ -49,7 +49,8 @@ jobs:
         if: always()
         run: |
           { echo '### Rinkimas'; echo '```'; grep '^{"source"' scrape.log || tail -5 scrape.log; echo '```';
-            echo '### Programėlės duomenys'; echo '```'; cat bridge.log 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+            echo '### Programėlės duomenys'; echo '```'; cat bridge.log 2>/dev/null; echo '```';
+            echo '### Laukų pilnumas'; node scripts/scrapers/completeness.cjs || true; } >> "$GITHUB_STEP_SUMMARY"
       - name: Open PR with data change
         env:
           GH_TOKEN: ${{ github.token }}
