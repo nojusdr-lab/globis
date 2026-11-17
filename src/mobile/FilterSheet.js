@@ -10,7 +10,7 @@ export default function FilterSheet({filters,pets,onApply,onClose,reduced,lang})
  const t=(lt,en)=>lang==='lt'?lt:en;
  const n=selectPets(pets,draft).length;
  const cityCount=city=>selectPets(pets,{...draft,city}).length;
- return <Sheet title={t('Filtrai','Filters')} reduced={reduced} onClose={onClose} footer={<View style={s.row}>
+ return <Sheet lang={lang} title={t('Filtrai','Filters')} reduced={reduced} onClose={onClose} footer={<View style={s.row}>
    <Button label={t('Išvalyti','Clear')} onPress={()=>setDraft({...defaults,query:draft.query})}/>
    <Button style={{flex:1}} primary label={t(`Rodyti ${n} ${pl(n,'skelbimą','skelbimus','skelbimų')}`,`Show ${n} ${n===1?'listing':'listings'}`)} onPress={()=>onApply(draft)}/>
   </View>}>

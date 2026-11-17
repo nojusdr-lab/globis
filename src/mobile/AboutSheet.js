@@ -4,16 +4,18 @@ import {Sheet,SourceLink} from './ui';
 import {styles as s} from './theme';
 import {email} from '../data/integrity.cjs';
 import {expo as config} from '../../app.json';
-export default function AboutSheet({onClose,reduced}) {
+export default function AboutSheet({onClose,reduced,lang='lt'}) {
+ const t=(lt,en)=>lang==='lt'?lt:en;
  const support=email(config.extra?.supportEmail);
- return <Sheet title="Apie GLOBIS" onClose={onClose} reduced={reduced}>
- <Text style={s.title}>GLOBIS · {config.version} beta</Text>
- <Text style={s.body}>Išsaugoti ir praleisti skelbimai bei kalba laikomi šiame įrenginyje. Paskyra nekuriama. Pasirinkimai tarp įrenginių nesinchronizuojami.</Text>
- <Text style={s.body}>Išvalius programėlės ar naršyklės svetainės duomenis pasirinkimai pašalinami. Išorinės gyvūnų nuotraukos ir atidarytos šaltinio nuorodos gali perduoti techninius ryšio duomenis tų svetainių valdytojams.</Text>
- <Text style={s.body}>Skelbimų prieinamumą ir visus nežinomus duomenis patikslinkite tiesiogiai su prieglauda. GLOBIS nesiunčia įvaikinimo paraiškų.</Text>
- <Text style={s.title}>Palaikymas</Text>
- <Text selectable style={s.body}>{support||'Palaikymo kontaktas dar nepaskelbtas.'}</Text>
- <SourceLink url={config.extra?.privacyPolicyUrl} label="Privatumo politika"/>
- {!config.extra?.privacyPolicyUrl?<Text style={s.muted}>Vieša privatumo politikos nuoroda dar nepaskelbta. Beta nepaskelbta parduotuvėse.</Text>:null}
+ const policy=config.extra?.privacyPolicyUrl;
+ return <Sheet lang={lang} title={t('Apie GLOBIS','About GLOBIS')} onClose={onClose} reduced={reduced}>
+ <Text style={s.title}>GLOBIS · {t('versija','version')} {config.version}</Text>
+ <Text style={s.body}>{t('Išsaugoti ir praleisti skelbimai bei kalba laikomi šiame įrenginyje. Paskyra nekuriama. Pasirinkimai tarp įrenginių nesinchronizuojami.','Saved and skipped listings and your language are kept on this device. No account is created. Choices are not synced between devices.')}</Text>
+ <Text style={s.body}>{t('Išvalius programėlės ar naršyklės svetainės duomenis pasirinkimai pašalinami. Išorinės gyvūnų nuotraukos ir atidarytos šaltinio nuorodos gali perduoti techninius ryšio duomenis tų svetainių valdytojams.','Clearing the app or browser site data removes your choices. External animal photos and opened source links may share technical connection data with the operators of those websites.')}</Text>
+ <Text style={s.body}>{t('Skelbimų prieinamumą ir visus nežinomus duomenis patikslinkite tiesiogiai su prieglauda. GLOBIS nesiunčia įvaikinimo paraiškų.','Confirm availability and any unknown details directly with the shelter. GLOBIS does not send adoption applications.')}</Text>
+ <Text style={s.title}>{t('Palaikymas','Support')}</Text>
+ <Text selectable style={s.body}>{support||t('Palaikymo kontaktas dar nepaskelbtas.','A support contact has not been published yet.')}</Text>
+ <SourceLink lang={lang} url={policy} label={t('Privatumo politika','Privacy policy')}/>
+ {!policy?<Text style={s.muted}>{t('Vieša privatumo politikos nuoroda dar nepaskelbta.','A public privacy policy link has not been published yet.')}</Text>:null}
  </Sheet>;
 }

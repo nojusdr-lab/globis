@@ -1,6 +1,6 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {emptyState,reducer,decode,shouldClaim}=require('../src/state/discovery.cjs');
+const {emptyState,langFromLocale,reducer,decode,shouldClaim}=require('../src/state/discovery.cjs');
 test('save/pass/undo restores the exact prior sets and ordering',()=>{
  let s=emptyState();
  s=reducer(s,{type:'save',id:'a'});s=reducer(s,{type:'pass',id:'b'});
@@ -29,4 +29,16 @@ test('storage read recovery hydrates validated prior choices without replacing t
  assert.deepEqual(reducer(emptyState(),{type:'hydrate',state:decode(JSON.stringify(previous))}),previous);
  assert.throws(()=>reducer(previous,{type:'hydrate',state:{broken:true}}));
  assert.deepEqual(previous.saved,['globok:kept']);
+});
+
+test('first launch language follows the phone, unknown stays Lithuanian',()=>{
+ assert.equal(langFromLocale('lt-LT'),'lt');
+ assert.equal(langFromLocale('LT'),'lt');
+ assert.equal(langFromLocale(''),'lt');
+ assert.equal(langFromLocale(undefined),'lt');
+ assert.equal(langFromLocale('en-US'),'en');
+ assert.equal(langFromLocale('de-DE'),'en');
+ assert.equal(emptyState('en').lang,'en');
+ assert.equal(emptyState().lang,'lt');
+ assert.equal(emptyState('fr').lang,'lt');
 });

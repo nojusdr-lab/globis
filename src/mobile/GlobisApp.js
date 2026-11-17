@@ -94,16 +94,16 @@ function AppContent() {
 
  return <SafeAreaView style={s.root} edges={['top','bottom']}><StatusBar barStyle="dark-content" backgroundColor={C.bg}/><View style={s.shell}>
   <View style={s.header}>
-   <Pressable accessibilityRole="button" accessibilityLabel="Apie GLOBIS" onPress={()=>setAbout(true)} style={{minHeight:48,justifyContent:'center'}}>
+   <Pressable accessibilityRole="button" accessibilityLabel={t('Apie GLOBIS','About GLOBIS')} onPress={()=>setAbout(true)} style={{minHeight:48,justifyContent:'center'}}>
     <Image source={require('../../Code_Generated_Image.png')} accessibilityLabel="GLOBIS" style={[s.logo,width<360&&{width:100}]} resizeMode="contain"/>
    </Pressable>
    <View style={s.row}>
-    <Button label={lang.toUpperCase()} accessibilityLabel={lang.toUpperCase()} onPress={()=>dispatch({type:'language',lang:lang==='lt'?'en':'lt'})} style={{minWidth:52,paddingHorizontal:12}}/>
+    <Button label={lang.toUpperCase()} accessibilityLabel={t('Kalba: lietuvių. Perjungti į anglų','Language: English. Switch to Lithuanian')} onPress={()=>dispatch({type:'language',lang:lang==='lt'?'en':'lt'})} style={{minWidth:52,paddingHorizontal:12}}/>
     <IconButton icon="information-circle-outline" label={t('Apie programėlę','About the app')} onPress={()=>setAbout(true)}/>
    </View>
   </View>
 
-  {error?<View style={s.banner}><Text accessibilityRole="alert" style={[s.body,{color:C.warnInk}]}>{error}</Text><Button label={t('Bandykite dar kartą','Retry')} onPress={retry} style={{alignSelf:'flex-start'}}/></View>:null}
+  {error?<View style={s.banner}><Text accessibilityRole="alert" style={[s.body,{color:C.warnInk}]}>{{read:t('Nepavyko perskaityti pasirinkimų. Esami duomenys neperrašyti.','Could not read your saved choices. Existing data was not overwritten.'),write:t('Nepavyko išsaugoti pasirinkimų šiame įrenginyje.','Could not save your choices on this device.'),retry:t('Vietinė saugykla vis dar nepasiekiama arba duomenys netinkami. Esami duomenys neperrašyti.','Local storage is still unavailable or the data is invalid. Existing data was not overwritten.')}[error]||error}</Text><Button label={t('Bandykite dar kartą','Retry')} onPress={retry} style={{alignSelf:'flex-start'}}/></View>:null}
 
   {tab==='discover'?<>
    <View style={s.toolbar}>
@@ -200,17 +200,17 @@ function AppContent() {
     const on=tab===id,a11y=id==='saved'&&saved.length?`${label} (${saved.length})`:label;
     return <Pressable key={id} accessibilityRole="tab" accessibilityLabel={a11y} accessibilityState={{selected:on}} onPress={()=>setTab(id)} style={[s.tab,on&&s.tabActive]}>
      <Ionicons name={on?icon:`${icon}-outline`} size={22} color={on?C.green:C.muted}/>
-     <Text style={[s.tabText,on&&s.tabTextActive]}>{label}</Text>
-     {id==='saved'&&saved.length?<View style={s.tabBadge}><Text style={s.tabBadgeText}>{saved.length}</Text></View>:null}
+     <Text maxFontSizeMultiplier={1.3} numberOfLines={1} style={[s.tabText,on&&s.tabTextActive]}>{label}</Text>
+     {id==='saved'&&saved.length?<View style={s.tabBadge}><Text maxFontSizeMultiplier={1.2} style={s.tabBadgeText}>{saved.length}</Text></View>:null}
     </Pressable>;})}
   </View></View>
  </View>
- {about?<AboutSheet onClose={()=>setAbout(false)} reduced={reduced}/>:null}
+ {about?<AboutSheet lang={lang} onClose={()=>setAbout(false)} reduced={reduced}/>:null}
  {filterOpen?<FilterSheet filters={filters} pets={PETS} lang={lang} reduced={reduced} onClose={()=>setFilterOpen(false)} onApply={next=>{setFilters(next);setFilterOpen(false);}}/>:null}
- {shelter?<Sheet full title={shelter.name} reduced={reduced} onClose={()=>setShelterId(null)}>
+ {shelter?<Sheet full lang={lang} title={shelter.name} reduced={reduced} onClose={()=>setShelterId(null)}>
   {shelter.city||shelter.address?<View style={[s.row,{alignItems:'flex-start'}]}><Ionicons name="location-outline" size={17} color={C.muted} style={{marginTop:3}}/><Text selectable style={[s.body,{flex:1}]}>{shelter.address||shelter.city}</Text></View>:null}
   <View style={s.tag}><Text style={s.tagText}>{t('Aktyvūs Globis skelbimai','Active Globis listings')}: {shelter.active}</Text></View>
-  <SourceLink url={shelter.url} label={t('Prieglaudos šaltinis','Shelter source')}/>
+  <SourceLink lang={lang} url={shelter.url} label={t('Prieglaudos šaltinis','Shelter source')} onError={notify}/>
   <Text style={s.sectionTitle}>{t('Gyvūnai GLOBIS','Animals on GLOBIS')}</Text>
   {shelter.pets.length?shelter.pets.map(p=><Pressable key={p.id} accessibilityRole="button" accessibilityLabel={`${p.name}. ${t('Atidaryti profilį','Open profile')}`} style={({pressed})=>[s.listCard,pressed&&{opacity:0.85}]} onPress={()=>{setShelterId(null);setProfile(p);}}>
    <View style={{width:56,height:56,borderRadius:14,overflow:'hidden'}}><Photo lang={lang} pet={p} height={56}/></View>
