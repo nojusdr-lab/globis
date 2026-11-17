@@ -72,6 +72,12 @@ function shelterPets(pets, id) {
   return pets.filter(pet => pet.shelter.id === id);
 }
 
+// Direct shelter-site rows replace Globok rows for the shelters they cover (same animals, primary source).
+function mergeDirect(globokPets, directPets) {
+  const covered = new Set(directPets.map(pet => pet.shelter.id));
+  return [...globokPets.filter(pet => !covered.has(pet.shelter.id)), ...directPets];
+}
+
 function validateImport(pets, shelters, previousPets, previousShelters) {
   for (const [rows, previous] of [[pets, previousPets], [shelters, previousShelters]]) {
     if (!Array.isArray(rows) || !Array.isArray(previous) ||
@@ -92,4 +98,4 @@ function validateImport(pets, shelters, previousPets, previousShelters) {
   }
 }
 
-module.exports = { listingId, statusFromText, phone, email, withOfficialContacts, joinListingShelters, eligible, shelterPets, validateImport };
+module.exports = { listingId, statusFromText, phone, email, withOfficialContacts, joinListingShelters, eligible, shelterPets, mergeDirect, validateImport };
