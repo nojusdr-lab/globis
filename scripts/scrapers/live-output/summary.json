@@ -1,0 +1,2076 @@
+{
+  "at": "2026-11-17T08:46:05.253Z",
+  "sources": [
+    {
+      "source": "sos-gyvunai",
+      "state": "complete",
+      "animals": 117,
+      "skipped": 0,
+      "requests": 7,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 117
+      },
+      "known": {
+        "name": 117,
+        "species": 0,
+        "sex": 0,
+        "age_text": 26,
+        "size": 0,
+        "photos": 116,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 117
+      },
+      "sample": [
+        {
+          "id": "sos-gyvunai:4468",
+          "source": "sos-gyvunai",
+          "sourceUrl": "https://sos-gyvunai.lt/imbieras/",
+          "name": "Imbieras",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://sos-gyvunai.lt/wp-content/uploads/667aa5a8-56e6-405e-b386-1272860f0b98.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Sunku jį vadinti naujoku, nes žinome Imbierą nuo RUGSĖJO 26 dienos. Būtent tą dieną ryžas katinas buvo atvežtas iki prieglaudos. Atvežtas be išankstinio susitar",
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": "2026-11-13T14:46:54Z"
+        },
+        {
+          "id": "sos-gyvunai:4436",
+          "source": "sos-gyvunai",
+          "sourceUrl": "https://sos-gyvunai.lt/ize/",
+          "name": "Izė",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://sos-gyvunai.lt/wp-content/uploads/aa5febf4-bada-4844-9685-11274acf3d92.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "VIDEO: https://www.facebook.com/reel/167776[kontaktas pašalintas] Neplanuotai, netikėtai teko priimti naujokus&#8230; Deja, bet užsimerkti ir nematyti tiesiog n",
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": "2026-11-13T07:43:52Z"
+        },
+        {
+          "id": "sos-gyvunai:4433",
+          "source": "sos-gyvunai",
+          "sourceUrl": "https://sos-gyvunai.lt/natas/",
+          "name": "Natas",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://sos-gyvunai.lt/wp-content/uploads/a8c347b3-3ad8-44be-90bb-a3239fd0e1ca.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "VIDEO: https://www.facebook.com/reel/167776[kontaktas pašalintas] Neplanuotai, netikėtai teko priimti naujokus&#8230; Deja, bet užsimerkti ir nematyti tiesiog n",
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": "2026-11-13T07:43:16Z"
+        },
+        {
+          "id": "sos-gyvunai:4432",
+          "source": "sos-gyvunai",
+          "sourceUrl": "https://sos-gyvunai.lt/stirna/",
+          "name": "Stirna",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://sos-gyvunai.lt/wp-content/uploads/AAA_5820-scaled.png"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Katytės labai žaismingos, smalsios, bet tuo pačiu moka būtu ir mielos . Labai gražiai draugauja tarpusavyje, bet mėgsta ir kitas kates. Noriai su visomis žaidži",
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": "2026-11-13T07:59:10Z"
+        },
+        {
+          "id": "sos-gyvunai:4427",
+          "source": "sos-gyvunai",
+          "sourceUrl": "https://sos-gyvunai.lt/bona/",
+          "name": "Bona",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://sos-gyvunai.lt/wp-content/uploads/ccd3c5fa-dfaa-4dc4-b3bf-0572480fd476.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Bona ieško Namų! Prieš kelias savaites prie mūsų prieglaudinukų šeimos prisijungė dvi paaugliukės – Cava ir Stirna. https://www.facebook.com/share/19ovsx1ecv/ K",
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": "2026-11-13T07:35:48Z"
+        }
+      ]
+    },
+    {
+      "source": "mgma",
+      "state": "complete",
+      "animals": 21,
+      "skipped": 2,
+      "requests": 4,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 17,
+        "unknown": 4
+      },
+      "known": {
+        "name": 21,
+        "species": 21,
+        "sex": 0,
+        "age_text": 18,
+        "size": 0,
+        "photos": 21,
+        "vaccinated": 18,
+        "neutered": 13,
+        "chipped": 17,
+        "bio_lt": 21
+      },
+      "sample": [
+        {
+          "id": "mgma:27291",
+          "source": "mgma",
+          "sourceUrl": "https://mgma.lt/gyvunas/soja-skiepyta-cipuota/",
+          "name": "Soja",
+          "species": "cat",
+          "sex": null,
+          "age_text": "gimusi apie 2026 metų rugsėjo pradžią",
+          "size": null,
+          "photos": [
+            "https://mgma.lt/wp-content/uploads/2026/11/906897828_1128581353360129_1143818050288977103_n.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": null,
+          "bio_lt": "SOJA – mažas baltas pūkuotas kamuoliukas jau dairosi savo žmogaus! Soja – lyg baltas minkštas debesėlis, kurį norisi apkabinti ir glostyti. Labai meili, nuolat ",
+          "status": "available",
+          "statusEvidence": "Kačiukai Dovanojami",
+          "sourceUpdatedAt": "2026-11-14T10:46:28Z"
+        },
+        {
+          "id": "mgma:27263",
+          "source": "mgma",
+          "sourceUrl": "https://mgma.lt/gyvunas/pripsi-skiepyta-cipuota/",
+          "name": "Pripsi",
+          "species": "cat",
+          "sex": null,
+          "age_text": "gimusi apie 2026 m. rugpjūčio pabaigą",
+          "size": null,
+          "photos": [
+            "https://mgma.lt/wp-content/uploads/2026/11/897252394_3339193046470584_8048193743146442185_n.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": null,
+          "bio_lt": "PRIPSI – rainiukė, turinti savo nuomonę! Ši mažoji dama jau dairosi savo namų ir, žinoma, būsimi šeimininkai turėtų žinoti vieną svarbų dalyką – Pripsi turi sav",
+          "status": "available",
+          "statusEvidence": "Kačiukai Dovanojami",
+          "sourceUpdatedAt": "2026-11-09T08:49:49Z"
+        },
+        {
+          "id": "mgma:27252",
+          "source": "mgma",
+          "sourceUrl": "https://mgma.lt/gyvunas/pudra-skiepyta-cipuota/",
+          "name": "Pudra",
+          "species": "cat",
+          "sex": null,
+          "age_text": "gimusi apie 2026 m. rugpjūčio pabaigą",
+          "size": null,
+          "photos": [
+            "https://mgma.lt/wp-content/uploads/2026/11/897177617_3498287730376919_90603124191611516_n.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": null,
+          "bio_lt": "PUDRA – mažas baltai juodas džiaugsmo kamuoliukas! Ši mažylė jau pasiruošusi naujam gyvenimo nuotykiui – savo namams! Pudra – meili, žaisminga ir vaikiškai išdy",
+          "status": "available",
+          "statusEvidence": "Kačiukai Dovanojami",
+          "sourceUpdatedAt": "2026-11-09T08:42:31Z"
+        },
+        {
+          "id": "mgma:27235",
+          "source": "mgma",
+          "sourceUrl": "https://mgma.lt/gyvunas/3-kaciukai-is-balsupiu-k/",
+          "name": "3 Kačiukai iš Balsupių k.",
+          "species": "cat",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://mgma.lt/wp-content/uploads/2026/10/867380710_1445490441119694_7139428151925897274_n.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "2026 10 28 į mūsų globą perduoti 3 kačiukai: katinas ir dvi katytės iš Balsupių k., Marijampolės sav. Kačiukai apie 5 mėn. amžiaus, pagauti ir sterilizuoti paga",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-10-29T21:16:10Z"
+        },
+        {
+          "id": "mgma:27194",
+          "source": "mgma",
+          "sourceUrl": "https://mgma.lt/gyvunas/uranas-skiepytas-cipuotas/",
+          "name": "Uranas",
+          "species": "cat",
+          "sex": null,
+          "age_text": "Gimęs apie 2026 m. liepos 24 d",
+          "size": null,
+          "photos": [
+            "https://mgma.lt/wp-content/uploads/2026/10/855557121_1647272693647352_8783026817231464165_n.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": null,
+          "bio_lt": "Rainiukas Uranas ieško savo žmogaus! Šiam dryžuotam gražuoliui dar reikia šiek tiek laiko, kad patikėtų žmogumi. Uranas kol kas nedrąsus ir atsargus, todėl jam ",
+          "status": "available",
+          "statusEvidence": "Kačiukai Dovanojami",
+          "sourceUpdatedAt": "2026-10-23T10:48:46Z"
+        }
+      ]
+    },
+    {
+      "source": "keturkojodraugas",
+      "state": "complete",
+      "animals": 28,
+      "skipped": 0,
+      "requests": 3,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "unknown": 7,
+        "available": 21
+      },
+      "known": {
+        "name": 28,
+        "species": 28,
+        "sex": 28,
+        "age_text": 28,
+        "size": 0,
+        "photos": 28,
+        "vaccinated": 21,
+        "neutered": 28,
+        "chipped": 21,
+        "bio_lt": 28
+      },
+      "sample": [
+        {
+          "id": "keturkojodraugas:kates-barbora",
+          "source": "keturkojodraugas",
+          "sourceUrl": "https://keturkojodraugas.lt/kates/",
+          "name": "BARBORA",
+          "species": "cat",
+          "sex": "female",
+          "age_text": "2026-05-01",
+          "size": null,
+          "photos": [
+            "https://keturkojodraugas.lt/wp-content/uploads/2026/11/BARBORA.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": false,
+          "bio_lt": "Veislė: Mix. Kailio spalva: Baltai juoda. Charakteris: Rami. DAR NEDOVANOJAMA. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "keturkojodraugas:kates-lape",
+          "source": "keturkojodraugas",
+          "sourceUrl": "https://keturkojodraugas.lt/kates/",
+          "name": "LAPĖ",
+          "species": "cat",
+          "sex": "female",
+          "age_text": "2026-09-01",
+          "size": null,
+          "photos": [
+            "https://keturkojodraugas.lt/wp-content/uploads/2026/11/LAPUTE.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": false,
+          "bio_lt": "Veislė: Mix. Kailio spalva: Raina. Charakteris: Meili, domisi aplinka. DAR NEDOVANOJAMA. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "keturkojodraugas:kates-alfonsas",
+          "source": "keturkojodraugas",
+          "sourceUrl": "https://keturkojodraugas.lt/kates/",
+          "name": "ALFONSAS",
+          "species": "cat",
+          "sex": "male",
+          "age_text": "Apie 3 metai",
+          "size": null,
+          "photos": [
+            "https://keturkojodraugas.lt/wp-content/uploads/2026/11/ALFONSAS.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": true,
+          "bio_lt": "Veislė: Mix. Kailio spalva: Juodai balta. Charakteris: Meilus. DAR NEDOVANOJAMAS. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "keturkojodraugas:kates-lapkritis",
+          "source": "keturkojodraugas",
+          "sourceUrl": "https://keturkojodraugas.lt/kates/",
+          "name": "LAPKRITIS",
+          "species": "cat",
+          "sex": "male",
+          "age_text": "-",
+          "size": null,
+          "photos": [
+            "https://keturkojodraugas.lt/wp-content/uploads/2026/11/NAUJOKAS-IS-4.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": false,
+          "bio_lt": "Veislė: Mix. Kailio spalva: Juodai balta. Charakteris: Atsargus, ramus. DAR NEDOVANOJAMAS. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "keturkojodraugas:kates-lelija",
+          "source": "keturkojodraugas",
+          "sourceUrl": "https://keturkojodraugas.lt/kates/",
+          "name": "LELIJA",
+          "species": "cat",
+          "sex": "female",
+          "age_text": "-",
+          "size": null,
+          "photos": [
+            "https://keturkojodraugas.lt/wp-content/uploads/2026/11/JUODUKAS-IS-NAUJOKU.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": false,
+          "bio_lt": "Veislė: Mix. Kailio spalva: Juodai balta. Charakteris: Atsargi, rami. DAR NEDOVANOJAMA. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": null
+        }
+      ]
+    },
+    {
+      "source": "kggn",
+      "state": "complete",
+      "animals": 41,
+      "skipped": 0,
+      "requests": 7,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 21,
+        "unknown": 20
+      },
+      "known": {
+        "name": 41,
+        "species": 41,
+        "sex": 40,
+        "age_text": 40,
+        "size": 0,
+        "photos": 41,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 29
+      },
+      "sample": [
+        {
+          "id": "kggn:2640",
+          "source": "kggn",
+          "sourceUrl": "https://kggn.lt/globotiniai/kovas/",
+          "name": "KOVAS",
+          "species": "dog",
+          "sex": "male",
+          "age_text": "2022",
+          "size": null,
+          "photos": [
+            "https://kggn.lt/wp-content/uploads/2025/02/Ziviles-05600-scaled.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Pavasarišku vardu Kovas blaškėsi Partizanų g., Kaune, kol buvo pagautas moters. Patys parsivežėme jį į NOJAUS prieglobstį. 🙁 Draugiško charakterio ir dar jauno",
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": "2025-02-05T07:38:59Z"
+        },
+        {
+          "id": "kggn:2639",
+          "source": "kggn",
+          "sourceUrl": "https://kggn.lt/globotiniai/atila/",
+          "name": "ATILA",
+          "species": "dog",
+          "sex": "female",
+          "age_text": "2021",
+          "size": null,
+          "photos": [
+            "https://kggn.lt/wp-content/uploads/2025/02/Atila2-scaled.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Atila su savo atžala Agatu – mėnesį laiko blaškėsi MAIŠIAGALOS sen. DŪKŠTELIŲ kaime. 🙁 Šunytė santūri, rami, mėgsta pozuoti nuotraukoms, gražiai eina su pavadž",
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": "2025-02-05T07:06:19Z"
+        },
+        {
+          "id": "kggn:2630",
+          "source": "kggn",
+          "sourceUrl": "https://kggn.lt/globotiniai/agatas/",
+          "name": "AGATAS",
+          "species": "dog",
+          "sex": "male",
+          "age_text": "2022",
+          "size": null,
+          "photos": [
+            "https://kggn.lt/wp-content/uploads/2025/02/Agatas4-scaled.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Agatas kartu su savo mamyte Atila mėnesį laiko blaškėsi MAIŠIAGALOS sen. DŪKŠTELIŲ kaime. 🙁 Vyrukas tikra „DRAMOS KARALIENĖ“, užsispyręs ir padūkęs, dar mokosi",
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": "2025-02-05T07:03:09Z"
+        },
+        {
+          "id": "kggn:2591",
+          "source": "kggn",
+          "sourceUrl": "https://kggn.lt/globotiniai/dikis/",
+          "name": "DIKIS",
+          "species": "dog",
+          "sex": "male",
+          "age_text": "2015",
+          "size": null,
+          "photos": [
+            "https://kggn.lt/wp-content/uploads/2025/02/Dikis2-scaled.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Mėtytas ir vėtytas, šeimininkų išduotas, kaimynų prižiūrėtas, ne pirmos jaunystės DIKIS iš JONIŠKIO GYVŪNŲ GLOBOS DRAUGIJOS atvyko į NOJŲ. Tikisi savo orią sena",
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": "2025-02-03T15:40:39Z"
+        },
+        {
+          "id": "kggn:2583",
+          "source": "kggn",
+          "sourceUrl": "https://kggn.lt/globotiniai/drakone/",
+          "name": "DRAKONĖ",
+          "species": "dog",
+          "sex": "female",
+          "age_text": "2015",
+          "size": null,
+          "photos": [
+            "https://kggn.lt/wp-content/uploads/2025/01/Drakone1-scaled.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Drakonė daugiau nei metus klaidžioje neturėdama vietos ir gyvendama benamės gyvenimą&#8230; NOJAUS slenkstį ji peržengė kartu su 13 atžalų. Vaikučiai rado namus",
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": "2025-01-30T10:51:15Z"
+        }
+      ]
+    },
+    {
+      "source": "lese",
+      "state": "complete",
+      "animals": 76,
+      "skipped": 0,
+      "requests": 15,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 66,
+        "reserved": 5,
+        "unknown": 5
+      },
+      "known": {
+        "name": 72,
+        "species": 76,
+        "sex": 0,
+        "age_text": 0,
+        "size": 0,
+        "photos": 76,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 0
+      },
+      "sample": [
+        {
+          "id": "lese:en-urve",
+          "source": "lese",
+          "sourceUrl": "https://lese.lt/globotiniai/en-urve/",
+          "name": "Urvė",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://lese.lt/wp-content/uploads/2026/11/ae872ad717ce86e7de61c7df5e2b8a8f-768x1024.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "lese:en-ola",
+          "source": "lese",
+          "sourceUrl": "https://lese.lt/globotiniai/en-ola/",
+          "name": "Ola",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://lese.lt/wp-content/uploads/2026/11/ff50a1bff9b8d05ef8b121a15c8a4ff3-768x1024.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "lese:en-urvis",
+          "source": "lese",
+          "sourceUrl": "https://lese.lt/globotiniai/en-urvis/",
+          "name": "Urvis",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://lese.lt/wp-content/uploads/2026/11/77ea4062b911216fa959747d869b338a-768x1024.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "lese:51862-2",
+          "source": "lese",
+          "sourceUrl": "https://lese.lt/globotiniai/51862-2/",
+          "name": null,
+          "species": "cat",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://lese.lt/wp-content/uploads/2026/11/6908bd84b039d15f3a5b34c76802384b-768x1024.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "reserved",
+          "statusEvidence": "Rezervuotas",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "lese:51859-2",
+          "source": "lese",
+          "sourceUrl": "https://lese.lt/globotiniai/51859-2/",
+          "name": null,
+          "species": "cat",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://lese.lt/wp-content/uploads/2026/11/8ab6a836836f0598b004ebfe53bf8e0e-768x1024.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų",
+          "sourceUpdatedAt": null
+        }
+      ]
+    },
+    {
+      "source": "tautmilesgloba",
+      "state": "complete",
+      "animals": 19,
+      "skipped": 0,
+      "requests": 2,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 19
+      },
+      "known": {
+        "name": 19,
+        "species": 0,
+        "sex": 0,
+        "age_text": 0,
+        "size": 0,
+        "photos": 19,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 0
+      },
+      "sample": [
+        {
+          "id": "tautmilesgloba:cipas-3",
+          "source": "tautmilesgloba",
+          "sourceUrl": "https://tautmilesgloba.lt/gyvunai/cipas-3/",
+          "name": "Čipas",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://tautmilesgloba.lt/wp-content/uploads/2026/08/IMG_4092-500x500.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "tautmilesgloba:bobikas",
+          "source": "tautmilesgloba",
+          "sourceUrl": "https://tautmilesgloba.lt/gyvunai/bobikas/",
+          "name": "Bobikas",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://tautmilesgloba.lt/wp-content/uploads/2026/08/IMG_4056-394x500.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "tautmilesgloba:ziulis-2",
+          "source": "tautmilesgloba",
+          "sourceUrl": "https://tautmilesgloba.lt/gyvunai/ziulis-2/",
+          "name": "Žiulis",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://tautmilesgloba.lt/wp-content/uploads/2026/08/IMG_4053-500x500.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "tautmilesgloba:leila-3",
+          "source": "tautmilesgloba",
+          "sourceUrl": "https://tautmilesgloba.lt/gyvunai/leila-3/",
+          "name": "Leila",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://tautmilesgloba.lt/wp-content/uploads/2026/08/IMG_3733-500x500.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "tautmilesgloba:dangis",
+          "source": "tautmilesgloba",
+          "sourceUrl": "https://tautmilesgloba.lt/gyvunai/dangis/",
+          "name": "Dangis",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://tautmilesgloba.lt/wp-content/uploads/2026/08/IMG_3674-500x500.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": null
+        }
+      ]
+    },
+    {
+      "source": "mazijausmai",
+      "state": "complete",
+      "animals": 36,
+      "skipped": 1,
+      "requests": 2,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 36
+      },
+      "known": {
+        "name": 36,
+        "species": 0,
+        "sex": 0,
+        "age_text": 0,
+        "size": 0,
+        "photos": 36,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 0
+      },
+      "sample": [
+        {
+          "id": "mazijausmai:liepsnele",
+          "source": "mazijausmai",
+          "sourceUrl": "https://mazijausmai.lt/liepsnele/",
+          "name": "Liepsnelė",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound551178545470449814-1-1024x766.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Namų ieškantys gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "mazijausmai:orionas",
+          "source": "mazijausmai",
+          "sourceUrl": "https://mazijausmai.lt/orionas/",
+          "name": "Orionas",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound4540238662853067588-2-1024x766.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Namų ieškantys gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "mazijausmai:saris",
+          "source": "mazijausmai",
+          "sourceUrl": "https://mazijausmai.lt/saris/",
+          "name": "Saris",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound5931104054772487867-2-1024x766.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Namų ieškantys gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "mazijausmai:micaras",
+          "source": "mazijausmai",
+          "sourceUrl": "https://mazijausmai.lt/micaras/",
+          "name": "Micaras",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound6502988481695326838-2-1024x766.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Namų ieškantys gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "mazijausmai:turkis",
+          "source": "mazijausmai",
+          "sourceUrl": "https://mazijausmai.lt/turkis/",
+          "name": "Turkis",
+          "species": null,
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound7654246363881569183-5-1024x757.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Namų ieškantys gyvūnai",
+          "sourceUpdatedAt": null
+        }
+      ]
+    },
+    {
+      "source": "bukmanodraugas",
+      "state": "complete",
+      "animals": 41,
+      "skipped": 0,
+      "requests": 4,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 41
+      },
+      "known": {
+        "name": 41,
+        "species": 41,
+        "sex": 0,
+        "age_text": 0,
+        "size": 0,
+        "photos": 41,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 41
+      },
+      "sample": [
+        {
+          "id": "bukmanodraugas:2542",
+          "source": "bukmanodraugas",
+          "sourceUrl": "https://bukmanodraugas.lt/martukas/",
+          "name": "Martukas",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://bukmanodraugas.lt/wp-content/uploads/2026/11/986089CA-1C1D-4BBE-8D9D-BB7C96634B39.png"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Martulis su dar dviem nelaimės draugiukais atvyko iš Tauragės rajono. Šeimininkas mirė, giminaičiai atidavė į prieglaudą. Atvykus paimti visus teko nurišti nuo ",
+          "status": "available",
+          "statusEvidence": "ieško namų",
+          "sourceUpdatedAt": "2026-11-11T18:50:16Z"
+        },
+        {
+          "id": "bukmanodraugas:2533",
+          "source": "bukmanodraugas",
+          "sourceUrl": "https://bukmanodraugas.lt/arciukas/",
+          "name": "Arčiukas",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://bukmanodraugas.lt/wp-content/uploads/2026/11/IMG_0978.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Susipažinkite su Arčiuku. Šunelis buvo paliktas Klaipėdos miesto pakrašty netoli miško. Atvyko kaip ir visi susistresavęs. Dabar savo gyvenamą vietą prieglaudoj",
+          "status": "available",
+          "statusEvidence": "ieško namų",
+          "sourceUpdatedAt": "2026-11-11T18:27:29Z"
+        },
+        {
+          "id": "bukmanodraugas:2526",
+          "source": "bukmanodraugas",
+          "sourceUrl": "https://bukmanodraugas.lt/zolina/",
+          "name": "Zolina",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://bukmanodraugas.lt/wp-content/uploads/2026/11/CC5BF147-017C-4F88-AC87-B4EC5CACC2CE.png"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Zolina į prieglaudą atvyko besilaukianti. Čia susilaukė šuniukų, kurie jau visi sėkmingai rado savo namus. Dabar savo žmogaus laukia ir pati Zolina. Atvykusi ji",
+          "status": "available",
+          "statusEvidence": "ieško namų",
+          "sourceUpdatedAt": "2026-11-10T22:04:31Z"
+        },
+        {
+          "id": "bukmanodraugas:2522",
+          "source": "bukmanodraugas",
+          "sourceUrl": "https://bukmanodraugas.lt/meilis/",
+          "name": "Meilis",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://bukmanodraugas.lt/wp-content/uploads/2026/11/EF858B20-982B-4FE9-AB03-BC984027A222.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Meilis – šuniukas, kuris išsiskiria ne tik savo gražiu, blizgančiu juodu kailiuku, bet ir puikiu būdu. Tai ramus, draugiškas ir žmogumi pasitikintis šuo. Į kitu",
+          "status": "available",
+          "statusEvidence": "ieško namų",
+          "sourceUpdatedAt": "2026-11-08T11:27:03Z"
+        },
+        {
+          "id": "bukmanodraugas:2516",
+          "source": "bukmanodraugas",
+          "sourceUrl": "https://bukmanodraugas.lt/pepsis/",
+          "name": "Pepsis",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://bukmanodraugas.lt/wp-content/uploads/2026/10/BA7359CA-B05B-4654-A429-B3573E0CE70C.png"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Pepsis – vidutinio ūgio šunelis, savo išvaizdoje turintis rotveilerio bruožų. Noriai bendrauja su visais žmonėmis ir mielai priima jų dėmesį bei paglostymus. Pe",
+          "status": "available",
+          "statusEvidence": "ieško namų",
+          "sourceUpdatedAt": "2026-10-23T07:25:11Z"
+        }
+      ]
+    },
+    {
+      "source": "penktakoja",
+      "state": "complete",
+      "animals": 240,
+      "skipped": 0,
+      "requests": 7,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "unknown": 240
+      },
+      "known": {
+        "name": 240,
+        "species": 240,
+        "sex": 0,
+        "age_text": 0,
+        "size": 0,
+        "photos": 221,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 2
+      },
+      "sample": [
+        {
+          "id": "penktakoja:23944",
+          "source": "penktakoja",
+          "sourceUrl": "https://penktakoja.lt/beglobis/trepse/",
+          "name": "TREPSĖ",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://penktakoja.lt/wp-content/uploads/2026/10/trepse-3_2.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-10-27T17:41:26Z"
+        },
+        {
+          "id": "penktakoja:23943",
+          "source": "penktakoja",
+          "sourceUrl": "https://penktakoja.lt/beglobis/volfas/",
+          "name": "VOLFAS",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://penktakoja.lt/wp-content/uploads/2026/10/volfas-4_2.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-10-27T17:41:05Z"
+        },
+        {
+          "id": "penktakoja:23942",
+          "source": "penktakoja",
+          "sourceUrl": "https://penktakoja.lt/beglobis/zrazas/",
+          "name": "ZRAZAS",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://penktakoja.lt/wp-content/uploads/2026/10/zrazas-5_2.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-10-27T17:40:25Z"
+        },
+        {
+          "id": "penktakoja:23912",
+          "source": "penktakoja",
+          "sourceUrl": "https://penktakoja.lt/beglobis/sachas/",
+          "name": "ŠACHAS",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://penktakoja.lt/wp-content/uploads/2026/10/sachas-1_2.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-10-27T17:39:12Z"
+        },
+        {
+          "id": "penktakoja:23911",
+          "source": "penktakoja",
+          "sourceUrl": "https://penktakoja.lt/beglobis/smakis/",
+          "name": "ŠMAKIS",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://penktakoja.lt/wp-content/uploads/2026/10/smakis-3.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-10-27T17:34:25Z"
+        }
+      ]
+    },
+    {
+      "source": "linksmosiospedutes",
+      "state": "complete",
+      "animals": 53,
+      "skipped": 0,
+      "requests": 3,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 53
+      },
+      "known": {
+        "name": 53,
+        "species": 53,
+        "sex": 0,
+        "age_text": 0,
+        "size": 0,
+        "photos": 53,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 0
+      },
+      "sample": [
+        {
+          "id": "linksmosiospedutes:18181",
+          "source": "linksmosiospedutes",
+          "sourceUrl": "https://www.linksmosiospedutes.lt/lt/suniukai/oronas-18181.html",
+          "name": "Oronas",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18181&w=220&h=220&t=crop"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Šuniukai ieškantys namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "linksmosiospedutes:18180",
+          "source": "linksmosiospedutes",
+          "sourceUrl": "https://www.linksmosiospedutes.lt/lt/suniukai/zuzu-18180.html",
+          "name": "Zuzu",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18180&w=220&h=220&t=crop"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Šuniukai ieškantys namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "linksmosiospedutes:18179",
+          "source": "linksmosiospedutes",
+          "sourceUrl": "https://www.linksmosiospedutes.lt/lt/suniukai/syra-18179.html",
+          "name": "Šyra",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18179&w=220&h=220&t=crop"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Šuniukai ieškantys namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "linksmosiospedutes:18159",
+          "source": "linksmosiospedutes",
+          "sourceUrl": "https://www.linksmosiospedutes.lt/lt/suniukai/dzekse-18159.html",
+          "name": "Džeksė",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18159&w=220&h=220&t=crop"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Šuniukai ieškantys namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "linksmosiospedutes:18158",
+          "source": "linksmosiospedutes",
+          "sourceUrl": "https://www.linksmosiospedutes.lt/lt/suniukai/peka-18158.html",
+          "name": "Peka",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18158&w=220&h=220&t=crop"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Šuniukai ieškantys namų",
+          "sourceUpdatedAt": null
+        }
+      ]
+    },
+    {
+      "source": "mazasdraugas",
+      "state": "complete",
+      "animals": 36,
+      "skipped": 0,
+      "requests": 3,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 36
+      },
+      "known": {
+        "name": 36,
+        "species": 36,
+        "sex": 0,
+        "age_text": 36,
+        "size": 0,
+        "photos": 36,
+        "vaccinated": 35,
+        "neutered": 33,
+        "chipped": 35,
+        "bio_lt": 36
+      },
+      "sample": [
+        {
+          "id": "mazasdraugas:13856",
+          "source": "mazasdraugas",
+          "sourceUrl": "https://www.mazasdraugas.lt/saris/",
+          "name": "Šaris",
+          "species": "dog",
+          "sex": null,
+          "age_text": "Gimė: 2018-06",
+          "size": null,
+          "photos": [
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/11/Saris1-684x1024.jpg",
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/11/Saris-1024x684.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": true,
+          "bio_lt": "❤️ Šaris – mielas šunelis, kurio širdelė taip laukia savo žmogaus. Jis be galo draugiškas, švelnus ir kupinas meilės. Labiausiai jis trokšta ilgų pasivaikščioji",
+          "status": "available",
+          "statusEvidence": "Dovanojami šunys",
+          "sourceUpdatedAt": "2026-11-02T17:02:03Z"
+        },
+        {
+          "id": "mazasdraugas:13841",
+          "source": "mazasdraugas",
+          "sourceUrl": "https://www.mazasdraugas.lt/seba/",
+          "name": "Seba",
+          "species": "cat",
+          "sex": null,
+          "age_text": "Gimė: 2020-05",
+          "size": null,
+          "photos": [
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/11/Seba.jpg",
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/11/Seba1-768x1024.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": true,
+          "bio_lt": "❤️ Seba – rami, gera ir miela katytė, draugiškai sutarianti su kitais katinais. Ji svajoja apie savo žmogų ir tikruosius namus. 🏡 Sebos FIV testas teigiamas, t",
+          "status": "available",
+          "statusEvidence": "Dovanojamos katės",
+          "sourceUpdatedAt": "2026-11-02T16:04:24Z"
+        },
+        {
+          "id": "mazasdraugas:13828",
+          "source": "mazasdraugas",
+          "sourceUrl": "https://www.mazasdraugas.lt/pripsas/",
+          "name": "Pripsas",
+          "species": "cat",
+          "sex": null,
+          "age_text": "Gimė: 2026-04",
+          "size": null,
+          "photos": [
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/10/Pripsas1.jpeg",
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/10/Pripsas2-689x1024.jpeg",
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/10/Pripsas-801x1024.jpeg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": null,
+          "bio_lt": "Mielas ir padykęs katinėlis Pripsas laukia nesulaukia, kada galės savuose namuose krėsti išdaigas, kelti šypsenas ir dovanoti savo šeimai jaukų artumą.🏡🧸",
+          "status": "available",
+          "statusEvidence": "Dovanojamos katės",
+          "sourceUpdatedAt": "2026-10-26T19:30:23Z"
+        },
+        {
+          "id": "mazasdraugas:13816",
+          "source": "mazasdraugas",
+          "sourceUrl": "https://www.mazasdraugas.lt/naitas/",
+          "name": "Naitas",
+          "species": "dog",
+          "sex": null,
+          "age_text": "Gimė: 2018-07",
+          "size": null,
+          "photos": [
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/10/Naitas-1024x684.jpg",
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/10/Naitas1-1024x684.jpg",
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/10/Naitas2-1024x684.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": true,
+          "bio_lt": "Naitas – su visais draugiškas, geras ir linksmas šuo. Iš išvaizdos – rimtas, didelis šuo. Atrodo, tikras sargas bus. O iš tiesų elgiasi kaip mažas vaikas. ❤️ Ži",
+          "status": "available",
+          "statusEvidence": "Dovanojami šunys",
+          "sourceUpdatedAt": "2026-10-26T18:59:33Z"
+        },
+        {
+          "id": "mazasdraugas:13800",
+          "source": "mazasdraugas",
+          "sourceUrl": "https://www.mazasdraugas.lt/tobis/",
+          "name": "Tobis",
+          "species": "dog",
+          "sex": null,
+          "age_text": "Gimė: 2022-08",
+          "size": null,
+          "photos": [
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/10/Tobis1-577x1024.jpg",
+            "https://www.mazasdraugas.lt/wp-content/uploads/2026/10/Tobis-1024x684.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": true,
+          "bio_lt": "Tobis – ramus, draugiškas ir visada laimingas! ❤️ Ieškome šiam vaikinui šeimos, kurioje jis būtų mylimas ir visavertis narys, kur jo lauktų smagūs pasivaikščioj",
+          "status": "available",
+          "statusEvidence": "Dovanojami šunys",
+          "sourceUpdatedAt": "2026-10-24T15:59:26Z"
+        }
+      ]
+    },
+    {
+      "source": "rozinepedute",
+      "state": "complete",
+      "animals": 18,
+      "skipped": 0,
+      "requests": 2,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 18
+      },
+      "known": {
+        "name": 18,
+        "species": 0,
+        "sex": 18,
+        "age_text": 0,
+        "size": 0,
+        "photos": 18,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 0
+      },
+      "sample": [
+        {
+          "id": "rozinepedute:emaja",
+          "source": "rozinepedute",
+          "sourceUrl": "https://rozinepedute.lt/gyvunai/emaja/",
+          "name": "EMAJA",
+          "species": null,
+          "sex": "female",
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://rozinepedute.lt/wp-content/uploads/FB_IMG_1794830084689-1440x1920.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "rozinepedute:frontis",
+          "source": "rozinepedute",
+          "sourceUrl": "https://rozinepedute.lt/gyvunai/frontis/",
+          "name": "FRONTIS",
+          "species": null,
+          "sex": "male",
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://rozinepedute.lt/wp-content/uploads/received_1833790911175288-1081x1920.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "rozinepedute:fronkis",
+          "source": "rozinepedute",
+          "sourceUrl": "https://rozinepedute.lt/gyvunai/fronkis/",
+          "name": "FRONKIS",
+          "species": null,
+          "sex": "male",
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://rozinepedute.lt/wp-content/uploads/received_1825087875243977-1081x1920.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "rozinepedute:sansa",
+          "source": "rozinepedute",
+          "sourceUrl": "https://rozinepedute.lt/gyvunai/sansa/",
+          "name": "SANSA",
+          "species": null,
+          "sex": "female",
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://rozinepedute.lt/wp-content/uploads/IMG_20261112_132700_1-1440x1920.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "rozinepedute:verona",
+          "source": "rozinepedute",
+          "sourceUrl": "https://rozinepedute.lt/gyvunai/verona/",
+          "name": "VERONA",
+          "species": null,
+          "sex": "female",
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://rozinepedute.lt/wp-content/uploads/IMG_20261112_132538_2-1440x1920.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojami gyvūnai",
+          "sourceUpdatedAt": null
+        }
+      ]
+    },
+    {
+      "source": "siauliuletenele",
+      "state": "complete",
+      "animals": 207,
+      "skipped": 0,
+      "requests": 5,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "unknown": 199,
+        "reserved": 4,
+        "confirmed_adopted": 4
+      },
+      "known": {
+        "name": 185,
+        "species": 207,
+        "sex": 0,
+        "age_text": 196,
+        "size": 0,
+        "photos": 207,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 207
+      },
+      "sample": [
+        {
+          "id": "siauliuletenele:92798",
+          "source": "siauliuletenele",
+          "sourceUrl": "https://siauliuletenele.lt/is-vienkiemio/",
+          "name": "UNA",
+          "species": "dog",
+          "sex": null,
+          "age_text": "ŠUNYS, GIMĘ 2024-2026 M.",
+          "size": null,
+          "photos": [
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_2380880079395391.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_1865801614872247.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Kiek kartais nedaug reikia žmogui iki laimės- tik išgelbėti vienišą mažą šuniuką 💓 Buvo sugauta maža, nė metų neturinti kalytė, kuri, mažiausiai, du mėnesius g",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-11-16T05:46:46Z"
+        },
+        {
+          "id": "siauliuletenele:92790",
+          "source": "siauliuletenele",
+          "sourceUrl": "https://siauliuletenele.lt/is-radviliskio-6/",
+          "name": null,
+          "species": "dog",
+          "sex": null,
+          "age_text": "ŠUNYS, GIMĘ 2017-2023 M.",
+          "size": null,
+          "photos": [
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1935563201188294.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_1481803203881597.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_2210758903147486.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1441090554218272.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1429478805921500.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_2323725175049373.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Šunelis iš Radviliškio, tel. [kontaktas pašalintas]",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-11-16T05:47:12Z"
+        },
+        {
+          "id": "siauliuletenele:92785",
+          "source": "siauliuletenele",
+          "sourceUrl": "https://siauliuletenele.lt/karadajus/",
+          "name": "KARADAJUS",
+          "species": "dog",
+          "sex": null,
+          "age_text": "ŠUNYS, GIMĘ 2017-2023 M.",
+          "size": null,
+          "photos": [
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1620276173181802.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1672704867627656.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1746426143770801.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Karadajus iš Pakiršinio k., Radviliškio r., tel. [kontaktas pašalintas]",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-11-16T05:47:26Z"
+        },
+        {
+          "id": "siauliuletenele:92739",
+          "source": "siauliuletenele",
+          "sourceUrl": "https://siauliuletenele.lt/dina-ir-dukrytes/",
+          "name": "DINA IR DUKRYTĖS",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_1B88A589-7D64-4877-848E-AFAB03A54DBF.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_E0C5CE88-A86F-4BF8-B5D2-DAAF0BEE282D.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_96BF779E-DF0A-47F2-A62F-0419AEF5A2F3.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_7BA3D770-2742-4B6F-B90D-ADDAAD0569A9.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_8F6DBD09-80EE-442C-A25C-2C3144830666.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_7D5E69C1-4187-4CE3-A716-3726A9A6B372.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_1CB76ED5-BDEB-4F7C-83DC-1D93AEA60F1C.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_3088AF59-DB9B-4375-8655-4204D6A146E3.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_B204A233-F77A-4D3B-94CC-0BA8D166F101.jpeg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_D6A73009-FF98-48D2-844C-B07F7E8F33A8.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Dina buvo kambarinis šuniukas, taip ir turėjo būti, nes jos kailis visiškai nepritaikytas žiemoti lauke. Kodėl prieš kelis metus močiutė nusprendė ją pririšti p",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-11-16T05:49:54Z"
+        },
+        {
+          "id": "siauliuletenele:92734",
+          "source": "siauliuletenele",
+          "sourceUrl": "https://siauliuletenele.lt/ganga/",
+          "name": "GANGA",
+          "species": "dog",
+          "sex": null,
+          "age_text": "ŠUNYS, GIMĘ 2017-2023 M.",
+          "size": null,
+          "photos": [
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1452712079533923.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1618918522865149.jpg",
+            "https://siauliuletenele.lt/wp-content/uploads/2026/11/Business-Suite_creation_1740454330918296.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Mirus senoliui, liko jo ištikima keturkojė draugė Ganga… Kalytė buvo palikta viena nešildomoje troboje. Paimta iš Daugėlių k., sodų bendrija „Sodžius“, Šiaulių ",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": "2026-11-13T06:47:37Z"
+        }
+      ]
+    },
+    {
+      "source": "gyvunugloba",
+      "state": "complete",
+      "animals": 37,
+      "skipped": 0,
+      "requests": 5,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 37
+      },
+      "known": {
+        "name": 37,
+        "species": 37,
+        "sex": 0,
+        "age_text": 0,
+        "size": 0,
+        "photos": 36,
+        "vaccinated": 0,
+        "neutered": 0,
+        "chipped": 0,
+        "bio_lt": 0
+      },
+      "sample": [
+        {
+          "id": "gyvunugloba:loris-2",
+          "source": "gyvunugloba",
+          "sourceUrl": "https://gyvunugloba.com/portfolio_page/loris-2/",
+          "name": "Loris",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://gyvunugloba.com/wp-content/uploads/2026/08/20260805_1422270.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "gyvunugloba:agrastas",
+          "source": "gyvunugloba",
+          "sourceUrl": "https://gyvunugloba.com/portfolio_page/agrastas/",
+          "name": "Agrastas",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://gyvunugloba.com/wp-content/uploads/2025/10/Messenger_creation_E017AC82-7620-459E-B3AC-9228CBCABF6D.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "gyvunugloba:sakira",
+          "source": "gyvunugloba",
+          "sourceUrl": "https://gyvunugloba.com/portfolio_page/sakira/",
+          "name": "Šakira",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://gyvunugloba.com/wp-content/uploads/2025/10/IMG-20251007-WA0028.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "gyvunugloba:meksika-2",
+          "source": "gyvunugloba",
+          "sourceUrl": "https://gyvunugloba.com/portfolio_page/meksika-2/",
+          "name": "Meksika",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://gyvunugloba.com/wp-content/uploads/2025/08/Messenger_creation_1287A83F-24FC-454C-A7EF-973DC2148836-1.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų gyvūnai",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "gyvunugloba:dzosas-2",
+          "source": "gyvunugloba",
+          "sourceUrl": "https://gyvunugloba.com/portfolio_page/dzosas-2/",
+          "name": "Džošas",
+          "species": "dog",
+          "sex": null,
+          "age_text": null,
+          "size": null,
+          "photos": [
+            "https://gyvunugloba.com/wp-content/uploads/2025/08/DSC02648-2.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Ieško namų gyvūnai",
+          "sourceUpdatedAt": null
+        }
+      ]
+    },
+    {
+      "source": "katinosvajone",
+      "state": "complete",
+      "animals": 40,
+      "skipped": 0,
+      "requests": 44,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 40
+      },
+      "known": {
+        "name": 40,
+        "species": 0,
+        "sex": 40,
+        "age_text": 40,
+        "size": 0,
+        "photos": 40,
+        "vaccinated": 0,
+        "neutered": 40,
+        "chipped": 0,
+        "bio_lt": 0
+      },
+      "sample": [
+        {
+          "id": "katinosvajone:tankas",
+          "source": "katinosvajone",
+          "sourceUrl": "https://www.katinosvajone.lt/musu-globotinis/tankas",
+          "name": "Tankas",
+          "species": null,
+          "sex": "male",
+          "age_text": "6-12 Mėnesiai",
+          "size": null,
+          "photos": [
+            "https://www.katinosvajone.lt/wp-content/uploads/2026/11/IMG_8291-scaled-703x800-c-center.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": false,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "katinosvajone:dolcius",
+          "source": "katinosvajone",
+          "sourceUrl": "https://www.katinosvajone.lt/musu-globotinis/dolcius",
+          "name": "Dolčius",
+          "species": null,
+          "sex": "male",
+          "age_text": "6-12 Mėnesiai",
+          "size": null,
+          "photos": [
+            "https://www.katinosvajone.lt/wp-content/uploads/2026/11/IMG_8288-scaled-682x800-c-center.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": false,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "katinosvajone:gustas",
+          "source": "katinosvajone",
+          "sourceUrl": "https://www.katinosvajone.lt/musu-globotinis/gustas",
+          "name": "Gustas",
+          "species": null,
+          "sex": "male",
+          "age_text": "6-12 Mėnesiai",
+          "size": null,
+          "photos": [
+            "https://www.katinosvajone.lt/wp-content/uploads/2026/11/IMG_8294-scaled-695x800-c-center.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": false,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojamas",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "katinosvajone:sirena",
+          "source": "katinosvajone",
+          "sourceUrl": "https://www.katinosvajone.lt/musu-globotinis/sirena",
+          "name": "Sirena",
+          "species": null,
+          "sex": "female",
+          "age_text": "1-3 Metai",
+          "size": null,
+          "photos": [
+            "https://www.katinosvajone.lt/wp-content/uploads/2026/11/IMG_8286-scaled-814x800-c-center.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": true,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojama",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "katinosvajone:luse-2",
+          "source": "katinosvajone",
+          "sourceUrl": "https://www.katinosvajone.lt/musu-globotinis/luse-2",
+          "name": "Lūšė",
+          "species": null,
+          "sex": "female",
+          "age_text": "1-3 Metai",
+          "size": null,
+          "photos": [
+            "https://www.katinosvajone.lt/wp-content/uploads/2026/11/IMG_8303-scaled-443x800-c-center.jpeg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": true,
+          "bio_lt": null,
+          "status": "available",
+          "statusEvidence": "Dovanojama",
+          "sourceUpdatedAt": null
+        }
+      ]
+    },
+    {
+      "source": "padekman",
+      "state": "complete",
+      "animals": 88,
+      "skipped": 0,
+      "requests": 98,
+      "published": true,
+      "reason": null,
+      "errors": [],
+      "byStatus": {
+        "available": 85,
+        "unknown": 3
+      },
+      "known": {
+        "name": 88,
+        "species": 87,
+        "sex": 67,
+        "age_text": 84,
+        "size": 0,
+        "photos": 84,
+        "vaccinated": 19,
+        "neutered": 82,
+        "chipped": 54,
+        "bio_lt": 83
+      },
+      "sample": [
+        {
+          "id": "padekman:7440",
+          "source": "padekman",
+          "sourceUrl": "https://padekman.lt/portfolio-item/nr-121-moisej/",
+          "name": "Nr. 121 Moisej",
+          "species": "cat",
+          "sex": "male",
+          "age_text": "1 met.",
+          "size": null,
+          "photos": [
+            "https://padekman.lt/wp-content/uploads/2022/10/Moisej-MINI-.jpg",
+            "https://padekman.lt/wp-content/uploads/2022/10/Moisej-.jpg",
+            "https://padekman.lt/wp-content/uploads/2022/10/Moisej-2.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": true,
+          "bio_lt": "Labai geras, meilus, energingas, draugiškas katinas.",
+          "status": "available",
+          "statusEvidence": "Ieško namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "padekman:7436",
+          "source": "padekman",
+          "sourceUrl": "https://padekman.lt/portfolio-item/nr-120/",
+          "name": "Nr.120",
+          "species": "cat",
+          "sex": "male",
+          "age_text": "4 mėn",
+          "size": null,
+          "photos": [
+            "https://padekman.lt/wp-content/uploads/2022/10/MINI-mar-1.jpg",
+            "https://padekman.lt/wp-content/uploads/2022/10/mar-1.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Energingas, draugiškas kačiukas.",
+          "status": "available",
+          "statusEvidence": "Ieško namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "padekman:7342",
+          "source": "padekman",
+          "sourceUrl": "https://padekman.lt/portfolio-item/nr-103-juoduke/",
+          "name": "Nr.103 Juodukė",
+          "species": "cat",
+          "sex": "female",
+          "age_text": "2 mėn.",
+          "size": null,
+          "photos": [
+            "https://padekman.lt/wp-content/uploads/2022/07/Mergait%C4%97-2-mini.jpg",
+            "https://padekman.lt/wp-content/uploads/2022/07/Mergait%C4%97-mini-.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Katytė juodukė ieško namų. 2 mėn, energinga, žaisminga. Dabar bijo žmonių, bet po truputį «leda juda į priekį» ir teigiamų pokyčių jau galima matyti.",
+          "status": "unknown",
+          "statusEvidence": null,
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "padekman:7327",
+          "source": "padekman",
+          "sourceUrl": "https://padekman.lt/portfolio-item/cernys/",
+          "name": "Černyš",
+          "species": "dog",
+          "sex": "male",
+          "age_text": "4 metai",
+          "size": null,
+          "photos": [
+            "https://padekman.lt/wp-content/uploads/2022/07/Cerny%C5%A1-mini.jpg"
+          ],
+          "chipped": null,
+          "vaccinated": null,
+          "neutered": null,
+          "bio_lt": "Buvo naminis šuo. Nedidelis, geras, draugiškas, gerai gali sutarti su kitais šunimis ir katinais.",
+          "status": "available",
+          "statusEvidence": "Ieško namų",
+          "sourceUpdatedAt": null
+        },
+        {
+          "id": "padekman:7321",
+          "source": "padekman",
+          "sourceUrl": "https://padekman.lt/portfolio-item/nr-101-pusok/",
+          "name": "Nr.101 Pušok",
+          "species": "cat",
+          "sex": "male",
+          "age_text": "8 metai",
+          "size": null,
+          "photos": [
+            "https://padekman.lt/wp-content/uploads/2022/07/Pushok-mini-.jpg",
+            "https://padekman.lt/wp-content/uploads/2022/07/Pushok-2-mini-.jpg"
+          ],
+          "chipped": true,
+          "vaccinated": true,
+          "neutered": true,
+          "bio_lt": "Geraširdis senolis katinas, buvo paiimtas iš prieglaudos prieš 6 metus. Šeimininkas mirė ir katinas buvo grąžintas atgal į prieglaudą.",
+          "status": "available",
+          "statusEvidence": "Ieško namų",
+          "sourceUpdatedAt": null
+        }
+      ]
+    }
+  ]
+}
