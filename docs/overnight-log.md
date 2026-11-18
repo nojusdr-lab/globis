@@ -88,6 +88,7 @@
 - **Lesės logotipas** (Kaunas, Vilnius): imamas iš lese.lt (robots leidžia). Logotipas baltas, todėl rodomas ant Lesės oranžinės `#e87e04` (laukas `logoBg`). Dabar logotipą turi visos 24 programėlėje rodomos prieglaudos. Patikrinta naršyklėje. Kiti 23 logotipai vis dar imami iš globok.lt. Testai 264/0.
 - **Prieglaudų logotipai iš jų pačių svetainių**: 15 prieglaudų logotipas dabar imamas iš jų svetainės, ne iš globok.lt. Kur apvali svetainės ikona aiškesnė, imta ji. Visi patikrinti akimi ir programėlėje, neveikiančių 0. Globok.lt liko 8: 5 be svetainės adreso, o Maži jausmai, Rasų globa ir Linksma uodegėlė laukia sutikimo.
 - **Dar 3 logotipai iš pačių prieglaudų**: Padėk man, Naminukai (svetainės ikona), Rožinė pėdutė (logotipas). Mažeikiai turi tik `favicon.ico`, o iOS jo nerodo, todėl paliktas globok.lt. Globok.lt liko 5 logotipai. Testai 264/0.
+- **Kryžminė patikra su globok.lt** (`scripts/crosscheck/globok.cjs`, savininko idėja): po 5 gyvūnus iš 17 prieglaudų (81 globok puslapis, 5 s tarpai, į programėlę nieko nepatenka). Rūšis ir lytis visur sutampa. 8 neatitikimai, visi dėl kastracijos ar skiepų: Naminukai 3, Lesė Vilnius 5. Patikrinti du prieglaudų puslapiai (Torūnė „KASTRACIJA: Neatlikta“, Arija „Sterilizacija: ne“): teisūs mes, klysta globok. „Tik globok“ (vardas nerastas pas mus, pvz. Lesė Vilnius 11, Linksmosios pėdutės 10) dar neperžiūrėta: gali būti pervadinti, įvaikinti arba praleisti. Testai 266/0.
 
 ## Laukia savininko
 
