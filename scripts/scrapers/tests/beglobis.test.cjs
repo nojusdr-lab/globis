@@ -76,7 +76,7 @@ test('beglobis: real detail page facts; contacts not read; unknown stays null', 
   assert.doesNotMatch(JSON.stringify(m), /Vilnius|Skydo|@/);
 });
 
-test('beglobis: second real detail page (Lota): guardian Beglobis kept, health only in bio', async () => {
+test('beglobis: second real detail page (Lota): guardian Beglobis kept, health from bio text', async () => {
   const { run } = await collect();
   const l = run.animals.find(a => a.id === 'beglobis:4101');
   assert.equal(l.name, 'Lota');
@@ -85,7 +85,10 @@ test('beglobis: second real detail page (Lota): guardian Beglobis kept, health o
   assert.equal(l.age_text, '7 metai');
   assert.equal(l.status, 'available');
   assert.match(l.bio_lt, /sterilizuota, skiepyta/);
-  for (const f of ['vaccinated', 'neutered', 'chipped']) assert.equal(l[f], null, `${f}: only in free text, not a labelled fact`);
+  // The description states it plainly, so it counts (lib/labels.cjs fromProse): "sterilizuota, skiepyta,ženklinta mikroschema".
+  assert.equal(l.neutered, true);
+  assert.equal(l.vaccinated, true);
+  assert.equal(l.chipped, true);
   assert.deepEqual(run.skipped, []);
 });
 

@@ -79,9 +79,10 @@ test('sos-gyvunai: parses REST fields, unknowns stay null, donation block not in
   assert.equal(iz.species, 'dog');
   assert.equal(iz.age_text, 'Jauni (6 mėn. - 2 m.)');
 
-  // The site has no structured sex/size/health fields; prose is not parsed into facts.
+  // No structured sex/size/health fields. Health words stated in the description count (fromProse).
+  assert.equal(im.neutered, true); // "Jis atvyko jau kastruotas"
   for (const a of run.animals) {
-    for (const f of ['sex', 'size', 'vaccinated', 'neutered', 'chipped']) assert.equal(a[f], null, `${a.id} ${f}`);
+    for (const f of ['sex', 'size']) assert.equal(a[f], null, `${a.id} ${f}`);
   }
 });
 

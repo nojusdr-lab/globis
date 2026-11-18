@@ -3,7 +3,7 @@
 // Usage: node scripts/scrapers/completeness.cjs [src/data/directPets.json]
 const FIELDS = {
   photo: p => p.photos?.length > 0, species: p => p.species != null, sex: p => p.sex != null,
-  age: p => p.ageLt != null, size: p => p.size != null, vaccinated: p => p.medical?.vaccinated != null,
+  age: p => p.ageLt != null, size: p => p.size != null, chipped: p => p.medical?.chipped != null, vaccinated: p => p.medical?.vaccinated != null,
   neutered: p => p.medical?.neutered != null, bio: p => !!p.bioLt,
 };
 

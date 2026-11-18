@@ -2,6 +2,7 @@
 // One animal as seen on a source page. Mirrors public.snapshot_animals.
 // Every fact is nullable; null means "the page did not say".
 const { cleanText, stripPrivate } = require('./normalize.cjs');
+const { fromProse } = require('./labels.cjs');
 
 const STATUSES = new Set(['available', 'reserved', 'unknown', 'confirmed_adopted']);
 const FIELDS = ['name', 'species', 'sex', 'age_text', 'size', 'chipped', 'vaccinated', 'neutered', 'bio_lt'];
@@ -45,6 +46,9 @@ function makeAnimal(sourceId, input) {
     // Which shelter record of a multi-branch source this animal belongs to (to-app-data.cjs).
     shelterHint: cleanText(input.shelterHint),
   };
+  // Labelled facts win; the description text fills only what the adapter left unknown.
+  const prose = fromProse(animal.bio_lt);
+  for (const k of ['chipped', 'vaccinated', 'neutered']) if (animal[k] === null && k in prose) animal[k] = prose[k];
   if (animal.bio_lt && animal.bio_lt.length > 4000) animal.bio_lt = animal.bio_lt.slice(0, 4000) + '…';
   return animal;
 }

@@ -47,4 +47,32 @@ function pairsFromText(text) {
     .map(m => [m[1], m[2]]);
 }
 
-module.exports = { fromPairs, pairsFromText, fieldFor };
+// Health facts stated in free text ("Kastruotas, čipuotas, paskiepytas."). Only whole words that
+// say the thing is done or not done ("not yet done" counts as no).
+// Both a yes and a no in one text (a mother and her kittens) -> null.
+const PROSE = {
+  neutered: [/^(kastruotas|kastruota|kastruoti|sterilizuotas|sterilizuota|sterilizuoti)$/, /^(nekastruotas|nekastruota|nekastruoti|nesterilizuotas|nesterilizuota|nesterilizuoti)$/],
+  vaccinated: [/^(paskiepytas|paskiepyta|paskiepyti|skiepytas|skiepyta|skiepyti|vakcinuotas|vakcinuota|vakcinuoti)$/, /^(nepaskiepytas|nepaskiepyta|neskiepytas|neskiepyta|neskiepyti|nevakcinuotas|nevakcinuota)$/],
+  chipped: [/^(čipuotas|čipuota|čipuoti|ženklintas|ženklinta|ženklinti|paženklintas|paženklinta|paženklinti)$/, /^(nečipuotas|nečipuota|neženklintas|neženklinta|nepaženklintas|nepaženklinta)$/],
+};
+// A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
+const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
+
+function fromProse(text) {
+  const out = {};
+  const sentences = N.fold(text).split(/[.!?\n]+/).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
+  for (const [field, [yes, no]] of Object.entries(PROSE)) {
+    const seen = new Set();
+    for (const words of sentences) {
+      const plan = words.some(w => PLAN.test(w));
+      for (const w of words) {
+        if (no.test(w)) seen.add(false);
+        else if (yes.test(w) && !plan) seen.add(true);
+      }
+    }
+    if (seen.size === 1) out[field] = [...seen][0];
+  }
+  return out;
+}
+
+module.exports = { fromPairs, pairsFromText, fieldFor, fromProse };
