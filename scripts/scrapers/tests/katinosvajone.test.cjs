@@ -70,10 +70,12 @@ test('katinosvajone: detail facts filled from the labelled list; unknown stays n
   assert.equal(t.age_text, '6-12 Mėnesiai');
   assert.equal(t.neutered, false);
   assert.deepEqual(t.photos, [`${HOST}/wp-content/uploads/2026/11/IMG_8291-scaled-703x800-c-center.jpeg`]);
-  for (const f of ['species', 'size', 'vaccinated', 'chipped', 'bio_lt', 'sourceUpdatedAt']) assert.equal(t[f], null, f);
+  assert.equal(t.species, 'cat', 'cats-only shelter (/apie-mus), no species field on the page');
+  for (const f of ['size', 'vaccinated', 'chipped', 'bio_lt', 'sourceUpdatedAt']) assert.equal(t[f], null, f);
   const k = byId['katinosvajone:katyte-340'];
   assert.equal(k.name, 'Karvutė');
-  for (const f of ['species', 'sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt']) assert.equal(k[f], null, f);
+  assert.equal(k.species, 'cat');
+  for (const f of ['sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt']) assert.equal(k[f], null, f);
   assert.deepEqual(k.photos, [`${HOST}/wp-content/uploads/2026/11/IMG_8332-scaled-142x142-c-center.jpeg`], 'list thumbnail when gallery is empty');
 });
 

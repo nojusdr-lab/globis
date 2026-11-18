@@ -51,6 +51,7 @@
 - **Utenos gyvūnų globa (gyvunugloba)**: skaitomas kiekvieno gyvūno puslapis (42 užklausos). Gyvai: aprašymas 0→84 %, kastracija 0→16 % (iš teksto). Paramos blokas (sąskaita, PayPal) ir anketos tekstas nukerpami. Lyties, amžiaus, skiepų puslapiuose atskirai nėra. Testai 247/0.
 - **Tautmilės globa**: skaitomas kiekvieno gyvūno puslapis (lentelė ir aprašymas, 21 užklausa). Gyvai: rūšis, lytis, amžius, dydis, kastracija 0→100 %, aprašymas 0→79 %. Telefonai ir darbuotojų vardai iš aprašymo nukerpami. Bendrai: „Ūgio kategorija“ ir „Mažas (iki 30cm)“ dabar atpažįstami kaip dydis visiems adapteriams. Testai 249/0.
 - **SOS gyvūnai**: svetainė perkėlė „Katės“/„Šunys“ po nauja kategorija „Visi gyvūnai“, todėl rūšis buvo dingusi. Dabar kategorijų gylis nesvarbus. Gyvai: rūšis 0→99 %, amžiaus grupė 22→98 % (čipas/skiepai/kastracija 74 % iš aprašymo). Testai 250/0.
+- **Katino svajonė**: rūšis 0→100 % („Apie mus“: prieglauda priima tik kates, 175 sąrašo puslapiuose šunų nėra; puslapio „Rūšis“ etiketė vis tiek svarbesnė). Aprašymo, skiepų, čipo svetainėje nėra. Gyvai perpaleista nebuvo (crawl-delay 10 s), skaičiuota iš paskutinio gyvo paleidimo. Testai 250/0.
 
 ## Laukia savininko
 
