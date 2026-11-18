@@ -15,6 +15,7 @@ const routes = {
   [`${B}/robots.txt`]: { body: fx('robots.txt') },
   [`${B}/lt/suniukai/`]: { body: fx('suniukai.html') },
   [`${B}/lt/kaciukai/`]: { body: fx('kaciukai.html') },
+  [`${B}/lt/suniukai/oronas-18181.html`]: { body: fx('detail-18181.html') },
 };
 
 async function collect(r = routes) {
@@ -24,9 +25,10 @@ async function collect(r = routes) {
   return { run, calls };
 }
 
-test('linksmosiospedutes: robots.txt first, then one GET per listing page, nothing else', async () => {
-  const { calls } = await collect();
-  assert.deepEqual(calls.map(c => c.url), [`${B}/robots.txt`, `${B}/lt/suniukai/`, `${B}/lt/kaciukai/`]);
+test('linksmosiospedutes: robots.txt first, listing pages, then one GET per animal page', async () => {
+  const { calls, run } = await collect();
+  assert.deepEqual(calls.slice(0, 3).map(c => c.url), [`${B}/robots.txt`, `${B}/lt/suniukai/`, `${B}/lt/kaciukai/`]);
+  assert.deepEqual(calls.slice(3).map(c => c.url).sort(), run.animals.map(a => a.sourceUrl).sort());
   assert.ok(calls.every(c => c.method === 'GET'));
 });
 
@@ -43,9 +45,14 @@ test('linksmosiospedutes: parses cards, unknown facts stay null', async () => {
   assert.equal(o.species, 'dog', 'from h1 "Šuniukai"');
   assert.equal(o.sourceUrl, `${B}/lt/suniukai/oronas-18181.html`);
   assert.deepEqual(o.photos, [`${B}/index.php?module=products&method=show_image&column=image&id=18181&w=220&h=220&t=crop`]);
-  for (const f of ['sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt', 'sourceUpdatedAt']) {
-    assert.equal(o[f], null, `${f} is not on the list page`);
-  }
+  // From the detail page; "DYDIS: Nedidukas, 10 kg" is not a size word we map, no sex line, text not kept.
+  assert.equal(o.age_text, '2018 10 14');
+  assert.equal(o.vaccinated, true);
+  assert.equal(o.chipped, true);
+  assert.equal(o.neutered, true);
+  for (const f of ['sex', 'size', 'bio_lt', 'sourceUpdatedAt']) assert.equal(o[f], null, f);
+  // Detail pages missing in this fixture set (404) keep the list-card facts.
+  assert.equal(byId['linksmosiospedutes:18180'].vaccinated, null);
   assert.equal(byId['linksmosiospedutes:17794'].name, 'Salsa', '"(VIDEO)" tag is not part of the name');
   assert.equal(byId['linksmosiospedutes:18179'].name, 'Šyra');
   const d = byId['linksmosiospedutes:18204'];
@@ -77,7 +84,7 @@ test('linksmosiospedutes: follows pagination links to the end (synthetic paging)
   };
   const { run, calls } = await collect(paged);
   assert.equal(run.state, 'complete');
-  assert.deepEqual(calls.map(c => c.url), [`${B}/robots.txt`, `${B}/lt/suniukai/`, `${B}/lt/kaciukai/`, `${B}/lt/kaciukai/?page=2`]);
+  assert.deepEqual(calls.map(c => c.url).filter(u => !u.endsWith(".html")), [`${B}/robots.txt`, `${B}/lt/suniukai/`, `${B}/lt/kaciukai/`, `${B}/lt/kaciukai/?page=2`]);
   assert.equal(run.animals.filter(a => a.species === 'cat').length, 3);
 });
 

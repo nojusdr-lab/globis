@@ -47,6 +47,7 @@
 - **Naujas adapteris** (4, dalis): Mažeikių gyvūnų globos draugija (`mazeikiugyvunai.cjs`). Svetainė skaito savo viešą API, imame tik „adoptable“. Gyvai: 97 gyvūnai per 6 užklausas, rūšis, lytis, gimimo data ir nuotrauka visiems. Kur gyvūnas rastas, neskaitome. Testai 244/0. Programėlėje po kito CI rinkimo.
 - **Nauji adapteriai** (4): baigta. Iš 46 šaltinių 19 turi adapterį; kiti be gyvūnų sąrašo (13), nepasiekiami (9), kitoje gijoje (lietuvagyvunams), užblokuoti robots ar laukia sutikimo (linksmauodegele, rasugloba), pristabdyti (mazijausmai dėl sąlygų, akeso: svetainė „atnaujinama“, REST atsako, bet neskaitome, kol paslėpta).
 - **Sveikatos faktai iš aprašymo** (prioritetas 1): `fromProse` skaito aiškiai parašytus žodžius („kastruotas, skiepytas, ženklintas“); planai („bus sterilizuota“) ir prieštaravimai lieka nežinomi, lentelės reikšmė svarbesnė. sos-gyvunai čipas/skiepai/kastracija 0→74 %, siauliuletenele 0→12–15 %, naminukai čipas 0→23 %. penktakoja: svetainėje faktų nėra (tik vardas ir telefonas). Testai 247/0. Programėlėje po kito CI rinkimo.
+- **Linksmosios pėdutės**: dabar skaitomas kiekvieno gyvūno puslapis (53 užklausos, kešas). Gyvai: amžius (gimimo data) 0→100 %, skiepai 0→98 %, čipas 0→98 %, kastracija 0→81 %. Lyties ir dydžio svetainėje nėra. Aprašymo tekstas nekopijuojamas (svetainė leidžia tik nuorodą). Testai 247/0.
 
 ## Laukia savininko
 
