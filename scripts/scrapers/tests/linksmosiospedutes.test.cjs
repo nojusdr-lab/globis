@@ -45,12 +45,13 @@ test('linksmosiospedutes: parses cards, unknown facts stay null', async () => {
   assert.equal(o.species, 'dog', 'from h1 "Šuniukai"');
   assert.equal(o.sourceUrl, `${B}/lt/suniukai/oronas-18181.html`);
   assert.deepEqual(o.photos, [`${B}/index.php?module=products&method=show_image&column=image&id=18181&w=220&h=220&t=crop`]);
-  // From the detail page; "DYDIS: Nedidukas, 10 kg" is not a size word we map, no sex line, text not kept.
+  // From the detail page; "DYDIS: Nedidukas, 10 kg" = small; no sex line, text not kept.
+  assert.equal(o.size, 'small');
   assert.equal(o.age_text, '2018 10 14');
   assert.equal(o.vaccinated, true);
   assert.equal(o.chipped, true);
   assert.equal(o.neutered, true);
-  for (const f of ['sex', 'size', 'bio_lt', 'sourceUpdatedAt']) assert.equal(o[f], null, f);
+  for (const f of ['sex', 'bio_lt', 'sourceUpdatedAt']) assert.equal(o[f], null, f);
   // Detail pages missing in this fixture set (404) keep the list-card facts.
   assert.equal(byId['linksmosiospedutes:18180'].vaccinated, null);
   assert.equal(byId['linksmosiospedutes:17794'].name, 'Salsa', '"(VIDEO)" tag is not part of the name');

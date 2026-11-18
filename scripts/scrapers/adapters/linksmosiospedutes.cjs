@@ -26,7 +26,7 @@ const N = require('../lib/normalize.cjs');
 const L = require('../lib/labels.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
-const PARSER_VERSION = 'linksmosiospedutes-detail-2';
+const PARSER_VERSION = 'linksmosiospedutes-detail-3';
 
 function parseDetail(body, nativeId) {
   const $ = html.load(body);

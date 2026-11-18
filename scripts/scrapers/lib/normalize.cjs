@@ -40,10 +40,12 @@ function sex(value) {
 
 function size(value) {
   // "Mažas (iki 30cm ties ketera)": the size word is what comes before a bracket or comma.
-  const v = fold(value).split(/\s*[(,]/)[0];
-  if (/^(mažas|maža|mažo dydžio|small)$/.test(v)) return 'small';
-  if (/^(vidutinis|vidutinė|vidutinio dydžio|medium)$/.test(v)) return 'medium';
-  if (/^(didelis|didelė|didelio dydžio|large)$/.test(v)) return 'large';
+  // A noun may follow ("Didelis vyrukas"), "labai"/"gana" may lead; "nemažas" (not small) stays unknown.
+  const v = fold(value).split(/\s*[(,]/)[0].replace(/^(labai|gana)\s+/, '');
+  const is = words => new RegExp('^(' + words + ')(\\s+\\p{L}+)?$', 'u').test(v);
+  if (is('mažas|maža|mažo dydžio|mažo ūgio|nedidelis|nedidelė|nedidukas|nedidukė|mažutis|mažutė|mažulytis|mažulytė|small')) return 'small';
+  if (is('vidutinis|vidutinė|vidutinio dydžio|vidutinio ūgio|medium')) return 'medium';
+  if (is('didelis|didelė|didelio dydžio|didelio ūgio|dičkis|stambus|stambi|large')) return 'large';
   return null;
 }
 

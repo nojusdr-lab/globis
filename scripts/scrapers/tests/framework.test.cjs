@@ -186,7 +186,17 @@ test('size: the word before a bracket or comma counts; other words stay unknown'
   const N = require('../lib/normalize.cjs');
   assert.equal(N.size('Mažas (iki 30cm ties ketera)'), 'small');
   assert.equal(N.size('Vidutinis, 15 kg'), 'medium');
-  assert.equal(N.size('Nedidukas, 10 kg svorio'), null);
+  // Real linksmosiospedutes.lt "DYDIS:" values (2026-11-19).
+  assert.equal(N.size('Nedidukas, 10 kg svorio'), 'small');
+  assert.equal(N.size('Mažulytė, 6,6 kg svorio'), 'small');
+  assert.equal(N.size('Mažutė, 7,8 kg svorio'), 'small');
+  assert.equal(N.size('Vidutinio ūgio, 18 kg svorio'), 'medium');
+  assert.equal(N.size('Didelis vyrukas, 32 kg svorio'), 'large');
+  assert.equal(N.size('Labai didelis berniukas, apie 50 kg'), 'large');
+  assert.equal(N.size('Gana didelė mergytė, 26 kg svorio'), 'large');
+  assert.equal(N.size('Dičkis, 41 kg svorio'), 'large');
+  assert.equal(N.size('Nemažas šuo, 27 kg svorio'), null, '"not small" is not a size class');
+  assert.equal(N.size('23,4 kg svorio'), null, 'weight alone is not a size class');
   assert.equal(require('../lib/labels.cjs').fieldFor('Ūgio kategorija'), 'size');
 });
 

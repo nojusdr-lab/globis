@@ -82,6 +82,10 @@
 - **Amžius iš aprašymo** (bendra): „4 m. amžiaus“, „Apie dešimties metų amžiaus“, „~2018 m. gimimo“. Jei tekste minimi keli amžiai (mama ir jaunikliai), laukas lieka tuščias. Gyvai: gyvunugloba amžius 0→8 %, mgma 84→89 %. Lytis iš pasakojimų neimama: per dažnai keli gyvūnai viename tekste. Testai 257/0.
 - **Profilis** (programėlė): lytis ir dydis rodomi žodžiais („Patelė“, „Mažas“), ne kodais („female“, „small“). Data be žodžių („2018 10 14“, „Spėjama gimimo data: …“) rodoma kaip „Gimimo data“, ne „Amžius“. Anglų kalba vietoj „Nenurodyta“ rodomas prieglaudos lietuviškas aprašymas ir amžius. Patikrinta naršyklėje, testai 259/0, web build praeina.
 
+## 2026-11-19
+
+- **Linksmosios pėdutės, dydis** (bendras `N.size`): „Nedidukas“, „Mažutė“, „Mažulytė“ → mažas; „Vidutinio ūgio“ → vidutinis; „Didelis vyrukas“, „Labai didelis“, „Gana didelė“, „Dičkis“ → didelis. „Nemažas“ ir vien svoris lieka nežinomi. Gyvai: dydis 11→32 % (kiti puslapiai DYDIS neturi). Aprašymų ten nėra: tik faktų eilutės ir paramos tekstas. Testai 264/0.
+
 ## Laukia savininko
 
 - Palaikymo el. paštas, privatumo politikos URL, bundle id, Apple Developer paskyra.
