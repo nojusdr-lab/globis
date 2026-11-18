@@ -84,6 +84,8 @@ async function main(perShelter = 5) {
   console.log('| prieglauda | sutapo pagal vardą | patikrinta | nesutampa | tik globok |\n|---|---|---|---|---|');
   for (const [sh, r] of Object.entries(out)) console.log(`| ${sh} | ${r.matched} | ${r.checked} | ${r.mismatches.length} | ${r.onlyGlobok.length} |`);
   console.log(lines.join('\n'));
+  // Names only globok still lists: usually adopted ("Rado namus") on the shelter site, sometimes a missed animal.
+  for (const [sh, r] of Object.entries(out)) if (r.onlyGlobok.length) console.log(`- tik globok, ${sh}: ${r.onlyGlobok.join(', ')}`);
 }
 
 if (require.main === module) main(Number(process.argv[2]) || 5).catch(e => { console.error(e); process.exit(1); });
