@@ -36,6 +36,8 @@
 - **ADR** (11) ir **DB limitų stebėjimas** (20): `81b809c`, roadmap pažymėtas.
 - **Žodynai** (10): jau veikia. `normalize.cjs` verčia rūšį, lytį, dydį; `record.cjs` atmeta bet ką už žodyno ribų, visi adapteriai eina per jį. Veislės lauko schemoje nėra, amžius lieka tekstu (`age_text`), kaip parašyta puslapyje.
 - **Kontaktų įrodymai** (8, dalis): Katino svajonė, Telšių Šuniukų namai, Rasų globa: telefonas ir el. paštas iš jų pačių svetainės, `contactEvidence` 2026-11-18. Rožinė pėdutė praleista: jos robots.txt blokuoja ClaudeBot. Liko: padekman, naminukai, mazeikiugyvunai, akesoprieglauda (kontaktų puslapyje nerasta).
+- **Kontaktai** (8): baigta. Visos prieglaudos, kurių svetainėje yra kontaktai, turi `contactEvidence`; kitoms telefonas ir el. paštas lieka tušti.
+- **Lesė nuorodos** (9): jau veikia. `mergeDirect` globok.lt įrašus keičia lese.lt adapterio įrašais, visos 75 nuorodos veda į lese.lt.
 
 ## Laukia savininko
 
