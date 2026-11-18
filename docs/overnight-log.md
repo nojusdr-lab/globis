@@ -54,6 +54,7 @@
 - **Katino svajonė**: rūšis 0→100 % („Apie mus“: prieglauda priima tik kates, 175 sąrašo puslapiuose šunų nėra; puslapio „Rūšis“ etiketė vis tiek svarbesnė). Aprašymo, skiepų, čipo svetainėje nėra. Gyvai perpaleista nebuvo (crawl-delay 10 s), skaičiuota iš paskutinio gyvo paleidimo. Testai 250/0.
 - **Rožinė pėdutė**: skaitomas kiekvieno gyvūno puslapis (lentelė ir aprašymas, 19 užklausų; robots.txt GlobisBot leidžia). Gyvai: gimimo data, skiepai, čipas, kastracija 0→100 %, aprašymas 0→41 %. Rūšies svetainėje nėra. Bendrai: etiketės „Ženklinta mikrochema“, „Skiepų informacija“ ir reikšmė „Vakcinuota“ atpažįstamos visiems. kggn ir bukmanodraugas patikrinti: daugiau faktų puslapiuose nėra. Testai 252/0.
 - **Lytis „Moteriška/Vyriška“** (bendra): `N.sex` dabar supranta ir padekman rašybos klaidą „Motiriška“. Padėk man gyvai: lytis 76→89 %. Skiepai 23 % lieka: kitų puslapiuose tokios eilutės nėra. Mažeikių API, keturkojo-viltis, mgma, mazasdraugas, siauliuletenele: lyties ir medicinos laukų šaltiniuose nėra (tik pasakojimas). Testai 253/0.
+- **Programėlė**: profilis jau rodo aprašymą, lytį, amžių, dydį, čipą, skiepus, kastraciją. Nauji skreiperių laukai į programėlę pateks tik po rinkimo su šios šakos kodu: kasdienis 04:07 rinkimas naudoja `main` kodą.
 
 ## Laukia savininko
 
@@ -61,3 +62,4 @@
 - Demo paskyra App Review'ui; ištrynimo nuoroda internete (Google Play reikalauja).
 - Privatumo politikos ir naudojimo sąlygų peržiūra ir paskelbimas (`privacyPolicyUrl`, `termsUrl`).
 - Maži jausmai: paprašyti raštiško leidimo arba palikti išjungtą. Iš programėlės įtaisytos kopijos jų įrašai pašalinti. Supabase jų paskutinė publikuota kopija lieka matoma (`published_animals` yra view); ją reikia nuimti duomenų bazėje.
+- Paleisti „Daily shelter collect“ iš šakos `feat/supabase-loader-cli` (Actions → Run workflow) arba sujungti PR #38, kad nauji gyvūnų laukai (aprašymai, skiepai, čipas, lytis) atsirastų programėlėje. Autopilotas to padaryti negalėjo: leidimas atmestas.
