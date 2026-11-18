@@ -35,3 +35,16 @@ test('fromProse: birth date written in the story, kept as written', () => {
 test('fromProse: birth date without a colon keeps the date whole', () => {
   assert.equal(fromProse('✅ Spėjama gimimo data 2017-04-30, sveria 10.6 kg').age_text, 'Spėjama gimimo data: 2017-04-30');
 });
+
+test('fromProse: age phrases in the story (gyvunugloba, siauliuletenele wording)', () => {
+  assert.equal(fromProse('Agrastas kastruotas, 4 m. amžiaus vokiečių aviganis.').age_text, '4 m. amžiaus');
+  assert.equal(fromProse('Apie dešimties metų amžiaus, vidutinio dydžio.').age_text, 'Apie dešimties metų amžiaus');
+  assert.equal(fromProse('Jei šis nuostabus berniukas palietė jūsų širdį, ~2018 m. gimimo, susisiekite.').age_text, '~2018 m. gimimo');
+  assert.equal(fromProse('Boksas pas mus jau metai laiko.').age_text, undefined);
+  assert.equal(fromProse('Kalytė (apie 4 m. amžiaus) ir dukrytė (apie 2 m. amžiaus).').age_text, undefined, 'two ages');
+});
+
+test('fromProse: an age phrase next to another age figure stays unknown', () => {
+  // Real siauliuletenele post 92739: the age belongs to the daughters, not to the post's animal.
+  assert.equal(fromProse('Kalytė Dina (apie 4 m.) ir dvi jos dukrytės (apie 2 mėn. amžiaus) atvežtos.').age_text, undefined);
+});

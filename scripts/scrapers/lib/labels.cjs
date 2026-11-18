@@ -60,6 +60,9 @@ const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|ka
 
 const BIRTH = /((?:spėjama\s+)?gimimo\s+data(?:\s*\(spėjama\))?|gimęs|gimusi|gimė)\s*[:–-]?\s*(\d{4}(?:[-.\s]\d{2}){0,2})(?!\d)/giu;
 
+const NUM_WORD = 'vienerių|dvejų|dviejų|trejų|trijų|keturių|penkių|šešių|septynių|aštuonių|devynių|dešimties|pusės|pusantrų|kelių';
+const AGE = new RegExp(`(?:(?:apie|iki|virš|~)\\s*)?(?:\\d+(?:[.,]\\d+)?(?:\\s*[-–]\\s*\\d+)?|${NUM_WORD})\\s*(?:m\\.|metų|mėn\\.?|mėnesių)\\s+amžiaus|~?\\s*\\d{4}\\s*m\\.\\s+gimimo`, 'giu');
+
 function fromProse(text) {
   const out = {};
   const sentences = N.fold(text).split(/[.!?\n]+/).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
@@ -79,6 +82,13 @@ function fromProse(text) {
   const births = new Map();
   for (const m of String(text || '').matchAll(BIRTH)) births.set(m[2].replace(/[.\s]/g, '-'), `${N.cleanText(m[1]).replace(/^./u, c => c.toUpperCase())}: ${m[2]}`);
   if (births.size === 1) out.age_text = [...births.values()][0];
+  // Otherwise an age phrase: "4 m. amžiaus", "Apie dešimties metų amžiaus", "~2018 m. gimimo". Kept as written.
+  if (!out.age_text) {
+    const ages = new Set([...String(text || '').matchAll(AGE)].map(m => N.cleanText(m[0]).replace(/^./u, c => c.toUpperCase())));
+    // Any other age figure in the text ("Dina (apie 4 m.) ir dukrytės (apie 2 mėn. amžiaus)") = several animals.
+    const figures = new Set([...String(text || '').matchAll(/(\d+(?:[.,]\d+)?)\s*(m\.|metų|metai|metukai|mėn)/giu)].map(m => m[1] + m[2][0]));
+    if (ages.size === 1 && figures.size <= 1) out.age_text = [...ages][0];
+  }
   return out;
 }
 
