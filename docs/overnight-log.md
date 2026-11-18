@@ -50,4 +50,4 @@
 - Palaikymo el. paštas, privatumo politikos URL, bundle id, Apple Developer paskyra.
 - Demo paskyra App Review'ui; ištrynimo nuoroda internete (Google Play reikalauja).
 - Privatumo politikos ir naudojimo sąlygų peržiūra ir paskelbimas (`privacyPolicyUrl`, `termsUrl`).
-- Maži jausmai: paprašyti raštiško leidimo arba palikti išjungtą. Jų jau paskelbti įrašai Supabase lieka, kol neištrinsi (`delete from published_animals where source = 'mazijausmai'` ar per publish guard); programėlės įtaisyta kopija išsivalys po kito CI rinkimo.
+- Maži jausmai: paprašyti raštiško leidimo arba palikti išjungtą. Iš programėlės įtaisytos kopijos jų įrašai pašalinti. Supabase jų paskutinė publikuota kopija lieka matoma (`published_animals` yra view); ją reikia nuimti duomenų bazėje.
