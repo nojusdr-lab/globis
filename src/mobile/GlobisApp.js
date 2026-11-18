@@ -193,7 +193,7 @@ function AppContent() {
      {item.active===0&&(index===0||shelters[index-1].active>0)?<Text style={[s.sectionTitle,{marginTop:8}]}>{t('Be aktyvių Globis skelbimų','No active Globis listings')}</Text>:null}
      <Pressable accessibilityRole="button" accessibilityLabel={`${item.name}, ${item.city||''}, ${t(`laukia ${item.active}`,`${item.active} waiting`)}`} onPress={()=>setShelterId(item.id)} style={({pressed})=>[s.listCard,{flexDirection:'column',alignItems:'stretch'},pressed&&{opacity:0.85}]}>
       <View style={[s.row,{gap:12}]}>
-      <Avatar name={item.name} logo={item.logo}/>
+      <Avatar name={item.name} logo={item.logo} logoBg={item.logoBg}/>
       <View style={{flex:1,minWidth:0,gap:4}}>
        <Text style={s.title}>{item.name}</Text>
        <Text style={s.muted}>{[item.city,item.active?t(`${item.active} laukia namų`,`${item.active} waiting for a home`):t('Šiuo metu skelbimų nėra','No current listings')].filter(Boolean).join(' · ')}</Text>

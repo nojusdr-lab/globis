@@ -141,10 +141,11 @@ export function SourceLink({url,label,onError,lang='lt'}) {
 
 export const initials=name=>String(name||'').replace(/[„“"()]/g,'').replace(/^(VšĮ|Asociacija|Gyvūnų globos draugija)\s+/i,'')
  .split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('')||'?';
-export function Avatar({name,logo,size=46}) {
+// logoBg: the shelter's own brand colour, for logos drawn in white (Lesė).
+export function Avatar({name,logo,logoBg,size=46}) {
  const [broken,setBroken]=useState(false);
  const box={width:size,height:size,borderRadius:size/2};
- if(logo&&!broken) return <CachedImage source={{uri:logo}} onError={()=>setBroken(true)} contentFit="contain" cachePolicy="memory-disk" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[box,{backgroundColor:C.white}]}/>;
+ if(logo&&!broken) return <CachedImage source={{uri:logo}} onError={()=>setBroken(true)} contentFit="contain" cachePolicy="memory-disk" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[box,{backgroundColor:logoBg||C.white}]}/>;
  return <View style={[s.avatar,box]} accessibilityElementsHidden importantForAccessibility="no-hide-descendants"><Text style={[s.avatarText,size>50&&{fontSize:19}]}>{initials(name)}</Text></View>;
 }
 
