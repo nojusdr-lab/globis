@@ -52,6 +52,12 @@ export default function useAccount(saved, dispatch) {
       return r.error ? r : supabase.auth.updateUser({password});
     },
     signOut: () => supabase.auth.signOut(),
+    // GDPR access/portability: everything the server keeps about this account, as JSON.
+    exportData: async () => {
+      const {data, error} = await supabase.from('saved').select('animal_id, created_at').order('created_at');
+      if (error) return {error};
+      return {data: JSON.stringify({email: user.email, accountCreatedAt: user.created_at, saved: data}, null, 2)};
+    },
     deleteAccount: async () => {
       const {error} = await supabase.rpc('delete_own_account');
       if (!error) await supabase.auth.signOut({scope: 'local'});

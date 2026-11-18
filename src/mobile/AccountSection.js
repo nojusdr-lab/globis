@@ -1,6 +1,6 @@
 // Optional sign-in with email and password; a forgotten password is reset with an emailed code. Browsing and saving never need it.
 import React,{useState} from 'react';
-import {View,Text,TextInput,Pressable,ActivityIndicator} from 'react-native';
+import {View,Text,TextInput,Pressable,ActivityIndicator,Share} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 import {Button} from './ui';
 import {C,styles as s} from './theme';
@@ -35,6 +35,7 @@ export default function AccountSection({account,lang}) {
    </View>
   </View>
   <Button label={t('Atsijungti','Sign out')} icon="log-out-outline" onPress={()=>run(account.signOut)}/>
+  <Button label={t('Eksportuoti mano duomenis','Export my data')} icon="download-outline" onPress={()=>run(async()=>{const r=await account.exportData();return r.error?r:Share.share({title:'GLOBIS',message:r.data}).then(()=>({}));})}/>
   {confirmDelete?<View style={[s.listCard,{flexDirection:'column',alignItems:'stretch',gap:10}]}>
    <Text style={s.body}>{t('Paskyra ir jos išsaugotų sąrašas bus ištrinti visam laikui. Šiame įrenginyje išsaugoti gyvūnai liks.','Your account and its saved list will be deleted permanently. Animals saved on this device stay.')}</Text>
    <View style={s.row}>

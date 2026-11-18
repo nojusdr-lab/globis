@@ -42,6 +42,7 @@
 - **Naujas adapteris** (4, dalis): Alytaus „Keturkojo viltis“ (`keturkojo-viltis.cjs`, WP REST). Gyvai: 185 gyvūnai per 6 užklausas, rūšis visiems, amžius 91, nuotraukos 181. Svetainėje statuso nėra, todėl „nežinoma“. Etiketė „Spėjama gimimo data“ dabar skaitoma kaip amžius. Testai 242/0. Programėlėje atsiras po kito CI rinkimo.
 - **Naudojimo sąlygos** (35): juodraštis `docs/store/terms.lt.md` ir `terms.en.md`. GLOBIS ne prieglauda, duomenys iš prieglaudų gali būti pasenę, paskyra neprivaloma ir ištrinama programėlėje, Lietuvos teisė. Reikia savininko duomenų `[…]` ir `termsUrl` `app.json` (nuoroda Paskyroje atsiras pati).
 - **Nuotraukų politika** (16): ADR `docs/adr/0002-photo-hotlink.md`, krauname tiesiai iš prieglaudų, kopijų nelaikome. Rasta klaida: 11 mažasdraugas nuotraukų buvo `http`, iOS jų nerodytų. `record.cjs` dabar to paties host `http` keičia į `https` (patikrinta: atsako 200). Programėlėje susitvarkys po kito CI rinkimo. Testai 243/0.
+- **BDAR** (36): ištrynimas jau buvo; pridėta Paskyra → „Eksportuoti mano duomenis“: el. paštas, paskyros data ir išsaugoti gyvūnai JSON per telefono „Bendrinti“. Privatumo politika LT/EN atnaujinta. Testai 243/0, web build praeina. Prisijungus neišbandyta (reikia paskyros).
 
 ## Laukia savininko
 
