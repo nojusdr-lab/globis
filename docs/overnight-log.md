@@ -80,6 +80,7 @@
 | padekman | 88 | 99 | 89 | 95 | 0 | 61 | 23 | 94 | 94 |
 - **Gimimo data iš aprašymo** (bendra): `fromProse` randa „Gimimo data (spėjama): 2012-01-01“, „Spėjama gimimo data – …“, „Gimęs 2021“ teksto viduryje; kelios skirtingos datos → nežinoma, atvykimo data neimama. Keturkojo viltis gyvai: amžius 49→98 %. Testai 255/0.
 - **Amžius iš aprašymo** (bendra): „4 m. amžiaus“, „Apie dešimties metų amžiaus“, „~2018 m. gimimo“. Jei tekste minimi keli amžiai (mama ir jaunikliai), laukas lieka tuščias. Gyvai: gyvunugloba amžius 0→8 %, mgma 84→89 %. Lytis iš pasakojimų neimama: per dažnai keli gyvūnai viename tekste. Testai 257/0.
+- **Profilis** (programėlė): lytis ir dydis rodomi žodžiais („Patelė“, „Mažas“), ne kodais („female“, „small“). Data be žodžių („2018 10 14“, „Spėjama gimimo data: …“) rodoma kaip „Gimimo data“, ne „Amžius“. Anglų kalba vietoj „Nenurodyta“ rodomas prieglaudos lietuviškas aprašymas ir amžius. Patikrinta naršyklėje, testai 259/0, web build praeina.
 
 ## Laukia savininko
 

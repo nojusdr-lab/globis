@@ -4,7 +4,7 @@ import {Ionicons} from '@expo/vector-icons';
 import {eligible,phone,email} from '../data/integrity.cjs';
 import {Avatar,Button,Photo,Sheet,SourceLink,StatusNote} from './ui';
 import {C,styles as s} from './theme';
-import {facts,openQuestions} from './facts.cjs';
+import {facts,openQuestions,text} from './facts.cjs';
 
 function Fact({label,value,note,lang}) {
  const known=value!=null&&value!=='';
@@ -18,7 +18,7 @@ function Fact({label,value,note,lang}) {
 export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter,saved,reduced,onError}) {
  const t=(lt,en)=>lang==='lt'?lt:en;
  const date=pet.observedAt&&Number.isFinite(Date.parse(pet.observedAt))?new Date(pet.observedAt):null;
- const bio=lang==='lt'?pet.bioLt:pet.bioEn;
+ const bio=text(pet,'bio',lang==='lt');
  const rows=facts(pet,lang);
  const questions=openQuestions(pet,lang);
  return <Sheet full lang={lang} title={pet.name} reduced={reduced} onClose={onClose} footer={<View style={s.row}>
