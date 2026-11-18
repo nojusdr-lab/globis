@@ -89,3 +89,5 @@
 - Privatumo politikos ir naudojimo sąlygų peržiūra ir paskelbimas (`privacyPolicyUrl`, `termsUrl`).
 - Maži jausmai: paprašyti raštiško leidimo arba palikti išjungtą. Iš programėlės įtaisytos kopijos jų įrašai pašalinti. Supabase jų paskutinė publikuota kopija lieka matoma (`published_animals` yra view); ją reikia nuimti duomenų bazėje.
 - Paleisti „Daily shelter collect“ iš šakos `feat/supabase-loader-cli` (Actions → Run workflow) arba sujungti PR #38, kad nauji gyvūnų laukai (aprašymai, skiepai, čipas, lytis) atsirastų programėlėje. Autopilotas to padaryti negalėjo: leidimas atmestas.
+
+- **Atsarginės kopijos** (19 žingsnis): `.github/workflows/db-backup.yml` kasdien 03:37 UTC daro `pg_dump` (`public` schema ir `auth.users` eilutės), užšifruoja AES256, patikrina, kad atsidaro, ir laiko 14 dienų Actions artifacts. Šifruojama, nes repo viešas. Veiks, kai savininkas pridės secret `BACKUP_PASSPHRASE`; kol nėra, praleidžia su įspėjimu. Atkūrimas: [backup-restore.md](backup-restore.md). Klaidų stebėjimas: nepavykęs suplanuotas darbas GitHub siunčia laišką. Gyvai nepaleista: be secret.
