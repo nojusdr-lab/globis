@@ -34,14 +34,19 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
  const callbacks=useRef({});callbacks.current={pet,onSave,onPass,reduced};
  const responder=useMemo(()=>PanResponder.create({
   onStartShouldSetPanResponder:()=>false,
+  // Capture phase: the photo's tap zones (Pressable) own the touch first and would otherwise keep a horizontal drag, so the card snapped back unsaved.
+  onMoveShouldSetPanResponderCapture:(_,g)=>shouldClaim(g),
   onMoveShouldSetPanResponder:(_,g)=>shouldClaim(g),
+  onPanResponderTerminationRequest:()=>false,
   onPanResponderMove:(_,g)=>{if(!callbacks.current.reduced)x.setValue(g.dx);},
   onPanResponderRelease:(_,g)=>{
    const c=callbacks.current;
    if(Math.abs(g.dx)<=THRESHOLD){Animated.spring(x,{toValue:0,useNativeDriver:false,friction:7}).start();return;}
-   const decide=()=>{x.setValue(0);(g.dx>0?c.onSave:c.onPass)(c.pet);};
+   // Read the direction now: PanResponder resets gestureState (dx=0) before the animation ends, which turned every right swipe into a pass.
+   const right=g.dx>0;
+   const decide=()=>{x.setValue(0);(right?c.onSave:c.onPass)(c.pet);};
    if(c.reduced) decide();
-   else Animated.timing(x,{toValue:g.dx>0?520:-520,duration:200,useNativeDriver:false}).start(decide);
+   else Animated.timing(x,{toValue:right?520:-520,duration:200,useNativeDriver:false}).start(decide);
   },
   onPanResponderTerminate:()=>x.setValue(0),
  }),[x]);
