@@ -155,3 +155,22 @@ test('sos-gyvunai: a failing page makes the whole run failed', async () => {
   delete noListing[`${O}/visi-gyvunai/`];
   assert.equal((await collect(noListing)).run.state, 'failed');
 });
+
+test('sos-gyvunai: species and age survive the 2026-11-18 term layout (Katės/Šunys under "Visi gyvūnai")', async () => {
+  // Real live term list of 2026-11-18, ids unchanged; only parents and age names moved.
+  const live = [
+    { id: 51, name: 'Visi gyvūnai', slug: 'visi-gyvunai', parent: 0 },
+    { id: 40, name: 'Katės', slug: 'kates', parent: 51 },
+    { id: 42, name: 'Katės jaunos', slug: 'kates-jaunos', parent: 40 },
+    { id: 43, name: 'Katės suaugusios', slug: 'kates-suaugusios', parent: 40 },
+    { id: 45, name: 'Šunys', slug: 'sunys', parent: 51 },
+    { id: 47, name: 'Šunys jauni', slug: 'sunys-jauni', parent: 45 },
+  ];
+  const r = routes();
+  r[`${O}/wp-json/wp/v2/gyvunai?per_page=100&page=1&_fields=id,name,slug,parent`] = { body: live };
+  const { run } = await collect(r);
+  const byId = Object.fromEntries(run.animals.map(a => [a.id, a]));
+  assert.equal(byId['sos-gyvunai:4436'].species, 'dog');
+  assert.equal(byId['sos-gyvunai:4436'].age_text, 'Šunys jauni');
+  assert.ok(run.animals.every(a => a.species), 'every fixture post carries Katės or Šunys');
+});
