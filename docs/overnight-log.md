@@ -39,6 +39,7 @@
 - **Kontaktai** (8): baigta. Visos prieglaudos, kurių svetainėje yra kontaktai, turi `contactEvidence`; kitoms telefonas ir el. paštas lieka tušti.
 - **Lesė nuorodos** (9): jau veikia. `mergeDirect` globok.lt įrašus keičia lese.lt adapterio įrašais, visos 75 nuorodos veda į lese.lt.
 - **robots.txt auditas** (3, dalis): patikrinti psa, vizgis, vysniusodas. 8 svetainės nepasiekiamos (binada, grinda, vggd, makatukai, donpita, pukuotasvajone, dryzuotalaime, vggn). Rasta: Alytaus „Keturkojo viltis“ veikia adresu `keturkojo-viltis.lt` (su brūkšneliu), WP REST `gyvunas`, 185 įrašai. Kandidatas naujam adapteriui (4 žingsnis). Sąlygų puslapiai dar neperskaityti, todėl 3 žingsnis nepažymėtas.
+- **Naujas adapteris** (4, dalis): Alytaus „Keturkojo viltis“ (`keturkojo-viltis.cjs`, WP REST). Gyvai: 185 gyvūnai per 6 užklausas, rūšis visiems, amžius 91, nuotraukos 181. Svetainėje statuso nėra, todėl „nežinoma“. Etiketė „Spėjama gimimo data“ dabar skaitoma kaip amžius. Testai 242/0. Programėlėje atsiras po kito CI rinkimo.
 
 ## Laukia savininko
 

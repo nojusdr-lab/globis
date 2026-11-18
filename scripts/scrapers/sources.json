@@ -599,8 +599,8 @@
       "robots": "User-agent: * Allow: / ; Disallow: /wp-admin/ /?s= ; no crawl-delay",
       "terms": "unverified",
       "cms": "wordpress",
-      "decision": "probe",
-      "note": "Real domain has a hyphen (keturkojoviltis.lt does not resolve). WP REST custom type gyvunas, 185 records (2026-11-18). Adapter candidate for step 4.",
+      "decision": "adapter",
+      "note": "Real domain has a hyphen (keturkojoviltis.lt does not resolve). Adapter keturkojo-viltis: WP REST gyvunas, live 2026-11-18: 185 animals, 6 requests. No status on the site, so status stays unknown.",
       "checked": "2026-11-18"
     },
     {

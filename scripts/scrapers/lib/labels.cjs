@@ -6,7 +6,7 @@ const N = require('./normalize.cjs');
 const LABELS = [
   ['species', /^(gyvūnas|rūšis)$/],
   ['sex', /^lytis$/],
-  ['age_text', /^(amžius|gimimo data|gimęs|gimusi|gimė)$/],
+  ['age_text', /^(amžius|gimimo data|spėjama gimimo data|gimęs|gimusi|gimė)$/],
   ['size', /^(dydis|ūgis)$/],
   ['vaccinated', /^(skiepai|skiepytas|skiepyta|vakcinuotas|vakcinuota|vakcinacija)$/],
   ['neutered', /^(sterilizuotas|sterilizuota|sterilizacija|kastracija|kastruotas|kastruota|sterilizacija\/kastracija|atlikta sterilizacija|sterilizuotas\/kastruotas)$/],
