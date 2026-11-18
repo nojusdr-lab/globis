@@ -31,6 +31,11 @@
 - **Parduotuvių dokumentai**: privatumo politika LT/EN, Data Safety / App Privacy ir App Review pastabos atnaujintos dėl neprivalomos paskyros. Reikia savininko peržiūros.
 - **Roadmap** atnaujintas: 19 iš 50 padaryta, dabar etapas D.
 
+## 2026-11-18
+
+- **ADR** (11) ir **DB limitų stebėjimas** (20): `81b809c`, roadmap pažymėtas.
+- **Žodynai** (10): jau veikia. `normalize.cjs` verčia rūšį, lytį, dydį; `record.cjs` atmeta bet ką už žodyno ribų, visi adapteriai eina per jį. Veislės lauko schemoje nėra, amžius lieka tekstu (`age_text`), kaip parašyta puslapyje.
+
 ## Laukia savininko
 
 - Palaikymo el. paštas, privatumo politikos URL, bundle id, Apple Developer paskyra.
