@@ -132,9 +132,14 @@ function AppContent() {
   {tab==='discover'?<>
 
    {top?<View style={{flex:1,paddingHorizontal:16,paddingBottom:8,width:'100%',maxWidth:480,alignSelf:'center'}}>
-     {/* The next card's edge peeks out below: there are more to see. */}
+     {/* The next card waits underneath, so dragging the top one reveals it. */}
      <View style={{flex:1,marginBottom:8}}>
-     {pending.length>1?<View pointerEvents="none" style={[s.card,{position:'absolute',left:16,right:16,top:16,bottom:-12,backgroundColor:C.line2,borderColor:C.line2}]}/>:null}
+     {pending[1]&&photoH?<View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.card,{position:'absolute',left:0,right:0,top:0,bottom:0}]}>
+      <Photo lang={lang} pet={pending[1]} height={photoH}>
+       <LinearGradient colors={['rgba(12,24,19,0)','rgba(12,24,19,0.88)']} style={s.cardShade}/>
+       <View style={s.cardOverlay}><Text style={s.cardNameLight} numberOfLines={2}>{pending[1].name}</Text></View>
+      </Photo>
+     </View>:null}
      <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
       <View style={[s.card,{flex:1}]}>
        <View style={{flex:1}} onLayout={e=>setPhotoH(Math.round(e.nativeEvent.layout.height))}>
