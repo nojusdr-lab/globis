@@ -11,7 +11,6 @@ module.exports = [
   require('./penktakoja.cjs'),
   require('./bukmanodraugas.cjs'),
   require('./tautmilesgloba.cjs'),
-  require('./mazijausmai.cjs'),
   require('./siauliuletenele.cjs'),
   require('./mazasdraugas.cjs'),
   require('./linksmosiospedutes.cjs'),

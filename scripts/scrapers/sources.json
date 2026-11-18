@@ -70,10 +70,10 @@
         "https://bukmanodraugas.lt/category/kates-iesko-namu/"
       ],
       "robots": "Disallow: /wp-admin/",
-      "terms": "unverified",
+      "terms": "none found (no terms link on the home page, 2026-11-18)",
       "cms": "wordpress-posts",
       "decision": "adapter",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "linksmosiospedutes",
@@ -182,10 +182,10 @@
         "https://siauliuletenele.lt/kategorija/kates/"
       ],
       "robots": "Disallow: /wp-admin/",
-      "terms": "unverified",
+      "terms": "none found (privacy policy link only, 2026-11-18)",
       "cms": "wordpress-posts",
       "decision": "adapter",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "note": "No per-animal available marker; most animals stay unknown status. Posts can describe several animals."
     },
     {
@@ -270,10 +270,10 @@
         "https://sos-gyvunai.lt/visi-gyvunai/"
       ],
       "robots": "Yoast, nothing disallowed",
-      "terms": "/tinklapio-taisykles/ unverified",
+      "terms": "/tinklapio-taisykles/ says only \"Informacija ruošiama\" (2026-11-18): no terms yet",
       "cms": "wordpress-rest:gyvunas",
       "decision": "adapter",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "grinda",
@@ -407,10 +407,10 @@
         "https://mgma.lt/"
       ],
       "robots": "Yoast, nothing disallowed",
-      "terms": "unverified",
+      "terms": "none found (no terms link on the home page, 2026-11-18)",
       "cms": "wordpress-rest:product",
       "decision": "adapter",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "zga",
@@ -487,10 +487,11 @@
         "https://mazijausmai.lt/ieskantys-namu/"
       ],
       "robots": "Disallow: /wp-admin/",
-      "terms": "termshub.io terms not yet read",
+      "terms": "termshub.io paslaugu_teikimo_salygos (read 2026-11-18): no use, copying or distribution for commercial purposes; content may be kept on your own devices but not on servers or networked devices.",
       "cms": "wordpress-elementor",
-      "decision": "adapter",
-      "checked": "2026-11-17"
+      "decision": "paused",
+      "checked": "2026-11-18",
+      "note": "Paused 2026-11-18: storing their content in Supabase conflicts with the terms. Resume only with the shelter's written permission (step 34). Adapter file and test kept."
     },
     {
       "id": "pukuotasvajone",
@@ -597,7 +598,7 @@
         "https://keturkojo-viltis.lt/wp-json/wp/v2/gyvunas"
       ],
       "robots": "User-agent: * Allow: / ; Disallow: /wp-admin/ /?s= ; no crawl-delay",
-      "terms": "unverified",
+      "terms": "none found (no terms link on the home page, 2026-11-18)",
       "cms": "wordpress",
       "decision": "adapter",
       "note": "Real domain has a hyphen (keturkojoviltis.lt does not resolve). Adapter keturkojo-viltis: WP REST gyvunas, live 2026-11-18: 185 animals, 6 requests. No status on the site, so status stays unknown.",

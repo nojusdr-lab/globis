@@ -43,9 +43,11 @@
 - **Naudojimo sąlygos** (35): juodraštis `docs/store/terms.lt.md` ir `terms.en.md`. GLOBIS ne prieglauda, duomenys iš prieglaudų gali būti pasenę, paskyra neprivaloma ir ištrinama programėlėje, Lietuvos teisė. Reikia savininko duomenų `[…]` ir `termsUrl` `app.json` (nuoroda Paskyroje atsiras pati).
 - **Nuotraukų politika** (16): ADR `docs/adr/0002-photo-hotlink.md`, krauname tiesiai iš prieglaudų, kopijų nelaikome. Rasta klaida: 11 mažasdraugas nuotraukų buvo `http`, iOS jų nerodytų. `record.cjs` dabar to paties host `http` keičia į `https` (patikrinta: atsako 200). Programėlėje susitvarkys po kito CI rinkimo. Testai 243/0.
 - **BDAR** (36): ištrynimas jau buvo; pridėta Paskyra → „Eksportuoti mano duomenis“: el. paštas, paskyros data ir išsaugoti gyvūnai JSON per telefono „Bendrinti“. Privatumo politika LT/EN atnaujinta. Testai 243/0, web build praeina. Prisijungus neišbandyta (reikia paskyros).
+- **Sąlygų auditas** (3): perskaitytos visų adapterių šaltinių sąlygos. sos-gyvunai: puslapis „Informacija ruošiama“; bukmanodraugas, mgma, keturkojo-viltis, siauliuletenele: sąlygų nėra. **Maži jausmai** sąlygos draudžia komercinį naudojimą ir laikyti turinį serveriuose, todėl adapteris pristabdytas (`index.cjs`), failas ir testas palikti. Testai 243/0.
 
 ## Laukia savininko
 
 - Palaikymo el. paštas, privatumo politikos URL, bundle id, Apple Developer paskyra.
 - Demo paskyra App Review'ui; ištrynimo nuoroda internete (Google Play reikalauja).
 - Privatumo politikos ir naudojimo sąlygų peržiūra ir paskelbimas (`privacyPolicyUrl`, `termsUrl`).
+- Maži jausmai: paprašyti raštiško leidimo arba palikti išjungtą. Jų jau paskelbti įrašai Supabase lieka, kol neištrinsi (`delete from published_animals where source = 'mazijausmai'` ar per publish guard); programėlės įtaisyta kopija išsivalys po kito CI rinkimo.
