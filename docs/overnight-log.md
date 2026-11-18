@@ -55,6 +55,29 @@
 - **Rožinė pėdutė**: skaitomas kiekvieno gyvūno puslapis (lentelė ir aprašymas, 19 užklausų; robots.txt GlobisBot leidžia). Gyvai: gimimo data, skiepai, čipas, kastracija 0→100 %, aprašymas 0→41 %. Rūšies svetainėje nėra. Bendrai: etiketės „Ženklinta mikrochema“, „Skiepų informacija“ ir reikšmė „Vakcinuota“ atpažįstamos visiems. kggn ir bukmanodraugas patikrinti: daugiau faktų puslapiuose nėra. Testai 252/0.
 - **Lytis „Moteriška/Vyriška“** (bendra): `N.sex` dabar supranta ir padekman rašybos klaidą „Motiriška“. Padėk man gyvai: lytis 76→89 %. Skiepai 23 % lieka: kitų puslapiuose tokios eilutės nėra. Mažeikių API, keturkojo-viltis, mgma, mazasdraugas, siauliuletenele: lyties ir medicinos laukų šaltiniuose nėra (tik pasakojimas). Testai 253/0.
 - **Programėlė**: profilis jau rodo aprašymą, lytį, amžių, dydį, čipą, skiepus, kastraciją. Nauji skreiperių laukai į programėlę pateks tik po rinkimo su šios šakos kodu: kasdienis 04:07 rinkimas naudoja `main` kodą.
+- **Pilnas gyvas patikrinimas** (2026-11-18 vakare): visi 19 šaltinių `complete`, 1402 gyvūnai, procentai žemiau. Kur liko 0 %, to svetainė nenurodo (patikrinta po vieną puslapį).
+
+| šaltinis | gyvūnų | rūšis | lytis | amžius | dydis | čipas | skiepai | kastr. | aprašymas |
+|---|---|---|---|---|---|---|---|---|---|
+| sos-gyvunai | 117 | 99 | 0 | 98 | 0 | 74 | 74 | 74 | 100 |
+| mgma | 19 | 100 | 0 | 84 | 0 | 79 | 84 | 79 | 100 |
+| keturkojodraugas | 28 | 100 | 100 | 100 | 0 | 75 | 75 | 100 | 100 |
+| kggn | 41 | 100 | 98 | 98 | 0 | 0 | 0 | 0 | 71 |
+| bukmanodraugas | 41 | 100 | 0 | 0 | 0 | 2 | 0 | 2 | 100 |
+| penktakoja | 253 | 100 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| siauliuletenele | 208 | 100 | 0 | 95 | 0 | 14 | 13 | 13 | 100 |
+| mazasdraugas | 36 | 100 | 0 | 100 | 0 | 97 | 97 | 92 | 100 |
+| tautmilesgloba | 19 | 100 | 100 | 100 | 100 | 0 | 0 | 100 | 79 |
+| rozinepedute | 17 | 0 | 100 | 100 | 0 | 100 | 100 | 100 | 41 |
+| linksmosiospedutes | 53 | 100 | 0 | 100 | 11 | 98 | 98 | 81 | 0 |
+| katinosvajone | 40 | 100 | 100 | 100 | 0 | 0 | 0 | 100 | 0 |
+| lese | 75 | 100 | 100 | 100 | 83 | 0 | 100 | 100 | 100 |
+| naminukai | 22 | 100 | 100 | 100 | 100 | 23 | 23 | 100 | 100 |
+| gyvunugloba | 37 | 100 | 0 | 0 | 0 | 0 | 0 | 16 | 81 |
+| keturkojo-viltis | 184 | 100 | 0 | 49 | 0 | 43 | 41 | 42 | 100 |
+| mazeikiugyvunai | 97 | 100 | 100 | 100 | 0 | 0 | 0 | 0 | 1 |
+| beglobis | 27 | 100 | 100 | 100 | 0 | 30 | 74 | 41 | 100 |
+| padekman | 88 | 99 | 89 | 95 | 0 | 61 | 23 | 94 | 94 |
 
 ## Laukia savininko
 
