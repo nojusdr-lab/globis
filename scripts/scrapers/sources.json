@@ -111,12 +111,15 @@
       "vmvtRow": 12,
       "name": "Mažeikių gyvūnų globos draugija",
       "website": "https://mazeikiugyvunai.lt/",
-      "listing": [],
-      "robots": "unverified (robots.txt returns HTML)",
-      "terms": "unverified",
-      "cms": "javascript app",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "listing": [
+        "https://gyvunuglobosdraugija.lt/api/public/integrations/animals?adoptable=true"
+      ],
+      "robots": "none: robots.txt on both hosts returns the app HTML (2026-11-18)",
+      "terms": "none found (2026-11-18)",
+      "cms": "Angular app + public integration API",
+      "decision": "adapter",
+      "checked": "2026-11-18",
+      "note": "Adapter mazeikiugyvunai: the site's own public API, adoptable only. Live 2026-11-18: 97 animals, 6 requests. arrivalCircumstances not read."
     },
     {
       "id": "psa",

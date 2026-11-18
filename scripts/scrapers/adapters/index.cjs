@@ -20,4 +20,5 @@ module.exports = [
   require('./beglobis.cjs'),
   require('./naminukai.cjs'),
   require('./keturkojo-viltis.cjs'),
+  require('./mazeikiugyvunai.cjs'),
 ];

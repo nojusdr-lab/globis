@@ -44,6 +44,7 @@
 - **Nuotraukų politika** (16): ADR `docs/adr/0002-photo-hotlink.md`, krauname tiesiai iš prieglaudų, kopijų nelaikome. Rasta klaida: 11 mažasdraugas nuotraukų buvo `http`, iOS jų nerodytų. `record.cjs` dabar to paties host `http` keičia į `https` (patikrinta: atsako 200). Programėlėje susitvarkys po kito CI rinkimo. Testai 243/0.
 - **BDAR** (36): ištrynimas jau buvo; pridėta Paskyra → „Eksportuoti mano duomenis“: el. paštas, paskyros data ir išsaugoti gyvūnai JSON per telefono „Bendrinti“. Privatumo politika LT/EN atnaujinta. Testai 243/0, web build praeina. Prisijungus neišbandyta (reikia paskyros).
 - **Sąlygų auditas** (3): perskaitytos visų adapterių šaltinių sąlygos. sos-gyvunai: puslapis „Informacija ruošiama“; bukmanodraugas, mgma, keturkojo-viltis, siauliuletenele: sąlygų nėra. **Maži jausmai** sąlygos draudžia komercinį naudojimą ir laikyti turinį serveriuose, todėl adapteris pristabdytas (`index.cjs`), failas ir testas palikti. Testai 243/0.
+- **Naujas adapteris** (4, dalis): Mažeikių gyvūnų globos draugija (`mazeikiugyvunai.cjs`). Svetainė skaito savo viešą API, imame tik „adoptable“. Gyvai: 97 gyvūnai per 6 užklausas, rūšis, lytis, gimimo data ir nuotrauka visiems. Kur gyvūnas rastas, neskaitome. Testai 244/0. Programėlėje po kito CI rinkimo.
 
 ## Laukia savininko
 

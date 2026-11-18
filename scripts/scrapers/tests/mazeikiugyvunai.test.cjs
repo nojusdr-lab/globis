@@ -1,0 +1,30 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const adapter = require('../adapters/mazeikiugyvunai.cjs');
+const { createFetcher } = require('../lib/polite-fetch.cjs');
+const { createParseCache } = require('../lib/parse-cache.cjs');
+const { runSource } = require('../lib/run-source.cjs');
+const { fakeFetch, fakeClock } = require('./helpers.cjs');
+const routes = require('../fixtures/mazeikiugyvunai/routes.json');
+
+test('mazeikiugyvunai: pages the public API, adoptable only, never reads where the animal was found', async () => {
+  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(routes, []) });
+  const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
+  assert.equal(run.state, 'complete');
+  assert.deepEqual(run.animals.map(a => a.id), ['mazeikiugyvunai:829', 'mazeikiugyvunai:830']);
+  const [k, r] = run.animals;
+  assert.equal(k.name, 'Kobra');
+  assert.equal(k.species, 'cat');
+  assert.equal(k.sex, 'male');
+  assert.equal(k.age_text, '2016-01-01');
+  assert.equal(k.status, 'available');
+  assert.equal(k.sourceUrl, 'https://mazeikiugyvunai.lt/#829');
+  assert.deepEqual(k.photos, ['https://fra1.digitaloceanspaces.com/images/production/829-large.jpg']);
+  assert.doesNotMatch(JSON.stringify(run.animals), /Rastas prie namo/);
+  assert.equal(r.species, 'dog');
+  assert.equal(r.sex, 'female');
+  assert.equal(r.age_text, null);
+  assert.deepEqual(r.photos, []);
+  assert.equal(r.bio_lt, 'Draugiškas');
+});
