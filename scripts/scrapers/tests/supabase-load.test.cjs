@@ -15,7 +15,7 @@ const routes = require('../fixtures/kggn/routes.json');
 async function db() {
   const { PGlite } = await import('@electric-sql/pglite');
   const pg = new PGlite();
-  await pg.exec('create role anon; create role authenticated;');
+  await pg.exec(fs.readFileSync(path.join(__dirname, '../../../tests/supabase-stub.sql'), 'utf8'));
   const dir = path.join(__dirname, '../../../supabase/migrations');
   for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.sql')).sort()) await pg.exec(fs.readFileSync(path.join(dir, f), 'utf8'));
   return pg;

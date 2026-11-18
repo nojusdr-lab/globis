@@ -18,6 +18,15 @@ async function main() {
   const todo = adapters.filter(a => !only || only.has(a.id));
   require('node:fs').mkdirSync(outDir, { recursive: true });
   const report = [];
+  // Optional: also load each run into Supabase Postgres. Connection string comes only from the environment (CI secret).
+  let db = null;
+  if (process.env.SUPABASE_DB_URL) {
+    const { Client } = require('pg');
+    db = new Client({ connectionString: process.env.SUPABASE_DB_URL, ssl: { rejectUnauthorized: false } });
+    await db.connect();
+  }
+  const { loadRun } = require('./lib/supabase-load.cjs');
+  let dbQueue = Promise.resolve();
   const workers = Array.from({ length: Math.min(4, todo.length) }, async () => {
     while (todo.length) {
       const adapter = todo.shift();
@@ -25,10 +34,18 @@ async function main() {
       const run = await runSource(adapter, { fetcher, cache, log: m => console.log(m) });
       const result = publish(run, { outDir });
       report.push({ source: adapter.id, state: run.state, animals: run.animals.length, skipped: run.skipped.length, requests: run.requests, published: result.published, reason: result.reason, errors: run.errors.slice(0, 5) });
+      if (db) {
+        // One shared client: serialize loads so transactions from parallel workers never interleave.
+        dbQueue = dbQueue.then(() => loadRun(db, adapter, run)).then(
+          r => { report.at(-1).db = r.published ? 'published' : r.reason; },
+          e => { report.at(-1).db = `error: ${e.message}`; process.exitCode = 1; });
+        await dbQueue;
+      }
       console.log(JSON.stringify(report.at(-1)));
     }
   });
   await Promise.all(workers);
+  if (db) await db.end();
   require('node:fs').writeFileSync(path.join(outDir, 'report.json'), JSON.stringify(report, null, 2));
   if (report.some(r => r.state === 'failed')) process.exitCode = 1;
 }

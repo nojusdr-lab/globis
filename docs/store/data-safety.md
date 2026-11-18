@@ -2,11 +2,16 @@
 
 Atsakymai atitinka dabartinį kodą (2026-11-16): nėra paskyrų, analitikos, reklamos, klaidų ataskaitų SDK, push pranešimų ar serverio, kuris gautų vartotojo duomenis. Jei bent vienas iš jų atsiras (pvz. Supabase su vartotojo įrašais, Sentry, analitika), šias formas reikia pildyti iš naujo.
 
+> **Atnaujinta 2026-11-17:** atsirado neprivaloma paskyra (Supabase, ES). Žemiau atsakymai su paskyra.
+
 ## Apple · App Privacy („Privatumo etiketė“)
 
 | Klausimas | Atsakymas | Kodėl |
 |---|---|---|
-| Do you or your third-party partners collect data from this app? | **No, we do not collect data from this app** | Išsaugoti skelbimai, atšaukimo istorija ir kalba lieka tik įrenginyje. Apple apibrėžime „collect“ reiškia perdavimą iš įrenginio. |
+| Do you or your third-party partners collect data from this app? | **Yes** | Neprivaloma paskyra siunčia el. paštą ir išsaugotų skelbimų ID į Supabase. |
+| Contact Info → **Email Address** | Collected · **Linked to user** · **App Functionality** · Not used for tracking | Prisijungimui. |
+| User Content → **Other User Content** (išsaugotų gyvūnų ID) | Collected · **Linked to user** · **App Functionality** · Not used for tracking | Sąrašo sinchronizacijai. |
+| Identifiers → **User ID** | Collected · **Linked to user** · **App Functionality** · Not used for tracking | Supabase paskyros ID. |
 | Tracking | Ne | Nėra reklamos ar sekimo SDK. `ios.privacyManifests.NSPrivacyTracking = false`. |
 | Privacy Policy URL | **Reikia savininko** | Paskelbti [LT](privacy-policy.lt.md) / [EN](privacy-policy.en.md) versiją viešu adresu. |
 
@@ -18,15 +23,15 @@ Pastaba: nuotraukos kraunamos iš trečiųjų šalių serverių (dabar `globok.l
 
 | Klausimas | Atsakymas |
 |---|---|
-| Does your app collect or share any of the required user data types? | **No** |
-| Is all of the user data collected by your app encrypted in transit? | Netaikoma (nerenka). Visi tinklo kreipiniai į HTTPS adresus. |
-| Do you provide a way for users to request that their data is deleted? | Netaikoma. Vietinius duomenis vartotojas ištrina programėlės nustatymuose. |
+| Does your app collect or share any of the required user data types? | **Yes** (tik su neprivaloma paskyra): Personal info → Email address; App activity → Other user-generated content (išsaugotų ID); App info → User IDs. Visi: Collected, not shared, **optional**, purpose: App functionality / Account management. |
+| Is all of the user data collected by your app encrypted in transit? | **Yes** (HTTPS). |
+| Do you provide a way for users to request that their data is deleted? | **Yes**: Paskyra → „Ištrinti paskyrą“ programėlėje. Google taip pat reikalauja ištrynimo nuorodos internete: **reikia savininko** (pvz. puslapis su instrukcija ir el. paštu). |
 | Privacy policy URL | **Reikia savininko** (tas pats URL kaip Apple). |
 
 Kiti Play Console klausimynai:
 
 - **Ads:** No ads.
-- **App access:** All functionality available without special access (prisijungti nereikia).
+- **App access:** visos funkcijos be prisijungimo; neprivaloma paskyra tik sinchronizacijai. Peržiūrai pateikti demo paskyrą.
 - **Content rating (IARC):** atsakymai: smurto, seksualinio turinio, keiksmų, azartinių lošimų, vartotojų bendravimo, vietos dalinimosi, pirkimų nėra. Tikėtinas rezultatas „Everyone / PEGI 3“, bet galutinį duoda klausimynas.
 - **Target audience:** 18+ (arba 13+). Ne vaikams skirta programėlė, todėl Families politika netaikoma.
 - **News app:** No. **Government app:** No. **Financial features:** None. **Health:** No.

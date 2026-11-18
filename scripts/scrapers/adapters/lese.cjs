@@ -10,11 +10,13 @@
 //   type=<value> (Šuo, Katė, ...) narrows the same list by species. One walk per type sets species,
 //   instead of one request per animal.
 // Each card gives: link, name, status text, an unlabeled date (ignored), one photo.
-// Detail pages (/globotiniai/<slug>/) carry labelled facts (Rūšis, Lytis, Dydis, Sterilizacija,
-// Skiepai, age table, description) but are NOT read here, to keep requests per run small.
+// Detail pages (/globotiniai/<slug>/) carry labelled facts (Rūšis, Miestas, Lytis, Dydis, Sterilizacija,
+// Skiepai, Bruožai), an age table, description, gallery and update date: read one per animal.
+// "Miestas" names the branch ("„Lesė“, Vilniaus skyrius") and decides which shelter record it joins.
 // Pagination: follow "a.next.page-numbers" until the last page (span.current, no next).
 const H = require('../lib/html.cjs');
 const N = require('../lib/normalize.cjs');
+const L = require('../lib/labels.cjs');
 
 const ORIGIN = 'https://lese.lt';
 const LIST_PATH = '/lese-globotiniai/';
@@ -79,7 +81,37 @@ function parsePage(html, pageUrl) {
   };
 }
 
-function createLeseAdapter({ maxPages = 40 } = {}) {
+// Facts from one animal page. Unknown labels are ignored; missing ones stay null.
+function parseDetail(html, pageUrl) {
+  const $ = H.load(html);
+  const pairs = $('.animal-description__row').map((_, row) => [[
+    N.cleanText($(row).find('.animal-description__th').first().text()),
+    N.cleanText($(row).find('.animal-description__td').first().text()),
+  ]]).get().filter(([a, b]) => a && b);
+  const get = label => pairs.find(([a]) => N.fold(a).replace(/:$/, '') === label)?.[1] ?? null;
+  const facts = L.fromPairs(pairs.map(([a, b]) => [a, a.startsWith('Dydis') ? b.replace(/\s*\(.*$/, '') : b]));
+  // "Man jau:" table: years and months.
+  const ageCells = $('.ageBlock__table').first().find('.ageBlock__time').map((_, td) => Number(N.cleanText($(td).text()))).get();
+  const [years, months] = ageCells;
+  const age = Number.isInteger(years) && Number.isInteger(months) && (years || months)
+    ? [years ? `${years} m.` : '', months ? `${months} mėn.` : ''].filter(Boolean).join(' ') : null;
+  const desc = $('.animal-description__desc').first().clone();
+  desc.find('.addtoany_share_save_container').remove();
+  const traits = get('bruožai');
+  const bio = [N.cleanText(desc.text()), traits ? `Bruožai: ${traits}.` : null].filter(Boolean).join('\n\n');
+  const photos = [...new Set($('.imgGallery a[data-lightbox]').map((_, a) => H.abs($(a).attr('href'), pageUrl)).get().filter(Boolean))];
+  const updated = (N.cleanText($('.details').text()) || '').match(/Paskutinis atnaujinimas:\s*(\d{4}-\d{2}-\d{2})/);
+  const branch = N.fold(get('miestas') || '');
+  return {
+    species: facts.species ?? null, sex: facts.sex ?? null, size: facts.size ?? null,
+    vaccinated: facts.vaccinated ?? null, neutered: facts.neutered ?? null, chipped: facts.chipped ?? null,
+    age_text: age, bio_lt: bio || null, photos,
+    sourceUpdatedAt: updated ? `${updated[1]}T00:00:00Z` : null,
+    shelterHint: /vilni/.test(branch) ? 'vilnius' : /kaun/.test(branch) ? 'kaunas' : null,
+  };
+}
+
+function createLeseAdapter({ maxPages = 40, details = true } = {}) {
   // Walks one filtered list to its last page. Returns cards, the form's type options and whether
   // the end was proven. Any fetch error throws (run fails, nothing published).
   async function walk(fetcher, params, log) {
@@ -162,6 +194,16 @@ function createLeseAdapter({ maxPages = 40 } = {}) {
         sourceUpdatedAt: null,
       });
     }
+    if (details) {
+      for (const a of animals) {
+        const res = await fetcher.get(a.sourceUrl);
+        const d = parseDetail(res.body, res.url);
+        Object.assign(a, {
+          ...d, species: a.species ?? d.species,
+          photos: d.photos.length ? d.photos : a.photos,
+        });
+      }
+    }
     log(`lese: ${animals.length} animals, ${skipped.length} skipped, complete=${complete}`);
     return { animals, skipped, complete };
   }
@@ -179,3 +221,4 @@ module.exports = createLeseAdapter();
 module.exports.createLeseAdapter = createLeseAdapter;
 module.exports.parsePage = parsePage;
 module.exports.slugId = slugId;
+module.exports.parseDetail = parseDetail;

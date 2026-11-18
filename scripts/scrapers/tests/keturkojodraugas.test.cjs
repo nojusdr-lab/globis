@@ -50,7 +50,8 @@ test('keturkojodraugas: parses card tables and free text, unknowns stay null', a
   assert.equal(z.vaccinated, true, '"Skiepytas"');
   assert.equal(z.chipped, true, '"ženklintas"');
   assert.deepEqual(z.photos, ['https://keturkojodraugas.lt/wp-content/uploads/2026/10/ZAIBAS.jpeg']);
-  assert.equal(z.sourceUrl, 'https://keturkojodraugas.lt/kates/');
+  assert.equal(z.sourceUrl, 'https://keturkojodraugas.lt/kates/#zaibas');
+  assert.equal(new Set(run.animals.map(a => a.sourceUrl)).size, run.animals.length); // DB needs unique listing URLs
   assert.match(z.bio_lt, /Charakteris: Atsargus/);
 
   const m = byId['keturkojodraugas:kates-mike'];

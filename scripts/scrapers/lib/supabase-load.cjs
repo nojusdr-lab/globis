@@ -26,10 +26,10 @@ async function loadRun(db, adapter, run) {
       await db.query(
         `insert into public.snapshot_animals
            (run_id, animal_id, shelter_id, name, species, sex, age_text, size, photos,
-            chipped, vaccinated, neutered, bio_lt, status, status_evidence)
-         values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15)`,
+            chipped, vaccinated, neutered, bio_lt, status, status_evidence, shelter_hint)
+         values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)`,
         [runId, a.id, adapter.id, a.name, a.species, a.sex, a.age_text, a.size, a.photos,
-          a.chipped, a.vaccinated, a.neutered, a.bio_lt, a.status, a.statusEvidence]);
+          a.chipped, a.vaccinated, a.neutered, a.bio_lt, a.status, a.statusEvidence, a.shelterHint ?? null]);
     }
     await db.query('commit');
   } catch (e) {
