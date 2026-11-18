@@ -175,3 +175,9 @@ test('cleanText decodes numeric and named HTML entities in one pass', () => {
   assert.equal(cleanText('naujokus&#8230; &#x41;&scaron;&nbsp;&amp;#8230;'), 'naujokus… Aš &#8230;');
   assert.equal(cleanText('a &bogus; b &#0; c'), 'a &bogus; b &#0; c');
 });
+
+test('record: http photos on an https page become https only for the same host', () => {
+  const a = makeAnimal('s', { nativeId: '1', sourceUrl: 'https://www.a.lt/1',
+    photos: ['http://www.a.lt/x.jpg', 'http://cdn.other.lt/y.jpg', '/z.jpg'] });
+  assert.deepEqual(a.photos, ['https://www.a.lt/x.jpg', 'http://cdn.other.lt/y.jpg', 'https://www.a.lt/z.jpg']);
+});

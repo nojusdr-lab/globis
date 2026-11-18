@@ -6,6 +6,13 @@ const { cleanText, stripPrivate } = require('./normalize.cjs');
 const STATUSES = new Set(['available', 'reserved', 'unknown', 'confirmed_adopted']);
 const FIELDS = ['name', 'species', 'sex', 'age_text', 'size', 'chipped', 'vaccinated', 'neutered', 'bio_lt'];
 
+// iOS blocks plain-http images. An https page's own http photo links are upgraded (same host serves https).
+function photoUrl(p, page) {
+  const u = new URL(p, page);
+  if (u.protocol === 'http:' && page.protocol === 'https:' && u.hostname === page.hostname) u.protocol = 'https:';
+  return u.href;
+}
+
 function makeAnimal(sourceId, input) {
   if (!input || typeof input !== 'object') throw new Error('Animal must be an object');
   const url = new URL(input.sourceUrl);
@@ -27,7 +34,7 @@ function makeAnimal(sourceId, input) {
     sex: oneOf(input.sex, ['male', 'female']),
     age_text: cleanText(input.age_text),
     size: oneOf(input.size, ['small', 'medium', 'large']),
-    photos: [...new Set((input.photos || []).filter(Boolean).map(p => new URL(p, url).href))].slice(0, 10),
+    photos: [...new Set((input.photos || []).filter(Boolean).map(p => photoUrl(p, url)))].slice(0, 10),
     chipped: bool(input.chipped),
     vaccinated: bool(input.vaccinated),
     neutered: bool(input.neutered),
