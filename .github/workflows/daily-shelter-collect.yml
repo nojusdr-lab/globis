@@ -51,6 +51,11 @@ jobs:
           { echo '### Rinkimas'; echo '```'; grep '^{"source"' scrape.log || tail -5 scrape.log; echo '```';
             echo '### Programėlės duomenys'; echo '```'; cat bridge.log 2>/dev/null; echo '```';
             echo '### Laukų pilnumas'; node scripts/scrapers/completeness.cjs || true; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Database usage
+        if: always()
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: node scripts/scrapers/db-usage.cjs >> "$GITHUB_STEP_SUMMARY"
       - name: Open PR with data change
         env:
           GH_TOKEN: ${{ github.token }}
