@@ -189,3 +189,10 @@ test('size: the word before a bracket or comma counts; other words stay unknown'
   assert.equal(N.size('Nedidukas, 10 kg svorio'), null);
   assert.equal(require('../lib/labels.cjs').fieldFor('Ūgio kategorija'), 'size');
 });
+
+test('labels: rozinepedute-style rows map to health fields', () => {
+  const L = require('../lib/labels.cjs');
+  assert.deepEqual(L.fromPairs([['Ženklinta mikrochema', 'Taip'], ['Skiepų informacija:', 'Vakcinuota'], ['Kastracija', 'Neatlikta']]),
+    { chipped: true, vaccinated: true, neutered: false });
+  assert.deepEqual(L.fromPairs([['Skiepų informacija:', 'Nevakcinuota']]), { vaccinated: false });
+});

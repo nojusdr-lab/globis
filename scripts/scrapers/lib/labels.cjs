@@ -8,9 +8,9 @@ const LABELS = [
   ['sex', /^lytis$/],
   ['age_text', /^(amžius|gimimo data|spėjama gimimo data|gimęs|gimusi|gimė)$/],
   ['size', /^(dydis|ūgis|ūgio kategorija|dydžio kategorija)$/],
-  ['vaccinated', /^(skiepai|skiepytas|skiepyta|vakcinuotas|vakcinuota|vakcinacija)$/],
+  ['vaccinated', /^(skiepai|skiepytas|skiepyta|vakcinuotas|vakcinuota|vakcinacija|skiepų informacija)$/],
   ['neutered', /^(sterilizuotas|sterilizuota|sterilizacija|kastracija|kastruotas|kastruota|sterilizacija\/kastracija|atlikta sterilizacija|sterilizuotas\/kastruotas)$/],
-  ['chipped', /^(čipas|čipuotas|čipuota|mikroschema|ženklinimas|paženklintas|paženklinta)$/],
+  ['chipped', /^(čipas|čipuotas|čipuota|mikroschema|ženklinimas|paženklintas|paženklinta|(pa)?ženklint(as|a) mikro(s)?chema)$/],
   ['status', /^(statusas|būsena|būklė)$/],
 ];
 
