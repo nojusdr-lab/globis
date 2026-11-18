@@ -181,3 +181,11 @@ test('record: http photos on an https page become https only for the same host',
     photos: ['http://www.a.lt/x.jpg', 'http://cdn.other.lt/y.jpg', '/z.jpg'] });
   assert.deepEqual(a.photos, ['https://www.a.lt/x.jpg', 'http://cdn.other.lt/y.jpg', 'https://www.a.lt/z.jpg']);
 });
+
+test('size: the word before a bracket or comma counts; other words stay unknown', () => {
+  const N = require('../lib/normalize.cjs');
+  assert.equal(N.size('Mažas (iki 30cm ties ketera)'), 'small');
+  assert.equal(N.size('Vidutinis, 15 kg'), 'medium');
+  assert.equal(N.size('Nedidukas, 10 kg svorio'), null);
+  assert.equal(require('../lib/labels.cjs').fieldFor('Ūgio kategorija'), 'size');
+});

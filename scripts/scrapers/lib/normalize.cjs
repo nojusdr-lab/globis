@@ -38,7 +38,8 @@ function sex(value) {
 }
 
 function size(value) {
-  const v = fold(value);
+  // "Mažas (iki 30cm ties ketera)": the size word is what comes before a bracket or comma.
+  const v = fold(value).split(/\s*[(,]/)[0];
   if (/^(mažas|maža|mažo dydžio|small)$/.test(v)) return 'small';
   if (/^(vidutinis|vidutinė|vidutinio dydžio|medium)$/.test(v)) return 'medium';
   if (/^(didelis|didelė|didelio dydžio|large)$/.test(v)) return 'large';

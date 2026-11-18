@@ -49,6 +49,7 @@
 - **Sveikatos faktai iš aprašymo** (prioritetas 1): `fromProse` skaito aiškiai parašytus žodžius („kastruotas, skiepytas, ženklintas“); planai („bus sterilizuota“) ir prieštaravimai lieka nežinomi, lentelės reikšmė svarbesnė. sos-gyvunai čipas/skiepai/kastracija 0→74 %, siauliuletenele 0→12–15 %, naminukai čipas 0→23 %. penktakoja: svetainėje faktų nėra (tik vardas ir telefonas). Testai 247/0. Programėlėje po kito CI rinkimo.
 - **Linksmosios pėdutės**: dabar skaitomas kiekvieno gyvūno puslapis (53 užklausos, kešas). Gyvai: amžius (gimimo data) 0→100 %, skiepai 0→98 %, čipas 0→98 %, kastracija 0→81 %. Lyties ir dydžio svetainėje nėra. Aprašymo tekstas nekopijuojamas (svetainė leidžia tik nuorodą). Testai 247/0.
 - **Utenos gyvūnų globa (gyvunugloba)**: skaitomas kiekvieno gyvūno puslapis (42 užklausos). Gyvai: aprašymas 0→84 %, kastracija 0→16 % (iš teksto). Paramos blokas (sąskaita, PayPal) ir anketos tekstas nukerpami. Lyties, amžiaus, skiepų puslapiuose atskirai nėra. Testai 247/0.
+- **Tautmilės globa**: skaitomas kiekvieno gyvūno puslapis (lentelė ir aprašymas, 21 užklausa). Gyvai: rūšis, lytis, amžius, dydis, kastracija 0→100 %, aprašymas 0→79 %. Telefonai ir darbuotojų vardai iš aprašymo nukerpami. Bendrai: „Ūgio kategorija“ ir „Mažas (iki 30cm)“ dabar atpažįstami kaip dydis visiems adapteriams. Testai 249/0.
 
 ## Laukia savininko
 
