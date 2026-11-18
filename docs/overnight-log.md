@@ -78,6 +78,7 @@
 | mazeikiugyvunai | 97 | 100 | 100 | 100 | 0 | 0 | 0 | 0 | 1 |
 | beglobis | 27 | 100 | 100 | 100 | 0 | 30 | 74 | 41 | 100 |
 | padekman | 88 | 99 | 89 | 95 | 0 | 61 | 23 | 94 | 94 |
+- **Gimimo data iš aprašymo** (bendra): `fromProse` randa „Gimimo data (spėjama): 2012-01-01“, „Spėjama gimimo data – …“, „Gimęs 2021“ teksto viduryje; kelios skirtingos datos → nežinoma, atvykimo data neimama. Keturkojo viltis gyvai: amžius 49→98 %. Testai 255/0.
 
 ## Laukia savininko
 

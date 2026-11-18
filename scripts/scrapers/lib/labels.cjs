@@ -58,6 +58,8 @@ const PROSE = {
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
 const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
 
+const BIRTH = /((?:spėjama\s+)?gimimo\s+data(?:\s*\(spėjama\))?|gimęs|gimusi|gimė)\s*[:–-]?\s*(\d{4}(?:[-.\s]\d{2}){0,2})(?!\d)/giu;
+
 function fromProse(text) {
   const out = {};
   const sentences = N.fold(text).split(/[.!?\n]+/).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
@@ -72,6 +74,11 @@ function fromProse(text) {
     }
     if (seen.size === 1) out[field] = [...seen][0];
   }
+  // Birth date written in the story: "Gimimo data (spėjama): 2012-01-01", "Spėjama gimimo data – 2023-10-01",
+  // "Gimęs 2021-05". Label and date kept as written, joined with ": ". Two different dates (several animals in one text) -> unknown.
+  const births = new Map();
+  for (const m of String(text || '').matchAll(BIRTH)) births.set(m[2].replace(/[.\s]/g, '-'), `${N.cleanText(m[1]).replace(/^./u, c => c.toUpperCase())}: ${m[2]}`);
+  if (births.size === 1) out.age_text = [...births.values()][0];
   return out;
 }
 
