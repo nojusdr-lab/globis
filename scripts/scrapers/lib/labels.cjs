@@ -63,6 +63,10 @@ const BIRTH = /((?:spėjama\s+)?gimimo\s+data(?:\s*\(spėjama\))?|gimęs|gimusi|
 const NUM_WORD = 'vienerių|dvejų|dviejų|trejų|trijų|keturių|penkių|šešių|septynių|aštuonių|devynių|dešimties|pusės|pusantrų|kelių';
 const AGE = new RegExp(`(?:(?:apie|iki|virš|~)\\s*)?(?:\\d+(?:[.,]\\d+)?(?:\\s*[-–]\\s*\\d+)?|${NUM_WORD})\\s*(?:m\\.|metų|mėn\\.?|mėnesių)\\s+amžiaus|~?\\s*\\d{4}\\s*m\\.\\s+gimimo`, 'giu');
 
+// Size only when the text says "<word> ūgio/dydžio" ("vidutinio ūgio šunelis"); "didelio šuns" alone may be another dog.
+const SIZE = /(?<!\p{L})(mažo|nedidelio|vidutinio|didelio|stambaus)\s+(?:ūgio|dydžio)(?!\p{L})/giu;
+const SIZE_OF = { mažo: 'small', nedidelio: 'small', vidutinio: 'medium', didelio: 'large', stambaus: 'large' };
+
 function fromProse(text) {
   const out = {};
   const sentences = N.fold(text).split(/[.!?\n]+/).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
@@ -89,6 +93,9 @@ function fromProse(text) {
     const figures = new Set([...String(text || '').matchAll(/(\d+(?:[.,]\d+)?)\s*(m\.|metų|metai|metukai|mėn)/giu)].map(m => m[1] + m[2][0]));
     if (ages.size === 1 && figures.size <= 1) out.age_text = [...ages][0];
   }
+  // Two different sizes (mother and puppies) -> unknown.
+  const sizes = new Set([...String(text || '').matchAll(SIZE)].map(m => SIZE_OF[m[1].toLowerCase()]));
+  if (sizes.size === 1) out.size = [...sizes][0];
   return out;
 }
 

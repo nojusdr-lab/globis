@@ -62,11 +62,11 @@ test('bukmanodraugas: real posts give name, species, photo, text; unknown facts 
   assert.deepEqual(a.photos, ['https://bukmanodraugas.lt/wp-content/uploads/2026/11/986089CA-1C1D-4BBE-8D9D-BB7C96634B39.png']);
   assert.match(a.bio_lt, /^Martulis su dar dviem/);
   assert.equal(a.sourceUpdatedAt, '2026-11-11T18:50:16Z');
-  // Prose only: nothing is guessed from words like "šunelis" or "vidutinio ūgio".
+  // Prose only: nothing is guessed from words like "šunelis"; only a stated "vidutinio ūgio" gives a size.
   for (const x of run.animals) {
-    for (const f of ['sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped']) assert.equal(x[f], null, `${x.id} ${f}`);
+    for (const f of ['sex', 'age_text', 'vaccinated', 'neutered', 'chipped']) assert.equal(x[f], null, `${x.id} ${f}`);
   }
-  assert.equal(byId['bukmanodraugas:2516'].size, null, '"vidutinio ūgio" in prose is not a size label');
+  assert.equal(byId['bukmanodraugas:2516'].size, 'medium', '"vidutinio ūgio" stated in the text');
 });
 
 test('bukmanodraugas: status comes from the category text, with evidence', async () => {

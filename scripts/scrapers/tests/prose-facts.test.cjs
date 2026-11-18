@@ -48,3 +48,13 @@ test('fromProse: an age phrase next to another age figure stays unknown', () => 
   // Real siauliuletenele post 92739: the age belongs to the daughters, not to the post's animal.
   assert.equal(fromProse('Kalytė Dina (apie 4 m.) ir dvi jos dukrytės (apie 2 mėn. amžiaus) atvežtos.').age_text, undefined);
 });
+
+test('fromProse: size stated as "<word> ūgio/dydžio" (bukmanodraugas, sos-gyvunai, mazasdraugas wording)', () => {
+  assert.equal(fromProse('Pepsis – vidutinio ūgio šunelis, draugiškas.').size, 'medium');
+  assert.equal(fromProse('Apie dešimties metų amžiaus, vidutinio dydžio.').size, 'medium');
+  assert.equal(fromProse('Nedidelio ūgio, linksma kalytė.').size, 'small');
+  assert.equal(fromProse('Mažo ūgio berniukas.').size, 'small');
+  assert.equal(fromProse('Stambaus sudėjimo, didelio ūgio šuo.').size, 'large');
+  assert.equal(fromProse('Bijo didelio šuns kaimynystėje.').size, undefined, 'no ūgio/dydžio = not about this animal');
+  assert.equal(fromProse('Mama didelio ūgio, šuniukai bus mažo ūgio.').size, undefined, 'two sizes');
+});

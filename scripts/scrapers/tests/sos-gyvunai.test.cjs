@@ -81,9 +81,9 @@ test('sos-gyvunai: parses REST fields, unknowns stay null, donation block not in
 
   // No structured sex/size/health fields. Health words stated in the description count (fromProse).
   assert.equal(im.neutered, true); // "Jis atvyko jau kastruotas"
-  for (const a of run.animals) {
-    for (const f of ['sex', 'size']) assert.equal(a[f], null, `${a.id} ${f}`);
-  }
+  for (const a of run.animals) assert.equal(a.sex, null, `${a.id} sex`);
+  // Size only where the text states "<word> ūgio/dydžio".
+  for (const a of run.animals) assert.equal(a.size, /(mažo|nedidelio|vidutinio|didelio|stambaus)\s+(ūgio|dydžio)/i.test(a.bio_lt || '') ? a.size : null, `${a.id} size`);
 });
 
 test('sos-gyvunai: status comes from the real "Dovanojami gyvūnai" heading, with evidence', async () => {
