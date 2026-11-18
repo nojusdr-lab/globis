@@ -86,6 +86,7 @@
 
 - **Linksmosios pėdutės, dydis** (bendras `N.size`): „Nedidukas“, „Mažutė“, „Mažulytė“ → mažas; „Vidutinio ūgio“ → vidutinis; „Didelis vyrukas“, „Labai didelis“, „Gana didelė“, „Dičkis“ → didelis. „Nemažas“ ir vien svoris lieka nežinomi. Gyvai: dydis 11→32 % (kiti puslapiai DYDIS neturi). Aprašymų ten nėra: tik faktų eilutės ir paramos tekstas. Testai 264/0.
 - **Lesės logotipas** (Kaunas, Vilnius): imamas iš lese.lt (robots leidžia). Logotipas baltas, todėl rodomas ant Lesės oranžinės `#e87e04` (laukas `logoBg`). Dabar logotipą turi visos 24 programėlėje rodomos prieglaudos. Patikrinta naršyklėje. Kiti 23 logotipai vis dar imami iš globok.lt. Testai 264/0.
+- **Prieglaudų logotipai iš jų pačių svetainių**: 15 prieglaudų logotipas dabar imamas iš jų svetainės, ne iš globok.lt. Kur apvali svetainės ikona aiškesnė, imta ji. Visi patikrinti akimi ir programėlėje, neveikiančių 0. Globok.lt liko 8: 5 be svetainės adreso, o Maži jausmai, Rasų globa ir Linksma uodegėlė laukia sutikimo.
 
 ## Laukia savininko
 
