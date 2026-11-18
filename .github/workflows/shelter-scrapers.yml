@@ -3,8 +3,14 @@ on:
   pull_request:
     paths:
       - 'scripts/scrapers/**'
+      - 'package*.json'
       - '.github/workflows/shelter-scrapers.yml'
   workflow_dispatch:
+    inputs:
+      source:
+        description: One enabled source ID, after checking its access and content-use conditions
+        required: true
+        type: string
 permissions:
   contents: read
 jobs:
@@ -12,73 +18,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22.13.0'
           cache: npm
       - run: npm ci
       - run: node --test scripts/scrapers/tests/*.test.cjs
-  # Reconnaissance: runs only when the PR changes scripts/scrapers/probe-request.txt.
-  # Saves raw robots.txt and allowed pages back to the PR branch for adapter work.
-  probe:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+  preview:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-      - id: changed
-        run: |
-          if git diff --name-only "${{ github.event.before || 'HEAD~1' }}" HEAD | grep -q '^scripts/scrapers/probe-request.txt$'; then echo "run=1" >> "$GITHUB_OUTPUT"; fi
-      - uses: actions/setup-node@v4
-        if: steps.changed.outputs.run == '1'
-        with:
-          node-version: '22.13.0'
-      - if: steps.changed.outputs.run == '1'
-        run: |
-          node scripts/scrapers/probe.cjs scripts/scrapers/probe-output "$(head -1 scripts/scrapers/probe-request.txt | sed 's/^all$//')"
-      - if: steps.changed.outputs.run == '1'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/scrapers/probe-output
-          git commit -m "chore(scrapers): probe output (temporary, removed before merge)" || exit 0
-          ok=0; for i in 1 2 3 4; do git pull --rebase -q origin "$GITHUB_HEAD_REF" && git push && { ok=1; break; }; sleep $((i*5)); done; [ "$ok" = 1 ]
-  # Live dry run: runs every adapter against the real sites when the PR changes
-  # scripts/scrapers/live-run-request.txt, and commits a short report (no Supabase, no secrets).
-  live-run:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
     timeout-minutes: 60
+    concurrency: scraper-preview-${{ inputs.source }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-      - id: changed
-        run: |
-          if git diff --name-only "${{ github.event.before || 'HEAD~1' }}" HEAD | grep -q '^scripts/scrapers/live-run-request.txt$'; then echo "run=1" >> "$GITHUB_OUTPUT"; fi
+          persist-credentials: false
       - uses: actions/setup-node@v4
-        if: steps.changed.outputs.run == '1'
         with:
           node-version: '22.13.0'
           cache: npm
-      - if: steps.changed.outputs.run == '1'
-        run: npm ci
-      - if: steps.changed.outputs.run == '1'
-        run: node scripts/scrapers/run.cjs /tmp/scraped "$(head -1 scripts/scrapers/live-run-request.txt | awk '{print $1}' | sed 's/^all$//')" || true
-      - if: steps.changed.outputs.run == '1'
-        run: node scripts/scrapers/live-summary.cjs /tmp/scraped scripts/scrapers/live-output
-      - if: steps.changed.outputs.run == '1'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/scrapers/live-output
-          git commit -m "chore(scrapers): live dry-run report (temporary, removed before merge)" || exit 0
-          ok=0; for i in 1 2 3 4; do git pull --rebase -q origin "$GITHUB_HEAD_REF" && git push && { ok=1; break; }; sleep $((i*5)); done; [ "$ok" = 1 ]
+      - run: npm ci
+      - name: Collect one source and print counts
+        shell: bash
+        env:
+          SOURCE: ${{ inputs.source }}
+        run: node scripts/scrapers/preview.cjs "$SOURCE" "$RUNNER_TEMP/scraped-preview" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Keep full output for diagnosis
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shelter-preview-${{ github.run_id }}
+          path: ${{ runner.temp }}/scraped-preview/
+          retention-days: 7
+          if-no-files-found: warn

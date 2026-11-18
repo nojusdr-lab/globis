@@ -31,3 +31,19 @@ Gyvūno laukai: `nativeId` (stabilus: WP id arba slug), `sourceUrl`, `name`, `sp
 
 ## Testai
 `tests/<id>.test.cjs` su `fixtures/<id>/` (tikri, apkarpyti puslapiai iš `probe-output`, be kontaktų). Patikrink: laukai, nežinomi = null, statusai su įrodymu, puslapiavimas, klaida → `failed`.
+
+## Trumpa peržiūra
+
+Patikrinęs vieno šaltinio prieigos ir turinio naudojimo sąlygas, paleisk
+`npm run scrape:preview -- kggn` (arba kitą įjungto adapterio ID).
+Komanda pateikia tik skaičius ir iki trijų trumpų klaidų. Pilnas žurnalas yra
+`data/scraped-preview/run.log`, duomenys ir suvestinė yra tame pačiame aplanke.
+Peržiūra paveldi vietinio rinkimo patikras ir išsaugo paskutinę gerą kopiją.
+Duomenų bazės prisijungimo kintamasis į šį paleidimą neperduodamas.
+Nepilnas, atmestas ar nepavykęs paleidimas grąžina nesėkmės kodą.
+`npm run scrape` lieka esamai kasdienei eigai ir išsamiam diagnozavimui.
+
+GitHub „Shelter scrapers“ PR patikroje veikia vietiniai testų pavyzdžiai.
+Patvirtintai vieno šaltinio peržiūrai naudok „Run workflow“ ir įrašyk jo ID.
+Rezultatai laikomi 7 dienų artefakte, o santrauka rodoma paleidimo puslapyje.
+`probe-request.txt` ir `live-run-request.txt` pakeitimai rinkimo nebepaleidžia.
