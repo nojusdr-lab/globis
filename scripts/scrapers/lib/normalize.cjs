@@ -32,8 +32,9 @@ function species(value) {
 
 function sex(value) {
   const v = fold(value);
-  if (/^(patinas|patinėlis|berniukas|katinas|male)$/.test(v)) return 'male';
-  if (/^(patelė|patele|patytė|mergaitė|female)$/.test(v)) return 'female';
+  if (/^(patinas|patinėlis|berniukas|katinas|male|vyriška|vyriškas|vyriškoji)$/.test(v)) return 'male';
+  // "motiriška": a misspelling seen on padekman.lt (2026-11-18).
+  if (/^(patelė|patele|patytė|mergaitė|female|moteriška|moteriškas|moteriškoji|motiriška)$/.test(v)) return 'female';
   return null;
 }
 

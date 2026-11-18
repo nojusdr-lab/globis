@@ -196,3 +196,8 @@ test('labels: rozinepedute-style rows map to health fields', () => {
     { chipped: true, vaccinated: true, neutered: false });
   assert.deepEqual(L.fromPairs([['Skiepų informacija:', 'Nevakcinuota']]), { vaccinated: false });
 });
+
+test('sex: "Moteriška/Vyriška" and the padekman spelling "Motiriška"', () => {
+  const N = require('../lib/normalize.cjs');
+  assert.deepEqual(['Moteriška', 'Motiriška', 'Vyriška', 'Moteris'].map(N.sex), ['female', 'female', 'male', null]);
+});
