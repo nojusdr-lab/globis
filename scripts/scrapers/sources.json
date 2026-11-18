@@ -124,11 +124,11 @@
       "name": "AB „Panevėžio specialusis autotransportas“",
       "website": "https://www.psa.lt/benamiai-gyvunai/",
       "listing": [],
-      "robots": "unverified",
+      "robots": "Disallow: /admin/ /uploads/apsaugoti/",
       "terms": "unverified",
       "cms": "other",
       "decision": "no_listing",
-      "checked": "2026-11-16",
+      "checked": "2026-11-18",
       "note": "Stray capture service, one-dog gallery, no adoption list."
     },
     {
@@ -137,12 +137,12 @@
       "name": "Gintos Lapėnaitės gyvūnų namai Vizgis",
       "website": "https://vizgis.lt/",
       "listing": [],
-      "robots": "unverified",
+      "robots": "404 (no rules)",
       "terms": "unverified",
       "cms": "unverified",
       "decision": "no_listing",
       "note": "Home page (menu: Klinika, Apie mus, Paremti, Kontaktai) has no animal list; only totals.",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "sggn",
@@ -227,7 +227,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "gyvunugloba",
@@ -286,7 +286,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "vysniusodas",
@@ -294,12 +294,12 @@
       "name": "VšĮ „Vyšnių sodas“",
       "website": "http://www.vysniusodas.lt/",
       "listing": [],
-      "robots": "unverified",
+      "robots": "Disallow: /wp-admin/",
       "terms": "unverified",
       "cms": "unverified",
       "decision": "no_listing",
       "note": "Menu has only about, adoption form, reports, support; no animal list.",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "akeso",
@@ -325,7 +325,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "beglobis",
@@ -452,7 +452,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "donpita",
@@ -465,7 +465,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "lietuvagyvunams",
@@ -503,7 +503,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "telsiusuniukunamai",
@@ -591,15 +591,17 @@
     {
       "id": "keturkojoviltis",
       "vmvtRow": 2,
-      "name": "Asociacija „Keturkojo viltis“, Alytus (VMVT lists only Facebook)",
-      "website": "https://keturkojoviltis.lt/",
-      "listing": [],
-      "robots": "unverified",
+      "name": "Asociacija „Keturkojo viltis“, Alytus",
+      "website": "https://keturkojo-viltis.lt/",
+      "listing": [
+        "https://keturkojo-viltis.lt/wp-json/wp/v2/gyvunas"
+      ],
+      "robots": "User-agent: * Allow: / ; Disallow: /wp-admin/ /?s= ; no crawl-delay",
       "terms": "unverified",
-      "cms": "unverified",
-      "decision": "unreachable",
-      "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "cms": "wordpress",
+      "decision": "probe",
+      "note": "Real domain has a hyphen (keturkojoviltis.lt does not resolve). WP REST custom type gyvunas, 185 records (2026-11-18). Adapter candidate for step 4.",
+      "checked": "2026-11-18"
     },
     {
       "id": "naminukai",
@@ -628,7 +630,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "vggn",
@@ -641,7 +643,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     }
   ]
 }

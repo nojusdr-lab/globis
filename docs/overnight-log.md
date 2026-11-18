@@ -38,6 +38,7 @@
 - **Kontaktų įrodymai** (8, dalis): Katino svajonė, Telšių Šuniukų namai, Rasų globa: telefonas ir el. paštas iš jų pačių svetainės, `contactEvidence` 2026-11-18. Rožinė pėdutė praleista: jos robots.txt blokuoja ClaudeBot. Liko: padekman, naminukai, mazeikiugyvunai, akesoprieglauda (kontaktų puslapyje nerasta).
 - **Kontaktai** (8): baigta. Visos prieglaudos, kurių svetainėje yra kontaktai, turi `contactEvidence`; kitoms telefonas ir el. paštas lieka tušti.
 - **Lesė nuorodos** (9): jau veikia. `mergeDirect` globok.lt įrašus keičia lese.lt adapterio įrašais, visos 75 nuorodos veda į lese.lt.
+- **robots.txt auditas** (3, dalis): patikrinti psa, vizgis, vysniusodas. 8 svetainės nepasiekiamos (binada, grinda, vggd, makatukai, donpita, pukuotasvajone, dryzuotalaime, vggn). Rasta: Alytaus „Keturkojo viltis“ veikia adresu `keturkojo-viltis.lt` (su brūkšneliu), WP REST `gyvunas`, 185 įrašai. Kandidatas naujam adapteriui (4 žingsnis). Sąlygų puslapiai dar neperskaityti, todėl 3 žingsnis nepažymėtas.
 
 ## Laukia savininko
 
