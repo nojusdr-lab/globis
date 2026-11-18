@@ -68,9 +68,13 @@
     "logo": "https://globok.lt/shelter-logos/telsiusuniukunamailt.jpg",
     "url": "https://globok.lt/prieglaudos/telsiusuniukunamailt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37067505615",
+    "email": "vsitelsiusuniukunamai@gmail.com",
+    "website": "https://www.telsiusuniukunamai.lt",
+    "contactEvidence": {
+      "url": "https://www.telsiusuniukunamai.lt/kontaktai/",
+      "checkedAt": "2026-11-18"
+    }
   },
   {
     "id": "manual-asociacija-telsiu-uodegele",
@@ -317,9 +321,13 @@
     "logo": "https://globok.lt/shelter-logos/katinosvajonelt.png",
     "url": "https://globok.lt/prieglaudos/katinosvajonelt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37065515024",
+    "email": "info@katinosvajone.lt",
+    "website": "https://www.katinosvajone.lt",
+    "contactEvidence": {
+      "url": "https://www.katinosvajone.lt/kontaktai",
+      "checkedAt": "2026-11-18"
+    }
   },
   {
     "id": "fb-vsi-katino-usai",
@@ -467,9 +475,13 @@
     "logo": "https://globok.lt/shelter-logos/rasuglobalt.png",
     "url": "https://globok.lt/prieglaudos/rasuglobalt",
     "source": "globok",
-    "phone": null,
-    "email": null,
-    "website": null
+    "phone": "+37065614950",
+    "email": "rasugloba@gmail.com",
+    "website": "https://www.rasugloba.lt",
+    "contactEvidence": {
+      "url": "https://www.rasugloba.lt/",
+      "checkedAt": "2026-11-18"
+    }
   },
   {
     "id": "rozinepedutelt",
