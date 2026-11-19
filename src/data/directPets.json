@@ -240,7 +240,7 @@
   "status": "available",
   "statusEvidence": "ieško namų",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Apie 10 metukų",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -40153,7 +40153,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Talula rasta Salotės gatvėje. Ją radęs žmogus rūpinosi katyte, tačiau namuose gyvenantis šuo ir Talula nelabai sutarė, todėl mažylė atkeliavo pas mus. Talula – tikras meilumo įsikūnijimas. Vos priėjus prie jos narvelio, katytė iškiša savo mažą letenėlę ir prašo paglostukų. Ji labai draugiška, mėgstanti žmogaus dėmesį ir švelnumą. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-14T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-19T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
