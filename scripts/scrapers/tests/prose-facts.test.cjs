@@ -91,3 +91,11 @@ test('fromProse: time in shelter as written after "Prieglaudoje nuo"', () => {
   assert.equal(fromProse('Prieglaudoje nuo 2025-03.').in_shelter, 'nuo 2025-03');
   assert.equal(fromProse('Mama prieglaudoje nuo 2024 m., vaikai prieglaudoje nuo 2025 m.').in_shelter, undefined);
 });
+
+test('fromProse: arrival date "Į prieglaudą atvyko" counts as time in shelter; bare "atvyko" does not', () => {
+  // keturkojo-viltis.lt (2026-11-19)
+  assert.equal(fromProse('Į prieglaudą atvyko – 2025-07-29 iš Viečiūnų.').in_shelter, 'nuo 2025-07-29');
+  assert.equal(fromProse('Vaikinas atvyko į prieglaudą 2025 metų balandžio mėnesį mirus šeimininkui.').in_shelter, 'nuo 2025 metų balandžio mėnesį');
+  assert.equal(fromProse('Taip jis į mūsų globą atvyko 2026-04-01.').in_shelter, 'nuo 2026-04-01');
+  assert.equal(fromProse('Projekto dieną atvyko labai garbaus amžiaus pora.').in_shelter, undefined);
+});

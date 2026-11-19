@@ -44210,7 +44210,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-07-29",
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -45576,7 +45576,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2026 metų liepos mėnesį",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -45804,7 +45804,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2026-04-01",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -45880,7 +45880,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025 metų balandžio mėnesį",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -45918,7 +45918,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025 metų balandžio mėnesį",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -46716,7 +46716,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2021 m. lapkričio mėn.",
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -46792,7 +46792,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2021-08-25",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -46830,7 +46830,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2026-01-26",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -47172,7 +47172,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-02-04",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -47248,7 +47248,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-06-09",
   "medical": {
    "chipped": true,
    "vaccinated": null,
@@ -47324,7 +47324,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-12-06",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -47628,7 +47628,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-05-28",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -47666,7 +47666,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-12-22",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -47742,7 +47742,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2026-02-03",
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -47780,7 +47780,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-05-15",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -47856,7 +47856,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2026-02-01",
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -48046,7 +48046,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-10-10",
   "medical": {
    "chipped": true,
    "vaccinated": null,
@@ -48160,7 +48160,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2026-02-03",
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -48198,7 +48198,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2026-02-01",
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -48350,7 +48350,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-08-26",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -48464,7 +48464,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-11-19",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -48540,7 +48540,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-07-28",
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -48576,7 +48576,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-07-31",
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -48652,7 +48652,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-10-10",
   "medical": {
    "chipped": true,
    "vaccinated": null,
@@ -48728,7 +48728,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2025-01-23",
   "medical": {
    "chipped": true,
    "vaccinated": true,
@@ -49298,7 +49298,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2026 m.",
   "medical": {
    "chipped": true,
    "vaccinated": true,

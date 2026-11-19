@@ -106,6 +106,7 @@
 - **Lytis iš aprašymo** (bendra, `fromProse`): tik vienaskaitos gyvūno žodžiai („kalytė“, „patinas“, „patelė“, „patinėlis“); daugiskaita („dvi kalytės“), abi lytys tekste, „berniukas/mergaitė“ (gali būti vaikas) ir įrašai su keliais vardais („MARTA IR BAIKA“) lieka nežinomi. Patikrinta 6 pavyzdžiais, visi teisingi. Gyvai: siauliuletenele lytis 0→11 %, mazasdraugas 0→14 %, sos-gyvunai 0→6 %, keturkojo-viltis 0→2 %. `directPets.json` atnaujintas. Testai 283/0.
 - **Laikas prieglaudoje** (naujas laukas `in_shelter`, programėlės profilyje „Prieglaudoje“, rodomas tik kai žinomas): kaip parašyta prieglaudos. Keturkojo viltis „Prieglaudoje nuo: …“ 0→47 % (pvz. Žvirbliukas „nuo 2026 m. birželio mėn.“), Rožinė pėdutė kortelės „Prieglaudoje: 1mėn. 7d.“ 0→100 %, Mažeikiai API `registrationDate` 0→100 %. Rožinės pėdutės gyvūnai mirksniui pasimes, kai serveris pakeis įpakuotą kopiją: DB dar neturi stulpelio (reikės migracijos). Testai 286/0.
 - **`in_shelter` duomenų bazėje**: migracija `20261119000200_in_shelter.sql` (stulpelis + `published_animals` view). Loaderis rašo stulpelį tik kai jis yra, todėl rinkimas veikia ir prieš migraciją. Testas: laukas pasiekia programėlės view; DB be stulpelio vis tiek įkeliama. Testai 287/0.
+- **Laikas prieglaudoje iš „Į prieglaudą atvyko …“** (bendra): data turi eiti iškart po žodžių su „prieglaudą“, „mūsų globą“ ar „pas mus“; vien „atvyko pora“ neimama. Keturkojo viltis 47→61 % (pvz. Birutė „nuo 2025-07-29“). Testai 288/0.
 
 ## Laukia savininko
 
