@@ -8,6 +8,8 @@ Izoliuotoje vietinėje kopijoje gyvai užbaigti 19 įjungtų adapterių. Pradin�
 
 Pakartotas „Penktos kojos“ gyvas rinkimas iš galerijų atkūrė 18 trūkusių pagrindinių nuotraukų (iš 19 liko 1 be nuotraukos). Atskirai patikrintos 22 neįjungtų svetainių viešos pradinės nuorodos: 13 pasiekiamų, 9 neprieinamos šiuo leidžiamu būdu (įskaitant ankstesnę `no_listing` 404 nuorodą). Užklausų laikai / HTTP / hash ir konservatyvi šios patikros apimtis pateikti [šaltinių patikros įraše](source-review-2026-11-19.json). Pasiekiamas pagrindinis puslapis neįrodo gyvūnų sąrašo ar naudojimo leidimo.
 
+Galutinė [gyvos patikros suvestinė](verification-2026-11-19.json): 1404 įrašai, 0 struktūros klaidų; patikrintos visų įrašų pagrindinės nuotraukos, 1399 pasiekiamos, 5 nepateiktos šaltiniuose. Iš viso atkurta 24 galerijų nuotraukos: 18 „Penkta koja“, 4 „Keturkojo viltis“, 1 „SOS gyvūnai“, 1 Utenos draugija. Ištaisytas parseris po pakartotų gyvų rinkimų atgavo 32 aiškiai tekste buvusius sveikatos faktus. 27 „Beglobio“ įrašai vis dar turi HTTP nuotraukų nuorodas; HTTPS robots / puslapio gavimas nepavyko, todėl saugus transportas neišgalvojamas. Penkiems likusiems įrašams svetimų gyvūnų ar logotipų nepriskiriame. 604 įrašai turi bent vieną įspėjimą apie trūkstamą ar neaiškią informaciją; tai nėra 604 netaisyklingi įrašai.
+
 Likusių eilučių priežastys iš pradinės patikros:
 
 | Būsena | Eilutės |
