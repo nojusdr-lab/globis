@@ -99,6 +99,7 @@
 - **Serverio skaitymas** (B17): `fetchPublished` baigdavo, kai puslapis trumpesnis nei 1000; jei Supabase `max-rows` mažesnis, programėlė gautų tik dalį gyvūnų ir jais pakeistų įpakuotą kopiją. Dabar skaitoma su `limit/offset`, kol puslapis tuščias; bet kokia klaida palieka įpakuotą kopiją. Logika perkelta į `appPet.cjs` ir patikrinta testu. Testai 270/0. Programėlėje (Expo) nepaleista.
 - **Serverio skaitymas gyvai** (B17 patikra): programėlė naršyklėje (Expo web) skaito gyvą Supabase: 3 užklausos (`offset` 0, 1000, 1156), gauta 1156 eilučių, paskutinis tuščias puslapis baigia ciklą, konsolėje klaidų nėra. Pastaba savininkui: įpakuotoje globok.lt kopijoje vis dar rodomos „Maži jausmai“ nuotraukos, nors jų sąlygos draudžia naudoti turinį.
 - **Gyva DB ir Maži jausmai**: gyvame Supabase visos kopijos dar 2026-11-18 11:xx (senas kodas), todėl nauji laukai (pvz. linksmosiospedutes, tautmilesgloba, rozinepedute, sos-gyvunai 0 %) programėlėje atsiras tik po savininko CI rinkimo. Ten pat dar publikuota 36 „Maži jausmai“ gyvūnų, nors jų sąlygos draudžia naudoti turinį, o `allPets.json` turi 36 jų globok.lt kopijas. Programėlė dabar jų nerodo (`withoutBlocked` bendrame `build` kelyje): 1327→1291. DB kopiją nuimti vis tiek turi savininkas. Testai 271/0.
+- **Maži jausmai patikra programėlėje**: Expo web su gyvu Supabase, „Prieglaudos“ sąraše (rūšiuota pagal gyvūnų skaičių) po „Mažas draugas · 36“ eina „Lesė (Vilnius) · 31“; „Maži jausmai“ nerodoma.
 
 ## Laukia savininko
 
