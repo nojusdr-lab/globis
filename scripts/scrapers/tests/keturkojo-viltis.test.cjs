@@ -47,3 +47,20 @@ test('keturkojo-viltis: Žvirbliukas page gives birth date, health facts and a c
   assert.match(z.bio_lt, /Prieglaudoje nuo: 2026 m\. birželio mėn\.$/);
   assert.doesNotMatch(z.bio_lt, /Facebook|☎|Stoties|keturkojo-viltis\.lt/);
 });
+
+test('keturkojo-viltis: detail page gives sex and status from its fact list', async () => {
+  const html = require('node:fs').readFileSync(require('node:path').join(__dirname, '../fixtures/keturkojo-viltis/morana.html'), 'utf8');
+  const r = { ...routes, 'https://keturkojo-viltis.lt/gyvunai/morana/': { body: html } };
+  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, []) });
+  const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
+  assert.equal(run.state, 'complete');
+  const m = run.animals.find(a => a.id === 'keturkojo-viltis:2077');
+  assert.equal(m.sex, 'female', '<dt>Lytis</dt><dd>Patelė</dd>');
+  assert.equal(m.status, 'available', '"Ieško namų"');
+  assert.equal(m.statusEvidence, 'Ieško namų');
+  assert.equal(m.age_text, 'Spėjama gimimo data: 2025-10-01');
+  // No detail page for the other fixture animal: its REST facts stay, nothing is guessed.
+  const t = run.animals.find(a => a.id === 'keturkojo-viltis:2050');
+  assert.equal(t.sex, null);
+  assert.equal(t.status, 'unknown');
+});

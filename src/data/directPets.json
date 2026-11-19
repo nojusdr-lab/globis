@@ -7196,15 +7196,15 @@
   "status": "available",
   "statusEvidence": "Šuniukai ieškantys namų",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "2018 10 14",
   "ageEn": null,
-  "size": null,
+  "size": "small",
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -8678,15 +8678,15 @@
   "status": "available",
   "statusEvidence": "Kačiukai ieškantys namų",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "2026 05 16",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -42649,9 +42649,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5822-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-10-01",
   "ageEn": null,
   "size": null,
@@ -42687,9 +42687,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5271-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2026-04-01",
   "ageEn": null,
   "size": null,
@@ -42723,9 +42723,9 @@
   "species": "cat",
   "city": "Alytus",
   "photos": [],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2024-09-18",
   "ageEn": null,
   "size": null,
@@ -42761,9 +42761,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_2788-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-04-01",
   "ageEn": null,
   "size": null,
@@ -42799,9 +42799,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_4974-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2026-05-19",
   "ageEn": null,
   "size": null,
@@ -42837,9 +42837,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_3721-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-05-01",
   "ageEn": null,
   "size": null,
@@ -42875,9 +42875,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_4578-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2016-01-01",
   "ageEn": null,
   "size": null,
@@ -42913,9 +42913,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5602-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-05-01",
   "ageEn": null,
   "size": null,
@@ -42951,9 +42951,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_4750-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2026-05-04",
   "ageEn": null,
   "size": null,
@@ -42989,9 +42989,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_4795-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-05-01",
   "ageEn": null,
   "size": null,
@@ -43027,10 +43027,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5651-1-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2026-05-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "20126-05-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -43065,9 +43065,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_0102-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2020-02-01",
   "ageEn": null,
   "size": null,
@@ -43103,9 +43103,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_9731-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2019-07-01",
   "ageEn": null,
   "size": null,
@@ -43141,9 +43141,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5802-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-05-15",
   "ageEn": null,
   "size": null,
@@ -43179,9 +43179,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5676-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-05-12",
   "ageEn": null,
   "size": null,
@@ -43217,9 +43217,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_2168-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2025-06-01",
   "ageEn": null,
   "size": null,
@@ -43255,10 +43255,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5190-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimimo data: 2019-03-01",
+  "ageLt": "Spėjama gimimo data: 2019-03-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -43293,10 +43293,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5329-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2025-05-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2025-10-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -43331,10 +43331,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5159-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "201-03-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2019-03-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -43369,9 +43369,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_0554-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2024-05-01",
   "ageEn": null,
   "size": null,
@@ -43407,10 +43407,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5060-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data (spėjama): 2012-01-01",
+  "ageLt": "Spėjama gimimo data: 2012-01-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -43445,9 +43445,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/3_20261025_100543_0002-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2015-01-01",
   "ageEn": null,
   "size": null,
@@ -43483,9 +43483,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5946.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-05-01",
   "ageEn": null,
   "size": null,
@@ -43521,9 +43521,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5308-scaled-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2019-03-01",
   "ageEn": null,
   "size": null,
@@ -43559,9 +43559,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5564-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2026-04-01",
   "ageEn": null,
   "size": null,
@@ -43597,9 +43597,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_4778-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-04-01",
   "ageEn": null,
   "size": null,
@@ -43635,9 +43635,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_4685-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-05-10",
   "ageEn": null,
   "size": null,
@@ -43671,10 +43671,10 @@
   "species": "cat",
   "city": "Alytus",
   "photos": [],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2026-01-29",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2025-09-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -43709,9 +43709,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5499-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-05-01",
   "ageEn": null,
   "size": null,
@@ -43747,9 +43747,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5720-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-04-01",
   "ageEn": null,
   "size": null,
@@ -43785,9 +43785,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_4606-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2024-03-01",
   "ageEn": null,
   "size": null,
@@ -43823,9 +43823,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_2566-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2026-01-29",
   "ageEn": null,
   "size": null,
@@ -43861,9 +43861,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_9260-scaled-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2026-05-15",
   "ageEn": null,
   "size": null,
@@ -43899,9 +43899,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5920-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2017-01-01",
   "ageEn": null,
   "size": null,
@@ -43937,10 +43937,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5131-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2026-04-20",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2025-04-20",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -43975,9 +43975,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_5405-scaled-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2016-01-01",
   "ageEn": null,
   "size": null,
@@ -44013,10 +44013,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_4595-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data (spėjama): 2025-08-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2025-08-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -44051,9 +44051,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_0251-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2023-10-01",
   "ageEn": null,
   "size": null,
@@ -44089,9 +44089,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/VEGA-2.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2021-01-01",
   "ageEn": null,
   "size": null,
@@ -44127,9 +44127,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/DOVYDAS.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2020-10-01",
   "ageEn": null,
   "size": null,
@@ -44165,10 +44165,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/898290217_1452061506570332_4364577760697225533_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2015-09-10",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2015-09-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -44203,9 +44203,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_0622-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2021-11-29",
   "ageEn": null,
   "size": null,
@@ -44241,9 +44241,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/istockphoto-2096591522-612x612-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2015-10-01",
   "ageEn": null,
   "size": null,
@@ -44279,9 +44279,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/REGIS.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2023-04-06",
   "ageEn": null,
   "size": null,
@@ -44317,9 +44317,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/GILSE.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2024-12-10",
   "ageEn": null,
   "size": null,
@@ -44355,9 +44355,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/GEMA.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2022-09-20",
   "ageEn": null,
   "size": null,
@@ -44393,9 +44393,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/RYLE.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2022-07-02",
   "ageEn": null,
   "size": null,
@@ -44431,9 +44431,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/SILVA.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2020-06-18",
   "ageEn": null,
   "size": null,
@@ -44469,9 +44469,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/HUGO.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2022-02-03",
   "ageEn": null,
   "size": null,
@@ -44507,9 +44507,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/RUGIS.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2021-05-16",
   "ageEn": null,
   "size": null,
@@ -44545,9 +44545,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/891953500_4084800155158372_7228657560743110048_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-12-14",
   "ageEn": null,
   "size": null,
@@ -44583,9 +44583,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/888204602_2217972572410420_2896775493438820727_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-12-14",
   "ageEn": null,
   "size": null,
@@ -44621,9 +44621,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/864731854_1498975972149764_8318954538234434855_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2022-01-20",
   "ageEn": null,
   "size": null,
@@ -44659,9 +44659,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/897299230_1487920213215849_3027153720839469768_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2016-02-05",
   "ageEn": null,
   "size": null,
@@ -44697,9 +44697,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/PIFAS-is-kaimo.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2019-12-01",
   "ageEn": null,
   "size": null,
@@ -44735,9 +44735,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/893020418_2230963777840931_3503175254723444418_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2018-01-10",
   "ageEn": null,
   "size": null,
@@ -44773,8 +44773,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/893398082_1160734993565973_3621355295517592600_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": null,
   "ageLt": "Spėjama gimimo data: 2015-05-18",
   "ageEn": null,
@@ -44811,9 +44811,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/896050208_1449391000660384_5292870681839098363_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2021-01-01",
   "ageEn": null,
   "size": null,
@@ -44849,9 +44849,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/888448471_974770759041597_4796238254885346255_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2020-01-01",
   "ageEn": null,
   "size": null,
@@ -44887,9 +44887,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/884549059_2642828656190329_6377798893056077991_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2020-01-01",
   "ageEn": null,
   "size": null,
@@ -44925,9 +44925,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/888014245_1462634848536019_2874067144664048113_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2019-06-01",
   "ageEn": null,
   "size": null,
@@ -44963,9 +44963,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/871055414_1121362390684495_6426333555564668493_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2022-01-01",
   "ageEn": null,
   "size": null,
@@ -45001,9 +45001,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/891787027_1184647097843638_3208653479610776796_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2020-01-01",
   "ageEn": null,
   "size": null,
@@ -45039,9 +45039,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/899053368_1158346813504945_995127006406331544_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2016-01-01",
   "ageEn": null,
   "size": null,
@@ -45077,9 +45077,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/892368548_2230619907851513_4506059947129197886_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2021-01-01",
   "ageEn": null,
   "size": null,
@@ -45115,9 +45115,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/893764214_1093652490173001_5764374748749878986_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2018-08-06",
   "ageEn": null,
   "size": null,
@@ -45153,9 +45153,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/890717163_4616542765224559_8969009197601455611_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2018-01-01",
   "ageEn": null,
   "size": null,
@@ -45191,9 +45191,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/877810303_2126780994872783_5079686089307804807_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2018-01-01",
   "ageEn": null,
   "size": null,
@@ -45229,9 +45229,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/PXL_20261104_120813505.MP_-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2022-05-02",
   "ageEn": null,
   "size": null,
@@ -45265,10 +45265,10 @@
   "species": "dog",
   "city": "Alytus",
   "photos": [],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2018-04-01",
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2018-04-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -45303,9 +45303,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_9464.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2021-07-02",
   "ageEn": null,
   "size": null,
@@ -45341,9 +45341,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_9020-scaled-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2016-03-24",
   "ageEn": null,
   "size": null,
@@ -45379,9 +45379,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_0475_1-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2022-08-01",
   "ageEn": null,
   "size": null,
@@ -45417,10 +45417,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/e16fbf251b94cf517c1dcafd9a518066.jpeg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2019-11-19",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2019-11-19",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -45455,9 +45455,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/PXL_20261017_095912720-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2024-07-28",
   "ageEn": null,
   "size": null,
@@ -45493,9 +45493,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/att.aaFK-DY0ngZQgq1DeOodPoEtbvevQObBkfEtnj3Y124.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2021-01-01",
   "ageEn": null,
   "size": null,
@@ -45531,9 +45531,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/PXL_20261004_065309097-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2017-04-30",
   "ageEn": null,
   "size": null,
@@ -45569,9 +45569,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_3252_1-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2022-05-24",
   "ageEn": null,
   "size": null,
@@ -45607,10 +45607,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/9d8b023cf5d2e87c1a0e82939d575aee.jpeg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimęs: 2018-05-05",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2018-05-05",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -45645,9 +45645,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/Keturkojo_Viltis_Sunys-48-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2018-11-05",
   "ageEn": null,
   "size": null,
@@ -45683,9 +45683,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/IMG_6609_1-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2020-01-14",
   "ageEn": null,
   "size": null,
@@ -45721,9 +45721,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_0444-scaled-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2018-08-01",
   "ageEn": null,
   "size": null,
@@ -45759,9 +45759,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_1733-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2015-07-08",
   "ageEn": null,
   "size": null,
@@ -45797,9 +45797,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG-20260520-WA0071.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2020-02-05",
   "ageEn": null,
   "size": null,
@@ -45835,9 +45835,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG-20260520-WA0037.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2015-01-01",
   "ageEn": null,
   "size": null,
@@ -45873,10 +45873,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/GSS9809-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2019-01-05",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2019-01-05",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -45911,10 +45911,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/PXL_20261017_103935490-1-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2021-05-10",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2021-05-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -45949,10 +45949,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Copy-of-IMG_0628-2.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 28.02.2013",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2013-02-28",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -45987,9 +45987,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/att.Y3xt03yyfFg3ewBpoCIGO7rgHQHgJn8DUK_xMq98t6k.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2015-11-01",
   "ageEn": null,
   "size": null,
@@ -46025,9 +46025,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Svarcas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2019-01-01",
   "ageEn": null,
   "size": null,
@@ -46063,9 +46063,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Roksis-6.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2020-04-20",
   "ageEn": null,
   "size": null,
@@ -46101,10 +46101,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/PXL_20261017_103515843-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2019-01-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2019",
   "ageEn": null,
   "size": "medium",
   "waitingDays": null,
@@ -46139,10 +46139,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Rikis-Piktukas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2012-10-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2012",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46177,10 +46177,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Pifas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2015-05-09",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2015",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46215,8 +46215,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_0001-scaled-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2015-01-01",
   "ageEn": null,
@@ -46253,9 +46253,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_8990.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2016-02-14",
   "ageEn": null,
   "size": null,
@@ -46291,10 +46291,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Kliukas-6.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2011-04-26",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2011-04-26",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46329,9 +46329,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_2945.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2019-01-01",
   "ageEn": null,
   "size": null,
@@ -46367,9 +46367,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_0100-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2016",
   "ageEn": null,
   "size": null,
@@ -46405,9 +46405,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_6777-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2017-07-25",
   "ageEn": null,
   "size": null,
@@ -46443,8 +46443,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Salpusnis-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "Gimimo data: 2019-10-15",
   "ageEn": null,
@@ -46481,10 +46481,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Renatas-4.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "2021 m. lapkritį",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2021-11-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46519,10 +46519,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Kajus-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": null,
-  "ageLt": "Spėjama gimimo data: 2026-05-10",
+  "ageLt": "Gimimo data: 2026-05-10",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46557,8 +46557,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Duksta-6.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2011-01-01",
   "ageEn": null,
@@ -46595,10 +46595,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_5049-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "2024 m. birželį",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2024-06-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46633,8 +46633,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Vasara-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2021-06-25",
   "ageEn": null,
@@ -46671,8 +46671,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Tinkis-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": null,
   "ageLt": "Spėjama gimimo data: 2025-10-01",
   "ageEn": null,
@@ -46709,10 +46709,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Saulius-4.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": null,
+  "ageLt": "2020 m.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46747,10 +46747,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Reine-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data (spėjama): 2022-05-01",
+  "ageLt": "Spėjama gimimo data: 2022-05-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46785,10 +46785,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Pestukas-1-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimęs: 2019",
+  "ageLt": "Spėjama gimimo data: 2019-01-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46823,10 +46823,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Oniksas-2.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimęs: 2019",
+  "ageLt": "Spėjama gimimo data: 2019-06-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46861,10 +46861,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Nemunelis-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimimo data: 2021-03-01",
+  "ageLt": "Spėjama gimimo data: 2021-03-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46899,10 +46899,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Nefritas-1-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimęs: 2021",
+  "ageLt": "Spėjama gimimo data: 2021",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46937,10 +46937,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Mini-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimusi: 2021",
+  "ageLt": "Spėjama gimimo data: 2021-04-15",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -46975,10 +46975,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Lakaja-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data: 2021-06-24",
+  "ageLt": "Spėjama gimimo data: 2021-06-24",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47013,8 +47013,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Kurapka-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2021-03-01",
   "ageEn": null,
@@ -47051,10 +47051,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Krabas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimimo data: 2021-06-05",
+  "ageLt": "Spėjama gimimo data: 2021-06-05",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47089,9 +47089,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Dilanas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2025-05-01",
   "ageEn": null,
   "size": null,
@@ -47127,10 +47127,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Cezaris-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": null,
+  "ageLt": "Spėjama gimimo data: 2020-05-20",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47165,8 +47165,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Banginuke-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2018-10-01",
   "ageEn": null,
@@ -47203,10 +47203,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_0452-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2016-01-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2016.01.01",
   "ageEn": null,
   "size": "large",
   "waitingDays": null,
@@ -47241,9 +47241,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_5510-scaled.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Gimimo data: 2018-01-01",
   "ageEn": null,
   "size": null,
@@ -47279,10 +47279,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_7472-scaled.jpeg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimęs: 2015-11-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2015-11-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47317,9 +47317,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/00fc20c4ff8e6b979ec3e38b12c53c0a.jpeg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2019-01-01",
   "ageEn": null,
   "size": null,
@@ -47355,10 +47355,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/fa1935b2-180d-43d3-b34d-7bf49a45bede.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2018-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2018-01-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47393,9 +47393,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Bela-2.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2020-11-01",
   "ageEn": null,
   "size": null,
@@ -47431,10 +47431,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Amygo-7.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2017-01-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2017",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47469,8 +47469,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Verita-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2024-09-01",
   "ageEn": null,
@@ -47507,8 +47507,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Vagonas-2.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "Spėjama gimimo data: 2022-12-01",
   "ageEn": null,
@@ -47545,10 +47545,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Umede-5.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": null,
+  "ageLt": "Spėjama gimimo data: 2025-08-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47583,8 +47583,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Skraiste-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-02-01",
   "ageEn": null,
@@ -47621,8 +47621,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Sampane-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2023-02-01",
   "ageEn": null,
@@ -47659,9 +47659,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Sadis-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2026-04-01",
   "ageEn": null,
   "size": null,
@@ -47697,10 +47697,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Rekjavikas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Spėjama gimimo data: 2023-05-01",
+  "ageLt": "Spėjama gimimo data: 2025-06-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47735,10 +47735,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Rasyte-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data: 2025-11",
+  "ageLt": "Spėjama gimimo data: 2025-11-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47773,8 +47773,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Pecilija-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-08-01",
   "ageEn": null,
@@ -47811,10 +47811,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Naktele-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data: 2023-04-12",
+  "ageLt": "Spėjama gimimo data: 2023-04-12",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47849,10 +47849,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Mikle-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data: 2025-10-01",
+  "ageLt": "Spėjama gimimo data: 2025-10-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -47887,8 +47887,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Martynas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "Spėjama gimimo data: 2025-06-14",
   "ageEn": null,
@@ -47925,8 +47925,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Leila-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-05-01",
   "ageEn": null,
@@ -47963,10 +47963,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Lavera-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data: 2025-06-01",
+  "ageLt": "Spėjama gimimo data: 2025-06-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48001,9 +48001,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Kruzas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2025-09-01",
   "ageEn": null,
   "size": null,
@@ -48039,8 +48039,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/apucina-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2023-05-01",
   "ageEn": null,
@@ -48077,10 +48077,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Kamiu-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimęs: 2025-08-01",
+  "ageLt": "Spėjama gimimo data: 2025-08-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48115,10 +48115,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Ilinojus-2.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimęs: 2024-09-01",
+  "ageLt": "Spėjama gimimo data: 2024-09-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48153,10 +48153,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Berne-1-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": null,
-  "ageLt": "Gimusi: 2025-04-01",
+  "ageLt": "2025 m.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48191,8 +48191,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Barilis-2.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "Spėjama gimimo data: 2025-05-01",
   "ageEn": null,
@@ -48229,8 +48229,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Barchanas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "Spėjama gimimo data: 2022-09-01",
   "ageEn": null,
@@ -48267,8 +48267,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Baiba-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-06-25",
   "ageEn": null,
@@ -48305,8 +48305,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Auresta-7.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-04-01",
   "ageEn": null,
@@ -48343,10 +48343,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Atika-3.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data: 2024-09-01",
+  "ageLt": "Spėjama gimimo data: 2024-09-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48381,8 +48381,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Astrida-4.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-05-01",
   "ageEn": null,
@@ -48417,8 +48417,8 @@
   "species": "cat",
   "city": "Alytus",
   "photos": [],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2025-05-01",
   "ageEn": null,
@@ -48455,10 +48455,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Anabele-6.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "Gimimo data (spėjama): 2024-06-01",
+  "ageLt": "Spėjama gimimo data: 2024-06-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48493,8 +48493,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Amarilis-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "Spėjama gimimo data: 2025-06-14",
   "ageEn": null,
@@ -48531,8 +48531,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Alberto-3.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "Spėjama gimimo data: 2025-08-01",
   "ageEn": null,
@@ -48569,9 +48569,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Agurkas-6.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2024-07-01",
   "ageEn": null,
   "size": null,
@@ -48607,10 +48607,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/469891339_1494127314587419_2187286648380228371_n-1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2017-01-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48645,10 +48645,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Virbalis-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimimo data: 2018-01-01",
+  "ageLt": "Spėjama gimimo data: 2018-01-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48683,9 +48683,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Troja-2.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2020-01-01",
   "ageEn": null,
   "size": null,
@@ -48721,9 +48721,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/893426607_1435770028682757_7336946956337098960_n.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2022-06-10",
   "ageEn": null,
   "size": null,
@@ -48759,10 +48759,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Sosa-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2024-06-05",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2024-06-05",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -48797,8 +48797,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Sira-5.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2024-01-12",
   "ageEn": null,
@@ -48835,8 +48835,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Simba-7-e1793713500406.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "Spėjama gimimo data: 2021-01-01",
   "ageEn": null,
@@ -48873,9 +48873,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Salsa-2.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2023-01-01",
   "ageEn": null,
   "size": null,
@@ -48911,9 +48911,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Rusnius-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2018-11-01",
   "ageEn": null,
   "size": null,
@@ -48949,9 +48949,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Reksas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2019-08-01",
   "ageEn": null,
   "size": null,
@@ -48987,9 +48987,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Pukis-5.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2023-01-01",
   "ageEn": null,
   "size": null,
@@ -49025,9 +49025,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Pletas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2023-12-15",
   "ageEn": null,
   "size": null,
@@ -49063,9 +49063,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Niva-3-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2018-01-01",
   "ageEn": null,
   "size": null,
@@ -49101,9 +49101,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Naidas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2021-07-02",
   "ageEn": null,
   "size": null,
@@ -49139,10 +49139,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Luna-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2023-11-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2023-11-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -49177,9 +49177,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Luka-2-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
   "ageLt": "Spėjama gimimo data: 2021-01-01",
   "ageEn": null,
   "size": null,
@@ -49215,10 +49215,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Lazdis-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "Gimimo data: 2022-01-01",
+  "ageLt": "Spėjama gimimo data: 2022-01-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -49253,9 +49253,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Grinius-2.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2021-09-01",
   "ageEn": null,
   "size": null,
@@ -49291,10 +49291,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_7787-scaled.jpeg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2017",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2017-01-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -49329,10 +49329,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Aras-1-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2021-01-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2021",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -49367,10 +49367,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Amsius-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2020-09-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2020-09-01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -49405,10 +49405,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Zvirbliukas-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2018-06-05",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2018-06-05",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -49443,10 +49443,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Smarlis-5.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2016-01-26",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2016",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -49481,8 +49481,8 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Seira-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "female",
   "ageLt": "Spėjama gimimo data: 2014-01-01",
   "ageEn": null,
@@ -49519,10 +49519,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/IMG_3883_1.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Spėjama gimimo data: 2015-01-01",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "Spėjama gimimo data: 2015",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -49557,9 +49557,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Juodis-1.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
   "ageLt": "Spėjama gimimo data: 2012-04-20",
   "ageEn": null,
   "size": null,
@@ -49595,10 +49595,10 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Ciobis-3.webp"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "Gimimo data: 2018-10-10",
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2018-10-10",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
