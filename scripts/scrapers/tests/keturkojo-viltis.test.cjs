@@ -16,7 +16,7 @@ test('keturkojo-viltis: species from rusis, age from "Spėjama gimimo data", sta
   const m = byId['keturkojo-viltis:2077'];
   assert.equal(m.name, 'Morana');
   assert.equal(m.species, 'cat');
-  assert.equal(m.age_text, '2025-10-01');
+  assert.equal(m.age_text, 'Spėjama gimimo data: 2025-10-01');
   assert.equal(m.sex, null);
   assert.equal(m.status, 'unknown');
   assert.deepEqual(m.photos, ['https://keturkojo-viltis.lt/wp-content/uploads/2026/11/morana.jpg']);

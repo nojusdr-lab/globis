@@ -20,6 +20,14 @@ function fieldFor(label) {
   return null;
 }
 
+// A date keeps its label ("Spėjama gimimo data: 2025-10-01"): a bare date hides that it is a birth date or an estimate.
+// Text after the date on the same line ("2020-03-01, svoris: 12 kg, …") is not the age; the story still holds it.
+function ageText(label, value) {
+  const date = value.match(/^(\d{4}(?:[-. ]\d{1,2}){0,2}|\d{1,2}\.\d{1,2}\.\d{4})(?=$|[,;])/);
+  if (!date) return value;
+  const l = N.cleanText(label).replace(/[:：]\s*$/, '');
+  return /^amžius$/i.test(l) ? date[1] : `${l.charAt(0).toUpperCase()}${l.slice(1)}: ${date[1]}`;
+}
 // pairs: array of [label, value] already split by an adapter (from a table, dl, or "A: B" lines).
 function fromPairs(pairs) {
   const out = {};
@@ -30,7 +38,7 @@ function fromPairs(pairs) {
     if (field === 'species') out.species = N.species(value);
     else if (field === 'sex') out.sex = N.sex(value);
     else if (field === 'size') out.size = N.size(value);
-    else if (field === 'age_text') out.age_text = value;
+    else if (field === 'age_text') out.age_text = ageText(label, value);
     else if (field === 'status') { const s = N.status(value); out.status = s.status; out.statusEvidence = s.statusEvidence; }
     else out[field] = N.yesNo(value);
   }
