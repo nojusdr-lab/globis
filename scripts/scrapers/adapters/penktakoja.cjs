@@ -94,18 +94,30 @@ function create({ perPage = 100, maxPages = 10 } = {}) {
     }
     // Some real dogs have featured_media=0 while the product gallery contains
     // their photos. Read only those detail pages, never a site-wide logo/og image.
+    const donations = new Set();
     for (const a of animals.filter(a => !a.photos.length)) {
       try {
         const page = await fetcher.get(a.sourceUrl);
-        a.photos = await cache.getOrParse(page.hash, 'penktakoja-gallery-1', () => {
+        const detail = await cache.getOrParse(sha256(page.url + '\n' + page.body), 'penktakoja-gallery-2', () => {
           const $ = H.load(page.body);
-          return [...new Set($('.woocommerce-product-gallery__image a[href]').map((_, el) =>
-            H.abs($(el).attr('href'), page.url)).get().filter(Boolean))];
+          const summary = N.cleanText($('.summary').text()) || '';
+          return { photos: [...new Set($('.woocommerce-product-gallery__image a[href]').map((_, el) =>
+            H.abs($(el).attr('href'), page.url)).get().filter(Boolean))],
+          donationForm: /pasirinkite paramos tipą|continue with your donation/iu.test(summary) };
         });
+        a.photos = detail.photos;
+        // The live /beglobis/parama/ product is a generic donation widget
+        // misplaced in Šunys. Require the actual widget plus a generic name
+        // and no individual photo/description; missing data alone is no proof.
+        if (detail.donationForm && N.fold(a.name) === 'parama' && !a.photos.length && !N.cleanText(a.bio_lt)) {
+          donations.add(a.nativeId);
+          skipped.push({ nativeId: a.nativeId, reason: 'generic donation form, not an individual animal' });
+        }
       } catch (error) { log(`penktakoja: missing-photo detail unavailable (${error.message})`); }
     }
-    log(`penktakoja: ${animals.length} animals, ${skipped.length} skipped`);
-    return { animals, skipped, complete: products.complete };
+    const records = animals.filter(a => !donations.has(a.nativeId));
+    log(`penktakoja: ${records.length} animals, ${skipped.length} skipped`);
+    return { animals: records, skipped, complete: products.complete };
   }
 
   return {
