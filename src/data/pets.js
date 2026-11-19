@@ -5,7 +5,7 @@ import directPets from './directPets.json';
 import shelters from './shelters.json';
 
 import { joinListingShelters, mergeDirect } from './integrity.cjs';
-import { fromRemote } from './appPet.cjs';
+import { fromRemote, fetchPublishedRows } from './appPet.cjs';
 
 const build = direct => joinListingShelters(mergeDirect(allPets, direct), shelters);
 
@@ -13,20 +13,8 @@ const build = direct => joinListingShelters(mergeDirect(allPets, direct), shelte
 export const PETS = build(directPets);
 
 const URL = process.env.EXPO_PUBLIC_SUPABASE_URL, KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
-const PAGE = 1000; // Supabase's default max rows per request
-
-export async function fetchPublished(fetchImpl = fetch) {
-  const rows = [];
-  for (let from = 0; ; from += PAGE) {
-    const res = await fetchImpl(`${URL}/rest/v1/published_animals?select=*&order=animal_id`, {
-      headers: { apikey: KEY, Range: `${from}-${from + PAGE - 1}` },
-    });
-    if (!res.ok) throw new Error(`published_animals ${res.status}`);
-    const page = await res.json();
-    rows.push(...page);
-    if (page.length < PAGE) return rows;
-  }
-}
+// Bound to this app's server; the paging logic lives in appPet.cjs (tested).
+export const fetchPublished = (fetchImpl = fetch) => fetchPublishedRows(URL, KEY, fetchImpl);
 
 // Server rows replace the bundled rows of the sources they cover; other sources keep the bundled copy.
 export function usePets() {

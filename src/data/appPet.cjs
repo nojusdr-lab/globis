@@ -46,4 +46,20 @@ function fromRemote(rows, shelters, bundledDirect) {
   return [...bundledDirect.filter(p => !sources.has(p.source)), ...remote];
 }
 
-module.exports = { SHELTER, BRANCHES, shelterResolver, toAppPet, fromRemote };
+// All published_animals rows, page by page. The server may cap a page below `limit` (PostgREST
+// max-rows), so a short page is not the end: only an empty page is. Any failed page throws, so the
+// caller keeps its bundled copy instead of replacing sources with a partial list.
+async function fetchPublishedRows(url, key, fetchImpl, limit = 1000) {
+  const rows = [];
+  for (;;) {
+    const res = await fetchImpl(`${url}/rest/v1/published_animals?select=*&order=animal_id&limit=${limit}&offset=${rows.length}`,
+      { headers: { apikey: key } });
+    if (!res.ok) throw new Error(`published_animals ${res.status}`);
+    const page = await res.json();
+    if (!Array.isArray(page)) throw new Error('published_animals: unexpected response');
+    if (!page.length) return rows;
+    rows.push(...page);
+  }
+}
+
+module.exports = { SHELTER, BRANCHES, shelterResolver, toAppPet, fromRemote, fetchPublishedRows };
