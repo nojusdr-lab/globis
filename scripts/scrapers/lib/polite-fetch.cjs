@@ -27,6 +27,7 @@ function createFetcher({
   now = () => Date.now(),
   log = () => {},
   signal,
+  gate,
 } = {}) {
   if (!Array.isArray(allowedHosts) || !allowedHosts.length) throw new Error('allowedHosts required');
   const hosts = new Set(allowedHosts.map(h => h.toLowerCase()));
@@ -45,6 +46,7 @@ function createFetcher({
     const turn = new Promise(r => { release = r; });
     queueByHost.set(host, prev.then(() => turn));
     await prev;
+    let releaseShared;
     try {
       signal?.throwIfAborted();
       const robots = robotsByOrigin.get(url.origin);
@@ -55,6 +57,7 @@ function createFetcher({
         if (wait > 0) await sleep(wait);
       }
       signal?.throwIfAborted();
+      if (gate) releaseShared = await gate.enter(host, delay, timeoutMs, signal);
       lastRequestAt.set(host, now());
       requests++;
       log(`${method} ${url.href}`);
@@ -90,12 +93,14 @@ function createFetcher({
         }
         evidence.push({ url: url.href, method, status: res.status, hash: method === 'HEAD' ? null : sha256(body),
           observedAt: new Date(now()).toISOString() });
+        if (res.status === 429 || res.status >= 500) gate?.defer(host, retryAfter(res.headers.get('retry-after')));
         return { status: res.status, headers: res.headers, body };
       } finally {
         clearTimeout(timer);
       }
     } finally {
-      release();
+      try { if (releaseShared) releaseShared(); }
+      finally { release(); }
     }
   }
 

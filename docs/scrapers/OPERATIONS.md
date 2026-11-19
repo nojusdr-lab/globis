@@ -6,6 +6,8 @@ Oficialus [VMVT puslapis](https://vmvt.lrv.lt/lt/veiklos-sritys/gyvunu-gerove/gy
 
 Izoliuotoje vietinėje kopijoje gyvai užbaigti 19 įjungtų adapterių. Pradinė kopija: 1404 įrašai. Kiekvienas įrašas turi ID, originalų šaltinio URL, stebėjimo laiką ir struktūros patikros rezultatą. Mažeikių API 98 įrašams pridėtas tikras prieinamumo įrodymas `adoptable: true`. „Penkta koja“ atvejui `featured_media=0` pridedamas galerijos skaitymas iš to paties gyvūno puslapio; bendras svetainės logotipas netinka.
 
+Pakartotas „Penktos kojos“ gyvas rinkimas iš galerijų atkūrė 18 trūkusių pagrindinių nuotraukų (iš 19 liko 1 be nuotraukos). Atskirai patikrintos 22 neįjungtų svetainių viešos pradinės nuorodos: 13 pasiekiamų, 9 neprieinamos šiuo leidžiamu būdu (įskaitant ankstesnę `no_listing` 404 nuorodą). Užklausų laikai / HTTP / hash ir konservatyvi šios patikros apimtis pateikti [šaltinių patikros įraše](source-review-2026-11-19.json). Pasiekiamas pagrindinis puslapis neįrodo gyvūnų sąrašo ar naudojimo leidimo.
+
 Likusių eilučių priežastys iš pradinės patikros:
 
 | Būsena | Eilutės |
@@ -50,7 +52,7 @@ Visi failai rašomi į pasirinktą vykdymo katalogą, ne į pokalbį:
 | `<source>/image-health.json` | Kiekvieno gyvūno pagrindinės nuotraukos HTTP patikra; sveikas alternatyvus URL, jei rastas |
 | `queue.sqlite` | Nuolatinė užduočių būsena; neįkelti į Git |
 
-`npm run scrape:coverage -- /kelias` pakartoja struktūros patikrą be interneto. `npm run scrape:images -- /kelias` atskirai tikrina kiekvieno gyvūno pagrindinės nuotraukos HEAD atsakymą (nesiunčia vaizdų modeliui ir jų neatsisiunčia). Vienodi URL tikrinami vieną kartą; 404/410 atskiriami nuo neprieinamo ar HEAD nepalaikančio serverio. Tikrinami tik adapterio hostai ir aiškiai deklaruoti `photoHosts`. Jei pagrindinė nuotrauka nebeveikia, ieškoma jau šaltinyje buvusios alternatyvos; auditas originalo neištrina. Šią komandą leisti, kai tame pačiame kataloge nevyksta gyvas rinkimas; ji nesidalija rinkimo eilės lease. Kokybės ciklas nuotraukų HTTP patikros kas dvi minutes nekartoja.
+`npm run scrape:coverage -- /kelias` pakartoja struktūros patikrą be interneto. `npm run scrape:images -- /kelias` atskirai tikrina kiekvieno gyvūno pagrindinės nuotraukos HEAD atsakymą (nesiunčia vaizdų modeliui ir jų neatsisiunčia). Vienodi URL tikrinami vieną kartą; 404/410 atskiriami nuo neprieinamo ar HEAD nepalaikančio serverio. Tikrinami tik adapterio hostai ir aiškiai deklaruoti `photoHosts`. Jei pagrindinė nuotrauka nebeveikia, ieškoma jau šaltinyje buvusios alternatyvos; auditas originalo neištrina. Rinkimas, vietinis service ir nuotraukų auditas tame pačiame kataloge dalijasi `.http-gate.sqlite`: vienu metu viena HTTP užklausa domenui, bendras intervalas, ilgiausias matytas Crawl-delay ir Retry-After. Atskirų vykdymo katalogų užklausų ši vietinė DB nesujungia. Kokybės ciklas nuotraukų HTTP patikros kas dvi minutes nekartoja.
 
 ## Kada duomenys neskelbiami
 

@@ -11,6 +11,7 @@ const { runSource } = require('./lib/run-source.cjs');
 const { publish, writeJsonAtomic } = require('./lib/snapshot.cjs');
 const { writeReports } = require('./coverage.cjs');
 const { auditRun } = require('./lib/quality.cjs');
+const { HttpGate } = require('./lib/http-gate.cjs');
 
 function enabledAdapters() {
   // Re-read decisions every tick so pausing a source takes effect without restarting.
@@ -31,6 +32,7 @@ class ScraperService {
     fs.mkdirSync(this.outDir, { recursive: true, mode: 0o700 });
     this.queue = new ScheduleQueue(path.join(this.outDir, 'queue.sqlite'), { now, refreshMs });
     this.cache = createParseCache(path.join(this.outDir, '.parse-cache'));
+    this.gate = new HttpGate(path.join(this.outDir, '.http-gate.sqlite'));
   }
   tick() {
     if (this.stopping) return;
@@ -76,7 +78,7 @@ class ScraperService {
     }, 10000);
     const deadline = setTimeout(() => controller.abort(new Error('Source run deadline exceeded')), this.maxRunMs);
     try {
-      const fetcher = this.fetcherFactory({ allowedHosts: adapter.hosts, signal: controller.signal,
+      const fetcher = this.fetcherFactory({ allowedHosts: adapter.hosts, signal: controller.signal, gate: this.gate,
         log: message => this.log(`[${adapter.id}] ${message}`) });
       const run = await runSource(adapter, { fetcher, cache: this.cache,
         now: () => new Date(this.now()).toISOString(), log: message => this.log(`[${adapter.id}] ${message}`) });
@@ -110,7 +112,7 @@ class ScraperService {
     try { await this.idle(); }
     finally {
       try { this.report(); }
-      finally { this.queue.close(); this.closed = true; }
+      finally { this.queue.close(); this.gate.close(); this.closed = true; }
     }
   }
 }
