@@ -5,9 +5,9 @@ import directPets from './directPets.json';
 import shelters from './shelters.json';
 
 import { joinListingShelters, mergeDirect } from './integrity.cjs';
-import { fromRemote, fetchPublishedRows } from './appPet.cjs';
+import { fromRemote, fetchPublishedRows, withoutBlocked } from './appPet.cjs';
 
-const build = direct => joinListingShelters(mergeDirect(allPets, direct), shelters);
+const build = direct => withoutBlocked(joinListingShelters(mergeDirect(allPets, direct), shelters));
 
 // Bundled copy: shown first, and kept whenever the server cannot be reached (offline copy).
 export const PETS = build(directPets);

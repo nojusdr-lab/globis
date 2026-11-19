@@ -62,4 +62,9 @@ async function fetchPublishedRows(url, key, fetchImpl, limit = 1000) {
   }
 }
 
-module.exports = { SHELTER, BRANCHES, shelterResolver, toAppPet, fromRemote, fetchPublishedRows };
+// Sources whose terms forbid using their content. Their rows stay hidden even if the server or an
+// old globok.lt copy still has them (the server copy must be removed in the database by the owner).
+const BLOCKED = { sources: new Set(['mazijausmai']), shelters: new Set(['mazijausmailt']) };
+const withoutBlocked = pets => pets.filter(p => !BLOCKED.sources.has(p.source) && !BLOCKED.shelters.has(p.shelter?.id));
+
+module.exports = { SHELTER, BRANCHES, shelterResolver, toAppPet, fromRemote, fetchPublishedRows, withoutBlocked };

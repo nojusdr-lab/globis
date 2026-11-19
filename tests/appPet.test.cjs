@@ -45,3 +45,13 @@ test('fetchPublishedRows: a server page cap below the limit does not truncate; f
   const failing = async u => (u.includes('offset=2') ? { ok: false, status: 503 } : capped(u));
   await assert.rejects(fetchPublishedRows('https://db.example', 'k', failing), /503/);
 });
+
+test('withoutBlocked: Maži jausmai rows are hidden from server and globok.lt copies', () => {
+  const { withoutBlocked } = require('../src/data/appPet.cjs');
+  const pets = [
+    { id: 'mazijausmai:1', source: 'mazijausmai', shelter: { id: 'mazijausmailt' } },
+    { id: 'globok:x', source: 'globok', shelter: { id: 'mazijausmailt' } },
+    { id: 'kggn:1', source: 'kggn', shelter: { id: 'kggnlt' } },
+  ];
+  assert.deepEqual(withoutBlocked(pets).map(p => p.id), ['kggn:1']);
+});
