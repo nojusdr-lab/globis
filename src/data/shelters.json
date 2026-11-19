@@ -495,8 +495,12 @@
     "url": "https://globok.lt/prieglaudos/rozinepedutelt",
     "source": "globok",
     "phone": null,
-    "email": null,
-    "website": null
+    "email": "info@rozinepedute.lt",
+    "website": "https://rozinepedute.lt",
+    "contactEvidence": {
+      "url": "https://rozinepedute.lt/kontaktai/",
+      "checkedAt": "2026-11-19"
+    }
   },
   {
     "id": "siauliuletenelelt",
