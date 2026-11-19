@@ -70,7 +70,9 @@ const IN_SHELTER = new RegExp(`(?:prieglaudoje\\s+nuo\\s*:?|(?:į\\s+(?:prieglau
 const BIRTH = /((?:spėjama\s+)?gimimo\s+data(?:\s*\(spėjama\))?|gimęs|gimusi|gimė)\s*[:–-]?\s*(\d{4}(?:[-.\s]\d{2}){0,2})(?!\d)/giu;
 
 const NUM_WORD = 'vienerių|dvejų|dviejų|trejų|trijų|keturių|penkių|šešių|septynių|aštuonių|devynių|dešimties|pusės|pusantrų|kelių';
-const AGE = new RegExp(`(?:(?:apie|iki|virš|~)\\s*)?(?:\\d+(?:[.,]\\d+)?(?:\\s*[-–]\\s*\\d+)?|${NUM_WORD})\\s*(?:m\\.|metų|mėn\\.?|mėnesių)\\s+amžiaus|~?\\s*\\d{4}\\s*m\\.\\s+gimimo`, 'giu');
+// "4 m. amžiaus", "iki 3 metukų amžiaus", "~2018 m. gimimo", and without "amžiaus" only after "apie/iki":
+// "Apie 6-7 metų", "Apie 4mėn.", "Apie 5 m." (an approximate figure is how shelters write an age).
+const AGE = new RegExp(`(?:(?:apie|iki|virš|~)\\s*)?(?:\\d+(?:[.,]\\d+)?(?:\\s*[-–]\\s*\\d+)?|${NUM_WORD})\\s*(?:m\\.|metų|metukų|mėn\\.?|mėnesių)\\s+amžiaus|~?\\s*\\d{4}\\s*m\\.\\s+gimimo|(?<!\\p{L})(?:apie|iki)\\s+(?:\\d+(?:[.,]\\d+)?(?:\\s*[-–]\\s*\\d+)?|${NUM_WORD})\\s*(?:m\\.(?!\\s*\\p{L}+\\s+mėn)|metų|metukų|mėn\\.?|mėnesių)`, 'giu');
 
 // Size only when the text says "<word> ūgio/dydžio" ("vidutinio ūgio šunelis"); "didelio šuns" alone may be another dog.
 const SIZE = /(?<!\p{L})(mažo|nedidelio|vidutinio|didelio|stambaus)\s+(?:ūgio|dydžio)(?!\p{L})/giu;
@@ -78,7 +80,8 @@ const SIZE_OF = { mažo: 'small', nedidelio: 'small', vidutinio: 'medium', didel
 
 function fromProse(text) {
   const out = {};
-  const sentences = N.fold(text).split(/[.!?\n]+/).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
+  // Emoji end a thought too: "…namuose bus meilūnas🤍 Kastruotas" is two sentences, not a plan.
+  const sentences = N.fold(text).split(/[.!?\n]+|\p{Extended_Pictographic}+/u).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
   const words = sentences.flat();
   for (const [field, [yes, no]] of Object.entries(PROSE)) {
     const seen = new Set();
@@ -100,7 +103,7 @@ function fromProse(text) {
   if (!out.age_text) {
     const ages = new Set([...String(text || '').matchAll(AGE)].map(m => N.cleanText(m[0]).replace(/^./u, c => c.toUpperCase())));
     // Any other age figure in the text ("Dina (apie 4 m.) ir dukrytės (apie 2 mėn. amžiaus)") = several animals.
-    const figures = new Set([...String(text || '').matchAll(/(\d+(?:[.,]\d+)?)\s*(m\.|metų|metai|metukai|mėn)/giu)].map(m => m[1] + m[2][0]));
+    const figures = new Set([...String(text || '').matchAll(/(\d+(?:[.,]\d+)?)\s*(m\.|metų|metai|metukai|metukų|mėn)/giu)].map(m => m[1] + m[2][0]));
     if (ages.size === 1 && figures.size <= 1) out.age_text = [...ages][0];
   }
   // Sex only from a singular noun that names it ("nečipuota kalytė rasta", "didesnis patinas").

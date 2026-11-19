@@ -109,6 +109,7 @@
 - **Laikas prieglaudoje iš „Į prieglaudą atvyko …“** (bendra): data turi eiti iškart po žodžių su „prieglaudą“, „mūsų globą“ ar „pas mus“; vien „atvyko pora“ neimama. Keturkojo viltis 47→61 % (pvz. Birutė „nuo 2025-07-29“). Testai 288/0.
 - **Facebook be prisijungimo** (savininko leidimas 2026-11-19): patikrintas viešas „Klajūnas“ puslapis (1 užklausa, 533 kB). Be prisijungimo matomas tik pavadinimas: 0 įrašų, nė vieno gyvūno žodžio. Gyvūnų iš Facebook be prisijungimo surinkti negalima; apeiti neleidžiama. Likę 37 globok.lt gyvūnai priklauso prieglaudoms, kurios užblokuotos robots.txt (linksmauodegele), laukia sutikimo (rasugloba), neveikia (dryzuotalaime) ar skelbia tik Facebook albumuose (dogspotas).
 - **Kryžminė patikra su globok.lt po atnaujinimo** (19 prieglaudų, po 3 gyvūnus): rūšis, lytis, amžius sutampa visur. 8 neatitikimai, visi tos pačios rūšies: globok.lt rodo „kastruotas/skiepytas“, o mūsų „ne“. Patikrinti šaltiniai: Rožinė pėdutė EMKIS „Kastracija: Neatlikta“, Lesė Talula „Sterilizacija: ne, Skiepai: ne“ (anksčiau taip pat Torūnė, Arija). Mūsų duomenys teisingi, skreiperių keisti nereikia.
+- **Amžius „Apie N metų/mėn.“ ir faktai po jaustukų** (bendra): „Apie 6-7 metų“, „Apie 4mėn.“, „apie 3 metukų amžiaus“ dabar amžius (keli skirtingi skaičiai lieka nežinoma); jaustukas skiria sakinius, todėl „…bus meilūnas🤍 Kastruotas“ nebelaikomas planu. Gyvai: gyvunugloba amžius 8→30 %, kastracija 16→30 %, čipas 0→5 %; keturkojo-viltis medicina +2 %, sos-gyvunai ir siauliuletenele +1 %. Testai 289/0.
 
 ## Laukia savininko
 

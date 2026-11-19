@@ -99,3 +99,13 @@ test('fromProse: arrival date "Į prieglaudą atvyko" counts as time in shelter;
   assert.equal(fromProse('Taip jis į mūsų globą atvyko 2026-04-01.').in_shelter, 'nuo 2026-04-01');
   assert.equal(fromProse('Projekto dieną atvyko labai garbaus amžiaus pora.').in_shelter, undefined);
 });
+
+test('fromProse: "apie N metų/mėn." ages and facts after an emoji', () => {
+  // gyvunugloba.com (2026-11-19)
+  assert.equal(fromProse('Apie 6-7 metų, apie 30 kg svorio, sterilizuota Meksika.').age_text, 'Apie 6-7 metų');
+  assert.equal(fromProse('Apie 4mėn. švelnutė princesė🤗').age_text, 'Apie 4mėn.');
+  assert.equal(fromProse('Alytė jaunutė, apie 3 metukų amžiaus, apvalutė.').age_text, 'Apie 3 metukų amžiaus');
+  assert.equal(fromProse('Pirmam triušiukui 3 mėn, kitiems po 6 mėn.').age_text, undefined);
+  assert.equal(fromProse('Kai susidraugausim, namuose bus meilūnas🤍 Kastruotas ir visa padaryta.').neutered, true);
+  assert.equal(fromProse('Kai susidraugausim, bus kastruotas.').neutered, undefined);
+});

@@ -1684,7 +1684,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų gyvūnai",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Apie 6-7 metų",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -2110,7 +2110,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -2140,7 +2140,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų gyvūnai",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Apie 5 mėn.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -2178,7 +2178,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų gyvūnai",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Apie 3 metukų amžiaus",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -2224,7 +2224,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -2254,7 +2254,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų gyvūnai",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Apie 4mėn.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -2330,7 +2330,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų gyvūnai",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Iki 3 metukų amžiaus",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -2406,7 +2406,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų gyvūnai",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Apie 3 mėn.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -2520,7 +2520,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų gyvūnai",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Apie 4 metų",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -2564,9 +2564,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
+   "chipped": true,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -2634,15 +2634,15 @@
   "status": "available",
   "statusEvidence": "Ieško namų gyvūnai",
   "sex": null,
-  "ageLt": null,
+  "ageLt": "Apie 5 m.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
+   "chipped": true,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -2756,7 +2756,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32630,9 +32630,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36316,9 +36316,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -43416,9 +43416,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -48087,8 +48087,8 @@
   "inShelterLt": null,
   "medical": {
    "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -48504,9 +48504,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -49034,9 +49034,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
