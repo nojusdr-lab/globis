@@ -65,7 +65,7 @@ const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patel
 const SINCE_DATE = '((?:\\d{4}\\s*(?:m\\.|metų)\\s*)?\\p{L}+\\s+mėn(?:\\.|esį)|\\d{4}[-.]\\d{2}(?:[-.]\\d{2})?|\\d{4}\\s*m\\.)';
 // "Prieglaudoje nuo: 2026 m. birželio mėn.", "Į prieglaudą atvyko – 2025-07-29", "į mūsų globą atvyko 2026-04-01",
 // "atvyko į prieglaudą 2025 metų balandžio mėnesį". Plain "atvyko <date>" without the shelter word is not used.
-const IN_SHELTER = new RegExp(`(?:prieglaudoje\\s+nuo\\s*:?|(?:į\\s+(?:prieglaudą|mūsų\\s+globą)|pas\\s+mus)\\s+(?:\\p{L}+\\s+)?atvyko\\s*[–-]?|atvyko\\s+į\\s+prieglaudą)\\s*${SINCE_DATE}`, 'giu');
+const IN_SHELTER = new RegExp(`(?:prieglaudoje\\s+nuo\\s*:?|(?:į\\s+(?:prieglaudą|mūsų\\s+globą)|pas\\s+mus)\\s+(?:\\p{L}+\\s+)?atvyko\\s*[:–-]?|atvyko\\s+į\\s+prieglaudą\\s*:?)\\s*${SINCE_DATE}`, 'giu');
 
 const BIRTH = /((?:spėjama\s+)?gimimo\s+data(?:\s*\(spėjama\))?|gimęs|gimusi|gimė)\s*[:–-]?\s*(\d{4}(?:[-.\s]\d{2}){0,2})(?!\d)/giu;
 

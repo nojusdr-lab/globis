@@ -111,6 +111,7 @@
 - **Kryžminė patikra su globok.lt po atnaujinimo** (19 prieglaudų, po 3 gyvūnus): rūšis, lytis, amžius sutampa visur. 8 neatitikimai, visi tos pačios rūšies: globok.lt rodo „kastruotas/skiepytas“, o mūsų „ne“. Patikrinti šaltiniai: Rožinė pėdutė EMKIS „Kastracija: Neatlikta“, Lesė Talula „Sterilizacija: ne, Skiepai: ne“ (anksčiau taip pat Torūnė, Arija). Mūsų duomenys teisingi, skreiperių keisti nereikia.
 - **Amžius „Apie N metų/mėn.“ ir faktai po jaustukų** (bendra): „Apie 6-7 metų“, „Apie 4mėn.“, „apie 3 metukų amžiaus“ dabar amžius (keli skirtingi skaičiai lieka nežinoma); jaustukas skiria sakinius, todėl „…bus meilūnas🤍 Kastruotas“ nebelaikomas planu. Gyvai: gyvunugloba amžius 8→30 %, kastracija 16→30 %, čipas 0→5 %; keturkojo-viltis medicina +2 %, sos-gyvunai ir siauliuletenele +1 %. Testai 289/0.
 - **Likusios 15 prieglaudų perpaleistos** su naujausiu kodu: visos `complete`; pokytis tik bukmanodraugas amžius 0→2 %. Programėlės duomenys šviežūs visoms 19 prieglaudų.
+- **„Į prieglaudą atvyko: 2021-03-24“** (su dvitaškiu) dabar irgi skaitoma: Keturkojo viltis laikas prieglaudoje 61→70 % (pvz. Rainys „nuo 2021-03-24“). Testai 289/0.
 
 ## Laukia savininko
 

@@ -97,6 +97,7 @@ test('fromProse: arrival date "Į prieglaudą atvyko" counts as time in shelter;
   assert.equal(fromProse('Į prieglaudą atvyko – 2025-07-29 iš Viečiūnų.').in_shelter, 'nuo 2025-07-29');
   assert.equal(fromProse('Vaikinas atvyko į prieglaudą 2025 metų balandžio mėnesį mirus šeimininkui.').in_shelter, 'nuo 2025 metų balandžio mėnesį');
   assert.equal(fromProse('Taip jis į mūsų globą atvyko 2026-04-01.').in_shelter, 'nuo 2026-04-01');
+  assert.equal(fromProse('📅 Gimimo data: 2019-03-01 🏡 Į prieglaudą atvyko: 2021-03-24 ✔️ Ženklinta').in_shelter, 'nuo 2021-03-24');
   assert.equal(fromProse('Projekto dieną atvyko labai garbaus amžiaus pora.').in_shelter, undefined);
 });
 
