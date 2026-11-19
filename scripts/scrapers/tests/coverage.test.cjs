@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { parseInventory } = require('../../discovery-engine/vmvt-inventory.cjs');
-const { buildCoverage } = require('../coverage.cjs');
+const { buildCoverage, writeReports } = require('../coverage.cjs');
 const inventory = parseInventory(fs.readFileSync(path.join(__dirname, '../../../docs/discovery-engine/vmvt-guardian-inventory.tsv'), 'utf8'));
 const sources = require('../sources.json').sources;
 const adapters = require('../adapters/index.cjs');
@@ -34,4 +34,21 @@ test('a good saved snapshot is visibly stale after a failed collection, never an
   assert.equal(row.state, 'last_good_retained');
   assert.equal(row.lastAttempt, '2026-11-19T00:00:00Z');
   assert.equal(row.lastPublished, '2026-11-18T00:00:00Z');
+});
+
+test('the per-animal report cannot claim an old image check for a changed primary URL', t => {
+  const os = require('node:os');
+  const { makeAnimal } = require('../lib/record.cjs');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'globis-image-report-'));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  fs.mkdirSync(path.join(dir, 'kggn'));
+  const a = makeAnimal('kggn', { nativeId: 'a', sourceUrl: 'https://kggn.lt/a', photos: ['https://kggn.lt/old.jpg'] });
+  const snapshot = { source: 'kggn', publishedAt: new Date().toISOString(), animals: [a] };
+  const file = path.join(dir, 'kggn/published.json');
+  fs.writeFileSync(file, JSON.stringify(snapshot));
+  fs.writeFileSync(path.join(dir, 'kggn/image-health.json'), JSON.stringify({ records: [{ id: a.id, state: 'healthy',
+    preferredUrl: a.photos[0], checks: [{ url: a.photos[0], checkedAt: new Date().toISOString() }] }] }));
+  assert.equal(writeReports(dir).summary.images.healthy, 1);
+  a.photos = ['https://kggn.lt/new.jpg']; fs.writeFileSync(file, JSON.stringify(snapshot));
+  assert.equal(writeReports(dir).summary.images.pending, 1);
 });

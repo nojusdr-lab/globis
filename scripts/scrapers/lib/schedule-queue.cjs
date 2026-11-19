@@ -50,6 +50,10 @@ class ScheduleQueue {
       WHERE id=? AND active=1 AND last_attempt IS NULL AND last_success IS NULL AND lease IS NULL`)
       .run(observedAt, animals, observedAt + this.refreshMs, id).changes;
   }
+  request(ids) {
+    return this.tx(() => ids.reduce((n, id) => n + this.db.prepare(`UPDATE schedule SET next_due=?
+      WHERE id=? AND active=1 AND lease IS NULL AND failures=0`).run(this.now(), id).changes, 0));
+  }
   renew(job, leaseMs = 90000) {
     return !!this.db.prepare('UPDATE schedule SET lease=? WHERE id=? AND token=? AND worker=? AND active=1 AND lease>?')
       .run(this.now() + leaseMs, job.id, job.token, job.worker, this.now()).changes;

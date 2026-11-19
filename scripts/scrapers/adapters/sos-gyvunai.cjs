@@ -20,6 +20,7 @@ const N = require('../lib/normalize.cjs');
 const L = require('../lib/labels.cjs');
 const H = require('../lib/html.cjs');
 const { sha256 } = require('../lib/hash.cjs');
+const { fillMissingGallery } = require('../lib/gallery.cjs');
 
 const PARSER_VERSION = 'sos-gyvunai-2';
 const ORIGIN = 'https://sos-gyvunai.lt';
@@ -152,6 +153,9 @@ function createAdapter({ perPage = 100, maxPages = 30 } = {}) {
         sourceUpdatedAt: post.modified_gmt ? `${post.modified_gmt}Z` : null,
       });
     }
+    await fillMissingGallery(animals, { fetcher, cache, log }, {
+      selector: '.w-slider-h a.rsImg[href]', attribute: 'href', version: 'sos-own-gallery-1',
+    });
     log(`sos-gyvunai: ${animals.length} animals, ${skipped.length} skipped`);
     return { animals, skipped, complete };
   }

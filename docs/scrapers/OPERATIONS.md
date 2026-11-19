@@ -34,6 +34,8 @@ Vienas bendras iki 4 worker'ų pool perima kitą organizaciją, kai baigia ankst
 
 `--once` palaukia visų šiuo metu priklausančių darbų ir baigia procesą. Vietinis vykdytojas nerašo į Supabase, `src/data`, GitHub ar `main`. Kasdienis GitHub workflow lieka atskiras: jo artefakte taip pat saugoma visų eilučių ir gyvūnų patikra. Vietiniam veikimui kompiuteris turi būti įjungtas ir nemiegoti; 24/7 serverio šis pakeitimas nediegia.
 
+Po sėkmingo rinkimo service automatiškai patikrina pagrindines nuotraukas, naudodamas iki 6 val. galiojančius ankstesnius HTTP rezultatus. Jei pirmoji nebeveikia, jau šaltinyje esanti ir HTTP patikrinta alternatyva perkeliama į pirmą vietą; nuorodos neištrinamos. Neprieinamumas, trūkstama nuotrauka ir sveikas atsakymas ataskaitoje atskiriami. `--refresh=id1,id2 --once` gali paankstinti jau sėkmingo šaltinio rinkimą po parserio pataisos; negali dubliuoti vykdomo darbo, įjungti sustabdyto šaltinio ar apeiti klaidų backoff / Retry-After. Vienkartinio proceso būsena rašoma į `last-one-off-status.json`, kad nesugadintų veikiančio launch agent būsenos.
+
 macOS paleidimui `node scripts/scrapers/launchd.cjs <absoliutus.plist> <absoliutus-vykdymo-katalogas>` tik paruošia `lt.globis.scrapers` konfigūraciją su konkrečiu Node ir repo keliu. Tik įdiegta į vartotojo `Library/LaunchAgents` ir sėkmingai paleista per `launchctl bootstrap` konfigūracija yra veikianti automatizacija. `launchctl print gui/$(id -u)/lt.globis.scrapers` parodo procesą; tikras `service-status.json.lastTick` pasikeitimas po 120 s patvirtina ciklą. Išjungimas: `launchctl bootout gui/$(id -u)/lt.globis.scrapers`. Failas ir procesas neturi raktų ar DB prisijungimo eilučių.
 
 ## Ataskaitos
@@ -53,6 +55,10 @@ Visi failai rašomi į pasirinktą vykdymo katalogą, ne į pokalbį:
 | `queue.sqlite` | Nuolatinė užduočių būsena; neįkelti į Git |
 
 `npm run scrape:coverage -- /kelias` pakartoja struktūros patikrą be interneto. `npm run scrape:images -- /kelias` atskirai tikrina kiekvieno gyvūno pagrindinės nuotraukos HEAD atsakymą (nesiunčia vaizdų modeliui ir jų neatsisiunčia). Vienodi URL tikrinami vieną kartą; 404/410 atskiriami nuo neprieinamo ar HEAD nepalaikančio serverio. Tikrinami tik adapterio hostai ir aiškiai deklaruoti `photoHosts`. Jei pagrindinė nuotrauka nebeveikia, ieškoma jau šaltinyje buvusios alternatyvos; auditas originalo neištrina. Rinkimas, vietinis service ir nuotraukų auditas tame pačiame kataloge dalijasi `.http-gate.sqlite`: vienu metu viena HTTP užklausa domenui, bendras intervalas, ilgiausias matytas Crawl-delay ir Retry-After. Atskirų vykdymo katalogų užklausų ši vietinė DB nesujungia. Kokybės ciklas nuotraukų HTTP patikros kas dvi minutes nekartoja.
+
+Nutrauktas nuotraukų auditas tęsiamas iš `image-health.json` ir jo `.checkpoint`; jau patikrintų nepakeistų URL užklausos nekartojamos, o pakeista pagrindinė nuotrauka tikrinama iš naujo. Užklausa atnaujina tikrą patikros laiką; cache pernaudojimas jo neapsimeta atnaujinęs.
+
+Parserio cache biografijose taip pat pašalinami kontaktai, ne tik galutinėje gyvūno eilutėje. Senos cache kopijos išvalomos jas skaitant. Vietinio audito metu papildomai išvalyti jau buvę nesanitizuoti biografijų įrašai; raktų ar kontaktų tekstas į PR / pokalbį nekeliamas.
 
 ## Kada duomenys neskelbiami
 

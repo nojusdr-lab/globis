@@ -93,3 +93,16 @@ test('a known good snapshot seeds its observation time once without resetting fa
   assert.equal(queue.status()[0].failures, 1);
   assert.equal(queue.status()[0].last_success, 900);
 });
+
+test('an explicit refresh can advance a successful source but cannot overlap work or bypass error backoff', t => {
+  const { queue } = fixture(t);
+  queue.sync([source('one')]);
+  queue.finish(queue.claim('w'), { ok: true, animals: 2 });
+  assert.equal(queue.claim('w'), null);
+  assert.equal(queue.request(['one']), 1);
+  const job = queue.claim('w');
+  assert.equal(queue.request(['one']), 0);
+  queue.finish(job, { ok: false, retryAfterMs: 600000 });
+  assert.equal(queue.request(['one']), 0);
+  assert.equal(queue.claim('w'), null);
+});

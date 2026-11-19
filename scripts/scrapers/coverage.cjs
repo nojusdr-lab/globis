@@ -55,8 +55,15 @@ function writeReports(outDir) {
       snapshots[adapter.id] = snapshot;
       const quality = auditRun({ animals: snapshot.animals, finishedAt: snapshot.publishedAt }, adapter);
       snapshot.validationInvalid = quality.invalid;
-      animals.push(...quality.records.map(record => ({ ...record, source: adapter.id,
-        observationAt: snapshot.publishedAt, auditAt: new Date().toISOString() })));
+      const images = new Map((readJson(path.join(dir, 'image-health.json'))?.records || []).map(r => [r.id, r]));
+      const photos = new Map(snapshot.animals.map(a => [a.id, a.photos]));
+      animals.push(...quality.records.map(record => {
+        const prior = images.get(record.id), current = photos.get(record.id) || [];
+        const matches = prior && (prior.checks?.[0]?.url === current[0] || prior.preferredUrl === current[0]);
+        return { ...record, source: adapter.id, observationAt: snapshot.publishedAt, auditAt: new Date().toISOString(),
+          image: { state: !current.length ? 'missing' : matches ? prior.state : 'pending',
+            checkedAt: matches ? prior.checks?.[0]?.checkedAt ?? null : null } };
+      }));
     }
     if (attempt) attempts[adapter.id] = attempt;
   }
@@ -64,6 +71,7 @@ function writeReports(outDir) {
   report.summary.animalsChecked = animals.length;
   report.summary.invalidAnimals = animals.filter(a => a.result === 'invalid').length;
   report.summary.animalsWithWarnings = animals.filter(a => a.warnings.length).length;
+  report.summary.images = animals.reduce((o, a) => { o[a.image.state] = (o[a.image.state] || 0) + 1; return o; }, {});
   const cell = text => String(text ?? '—').replace(/[|\r\n]/g, ' ');
   const markdown = [
     '# Rinkiklių padengimas', '', `Patikra: ${report.generatedAt}. Registro eilutės: ${report.summary.registryRows}; su nuorodomis: ${report.summary.withLinks}.`,

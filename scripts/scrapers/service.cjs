@@ -12,6 +12,7 @@ const { publish, writeJsonAtomic } = require('./lib/snapshot.cjs');
 const { writeReports } = require('./coverage.cjs');
 const { auditRun } = require('./lib/quality.cjs');
 const { HttpGate } = require('./lib/http-gate.cjs');
+const { auditImages } = require('./lib/image-health.cjs');
 
 function enabledAdapters() {
   // Re-read decisions every tick so pausing a source takes effect without restarting.
@@ -23,18 +24,19 @@ function enabledAdapters() {
 class ScraperService {
   constructor({ outDir, adapters, now = Date.now, refreshMs = 6 * 3600000,
     poolSize = 4, tickMs = 120000, maxRunMs = 45 * 60000,
-    fetcherFactory = createFetcher, log = console.log } = {}) {
+    fetcherFactory = createFetcher, log = console.log, statusFile = 'service-status.json' } = {}) {
     if (!outDir || !Number.isInteger(poolSize) || poolSize < 1 || poolSize > 4) throw Error('Expected outDir and 1–4 workers');
     this.outDir = path.resolve(outDir); this.now = now; this.poolSize = poolSize;
     this.tickMs = tickMs; this.maxRunMs = maxRunMs; this.log = log;
     this.fetcherFactory = fetcherFactory; this.configured = adapters;
+    this.statusFile = statusFile;
     this.worker = `${process.pid}:${randomUUID()}`; this.active = new Map(); this.stopping = false;
     fs.mkdirSync(this.outDir, { recursive: true, mode: 0o700 });
     this.queue = new ScheduleQueue(path.join(this.outDir, 'queue.sqlite'), { now, refreshMs });
     this.cache = createParseCache(path.join(this.outDir, '.parse-cache'));
     this.gate = new HttpGate(path.join(this.outDir, '.http-gate.sqlite'));
   }
-  tick() {
+  tick({ refresh = [] } = {}) {
     if (this.stopping) return;
     this.lastTick = this.now();
     this.adapters = this.configured || enabledAdapters();
@@ -51,6 +53,7 @@ class ScraperService {
       const quality = auditRun({ animals: snapshot.animals, finishedAt: snapshot.publishedAt }, adapter);
       if (!quality.invalid) this.queue.bootstrap(adapter.id, Date.parse(snapshot.publishedAt), snapshot.animals.length);
     }
+    if (refresh.length) this.queue.request(refresh);
     this.pump(); this.report();
   }
   pump() {
@@ -82,9 +85,27 @@ class ScraperService {
         log: message => this.log(`[${adapter.id}] ${message}`) });
       const run = await runSource(adapter, { fetcher, cache: this.cache,
         now: () => new Date(this.now()).toISOString(), log: message => this.log(`[${adapter.id}] ${message}`) });
+      let images;
+      if (run.state === 'complete' && run.animals.length) {
+        const file = path.join(this.outDir, adapter.id, 'image-health.json');
+        const priorRecords = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')).records || [] : [];
+        const hosts = [...adapter.hosts, ...(adapter.photoHosts || [])];
+        const imageFetcher = this.fetcherFactory({ allowedHosts: hosts, signal: controller.signal, gate: this.gate });
+        images = await auditImages(run.animals, { fetcher: imageFetcher, allowedHosts: hosts, priorRecords });
+        for (const a of run.animals) {
+          const checked = images.records.find(r => r.id === a.id);
+          if (checked?.state === 'fallback_available' && a.photos.includes(checked.preferredUrl)) {
+            a.photos = [checked.preferredUrl, ...a.photos.filter(p => p !== checked.preferredUrl)];
+          }
+        }
+        run.requests += imageFetcher.stats().requests;
+        run.evidence.push(...imageFetcher.evidence());
+      }
       if (controller.signal.aborted) { run.state = 'failed'; run.errors.push('Run stopped or lease lost'); }
-      const retryAfterMs = run.failure?.code === 'robots' ? 24 * 3600000 : run.failure?.retryAfterMs;
+      const restricted = run.failure?.code === 'robots' || [401, 403].includes(run.failure?.status);
+      const retryAfterMs = restricted ? Math.max(24 * 3600000, run.failure?.retryAfterMs || 0) : run.failure?.retryAfterMs;
       const accepted = this.queue.finish(job, { ok: false, animals: run.animals.length, retryAfterMs }, () => {
+        if (images) writeJsonAtomic(path.join(this.outDir, adapter.id, 'image-health.json'), { state: 'complete', ...images });
         const result = publish(run, { outDir: this.outDir });
         return { ok: result.published, error: run.errors.join('; ') || result.reason };
       });
@@ -94,11 +115,12 @@ class ScraperService {
   }
   report() {
     writeReports(this.outDir);
-    writeJsonAtomic(path.join(this.outDir, 'service-status.json'), {
+    const sources = this.queue.status();
+    writeJsonAtomic(path.join(this.outDir, this.statusFile), {
       updatedAt: new Date(this.now()).toISOString(), lastTick: this.lastTick ? new Date(this.lastTick).toISOString() : null,
       nextTick: this.stopping ? null : new Date((this.lastTick || this.now()) + this.tickMs).toISOString(),
       tickMs: this.tickMs, state: this.fatal ? 'failed' : this.stopping ? 'stopped' : 'running',
-      active: [...this.active.keys()], sources: this.queue.status(),
+      active: sources.filter(s => s.active && s.lease > this.now()).map(s => s.id), sources,
     });
   }
   async idle() {
@@ -119,17 +141,20 @@ class ScraperService {
 
 async function main() {
   const args = process.argv.slice(2), once = args.includes('--once');
-  const unknown = args.filter(a => a.startsWith('--') && a !== '--once');
+  const refresh = args.find(a => a.startsWith('--refresh='))?.slice('--refresh='.length).split(',') || [];
+  const known = new Set(enabledAdapters().map(a => a.id));
+  if (refresh.some(id => !known.has(id))) throw Error('Unknown or paused source in --refresh');
+  const unknown = args.filter(a => a.startsWith('--') && a !== '--once' && !a.startsWith('--refresh='));
   if (unknown.length) throw Error('Unknown option: ' + unknown.join(', '));
   const outDir = args.find(a => !a.startsWith('--')) || 'data/scraped-local';
   process.umask(0o077);
-  const service = new ScraperService({ outDir });
+  const service = new ScraperService({ outDir, statusFile: once ? 'last-one-off-status.json' : 'service-status.json' });
   let timer;
   const stop = async () => { clearInterval(timer); await service.close(); };
   const onSignal = () => { stop().catch(error => { console.error(error.message); process.exitCode = 1; }); };
   process.once('SIGINT', onSignal); process.once('SIGTERM', onSignal);
   try {
-    service.tick();
+    service.tick({ refresh });
     if (once) { await service.idle(); await stop(); }
     else timer = setInterval(() => {
       try { if (service.fatal) throw service.fatal; service.tick(); }

@@ -8,6 +8,15 @@ const { runSource } = require('../lib/run-source.cjs');
 const { fakeFetch, fakeClock } = require('./helpers.cjs');
 const routes = require('../fixtures/keturkojo-viltis/routes.json');
 
+test('keturkojo-viltis: missing API image uses only the own gallery, never a related animal', async () => {
+  const posts = Object.values(routes).flatMap(v => Array.isArray(v) ? v : Array.isArray(v.body) ? v.body : []);
+  const missing = posts.find(p => p.id === 2050 && p.link);
+  const r = { ...routes, [missing.link]: { body: `<div class="kv-gallery__main"><img src="/own-dog.jpg"></div>
+    <div class="kv-card__img"><img src="/different-animal.jpg"></div>` } };
+  const run = await runSource(adapter, { fetcher: createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, []) }), cache: createParseCache(null) });
+  assert.deepEqual(run.animals.find(a => a.id === 'keturkojo-viltis:2050').photos, ['https://keturkojo-viltis.lt/own-dog.jpg']);
+});
+
 test('keturkojo-viltis: species from rusis, age from "Spėjama gimimo data", status unknown', async () => {
   const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(routes, []) });
   const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });

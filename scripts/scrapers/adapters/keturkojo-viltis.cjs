@@ -4,8 +4,9 @@
 // Animals are the public WordPress type "gyvunas" with taxonomy rusis (species).
 // Pages carry "Spėjama gimimo data" (age) only; no status taxonomy, so status stays unknown.
 const { createWordpressAdapter } = require('./wordpress-rest.cjs');
+const { fillMissingGallery } = require('../lib/gallery.cjs');
 
-module.exports = createWordpressAdapter({
+const adapter = createWordpressAdapter({
   id: 'keturkojo-viltis',
   name: 'Asociacija „Keturkojo viltis“',
   base: 'https://keturkojo-viltis.lt/',
@@ -15,3 +16,10 @@ module.exports = createWordpressAdapter({
   // contact footer (phone, website, addresses), which starts at the paragraph with "☎".
   bioHtml: h => h.replace(/<p>\s*<a[^>]*facebook\.com[^>]*>[^<]*<\/a>\s*<\/p>/gi, '').replace(/<p>[^<]*☎[\s\S]*$/, ''),
 });
+const collect = adapter.collect;
+adapter.collect = async options => {
+  const result = await collect(options);
+  await fillMissingGallery(result.animals, options, { selector: '.kv-gallery__main img', version: 'keturkojo-own-gallery-1' });
+  return result;
+};
+module.exports = adapter;
