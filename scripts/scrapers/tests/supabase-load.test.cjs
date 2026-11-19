@@ -61,3 +61,26 @@ test('supabase: an animal that disappears becomes no_longer_listed, not adopted'
   const { rows } = await pg.query(`select status from animal_status_history where animal_id = 'kggn:9004' order by id`);
   assert.deepEqual(rows.map(r => r.status), ['unknown', 'no_longer_listed']);
 });
+
+test('supabase: a DB error mid-load leaves no partial run; last good copy stays', async () => {
+  const pg = await db();
+  await loadRun(pg, adapter, await collect());
+  const run = await collect();
+  run.animals = [...run.animals, { ...run.animals[0], id: 'kggn:bad', status: 'not-a-status' }];
+  await assert.rejects(loadRun(pg, adapter, run));
+  const runs = await pg.query('select count(*)::int as n from public.source_runs');
+  assert.equal(runs.rows[0].n, 1);
+  const { rows } = await pg.query('select count(*)::int as n from published_animals');
+  assert.equal(rows[0].n, 3);
+});
+
+test('supabase: publishing takes a per-source lock before reading the previous snapshot', async () => {
+  const pg = await db();
+  const seen = [];
+  const spy = { query: (sql, params) => { seen.push(sql.trim().split(/\s+/).slice(0, 4).join(' ')); return pg.query(sql, params); } };
+  const res = await loadRun(spy, adapter, await collect());
+  assert.equal(res.published, true, res.reason);
+  const lock = seen.findIndex(s => s.includes('pg_advisory_xact_lock'));
+  const prev = seen.findIndex(s => s.startsWith('select id from public.source_runs'));
+  assert.ok(lock > -1 && lock < prev, seen.join('\n'));
+});
