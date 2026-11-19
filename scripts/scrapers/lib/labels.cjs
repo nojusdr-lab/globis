@@ -58,6 +58,7 @@ const PROSE = {
 };
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
 const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
+const UNCERTAIN = /^(nežinom\p{L}*|neaišk\p{L}*|galbūt|galimai|ar)$/u;
 
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
 const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female' };
@@ -84,9 +85,20 @@ function fromProse(text) {
     const seen = new Set();
     for (const words of sentences) {
       const plan = words.some(w => PLAN.test(w));
-      for (const w of words) {
+      for (let i = 0; i < words.length; i++) {
+        const w = words[i];
+        // A later adoption question must not erase an earlier health list.
+        if (words.slice(Math.max(0, i - 5), i).some(p => UNCERTAIN.test(p)) ||
+            (words[i + 1] === 'ar' && words[i + 2] === 'ne')) continue;
         if (no.test(w)) seen.add(false);
-        else if (yes.test(w) && !plan) seen.add(true);
+        else if (yes.test(w) && !plan) {
+          const prefix = words.slice(Math.max(0, i - 2), i);
+          // A conjunction starts a new clause: "nėra skiepytas, bet kastruotas".
+          const boundary = prefix.findLastIndex(p => ['bet', 'tačiau', 'o'].includes(p));
+          const local = prefix.slice(boundary + 1);
+          const negated = local.some((p, n) => p === 'nėra' || (p === 'ne' && local[n + 1] !== 'tik'));
+          seen.add(!negated);
+        }
       }
     }
     if (seen.size === 1) out[field] = [...seen][0];

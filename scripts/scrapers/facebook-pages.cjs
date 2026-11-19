@@ -18,15 +18,15 @@ const decode = s => s.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoin
 function parseProfile(html) {
   const og = p => { const m = html.match(new RegExp(`<meta property="og:${p}" content="([^"]*)"`)); return m ? decode(m[1]) : null; };
   const name = og('title');
-  if (!name || /^(log in|prisijung)/i.test(name)) return { state: 'login_wall' };
+  if (!name || /^(facebook|log in|prisijung)/i.test(name) ||
+      /prisijunkite|prisiregistruokite|log in to|sign up to/i.test(name)) return { state: 'login_wall' };
   return { state: 'ok', name, description: og('description'), url: og('url') };
 }
 
 function facebookRows(tsv) {
-  const [head, ...rows] = tsv.trim().split('\n').map(l => l.split('\t'));
-  const i = Object.fromEntries(head.map((h, n) => [h, n]));
-  return rows.filter(r => r[i.channel_types].includes('facebook'))
-    .map(r => ({ vmvtRow: +r[i.vmvt_row], registeredName: r[i.registered_name], url: r[i.listed_urls] }));
+  const { parseInventory } = require('../discovery-engine/vmvt-inventory.cjs');
+  return parseInventory(tsv).flatMap(row => row.destinations.filter(d => d.type === 'facebook')
+    .map(d => ({ vmvtRow: +row.vmvt_row, registeredName: row.registered_name, url: d.url })));
 }
 
 async function main() {

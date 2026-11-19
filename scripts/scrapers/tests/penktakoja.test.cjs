@@ -25,7 +25,7 @@ test('penktakoja: robots.txt is read first, all requests are GETs to penktakoja.
   const { calls } = await collect();
   assert.equal(calls[0].url, 'https://penktakoja.lt/robots.txt');
   assert.ok(calls.every(c => c.method === 'GET' && new URL(c.url).hostname === 'penktakoja.lt'));
-  assert.equal(calls.length, 3, 'robots + one product page + one media page');
+  assert.equal(calls.length, 4, 'robots + product + media + missing-photo detail fallback');
 });
 
 test('penktakoja: reads name, link, photo, date; unknown facts stay null', async () => {
@@ -54,6 +54,16 @@ test('penktakoja: no status text on the site = unknown with no evidence', async 
     assert.equal(a.statusEvidence, null);
   }
   assert.deepEqual(run.skipped, []);
+});
+
+test('penktakoja: missing API media falls back to the animals own WooCommerce gallery', async () => {
+  const last = PRODUCTS.at(-1);
+  const r = { ...routes, [last.link]: { body: `<img src="https://penktakoja.lt/logo.png">
+    <div class="woocommerce-product-gallery__image"><a href="/wp-content/uploads/fixture-dog.jpg"><img></a></div>` } };
+  const { run } = await collect(r);
+  assert.equal(run.state, 'complete');
+  assert.deepEqual(run.animals.at(-1).photos, ['https://penktakoja.lt/wp-content/uploads/fixture-dog.jpg']);
+  assert.equal(run.animals.at(-1).name, 'ŠMAKIS');
 });
 
 test('penktakoja: walks pages until a short page', async () => {

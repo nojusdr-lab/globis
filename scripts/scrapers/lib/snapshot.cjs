@@ -28,6 +28,8 @@ function checkRun(run, previous, guard) {
   const ids = run.animals.map(a => a.id);
   if (new Set(ids).size !== ids.length) return 'duplicate animal ids';
   if (!previous) return null;
+  const observed = Date.parse(run.startedAt), prior = Date.parse(previous.runStartedAt);
+  if (Number.isFinite(observed) && Number.isFinite(prior) && observed <= prior) return 'observation is not newer than published snapshot';
   const now = new Set(ids);
   const lost = previous.animals.filter(a => !now.has(a.id)).length;
   const limit = Math.max(guard.maxLostAbsolute, Math.floor(previous.animals.length * guard.maxLostRatio));
@@ -43,18 +45,31 @@ function publish(run, { outDir, guard: guardIn = {}, now = () => new Date().toIS
   const previous = readJson(publishedFile, null);
   const state = readJson(stateFile, { pending: null });
   writeJsonAtomic(path.join(dir, 'last-run.json'), summary(run));
+  if (run.quality) writeJsonAtomic(path.join(dir, 'validation.json'), run.quality);
+  if (run.evidence) writeJsonAtomic(path.join(dir, 'evidence.json'), run.evidence);
+  const result = value => {
+    writeJsonAtomic(path.join(dir, 'last-run.json'), { ...summary(run), published: value.published, reason: value.reason });
+    return value;
+  };
 
   let problem = checkRun(run, previous, guard);
   if (problem && /^lost /.test(problem)) {
     const idsHash = sha256(run.animals.map(a => a.id).sort().join('\n'));
-    const seen = state.pending && state.pending.idsHash === idsHash ? state.pending.count + 1 : 1;
+    const same = state.pending?.idsHash === idsHash;
+    const stamp = Date.parse(run.startedAt), previousStamp = Date.parse(state.pending?.startedAt);
+    const replay = Number.isFinite(stamp) && Number.isFinite(previousStamp) && stamp <= previousStamp;
+    const seen = same ? state.pending.count + (replay ? 0 : 1) : 1;
     if (seen >= guard.confirmRuns) problem = null;
     else {
-      writeJsonAtomic(stateFile, { ...state, pending: { idsHash, count: seen, reason: problem } });
-      return { published: false, reason: `${problem}; waiting for ${guard.confirmRuns - seen} more identical run(s)` };
+      writeJsonAtomic(stateFile, { ...state, pending: { idsHash, count: seen, reason: problem,
+        startedAt: replay ? state.pending.startedAt : run.startedAt } });
+      return result({ published: false, reason: `${problem}; waiting for ${guard.confirmRuns - seen} more identical run(s)` });
     }
   }
-  if (problem) return { published: false, reason: problem };
+  if (problem) {
+    if (run.state !== 'complete' && state.pending) writeJsonAtomic(stateFile, { ...state, pending: null });
+    return result({ published: false, reason: problem });
+  }
 
   const observedAt = run.finishedAt || now();
   const history = [];
@@ -73,12 +88,13 @@ function publish(run, { outDir, guard: guardIn = {}, now = () => new Date().toIS
   if (history.length) {
     fs.appendFileSync(path.join(dir, 'history.jsonl'), history.map(h => JSON.stringify(h)).join('\n') + '\n');
   }
-  return { published: true, reason: null, changes: history.length };
+  return result({ published: true, reason: null, changes: history.length });
 }
 
 function summary(run) {
   return { source: run.source, state: run.state, startedAt: run.startedAt, finishedAt: run.finishedAt,
-    animals: run.animals.length, skipped: run.skipped.length, errors: run.errors, requests: run.requests };
+    animals: run.animals.length, skipped: run.skipped.length, errors: run.errors, requests: run.requests,
+    quality: run.quality ? { checked: run.quality.checked, invalid: run.quality.invalid, withWarnings: run.quality.withWarnings } : null };
 }
 
-module.exports = { publish, checkRun, DEFAULT_GUARD };
+module.exports = { publish, checkRun, DEFAULT_GUARD, writeJsonAtomic };

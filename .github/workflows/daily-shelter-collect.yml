@@ -45,6 +45,22 @@ jobs:
         with:
           path: data/scraped
           key: scraped-${{ github.run_id }}
+      - name: Audit every animal and registry row
+        if: always()
+        run: node scripts/scrapers/coverage.cjs data/scraped
+      - name: Save provenance and per-animal validation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shelter-quality-${{ github.run_id }}
+          retention-days: 14
+          path: |
+            data/scraped/coverage.json
+            data/scraped/coverage.md
+            data/scraped/animals-audit.jsonl
+            data/scraped/*/validation.json
+            data/scraped/*/evidence.json
+            data/scraped/*/last-run.json
       - run: node scripts/scrapers/to-app-data.cjs data/scraped | tee bridge.log
       - name: Summary
         if: always()

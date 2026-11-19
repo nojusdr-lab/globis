@@ -28,3 +28,4 @@ yarn-error.log*
 
 # Scraper output (published to Supabase/artifacts, not to git)
 data/scraped/
+data/scraped-local/

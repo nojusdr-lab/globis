@@ -25,7 +25,8 @@ function toAnimal(row) {
     // registrationDate: when the shelter registered the animal (its arrival).
     in_shelter: /^\d{4}-\d{2}-\d{2}$/.test(row.registrationDate ?? '') ? `nuo ${row.registrationDate}` : null,
     status: 'available',
-    statusEvidence: null,
+    // Exact field in the shelter's public API; collect() accepts only true.
+    statusEvidence: 'adoptable: true',
   };
 }
 
@@ -34,6 +35,7 @@ module.exports = {
   name: 'Mažeikių gyvūnų globos draugija',
   website: `${SITE}/`,
   hosts: ['mazeikiugyvunai.lt', 'gyvunuglobosdraugija.lt'],
+  photoHosts: ['fra1.digitaloceanspaces.com'],
   async collect({ fetcher, log = () => {} }) {
     const animals = [];
     let complete = false;

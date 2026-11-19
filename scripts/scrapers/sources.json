@@ -594,6 +594,7 @@
     },
     {
       "id": "keturkojoviltis",
+      "adapterId": "keturkojo-viltis",
       "vmvtRow": 2,
       "name": "Asociacija „Keturkojo viltis“, Alytus",
       "website": "https://keturkojo-viltis.lt/",

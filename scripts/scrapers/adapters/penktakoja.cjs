@@ -12,6 +12,7 @@
 // REST data, so they stay null / 'unknown' unless the content itself has "Label: value" lines.
 const N = require('../lib/normalize.cjs');
 const L = require('../lib/labels.cjs');
+const H = require('../lib/html.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
 const PARSER_VERSION = 'penktakoja-1';
@@ -90,6 +91,18 @@ function create({ perPage = 100, maxPages = 10 } = {}) {
         statusEvidence: st.statusEvidence,
         sourceUpdatedAt: p.modified_gmt ? `${p.modified_gmt}Z` : null,
       });
+    }
+    // Some real dogs have featured_media=0 while the product gallery contains
+    // their photos. Read only those detail pages, never a site-wide logo/og image.
+    for (const a of animals.filter(a => !a.photos.length)) {
+      try {
+        const page = await fetcher.get(a.sourceUrl);
+        a.photos = await cache.getOrParse(page.hash, 'penktakoja-gallery-1', () => {
+          const $ = H.load(page.body);
+          return [...new Set($('.woocommerce-product-gallery__image a[href]').map((_, el) =>
+            H.abs($(el).attr('href'), page.url)).get().filter(Boolean))];
+        });
+      } catch (error) { log(`penktakoja: missing-photo detail unavailable (${error.message})`); }
     }
     log(`penktakoja: ${animals.length} animals, ${skipped.length} skipped`);
     return { animals, skipped, complete: products.complete };
