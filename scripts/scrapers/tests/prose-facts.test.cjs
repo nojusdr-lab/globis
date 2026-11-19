@@ -78,6 +78,16 @@ test('fromProse: sex from a singular animal noun only; plurals, both sexes and c
   assert.equal(fromProse('Šeimoje auga mergaitė, šuo labai draugiškas.').sex, undefined);
 });
 
+test('fromProse: cat nouns "katinas/katinukas" male, "katytė" female; an opposite-sex plural voids it', () => {
+  // mgma.lt Mochikanas, mazasdraugas.lt Pepsis (2026-11-19)
+  assert.equal(fromProse('Sveikas, drūtas, jaunas (gimęs 2022 metais) katinas Mochikanas ieško namų.').sex, 'male');
+  assert.equal(fromProse('Pepsis – meilus ir mielas katinukas.').sex, 'male');
+  assert.equal(fromProse('Ši juoda katytė labai meili.').sex, 'female');
+  // mgma.lt "3 Kačiukai iš Balsupių k." (2026-11-19)
+  assert.equal(fromProse('Į mūsų globą perduoti 3 kačiukai: katinas ir dvi katytės iš Balsupių k.').sex, undefined);
+  assert.equal(fromProse('FIV turinčios katytės taip pat gali džiaugtis kasdienybe.').sex, undefined);
+});
+
 test('record: a post named after several animals gets no sex from its story', () => {
   const { makeAnimal } = require('../lib/record.cjs');
   const base = { nativeId: '1', sourceUrl: 'https://example.lt/a', species: 'dog', bio_lt: 'Nečipuota kalytė rasta.', photos: [] };

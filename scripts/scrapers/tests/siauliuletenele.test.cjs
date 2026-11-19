@@ -93,7 +93,8 @@ test('siauliuletenele: unknown facts stay null (no guessing)', async () => {
   }
   // Sex only where the story names it for one animal: "maža ... kalytė" (UNA), "Kalytė buvo palikta" (GANGA).
   const female = run.animals.filter(x => x.sex).map(x => [x.id, x.sex]);
-  assert.deepEqual(female.sort(), [['siauliuletenele:92734', 'female'], ['siauliuletenele:92798', 'female']]);
+  // "Senjoras katinas" (KENZIS) is male.
+  assert.deepEqual(female.sort(), [['siauliuletenele:86345', 'male'], ['siauliuletenele:92734', 'female'], ['siauliuletenele:92798', 'female']]);
   assert.equal(a['siauliuletenele:92739'].sex, null, '"DINA IR DUKRYTĖS": several animals');
   assert.equal(a['siauliuletenele:92790'].name, null, '"IŠ RADVILIŠKIO" is a place, not a name');
   assert.equal(a['siauliuletenele:88088'].name, null, '"IŠ VARPUTĖNŲ" is a place, not a name');

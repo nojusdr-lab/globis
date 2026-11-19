@@ -132,3 +132,7 @@
 - **RLS gyvoje DB** (13, dalis, tik skaitymas su viešu raktu): anon mato tik publikuotus paleidimus (53 `complete/true`), 3418 kopijos eilučių, iš nepublikuotų 0; 1159 gyvūnai, be publikuotos kopijos 0; `saved` ir įrašymas į `shelters` atmesti (401). Migracija `in_shelter` gyvoje DB dar nepritaikyta (`column published_animals.in_shelter does not exist`). Xcode Mac'e dar neįdiegtas (`/Applications/Xcode.app` nėra), todėl `xcode-select` komanda nepadės.
 - **Nepasiekiamos svetainės dar kartą** (2026-11-19, iš Mac): binada, grinda, vggd, makatukai, donpita, pukuotasvajone, dryzuotalaime, vggn neatsako; pifas 404. Naujų adapterių kandidatų nėra.
 - **iPhone simuliatorius** (21): Xcode įdiegtas, iPhone 17 (iOS 27.2) paleistas, bet `expo start --ios` užstringa ties „Installing Expo Go“ (>5 min). Kitas bandymas: development build (`npx expo run:ios`) vietoj Expo Go.
+
+## 2026-11-20
+
+- **Lytis iš „katinas/katinukas“ ir „katytė“** (bendra, `fromProse`): vienaskaita duoda lytį, priešingos lyties daugiskaita („katinas ir dvi katytės“) – nežinoma. Gyvai: mgma lytis 0→37 %, mazasdraugas 14→39 %. Pagal paskutinę kopiją: keturkojo-viltis +24 %, sos-gyvunai +18 %, gyvunugloba +19 %, siauliuletenele +10 %. Patikrinta 110 gyvūnų pagal vardo galūnę: 1 klaida dėl prieglaudos (Rekjaviko puslapyje Kapučinos tekstas). Penktakoja dar kartą patikrinta: puslapyje tik vardas ir telefonas. Testai 291/0. `directPets.json` neatnaujintas (Mac'e baigėsi vieta, simuliatorius išjungtas).

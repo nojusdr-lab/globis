@@ -66,7 +66,10 @@ const PENDING = {
 const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
 
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
-const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female' };
+const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female',
+  katinas: 'male', katinukas: 'male', katytė: 'female' };
+// Plurals never set a sex, but one of the other sex voids it ("katinas ir dvi katytės" = a litter).
+const SEX_PLURAL = { patinai: 'male', katinai: 'male', katinukai: 'male', patelės: 'female', kalytės: 'female', katytės: 'female' };
 
 const SINCE_DATE = '((?:\\d{4}\\s*(?:m\\.|metų)\\s*)?\\p{L}+\\s+mėn(?:\\.|esį)|\\d{4}[-.]\\d{2}(?:[-.]\\d{2})?|\\d{4}\\s*m\\.)';
 // "Prieglaudoje nuo: 2026 m. birželio mėn.", "Į prieglaudą atvyko – 2025-07-29", "į mūsų globą atvyko 2026-04-01",
@@ -117,7 +120,8 @@ function fromProse(text) {
   // Sex only from a singular noun that names it ("nečipuota kalytė rasta", "didesnis patinas").
   // Plural or ambiguous forms ("dvi kalytės") are ignored; both sexes in one text -> unknown.
   const sexes = new Set(words.filter(w => SEX_WORD[w]).map(w => SEX_WORD[w]));
-  if (sexes.size === 1) out.sex = [...sexes][0];
+  const plural = new Set(words.filter(w => SEX_PLURAL[w]).map(w => SEX_PLURAL[w]));
+  if (sexes.size === 1 && [...plural].every(x => sexes.has(x))) out.sex = [...sexes][0];
   // Time in the shelter as written after "Prieglaudoje nuo": "2026 m. birželio mėn.", "2025-03". One value only.
   const since = new Set([...String(text || '').matchAll(IN_SHELTER)].map(m => `nuo ${N.cleanText(m[1])}`));
   if (since.size === 1) out.in_shelter = [...since][0];
