@@ -37,6 +37,17 @@ async function asAnon(pg, sql) {
   try { return (await pg.query(sql)).rows; } finally { await pg.exec('reset role'); }
 }
 
+test('API roles retain schema access after restoring into an empty public schema', async () => {
+  const pg = await db();
+  try {
+    // A restored schema need not inherit the cluster's default PUBLIC grant.
+    await pg.exec('revoke all on schema public from public');
+    assert.deepEqual(await asAnon(pg, 'select animal_id from public.published_animals'), []);
+    await pg.exec('set role authenticated');
+    assert.deepEqual((await pg.query('select animal_id from public.saved')).rows, []);
+  } finally { await pg.close(); }
+});
+
 test('unknown facts stay null and status defaults to unknown', async () => {
   const pg = await db();
   const id = await run(pg, 'complete', ['globok:a']);
