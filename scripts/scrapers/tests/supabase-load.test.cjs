@@ -84,3 +84,24 @@ test('supabase: publishing takes a per-source lock before reading the previous s
   const prev = seen.findIndex(s => s.startsWith('select id from public.source_runs'));
   assert.ok(lock > -1 && lock < prev, seen.join('\n'));
 });
+
+test('supabase: the app read path (anon view -> fromRemote) gives the same pets as the bundled path', async () => {
+  const { fromRemote, toAppPet, shelterResolver } = require('../../../src/data/appPet.cjs');
+  const shelters = require('../../../src/data/shelters.json');
+  const pg = await db();
+  const run = await collect();
+  assert.equal((await loadRun(pg, adapter, run)).published, true);
+  await pg.exec('set role anon');
+  const { rows } = await pg.query('select * from published_animals order by animal_id');
+  await pg.exec('reset role');
+  const viaServer = fromRemote(rows, shelters, []);
+  const byId = new Map(shelters.map(s => [s.id, s]));
+  const published = run.animals.filter(a => rows.some(r => r.animal_id === a.id));
+  const bundled = published.map(a => toAppPet(a, shelterResolver(a.source, byId)(a)));
+  assert.equal(viaServer.length, 3);
+  assert.equal(viaServer.length, bundled.length);
+  // sourceUpdatedAt is not stored in snapshot_animals; everything else must match.
+  const strip = p => ({ ...p, sourceUpdatedAt: null });
+  assert.deepEqual(viaServer.map(strip).sort((x, y) => x.id.localeCompare(y.id)),
+    bundled.map(strip).sort((x, y) => x.id.localeCompare(y.id)));
+});
