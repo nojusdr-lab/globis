@@ -11,4 +11,7 @@ module.exports = createWordpressAdapter({
   base: 'https://keturkojo-viltis.lt/',
   restBase: 'gyvunas',
   taxonomies: { rusis: 'species' },
+  // Description only: drop the leading "Facebook nuoroda" link paragraph and the shelter's
+  // contact footer (phone, website, addresses), which starts at the paragraph with "☎".
+  bioHtml: h => h.replace(/<p>\s*<a[^>]*facebook\.com[^>]*>[^<]*<\/a>\s*<\/p>/gi, '').replace(/<p>[^<]*☎[\s\S]*$/, ''),
 });
