@@ -89,8 +89,12 @@ test('siauliuletenele: unknown facts stay null (no guessing)', async () => {
   const { run } = await collect();
   const a = byId(run);
   for (const animal of run.animals) {
-    for (const f of ['sex', 'size', 'vaccinated', 'neutered', 'chipped']) assert.equal(animal[f], null, `${animal.id} ${f}`);
+    for (const f of ['size', 'vaccinated', 'neutered', 'chipped']) assert.equal(animal[f], null, `${animal.id} ${f}`);
   }
+  // Sex only where the story names it for one animal: "maža ... kalytė" (UNA), "Kalytė buvo palikta" (GANGA).
+  const female = run.animals.filter(x => x.sex).map(x => [x.id, x.sex]);
+  assert.deepEqual(female.sort(), [['siauliuletenele:92734', 'female'], ['siauliuletenele:92798', 'female']]);
+  assert.equal(a['siauliuletenele:92739'].sex, null, '"DINA IR DUKRYTĖS": several animals');
   assert.equal(a['siauliuletenele:92790'].name, null, '"IŠ RADVILIŠKIO" is a place, not a name');
   assert.equal(a['siauliuletenele:88088'].name, null, '"IŠ VARPUTĖNŲ" is a place, not a name');
   assert.equal(a['siauliuletenele:92739'].age_text, null, 'mother + puppies: two age categories = unknown');

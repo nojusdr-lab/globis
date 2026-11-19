@@ -6,7 +6,7 @@ const { makeAnimal } = require('../lib/record.cjs');
 
 test('fromProse: stated health facts from free text', () => {
   assert.deepEqual(fromProse('Karadajus kastruotas, čipuotas, paskiepytas pagal amžių.'), { neutered: true, vaccinated: true, chipped: true });
-  assert.deepEqual(fromProse('Kalytė dar nesterilizuota, bet ženklinta.'), { neutered: false, chipped: true });
+  assert.deepEqual(fromProse('Kalytė dar nesterilizuota, bet ženklinta.'), { neutered: false, chipped: true, sex: 'female' });
 });
 
 test('fromProse: plans, conflicts and unrelated words stay unknown', () => {
@@ -67,4 +67,20 @@ test('fromProse: plural feminine participles count ("Skiepytos, ženklintos")', 
   assert.equal(r.neutered, undefined);
   assert.equal(fromProse('Neskiepytos ir nesterilizuotos.').vaccinated, false);
   assert.equal(fromProse('Neskiepytos ir nesterilizuotos.').neutered, false);
+});
+
+test('fromProse: sex from a singular animal noun only; plurals, both sexes and child words stay unknown', () => {
+  // siauliuletenele.lt LIALIA (2026-11-19)
+  assert.equal(fromProse('Neseniai nečipuota kalytė rasta Pakapėje.').sex, 'female');
+  assert.equal(fromProse('Rastas jaunas patinas, labai draugiškas.').sex, 'male');
+  assert.equal(fromProse('Rasti du šuneliai – didesnis patinas, mažesnė kalytė!').sex, undefined);
+  assert.equal(fromProse('Dvi kalytės iškart apsivaikavo.').sex, undefined);
+  assert.equal(fromProse('Šeimoje auga mergaitė, šuo labai draugiškas.').sex, undefined);
+});
+
+test('record: a post named after several animals gets no sex from its story', () => {
+  const { makeAnimal } = require('../lib/record.cjs');
+  const base = { nativeId: '1', sourceUrl: 'https://example.lt/a', species: 'dog', bio_lt: 'Nečipuota kalytė rasta.', photos: [] };
+  assert.equal(makeAnimal('x', { ...base, name: 'LIALIA' }).sex, 'female');
+  assert.equal(makeAnimal('x', { ...base, name: 'MARTA IR BAIKA' }).sex, null);
 });

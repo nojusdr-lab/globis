@@ -59,6 +59,9 @@ const PROSE = {
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
 const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
 
+// Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
+const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female' };
+
 const BIRTH = /((?:spėjama\s+)?gimimo\s+data(?:\s*\(spėjama\))?|gimęs|gimusi|gimė)\s*[:–-]?\s*(\d{4}(?:[-.\s]\d{2}){0,2})(?!\d)/giu;
 
 const NUM_WORD = 'vienerių|dvejų|dviejų|trejų|trijų|keturių|penkių|šešių|septynių|aštuonių|devynių|dešimties|pusės|pusantrų|kelių';
@@ -71,6 +74,7 @@ const SIZE_OF = { mažo: 'small', nedidelio: 'small', vidutinio: 'medium', didel
 function fromProse(text) {
   const out = {};
   const sentences = N.fold(text).split(/[.!?\n]+/).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
+  const words = sentences.flat();
   for (const [field, [yes, no]] of Object.entries(PROSE)) {
     const seen = new Set();
     for (const words of sentences) {
@@ -94,6 +98,10 @@ function fromProse(text) {
     const figures = new Set([...String(text || '').matchAll(/(\d+(?:[.,]\d+)?)\s*(m\.|metų|metai|metukai|mėn)/giu)].map(m => m[1] + m[2][0]));
     if (ages.size === 1 && figures.size <= 1) out.age_text = [...ages][0];
   }
+  // Sex only from a singular noun that names it ("nečipuota kalytė rasta", "didesnis patinas").
+  // Plural or ambiguous forms ("dvi kalytės") are ignored; both sexes in one text -> unknown.
+  const sexes = new Set(words.filter(w => SEX_WORD[w]).map(w => SEX_WORD[w]));
+  if (sexes.size === 1) out.sex = [...sexes][0];
   // Two different sizes (mother and puppies) -> unknown.
   const sizes = new Set([...String(text || '').matchAll(SIZE)].map(m => SIZE_OF[m[1].toLowerCase()]));
   if (sizes.size === 1) out.size = [...sizes][0];
