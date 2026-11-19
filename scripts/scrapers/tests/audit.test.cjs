@@ -15,4 +15,6 @@ test('audit: flags facts the text mentions while the field is empty; filled fiel
   assert.deepEqual(r.gaps.chipped, []);
   assert.deepEqual(r.gaps.neutered, []);
   assert.deepEqual(r.noBio.map(a => a.name), ['C']);
+  const dates = auditAnimals([{ name: 'D', bio_lt: 'Atvyko 2025 m. vasario mėn. Negalime laukti amžinybę.', age_text: null }]);
+  assert.deepEqual(dates.gaps.age_text, []);
 });

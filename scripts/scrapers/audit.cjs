@@ -9,7 +9,8 @@ const path = require('node:path');
 // Words that mean the text talks about the fact. Lithuanian stems, case-insensitive.
 const MENTIONS = {
   sex: /\b(patinas|patinėlis|patelė|berniukas|mergaitė|kalytė|kalaitė|lytis)\b/i,
-  age_text: /\b(gim(ė|us|usi|ęs|usios|imo)|amžius|amžiaus|\d+\s*(m\.|metų|metukų|mėn))/i,
+  // 1-2 digit figures only: "2025 m. vasario mėn." is an arrival date, not an age.
+  age_text: /(gim(ė|us|usi|ęs|usios|imo)\s*[:–-]?\s*\d|amžius\s*[:–-]|(?<!\d)\d{1,2}(?:[.,]\d)?\s*(m\.|metų|metukų|mėn))/i,
   chipped: /(ženklint|čipuot|čipas|mikroschem)/i,
   vaccinated: /(skiep|vakcin)/i,
   neutered: /(kastr|steril)/i,
