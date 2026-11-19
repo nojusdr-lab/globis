@@ -19,6 +19,10 @@ async function loadRun(db, adapter, run) {
        values ($1, $2, $3, $4, $5, $6) returning id`,
       [adapter.id, run.state, run.startedAt, run.finishedAt, run.animals.length, run.errors.join('\n').slice(0, 4000) || null]);
     runId = r.rows[0].id;
+    // in_shelter arrives with migration 20261119000200, applied by hand: until then, skip the column.
+    const inShelter = (await db.query(
+      `select 1 from information_schema.columns
+       where table_schema = 'public' and table_name = 'snapshot_animals' and column_name = 'in_shelter'`)).rows.length > 0;
     for (const a of run.animals) {
       await db.query(
         `insert into public.animals (id, source, source_url, shelter_id) values ($1, $2, $3, $4)
@@ -26,10 +30,11 @@ async function loadRun(db, adapter, run) {
       await db.query(
         `insert into public.snapshot_animals
            (run_id, animal_id, shelter_id, name, species, sex, age_text, size, photos,
-            chipped, vaccinated, neutered, bio_lt, status, status_evidence, shelter_hint)
-         values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)`,
+            chipped, vaccinated, neutered, bio_lt, status, status_evidence, shelter_hint${inShelter ? ', in_shelter' : ''})
+         values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16${inShelter ? ',$17' : ''})`,
         [runId, a.id, adapter.id, a.name, a.species, a.sex, a.age_text, a.size, a.photos,
-          a.chipped, a.vaccinated, a.neutered, a.bio_lt, a.status, a.statusEvidence, a.shelterHint ?? null]);
+          a.chipped, a.vaccinated, a.neutered, a.bio_lt, a.status, a.statusEvidence, a.shelterHint ?? null,
+          ...(inShelter ? [a.in_shelter ?? null] : [])]);
     }
     await db.query('commit');
   } catch (e) {

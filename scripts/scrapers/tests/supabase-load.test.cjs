@@ -105,3 +105,20 @@ test('supabase: the app read path (anon view -> fromRemote) gives the same pets 
   assert.deepEqual(viaServer.map(strip).sort((x, y) => x.id.localeCompare(y.id)),
     bundled.map(strip).sort((x, y) => x.id.localeCompare(y.id)));
 });
+
+test('supabase: in_shelter reaches the app view; a database without the column still loads', async () => {
+  const pg = await db();
+  const run = await collect();
+  run.animals = run.animals.map((a, i) => ({ ...a, in_shelter: i === 0 ? 'nuo 2026-09-13' : null }));
+  assert.equal((await loadRun(pg, adapter, run)).published, true);
+  await pg.exec('set role anon');
+  const { rows } = await pg.query('select animal_id, in_shelter from published_animals order by animal_id');
+  await pg.exec('reset role');
+  assert.equal(rows[0].in_shelter, 'nuo 2026-09-13');
+  // Before the migration is applied: information_schema has no in_shelter, so the insert leaves it out.
+  const sql = [];
+  const old = { query: (q, p) => { sql.push(q); return /information_schema/.test(q) ? { rows: [] } : pg.query(q, p); } };
+  await loadRun(old, adapter, await collect());
+  assert.ok(sql.some(q => /insert into public\.snapshot_animals/.test(q)));
+  assert.ok(!sql.some(q => /insert into public\.snapshot_animals[\s\S]*in_shelter/.test(q)));
+});
