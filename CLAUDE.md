@@ -17,7 +17,7 @@ GLOBIS yra Lietuvos gyvūnų globos ir įvaikinimo programėlė. Pagrindinė kal
 
 ## Duomenų rinkimas
 
-Savininko sprendimas (2026-11-17): viešų prieglaudų svetainių ir viešų Facebook puslapių duomenis rinkti galima. Ribos: be prisijungimo, neapeiti CAPTCHA ar kitų apsaugų, riboti užklausų dažnį, nerinkti privačių asmenų duomenų. Svetainėms gerbti `robots.txt` ir sąlygas. Facebook `robots.txt` draudžia automatinį rinkimą be Meta rašytinio leidimo; savininkas sprendimą priėmė žinodamas šią riziką. Facebook puslapiai skaitomi tik kaip organizacijos profilis (`scripts/scrapers/facebook-pages.cjs`); skelbimų iš ten be prisijungimo nėra.
+Savininko sprendimas (2026-11-17): viešų prieglaudų svetainių ir viešų Facebook puslapių duomenis rinkti galima. Ribos: be prisijungimo, neapeiti CAPTCHA ar kitų apsaugų, riboti užklausų dažnį, nerinkti privačių asmenų duomenų. Svetainėms gerbti `robots.txt` ir sąlygas. Facebook `robots.txt` draudžia automatinį rinkimą be Meta rašytinio leidimo; savininkas sprendimą priėmė žinodamas šią riziką. Savininkas (2026-11-19) leidžia iš viešų prieglaudų Facebook puslapių rinkti ir gyvūnų įrašus, kiek jų matoma be prisijungimo. Profilis: `scripts/scrapers/facebook-pages.cjs`.
 
 ## Dizainas
 
