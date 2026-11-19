@@ -100,6 +100,7 @@
 - **Serverio skaitymas gyvai** (B17 patikra): programėlė naršyklėje (Expo web) skaito gyvą Supabase: 3 užklausos (`offset` 0, 1000, 1156), gauta 1156 eilučių, paskutinis tuščias puslapis baigia ciklą, konsolėje klaidų nėra. Pastaba savininkui: įpakuotoje globok.lt kopijoje vis dar rodomos „Maži jausmai“ nuotraukos, nors jų sąlygos draudžia naudoti turinį.
 - **Gyva DB ir Maži jausmai**: gyvame Supabase visos kopijos dar 2026-11-18 11:xx (senas kodas), todėl nauji laukai (pvz. linksmosiospedutes, tautmilesgloba, rozinepedute, sos-gyvunai 0 %) programėlėje atsiras tik po savininko CI rinkimo. Ten pat dar publikuota 36 „Maži jausmai“ gyvūnų, nors jų sąlygos draudžia naudoti turinį, o `allPets.json` turi 36 jų globok.lt kopijas. Programėlė dabar jų nerodo (`withoutBlocked` bendrame `build` kelyje): 1327→1291. DB kopiją nuimti vis tiek turi savininkas. Testai 271/0.
 - **Maži jausmai patikra programėlėje**: Expo web su gyvu Supabase, „Prieglaudos“ sąraše (rūšiuota pagal gyvūnų skaičių) po „Mažas draugas · 36“ eina „Lesė (Vilnius) · 31“; „Maži jausmai“ nerodoma.
+- **Tuščios būsenos** (C24, dalis, Expo web): prieglaudų paieška be atitikmenų rodo „Prieglaudų nerasta“ ir mygtuką „Išvalyti paiešką ir filtrus“ (veikia); prieglauda be skelbimų („Maži jausmai“) rodoma skiltyje „Be aktyvių Globis skelbimų“, jos puslapyje „Skelbimų nėra“ su paaiškinimu, kad gyvūnų gali būti. Serverio klaida palieka įpakuotą kopiją (testas). Telefonuose ir be interneto dar nepatikrinta.
 
 ## Laukia savininko
 
