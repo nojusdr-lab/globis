@@ -22,8 +22,16 @@ async function main() {
       const fetcher = createFetcher({ allowedHosts: hosts, gate });
       const records = [];
       const file = path.join(outDir, adapter.id, 'image-health.json');
+      const checkpoint = file + '.checkpoint';
+      const prior = new Map();
+      for (const saved of [checkpoint, file]) {
+        if (fs.existsSync(saved)) for (const r of JSON.parse(fs.readFileSync(saved, 'utf8')).records || []) prior.set(r.id, r);
+      }
+      const priorRecords = [...prior.values()];
+      // Retain not-yet-replayed checks if this process stops during resumption.
+      if (priorRecords.length) writeJsonAtomic(checkpoint, { records: priorRecords });
       writeJsonAtomic(file, { state: 'running', expected: animals.length, checked: 0, records: [] });
-      const report = await auditImages(animals, { fetcher, allowedHosts: hosts, onRecord: record => {
+      const report = await auditImages(animals, { fetcher, allowedHosts: hosts, priorRecords, onRecord: record => {
         records.push(record);
         if (records.length % 10 === 0) writeJsonAtomic(file, { state: 'running', expected: animals.length, checked: records.length, records });
       } });

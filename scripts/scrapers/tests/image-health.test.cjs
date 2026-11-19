@@ -37,3 +37,17 @@ test('broken primary image finds an existing fallback; unknown hosts are never f
   assert.ok(!calls.some(c => c[0].includes('unapproved')));
   assert.equal(animals[0].photos[0], 'https://images.invalid/bad.jpg', 'audit never deletes or silently rewrites source evidence');
 });
+
+test('a resumed audit reuses recent successful checks but invalidates a changed primary URL', async () => {
+  const f = createFetcher({ allowedHosts: ['images.invalid'], minDelayMs: 0,
+    fetchImpl: async url => new Response('', { headers: { 'content-type': url.endsWith('/robots.txt') ? 'text/plain' : 'image/jpeg' } }) });
+  const animals = [{ id: 'a', photos: ['https://images.invalid/old.jpg'] }];
+  const initial = await auditImages(animals, { fetcher: f, allowedHosts: ['images.invalid'] });
+  const count = f.stats().requests;
+  const resumed = await auditImages(animals, { fetcher: f, allowedHosts: ['images.invalid'], priorRecords: initial.records });
+  assert.equal(f.stats().requests, count);
+  assert.equal(resumed.records[0].reused, true);
+  await auditImages([{ id: 'a', photos: ['https://images.invalid/new.jpg'] }],
+    { fetcher: f, allowedHosts: ['images.invalid'], priorRecords: initial.records });
+  assert.equal(f.stats().requests, count + 1);
+});

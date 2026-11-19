@@ -1,8 +1,10 @@
 'use strict';
 // Check a primary image with HEAD. No image downloads and no face/image model.
 // Inconclusive/access failures are kept distinct from a confirmed HTTP 404/410.
-async function auditImages(animals, { fetcher, allowedHosts, now = () => new Date().toISOString(), onRecord = () => {} }) {
+async function auditImages(animals, { fetcher, allowedHosts, now = () => new Date().toISOString(), onRecord = () => {},
+  priorRecords = [], maxAgeMs = 6 * 3600000 }) {
   const cache = new Map(), paused = new Map(), records = [];
+  const previous = new Map(priorRecords.map(r => [r.id, r]));
   async function check(url) {
     let parsed;
     try { parsed = new URL(url); } catch { return { state: 'invalid_url', url }; }
@@ -25,6 +27,12 @@ async function auditImages(animals, { fetcher, allowedHosts, now = () => new Dat
     cache.set(url, result); return result;
   }
   for (const animal of animals) {
+    const old = previous.get(animal.id), age = Date.parse(now()) - Date.parse(old?.checks?.[0]?.checkedAt);
+    if (old && ['healthy', 'fallback_available'].includes(old.state) && age >= 0 && age < maxAgeMs &&
+        old.checks[0].url === animal.photos?.[0] && animal.photos.includes(old.preferredUrl)) {
+      const record = { ...old, reused: true };
+      records.push(record); onRecord(record); continue;
+    }
     const checks = [];
     for (const url of animal.photos || []) {
       const result = await check(url); checks.push(result);

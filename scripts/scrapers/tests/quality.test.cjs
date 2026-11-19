@@ -63,6 +63,18 @@ test('the Mazeikiai API adapter preserves the exact adoptable field as availabil
   assert.equal(animal.statusEvidence, 'adoptable: true');
 });
 
+test('an unrelated future/adoption clause cannot hide a clearly completed health fact', () => {
+  assert.equal(fromProse('Namuose bus meilūnas 🤍 Kastruotas ir visa padaryta').neutered, true);
+  assert.equal(fromProse('Jei priimam ir duodam 🩷 Tibras kastruotas, čipuotas').chipped, true);
+  const facts = fromProse('Ženklinta ✔️ Skiepyta ✔️ Sterilizuota 💛 Galbūt jūsų namuose?');
+  assert.equal(facts.vaccinated, true);
+  assert.equal(facts.neutered, true);
+  assert.equal(facts.chipped, true);
+  assert.equal(fromProse('Skiepinta, pažymėta mikroschema.').vaccinated, true);
+  assert.equal(fromProse('Skiepinta, pažymėta mikroschema.').chipped, true);
+  assert.equal(fromProse('Pažymėta kaip draugiška.').chipped, undefined);
+});
+
 test('local publication rejects delayed observations and a replay cannot confirm a large drop', t => {
   const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'globis-local-order-'));
   t.after(() => fs.rmSync(outDir, { recursive: true, force: true }));

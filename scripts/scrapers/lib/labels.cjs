@@ -53,7 +53,7 @@ function pairsFromText(text) {
 // Participle in any gender/number: -as, -a, -i, -os ("Skiepytos, ženklintos" about female pups).
 const PROSE = {
   neutered: [/^(kastruot|sterilizuot)(as|a|i|os)$/, /^ne(kastruot|sterilizuot)(as|a|i|os)$/],
-  vaccinated: [/^(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/],
+  vaccinated: [/^(pa)?(skiepyt|skiepint|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|skiepint|vakcinuot)(as|a|i|os)$/],
   chipped: [/^(čipuot|(pa)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa)?ženklint)(as|a|i|os)$/],
 };
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
@@ -79,7 +79,10 @@ const SIZE_OF = { mažo: 'small', nedidelio: 'small', vidutinio: 'medium', didel
 
 function fromProse(text) {
   const out = {};
-  const sentences = N.fold(text).split(/[.!?\n]+/).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
+  // Shelter stories often use emoji or smileys instead of a full stop. Keep a
+  // later adoption/phone condition outside the preceding medical statement.
+  const sentences = N.fold(text).split(/[.!?\n;]+|\p{Extended_Pictographic}|[:;]-?[()DP]|[,–—]\s*(?=(?:bet|tačiau|jei|jeigu|kai|o|nes)(?!\p{L}))/u)
+    .map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
   const words = sentences.flat();
   for (const [field, [yes, no]] of Object.entries(PROSE)) {
     const seen = new Set();
@@ -87,11 +90,12 @@ function fromProse(text) {
       const plan = words.some(w => PLAN.test(w));
       for (let i = 0; i < words.length; i++) {
         const w = words[i];
+        const microchip = field === 'chipped' && /^(pa)?žymėt(as|a|i|os)$/.test(w) && /^mikroschem/.test(words[i + 1] || '');
         // A later adoption question must not erase an earlier health list.
         if (words.slice(Math.max(0, i - 5), i).some(p => UNCERTAIN.test(p)) ||
             (words[i + 1] === 'ar' && words[i + 2] === 'ne')) continue;
         if (no.test(w)) seen.add(false);
-        else if (yes.test(w) && !plan) {
+        else if ((yes.test(w) || microchip) && !plan) {
           const prefix = words.slice(Math.max(0, i - 2), i);
           // A conjunction starts a new clause: "nėra skiepytas, bet kastruotas".
           const boundary = prefix.findLastIndex(p => ['bet', 'tačiau', 'o'].includes(p));
