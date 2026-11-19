@@ -52,6 +52,8 @@ test('withoutBlocked: Maži jausmai rows are hidden from server and globok.lt co
     { id: 'mazijausmai:1', source: 'mazijausmai', shelter: { id: 'mazijausmailt' } },
     { id: 'globok:x', source: 'globok', shelter: { id: 'mazijausmailt' } },
     { id: 'kggn:1', source: 'kggn', shelter: { id: 'kggnlt' } },
+    // rasugloba.lt /taisykles-ir-salygos/ 4.2: no copying or use without prior written consent.
+    { id: 'globok:portas', source: 'globok', shelter: { id: 'rasuglobalt' } },
   ];
   assert.deepEqual(withoutBlocked(pets).map(p => p.id), ['kggn:1']);
 });
