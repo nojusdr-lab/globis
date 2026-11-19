@@ -23,14 +23,15 @@ async function main() {
   let databaseError = null;
   if (process.env.SUPABASE_DB_URL) {
     const { Client } = require('pg');
-    db = new Client({ connectionString: process.env.SUPABASE_DB_URL, ssl: { rejectUnauthorized: false } });
+    const { postgresConfig } = require('./lib/postgres-config.cjs');
     try {
+      db = new Client(postgresConfig());
       await db.connect();
     } catch (error) {
       // The local snapshots still provide the bundled fallback during an outage.
       databaseError = 'error: ' + error.message;
       process.exitCode = 1;
-      try { await db.end(); }
+      try { if (db) await db.end(); }
       catch (closeError) { console.error('Database cleanup failed: ' + closeError.message); }
       db = null;
     }

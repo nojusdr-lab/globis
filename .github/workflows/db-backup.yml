@@ -18,19 +18,43 @@ jobs:
     env:
       SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
       BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+      SUPABASE_DB_CA_CERT: ${{ secrets.SUPABASE_DB_CA_CERT }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.13.0'
+          cache: npm
       - id: ready
         run: |
-          if [ -z "$SUPABASE_DB_URL" ] || [ -z "$BACKUP_PASSPHRASE" ]; then
-            echo "::warning title=Backup skipped::SUPABASE_DB_URL or BACKUP_PASSPHRASE secret is missing"
+          if [ -z "$SUPABASE_DB_URL" ] || [ -z "$BACKUP_PASSPHRASE" ] || [ -z "$SUPABASE_DB_CA_CERT" ]; then
+            echo "::warning title=Backup skipped::SUPABASE_DB_URL, SUPABASE_DB_CA_CERT or BACKUP_PASSPHRASE is missing"
             echo "ok=0" >> "$GITHUB_OUTPUT"
           else
             echo "ok=1" >> "$GITHUB_OUTPUT"
           fi
+      - if: steps.ready.outputs.ok == '1'
+        run: npm ci --no-audit --no-fund --ignore-scripts
       - name: Install pg_dump matching the server version
+        shell: bash
         if: steps.ready.outputs.ok == '1'
         run: |
-          major=$(psql "$SUPABASE_DB_URL" -Atc 'show server_version_num' | cut -c1-2)
+          major=$(node <<'NODE'
+          const { Client } = require('pg');
+          const { postgresConfig } = require('./scripts/scrapers/lib/postgres-config.cjs');
+          async function version() {
+            const db = new Client(postgresConfig());
+            try {
+              await db.connect();
+              const result = await db.query('show server_version_num');
+              console.log(String(result.rows[0].server_version_num).slice(0, 2));
+            } finally { await db.end(); }
+          }
+          version().catch(() => process.exit(1));
+          NODE
+          )
           echo "Server PostgreSQL $major"
           sudo apt-get install -y -qq postgresql-common > /dev/null
           sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y > /dev/null
@@ -41,9 +65,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir dump
-          # App tables (schema and rows) plus account rows, which saved.user_id points to.
-          pg_dump "$SUPABASE_DB_URL" --schema=public --no-owner --no-privileges -f dump/public.sql
-          pg_dump "$SUPABASE_DB_URL" --data-only --table=auth.users --no-owner --no-privileges -f dump/auth-users.sql
+          # One shared snapshot includes app rows, permissions and account identities.
+          node scripts/scrapers/backup-dump.cjs dump
           grep -q 'CREATE TABLE public.saved' dump/public.sql || { echo "::error::dump has no public.saved table"; exit 1; }
           ls -l dump
           name="globis-db-$(date -u +%Y-%m-%d)"

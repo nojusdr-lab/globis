@@ -4,7 +4,8 @@
 async function main() {
   if (!process.env.SUPABASE_DB_URL) return;
   const { Client } = require('pg');
-  const db = new Client({ connectionString: process.env.SUPABASE_DB_URL, ssl: { rejectUnauthorized: false } });
+  const { postgresConfig } = require('./lib/postgres-config.cjs');
+  const db = new Client(postgresConfig());
   await db.connect();
   try {
     const { rows: [r] } = await db.query(`select pg_database_size(current_database()) as bytes,

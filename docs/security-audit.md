@@ -1,5 +1,7 @@
 # GLOBIS saugumo auditas (2026-11-17)
 
+> 2026-11-19 patikslinimas. Toliau esanti išvada aprašo ankstesnę kodo versiją. PR #38 papildomai turi pasirenkamas paskyras, `saved` RLS ir paskyros ištrynimo funkciją. DB klientuose pakeistas `rejectUnauthorized: false` į sertifikato ir vardo tikrinimą; reikia patvirtinti gyvos aplinkos CA konfigūraciją. Publikavimo chronologijai pridėta nauja migracija, šifruotai kopijai — bendras snapshot ir atkūrimo testas CI. Dabartinė leidimo patikra nurodyta [kelrodyje](handoff/GLOBIS_ROADMAP.md).
+
 Pagal savininko atsiųstą 8 skyrių sąrašą. Architektūra: Expo programėlė be serverio API; Supabase tik viešam skaitymui (anon raktas + RLS); rašo tik CI scraperis per `SUPABASE_DB_URL` (GitHub secret). Paskyrų, mokėjimų, įkėlimų, AI kvietimų nėra.
 
 ## Įvertinimas: 🟡 ACCEPTABLE

@@ -47,7 +47,7 @@ function collectOffline(t, { sources, databaseResults, databaseError = false }) 
   `);
   const result = spawnSync(process.execPath, [path.join(scriptRoot, 'run.cjs'), dir], {
     encoding: 'utf8', timeout: 10000,
-    env: { ...process.env, SUPABASE_DB_URL: databaseResults || databaseError ? 'offline-test' : '',
+    env: { ...process.env, SUPABASE_DB_URL: databaseResults || databaseError ? 'postgres://offline@fixture.invalid/globis' : '',
       NODE_OPTIONS: '--require=' + preload },
   });
   const file = path.join(dir, 'report.json');

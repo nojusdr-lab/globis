@@ -39,10 +39,11 @@ async function loadRun(db, adapter, run) {
   if (run.state !== 'complete') return { runId, published: false, reason: `run is ${run.state}` };
 
   try {
-    await db.query('begin');
-    // The daily run and a one-source run can load the same source at once (different CI
-    // concurrency groups). Lock per source so "previous snapshot" is read after the other commits.
-    await db.query('select pg_advisory_xact_lock(hashtext($1))', ['publish:' + adapter.id]);
+    await db.query('begin isolation level read committed');
+    // The daily and one-source collectors share the database function's lock,
+    // covering the previous-head read and resulting status history as well.
+    await db.query('select pg_advisory_xact_lock(hashtextextended($1, 0))',
+      ['globis:publish:' + adapter.id]);
     const prev = await db.query(
       `select id from public.source_runs where source = $1 and published order by published_at desc, id desc limit 1`, [adapter.id]);
     await db.query('select public.publish_source_run($1)', [runId]);
