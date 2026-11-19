@@ -1,5 +1,5 @@
 {
-  "_about": "Shelter websites from the VMVT guardian registry (docs/discovery-engine/vmvt-guardian-inventory.tsv). Facebook rows are not listed here: public page profiles are read by scripts/scrapers/facebook-pages.cjs (owner decision 2026-11-17); owner allows reading animal posts from public pages without login (2026-11-19). decision: adapter = collector exists; probe = robots/terms/listing must be checked from GitHub Actions (cloud sandbox could not read it); no_listing = site has no animal list; blocked = robots.txt or terms forbid; other_thread = handled elsewhere; paused = site down or under maintenance. checked = date of the manual check.",
+  "_about": "Shelter website access decisions, including own websites found behind VMVT Facebook entries. Registry transcription: docs/discovery-engine/vmvt-guardian-inventory.tsv. Public visibility and robots access do not establish a republication licence. decision adapter = tested collector; blocked = explicit robots/terms restriction; no_listing = no verifiable individual adoption list; adoption_confirmation_required = current list includes found animals without explicit availability; other_thread = separate work; paused = intentionally unavailable; unreachable = access failed. Alternative-channel review: docs/scrapers/alternative-channel-review-2026-11-19.json. No login or access-control bypass. Owner decision 2026-11-19 permits reading genuinely public Facebook animal posts without login; this does not grant access to restricted content or create a republication licence.",
   "sources": [
     {
       "id": "kggn",
@@ -282,14 +282,18 @@
       "id": "grinda",
       "vmvtRow": 28,
       "name": "UAB „Grinda“ (Vilniaus beglobių gyvūnų skyrius)",
-      "website": "https://vbgst.grinda.lt/",
-      "listing": [],
-      "robots": "unverified",
-      "terms": "unverified",
-      "cms": "unverified",
-      "decision": "unreachable",
-      "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-18"
+      "website": "https://vggn.grinda.lt/",
+      "listing": [
+        "https://vggn.grinda.lt/gyvunai/sunys/",
+        "https://vggn.grinda.lt/gyvunai/kates/"
+      ],
+      "robots": "WordPress /wp-admin/ only; public HTML permitted",
+      "terms": "No separate terms/privacy link found in homepage, listing and contact navigation; copyright footer only",
+      "cms": "wordpress-html:animals",
+      "decision": "adoption_confirmation_required",
+      "note": "New official host found. Individual pages inspected: Kriptas/Kripas found 2026-11-18; Grinius explicitly reserved. List includes recently found animals, not a verified adoptable-only feed. Do not infer availability from presence, registration number, age or holding time. Identity: UAB Grinda footer and VilniausGyvunuGlobosNamai Facebook link.",
+      "checked": "2026-11-19",
+      "registryWebsite": "https://vbgst.grinda.lt/"
     },
     {
       "id": "vysniusodas",
@@ -538,15 +542,18 @@
     {
       "id": "nuaras",
       "vmvtRow": 1,
-      "name": "Nuaras (Kaunas, Alytus, Klaipėda)",
-      "website": "https://nuaras.lt/",
+      "name": "UAB „Nuaras“ (VMVT registruota organizacija)",
+      "website": "http://animal.lt/lt/gyvunu-globa/alytaus-regiono-gyvunu-globos-namai",
       "listing": [],
-      "robots": "Disallow: /wp-admin/",
-      "terms": "unverified",
+      "robots": "animal.lt robots redirect could not be completed; collection stopped",
+      "terms": "unverified for the registered channel",
       "cms": "wordpress",
-      "decision": "no_listing",
-      "checked": "2026-11-16",
-      "note": "\"Globotiniai\" links to Facebook photos. VMVT lists animal.lt page too; probe that."
+      "decision": "identity_review",
+      "checked": "2026-11-19",
+      "note": "VMVT registers UAB Nuaras at animal.lt. That channel is currently unavailable to the polite client. Alternative nuaras.lt identifies VšĮ Nuaro fondas, a different legal name; common branding is not sufficient to assign animal ownership. Verify legal relationship and a public authorized adoption feed before enabling. The alternative homepage points to Facebook photographs, not individual animal listings.",
+      "candidateWebsites": [
+        "https://nuaras.lt/"
+      ]
     },
     {
       "id": "rozinepedute",
@@ -649,6 +656,88 @@
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
       "checked": "2026-11-18"
+    },
+    {
+      "id": "puma",
+      "vmvtRow": 49,
+      "name": "VšĮ Beglobių gyvūnų organizacija „PUMA“",
+      "website": "https://www.gyvunaipuma.lt/",
+      "listing": [
+        "https://www.gyvunaipuma.lt/gyvunai/"
+      ],
+      "robots": "Disallow /wp-admin/",
+      "terms": "No separate terms link found; no licence inferred",
+      "cms": "wordpress:broken-facebook-embed",
+      "decision": "no_listing",
+      "checked": "2026-11-19",
+      "note": "Organization name and gyvunai.puma Facebook link match registry. Gyvūnai page contains a failed Facebook token/session message, not animal records. No private token or login attempted."
+    },
+    {
+      "id": "pukuotauodega",
+      "vmvtRow": 54,
+      "name": "VšĮ „Pūkuota uodega“",
+      "website": "https://pukuotauodega.lt/",
+      "listing": [],
+      "robots": "WordPress rules; public HTML permitted",
+      "terms": "No separate collection terms link found; no licence inferred",
+      "cms": "wordpress:organization-and-stories",
+      "decision": "no_listing",
+      "checked": "2026-11-19",
+      "note": "Homepage and Apie mus identify the organization and Klaipėda PSP work. Visible story from 2023 already says Rado namus. No current individual adoption list verified; do not turn a rescue total or an adopted story into available animals."
+    },
+    {
+      "id": "batuotoskates",
+      "vmvtRow": 72,
+      "name": "VšĮ „Batuotos katės“",
+      "website": "https://batuotoskates.lt/",
+      "listing": [],
+      "robots": "WordPress rules; public HTML permitted",
+      "terms": "No separate terms link found; no licence inferred",
+      "cms": "wordpress:organization-profile",
+      "decision": "no_listing",
+      "checked": "2026-11-19",
+      "note": "Own homepage names VšĮ Batuotos katės and links back to registry Facebook page. Describes support and foster care, not individual adoption listings. Embedded Facebook photo links do not establish individual animal identities."
+    },
+    {
+      "id": "rastinenurastinukai",
+      "vmvtRow": 87,
+      "name": "VšĮ Rastinėnų rastinukai",
+      "website": "https://rastinenurastinukai.lt/",
+      "listing": [],
+      "robots": "Public HTML permitted",
+      "terms": "Linked privacy.html reviewed: personal-data/cookie policy, no collection prohibition found; not a republication licence",
+      "cms": "static:photo-gallery",
+      "decision": "no_listing",
+      "checked": "2026-11-19",
+      "note": "Organization name and Facebook numeric ID 61569075597416 match registry. Gallery is moments/photos with generic captions, sometimes several animals in a photograph; no individual profiles or adoption status. Do not fabricate named animal records from photo numbers."
+    },
+    {
+      "id": "plungespriglaustukai",
+      "vmvtRow": 52,
+      "name": "VšĮ „Plungės priglaustukai“",
+      "website": "https://plungespriglaustukai.lt/",
+      "listing": [],
+      "robots": "Public HTML permitted; terms take precedence for enabling collection",
+      "terms": "https://plungespriglaustukai.lt/salygos-ir-taisykles/ section 6 prohibits systematic/automated data collection; section 4.1 requires prior written permission for content reuse",
+      "cms": "wordpress",
+      "decision": "blocked",
+      "checked": "2026-11-19",
+      "note": "Organization name and registry Facebook link match. Access/listing diagnostics only; no animal snapshot published. Automated collection disabled after the terms review. Do not implement/enable collection without verified authorization covering the planned use."
+    },
+    {
+      "id": "egzoticsos",
+      "vmvtRow": 56,
+      "name": "VšĮ „EgzoticSOS“",
+      "website": "https://egzoticsos.lt/",
+      "listing": [
+        "https://egzoticsos.lt/?swoof=1&product_cat=iesko-namu"
+      ],
+      "robots": "Disallow /wp-admin/; public listing and /wp-json/wp/v2/ permitted",
+      "terms": "Linked privatumo-politika reviewed 2026-11-19: personal-data/cookie policy, no collection prohibition found; no separate terms link found; no republication licence inferred",
+      "cms": "wordpress-rest:product",
+      "decision": "adapter",
+      "checked": "2026-11-19",
+      "note": "Homepage links to pagalba.egzotinei.faunai, matching registry. Only public Ieško namų products, category resolved by slug+label, not all historical/found/quarantined products. Explicit animal-kind tags map to other; unexplained short codes remain unknown. Own photos only. Private details excluded; no commerce actions."
     }
   ]
 }

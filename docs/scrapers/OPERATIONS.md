@@ -2,27 +2,34 @@
 
 ## 2026-11-19 patikra
 
-Oficialus [VMVT puslapis](https://vmvt.lrv.lt/lt/veiklos-sritys/gyvunu-gerove/gyvunu-augintiniu-gerove/reikalavimai-gyvunu-globejams-ir-globos-namams/gyvunu-globeju-sarasas/) patikrintas iš naujo. Inventorius turi 96 eilutes, 95 su nuoroda; 27 eilutė – neveikiantis LGGD Vilniaus skyrius. Tai registro eilučių skaičius, ne patvirtintas 95 veikiančių įvaikinimo svetainių skaičius.
+Oficialus [VMVT puslapis](https://vmvt.lrv.lt/lt/veiklos-sritys/gyvunu-gerove/gyvunu-augintiniu-gerove/reikalavimai-gyvunu-globejams-ir-globos-namams/gyvunu-globeju-sarasas/) patikrintas iš naujo. [Dabartinių nuorodų patikra](registry-review-2026-11-19.json) 13:48 UTC nerado organizacijų / URL skirtumų nuo inventoriaus. Inventorius turi 96 eilutes, 95 su nuoroda; 27 eilutė – neveikiantis LGGD Vilniaus skyrius. Tai registro eilučių skaičius, ne patvirtintas 95 veikiančių įvaikinimo svetainių skaičius.
 
 Izoliuotoje vietinėje kopijoje gyvai užbaigti 19 įjungtų adapterių. Pradinė kopija: 1404 įrašai. Kiekvienas įrašas turi ID, originalų šaltinio URL, stebėjimo laiką ir struktūros patikros rezultatą. Mažeikių API 98 įrašams pridėtas tikras prieinamumo įrodymas `adoptable: true`. „Penkta koja“ atvejui `featured_media=0` pridedamas galerijos skaitymas iš to paties gyvūno puslapio; bendras svetainės logotipas netinka.
 
 Pakartotas „Penktos kojos“ gyvas rinkimas iš galerijų atkūrė 18 trūkusių pagrindinių nuotraukų (iš 19 liko 1 be nuotraukos). Atskirai patikrintos 22 neįjungtų svetainių viešos pradinės nuorodos: 13 pasiekiamų, 9 neprieinamos šiuo leidžiamu būdu (įskaitant ankstesnę `no_listing` 404 nuorodą). Užklausų laikai / HTTP / hash ir konservatyvi šios patikros apimtis pateikti [šaltinių patikros įraše](source-review-2026-11-19.json). Pasiekiamas pagrindinis puslapis neįrodo gyvūnų sąrašo ar naudojimo leidimo.
 
-Galutinė [gyvos patikros suvestinė](verification-2026-11-19.json): 1404 įrašai, 0 struktūros klaidų; patikrintos visų įrašų pagrindinės nuotraukos, 1399 pasiekiamos, 5 nepateiktos šaltiniuose. Iš viso atkurta 24 galerijų nuotraukos: 18 „Penkta koja“, 4 „Keturkojo viltis“, 1 „SOS gyvūnai“, 1 Utenos draugija. Ištaisytas parseris po pakartotų gyvų rinkimų atgavo 32 aiškiai tekste buvusius sveikatos faktus. 27 „Beglobio“ įrašai vis dar turi HTTP nuotraukų nuorodas; HTTPS robots / puslapio gavimas nepavyko, todėl saugus transportas neišgalvojamas. Penkiems likusiems įrašams svetimų gyvūnų ar logotipų nepriskiriame. 604 įrašai turi bent vieną įspėjimą apie trūkstamą ar neaiškią informaciją; tai nėra 604 netaisyklingi įrašai.
+Pradinėje 19 šaltinių patikroje: 1404 įrašai, 0 struktūros klaidų; patikrintos visų įrašų pagrindinės nuotraukos, 1399 pasiekiamos, 5 nepateiktos šaltiniuose. Iš viso atkurta 24 galerijų nuotraukos: 18 „Penkta koja“, 4 „Keturkojo viltis“, 1 „SOS gyvūnai“, 1 Utenos draugija. Ištaisytas parseris po pakartotų gyvų rinkimų atgavo 32 aiškiai tekste buvusius sveikatos faktus. 27 „Beglobio“ įrašai vis dar turi HTTP nuotraukų nuorodas; HTTPS robots / puslapio gavimas nepavyko, todėl saugus transportas neišgalvojamas. Penkiems likusiems įrašams svetimų gyvūnų ar logotipų nepriskiriame. 604 įrašai turi bent vieną įspėjimą apie trūkstamą ar neaiškią informaciją; tai nėra 604 netaisyklingi įrašai. Naujausi tikri kiekiai ir laikai pateikiami [gyvos patikros suvestinėje](verification-2026-11-19.json).
 
-Likusių eilučių priežastys iš pradinės patikros:
+Atskirai ieškota alternatyvių kanalų visoms 49 dar neprijungtoms Facebook registro organizacijoms ir 7 nepasiekiamų svetainių organizacijoms. [Paieškų ir patikrų žurnalas](alternative-channel-review-2026-11-19.json) atskiria rastą kandidatą nuo patvirtintos tapatybės, prieigos ir tikro gyvūnų sąrašo. Vien paieška negali įrodyti, kad kitos svetainės nėra.
+
+Pridėtas 20-as adapteris „EgzoticSOS“: patvirtintas registro Facebook kanalo ir svetainės ryšys, perskaityti robots ir privatumo politika. Viešas REST „Ieško namų“ filtras pateikė 167 įrašus; 5 atmesti dėl papildomų rastų / neįvaikinamų kategorijų, liko 162 kandidatai. Šaltinis neskaito viso istorinio katalogo ir neatlieka jokių pirkimo veiksmų. Patikrinti pavadinimai / būsenų paminėjimai, vykdoma pagrindinių nuotraukų patikra. Nauja organizacija susieta programėlės duomenų sluoksnyje; nežinomi miestas / adresas lieka null. Senos migracijos pakartojimas nebepervadina tiesiogiai gauto organizacijos šaltinio į Globok. Programėlės gyvūnų failai ir DB nepublikuojami.
+
+Po alternatyvių kanalų patikros:
 
 | Būsena | Eilutės |
 |---|---:|
-| Įjungti svetainių adapteriai | 19 |
-| Tik socialinis kanalas, neprijungtas autorizuotas gyvūnų srautas | 49 |
-| Gyvūnų įvaikinimo sąrašo nerasta / svetainė skirta kitai paslaugai | 13 |
-| Svetainė nepasiekiama | 8 |
+| Įjungti svetainių adapteriai | 20 |
+| Socialinis kanalas; patvirtintas alternatyvus gyvūnų srautas neprijungtas | 43 |
+| Gyvūnų įvaikinimo sąrašo nerasta / svetainė skirta kitai paslaugai | 16 |
+| Svetainė nepasiekiama | 7 |
 | Sustabdyta dėl sąlygų ar priežiūros darbų | 2 |
-| Robots / naudojimo sąlygų ribojimas | 2 |
+| Robots / naudojimo sąlygų ribojimas | 3 |
+| Sąraše yra rastų gyvūnų; įvaikinimo prieinamumas nepatvirtintas | 1 |
 | Atskiras ankstesnis LT-GYVŪNAMS rinkiklis | 1 |
-| Tas pats URL kitoje registro eilutėje; tapatybė nepatvirtinta | 1 |
+| Organizacijos tapatybės / kanalo priskyrimo patikra | 2 |
 | Veiklos nevykdo | 1 |
+
+„PUMA“ gyvūnų puslapis rodo neveikiančią Facebook integraciją. „Batuotos katės“ pateikia organizacijos profilį, „Rastinėnų rastinukai“ – nuotraukų akimirkas be individualių gyvūnų tapatybės; „Pūkuotos uodegos“ įrašų sąraše tik jau padovanoto gyvūno istorija. „Plungės priglaustukų“ taisyklių 6 skyrius draudžia automatinį rinkimą; adapteris nejungiamas. Rastas naujas Grinda hostas `vggn.grinda.lt`, tačiau sąraše yra ir ką tik rastų gyvūnų: jie nėra automatiškai dovanojami. VMVT registruoja UAB „Nuaras“ `animal.lt`, o alternatyvi svetainė prisistato VšĮ Nuaro fondu; bendras pavadinimas nėra teisinės tapatybės ar gyvūnų priskyrimo įrodymas.
 
 39 ir 62 eilutės nurodo `padekman.lt`; vienodas adresas neleidžia abiem organizacijoms priskirti tų pačių gyvūnų. `sources.json` išsaugo prieigos sprendimus; inventoriaus įrašas nesuteikia turinio ar nuotraukų licencijos. Šiame pakeitime naujų Facebook gyvūnų užklausų nėra. Prisijungimo siena neapeinama. Pataisytas profilio parseris nebelaiko lietuviško prisijungimo teksto organizacijos vardu, mišri VMVT eilutė nesujungia dviejų URL į vieną užklausą.
 

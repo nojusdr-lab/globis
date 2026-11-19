@@ -153,7 +153,11 @@ function createFetcher({
     if (res.status === 401 || res.status === 403) throw new FetchError('Access restricted', { url: href, status: res.status, code: 'restricted' });
     if (res.status < 200 || res.status >= 300) throw new FetchError(`HTTP ${res.status}`, {
       url: href, status: res.status, code: 'http', retryAfterMs: retryAfter(res.headers.get('retry-after')) });
-    return { url: url.href, status: res.status, body: res.body, contentType: res.headers.get('content-type') || '', hash: sha256(res.body) };
+    const pages = res.headers.get('x-wp-totalpages');
+    const total = res.headers.get('x-wp-total');
+    return { url: url.href, status: res.status, body: res.body, contentType: res.headers.get('content-type') || '', hash: sha256(res.body),
+      ...(pages != null && /^\d+$/.test(pages) ? { wpTotalPages: Number(pages) } : {}),
+      ...(total != null && /^\d+$/.test(total) ? { wpTotal: Number(total) } : {}) };
   }
 
   async function getJson(href) {

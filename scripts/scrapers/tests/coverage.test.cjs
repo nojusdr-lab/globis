@@ -14,8 +14,11 @@ test('every registry row has its own result, including the inactive organization
   assert.equal(report.organizations.length, 96);
   assert.equal(report.summary.withLinks, 95);
   assert.equal(report.organizations.find(r => r.vmvtRow === 27).state, 'inactive');
-  assert.equal(report.summary.enabledCollectors, 19);
+  assert.equal(report.summary.enabledCollectors, 20);
   assert.equal(report.organizations.find(r => r.vmvtRow === 2).adapterId, 'keturkojo-viltis');
+  assert.equal(report.organizations.find(r => r.vmvtRow === 56).adapterId, 'egzoticsos', 'own website discovered behind a Facebook registry entry');
+  assert.equal(report.organizations.find(r => r.vmvtRow === 52).state, 'blocked', 'explicit terms prohibit automated collection');
+  assert.equal(report.organizations.find(r => r.vmvtRow === 28).state, 'adoption_confirmation_required', 'recently found animals are not automatically adoptable');
 });
 
 test('a shared URL does not assign one shelters animals to a different organization', () => {
@@ -51,4 +54,18 @@ test('the per-animal report cannot claim an old image check for a changed primar
   assert.equal(writeReports(dir).summary.images.healthy, 1);
   a.photos = ['https://kggn.lt/new.jpg']; fs.writeFileSync(file, JSON.stringify(snapshot));
   assert.equal(writeReports(dir).summary.images.pending, 1);
+});
+
+test('a running reporter sees an updated source pause instead of cached access permission', t => {
+  const os = require('node:os');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'globis-source-policy-'));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const sourceFile = path.join(dir, 'policy.json');
+  fs.writeFileSync(sourceFile, JSON.stringify({ sources: [{ id: 'kggn', vmvtRow: 6, decision: 'adapter' }] }));
+  assert.equal(writeReports(dir, { sourceFile }).organizations.find(r => r.vmvtRow === 6).state, 'not_collected');
+  fs.writeFileSync(sourceFile, JSON.stringify({ sources: [{ id: 'kggn', vmvtRow: 6, decision: 'paused', note: 'Access withdrawn' }] }));
+  const row = writeReports(dir, { sourceFile }).organizations.find(r => r.vmvtRow === 6);
+  assert.equal(row.state, 'paused');
+  assert.equal(row.adapterId, null);
+  assert.equal(row.reason, 'Access withdrawn');
 });

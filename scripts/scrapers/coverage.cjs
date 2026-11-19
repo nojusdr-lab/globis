@@ -42,9 +42,9 @@ function readJson(file) {
   catch (error) { if (error.code === 'ENOENT') return null; throw error; }
 }
 
-function writeReports(outDir) {
+function writeReports(outDir, { sourceFile = path.join(__dirname, 'sources.json') } = {}) {
   const adapters = require('./adapters/index.cjs');
-  const sources = require('./sources.json').sources;
+  const sources = JSON.parse(fs.readFileSync(sourceFile, 'utf8')).sources;
   const inventory = parseInventory(fs.readFileSync(path.join(__dirname, '../../docs/discovery-engine/vmvt-guardian-inventory.tsv'), 'utf8'));
   const snapshots = {}, attempts = {}, animals = [];
   for (const adapter of adapters) {
