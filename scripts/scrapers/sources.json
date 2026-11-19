@@ -315,7 +315,7 @@
       "cms": "wordpress",
       "decision": "paused",
       "checked": "2026-11-18",
-      "note": "Site under maintenance (\"Vyksta atnaujinimo darbai\", still 2026-11-18). WP REST type gyvunai answers, but the owner hides the site on purpose, so we do not read it until the site is back."
+      "note": "Site under maintenance (\"Vyksta atnaujinimo darbai\", still 2026-11-19). WP REST type gyvunai answers, but the owner hides the site on purpose, so we do not read it until the site is back."
     },
     {
       "id": "vggd",
