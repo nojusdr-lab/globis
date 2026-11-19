@@ -58,3 +58,13 @@ test('fromProse: size stated as "<word> ūgio/dydžio" (bukmanodraugas, sos-gyvu
   assert.equal(fromProse('Bijo didelio šuns kaimynystėje.').size, undefined, 'no ūgio/dydžio = not about this animal');
   assert.equal(fromProse('Mama didelio ūgio, šuniukai bus mažo ūgio.').size, undefined, 'two sizes');
 });
+
+test('fromProse: plural feminine participles count ("Skiepytos, ženklintos")', () => {
+  // sos-gyvunai.lt/kami/ (2026-11-19)
+  const r = fromProse('Apie 3mėn. Skiepytos, ženklintos. Spėjame, kad bus vidutinio/didesnio dydžio.');
+  assert.equal(r.vaccinated, true);
+  assert.equal(r.chipped, true);
+  assert.equal(r.neutered, undefined);
+  assert.equal(fromProse('Neskiepytos ir nesterilizuotos.').vaccinated, false);
+  assert.equal(fromProse('Neskiepytos ir nesterilizuotos.').neutered, false);
+});

@@ -50,10 +50,11 @@ function pairsFromText(text) {
 // Health facts stated in free text ("Kastruotas, čipuotas, paskiepytas."). Only whole words that
 // say the thing is done or not done ("not yet done" counts as no).
 // Both a yes and a no in one text (a mother and her kittens) -> null.
+// Participle in any gender/number: -as, -a, -i, -os ("Skiepytos, ženklintos" about female pups).
 const PROSE = {
-  neutered: [/^(kastruotas|kastruota|kastruoti|sterilizuotas|sterilizuota|sterilizuoti)$/, /^(nekastruotas|nekastruota|nekastruoti|nesterilizuotas|nesterilizuota|nesterilizuoti)$/],
-  vaccinated: [/^(paskiepytas|paskiepyta|paskiepyti|skiepytas|skiepyta|skiepyti|vakcinuotas|vakcinuota|vakcinuoti)$/, /^(nepaskiepytas|nepaskiepyta|neskiepytas|neskiepyta|neskiepyti|nevakcinuotas|nevakcinuota)$/],
-  chipped: [/^(čipuotas|čipuota|čipuoti|ženklintas|ženklinta|ženklinti|paženklintas|paženklinta|paženklinti)$/, /^(nečipuotas|nečipuota|neženklintas|neženklinta|nepaženklintas|nepaženklinta)$/],
+  neutered: [/^(kastruot|sterilizuot)(as|a|i|os)$/, /^ne(kastruot|sterilizuot)(as|a|i|os)$/],
+  vaccinated: [/^(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/],
+  chipped: [/^(čipuot|(pa)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa)?ženklint)(as|a|i|os)$/],
 };
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
 const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
