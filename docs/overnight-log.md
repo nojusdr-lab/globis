@@ -112,6 +112,7 @@
 - **Amžius „Apie N metų/mėn.“ ir faktai po jaustukų** (bendra): „Apie 6-7 metų“, „Apie 4mėn.“, „apie 3 metukų amžiaus“ dabar amžius (keli skirtingi skaičiai lieka nežinoma); jaustukas skiria sakinius, todėl „…bus meilūnas🤍 Kastruotas“ nebelaikomas planu. Gyvai: gyvunugloba amžius 8→30 %, kastracija 16→30 %, čipas 0→5 %; keturkojo-viltis medicina +2 %, sos-gyvunai ir siauliuletenele +1 %. Testai 289/0.
 - **Likusios 15 prieglaudų perpaleistos** su naujausiu kodu: visos `complete`; pokytis tik bukmanodraugas amžius 0→2 %. Programėlės duomenys šviežūs visoms 19 prieglaudų.
 - **„Į prieglaudą atvyko: 2021-03-24“** (su dvitaškiu) dabar irgi skaitoma: Keturkojo viltis laikas prieglaudoje 61→70 % (pvz. Rainys „nuo 2021-03-24“). Testai 289/0.
+- **„Laukia skiepai / kastracija“ = dar neatlikta** (bendra): sakinys su „laukia“ ir procedūros daiktavardžiu žymi „ne“; jei tekste ir „kastruotas“, lieka nežinoma. sos-gyvunai čipas 81→83 %, skiepai 80→82 %, kastracija 80→84 %; siauliuletenele kastracija 15→16 %. Patikrinta: Izė visi „ne“, KissTutis ir Pakruojo dvarininkas kastracija „ne“, Upė vis dar „taip“. Testai 290/0.
 
 ## Laukia savininko
 

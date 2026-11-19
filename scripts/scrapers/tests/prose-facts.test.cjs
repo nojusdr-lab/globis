@@ -110,3 +110,12 @@ test('fromProse: "apie N metų/mėn." ages and facts after an emoji', () => {
   assert.equal(fromProse('Kai susidraugausim, namuose bus meilūnas🤍 Kastruotas ir visa padaryta.').neutered, true);
   assert.equal(fromProse('Kai susidraugausim, bus kastruotas.').neutered, undefined);
 });
+
+test('fromProse: "laukia <procedure>" means not done yet', () => {
+  // sos-gyvunai.lt Izė/Natas, KissTutis; siauliuletenele PAKRUOJO DVARININKAS (2026-11-19)
+  const r = fromProse('Pas mus jie jau gavo vaistų, dar laukia skiepai, ženklinimas, sterilizacija/kastracija.');
+  assert.deepEqual([r.vaccinated, r.chipped, r.neutered], [false, false, false]);
+  assert.equal(fromProse('Ateityje laukia kastracija ir dantukų tvarkymas.').neutered, false);
+  assert.equal(fromProse('Skiepyta, čipuota, sterilizuota. Galbūt jūsų namuose Upės laukia tas žmogus.').neutered, true);
+  assert.equal(fromProse('Kastruotas. Laukia kastracija.').neutered, undefined); // contradiction -> unknown
+});

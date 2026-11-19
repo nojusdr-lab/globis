@@ -56,6 +56,12 @@ const PROSE = {
   vaccinated: [/^(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/],
   chipped: [/^(čipuot|(pa)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa)?ženklint)(as|a|i|os)$/],
 };
+// Procedure nouns that, next to "laukia" (is waiting for), say the procedure is still to be done.
+const PENDING = {
+  neutered: /^(sterilizacij|kastracij)\p{L}*$/u,
+  vaccinated: /^(skiep(ai|ų|as)|vakcinacij\p{L}*)$/u,
+  chipped: /^(ženklinim\p{L}*|čipavim\p{L}*|mikročip\p{L}*)$/u,
+};
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
 const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
 
@@ -87,6 +93,8 @@ function fromProse(text) {
     const seen = new Set();
     for (const words of sentences) {
       const plan = words.some(w => PLAN.test(w));
+      // "Dar laukia skiepai, ženklinimas, sterilizacija" / "Ateityje laukia kastracija": not done yet.
+      if (words.includes('laukia') && words.some(w => PENDING[field].test(w))) seen.add(false);
       for (const w of words) {
         if (no.test(w)) seen.add(false);
         else if (yes.test(w) && !plan) seen.add(true);

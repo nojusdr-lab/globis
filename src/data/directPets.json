@@ -30557,9 +30557,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Katytės – Vaka (raina) ir Paka (juoda) – iš Gedimino g., Kuršėnai, tel. [kontaktas pašalintas]",
+  "bioLt": "Katytės – Vaka (raina, rado namus) ir Paka (juoda) – iš Gedimino g., Kuršėnai, tel. [kontaktas pašalintas]",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-17T13:43:30Z",
+  "sourceUpdatedAt": "2026-11-19T15:03:45Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -30971,7 +30971,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": null
+   "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33886,9 +33886,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": false,
+   "vaccinated": false,
+   "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33924,9 +33924,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": false,
+   "vaccinated": false,
+   "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34150,9 +34150,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": false,
+   "vaccinated": false,
+   "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34418,7 +34418,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": null
+   "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35216,7 +35216,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": true,
-   "neutered": null
+   "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -37302,7 +37302,7 @@
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": null,
+  "inShelterLt": "nuo 2022.09.24",
   "medical": {
    "chipped": null,
    "vaccinated": null,
