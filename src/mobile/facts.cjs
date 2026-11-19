@@ -44,4 +44,6 @@ function openQuestions(pet,lang='lt') {
  return q;
 }
 
-module.exports={facts,openQuestions,text};
+// Card line: a birth date gets its label so a bare "2025-10-01" is not a mystery number.
+const cardAge=(pet,lang='lt')=>{const a=age(text(pet,'age',lang==='lt'),lang==='lt');return a.value?(a.label==='Gimimo data'||a.label==='Born'?`${a.label}: ${a.value}`:a.value):null;};
+module.exports={facts,openQuestions,text,cardAge};

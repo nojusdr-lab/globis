@@ -9,7 +9,7 @@ import {useFonts,Fraunces_600SemiBold} from '@expo-google-fonts/fraunces';
 import useDiscovery from '../state/useDiscovery';
 import useReducedMotion from '../state/useReducedMotion';
 import {shouldClaim} from '../state/discovery.cjs';
-import {text as ageText} from './facts.cjs';
+import {cardAge} from './facts.cjs';
 import {eligible} from '../data/integrity.cjs';
 import {usePets} from '../data/pets';
 import organizations from '../data/shelters.json';
@@ -154,7 +154,7 @@ function AppContent() {
           <View style={s.cardMore}><Ionicons name="chevron-forward" size={18} color={C.white}/></View>
          </View>
          <View style={[s.row,{gap:6}]}><Ionicons name="location-outline" size={15} color="rgba(255,255,255,0.85)"/><Text style={[s.cardMetaLight,{flex:1}]} numberOfLines={1}>{[top.city||t('Miestas nenurodytas','City not listed'),top.shelter?.name].filter(Boolean).join(' · ')}</Text></View>
-         {ageText(top,'age',lang==='lt')?<Text style={s.cardMetaLight} numberOfLines={1}>{ageText(top,'age',lang==='lt')}</Text>:null}
+         {cardAge(top,lang)?<Text style={s.cardMetaLight} numberOfLines={1}>{cardAge(top,lang)}</Text>:null}
          {!['available','reserved'].includes(top.status)?<View style={[s.row,{gap:6}]}><Ionicons name="help-circle-outline" size={15} color="rgba(255,255,255,0.75)"/><Text style={[s.cardMetaLight,{flex:1,fontSize:13,opacity:0.85}]} numberOfLines={1}>{t('Ar dar ieško namų, pasitikslink prieglaudoje','Check with the shelter that it is still available')}</Text></View>:null}
         </Pressable>
        </Photo>:null}

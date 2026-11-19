@@ -54,3 +54,15 @@ test('facts: time in shelter shown only when the shelter states it', () => {
   assert.equal(facts({inShelterLt:'nuo 2026-09-13'}).find(f=>f.key==='inShelter').value,'nuo 2026-09-13');
   assert.equal(facts({}).some(f=>f.key==='inShelter'),false);
 });
+test('deck shows listings with a story and facts first, keeping source order otherwise',()=>{
+ const base={species:'dog',city:'Vilnius',shelter:{id:'x'},status:'unknown'};
+ const pets=[{...base,id:'bare'},{...base,id:'bioOnly',bioLt:'Draugiškas.'},{...base,id:'rich1',bioLt:'Ramus.',sex:'male'},{...base,id:'bare2'},{...base,id:'rich2',bioLt:'Meili.',medical:{chipped:true}}];
+ assert.deepEqual(selectPets(pets,defaults).map(p=>p.id),['rich1','rich2','bioOnly','bare','bare2']);
+});
+test('card age line labels a bare birth date and keeps a written age as is',()=>{
+ const {cardAge}=require('../src/mobile/facts.cjs');
+ assert.equal(cardAge({ageLt:'2025-10-01'},'lt'),'Gimimo data: 2025-10-01');
+ assert.equal(cardAge({ageLt:'Spėjama gimimo data: 2016-03-24'},'en'),'Born: 2016-03-24 (estimated)');
+ assert.equal(cardAge({ageLt:'4 m. amžiaus'},'lt'),'4 m. amžiaus');
+ assert.equal(cardAge({},'lt'),null);
+});
