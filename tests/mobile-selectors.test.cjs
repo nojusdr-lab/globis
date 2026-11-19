@@ -48,3 +48,9 @@ test('profile in English shows the shelter\'s Lithuanian text instead of "not st
  assert.equal(Object.fromEntries(facts(pet,'en').map(f=>[f.key,f])).age.value,'4-8 metai');
  assert.ok(!openQuestions(pet,'en').some(q=>/How old|What is the animal like/.test(q)));
 });
+
+test('facts: time in shelter shown only when the shelter states it', () => {
+  const {facts}=require('../src/mobile/facts.cjs');
+  assert.equal(facts({inShelterLt:'nuo 2026-09-13'}).find(f=>f.key==='inShelter').value,'nuo 2026-09-13');
+  assert.equal(facts({}).some(f=>f.key==='inShelter'),false);
+});

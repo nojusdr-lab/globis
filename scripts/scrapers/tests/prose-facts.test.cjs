@@ -84,3 +84,10 @@ test('record: a post named after several animals gets no sex from its story', ()
   assert.equal(makeAnimal('x', { ...base, name: 'LIALIA' }).sex, 'female');
   assert.equal(makeAnimal('x', { ...base, name: 'MARTA IR BAIKA' }).sex, null);
 });
+
+test('fromProse: time in shelter as written after "Prieglaudoje nuo"', () => {
+  // keturkojo-viltis.lt/gyvunai/zvirbliukas/ (2026-11-19)
+  assert.equal(fromProse('Kitų gyvūnų draugijos nemėgsta. Prieglaudoje nuo: 2026 m. birželio mėn. Skambinkite.').in_shelter, 'nuo 2026 m. birželio mėn.');
+  assert.equal(fromProse('Prieglaudoje nuo 2025-03.').in_shelter, 'nuo 2025-03');
+  assert.equal(fromProse('Mama prieglaudoje nuo 2024 m., vaikai prieglaudoje nuo 2025 m.').in_shelter, undefined);
+});

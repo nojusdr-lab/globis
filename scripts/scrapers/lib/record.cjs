@@ -40,6 +40,8 @@ function makeAnimal(sourceId, input) {
     vaccinated: bool(input.vaccinated),
     neutered: bool(input.neutered),
     bio_lt: stripPrivate(cleanText(input.bio_lt)),
+    // How long or since when the animal is in the shelter, as the shelter writes it ("nuo 2026-09-13", "1mėn. 7d.").
+    in_shelter: cleanText(input.in_shelter),
     status,
     statusEvidence,
     sourceUpdatedAt: input.sourceUpdatedAt ?? null,
@@ -48,7 +50,7 @@ function makeAnimal(sourceId, input) {
   };
   // Labelled facts win; the description text fills only what the adapter left unknown.
   const prose = fromProse(animal.bio_lt);
-  for (const k of ['chipped', 'vaccinated', 'neutered', 'age_text', 'size']) if (animal[k] === null && k in prose) animal[k] = prose[k];
+  for (const k of ['chipped', 'vaccinated', 'neutered', 'age_text', 'size', 'in_shelter']) if (animal[k] === null && k in prose) animal[k] = prose[k];
   // A post named after several animals ("MARTA IR BAIKA", "TILI, MAURILĖ") never gets a sex from its story.
   if (animal.sex === null && prose.sex && !/,|&|\s(ir|su)\s/iu.test(animal.name || '')) animal.sex = prose.sex;
   if (animal.bio_lt && animal.bio_lt.length > 4000) animal.bio_lt = animal.bio_lt.slice(0, 4000) + '…';

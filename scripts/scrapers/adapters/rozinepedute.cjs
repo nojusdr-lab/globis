@@ -78,6 +78,7 @@ function parseListing(html, baseUrl) {
       name,
       note: [note, extra].filter(Boolean).join(' ') || null,
       gender: gender ?? null,
+      time: N.cleanText($card.find('.card-animals__time span').first().text()) || null,
       photo: img.length ? H.imgSrc(img, baseUrl) : null,
     });
   });
@@ -170,6 +171,7 @@ module.exports = {
         chipped: null,
         photos: c.photo ? [c.photo] : [],
         bio_lt: null,
+        in_shelter: c.time, // "Prieglaudoje: 1mėn. 14d." on the card, as of the run date
         status: st.status,
         statusEvidence: st.statusEvidence,
         sourceUpdatedAt: null,

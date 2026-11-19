@@ -17,7 +17,7 @@ function toAppPet(a, shelter) {
     id: a.id, url: a.sourceUrl, source: a.source, name: a.name, species: a.species ?? null,
     city: shelter.city ?? null, photos: a.photos ?? [], status: a.status ?? 'unknown',
     statusEvidence: a.statusEvidence ?? null, sex: a.sex ?? null, ageLt: a.age_text ?? null, ageEn: null,
-    size: a.size ?? null, waitingDays: null,
+    size: a.size ?? null, waitingDays: null, inShelterLt: a.in_shelter ?? null,
     medical: { chipped: a.chipped ?? null, vaccinated: a.vaccinated ?? null, neutered: a.neutered ?? null },
     compatibilityTagsLt: [], compatibilityTagsEn: [], personalityTraitsLt: [], personalityTraitsEn: [],
     bioLt: a.bio_lt ?? null, bioEn: null, sourceUpdatedAt: a.sourceUpdatedAt ?? null,
@@ -36,7 +36,7 @@ function fromRemote(rows, shelters, bundledDirect) {
       id: r.animal_id, sourceUrl: r.source_url, source: r.source, name: r.name, species: r.species,
       sex: r.sex, age_text: r.age_text, size: r.size, photos: r.photos, chipped: r.chipped,
       vaccinated: r.vaccinated, neutered: r.neutered, bio_lt: r.bio_lt, status: r.status,
-      statusEvidence: r.status_evidence, shelterHint: r.shelter_hint,
+      statusEvidence: r.status_evidence, shelterHint: r.shelter_hint, in_shelter: r.in_shelter ?? null,
     };
     const shelter = shelterResolver(a.source, byId)(a);
     if (!shelter) continue; // unmapped source or unknown branch: not shown, same as the bundled bridge

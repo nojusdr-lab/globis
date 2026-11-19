@@ -62,6 +62,8 @@ const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|ka
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
 const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female' };
 
+const IN_SHELTER = /prieglaudoje\s+nuo\s*:?\s*((?:\d{4}\s*m\.\s*)?\p{L}+\s+mėn\.|\d{4}[-.]\d{2}(?:[-.]\d{2})?|\d{4}\s*m\.)/giu;
+
 const BIRTH = /((?:spėjama\s+)?gimimo\s+data(?:\s*\(spėjama\))?|gimęs|gimusi|gimė)\s*[:–-]?\s*(\d{4}(?:[-.\s]\d{2}){0,2})(?!\d)/giu;
 
 const NUM_WORD = 'vienerių|dvejų|dviejų|trejų|trijų|keturių|penkių|šešių|septynių|aštuonių|devynių|dešimties|pusės|pusantrų|kelių';
@@ -102,6 +104,9 @@ function fromProse(text) {
   // Plural or ambiguous forms ("dvi kalytės") are ignored; both sexes in one text -> unknown.
   const sexes = new Set(words.filter(w => SEX_WORD[w]).map(w => SEX_WORD[w]));
   if (sexes.size === 1) out.sex = [...sexes][0];
+  // Time in the shelter as written after "Prieglaudoje nuo": "2026 m. birželio mėn.", "2025-03". One value only.
+  const since = new Set([...String(text || '').matchAll(IN_SHELTER)].map(m => `nuo ${N.cleanText(m[1])}`));
+  if (since.size === 1) out.in_shelter = [...since][0];
   // Two different sizes (mother and puppies) -> unknown.
   const sizes = new Set([...String(text || '').matchAll(SIZE)].map(m => SIZE_OF[m[1].toLowerCase()]));
   if (sizes.size === 1) out.size = [...sizes][0];

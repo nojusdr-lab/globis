@@ -22,6 +22,8 @@ function toAnimal(row) {
     age_text: N.cleanText(a.birthDate),
     photos: a.photoUrl ? [a.photoUrl] : [],
     bio_lt: N.cleanText(a.description) || null,
+    // registrationDate: when the shelter registered the animal (its arrival).
+    in_shelter: /^\d{4}-\d{2}-\d{2}$/.test(row.registrationDate ?? '') ? `nuo ${row.registrationDate}` : null,
     status: 'available',
     statusEvidence: null,
   };

@@ -18,6 +18,7 @@ test('mazeikiugyvunai: pages the public API, adoptable only, never reads where t
   assert.equal(k.species, 'cat');
   assert.equal(k.sex, 'male');
   assert.equal(k.age_text, '2016-01-01');
+  assert.equal(k.in_shelter, 'nuo 2026-09-13', 'registrationDate = arrival');
   assert.equal(k.status, 'available');
   assert.equal(k.sourceUrl, 'https://mazeikiugyvunai.lt/#829');
   assert.deepEqual(k.photos, ['https://fra1.digitaloceanspaces.com/images/production/829-large.jpg']);

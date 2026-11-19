@@ -25,6 +25,8 @@ function facts(pet,lang='lt') {
   {key:'vaccinated',label:lt?'Skiepai':'Vaccinated',value:yesNo(m.vaccinated,lt),note:typeof m.vaccinated==='boolean'?(lt?'Pagal skelbimą':'Per listing'):null},
   {key:'neutered',label:lt?'Sterilizuotas':'Neutered',value:yesNo(m.neutered,lt),note:typeof m.neutered==='boolean'?(lt?'Pagal skelbimą':'Per listing'):null},
   {key:'chipped',label:lt?'Ženklintas':'Microchipped',value:yesNo(m.chipped,lt),note:typeof m.chipped==='boolean'?(lt?'Pagal skelbimą':'Per listing'):null},
+  // Shown only when the shelter states it ("nuo 2026 m. birželio mėn.", "1mėn. 7d.").
+  ...(pet.inShelterLt?[{key:'inShelter',label:lt?'Prieglaudoje':'In shelter',value:pet.inShelterLt}]:[]),
  ];
 }
 

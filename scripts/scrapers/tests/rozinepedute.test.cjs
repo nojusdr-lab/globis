@@ -150,3 +150,10 @@ test('rozinepedute: real detail page table gives birth date, sex and health fact
   const other = run.animals.find(a => a.id === 'rozinepedute:sansa');
   assert.equal(other.vaccinated, null, 'detail page not in fixtures (404): card facts stay');
 });
+
+test('rozinepedute: card "Prieglaudoje: <span>…</span>" becomes in_shelter as written', () => {
+  const { parseListing } = require('../adapters/rozinepedute.cjs')._test;
+  const html = require('node:fs').readFileSync(require('node:path').join(__dirname, '../fixtures/rozinepedute/gyvunai.html'), 'utf8');
+  const cards = parseListing(html, 'https://rozinepedute.lt/gyvunai/').cards;
+  assert.deepEqual(cards.slice(0, 2).map(c => [c.name, c.time]), [['EMAJA', '1mėn.'], ['FRONTIS', '10d.']]);
+});
