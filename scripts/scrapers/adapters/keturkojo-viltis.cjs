@@ -3,7 +3,8 @@
 // Public WordPress gyvunas/rusis; robots allows these pages, disallows /wp-admin/ and /?s=.
 // REST supplies the story. Each public detail page supplies its own labelled
 // facts/status and, where the API lacks an image, the animal's own gallery.
-// Read the page once for both purposes; failed detail reads preserve REST facts.
+// Read the page once for both purposes. REST has no authoritative status, so a
+// failed detail keeps REST candidates for diagnosis but cannot replace a good snapshot.
 const { createWordpressAdapter } = require('./wordpress-rest.cjs');
 const { galleryPhotos } = require('../lib/gallery.cjs');
 const H = require('../lib/html.cjs');
@@ -35,7 +36,12 @@ module.exports = {
     for (const a of result.animals) {
       let res;
       try { res = await ctx.fetcher.get(a.sourceUrl); }
-      catch (e) { ctx.log?.(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
+      catch (e) {
+        if (['robots', 'robots_unavailable'].includes(e.code) || [401, 403, 429].includes(e.status)) throw e;
+        result.complete = false;
+        ctx.log?.(`${a.sourceUrl}: required status detail not read (${e.message})`);
+        continue;
+      }
       const detail = await ctx.cache.getOrParse(sha256(res.url + '\n' + res.body), DETAIL_VERSION,
         () => parseDetail(res.body, res.url));
       for (const key of ['sex', 'age_text', 'species', 'size', 'vaccinated', 'neutered', 'chipped']) {
