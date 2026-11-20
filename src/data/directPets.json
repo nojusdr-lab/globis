@@ -40064,8 +40064,8 @@
    "https://lese.lt/wp-content/uploads/2026/11/34d96457c20e27684cf1bba46ec4aed8-768x1024.jpeg",
    "https://lese.lt/wp-content/uploads/2026/11/b48dc9d70707ddb76c67d0b7f1abc372.jpeg"
   ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "2 mėn.",
   "ageEn": null,
@@ -40083,7 +40083,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Kačiukas rastas Rokantiškių soduose Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-18T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-20T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40222,8 +40222,8 @@
    "https://lese.lt/wp-content/uploads/2026/11/f3501159c0f1f722ee3c8bfde2fc68b1-768x1024.jpeg",
    "https://lese.lt/wp-content/uploads/2026/11/2b2d4f25baacf33d4e31258841de0cc4.jpeg"
   ],
-  "status": "available",
-  "statusEvidence": "Ieško namų",
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
   "sex": "male",
   "ageLt": "4 m. 10 mėn.",
   "ageEn": null,
@@ -40241,7 +40241,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Markutiškių kaime rastas nuostabus didžkis Romanas. Labai gražus, mielas ir draugiškas katinėlis, kuris, vos pamatęs žmogų, tarsi visa savo širdimi prašo: „Pasiimk mane… aš būsiu tavo geriausias draugas.“ O gal Romanui tiesiog lemta tapti kažkieno didžiąja meile? Juk ne veltui jo vardas ROMANAS – galbūt kažkur laukia pati gražiausia gyvenimo meilė ir šeima?❤ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-08T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-20T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -44468,82 +44468,6 @@
   }
  },
  {
-  "id": "keturkojo-viltis:1692",
-  "url": "https://keturkojo-viltis.lt/gyvunai/gilse/",
-  "source": "keturkojo-viltis",
-  "name": "Gilšė",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [
-   "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/GILSE.jpg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "female",
-  "ageLt": "Spėjama gimimo data: 2024-12-10",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": "nuo 2025-05-19",
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Spėjama gimimo data: 2024-12-10 Prieglaudoje nuo: 2025-05-19",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-06T12:54:12Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
-  "id": "keturkojo-viltis:1690",
-  "url": "https://keturkojo-viltis.lt/gyvunai/gema/",
-  "source": "keturkojo-viltis",
-  "name": "Gema",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [
-   "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/GEMA.jpg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "female",
-  "ageLt": "Spėjama gimimo data: 2022-09-20",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": "nuo 2025-05-19",
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Spėjama gimimo data: 2022-09-20 Prieglaudoje nuo: 2025-05-19",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-06T12:52:38Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
   "id": "keturkojo-viltis:1686",
   "url": "https://keturkojo-viltis.lt/gyvunai/ryle/",
   "source": "keturkojo-viltis",
@@ -45009,9 +44933,9 @@
   "photos": [
    "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/888448471_974770759041597_4796238254885346255_n.jpg"
   ],
-  "status": "available",
-  "statusEvidence": "Ieško namų",
-  "sex": "male",
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": null,
   "ageLt": "Spėjama gimimo data: 2020-01-01",
   "ageEn": null,
   "size": null,
@@ -45409,42 +45333,6 @@
   "bioLt": "Spėjama gimimo data: 2022-05-02 Prieglaudoje nuo: 2026-05-26",
   "bioEn": null,
   "sourceUpdatedAt": "2026-11-05T13:55:12Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
-  "id": "keturkojo-viltis:1609",
-  "url": "https://keturkojo-viltis.lt/gyvunai/pilke/",
-  "source": "keturkojo-viltis",
-  "name": "Pilkė",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "female",
-  "ageLt": "Spėjama gimimo data: 2018-04-01",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Gimimo data: 2018-04-01, svoris: 22,4 kg, ūgis ties ketera: 54 cm. Pilkė – draugiška ir švelni šunytė. Mielai bendrauja su suaugusiais ir vaikais, mėgsta prisiglausti, prašo paglostymų ir dėmesio. Ji puikiai vaikšto su pavadėliu, supranta vidaus tvarkos taisykes, reikaliukus susitvarko lauke. Neturi baimės lipti laiptais, pati įšoka į automobilį. Ji sutaria su kai kuriais šuneliais. Tačiau, suvalgiusi savo maistą, bando atimti iš kambariokų, tad namų sąlygomis dar reikėtų pasimokyti gerų manierų. Su katėmis elgėsi atsargiai – jautėsi kiek nedrąsiai, bet agresijos nerodė. Patekimo į prieglaudą istorija neeilinė. 2024 m. spalį gavome pagalbos prašymą – moteris partrenkė šunį. Atvykus radome Pilkę griovyje. Jai lūžo dešinė priekinė ir galinė kojytės. Rentgeno tyrimas atskleidė dar vieną detalę – viena iš kojų buvo lūžusi ir anksčiau, joje jau buvo įdėta plokštelė. Šeimininkai taip ir neatsirado.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-09T12:46:22Z",
   "shelter": {
    "id": "keturkojo-viltislt",
    "name": "Asociacija Keturkojo viltis",
@@ -49708,44 +49596,6 @@
   }
  },
  {
-  "id": "keturkojo-viltis:22",
-  "url": "https://keturkojo-viltis.lt/gyvunai/juodis/",
-  "source": "keturkojo-viltis",
-  "name": "Juodis",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [
-   "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Juodis-1.webp"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "male",
-  "ageLt": "Spėjama gimimo data: 2012-04-20",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "🎂 Spėjama gimimo data: 2012-04-20 ⚖️ Svoris: 20,2 kg | 📏 Ūgis ties ketera: 55 cm 🩺 Skiepytas, ženklintas, kastruotas Juodis – ramus, švelnus ir žmogų labai mylintis senjoras 🤎 Puikiai vaikšto su pavadėliu, noriai ieško žmogaus dėmesio ir paglostymų. Su nepažįstamais – tiek vaikais, tiek suaugusiais – jaučiasi saugus ir draugiškas. Voljere tvarkingas, sutaria su dauguma šunelių. 🐈 Su katinėliais patikrintas – pilname katinėlių kambaryje jautėsi gerai, agresijos nerodė. Jei katinėlis sušnypščia – Juodis tiesiog pasitraukia. 🐾 Lankėsi kirpykloje – išsimaudė, išsišukavo, procedūras atlaikė ramiai ir kantriai 🥰 Juodis jau senjoras… O tokiems šunims rasti namus ypač sunku. Visi ieško jaunų ir „tobulų“, bet Juodis tiesiog nori paprasto dalyko – šiltų, ramių namų. 🥹 Jo akytės nebemato taip gerai, kojytės nebėra tokios vikrios, bet širdis – pilna meilės. Jam nebereikia daug – tik žmogaus šalia, ramybės ir saugumo, be prieglaudos triukšmo. 📍 Į prieglaudą pateko 2024 m. rugsėjį, mirus šeimininkui",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-09T16:54:19Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
   "id": "keturkojo-viltis:15",
   "url": "https://keturkojo-viltis.lt/gyvunai/ciobis/",
   "source": "keturkojo-viltis",
@@ -53505,6 +53355,1374 @@
    "city": "Mažeikiai",
    "address": "Mažeikių r. sav., Mažeikių sen., Mažeikiai, Vytauto g. 10, LT-89219",
    "url": "https://globok.lt/prieglaudos/mazeikiugyvunailt"
+  }
+ },
+ {
+  "id": "mazijausmai:liepsnele",
+  "url": "https://mazijausmai.lt/liepsnele/",
+  "source": "mazijausmai",
+  "name": "Liepsnelė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound551178545470449814-1-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:orionas",
+  "url": "https://mazijausmai.lt/orionas/",
+  "source": "mazijausmai",
+  "name": "Orionas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound4540238662853067588-2-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:saris",
+  "url": "https://mazijausmai.lt/saris/",
+  "source": "mazijausmai",
+  "name": "Saris",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound5931104054772487867-2-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:micaras",
+  "url": "https://mazijausmai.lt/micaras/",
+  "source": "mazijausmai",
+  "name": "Micaras",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound6502988481695326838-2-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:turkis",
+  "url": "https://mazijausmai.lt/turkis/",
+  "source": "mazijausmai",
+  "name": "Turkis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound7654246363881569183-5-1024x757.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:topazas",
+  "url": "https://mazijausmai.lt/topazas/",
+  "source": "mazijausmai",
+  "name": "Topazas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound1283640997034901766-3-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:alantas",
+  "url": "https://mazijausmai.lt/alantas/",
+  "source": "mazijausmai",
+  "name": "Alantas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/05/Alantas_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:bite",
+  "url": "https://mazijausmai.lt/bite/",
+  "source": "mazijausmai",
+  "name": "Bitė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/05/inbound8839310238021936674-1-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:lordukas",
+  "url": "https://mazijausmai.lt/lordukas/",
+  "source": "mazijausmai",
+  "name": "Lordukas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/12/Lordukas_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:alkas",
+  "url": "https://mazijausmai.lt/alkas/",
+  "source": "mazijausmai",
+  "name": "Alkas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/11/Alkas_1600x1200-1-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:tiche",
+  "url": "https://mazijausmai.lt/tiche/",
+  "source": "mazijausmai",
+  "name": "Tichė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2025/02/Tiche1_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:kurmis",
+  "url": "https://mazijausmai.lt/kurmis/",
+  "source": "mazijausmai",
+  "name": "Kurmis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/11/Kurmis_1200x900-1024x770.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:arielis",
+  "url": "https://mazijausmai.lt/arielis/",
+  "source": "mazijausmai",
+  "name": "Arielis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/12/Arielis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:klivija",
+  "url": "https://mazijausmai.lt/klivija/",
+  "source": "mazijausmai",
+  "name": "Klivija",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2025/11/Klivija3_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:kiras",
+  "url": "https://mazijausmai.lt/kiras/",
+  "source": "mazijausmai",
+  "name": "Kiras",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2025/12/Kiras3_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:ramunele",
+  "url": "https://mazijausmai.lt/ramunele/",
+  "source": "mazijausmai",
+  "name": "Ramunėlė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/05/Ramunele4_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:amaja",
+  "url": "https://mazijausmai.lt/amaja/",
+  "source": "mazijausmai",
+  "name": "Amaja",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/12/Amaja_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:armita",
+  "url": "https://mazijausmai.lt/armita/",
+  "source": "mazijausmai",
+  "name": "Armita",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/12/Armita_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:zumis",
+  "url": "https://mazijausmai.lt/zumis/",
+  "source": "mazijausmai",
+  "name": "Zumis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2025/11/Zumis2_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:alste",
+  "url": "https://mazijausmai.lt/alste/",
+  "source": "mazijausmai",
+  "name": "Alstė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Alste_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:kovas",
+  "url": "https://mazijausmai.lt/kovas/",
+  "source": "mazijausmai",
+  "name": "Kovas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/07/Kovas2_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:zibute",
+  "url": "https://mazijausmai.lt/zibute/",
+  "source": "mazijausmai",
+  "name": "Žibutė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/06/Zibute_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:jaspis",
+  "url": "https://mazijausmai.lt/jaspis/",
+  "source": "mazijausmai",
+  "name": "Jaspis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/07/Jaspis-1200x900-1-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:vakaris",
+  "url": "https://mazijausmai.lt/vakaris/",
+  "source": "mazijausmai",
+  "name": "Vakaris",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/05/Vakaris_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:alksnis",
+  "url": "https://mazijausmai.lt/alksnis/",
+  "source": "mazijausmai",
+  "name": "Alksnis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/08/Uosis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:gluosnis",
+  "url": "https://mazijausmai.lt/gluosnis/",
+  "source": "mazijausmai",
+  "name": "Gluosnis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/08/Gluosnis-1200x900-1-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:guoba",
+  "url": "https://mazijausmai.lt/guoba/",
+  "source": "mazijausmai",
+  "name": "Guoba",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Guoba2_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:tuopa",
+  "url": "https://mazijausmai.lt/tuopa/",
+  "source": "mazijausmai",
+  "name": "Tuopa",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/08/Tuopa_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:apis",
+  "url": "https://mazijausmai.lt/apis/",
+  "source": "mazijausmai",
+  "name": "Apis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/09/Apis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:berzelis",
+  "url": "https://mazijausmai.lt/berzelis/",
+  "source": "mazijausmai",
+  "name": "Berželis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/09/Berzelis3_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:uosis",
+  "url": "https://mazijausmai.lt/uosis/",
+  "source": "mazijausmai",
+  "name": "Uosis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/09/Uosis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:liepa",
+  "url": "https://mazijausmai.lt/liepa/",
+  "source": "mazijausmai",
+  "name": "Liepa",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Liepa_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:mumis",
+  "url": "https://mazijausmai.lt/mumis/",
+  "source": "mazijausmai",
+  "name": "Mumis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Mumis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:acis",
+  "url": "https://mazijausmai.lt/acis/",
+  "source": "mazijausmai",
+  "name": "Ačis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Acis2_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:sermuksnis",
+  "url": "https://mazijausmai.lt/sermuksnis/",
+  "source": "mazijausmai",
+  "name": "Šermukšnis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Sermuksnis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:brukne",
+  "url": "https://mazijausmai.lt/brukne/",
+  "source": "mazijausmai",
+  "name": "Bruknė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Brukne_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
   }
  }
 ]
