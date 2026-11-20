@@ -2338,7 +2338,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -30194,9 +30194,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35943,7 +35943,7 @@
   "inShelterLt": null,
   "medical": {
    "chipped": true,
-   "vaccinated": null,
+   "vaccinated": true,
    "neutered": true
   },
   "compatibilityTagsLt": [],
