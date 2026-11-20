@@ -57,7 +57,7 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
 
 <div class="wrap">
   <div>
-    <div class="label">GLOBIS · būsena patikrinta 2026-11-20 · main 62442db · PR #38 (7878f60) ir #40</div>
+    <div class="label">GLOBIS · būsena patikrinta 2026-11-20 · main 62442db · PR #38 (c24571c) ir #40</div>
     <h1>Kelrodis iki pirmojo leidimo</h1>
     <p class="lead">Dabar užbaigiame serverio integracijos patikimumą ir PR peržiūrą. Toliau — iPhone ir Android patikra, leidimo duomenys bei pasirašyta uždara beta.</p>
   </div>
@@ -128,12 +128,12 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
     <header><div class="label">Etapas B</div><h2>Backend</h2><p>Duomenys iš serverio, ne įpakuoti į programėlę.</p></header>
     <ol class="steps">
       <li class="done"><span class="n">11</span><span>Supabase pasirinkimas užrašytas ADR</span></li>
-      <li><span class="n">12</span><span>Patvirtinti veikiančio Supabase projekto regioną ir konfigūraciją</span></li>
+      <li class="done"><span class="n">12</span><span>Supabase regionas ir konfigūracija patikrinti: AWS eu-west-1 (Airija, ne Frankfurtas; dokumentai pataisyti), prisijungimas tik el. paštu, el. pašto patvirtinimas išjungtas</span></li>
       <li class="next"><span class="n">13</span><span>Suderinti migracijas su gyva DB ir užbaigti RLS patikrą; RLS skaitymas patikrintas, <code>in_shelter</code> migracija gyvoje DB dar nepritaikyta</span></li>
-      <li class="next"><span class="n">14</span><span>Užbaigti loaderio lygiagretaus darbo ir nesėkmių patikrą</span></li>
-      <li class="next"><span class="n">15</span><span>Patikrinti viešą read-only view su programėlės duomenų keliu</span></li>
+      <li class="done"><span class="n">14</span><span>Loaderio lygiagretus darbas ir nesėkmės: CI su tikru Postgres (to paties šaltinio publikavimas laukia, kitas eina lygiagrečiai), klaida įkėlimo viduryje palieka paskutinę gerą kopiją</span></li>
+      <li class="done"><span class="n">15</span><span>Viešas read-only view gyvai: programėlės kodas gauna 1156 publikuotus įrašus; anon negali rašyti ir nemato nepublikuotų</span></li>
       <li class="done"><span class="n">16</span><span>Patvirtinti nuotraukų naudojimo pagrindą pagal kiekvieną šaltinį</span></li>
-      <li class="next"><span class="n">17</span><span>Patikrinti serverio skaitymą ir įtaisytą atsarginę kopiją</span></li>
+      <li class="done"><span class="n">17</span><span>Serverio skaitymas veikia; nepavykus lieka įtaisyta kopija. Programėlėje nebeliko globok.lt įrašų (30 pašalinta), rodomos tik prieglaudų svetainės</span></li>
       <li class="done"><span class="n">18</span><span>CI raktai tik per GitHub secrets</span></li>
       <li class="next"><span class="n">19</span><span>Šifruotos kopijos ir testinis atkūrimas CI; laukia CA, BACKUP_PASSPHRASE ir gyvos aplinkos patikros</span></li>
       <li class="done"><span class="n">20</span><span>Nemokamo plano limitų stebėjimas</span></li>
@@ -143,7 +143,7 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
   <section class="phase">
     <header><div class="label">Etapas C</div><h2>Programėlė</h2><p>Native kokybė, prieinamumas, būsenos.</p></header>
     <ol class="steps">
-      <li class="next"><span class="n">21</span><span>iPhone patikra Expo Go: įvadas, kortelė ir safe area veikia iPhone 17 simuliatoriuje; liko gestai ir trumpas viršutinės juostos šuolis po įvado</span></li>
+      <li class="next"><span class="n">21</span><span>iPhone patikra Expo Go: įvadas, kortelė, safe area ir mygtukai veikia. Braukimas simuliatoriuje įrašo pasirinkimą, bet ekranas neatsinaujina iki kito veiksmo; reikia patikrinti tikrame telefone</span></li>
       <li><span class="n">22</span><span>Android patikra</span></li>
       <li class="next"><span class="n">23</span><span>iPhone ir Android patikra su dideliu šriftu, VoiceOver ir TalkBack</span></li>
       <li class="next"><span class="n">24</span><span>Patikrinti tuščias, klaidų ir offline būsenas įrenginiuose</span></li>
@@ -186,7 +186,7 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
     <header><div class="label">Etapas F</div><h2>Leidimas</h2><p>App Store ir Google Play.</p></header>
     <ol class="steps">
       <li><span class="n">45</span><span>Store ekrano nuotraukos ir ASO tekstai LT/EN</span></li>
-      <li><span class="n">46</span><span>Privacy labels ir Data safety formos</span></li>
+      <li class="done"><span class="n">46</span><span>Privacy labels ir Data safety atsakymai paruošti pagal kodą (<code>docs/store/data-safety.md</code>); įvesti į konsoles savininkas</span></li>
       <li><span class="n">47</span><span>App Store preflight ir pateikimas</span></li>
       <li><span class="n">48</span><span>Google Play pateikimas</span></li>
     </ol>
