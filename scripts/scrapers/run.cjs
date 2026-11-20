@@ -17,6 +17,8 @@ async function main() {
   if (unknown.length) throw new Error(`Unknown source id(s): ${unknown.join(', ')}`);
   const todo = adapters.filter(a => !only || only.has(a.id));
   require('node:fs').mkdirSync(outDir, { recursive: true });
+  const { HttpGate } = require('./lib/http-gate.cjs');
+  const gate = new HttpGate(path.join(outDir, '.http-gate.sqlite'));
   const report = [];
   // Optional: also load each run into Supabase Postgres. Connection string comes only from the environment (CI secret).
   let db = null;
@@ -41,7 +43,7 @@ async function main() {
   const workers = Array.from({ length: Math.min(4, todo.length) }, async () => {
     while (todo.length) {
       const adapter = todo.shift();
-      const fetcher = createFetcher({ allowedHosts: adapter.hosts, log: m => console.log(`[${adapter.id}] ${m}`) });
+      const fetcher = createFetcher({ allowedHosts: adapter.hosts, gate, log: m => console.log(`[${adapter.id}] ${m}`) });
       const run = await runSource(adapter, { fetcher, cache, log: m => console.log(m) });
       const result = publish(run, { outDir });
       const sourceReport = { source: adapter.id, state: run.state, animals: run.animals.length,
@@ -65,6 +67,7 @@ async function main() {
   await Promise.all(workers);
   require('node:fs').writeFileSync(path.join(outDir, 'report.json'), JSON.stringify(report, null, 2));
   if (db) await db.end();
+  gate.close();
   if (report.some(r => r.state !== 'complete' || !r.published)) process.exitCode = 1;
 }
 

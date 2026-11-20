@@ -49,6 +49,14 @@ async function collect(r = routes(), a = adapter) {
   return { run, calls };
 }
 
+test('sos: a missing featured image comes from the own slider, never embedded emoji or the logo', async () => {
+  const r = routes();
+  r[postsUrl(100, 1)] = data.posts.map((p, i) => i === 0 ? { ...p, featured_media: 0 } : p);
+  r[data.posts[0].link] = { body: `<img src="/logo.png"><div class="w-slider-h"><a class="rsImg" href="/own-cat.jpg"></a></div><img src="https://static.xx.fbcdn.net/emoji.png">` };
+  const { run } = await collect(r);
+  assert.deepEqual(run.animals.find(a => a.id === 'sos-gyvunai:4468').photos, ['https://sos-gyvunai.lt/own-cat.jpg']);
+});
+
 test('sos-gyvunai: robots.txt first, only GETs to sos-gyvunai.lt, no per-animal pages', async () => {
   const { run, calls } = await collect();
   assert.equal(calls[0].url, `${O}/robots.txt`);

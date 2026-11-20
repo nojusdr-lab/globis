@@ -25,7 +25,7 @@ test('penktakoja: robots.txt is read first, all requests are GETs to penktakoja.
   const { calls } = await collect();
   assert.equal(calls[0].url, 'https://penktakoja.lt/robots.txt');
   assert.ok(calls.every(c => c.method === 'GET' && new URL(c.url).hostname === 'penktakoja.lt'));
-  assert.equal(calls.length, 3, 'robots + one product page + one media page');
+  assert.equal(calls.length, 4, 'robots + product + media + missing-photo detail fallback');
 });
 
 test('penktakoja: reads name, link, photo, date; unknown facts stay null', async () => {
@@ -54,6 +54,36 @@ test('penktakoja: no status text on the site = unknown with no evidence', async 
     assert.equal(a.statusEvidence, null);
   }
   assert.deepEqual(run.skipped, []);
+});
+
+test('penktakoja: missing API media falls back to the animals own WooCommerce gallery', async () => {
+  const last = PRODUCTS.at(-1);
+  const r = { ...routes, [last.link]: { body: `<img src="https://penktakoja.lt/logo.png">
+    <div class="woocommerce-product-gallery__image"><a href="/wp-content/uploads/fixture-dog.jpg"><img></a></div>` } };
+  const { run } = await collect(r);
+  assert.equal(run.state, 'complete');
+  assert.deepEqual(run.animals.at(-1).photos, ['https://penktakoja.lt/wp-content/uploads/fixture-dog.jpg']);
+  assert.equal(run.animals.at(-1).name, 'ŠMAKIS');
+});
+
+test('penktakoja: a verified generic donation form is not an animal even inside the dog category', async () => {
+  const donation = { ...PRODUCTS.at(-1), id: 20793, title: { rendered: 'Parama' }, featured_media: 0,
+    content: { rendered: '' }, link: 'https://penktakoja.lt/beglobis/parama/' };
+  // Cropped visible widget text from the 2026-11-19 public detail probe;
+  // no donation form is submitted and no financial/contact values are needed.
+  const page = '<div class="summary"><h1>Parama</h1><noscript>Please activate JavaScript to continue with your donation.</noscript><label>Pasirinkite paramos tipą</label></div>';
+  const r = { ...routes, [productUrl(100, 1)]: [...PRODUCTS, donation], [donation.link]: { body: page } };
+  const { run, calls } = await collect(r);
+  assert.equal(run.state, 'complete');
+  assert.equal(run.animals.length, 5);
+  assert.deepEqual(run.skipped, [{ nativeId: '20793', reason: 'generic donation form, not an individual animal' }]);
+  assert.ok(calls.every(c => c.method === 'GET'));
+
+  const real = await collect({ ...r, [donation.link]: { body: page + '<div class="woocommerce-product-gallery__image"><a href="/own-dog.jpg"></a></div>' } });
+  assert.equal(real.run.animals.length, 6, 'a dog with its own photo is not dropped just because its name is Parama');
+  assert.equal(real.run.skipped.length, 0);
+  const unverified = await collect({ ...r, [donation.link]: { status: 503, body: 'unavailable' } });
+  assert.equal(unverified.run.animals.length, 6, 'a failed detail request is not evidence of a donation product');
 });
 
 test('penktakoja: walks pages until a short page', async () => {

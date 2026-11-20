@@ -565,5 +565,22 @@
       "url": "https://tautmilesgloba.lt/",
       "checkedAt": "2026-11-17"
     }
+  },
+  {
+    "id": "egzoticsoslt",
+    "slug": "egzoticsoslt",
+    "name": "VšĮ „EgzoticSOS“",
+    "city": null,
+    "address": null,
+    "logo": "",
+    "url": "https://egzoticsos.lt/",
+    "source": "egzoticsos",
+    "phone": null,
+    "email": null,
+    "website": "https://egzoticsos.lt",
+    "contactEvidence": {
+      "url": "https://egzoticsos.lt/",
+      "checkedAt": "2026-11-19"
+    }
   }
 ]

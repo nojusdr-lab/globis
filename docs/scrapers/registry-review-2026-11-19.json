@@ -1,0 +1,28 @@
+{
+  "url": "https://vmvt.lrv.lt/lt/veiklos-sritys/gyvunu-gerove/gyvunu-augintiniu-gerove/reikalavimai-gyvunu-globejams-ir-globos-namams/gyvunu-globeju-sarasas/",
+  "observedAt": "2026-11-19T13:48:18.959Z",
+  "state": "complete",
+  "registryRows": 96,
+  "withLinks": 95,
+  "inactiveRows": [
+    27
+  ],
+  "differences": [],
+  "evidence": [
+    {
+      "url": "https://vmvt.lrv.lt/robots.txt",
+      "method": "GET",
+      "status": 200,
+      "hash": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95",
+      "observedAt": "2026-11-19T13:48:14.016Z"
+    },
+    {
+      "url": "https://vmvt.lrv.lt/lt/veiklos-sritys/gyvunu-gerove/gyvunu-augintiniu-gerove/reikalavimai-gyvunu-globejams-ir-globos-namams/gyvunu-globeju-sarasas/",
+      "method": "GET",
+      "status": 200,
+      "hash": "bf71377423e8ed97a48ccd333cc548cbe54f9d4971fdc12f51423540ca12709b",
+      "observedAt": "2026-11-19T13:48:18.959Z"
+    }
+  ],
+  "note": "Compared organization cells and actual hyperlink targets by numbered row. Outlook Safe Links unwrapped to their public destination; tracking and personal mailbox parameters are not retained. Registry URL presence does not grant access or reuse rights."
+}

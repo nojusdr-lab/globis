@@ -1,0 +1,235 @@
+{
+  "checkedAt": "2026-11-19T13:11:13.064Z",
+  "codeCommit": "f474cc80649924291f0dad746c221ea94ffaf78a",
+  "scope": "Isolated local collection. No production database changes.",
+  "summary": {
+    "registryRows": 96,
+    "withLinks": 95,
+    "enabledCollectors": 19,
+    "collected": 19,
+    "byState": {
+      "no_listing": 13,
+      "collected": 19,
+      "social_access_required": 49,
+      "unreachable": 8,
+      "inactive": 1,
+      "paused": 2,
+      "other_thread": 1,
+      "identity_review": 1,
+      "blocked": 2
+    },
+    "animalsChecked": 1404,
+    "invalidAnimals": 0,
+    "animalsWithWarnings": 604,
+    "images": {
+      "healthy": 1399,
+      "missing": 5
+    }
+  },
+  "fixes": {
+    "availabilityEvidenceRecords": 98,
+    "photosRecoveredFromOwnGalleries": 24,
+    "healthFactsRecovered": 32
+  },
+  "remaining": {
+    "recordsWithHttpPhotos": 27,
+    "withoutPhoto": [
+      {
+        "id": "penktakoja:20793",
+        "sourceUrl": "https://penktakoja.lt/beglobis/parama/",
+        "reason": "No photo supplied by the API or the animal gallery"
+      },
+      {
+        "id": "padekman:7306",
+        "sourceUrl": "https://padekman.lt/portfolio-item/nr-97-stjopka/",
+        "reason": "No photo supplied by the API or the animal gallery"
+      },
+      {
+        "id": "padekman:7304",
+        "sourceUrl": "https://padekman.lt/portfolio-item/nr-96-muchic/",
+        "reason": "No photo supplied by the API or the animal gallery"
+      },
+      {
+        "id": "padekman:7298",
+        "sourceUrl": "https://padekman.lt/portfolio-item/nr-94-viola/",
+        "reason": "No photo supplied by the API or the animal gallery"
+      },
+      {
+        "id": "padekman:5911",
+        "sourceUrl": "https://padekman.lt/portfolio-item/aza/",
+        "reason": "No photo supplied by the API or the animal gallery"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source": "keturkojo-viltis",
+      "animals": 184,
+      "observationAt": "2026-11-19T13:00:05.478Z",
+      "images": {
+        "healthy": 184
+      }
+    },
+    {
+      "source": "katinosvajone",
+      "animals": 40,
+      "observationAt": "2026-11-19T11:50:42.710Z",
+      "images": {
+        "healthy": 40
+      }
+    },
+    {
+      "source": "lese",
+      "animals": 75,
+      "observationAt": "2026-11-19T11:50:58.424Z",
+      "images": {
+        "healthy": 75
+      }
+    },
+    {
+      "source": "penktakoja",
+      "animals": 253,
+      "observationAt": "2026-11-19T12:14:14.231Z",
+      "images": {
+        "healthy": 252,
+        "missing": 1
+      }
+    },
+    {
+      "source": "kggn",
+      "animals": 41,
+      "observationAt": "2026-11-19T11:44:32.258Z",
+      "images": {
+        "healthy": 41
+      }
+    },
+    {
+      "source": "bukmanodraugas",
+      "animals": 41,
+      "observationAt": "2026-11-19T11:44:47.763Z",
+      "images": {
+        "healthy": 41
+      }
+    },
+    {
+      "source": "linksmosiospedutes",
+      "animals": 53,
+      "observationAt": "2026-11-19T11:50:08.329Z",
+      "images": {
+        "healthy": 53
+      }
+    },
+    {
+      "source": "keturkojodraugas",
+      "animals": 28,
+      "observationAt": "2026-11-19T11:44:29.108Z",
+      "images": {
+        "healthy": 28
+      }
+    },
+    {
+      "source": "mazeikiugyvunai",
+      "animals": 98,
+      "observationAt": "2026-11-19T11:59:01.907Z",
+      "images": {
+        "healthy": 98
+      }
+    },
+    {
+      "source": "siauliuletenele",
+      "animals": 208,
+      "observationAt": "2026-11-19T12:38:20.501Z",
+      "images": {
+        "healthy": 208
+      }
+    },
+    {
+      "source": "gyvunugloba",
+      "animals": 37,
+      "observationAt": "2026-11-19T13:02:45.456Z",
+      "images": {
+        "healthy": 37
+      }
+    },
+    {
+      "source": "tautmilesgloba",
+      "animals": 19,
+      "observationAt": "2026-11-19T11:46:28.093Z",
+      "images": {
+        "healthy": 19
+      }
+    },
+    {
+      "source": "sos-gyvunai",
+      "animals": 118,
+      "observationAt": "2026-11-19T12:59:54.712Z",
+      "images": {
+        "healthy": 118
+      }
+    },
+    {
+      "source": "naminukai",
+      "animals": 22,
+      "observationAt": "2026-11-19T12:37:59.272Z",
+      "images": {
+        "healthy": 22
+      }
+    },
+    {
+      "source": "beglobis",
+      "animals": 27,
+      "observationAt": "2026-11-19T12:40:03.754Z",
+      "images": {
+        "healthy": 27
+      }
+    },
+    {
+      "source": "padekman",
+      "animals": 88,
+      "observationAt": "2026-11-19T11:58:14.399Z",
+      "images": {
+        "healthy": 84,
+        "missing": 4
+      }
+    },
+    {
+      "source": "mgma",
+      "animals": 19,
+      "observationAt": "2026-11-19T11:44:18.908Z",
+      "images": {
+        "healthy": 19
+      }
+    },
+    {
+      "source": "mazasdraugas",
+      "animals": 36,
+      "observationAt": "2026-11-19T11:45:32.929Z",
+      "images": {
+        "healthy": 36
+      }
+    },
+    {
+      "source": "rozinepedute",
+      "animals": 17,
+      "observationAt": "2026-11-19T11:47:58.564Z",
+      "images": {
+        "healthy": 17
+      }
+    }
+  ],
+  "tests": {
+    "localPass": 327,
+    "localFail": 0,
+    "localSkip": 1,
+    "skipped": "Real PostgreSQL runs in CI",
+    "ci": "https://github.com/nojusdr-lab/globis/actions/runs/44529385408",
+    "ciResult": "Node 22/24/26, Expo export, PostgreSQL recovery passed"
+  },
+  "automation": {
+    "label": "lt.globis.scrapers",
+    "queueAndQualityTickSeconds": 120,
+    "successfulSourceRefreshHours": 6,
+    "modelCallsPerRun": 0,
+    "requiresAwakeMac": true
+  }
+}

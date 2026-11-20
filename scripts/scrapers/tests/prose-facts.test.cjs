@@ -137,3 +137,9 @@ test('fromProse: "suženklintas/suženklinta" counts as chipped (sos-gyvunai Ser
   assert.equal(r.neutered, true);
   assert.equal(fromProse('Dar nesuženklintas.').chipped, false);
 });
+
+test('fromProse: an uncertain or conditional pending procedure stays unknown', () => {
+  assert.deepEqual(fromProse('Nežinoma, ar dar laukia skiepai.'), {});
+  assert.deepEqual(fromProse('Neaišku, ar laukia kastracija ir ženklinimas.'), {});
+  assert.deepEqual(fromProse('Jei laukia skiepai, susisiekite.'), {});
+});

@@ -1,0 +1,299 @@
+{
+  "checkedAt": "2026-11-20T00:46:27.475Z",
+  "liveCollectorCommit": "5ae63c32719295ff7bf46d11a3d5b329c958a0ba",
+  "requiredStatusReadVerified": true,
+  "codeCommit": "6dfa8d2111346c35dee0c37d48fe0e70e175a5dc",
+  "upstreamClaudeCommit": "df8841949ce96ac67902a2cba0fdbf48301de979",
+  "scope": "Complete local refresh of all 20 enabled sources after the merge; deterministic per-record and primary-image audit. No production DB or bundled animal data publication.",
+  "refreshRequestedAt": "2026-11-20T00:27:40.497Z",
+  "summary": {
+    "registryRows": 96,
+    "withLinks": 95,
+    "enabledCollectors": 20,
+    "collected": 20,
+    "byState": {
+      "identity_review": 2,
+      "collected": 20,
+      "social_access_required": 43,
+      "no_listing": 16,
+      "unreachable": 7,
+      "inactive": 1,
+      "adoption_confirmation_required": 1,
+      "paused": 2,
+      "blocked": 3,
+      "other_thread": 1
+    },
+    "animalsChecked": 1561,
+    "invalidAnimals": 0,
+    "animalsWithWarnings": 736,
+    "images": {
+      "healthy": 1557,
+      "missing": 4
+    }
+  },
+  "factsPresent": {
+    "species": 1543,
+    "sex": 845,
+    "age_text": 1198,
+    "size": 188,
+    "chipped": 429,
+    "vaccinated": 478,
+    "neutered": 614,
+    "in_shelter": 241
+  },
+  "statusCounts": {
+    "available": 1049,
+    "reserved": 20,
+    "unknown": 488,
+    "confirmed_adopted": 4
+  },
+  "comparisonWithEarlierBundledCopy": {
+    "commit": "ff75c02",
+    "matchedIds": 1355,
+    "newNonNullFacts": {
+      "species": 0,
+      "sex": 281,
+      "age_text": 44,
+      "size": 38,
+      "chipped": 9,
+      "vaccinated": 5,
+      "neutered": 7,
+      "in_shelter": 18
+    },
+    "note": "Only the same stable IDs are compared; a newly filled value is not an independent guarantee of the shelter statement."
+  },
+  "fixesFromInitialAudit": {
+    "availabilityEvidenceRecords": 98,
+    "photosRecoveredFromOwnGalleries": 24,
+    "healthFactsRecovered": 32
+  },
+  "additionalFixes": {
+    "newCollector": "egzoticsos",
+    "selected": 167,
+    "excludedBySourceCategories": 5,
+    "accepted": 162,
+    "excludedVerifiedNonAnimalProducts": 1,
+    "mergedOwnGalleryAndDetailIntoOneRequest": true,
+    "excludedDetailCannotFailWholeSource": true,
+    "uncertainPendingProceduresStayUnknown": true
+  },
+  "remaining": {
+    "recordsWithHttpPhotos": 27,
+    "withoutPhoto": [
+      {
+        "id": "padekman:7306",
+        "sourceUrl": "https://padekman.lt/portfolio-item/nr-97-stjopka/",
+        "reason": "No individual photo supplied by the verified source/gallery"
+      },
+      {
+        "id": "padekman:7304",
+        "sourceUrl": "https://padekman.lt/portfolio-item/nr-96-muchic/",
+        "reason": "No individual photo supplied by the verified source/gallery"
+      },
+      {
+        "id": "padekman:7298",
+        "sourceUrl": "https://padekman.lt/portfolio-item/nr-94-viola/",
+        "reason": "No individual photo supplied by the verified source/gallery"
+      },
+      {
+        "id": "padekman:5911",
+        "sourceUrl": "https://padekman.lt/portfolio-item/aza/",
+        "reason": "No individual photo supplied by the verified source/gallery"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source": "keturkojo-viltis",
+      "animals": 184,
+      "observationAt": "2026-11-20T00:45:52.597Z",
+      "images": {
+        "healthy": 184
+      }
+    },
+    {
+      "source": "katinosvajone",
+      "animals": 40,
+      "observationAt": "2026-11-20T00:35:23.100Z",
+      "images": {
+        "healthy": 40
+      }
+    },
+    {
+      "source": "lese",
+      "animals": 74,
+      "observationAt": "2026-11-20T00:38:43.070Z",
+      "images": {
+        "healthy": 74
+      }
+    },
+    {
+      "source": "penktakoja",
+      "animals": 252,
+      "observationAt": "2026-11-20T00:38:58.766Z",
+      "images": {
+        "healthy": 252
+      }
+    },
+    {
+      "source": "kggn",
+      "animals": 41,
+      "observationAt": "2026-11-20T00:32:17.858Z",
+      "images": {
+        "healthy": 41
+      }
+    },
+    {
+      "source": "bukmanodraugas",
+      "animals": 41,
+      "observationAt": "2026-11-20T00:31:21.922Z",
+      "images": {
+        "healthy": 41
+      }
+    },
+    {
+      "source": "linksmosiospedutes",
+      "animals": 53,
+      "observationAt": "2026-11-20T00:36:53.444Z",
+      "images": {
+        "healthy": 53
+      }
+    },
+    {
+      "source": "keturkojodraugas",
+      "animals": 28,
+      "observationAt": "2026-11-20T00:31:17.175Z",
+      "images": {
+        "healthy": 28
+      }
+    },
+    {
+      "source": "mazeikiugyvunai",
+      "animals": 98,
+      "observationAt": "2026-11-20T00:35:59.639Z",
+      "images": {
+        "healthy": 98
+      }
+    },
+    {
+      "source": "siauliuletenele",
+      "animals": 208,
+      "observationAt": "2026-11-20T00:39:20.436Z",
+      "images": {
+        "healthy": 208
+      }
+    },
+    {
+      "source": "gyvunugloba",
+      "animals": 37,
+      "observationAt": "2026-11-20T00:31:06.940Z",
+      "images": {
+        "healthy": 37
+      }
+    },
+    {
+      "source": "tautmilesgloba",
+      "animals": 19,
+      "observationAt": "2026-11-20T00:41:36.138Z",
+      "images": {
+        "healthy": 19
+      }
+    },
+    {
+      "source": "sos-gyvunai",
+      "animals": 118,
+      "observationAt": "2026-11-20T00:39:55.588Z",
+      "images": {
+        "healthy": 118
+      }
+    },
+    {
+      "source": "naminukai",
+      "animals": 22,
+      "observationAt": "2026-11-20T00:36:35.874Z",
+      "images": {
+        "healthy": 22
+      }
+    },
+    {
+      "source": "beglobis",
+      "animals": 27,
+      "observationAt": "2026-11-20T00:30:05.907Z",
+      "images": {
+        "healthy": 27
+      }
+    },
+    {
+      "source": "padekman",
+      "animals": 88,
+      "observationAt": "2026-11-20T00:44:42.266Z",
+      "images": {
+        "healthy": 84,
+        "missing": 4
+      }
+    },
+    {
+      "source": "mgma",
+      "animals": 19,
+      "observationAt": "2026-11-20T00:36:15.143Z",
+      "images": {
+        "healthy": 19
+      }
+    },
+    {
+      "source": "mazasdraugas",
+      "animals": 36,
+      "observationAt": "2026-11-20T00:35:34.534Z",
+      "images": {
+        "healthy": 36
+      }
+    },
+    {
+      "source": "egzoticsos",
+      "animals": 162,
+      "observationAt": "2026-11-20T00:28:12.494Z",
+      "images": {
+        "healthy": 162
+      }
+    },
+    {
+      "source": "rozinepedute",
+      "animals": 14,
+      "observationAt": "2026-11-20T00:39:58.585Z",
+      "images": {
+        "healthy": 14
+      }
+    }
+  ],
+  "tests": {
+    "localPass": 348,
+    "localFail": 0,
+    "localSkip": 1,
+    "skipped": "Real PostgreSQL test runs in CI",
+    "ci": "https://github.com/nojusdr-lab/globis/actions/runs/44648395300",
+    "ciResult": "Node 22.13/24/26, Expo export and real PostgreSQL recovery/concurrency passed for 6dfa8d2"
+  },
+  "accessReview": {
+    "registry": "registry-review-2026-11-19.json",
+    "alternativeChannels": "alternative-channel-review-2026-11-19.json",
+    "facebookOrganizationsIndividuallySearched": 49,
+    "unreachableOrganizationsSearched": 7
+  },
+  "automation": {
+    "label": "lt.globis.scrapers",
+    "queueAndQualityTickSeconds": 120,
+    "successfulSourceRefreshHours": 6,
+    "modelCallsPerRun": 0,
+    "requiresAwakeMac": true,
+    "localOnly": true,
+    "state": "running",
+    "lastObservedTick": "2026-11-20T00:47:21.156Z",
+    "nextObservedTick": "2026-11-20T00:49:21.156Z",
+    "observedIntervalProof": [
+      "2026-11-20T00:31:38.545Z",
+      "2026-11-20T00:33:38.556Z"
+    ],
+    "finalGuardLoaded": true
+  },
+  "verificationNote": "Live refresh used 5ae63c3. The later 6dfa8d2 changes only failure handling for missing required detail pages; every accepted Keturkojo viltis URL was additionally matched to a successful GET in the live evidence. Its failed-detail/last-good behavior passed fixture and publication regression tests. The final native process was restarted with that guard."
+}

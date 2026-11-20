@@ -25,9 +25,9 @@ const N = require('../lib/normalize.cjs');
 const L = require('../lib/labels.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
-const PARSER_VERSION = 'gyvunugloba-detail-4';
+const PARSER_VERSION = 'gyvunugloba-detail-5';
 
-function parseDetail(body, name) {
+function parseDetail(body, name, pageUrl = BASE) {
   const $ = html.load(body);
   const lines = $('.portfolio_content').first().find('p').map((_, p) => {
     $(p).find('br').replaceWith('\n');
@@ -43,7 +43,8 @@ function parseDetail(body, name) {
   while (footer > 0 && (/:$/.test(lines[footer - 1]) || /^utenos rajono gyvūnų mylėtojų draugija$/.test(N.fold(lines[footer - 1])))) footer--;
   if (footer >= 0) lines.length = footer;
   const facts = L.fromPairs(lines.map(l => l.match(/^([^:：]{2,40})[:：]\s*(.+)$/)).filter(Boolean).map(m => [m[1], m[2]]));
-  return { ...facts, bio_lt: lines.join('\n') || null };
+  const photos = [...new Set($('.portfolio_images img').map((_, img) => html.imgSrc($(img), pageUrl)).get().filter(Boolean))];
+  return { ...facts, bio_lt: lines.join('\n') || null, photos };
 }
 
 const BASE = 'https://gyvunugloba.com/';
@@ -160,8 +161,9 @@ module.exports = {
       let res;
       try { res = await fetcher.get(a.sourceUrl); }
       catch (e) { log(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
-      const d = await cache.getOrParse(sha256(res.body), PARSER_VERSION, () => parseDetail(res.body, a.name));
+      const d = await cache.getOrParse(sha256(res.body + '\n' + res.url), PARSER_VERSION, () => parseDetail(res.body, a.name, res.url));
       for (const k of ['sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt']) if (d[k] != null) a[k] = d[k];
+      if (!a.photos.length && d.photos?.length) a.photos = d.photos;
     }
     log(`gyvunugloba: ${animals.length} animals, ${skipped.length} skipped`);
     return { animals, skipped, complete };

@@ -8,10 +8,19 @@ const { runSource } = require('../lib/run-source.cjs');
 const { fakeFetch, fakeClock } = require('./helpers.cjs');
 const routes = require('../fixtures/keturkojo-viltis/routes.json');
 
-test('keturkojo-viltis: species from rusis, age from "Spėjama gimimo data", status unknown', async () => {
+test('keturkojo-viltis: missing API image uses only the own gallery, never a related animal', async () => {
+  const posts = Object.values(routes).flatMap(v => Array.isArray(v) ? v : Array.isArray(v.body) ? v.body : []);
+  const missing = posts.find(p => p.id === 2050 && p.link);
+  const r = { ...routes, [missing.link]: { body: `<div class="kv-gallery__main"><img src="/own-dog.jpg"></div>
+    <div class="kv-card__img"><img src="/different-animal.jpg"></div>` } };
+  const run = await runSource(adapter, { fetcher: createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, []) }), cache: createParseCache(null) });
+  assert.deepEqual(run.animals.find(a => a.id === 'keturkojo-viltis:2050').photos, ['https://keturkojo-viltis.lt/own-dog.jpg']);
+});
+
+test('keturkojo-viltis: unavailable details keep REST candidates but cannot publish unknown statuses', async () => {
   const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(routes, []) });
   const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
-  assert.equal(run.state, 'complete');
+  assert.equal(run.state, 'partial');
   const byId = Object.fromEntries(run.animals.map(a => [a.id, a]));
   const m = byId['keturkojo-viltis:2077'];
   assert.equal(m.name, 'Morana');
@@ -53,7 +62,7 @@ test('keturkojo-viltis: detail page gives sex and status from its fact list', as
   const r = { ...routes, 'https://keturkojo-viltis.lt/gyvunai/morana/': { body: html } };
   const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, []) });
   const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
-  assert.equal(run.state, 'complete');
+  assert.equal(run.state, 'partial', 'the other fixture animal has no readable detail/status');
   const m = run.animals.find(a => a.id === 'keturkojo-viltis:2077');
   assert.equal(m.sex, 'female', '<dt>Lytis</dt><dd>Patelė</dd>');
   assert.equal(m.status, 'available', '"Ieško namų"');
@@ -63,4 +72,52 @@ test('keturkojo-viltis: detail page gives sex and status from its fact list', as
   const t = run.animals.find(a => a.id === 'keturkojo-viltis:2050');
   assert.equal(t.sex, null);
   assert.equal(t.status, 'unknown');
+});
+
+test('keturkojo-viltis: a returned/deceased detail is excluded without failing every other animal', async () => {
+  const html = require('node:fs').readFileSync(require('node:path').join(__dirname, '../fixtures/keturkojo-viltis/morana.html'), 'utf8');
+  const r = { ...routes, 'https://keturkojo-viltis.lt/gyvunai/morana/': { body: html.replace('Ieško namų', 'Grįžo namo') } };
+  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, []) });
+  const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
+  assert.equal(run.state, 'partial', 'the surviving animal still needs a readable detail');
+  assert.equal(run.animals.length, 1);
+  assert.equal(run.animals[0].id, 'keturkojo-viltis:2050');
+  assert.deepEqual(run.skipped, [{ nativeId: '2077', reason: 'Grįžo namo' }]);
+});
+
+test('keturkojo-viltis: own facts and missing photo use one request and ignore related facts', async () => {
+  const calls = [];
+  const post = Object.values(routes).flatMap(r => r?.body || []).find(p => p?.id === 2050);
+  const r = { ...routes, [post.link]: { body: '<aside class="kv-animal__panel"><dl class="kv-facts"><dt>Lytis</dt><dd>Patinas</dd></dl></aside>'
+    + '<div class="kv-gallery__main"><img src="/own-photo.jpg"><img src="https://different.example/foreign.jpg"></div>'
+    + '<section class="related"><dl><dt>Lytis</dt><dd>Patelė</dd></dl><img src="/related.jpg"></section>' } };
+  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, calls) });
+  const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
+  const a = run.animals.find(a => a.id === 'keturkojo-viltis:2050');
+  assert.equal(a.sex, 'male');
+  assert.deepEqual(a.photos, ['https://keturkojo-viltis.lt/own-photo.jpg']);
+  assert.equal(calls.filter(c => c.url === post.link).length, 1, 'no duplicate gallery/detail request');
+});
+
+test('keturkojo-viltis: failed detail cannot replace a previously reserved animal with unknown', async t => {
+  const fs = require('node:fs'), path = require('node:path'), os = require('node:os');
+  const { publish } = require('../lib/snapshot.cjs');
+  const outDir = fs.mkdtempSync(path.join(os.tmpdir(), 'globis-required-status-'));
+  t.after(() => fs.rmSync(outDir, { recursive: true, force: true }));
+  const html = fs.readFileSync(path.join(__dirname, '../fixtures/keturkojo-viltis/morana.html'), 'utf8');
+  const posts = Object.values(routes).flatMap(r => r?.body || []).filter(p => p?.link && p.rusis);
+  const valid = { ...routes };
+  for (const post of posts) valid[post.link] = { body: html.replace('Ieško namų', 'Rezervuota') };
+  const collect = r => runSource(adapter, { fetcher: createFetcher({ allowedHosts: adapter.hosts,
+    ...fakeClock(), fetchImpl: fakeFetch(r, []) }), cache: createParseCache(null) });
+  const first = await collect(valid);
+  assert.equal(first.state, 'complete');
+  assert.equal(publish(first, { outDir }).published, true);
+  const file = path.join(outDir, adapter.id, 'published.json'), before = fs.readFileSync(file, 'utf8');
+  const broken = { ...valid, [posts[0].link]: { status: 503, body: 'temporarily unavailable' } };
+  const second = await collect(broken);
+  assert.equal(second.state, 'partial');
+  assert.equal(publish(second, { outDir }).published, false);
+  assert.equal(fs.readFileSync(file, 'utf8'), before);
+  assert.ok(JSON.parse(before).animals.every(a => a.status === 'reserved'));
 });
