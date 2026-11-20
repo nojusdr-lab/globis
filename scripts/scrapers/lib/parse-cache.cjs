@@ -1,9 +1,11 @@
 'use strict';
 // Content-hash cache: if a page's bytes did not change, reuse what we parsed last time.
-// Key = sha256(page) + parser version, so a parser change invalidates old entries.
+// Key = sha256(page) + parser version + shared rules fingerprint, so a change in an adapter or in
+// the shared label rules (labels.cjs, normalize.cjs) invalidates old entries.
 const fs = require('node:fs');
 const path = require('node:path');
 const { stripPrivate } = require('./normalize.cjs');
+const { sha256 } = require('./hash.cjs');
 
 function scrubCache(value) {
   if (Array.isArray(value)) return value.map(scrubCache);
@@ -12,12 +14,14 @@ function scrubCache(value) {
   return value;
 }
 
-function createParseCache(dir) {
+const LIB_VERSION = sha256(['labels.cjs', 'normalize.cjs'].map(f => fs.readFileSync(path.join(__dirname, f), 'utf8')).join('\n')).slice(0, 8);
+
+function createParseCache(dir, { libVersion = LIB_VERSION } = {}) {
   const memory = new Map();
   const file = key => path.join(dir, `${key}.json`);
   return {
     async getOrParse(hash, version, parse) {
-      const key = `${hash.slice(0, 32)}-${String(version).replace(/[^\w.-]/g, '')}`;
+      const key = `${hash.slice(0, 32)}-${String(version).replace(/[^\w.-]/g, '')}-${libVersion}`;
       if (memory.has(key)) return memory.get(key);
       if (dir) {
         try {

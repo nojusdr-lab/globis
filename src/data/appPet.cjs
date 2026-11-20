@@ -62,9 +62,9 @@ async function fetchPublishedRows(url, key, fetchImpl, limit = 1000) {
   }
 }
 
-// Sources whose terms forbid using their content. Their rows stay hidden even if the server or an
+// Sources whose terms forbid using their content (Maži jausmai: termshub; Rasų globa: /taisykles-ir-salygos/ 4.2). Their rows stay hidden even if the server or an
 // old globok.lt copy still has them (the server copy must be removed in the database by the owner).
-const BLOCKED = { sources: new Set(['mazijausmai']), shelters: new Set(['mazijausmailt']) };
+const BLOCKED = { sources: new Set(['mazijausmai', 'rasugloba']), shelters: new Set(['mazijausmailt', 'rasuglobalt']) };
 const withoutBlocked = pets => pets.filter(p => !BLOCKED.sources.has(p.source) && !BLOCKED.shelters.has(p.shelter?.id));
 
 module.exports = { SHELTER, BRANCHES, shelterResolver, toAppPet, fromRemote, fetchPublishedRows, withoutBlocked };

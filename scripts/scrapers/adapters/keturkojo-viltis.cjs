@@ -1,25 +1,55 @@
 'use strict';
-// Asociacija „Keturkojo viltis“, Alytus (keturkojo-viltis.lt, with a hyphen). VMVT row 2.
-// robots.txt: "User-agent: *" Allow: /, Disallow: /wp-admin/ /?s=, no crawl-delay (checked 2026-11-18).
-// Animals are the public WordPress type "gyvunas" with taxonomy rusis (species).
-// Pages carry "Spėjama gimimo data" (age) only; no status taxonomy, so status stays unknown.
+// Asociacija „Keturkojo viltis“, Alytus. VMVT row 2.
+// Public WordPress gyvunas/rusis; robots allows these pages, disallows /wp-admin/ and /?s=.
+// REST supplies the story. Each public detail page supplies its own labelled
+// facts/status and, where the API lacks an image, the animal's own gallery.
+// Read the page once for both purposes; failed detail reads preserve REST facts.
 const { createWordpressAdapter } = require('./wordpress-rest.cjs');
-const { fillMissingGallery } = require('../lib/gallery.cjs');
+const { galleryPhotos } = require('../lib/gallery.cjs');
+const H = require('../lib/html.cjs');
+const L = require('../lib/labels.cjs');
+const N = require('../lib/normalize.cjs');
+const { sha256 } = require('../lib/hash.cjs');
+const BASE = 'https://keturkojo-viltis.lt/';
+const DETAIL_VERSION = 'keturkojo-viltis-detail-2';
 
-const adapter = createWordpressAdapter({
-  id: 'keturkojo-viltis',
-  name: 'Asociacija „Keturkojo viltis“',
-  base: 'https://keturkojo-viltis.lt/',
-  restBase: 'gyvunas',
-  taxonomies: { rusis: 'species' },
-  // Description only: drop the leading "Facebook nuoroda" link paragraph and the shelter's
-  // contact footer (phone, website, addresses), which starts at the paragraph with "☎".
+function parseDetail(body, url = BASE) {
+  const $ = H.load(body), panel = $('.kv-animal__panel').first();
+  // Related animal cards and the footer cannot replace this animal's facts.
+  const facts = L.fromPairs(H.pairs($, panel.find('.kv-facts')));
+  return { ...facts, ...N.status(panel.find('.kv-status').first().text()),
+    photos: galleryPhotos(body, url, { selector: '.kv-gallery__main img' }) };
+}
+
+const base = createWordpressAdapter({
+  id: 'keturkojo-viltis', name: 'Asociacija „Keturkojo viltis“', base: BASE,
+  restBase: 'gyvunas', taxonomies: { rusis: 'species' },
+  // Drop the leading Facebook paragraph and the shelter contact footer.
   bioHtml: h => h.replace(/<p>\s*<a[^>]*facebook\.com[^>]*>[^<]*<\/a>\s*<\/p>/gi, '').replace(/<p>[^<]*☎[\s\S]*$/, ''),
 });
-const collect = adapter.collect;
-adapter.collect = async options => {
-  const result = await collect(options);
-  await fillMissingGallery(result.animals, options, { selector: '.kv-gallery__main img', version: 'keturkojo-own-gallery-1' });
-  return result;
+
+module.exports = {
+  ...base,
+  async collect(ctx) {
+    const result = await base.collect(ctx);
+    for (const a of result.animals) {
+      let res;
+      try { res = await ctx.fetcher.get(a.sourceUrl); }
+      catch (e) { ctx.log?.(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
+      const detail = await ctx.cache.getOrParse(sha256(res.url + '\n' + res.body), DETAIL_VERSION,
+        () => parseDetail(res.body, res.url));
+      for (const key of ['sex', 'age_text', 'species', 'size', 'vaccinated', 'neutered', 'chipped']) {
+        if (detail[key] != null) a[key] = detail[key];
+      }
+      if (detail.status && detail.status !== 'unknown') { a.status = detail.status; a.statusEvidence = detail.statusEvidence; }
+      if (!a.photos.length) a.photos = detail.photos;
+    }
+    result.animals = result.animals.filter(a => {
+      if (a.status !== 'excluded') return true;
+      result.skipped.push({ nativeId: a.nativeId, reason: a.statusEvidence });
+      return false;
+    });
+    return result;
+  },
+  _parseDetail: parseDetail,
 };
-module.exports = adapter;

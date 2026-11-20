@@ -78,6 +78,16 @@ test('fromProse: sex from a singular animal noun only; plurals, both sexes and c
   assert.equal(fromProse('Šeimoje auga mergaitė, šuo labai draugiškas.').sex, undefined);
 });
 
+test('fromProse: cat nouns "katinas/katinukas" male, "katytė" female; an opposite-sex plural voids it', () => {
+  // mgma.lt Mochikanas, mazasdraugas.lt Pepsis (2026-11-19)
+  assert.equal(fromProse('Sveikas, drūtas, jaunas (gimęs 2022 metais) katinas Mochikanas ieško namų.').sex, 'male');
+  assert.equal(fromProse('Pepsis – meilus ir mielas katinukas.').sex, 'male');
+  assert.equal(fromProse('Ši juoda katytė labai meili.').sex, 'female');
+  // mgma.lt "3 Kačiukai iš Balsupių k." (2026-11-19)
+  assert.equal(fromProse('Į mūsų globą perduoti 3 kačiukai: katinas ir dvi katytės iš Balsupių k.').sex, undefined);
+  assert.equal(fromProse('FIV turinčios katytės taip pat gali džiaugtis kasdienybe.').sex, undefined);
+});
+
 test('record: a post named after several animals gets no sex from its story', () => {
   const { makeAnimal } = require('../lib/record.cjs');
   const base = { nativeId: '1', sourceUrl: 'https://example.lt/a', species: 'dog', bio_lt: 'Nečipuota kalytė rasta.', photos: [] };
@@ -97,6 +107,7 @@ test('fromProse: arrival date "Į prieglaudą atvyko" counts as time in shelter;
   assert.equal(fromProse('Į prieglaudą atvyko – 2025-07-29 iš Viečiūnų.').in_shelter, 'nuo 2025-07-29');
   assert.equal(fromProse('Vaikinas atvyko į prieglaudą 2025 metų balandžio mėnesį mirus šeimininkui.').in_shelter, 'nuo 2025 metų balandžio mėnesį');
   assert.equal(fromProse('Taip jis į mūsų globą atvyko 2026-04-01.').in_shelter, 'nuo 2026-04-01');
+  assert.equal(fromProse('📅 Gimimo data: 2019-03-01 🏡 Į prieglaudą atvyko: 2021-03-24 ✔️ Ženklinta').in_shelter, 'nuo 2021-03-24');
   assert.equal(fromProse('Projekto dieną atvyko labai garbaus amžiaus pora.').in_shelter, undefined);
 });
 
@@ -108,4 +119,27 @@ test('fromProse: "apie N metų/mėn." ages and facts after an emoji', () => {
   assert.equal(fromProse('Pirmam triušiukui 3 mėn, kitiems po 6 mėn.').age_text, undefined);
   assert.equal(fromProse('Kai susidraugausim, namuose bus meilūnas🤍 Kastruotas ir visa padaryta.').neutered, true);
   assert.equal(fromProse('Kai susidraugausim, bus kastruotas.').neutered, undefined);
+});
+
+test('fromProse: "laukia <procedure>" means not done yet', () => {
+  // sos-gyvunai.lt Izė/Natas, KissTutis; siauliuletenele PAKRUOJO DVARININKAS (2026-11-19)
+  const r = fromProse('Pas mus jie jau gavo vaistų, dar laukia skiepai, ženklinimas, sterilizacija/kastracija.');
+  assert.deepEqual([r.vaccinated, r.chipped, r.neutered], [false, false, false]);
+  assert.equal(fromProse('Ateityje laukia kastracija ir dantukų tvarkymas.').neutered, false);
+  assert.equal(fromProse('Skiepyta, čipuota, sterilizuota. Galbūt jūsų namuose Upės laukia tas žmogus.').neutered, true);
+  assert.equal(fromProse('Kastruotas. Laukia kastracija.').neutered, undefined); // contradiction -> unknown
+});
+
+test('fromProse: "suženklintas/suženklinta" counts as chipped (sos-gyvunai Seras, Luna)', () => {
+  const r = fromProse('Gimimo data: 2017.01.01 Paskiepyta, suženklinta, gavo vaistų nuo vidaus ir išorės parazitų, sterilizuota.');
+  assert.equal(r.chipped, true);
+  assert.equal(r.vaccinated, true);
+  assert.equal(r.neutered, true);
+  assert.equal(fromProse('Dar nesuženklintas.').chipped, false);
+});
+
+test('fromProse: an uncertain or conditional pending procedure stays unknown', () => {
+  assert.deepEqual(fromProse('Nežinoma, ar dar laukia skiepai.'), {});
+  assert.deepEqual(fromProse('Neaišku, ar laukia kastracija ir ženklinimas.'), {});
+  assert.deepEqual(fromProse('Jei laukia skiepai, susisiekite.'), {});
 });

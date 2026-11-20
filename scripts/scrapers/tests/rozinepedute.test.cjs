@@ -144,7 +144,7 @@ test('rozinepedute: a listing with no animal links fails instead of publishing a
 test('rozinepedute: real detail page table gives birth date, sex and health facts', async () => {
   const { run } = await collect(routes());
   const e = run.animals.find(a => a.id === 'rozinepedute:elvis');
-  assert.deepEqual([e.age_text, e.sex, e.neutered, e.chipped, e.vaccinated], ['2026 06 20', 'male', false, true, true]);
+  assert.deepEqual([e.age_text, e.sex, e.neutered, e.chipped, e.vaccinated], ['Gimimo data: 2026 06 20', 'male', false, true, true]);
   assert.equal(e.species, null, 'no species row on the page');
   assert.equal(e.bio_lt, null, 'empty description block');
   const other = run.animals.find(a => a.id === 'rozinepedute:sansa');

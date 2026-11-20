@@ -20,6 +20,14 @@ function fieldFor(label) {
   return null;
 }
 
+// A date keeps its label ("Spėjama gimimo data: 2025-10-01"): a bare date hides that it is a birth date or an estimate.
+// Text after the date on the same line ("2020-03-01, svoris: 12 kg, …") is not the age; the story still holds it.
+function ageText(label, value) {
+  const date = value.match(/^(\d{4}(?:[-. ]\d{1,2}){0,2}|\d{1,2}\.\d{1,2}\.\d{4})(?=$|[,;])/);
+  if (!date) return value;
+  const l = N.cleanText(label).replace(/[:：]\s*$/, '');
+  return /^amžius$/i.test(l) ? date[1] : `${l.charAt(0).toUpperCase()}${l.slice(1)}: ${date[1]}`;
+}
 // pairs: array of [label, value] already split by an adapter (from a table, dl, or "A: B" lines).
 function fromPairs(pairs) {
   const out = {};
@@ -30,7 +38,7 @@ function fromPairs(pairs) {
     if (field === 'species') out.species = N.species(value);
     else if (field === 'sex') out.sex = N.sex(value);
     else if (field === 'size') out.size = N.size(value);
-    else if (field === 'age_text') out.age_text = value;
+    else if (field === 'age_text') out.age_text = ageText(label, value);
     else if (field === 'status') { const s = N.status(value); out.status = s.status; out.statusEvidence = s.statusEvidence; }
     else out[field] = N.yesNo(value);
   }
@@ -47,6 +55,14 @@ function pairsFromText(text) {
     .map(m => [m[1], m[2]]);
 }
 
+// Fact lists in page HTML: "<b>Lytis:</b> Patinas", "<dt>Lytis</dt><dd>Patelė</dd>", "<th>Skiepai</th><td>Taip</td>".
+// A bold label with no text after it (a heading like "<strong>Kaip padėti?</strong>") is skipped.
+function pairsFromHtml(html) {
+  const re = /<(b|strong|dt|th)\b[^>]*>\s*([^<]{2,40}?)\s*[:：]?\s*<\/\1>\s*(?:<(?:dd|td)\b[^>]*>\s*)?([^<]*)/gi;
+  return [...String(html || '').matchAll(re)]
+    .map(m => [N.cleanText(m[2]).replace(/[:：]$/, ''), N.cleanText(m[3])])
+    .filter(([label, value]) => label && value);
+}
 // Health facts stated in free text ("Kastruotas, čipuotas, paskiepytas."). Only whole words that
 // say the thing is done or not done ("not yet done" counts as no).
 // Both a yes and a no in one text (a mother and her kittens) -> null.
@@ -54,19 +70,28 @@ function pairsFromText(text) {
 const PROSE = {
   neutered: [/^(kastruot|sterilizuot)(as|a|i|os)$/, /^ne(kastruot|sterilizuot)(as|a|i|os)$/],
   vaccinated: [/^(pa)?(skiepyt|skiepint|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|skiepint|vakcinuot)(as|a|i|os)$/],
-  chipped: [/^(čipuot|(pa)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa)?ženklint)(as|a|i|os)$/],
+  chipped: [/^(čipuot|(pa|su)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa|su)?ženklint)(as|a|i|os)$/],
+};
+// Procedure nouns that, next to "laukia" (is waiting for), say the procedure is still to be done.
+const PENDING = {
+  neutered: /^(sterilizacij|kastracij)\p{L}*$/u,
+  vaccinated: /^(skiep(ai|ų|as)|vakcinacij\p{L}*)$/u,
+  chipped: /^(ženklinim\p{L}*|čipavim\p{L}*|mikročip\p{L}*)$/u,
 };
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
 const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
 const UNCERTAIN = /^(nežinom\p{L}*|neaišk\p{L}*|galbūt|galimai|ar)$/u;
 
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
-const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female' };
+const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female',
+  katinas: 'male', katinukas: 'male', katytė: 'female' };
+// Plurals never set a sex, but one of the other sex voids it ("katinas ir dvi katytės" = a litter).
+const SEX_PLURAL = { patinai: 'male', katinai: 'male', katinukai: 'male', patelės: 'female', kalytės: 'female', katytės: 'female' };
 
 const SINCE_DATE = '((?:\\d{4}\\s*(?:m\\.|metų)\\s*)?\\p{L}+\\s+mėn(?:\\.|esį)|\\d{4}[-.]\\d{2}(?:[-.]\\d{2})?|\\d{4}\\s*m\\.)';
 // "Prieglaudoje nuo: 2026 m. birželio mėn.", "Į prieglaudą atvyko – 2025-07-29", "į mūsų globą atvyko 2026-04-01",
 // "atvyko į prieglaudą 2025 metų balandžio mėnesį". Plain "atvyko <date>" without the shelter word is not used.
-const IN_SHELTER = new RegExp(`(?:prieglaudoje\\s+nuo\\s*:?|(?:į\\s+(?:prieglaudą|mūsų\\s+globą)|pas\\s+mus)\\s+(?:\\p{L}+\\s+)?atvyko\\s*[–-]?|atvyko\\s+į\\s+prieglaudą)\\s*${SINCE_DATE}`, 'giu');
+const IN_SHELTER = new RegExp(`(?:prieglaudoje\\s+nuo\\s*:?|(?:į\\s+(?:prieglaudą|mūsų\\s+globą)|pas\\s+mus)\\s+(?:\\p{L}+\\s+)?atvyko\\s*[:–-]?|atvyko\\s+į\\s+prieglaudą\\s*:?)\\s*${SINCE_DATE}`, 'giu');
 
 const BIRTH = /((?:spėjama\s+)?gimimo\s+data(?:\s*\(spėjama\))?|gimęs|gimusi|gimė)\s*[:–-]?\s*(\d{4}(?:[-.\s]\d{2}){0,2})(?!\d)/giu;
 
@@ -90,6 +115,9 @@ function fromProse(text) {
     const seen = new Set();
     for (const words of sentences) {
       const plan = words.some(w => PLAN.test(w));
+      // "Dar laukia skiepai, ženklinimas, sterilizacija": explicitly pending.
+      if (!plan && !words.some(w => UNCERTAIN.test(w)) && words.includes('laukia') &&
+          words.some(w => PENDING[field].test(w))) seen.add(false);
       for (let i = 0; i < words.length; i++) {
         const w = words[i];
         const microchip = field === 'chipped' && /^(pa)?žymėt(as|a|i|os)$/.test(w) && /^mikroschem/.test(words[i + 1] || '');
@@ -124,7 +152,8 @@ function fromProse(text) {
   // Sex only from a singular noun that names it ("nečipuota kalytė rasta", "didesnis patinas").
   // Plural or ambiguous forms ("dvi kalytės") are ignored; both sexes in one text -> unknown.
   const sexes = new Set(words.filter(w => SEX_WORD[w]).map(w => SEX_WORD[w]));
-  if (sexes.size === 1) out.sex = [...sexes][0];
+  const plural = new Set(words.filter(w => SEX_PLURAL[w]).map(w => SEX_PLURAL[w]));
+  if (sexes.size === 1 && [...plural].every(x => sexes.has(x))) out.sex = [...sexes][0];
   // Time in the shelter as written after "Prieglaudoje nuo": "2026 m. birželio mėn.", "2025-03". One value only.
   const since = new Set([...String(text || '').matchAll(IN_SHELTER)].map(m => `nuo ${N.cleanText(m[1])}`));
   if (since.size === 1) out.in_shelter = [...since][0];
@@ -134,4 +163,4 @@ function fromProse(text) {
   return out;
 }
 
-module.exports = { fromPairs, pairsFromText, fieldFor, fromProse };
+module.exports = { fromPairs, pairsFromText, pairsFromHtml, fieldFor, fromProse };

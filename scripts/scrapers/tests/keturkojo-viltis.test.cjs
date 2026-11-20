@@ -25,7 +25,7 @@ test('keturkojo-viltis: species from rusis, age from "Spėjama gimimo data", sta
   const m = byId['keturkojo-viltis:2077'];
   assert.equal(m.name, 'Morana');
   assert.equal(m.species, 'cat');
-  assert.equal(m.age_text, '2025-10-01');
+  assert.equal(m.age_text, 'Spėjama gimimo data: 2025-10-01');
   assert.equal(m.sex, null);
   assert.equal(m.status, 'unknown');
   assert.deepEqual(m.photos, ['https://keturkojo-viltis.lt/wp-content/uploads/2026/11/morana.jpg']);
@@ -55,4 +55,46 @@ test('keturkojo-viltis: Žvirbliukas page gives birth date, health facts and a c
   assert.match(z.bio_lt, /^Gimimo data/);
   assert.match(z.bio_lt, /Prieglaudoje nuo: 2026 m\. birželio mėn\.$/);
   assert.doesNotMatch(z.bio_lt, /Facebook|☎|Stoties|keturkojo-viltis\.lt/);
+});
+
+test('keturkojo-viltis: detail page gives sex and status from its fact list', async () => {
+  const html = require('node:fs').readFileSync(require('node:path').join(__dirname, '../fixtures/keturkojo-viltis/morana.html'), 'utf8');
+  const r = { ...routes, 'https://keturkojo-viltis.lt/gyvunai/morana/': { body: html } };
+  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, []) });
+  const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
+  assert.equal(run.state, 'complete');
+  const m = run.animals.find(a => a.id === 'keturkojo-viltis:2077');
+  assert.equal(m.sex, 'female', '<dt>Lytis</dt><dd>Patelė</dd>');
+  assert.equal(m.status, 'available', '"Ieško namų"');
+  assert.equal(m.statusEvidence, 'Ieško namų');
+  assert.equal(m.age_text, 'Spėjama gimimo data: 2025-10-01');
+  // No detail page for the other fixture animal: its REST facts stay, nothing is guessed.
+  const t = run.animals.find(a => a.id === 'keturkojo-viltis:2050');
+  assert.equal(t.sex, null);
+  assert.equal(t.status, 'unknown');
+});
+
+test('keturkojo-viltis: a returned/deceased detail is excluded without failing every other animal', async () => {
+  const html = require('node:fs').readFileSync(require('node:path').join(__dirname, '../fixtures/keturkojo-viltis/morana.html'), 'utf8');
+  const r = { ...routes, 'https://keturkojo-viltis.lt/gyvunai/morana/': { body: html.replace('Ieško namų', 'Grįžo namo') } };
+  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, []) });
+  const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
+  assert.equal(run.state, 'complete');
+  assert.equal(run.animals.length, 1);
+  assert.equal(run.animals[0].id, 'keturkojo-viltis:2050');
+  assert.deepEqual(run.skipped, [{ nativeId: '2077', reason: 'Grįžo namo' }]);
+});
+
+test('keturkojo-viltis: own facts and missing photo use one request and ignore related facts', async () => {
+  const calls = [];
+  const post = Object.values(routes).flatMap(r => r?.body || []).find(p => p?.id === 2050);
+  const r = { ...routes, [post.link]: { body: '<aside class="kv-animal__panel"><dl class="kv-facts"><dt>Lytis</dt><dd>Patinas</dd></dl></aside>'
+    + '<div class="kv-gallery__main"><img src="/own-photo.jpg"><img src="https://different.example/foreign.jpg"></div>'
+    + '<section class="related"><dl><dt>Lytis</dt><dd>Patelė</dd></dl><img src="/related.jpg"></section>' } };
+  const fetcher = createFetcher({ allowedHosts: adapter.hosts, ...fakeClock(), fetchImpl: fakeFetch(r, calls) });
+  const run = await runSource(adapter, { fetcher, cache: createParseCache(null) });
+  const a = run.animals.find(a => a.id === 'keturkojo-viltis:2050');
+  assert.equal(a.sex, 'male');
+  assert.deepEqual(a.photos, ['https://keturkojo-viltis.lt/own-photo.jpg']);
+  assert.equal(calls.filter(c => c.url === post.link).length, 1, 'no duplicate gallery/detail request');
 });

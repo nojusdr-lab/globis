@@ -211,3 +211,33 @@ test('sex: "Moteriška/Vyriška" and the padekman spelling "Motiriška"', () => 
   const N = require('../lib/normalize.cjs');
   assert.deepEqual(['Moteriška', 'Motiriška', 'Vyriška', 'Moteris'].map(N.sex), ['female', 'female', 'male', null]);
 });
+
+test('fromPairs: a birth-date label stays with its date; trailing weight/height is cut from the age', () => {
+  // keturkojo-viltis.lt/gyvunai/morana/ (2026-11-20): "Spėjama gimimo data: 2025-10-01"
+  assert.equal(L.fromPairs([['Spėjama gimimo data', '2025-10-01']]).age_text, 'Spėjama gimimo data: 2025-10-01');
+  assert.equal(L.fromPairs([['Gimimo data:', '2018 10 14']]).age_text, 'Gimimo data: 2018 10 14');
+  assert.equal(L.fromPairs([['Gimęs', '2021']]).age_text, 'Gimęs: 2021');
+  assert.equal(L.fromPairs([['Amžius', 'Apie 3 metai']]).age_text, 'Apie 3 metai');
+  assert.equal(L.fromPairs([['Spėjama gimimo data', '2020-03-01, svoris: 12 kg, ūgis ties ketera: 45 cm, ženklinta, skiepyta.']]).age_text,
+    'Spėjama gimimo data: 2020-03-01');
+});
+
+test('parse cache: a change in the shared label rules invalidates cached parses', async () => {
+  const { createParseCache } = require('../lib/parse-cache.cjs');
+  const dir = require('node:fs').mkdtempSync(require('node:path').join(require('node:os').tmpdir(), 'pc-'));
+  let calls = 0;
+  const parse = async () => ++calls;
+  await createParseCache(dir, { libVersion: 'a' }).getOrParse('h'.repeat(64), 'v1', parse);
+  await createParseCache(dir, { libVersion: 'a' }).getOrParse('h'.repeat(64), 'v1', parse);
+  assert.equal(calls, 1, 'same rules: cache hit');
+  await createParseCache(dir, { libVersion: 'b' }).getOrParse('h'.repeat(64), 'v1', parse);
+  assert.equal(calls, 2, 'labels.cjs/normalize.cjs changed: parse again');
+});
+
+test('pairsFromHtml: bold label, dt/dd and th/td fact lists', () => {
+  // bukmanodraugas.lt/martukas/ (2026-11-20), Elementor text widgets
+  const html = '<div><b>Amžius:</b> Gimimo data apie 2023 m. </div><div><b>Lytis:</b> Patinas </div><div><b>Ūgis:</b> Mažas </div>'
+    + '<dl><div><dt>Lytis</dt><dd>Patelė</dd></div></dl><table><tr><th>Skiepai</th><td>Taip</td></tr></table><p><strong>Kaip padėti?</strong></p>';
+  assert.deepEqual(L.pairsFromHtml(html), [['Amžius', 'Gimimo data apie 2023 m.'], ['Lytis', 'Patinas'], ['Ūgis', 'Mažas'], ['Lytis', 'Patelė'], ['Skiepai', 'Taip']]);
+  assert.deepEqual(L.fromPairs(L.pairsFromHtml(html)), { age_text: 'Gimimo data apie 2023 m.', sex: 'male', size: 'small', vaccinated: true });
+});
