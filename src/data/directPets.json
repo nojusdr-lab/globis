@@ -20442,44 +20442,6 @@
   }
  },
  {
-  "id": "penktakoja:19175",
-  "url": "https://penktakoja.lt/beglobis/gyvunu-geroves-zygis-spalio-4d/",
-  "source": "penktakoja",
-  "name": "Gyvūnų gerovės žygis su beglobiais šunimis – spalio 4d.",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/03/spalio4.png"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "🐶 Renginio eiga: Atvykstate ir prisiregistruojate (būtina parodyti el. bilietą) Gaunate savo keturkojį bendražygį Žygiuojate 7 km maršrutu Grįžę pasivaišinate arbata ir užkandžiais 📍 Liepų g. 2, Linksmakalnis, Kauno r. 🕒 Žygio laikai (spalio 4d): Pirmasis startas – 11:00 val. (iki 60 dalyvių) Antrasis startas – 13:00 val. (iki 60 dalyvių)",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-10-04T06:55:11Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:21373",
   "url": "https://penktakoja.lt/beglobis/keksas/",
   "source": "penktakoja",
@@ -21041,118 +21003,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2026-07-01T18:15:57Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:20793",
-  "url": "https://penktakoja.lt/beglobis/parama/",
-  "source": "penktakoja",
-  "name": "Parama",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-02-11T11:51:36Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:20805",
-  "url": "https://penktakoja.lt/beglobis/vienkartine-parama/",
-  "source": "penktakoja",
-  "name": "VIENKARTINĖ PARAMA",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/01/image.png"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-02-11T12:10:17Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:20808",
-  "url": "https://penktakoja.lt/beglobis/labai-reikalinga-kasmenesine-parama/",
-  "source": "penktakoja",
-  "name": "LABAI REIKALINGA: KASMĖNESINĖ PARAMA",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/01/Reguliari-parama.png"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "asf",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-02-11T12:10:58Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -23471,44 +23321,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2024-12-02T11:06:15Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:15856",
-  "url": "https://penktakoja.lt/beglobis/produktas/",
-  "source": "penktakoja",
-  "name": "Produktas",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2024/11/default-giftcard-main-image.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2024-12-10T08:26:25Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
