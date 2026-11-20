@@ -27,7 +27,7 @@ This data is not sent to our servers and we cannot see it. It is not linked to y
 An account is only needed to see your saved list on more than one device.
 
 - **What we store:** your email address, your password (only as an encrypted hash; we cannot see it), the IDs of the listings you saved and when you saved them.
-- **Where:** on Supabase servers in the European Union (Frankfurt, Germany). Supabase is our data processor.
+- **Where:** on Supabase servers in the European Union (Ireland). Supabase is our data processor.
 - **Why:** only to sync your list. Other users cannot see your data.
 - **Legal basis:** contract (GDPR Art. 6(1)(b)), because you create the account to use syncing.
 - **How long:** for as long as you keep the account.

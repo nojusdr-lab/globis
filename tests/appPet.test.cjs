@@ -57,3 +57,10 @@ test('withoutBlocked: Maži jausmai rows are hidden from server and globok.lt co
   ];
   assert.deepEqual(withoutBlocked(pets).map(p => p.id), ['kggn:1']);
 });
+
+test('app data: no globok.lt listing or photo reaches the app (globok is crosscheck only)', () => {
+  const fs = require('node:fs'), path = require('node:path');
+  const direct = require('../src/data/directPets.json');
+  assert.equal(direct.filter(p => /globok\.lt/.test(JSON.stringify([p.url, p.photos]))).length, 0);
+  assert.doesNotMatch(fs.readFileSync(path.join(__dirname, '../src/data/pets.js'), 'utf8'), /allPets/);
+});

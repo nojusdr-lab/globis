@@ -27,7 +27,7 @@ Kad programėlė prisimintų jūsų pasirinkimus, jūsų telefone (arba naršykl
 Paskyra reikalinga tik tam, kad išsaugotų gyvūnų sąrašas būtų matomas keliuose jūsų įrenginiuose.
 
 - **Ką saugome:** el. pašto adresą, slaptažodį (tik užšifruoto maišo pavidalu, jo nematome), išsaugotų gyvūnų skelbimų numerius ir jų išsaugojimo laiką.
-- **Kur:** Supabase serveriuose Europos Sąjungoje (Frankfurtas, Vokietija). Supabase yra mūsų duomenų tvarkytojas.
+- **Kur:** Supabase serveriuose Europos Sąjungoje (Airija). Supabase yra mūsų duomenų tvarkytojas.
 - **Kam:** tik jūsų sąrašo sinchronizavimui. Kiti vartotojai jūsų duomenų nemato.
 - **Teisinis pagrindas:** sutartis (BDAR 6 str. 1 d. b p.), nes paskyrą kuriate patys, kad naudotumėtės sinchronizavimu.
 - **Kiek laiko:** kol turite paskyrą.
