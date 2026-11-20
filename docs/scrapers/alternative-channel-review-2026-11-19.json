@@ -2407,5 +2407,31 @@
     "filteredOut": 5,
     "accepted": 162,
     "note": "All selected record titles and status mentions checked deterministically; found-category conflicts excluded. Image checks and final published counts are recorded separately in verification-2026-11-19.json."
+  },
+  "nonAnimalRecordReview": {
+    "source": "penktakoja",
+    "url": "https://penktakoja.lt/beglobis/parama/",
+    "checkedAt": "2026-11-19T13:58:42.704Z",
+    "title": "Parama",
+    "donationWidgetVerified": true,
+    "individualDescriptionPresent": false,
+    "galleryCount": 0,
+    "evidence": [
+      {
+        "url": "https://penktakoja.lt/robots.txt",
+        "method": "GET",
+        "status": 200,
+        "hash": "f6def844db51d33c6d5a296d1dbfcf13d85035a8b18dec46f1e472ae85c45d7d",
+        "observedAt": "2026-11-19T13:58:43.019Z"
+      },
+      {
+        "url": "https://penktakoja.lt/beglobis/parama/",
+        "method": "GET",
+        "status": 200,
+        "hash": "d6e912cd0791277ca0b900242b497cf323eee7f057e96287324e62694ace67c9",
+        "observedAt": "2026-11-19T13:58:47.796Z"
+      }
+    ],
+    "note": "Detail page contains a generic donation selector, not an individual animal profile. Exclude only with this verified widget, generic title and no individual description/photo; a missing image alone is insufficient."
   }
 }
