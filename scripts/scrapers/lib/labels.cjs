@@ -69,7 +69,7 @@ function pairsFromHtml(html) {
 // Participle in any gender/number: -as, -a, -i, -os ("Skiepytos, ženklintos" about female pups).
 const PROSE = {
   neutered: [/^(kastruot|sterilizuot)(as|a|i|os)$/, /^ne(kastruot|sterilizuot)(as|a|i|os)$/],
-  vaccinated: [/^(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/],
+  vaccinated: [/^(pa)?(skiepyt|skiept|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|skiept|vakcinuot)(as|a|i|os)$/],
   chipped: [/^(čipuot|(pa|su)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa|su)?ženklint)(as|a|i|os)$/],
 };
 // Procedure nouns that, next to "laukia" (is waiting for), say the procedure is still to be done.
@@ -106,7 +106,8 @@ const SIZE_OF = { mažo: 'small', nedidelio: 'small', vidutinio: 'medium', didel
 function fromProse(text) {
   const out = {};
   // Emoji end a thought too: "…namuose bus meilūnas🤍 Kastruotas" is two sentences, not a plan.
-  const sentences = N.fold(text).split(/[.!?\n]+|\p{Extended_Pictographic}+/u).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
+  // Parentheses too: "(kastruotas, čipuotas) visa informacija bus suteikta" is a fact, not a plan.
+  const sentences = N.fold(text).split(/[.!?\n()]+|\p{Extended_Pictographic}+/u).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
   const words = sentences.flat();
   for (const [field, [yes, no]] of Object.entries(PROSE)) {
     const seen = new Set();

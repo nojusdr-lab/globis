@@ -137,3 +137,17 @@ test('fromProse: "suženklintas/suženklinta" counts as chipped (sos-gyvunai Ser
   assert.equal(r.neutered, true);
   assert.equal(fromProse('Dar nesuženklintas.').chipped, false);
 });
+
+test('fromProse: short "skiepta" counts as vaccinated (sos-gyvunai Ruzlė)', () => {
+  assert.equal(fromProse('Apie 14 metų. Sterilizuota, skiepta, ženklinta.').vaccinated, true);
+  assert.equal(fromProse('Dar neskieptas.').vaccinated, false);
+});
+
+test('fromProse: facts in parentheses are not voided by a plan word outside them (siauliuletenele Zulis)', () => {
+  const r = fromProse('Apie Zulį (~2018m. gimimo, kastruotas, čipuotas, vakcinuotas) visa informacija bus suteikta tel.');
+  assert.equal(r.neutered, true);
+  assert.equal(r.chipped, true);
+  assert.equal(r.vaccinated, true);
+  // A plan inside the parentheses still counts as a plan.
+  assert.equal(fromProse('Atvyko mamytė Čipa (ji bus sterilizuota ir grąžinta atgal).').neutered, undefined);
+});
