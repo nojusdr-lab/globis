@@ -57,10 +57,9 @@ function decode(raw) {
   }
   return out;
 }
-const shouldClaim = ({dx,dy}) => Math.abs(dx)>8 && Math.abs(dx)>Math.abs(dy)*1.3;
 // What to send to the server so it matches the device's saved list.
 function syncPlan(saved,remote) {
   return {add:saved.filter(id=>!remote.has(id)),drop:[...remote].filter(id=>!saved.includes(id))};
 }
 
-module.exports={emptyState,langFromLocale,reducer,decode,shouldClaim,cleanFilters,syncPlan};
+module.exports={emptyState,langFromLocale,reducer,decode,cleanFilters,syncPlan};
