@@ -1,6 +1,6 @@
 # GLOBIS privatumo politika
 
-> **Juodraštis.** Paruošta pagal tai, ką programėlė daro dabar (2026-11-16). Tai ne teisinė konsultacija. Prieš skelbiant savininkas įrašo tikrus duomenis vietoj `[…]` ir, jei gali, duoda peržiūrėti teisininkui. Kol laukų `[…]` neužpildyta, politikos skelbti negalima.
+> **Juodraštis.** Paruošta pagal tai, ką programėlė daro dabar (2026-11-17, pridėta neprivaloma paskyra). Tai ne teisinė konsultacija. Prieš skelbiant savininkas įrašo tikrus duomenis vietoj `[…]` ir, jei gali, duoda peržiūrėti teisininkui. Kol laukų `[…]` neužpildyta, politikos skelbti negalima.
 
 **Galioja nuo:** [data]
 **Programėlę teikia:** [vardas, pavardė arba įmonės pavadinimas, kodas, adresas]
@@ -8,7 +8,7 @@
 
 ## Trumpai
 
-GLOBIS nerenka jūsų asmens duomenų. Paskyros kurti nereikia. Mes nenaudojame analitikos, reklamos ar sekimo įrankių. Tai, ką išsaugote, lieka tik jūsų telefone.
+Paskyros kurti nereikia: be jos galite naršyti ir išsaugoti gyvūnus, o tai, ką išsaugote, lieka jūsų telefone. Jei patys susikuriate neprivalomą paskyrą, saugome tik jūsų el. pašto adresą, slaptažodžio maišą ir išsaugotų gyvūnų numerius. Mes nenaudojame analitikos, reklamos ar sekimo įrankių.
 
 ## Kas laikoma jūsų įrenginyje
 
@@ -22,6 +22,17 @@ Kad programėlė prisimintų jūsų pasirinkimus, jūsų telefone (arba naršykl
 
 **Kaip ištrinti:** pašalinkite gyvūną iš skilties „Išsaugoti“, išvalykite programėlės duomenis telefono nustatymuose arba ištrinkite programėlę.
 
+## Neprivaloma paskyra
+
+Paskyra reikalinga tik tam, kad išsaugotų gyvūnų sąrašas būtų matomas keliuose jūsų įrenginiuose.
+
+- **Ką saugome:** el. pašto adresą, slaptažodį (tik užšifruoto maišo pavidalu, jo nematome), išsaugotų gyvūnų skelbimų numerius ir jų išsaugojimo laiką.
+- **Kur:** Supabase serveriuose Europos Sąjungoje (Airija). Supabase yra mūsų duomenų tvarkytojas.
+- **Kam:** tik jūsų sąrašo sinchronizavimui. Kiti vartotojai jūsų duomenų nemato.
+- **Teisinis pagrindas:** sutartis (BDAR 6 str. 1 d. b p.), nes paskyrą kuriate patys, kad naudotumėtės sinchronizavimu.
+- **Kiek laiko:** kol turite paskyrą.
+- **Kaip ištrinti:** Paskyra → „Ištrinti paskyrą“. Paskyra ir jos sąrašas ištrinami iš karto.
+
 ## Kas vyksta, kai programėlė rodo nuotraukas ir nuorodas
 
 - **Gyvūnų nuotraukos** kraunamos tiesiai iš prieglaudų ar skelbimų svetainių serverių. Kaip ir atidarant bet kurį tinklalapį, tie serveriai gauna techninius ryšio duomenis, pavyzdžiui, jūsų IP adresą ir įrenginio tipą. Tuos duomenis tvarko tų svetainių valdytojai pagal savo taisykles.
@@ -31,7 +42,7 @@ Kad programėlė prisimintų jūsų pasirinkimus, jūsų telefone (arba naršykl
 
 ## Ko nedarome
 
-- Neprašome vardo, el. pašto, telefono ar vietos.
+- Neprašome vardo, telefono ar vietos. El. pašto prašome tik tada, jei patys kuriate paskyrą.
 - Neprašome leidimų kamerai, mikrofonui, kontaktams ar vietai.
 - Nesekame jūsų kitose programėlėse ar svetainėse.
 - Neparduodame ir neperduodame duomenų reklamai.
@@ -39,8 +50,8 @@ Kad programėlė prisimintų jūsų pasirinkimus, jūsų telefone (arba naršykl
 
 ## Jūsų teisės
 
-Pagal BDAR turite teisę gauti informaciją, kokius duomenis apie jus tvarkome, prašyti juos ištaisyti ar ištrinti ir nesutikti su tvarkymu. Kadangi mes jūsų asmens duomenų nelaikome, dažniausiai paprasčiausia ištrinti programėlės duomenis savo telefone. Klausimus siųskite adresu [el. paštas]. Taip pat galite kreiptis į Valstybinę duomenų apsaugos inspekciją (vdai.lrv.lt).
+Pagal BDAR turite teisę gauti informaciją, kokius duomenis apie jus tvarkome, prašyti juos ištaisyti ar ištrinti ir nesutikti su tvarkymu. Jei paskyros neturite, mes jūsų asmens duomenų nelaikome. Jei turite, programėlėje (Paskyra → „Eksportuoti mano duomenis“) gausite visus apie jus saugomus duomenis JSON formatu, o paskyrą su visais duomenimis galite ištrinti. Klausimus siųskite adresu [el. paštas]. Taip pat galite kreiptis į Valstybinę duomenų apsaugos inspekciją (vdai.lrv.lt).
 
 ## Pakeitimai
 
-Jei programėlėje atsiras paskyros, pranešimai, analitika ar kitos funkcijos, kurios tvarko asmens duomenis, ši politika bus atnaujinta prieš tų funkcijų paleidimą, o data viršuje pakeista.
+Jei programėlėje atsiras pranešimai, analitika ar kitos funkcijos, kurios tvarko asmens duomenis, ši politika bus atnaujinta prieš tų funkcijų paleidimą, o data viršuje pakeista.

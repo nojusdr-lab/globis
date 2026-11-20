@@ -32,23 +32,27 @@ function species(value) {
 
 function sex(value) {
   const v = fold(value);
-  if (/^(patinas|patinėlis|berniukas|katinas|male)$/.test(v)) return 'male';
-  if (/^(patelė|patele|patytė|mergaitė|female)$/.test(v)) return 'female';
+  if (/^(patinas|patinėlis|berniukas|katinas|male|vyriška|vyriškas|vyriškoji)$/.test(v)) return 'male';
+  // "motiriška": a misspelling seen on padekman.lt (2026-11-18).
+  if (/^(patelė|patele|patytė|mergaitė|female|moteriška|moteriškas|moteriškoji|motiriška)$/.test(v)) return 'female';
   return null;
 }
 
 function size(value) {
-  const v = fold(value);
-  if (/^(mažas|maža|mažo dydžio|small)$/.test(v)) return 'small';
-  if (/^(vidutinis|vidutinė|vidutinio dydžio|medium)$/.test(v)) return 'medium';
-  if (/^(didelis|didelė|didelio dydžio|large)$/.test(v)) return 'large';
+  // "Mažas (iki 30cm ties ketera)": the size word is what comes before a bracket or comma.
+  // A noun may follow ("Didelis vyrukas"), "labai"/"gana" may lead; "nemažas" (not small) stays unknown.
+  const v = fold(value).split(/\s*[(,]/)[0].replace(/^(labai|gana)\s+/, '');
+  const is = words => new RegExp('^(' + words + ')(\\s+\\p{L}+)?$', 'u').test(v);
+  if (is('mažas|maža|mažo dydžio|mažo ūgio|nedidelis|nedidelė|nedidukas|nedidukė|mažutis|mažutė|mažulytis|mažulytė|small')) return 'small';
+  if (is('vidutinis|vidutinė|vidutinio dydžio|vidutinio ūgio|medium')) return 'medium';
+  if (is('didelis|didelė|didelio dydžio|didelio ūgio|dičkis|stambus|stambi|large')) return 'large';
   return null;
 }
 
 function yesNo(value) {
   const v = fold(value);
-  if (/^(taip|yra|atlikta|atliktas|skiepytas|skiepyta|paskiepytas|paskiepyta|sterilizuotas|sterilizuota|kastruotas|kastruota|čipuotas|čipuota|paženklintas|paženklinta|ženklintas|ženklinta)$/.test(v)) return true;
-  if (/^(ne|nėra|neatlikta|neatliktas|neskiepytas|neskiepyta|nesterilizuotas|nesterilizuota|nekastruotas|nekastruota)$/.test(v)) return false;
+  if (/^(taip|yra|atlikta|atliktas|skiepytas|skiepyta|paskiepytas|paskiepyta|sterilizuotas|sterilizuota|kastruotas|kastruota|čipuotas|čipuota|paženklintas|paženklinta|ženklintas|ženklinta|vakcinuotas|vakcinuota)$/.test(v)) return true;
+  if (/^(ne|nėra|neatlikta|neatliktas|neskiepytas|neskiepyta|nesterilizuotas|nesterilizuota|nekastruotas|nekastruota|nevakcinuotas|nevakcinuota)$/.test(v)) return false;
   return null;
 }
 

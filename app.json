@@ -81,12 +81,15 @@
           "resizeMode": "contain",
           "backgroundColor": "#F5F8F7"
         }
-      ]
+      ],
+      "expo-image",
+      "expo-font"
     ],
     "extra": {
       "betaStatus": "unpublished",
       "supportEmail": null,
-      "privacyPolicyUrl": null
+      "privacyPolicyUrl": null,
+      "termsUrl": null
     },
     "locales": {
       "lt": "./locales/lt.json",

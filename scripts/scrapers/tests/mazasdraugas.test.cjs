@@ -72,7 +72,8 @@ test('mazasdraugas: parses name, birth, procedures, species, photos, bio; contac
 
 test('mazasdraugas: unknown stays null (sex, size, unlisted procedure)', async () => {
   const { run } = await collect(routes());
-  for (const a of run.animals) { assert.equal(a.sex, null); assert.equal(a.size, null); }
+  // Sex only from the story's own noun: "Seba – rami, gera ir miela katytė".
+  for (const a of run.animals) { assert.equal(a.sex, a.id === 'mazasdraugas:13841' ? 'female' : null, a.id); assert.equal(a.size, null); }
   const p = run.animals.find(a => a.id === 'mazasdraugas:13828');
   assert.equal(p.name, 'Pripsas');
   assert.equal(p.neutered, null, '"Skiepytas, čipuotas." says nothing about neutering');

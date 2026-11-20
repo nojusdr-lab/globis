@@ -22,9 +22,17 @@ test('unnamed animals are not shown', () => {
 });
 
 test('unmapped source is skipped, nothing invented', () => {
-  const { pets, report } = build([{ source: 'lese', animals: [{ ...animal, source: 'lese' }] }], shelters, []);
+  const { pets, report } = build([{ source: 'beglobis', animals: [{ ...animal, source: 'beglobis' }] }], shelters, []);
   assert.equal(pets.length, 0);
   assert.equal(report[0].state, 'unmapped');
+});
+
+test('lese: each animal joins its branch; unknown branch is not shown', () => {
+  const both = [...shelters, { id: 'leseltvilnius', city: 'Vilnius' }, { id: 'leseltkaunas', city: 'Kaunas' }];
+  const lese = h => ({ ...animal, id: `lese:${h}`, source: 'lese', shelterHint: h });
+  const { pets } = build([{ source: 'lese', animals: [lese('vilnius'), lese('kaunas'), lese(null)] }], both, []);
+  assert.deepEqual(pets.map(p => [p.id, p.shelter.id, p.city]),
+    [['lese:vilnius', 'leseltvilnius', 'Vilnius'], ['lese:kaunas', 'leseltkaunas', 'Kaunas']]);
 });
 
 test('source missing from this run keeps its previous rows', () => {

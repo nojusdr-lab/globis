@@ -3,7 +3,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const adapter = require('../adapters/lese.cjs');
+const adapter = require('../adapters/lese.cjs').createLeseAdapter({ details: false });
 const { createLeseAdapter } = require('../adapters/lese.cjs');
 const { createFetcher } = require('../lib/polite-fetch.cjs');
 const { createParseCache } = require('../lib/parse-cache.cjs');
@@ -92,7 +92,7 @@ test('lese: pagination stops on the last page (current page, no next)', async ()
 });
 
 test('lese: page limit reached = not complete (partial, never published)', async () => {
-  const { run } = await collect(routes, createLeseAdapter({ maxPages: 1 }));
+  const { run } = await collect(routes, createLeseAdapter({ maxPages: 1, details: false }));
   assert.equal(run.state, 'partial');
 });
 
@@ -110,4 +110,15 @@ test('lese: filter not applied or list missing = failed, never a silent wrong li
   assert.equal((await collect({ ...routes, [P1]: { body: unfiltered } })).run.state, 'failed');
   const noList = '<html><body><main><select id="stat"><option value="1" selected>Ieško namų</option></select></main></body></html>';
   assert.equal((await collect({ ...routes, [P1]: { body: noList } })).run.state, 'failed');
+});
+
+test('lese: detail page facts, gallery, branch', () => {
+  const { parseDetail } = require('../adapters/lese.cjs');
+  const d = parseDetail(fs.readFileSync(path.join(__dirname, '../fixtures/lese/detail-urve.html'), 'utf8'),
+    'https://lese.lt/globotiniai/en-urve/');
+  assert.deepEqual({ ...d, photos: d.photos.length }, {
+    species: 'dog', sex: 'female', size: 'small', vaccinated: true, neutered: false, chipped: null,
+    age_text: '2 mėn.', bio_lt: 'Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.',
+    photos: 1, sourceUpdatedAt: '2026-11-16T00:00:00Z', shelterHint: 'vilnius',
+  });
 });

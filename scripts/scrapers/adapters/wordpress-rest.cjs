@@ -8,7 +8,7 @@ const L = require('../lib/labels.cjs');
 const PARSER_VERSION = 'wp-rest-1';
 
 function createWordpressAdapter(config) {
-  const { id, name, base, restBase, taxonomies = {}, perPage = 100, maxPages = 30, defaults = {} } = config;
+  const { id, name, base, restBase, taxonomies = {}, perPage = 100, maxPages = 30, defaults = {}, bioHtml = h => h } = config;
   const origin = new URL(base).origin;
   const api = p => `${origin}/wp-json/wp/v2/${p}`;
 
@@ -75,7 +75,7 @@ function createWordpressAdapter(config) {
         neutered: labelled.neutered ?? null,
         chipped: labelled.chipped ?? null,
         photos: mediaUrl.has(post.featured_media) ? [mediaUrl.get(post.featured_media)] : [],
-        bio_lt: post.content?.rendered ?? null,
+        bio_lt: post.content?.rendered == null ? null : bioHtml(post.content.rendered),
         status: st.status,
         statusEvidence: st.statusEvidence,
         sourceUpdatedAt: post.modified_gmt ? `${post.modified_gmt}Z` : null,

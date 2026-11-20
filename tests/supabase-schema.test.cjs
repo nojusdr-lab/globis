@@ -10,7 +10,7 @@ async function db() {
   const { PGlite } = await import('@electric-sql/pglite');
   const pg = new PGlite();
   // Supabase creates these roles; plain Postgres does not.
-  await pg.exec('create role anon; create role authenticated;');
+  await pg.exec(fs.readFileSync(path.join(__dirname, 'supabase-stub.sql'), 'utf8'));
   for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.sql')).sort()) {
     await pg.exec(fs.readFileSync(path.join(dir, file), 'utf8'));
   }
@@ -36,6 +36,17 @@ async function asAnon(pg, sql) {
   await pg.exec('set role anon');
   try { return (await pg.query(sql)).rows; } finally { await pg.exec('reset role'); }
 }
+
+test('API roles retain schema access after restoring into an empty public schema', async () => {
+  const pg = await db();
+  try {
+    // A restored schema need not inherit the cluster's default PUBLIC grant.
+    await pg.exec('revoke all on schema public from public');
+    assert.deepEqual(await asAnon(pg, 'select animal_id from public.published_animals'), []);
+    await pg.exec('set role authenticated');
+    assert.deepEqual((await pg.query('select animal_id from public.saved')).rows, []);
+  } finally { await pg.close(); }
+});
 
 test('unknown facts stay null and status defaults to unknown', async () => {
   const pg = await db();
@@ -163,4 +174,87 @@ test('public listing identities and history stay private until publication', asy
     await pg.query('select publish_source_run($1)', [complete]);
     await checkPublicRows(['globok:b']);
   } finally { await pg.close(); }
+});
+
+test('saved: a user sees and changes only their own rows; anon has no access; account deletion cascades', async () => {
+  const pg = await db();
+  const A = '00000000-0000-0000-0000-00000000000a', B = '00000000-0000-0000-0000-00000000000b';
+  await pg.exec(`insert into auth.users (id) values ('${A}'), ('${B}')`);
+  const as = async (user, sql) => {
+    await pg.exec(`set role authenticated; set request.jwt.claim.sub = '${user}'`);
+    try { return (await pg.query(sql)).rows; } finally { await pg.exec("reset role; set request.jwt.claim.sub = ''"); }
+  };
+  try {
+    await as(A, "insert into saved (user_id, animal_id) values ('" + A + "', 'lese:1')");
+    await as(B, "insert into saved (user_id, animal_id) values ('" + B + "', 'lese:2')");
+    assert.deepEqual((await as(A, 'select animal_id from saved')).map(r => r.animal_id), ['lese:1']);
+    await assert.rejects(as(A, "insert into saved (user_id, animal_id) values ('" + B + "', 'lese:3')"), /row-level security/);
+    await as(A, "delete from saved where animal_id = 'lese:2'"); // B's row: invisible to A, not deleted
+    assert.equal((await pg.query("select count(*)::int n from saved where user_id = '" + B + "'")).rows[0].n, 1);
+    await assert.rejects(asAnon(pg, 'select * from saved'), /permission denied/);
+    await assert.rejects(asAnon(pg, 'select delete_own_account()'), /permission denied/);
+    await as(A, 'select delete_own_account()');
+    assert.deepEqual((await pg.query('select id from auth.users')).rows.map(r => r.id), [B]);
+    assert.equal((await pg.query("select count(*)::int n from saved where user_id = '" + A + "'")).rows[0].n, 0);
+  } finally { await pg.close(); }
+});
+
+test('a delayed older observation cannot replace a newer published source snapshot', async () => {
+  const pg = await db();
+  try {
+    const newer = await run(pg, 'complete', ['globok:b']);
+    const delayed = await run(pg, 'complete', ['globok:a']);
+    await pg.query("update source_runs set started_at = '2026-01-02T00:00:00Z' where id = $1", [newer]);
+    await pg.query("update source_runs set started_at = '2026-01-01T00:00:00Z' where id = $1", [delayed]);
+    await pg.query('select publish_source_run($1)', [newer]);
+    await assert.rejects(pg.query('select publish_source_run($1)', [delayed]), /older/);
+    assert.deepEqual((await asAnon(pg, 'select animal_id from published_animals')).map(row => row.animal_id), ['globok:b']);
+  } finally { await pg.close(); }
+});
+
+test('replaying an already published run leaves its timestamp and the current snapshot unchanged', async () => {
+  const pg = await db();
+  try {
+    const first = await run(pg, 'complete', ['globok:a']);
+    const second = await run(pg, 'complete', ['globok:b']);
+    await pg.query('select publish_source_run($1)', [first]);
+    const before = (await pg.query('select published_at from source_runs where id = $1', [first])).rows[0].published_at;
+    await pg.query('select publish_source_run($1)', [second]);
+    await pg.query('select publish_source_run($1)', [first]);
+    const after = (await pg.query('select published_at from source_runs where id = $1', [first])).rows[0].published_at;
+    assert.equal(after.getTime(), before.getTime());
+    assert.deepEqual((await asAnon(pg, 'select animal_id from published_animals')).map(row => row.animal_id), ['globok:b']);
+  } finally { await pg.close(); }
+});
+
+test('backdated complete runs cannot confirm a large drop after a newer published observation', async () => {
+  const pg = await db();
+  try {
+    const ids = Array.from({ length: 10 }, (_, i) => 'sample:' + i);
+    for (const id of ids) await pg.query('insert into animals (id, source, source_url) values ($1,$2,$3)',
+      [id, 'globok', 'https://source.invalid/' + id]);
+    const previous = await run(pg, 'complete', ids);
+    await pg.query("update source_runs set started_at = '2026-01-10T00:00:00Z' where id = $1", [previous]);
+    await pg.query('select publish_source_run($1)', [previous]);
+    for (let i = 0; i < 2; i++) {
+      const old = await run(pg, 'complete', ids.slice(0, 5));
+      await pg.query("update source_runs set started_at = '2026-01-01T00:00:00Z' where id = $1", [old]);
+    }
+    const current = await run(pg, 'complete', ids.slice(0, 5));
+    await pg.query("update source_runs set started_at = '2026-01-11T00:00:00Z' where id = $1", [current]);
+    await assert.rejects(pg.query('select publish_source_run($1)', [current]), /previous snapshot preserved/);
+    assert.equal((await asAnon(pg, 'select * from published_animals')).length, 10);
+  } finally { await pg.close(); }
+});
+
+test('publication rejects a repeatable-read snapshot that could predate its source lock', async () => {
+  const pg = await db();
+  try {
+    const id = await run(pg, 'complete', ['globok:a']);
+    await pg.query('begin isolation level repeatable read');
+    await assert.rejects(pg.query('select publish_source_run($1)', [id]), /read committed/i);
+  } finally {
+    await pg.query('rollback');
+    await pg.close();
+  }
 });

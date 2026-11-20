@@ -18,6 +18,10 @@ const L = require('../lib/labels.cjs');
 
 const ID = 'katinosvajone';
 const BASE = 'https://www.katinosvajone.lt/';
+// Pages have no species field. The shelter takes in cats only: /apie-mus (read 2026-11-18) says
+// "Pagal galimybes priglaudžiame nereikalingais tapusius katinėlius", and no list page (all 175,
+// every status since 2014) mentions a dog. A labelled "Rūšis" on a page would still win.
+const SITE_SPECIES = 'cat';
 const LIST = `${BASE}musu-globotiniai`;
 const FILTER = 'for_adoption';
 const LIST_PARSER = 'katinosvajone-list-2';
@@ -135,7 +139,7 @@ async function collect({ fetcher, cache, log }) {
       nativeId: c.nativeId,
       sourceUrl: c.sourceUrl,
       name: c.name,
-      species: f.species ?? null,
+      species: f.species ?? SITE_SPECIES,
       sex: f.sex ?? null,
       age_text: f.age_text ?? null,
       size: f.size ?? null,
