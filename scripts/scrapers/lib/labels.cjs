@@ -70,7 +70,7 @@ function pairsFromHtml(html) {
 const PROSE = {
   neutered: [/^(kastruot|sterilizuot)(as|a|i|os)$/, /^ne(kastruot|sterilizuot)(as|a|i|os)$/],
   vaccinated: [/^(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|vakcinuot)(as|a|i|os)$/],
-  chipped: [/^(čipuot|(pa)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa)?ženklint)(as|a|i|os)$/],
+  chipped: [/^(čipuot|(pa|su)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa|su)?ženklint)(as|a|i|os)$/],
 };
 // Procedure nouns that, next to "laukia" (is waiting for), say the procedure is still to be done.
 const PENDING = {

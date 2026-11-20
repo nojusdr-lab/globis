@@ -129,3 +129,11 @@ test('fromProse: "laukia <procedure>" means not done yet', () => {
   assert.equal(fromProse('Skiepyta, čipuota, sterilizuota. Galbūt jūsų namuose Upės laukia tas žmogus.').neutered, true);
   assert.equal(fromProse('Kastruotas. Laukia kastracija.').neutered, undefined); // contradiction -> unknown
 });
+
+test('fromProse: "suženklintas/suženklinta" counts as chipped (sos-gyvunai Seras, Luna)', () => {
+  const r = fromProse('Gimimo data: 2017.01.01 Paskiepyta, suženklinta, gavo vaistų nuo vidaus ir išorės parazitų, sterilizuota.');
+  assert.equal(r.chipped, true);
+  assert.equal(r.vaccinated, true);
+  assert.equal(r.neutered, true);
+  assert.equal(fromProse('Dar nesuženklintas.').chipped, false);
+});
