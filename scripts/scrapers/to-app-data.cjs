@@ -7,22 +7,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DATA = path.join(__dirname, '../../src/data');
-// Adapter id -> shelters.json id, where it is not `${id}lt`. lese has two shelters (Kaunas,
-// Vilnius) and beglobis has no shelter record yet: both skipped until mapped by a person.
-const SHELTER = { gyvunugloba: 'gyvunuglobacom' };
-
-function toAppPet(a, shelter) {
-  return {
-    id: a.id, url: a.sourceUrl, source: a.source, name: a.name, species: a.species ?? null,
-    city: shelter.city ?? null, photos: a.photos ?? [], status: a.status ?? 'unknown',
-    statusEvidence: a.statusEvidence ?? null, sex: a.sex ?? null, ageLt: a.age_text ?? null, ageEn: null,
-    size: a.size ?? null, waitingDays: null,
-    medical: { chipped: a.chipped ?? null, vaccinated: a.vaccinated ?? null, neutered: a.neutered ?? null },
-    compatibilityTagsLt: [], compatibilityTagsEn: [], personalityTraitsLt: [], personalityTraitsEn: [],
-    bioLt: a.bio_lt ?? null, bioEn: null, sourceUpdatedAt: a.sourceUpdatedAt ?? null,
-    shelter: { id: shelter.id, name: shelter.name, city: shelter.city, address: shelter.address, url: shelter.url },
-  };
-}
+const { SHELTER, BRANCHES, shelterResolver, toAppPet } = require('../../src/data/appPet.cjs');
 
 function build(snapshots, shelters, previous) {
   const byId = new Map(shelters.map(s => [s.id, s]));
@@ -30,11 +15,12 @@ function build(snapshots, shelters, previous) {
   for (const p of previous) rows.set(p.source, [...(rows.get(p.source) ?? []), p]);
   const report = [];
   for (const snap of snapshots) {
-    const shelter = byId.get(SHELTER[snap.source] ?? `${snap.source}lt`);
-    if (!shelter) { report.push({ source: snap.source, state: 'unmapped' }); continue; }
-    // An unnamed card is not shown; the animal stays in the source snapshot.
-    const named = snap.animals.filter(a => a.name?.trim());
-    rows.set(snap.source, named.map(a => toAppPet(a, shelter)));
+    const branches = BRANCHES[snap.source];
+    const shelterOf = shelterResolver(snap.source, byId);
+    if (!branches && !shelterOf()) { report.push({ source: snap.source, state: 'unmapped' }); continue; }
+    // An unnamed card, or one whose branch is unknown, is not shown; it stays in the source snapshot.
+    const named = snap.animals.filter(a => a.name?.trim() && shelterOf(a));
+    rows.set(snap.source, named.map(a => toAppPet(a, shelterOf(a))));
     report.push({ source: snap.source, state: 'ok', animals: named.length, unnamed: snap.animals.length - named.length });
   }
   return { pets: [...rows.values()].flat(), report };

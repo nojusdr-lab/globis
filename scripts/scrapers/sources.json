@@ -1,5 +1,5 @@
 {
-  "_about": "Shelter websites from the VMVT guardian registry (docs/discovery-engine/vmvt-guardian-inventory.tsv). Facebook rows are not listed here: public page profiles are read by scripts/scrapers/facebook-pages.cjs (owner decision 2026-11-17); animals are not read from Facebook. decision: adapter = collector exists; probe = robots/terms/listing must be checked from GitHub Actions (cloud sandbox could not read it); no_listing = site has no animal list; blocked = robots.txt or terms forbid; other_thread = handled elsewhere; paused = site down or under maintenance. checked = date of the manual check.",
+  "_about": "Shelter websites from the VMVT guardian registry (docs/discovery-engine/vmvt-guardian-inventory.tsv). Facebook rows are not listed here: public page profiles are read by scripts/scrapers/facebook-pages.cjs (owner decision 2026-11-17); owner allows reading animal posts from public pages without login (2026-11-19). decision: adapter = collector exists; probe = robots/terms/listing must be checked from GitHub Actions (cloud sandbox could not read it); no_listing = site has no animal list; blocked = robots.txt or terms forbid; other_thread = handled elsewhere; paused = site down or under maintenance. checked = date of the manual check.",
   "sources": [
     {
       "id": "kggn",
@@ -70,10 +70,10 @@
         "https://bukmanodraugas.lt/category/kates-iesko-namu/"
       ],
       "robots": "Disallow: /wp-admin/",
-      "terms": "unverified",
+      "terms": "none found (no terms link on the home page, 2026-11-18)",
       "cms": "wordpress-posts",
       "decision": "adapter",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "linksmosiospedutes",
@@ -111,12 +111,15 @@
       "vmvtRow": 12,
       "name": "Mažeikių gyvūnų globos draugija",
       "website": "https://mazeikiugyvunai.lt/",
-      "listing": [],
-      "robots": "unverified (robots.txt returns HTML)",
-      "terms": "unverified",
-      "cms": "javascript app",
-      "decision": "probe",
-      "checked": "2026-11-16"
+      "listing": [
+        "https://gyvunuglobosdraugija.lt/api/public/integrations/animals?adoptable=true"
+      ],
+      "robots": "none: robots.txt on both hosts returns the app HTML (2026-11-18)",
+      "terms": "none found (2026-11-18)",
+      "cms": "Angular app + public integration API",
+      "decision": "adapter",
+      "checked": "2026-11-18",
+      "note": "Adapter mazeikiugyvunai: the site's own public API, adoptable only. Live 2026-11-18: 97 animals, 6 requests. arrivalCircumstances not read."
     },
     {
       "id": "psa",
@@ -124,11 +127,11 @@
       "name": "AB „Panevėžio specialusis autotransportas“",
       "website": "https://www.psa.lt/benamiai-gyvunai/",
       "listing": [],
-      "robots": "unverified",
+      "robots": "Disallow: /admin/ /uploads/apsaugoti/",
       "terms": "unverified",
       "cms": "other",
       "decision": "no_listing",
-      "checked": "2026-11-16",
+      "checked": "2026-11-18",
       "note": "Stray capture service, one-dog gallery, no adoption list."
     },
     {
@@ -137,12 +140,12 @@
       "name": "Gintos Lapėnaitės gyvūnų namai Vizgis",
       "website": "https://vizgis.lt/",
       "listing": [],
-      "robots": "unverified",
+      "robots": "404 (no rules)",
       "terms": "unverified",
       "cms": "unverified",
       "decision": "no_listing",
       "note": "Home page (menu: Klinika, Apie mus, Paremti, Kontaktai) has no animal list; only totals.",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "sggn",
@@ -182,10 +185,10 @@
         "https://siauliuletenele.lt/kategorija/kates/"
       ],
       "robots": "Disallow: /wp-admin/",
-      "terms": "unverified",
+      "terms": "none found (privacy policy link only, 2026-11-18)",
       "cms": "wordpress-posts",
       "decision": "adapter",
-      "checked": "2026-11-17",
+      "checked": "2026-11-18",
       "note": "No per-animal available marker; most animals stay unknown status. Posts can describe several animals."
     },
     {
@@ -227,7 +230,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "gyvunugloba",
@@ -270,10 +273,10 @@
         "https://sos-gyvunai.lt/visi-gyvunai/"
       ],
       "robots": "Yoast, nothing disallowed",
-      "terms": "/tinklapio-taisykles/ unverified",
+      "terms": "/tinklapio-taisykles/ says only \"Informacija ruošiama\" (2026-11-18): no terms yet",
       "cms": "wordpress-rest:gyvunas",
       "decision": "adapter",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "grinda",
@@ -286,7 +289,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "vysniusodas",
@@ -294,12 +297,12 @@
       "name": "VšĮ „Vyšnių sodas“",
       "website": "http://www.vysniusodas.lt/",
       "listing": [],
-      "robots": "unverified",
+      "robots": "Disallow: /wp-admin/",
       "terms": "unverified",
       "cms": "unverified",
       "decision": "no_listing",
       "note": "Menu has only about, adoption form, reports, support; no animal list.",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "akeso",
@@ -311,8 +314,8 @@
       "terms": "unverified",
       "cms": "wordpress",
       "decision": "paused",
-      "checked": "2026-11-16",
-      "note": "Site under maintenance (\"Vyksta atnaujinimo darbai\")."
+      "checked": "2026-11-18",
+      "note": "Site under maintenance (\"Vyksta atnaujinimo darbai\", still 2026-11-19). WP REST type gyvunai answers, but the owner hides the site on purpose, so we do not read it until the site is back."
     },
     {
       "id": "vggd",
@@ -325,7 +328,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "beglobis",
@@ -407,10 +410,10 @@
         "https://mgma.lt/"
       ],
       "robots": "Yoast, nothing disallowed",
-      "terms": "unverified",
+      "terms": "none found (no terms link on the home page, 2026-11-18)",
       "cms": "wordpress-rest:product",
       "decision": "adapter",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "zga",
@@ -452,7 +455,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "donpita",
@@ -465,7 +468,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "lietuvagyvunams",
@@ -487,10 +490,11 @@
         "https://mazijausmai.lt/ieskantys-namu/"
       ],
       "robots": "Disallow: /wp-admin/",
-      "terms": "termshub.io terms not yet read",
+      "terms": "termshub.io paslaugu_teikimo_salygos (read 2026-11-18): no use, copying or distribution for commercial purposes; content may be kept on your own devices but not on servers or networked devices.",
       "cms": "wordpress-elementor",
-      "decision": "adapter",
-      "checked": "2026-11-17"
+      "decision": "paused",
+      "checked": "2026-11-18",
+      "note": "Paused 2026-11-18: storing their content in Supabase conflicts with the terms. Resume only with the shelter's written permission (step 34). Adapter file and test kept."
     },
     {
       "id": "pukuotasvajone",
@@ -503,7 +507,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "telsiusuniukunamai",
@@ -591,27 +595,32 @@
     {
       "id": "keturkojoviltis",
       "vmvtRow": 2,
-      "name": "Asociacija „Keturkojo viltis“, Alytus (VMVT lists only Facebook)",
-      "website": "https://keturkojoviltis.lt/",
-      "listing": [],
-      "robots": "unverified",
-      "terms": "unverified",
-      "cms": "unverified",
-      "decision": "unreachable",
-      "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "name": "Asociacija „Keturkojo viltis“, Alytus",
+      "website": "https://keturkojo-viltis.lt/",
+      "listing": [
+        "https://keturkojo-viltis.lt/wp-json/wp/v2/gyvunas"
+      ],
+      "robots": "User-agent: * Allow: / ; Disallow: /wp-admin/ /?s= ; no crawl-delay",
+      "terms": "none found (no terms link on the home page, 2026-11-18)",
+      "cms": "wordpress",
+      "decision": "adapter",
+      "note": "Real domain has a hyphen (keturkojoviltis.lt does not resolve). Adapter keturkojo-viltis: WP REST gyvunas, live 2026-11-18: 185 animals, 6 requests. No status on the site, so status stays unknown.",
+      "checked": "2026-11-18"
     },
     {
       "id": "naminukai",
       "vmvtRow": 34,
-      "name": "VšĮ „Naminukai“, Vilnius (VMVT lists only Facebook)",
-      "website": "https://naminukai.lt/",
-      "listing": [],
-      "robots": "unverified",
-      "terms": "unverified",
-      "cms": "unverified",
-      "decision": "unreachable",
-      "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
+      "name": "VšĮ „Naminukai“, Vilnius",
+      "website": "https://naminukai.com/",
+      "listing": [
+        "https://naminukai.com/sunys/",
+        "https://naminukai.com/kates/"
+      ],
+      "robots": "User-agent: * / Disallow: /wp-admin/",
+      "terms": "none found",
+      "cms": "wordpress-rest:pages",
+      "decision": "adapter",
+      "note": "naminukai.lt is dead; the shelter moved to naminukai.com (checked 2026-11-17).",
       "checked": "2026-11-17"
     },
     {
@@ -625,7 +634,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     },
     {
       "id": "vggn",
@@ -638,7 +647,7 @@
       "cms": "unverified",
       "decision": "unreachable",
       "note": "Probe from GitHub Actions 2026-11-16: connection failed (site down or domain not in use).",
-      "checked": "2026-11-17"
+      "checked": "2026-11-18"
     }
   ]
 }

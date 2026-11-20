@@ -79,10 +79,12 @@ test('sos-gyvunai: parses REST fields, unknowns stay null, donation block not in
   assert.equal(iz.species, 'dog');
   assert.equal(iz.age_text, 'Jauni (6 mėn. - 2 m.)');
 
-  // The site has no structured sex/size/health fields; prose is not parsed into facts.
-  for (const a of run.animals) {
-    for (const f of ['sex', 'size', 'vaccinated', 'neutered', 'chipped']) assert.equal(a[f], null, `${a.id} ${f}`);
-  }
+  // No structured sex/size/health fields. Health words stated in the description count (fromProse).
+  assert.equal(im.neutered, true); // "Jis atvyko jau kastruotas"
+  // Sex only from a singular noun in the story: "ryžas katinas" (Imbieras).
+  for (const a of run.animals) assert.equal(a.sex, a === im ? 'male' : null, `${a.id} sex`);
+  // Size only where the text states "<word> ūgio/dydžio".
+  for (const a of run.animals) assert.equal(a.size, /(mažo|nedidelio|vidutinio|didelio|stambaus)\s+(ūgio|dydžio)/i.test(a.bio_lt || '') ? a.size : null, `${a.id} size`);
 });
 
 test('sos-gyvunai: status comes from the real "Dovanojami gyvūnai" heading, with evidence', async () => {
@@ -153,4 +155,23 @@ test('sos-gyvunai: a failing page makes the whole run failed', async () => {
   const noListing = routes();
   delete noListing[`${O}/visi-gyvunai/`];
   assert.equal((await collect(noListing)).run.state, 'failed');
+});
+
+test('sos-gyvunai: species and age survive the 2026-11-18 term layout (Katės/Šunys under "Visi gyvūnai")', async () => {
+  // Real live term list of 2026-11-18, ids unchanged; only parents and age names moved.
+  const live = [
+    { id: 51, name: 'Visi gyvūnai', slug: 'visi-gyvunai', parent: 0 },
+    { id: 40, name: 'Katės', slug: 'kates', parent: 51 },
+    { id: 42, name: 'Katės jaunos', slug: 'kates-jaunos', parent: 40 },
+    { id: 43, name: 'Katės suaugusios', slug: 'kates-suaugusios', parent: 40 },
+    { id: 45, name: 'Šunys', slug: 'sunys', parent: 51 },
+    { id: 47, name: 'Šunys jauni', slug: 'sunys-jauni', parent: 45 },
+  ];
+  const r = routes();
+  r[`${O}/wp-json/wp/v2/gyvunai?per_page=100&page=1&_fields=id,name,slug,parent`] = { body: live };
+  const { run } = await collect(r);
+  const byId = Object.fromEntries(run.animals.map(a => [a.id, a]));
+  assert.equal(byId['sos-gyvunai:4436'].species, 'dog');
+  assert.equal(byId['sos-gyvunai:4436'].age_text, 'Šunys jauni');
+  assert.ok(run.animals.every(a => a.species), 'every fixture post carries Katės or Šunys');
 });

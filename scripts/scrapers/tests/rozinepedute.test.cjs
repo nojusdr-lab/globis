@@ -17,7 +17,8 @@ const PAGE2 = 'https://rozinepedute.lt/gyvunai/page/2/';
 const ROBOTS_TXT = 'User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nUser-agent: Amazonbot\nUser-agent: Applebot-Extended\nUser-agent: CCBot\nUser-agent: ClaudeBot\nUser-agent: GPTBot\nUser-agent: Google-Extended\nUser-agent: GoogleOther\nUser-agent: Meta-ExternalAgent\nUser-agent: FacebookBot\nDisallow: /\n\nUser-agent: AhrefsBot\nUser-agent: AhrefsSiteAudit\nUser-agent: barkrowler\nUser-agent: DataForSeoBot\nUser-agent: dotbot\nUser-agent: rogerbot\nUser-agent: SemrushBot\nUser-agent: SiteAuditBot\nUser-agent: SemrushBot-BA\nDisallow: /\n\nSitemap: https://rozinepedute.lt/sitemap.xml\n';
 const ROBOTS = { 'https://rozinepedute.lt/robots.txt': { body: ROBOTS_TXT, headers: { 'content-type': 'text/plain' } } };
 const html = body => ({ body, headers: { 'content-type': 'text/html' } });
-const routes = (list = LIST_HTML, extra = {}) => ({ ...ROBOTS, [LIST]: html(list), ...extra });
+const ELVIS = { 'https://rozinepedute.lt/gyvunai/elvis/': html(fs.readFileSync(path.join(__dirname, '../fixtures/rozinepedute/detail-elvis.html'), 'utf8')) };
+const routes = (list = LIST_HTML, extra = {}) => ({ ...ROBOTS, [LIST]: html(list), ...ELVIS, ...extra });
 
 const REAL_SLUGS = ['emaja', 'frontis', 'fronkis', 'sansa', 'verona', 'cipsas', 'kometa', 'vava', 'elvis',
   'emkis', 'leke', 'minerva', 'savana', 'zuza', 'tigriuke', 'persiladas', 'kanapele', 'hebe'];
@@ -48,7 +49,8 @@ function splitPages() {
 
 test('rozinepedute: robots.txt first, then one GET of the listing, own host only', async () => {
   const { calls } = await collect(routes());
-  assert.deepEqual(calls.map(c => c.url), ['https://rozinepedute.lt/robots.txt', LIST]);
+  assert.deepEqual(calls.slice(0, 2).map(c => c.url), ['https://rozinepedute.lt/robots.txt', LIST]);
+  assert.deepEqual(calls.slice(2).map(c => c.url), REAL_SLUGS.map(s => `${LIST}${s}/`), 'then one GET per animal page');
   assert.ok(calls.every(c => c.method === 'GET'));
   assert.deepEqual(adapter.hosts, ['rozinepedute.lt', 'www.rozinepedute.lt']);
 });
@@ -67,7 +69,7 @@ test('rozinepedute: parses all 18 real cards; facts not on the list stay null', 
   assert.equal(run.animals.find(x => x.id === 'rozinepedute:cipsas').name, 'ČIPSAS');
   assert.equal(run.animals.filter(x => x.sex === 'female').length, 12);
   assert.equal(run.animals.filter(x => x.sex === 'male').length, 6);
-  for (const x of run.animals) {
+  for (const x of run.animals.filter(a => a.id !== 'rozinepedute:elvis')) { // elvis: real detail page, own test
     for (const f of ['species', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt', 'sourceUpdatedAt']) {
       assert.equal(x[f], null, `${x.id} ${f} unknown`);
     }
@@ -116,7 +118,7 @@ test('rozinepedute: paged loop is walked to data-max-pages and stops there', asy
   const { p1, p2 } = splitPages();
   const { run, calls } = await collect(routes(p1, { [PAGE2]: html(p2) }));
   assert.equal(run.state, 'complete');
-  assert.deepEqual(calls.map(c => c.url), ['https://rozinepedute.lt/robots.txt', LIST, PAGE2]);
+  assert.deepEqual(calls.map(c => c.url).filter(u => !REAL_SLUGS.some(s => u === `${LIST}${s}/`)), ['https://rozinepedute.lt/robots.txt', LIST, PAGE2]);
   assert.deepEqual(run.animals.map(a => a.id), REAL_SLUGS.map(s => `rozinepedute:${s}`));
 });
 
@@ -137,4 +139,21 @@ test('rozinepedute: a failing page makes the run failed', async () => {
 test('rozinepedute: a listing with no animal links fails instead of publishing an empty list', async () => {
   const { run } = await collect(routes('<html><body><main><h1>Dovanojami gyvūnai</h1></main></body></html>'));
   assert.equal(run.state, 'failed');
+});
+
+test('rozinepedute: real detail page table gives birth date, sex and health facts', async () => {
+  const { run } = await collect(routes());
+  const e = run.animals.find(a => a.id === 'rozinepedute:elvis');
+  assert.deepEqual([e.age_text, e.sex, e.neutered, e.chipped, e.vaccinated], ['Gimimo data: 2026 06 20', 'male', false, true, true]);
+  assert.equal(e.species, null, 'no species row on the page');
+  assert.equal(e.bio_lt, null, 'empty description block');
+  const other = run.animals.find(a => a.id === 'rozinepedute:sansa');
+  assert.equal(other.vaccinated, null, 'detail page not in fixtures (404): card facts stay');
+});
+
+test('rozinepedute: card "Prieglaudoje: <span>…</span>" becomes in_shelter as written', () => {
+  const { parseListing } = require('../adapters/rozinepedute.cjs')._test;
+  const html = require('node:fs').readFileSync(require('node:path').join(__dirname, '../fixtures/rozinepedute/gyvunai.html'), 'utf8');
+  const cards = parseListing(html, 'https://rozinepedute.lt/gyvunai/').cards;
+  assert.deepEqual(cards.slice(0, 2).map(c => [c.name, c.time]), [['EMAJA', '1mėn.'], ['FRONTIS', '10d.']]);
 });

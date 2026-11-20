@@ -21,7 +21,7 @@ const L = require('../lib/labels.cjs');
 const H = require('../lib/html.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
-const PARSER_VERSION = 'sos-gyvunai-1';
+const PARSER_VERSION = 'sos-gyvunai-2';
 const ORIGIN = 'https://sos-gyvunai.lt';
 const LISTING_URL = `${ORIGIN}/visi-gyvunai/`;
 const LIST_TERM_SLUG = 'visi-gyvunai';
@@ -122,8 +122,10 @@ function createAdapter({ perPage = 100, maxPages = 30 } = {}) {
           bio: bioWithoutDonations(html),
         };
       });
-      const species = [...new Set(postTerms.filter(t => !t.parent).map(t => N.species(t.name)).filter(Boolean))];
-      const ageTerms = postTerms.filter(t => t.parent);
+      // Depth changed on 2026-11-18 ("Katės"/"Šunys" moved under "Visi gyvūnai"), so no level is assumed:
+      // a species term is any term whose name is a species word; an age term is a child of a species term.
+      const species = [...new Set(postTerms.map(t => N.species(t.name)).filter(Boolean))];
+      const ageTerms = postTerms.filter(t => N.species(termById.get(t.parent)?.name));
       const inList = postTerms.some(t => t.slug === LIST_TERM_SLUG);
       const lab = parsed.labelled;
 

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "GLOBIS",
-    "slug": "myliu-tave",
+    "slug": "globis",
     "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,7 @@
     "ios": {
       "icon": "./assets/ios-app-icon.png",
       "supportsTablet": false,
-      "bundleIdentifier": "com.myliutave.app",
+      "bundleIdentifier": "lt.globis.app",
       "privacyManifests": {
         "NSPrivacyTracking": false,
         "NSPrivacyTrackingDomains": [],
@@ -50,7 +50,7 @@
       }
     },
     "android": {
-      "package": "com.myliutave.app",
+      "package": "lt.globis.app",
       "versionCode": 1,
       "permissions": [
         "INTERNET"
@@ -81,12 +81,15 @@
           "resizeMode": "contain",
           "backgroundColor": "#F5F8F7"
         }
-      ]
+      ],
+      "expo-image",
+      "expo-font"
     ],
     "extra": {
       "betaStatus": "unpublished",
       "supportEmail": null,
-      "privacyPolicyUrl": null
+      "privacyPolicyUrl": null,
+      "termsUrl": null
     },
     "locales": {
       "lt": "./locales/lt.json",

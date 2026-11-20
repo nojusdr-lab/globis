@@ -175,3 +175,69 @@ test('cleanText decodes numeric and named HTML entities in one pass', () => {
   assert.equal(cleanText('naujokus&#8230; &#x41;&scaron;&nbsp;&amp;#8230;'), 'naujokus… Aš &#8230;');
   assert.equal(cleanText('a &bogus; b &#0; c'), 'a &bogus; b &#0; c');
 });
+
+test('record: http photos on an https page become https only for the same host', () => {
+  const a = makeAnimal('s', { nativeId: '1', sourceUrl: 'https://www.a.lt/1',
+    photos: ['http://www.a.lt/x.jpg', 'http://cdn.other.lt/y.jpg', '/z.jpg'] });
+  assert.deepEqual(a.photos, ['https://www.a.lt/x.jpg', 'http://cdn.other.lt/y.jpg', 'https://www.a.lt/z.jpg']);
+});
+
+test('size: the word before a bracket or comma counts; other words stay unknown', () => {
+  const N = require('../lib/normalize.cjs');
+  assert.equal(N.size('Mažas (iki 30cm ties ketera)'), 'small');
+  assert.equal(N.size('Vidutinis, 15 kg'), 'medium');
+  // Real linksmosiospedutes.lt "DYDIS:" values (2026-11-19).
+  assert.equal(N.size('Nedidukas, 10 kg svorio'), 'small');
+  assert.equal(N.size('Mažulytė, 6,6 kg svorio'), 'small');
+  assert.equal(N.size('Mažutė, 7,8 kg svorio'), 'small');
+  assert.equal(N.size('Vidutinio ūgio, 18 kg svorio'), 'medium');
+  assert.equal(N.size('Didelis vyrukas, 32 kg svorio'), 'large');
+  assert.equal(N.size('Labai didelis berniukas, apie 50 kg'), 'large');
+  assert.equal(N.size('Gana didelė mergytė, 26 kg svorio'), 'large');
+  assert.equal(N.size('Dičkis, 41 kg svorio'), 'large');
+  assert.equal(N.size('Nemažas šuo, 27 kg svorio'), null, '"not small" is not a size class');
+  assert.equal(N.size('23,4 kg svorio'), null, 'weight alone is not a size class');
+  assert.equal(require('../lib/labels.cjs').fieldFor('Ūgio kategorija'), 'size');
+});
+
+test('labels: rozinepedute-style rows map to health fields', () => {
+  const L = require('../lib/labels.cjs');
+  assert.deepEqual(L.fromPairs([['Ženklinta mikrochema', 'Taip'], ['Skiepų informacija:', 'Vakcinuota'], ['Kastracija', 'Neatlikta']]),
+    { chipped: true, vaccinated: true, neutered: false });
+  assert.deepEqual(L.fromPairs([['Skiepų informacija:', 'Nevakcinuota']]), { vaccinated: false });
+});
+
+test('sex: "Moteriška/Vyriška" and the padekman spelling "Motiriška"', () => {
+  const N = require('../lib/normalize.cjs');
+  assert.deepEqual(['Moteriška', 'Motiriška', 'Vyriška', 'Moteris'].map(N.sex), ['female', 'female', 'male', null]);
+});
+
+test('fromPairs: a birth-date label stays with its date; trailing weight/height is cut from the age', () => {
+  // keturkojo-viltis.lt/gyvunai/morana/ (2026-11-20): "Spėjama gimimo data: 2025-10-01"
+  assert.equal(L.fromPairs([['Spėjama gimimo data', '2025-10-01']]).age_text, 'Spėjama gimimo data: 2025-10-01');
+  assert.equal(L.fromPairs([['Gimimo data:', '2018 10 14']]).age_text, 'Gimimo data: 2018 10 14');
+  assert.equal(L.fromPairs([['Gimęs', '2021']]).age_text, 'Gimęs: 2021');
+  assert.equal(L.fromPairs([['Amžius', 'Apie 3 metai']]).age_text, 'Apie 3 metai');
+  assert.equal(L.fromPairs([['Spėjama gimimo data', '2020-03-01, svoris: 12 kg, ūgis ties ketera: 45 cm, ženklinta, skiepyta.']]).age_text,
+    'Spėjama gimimo data: 2020-03-01');
+});
+
+test('parse cache: a change in the shared label rules invalidates cached parses', async () => {
+  const { createParseCache } = require('../lib/parse-cache.cjs');
+  const dir = require('node:fs').mkdtempSync(require('node:path').join(require('node:os').tmpdir(), 'pc-'));
+  let calls = 0;
+  const parse = async () => ++calls;
+  await createParseCache(dir, { libVersion: 'a' }).getOrParse('h'.repeat(64), 'v1', parse);
+  await createParseCache(dir, { libVersion: 'a' }).getOrParse('h'.repeat(64), 'v1', parse);
+  assert.equal(calls, 1, 'same rules: cache hit');
+  await createParseCache(dir, { libVersion: 'b' }).getOrParse('h'.repeat(64), 'v1', parse);
+  assert.equal(calls, 2, 'labels.cjs/normalize.cjs changed: parse again');
+});
+
+test('pairsFromHtml: bold label, dt/dd and th/td fact lists', () => {
+  // bukmanodraugas.lt/martukas/ (2026-11-20), Elementor text widgets
+  const html = '<div><b>Amžius:</b> Gimimo data apie 2023 m. </div><div><b>Lytis:</b> Patinas </div><div><b>Ūgis:</b> Mažas </div>'
+    + '<dl><div><dt>Lytis</dt><dd>Patelė</dd></div></dl><table><tr><th>Skiepai</th><td>Taip</td></tr></table><p><strong>Kaip padėti?</strong></p>';
+  assert.deepEqual(L.pairsFromHtml(html), [['Amžius', 'Gimimo data apie 2023 m.'], ['Lytis', 'Patinas'], ['Ūgis', 'Mažas'], ['Lytis', 'Patelė'], ['Skiepai', 'Taip']]);
+  assert.deepEqual(L.fromPairs(L.pairsFromHtml(html)), { age_text: 'Gimimo data apie 2023 m.', sex: 'male', size: 'small', vaccinated: true });
+});

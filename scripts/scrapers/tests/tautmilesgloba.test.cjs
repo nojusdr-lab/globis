@@ -17,7 +17,8 @@ const ROBOTS_URL = 'https://tautmilesgloba.lt/robots.txt';
 const P1 = 'https://tautmilesgloba.lt/dovanojami/';
 const P2 = 'https://tautmilesgloba.lt/dovanojami/page/2/';
 const robots = { body: ROBOTS, headers: { 'content-type': 'text/plain' } };
-const routes = { [ROBOTS_URL]: robots, [P1]: { body: fx('dovanojami.html') } };
+const BOBIKAS = 'https://tautmilesgloba.lt/gyvunai/bobikas/';
+const routes = { [ROBOTS_URL]: robots, [P1]: { body: fx('dovanojami.html') }, [BOBIKAS]: { body: fx('detail-bobikas.html') } };
 const pagedRoutes = { [ROBOTS_URL]: robots, [P1]: { body: fx('synthetic-page-1.html') }, [P2]: { body: fx('synthetic-page-2.html') } };
 
 async function collect(r = routes, a = adapter) {
@@ -27,9 +28,10 @@ async function collect(r = routes, a = adapter) {
   return { run, calls };
 }
 
-test('tautmilesgloba: robots.txt first, then one list page, all GET to tautmilesgloba.lt', async () => {
+test('tautmilesgloba: robots.txt first, list page, then one GET per animal page, all to tautmilesgloba.lt', async () => {
   const { calls } = await collect();
-  assert.deepEqual(calls.map(c => c.url), [ROBOTS_URL, P1]);
+  assert.deepEqual(calls.slice(0, 2).map(c => c.url), [ROBOTS_URL, P1]);
+  assert.equal(calls.length, 2 + 19);
   assert.ok(calls.every(c => c.method === 'GET' && new URL(c.url).hostname === 'tautmilesgloba.lt'));
   assert.ok(adapter.hosts.includes('tautmilesgloba.lt') && adapter.hosts.includes('www.tautmilesgloba.lt'));
 });
@@ -45,9 +47,16 @@ test('tautmilesgloba: parses the 19 real cards, ignores spam links, unknown fact
   assert.equal(a.sourceUrl, 'https://tautmilesgloba.lt/gyvunai/cipas-3/');
   assert.deepEqual(a.photos, ['https://tautmilesgloba.lt/wp-content/uploads/2026/08/IMG_4092-500x500.jpg']);
   for (const f of ['species', 'sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt', 'sourceUpdatedAt']) {
-    assert.equal(a[f], null, `${f} is not on the list page`);
+    assert.equal(a[f], null, `${f}: its detail page is not in the fixtures (404), list-card facts stay`);
   }
   assert.equal(byId['tautmilesgloba:dzordzia-sodyboj'].name, 'Džordžia');
+  // Real detail page: fact table + description, phone line dropped.
+  const b = byId['tautmilesgloba:bobikas'];
+  assert.deepEqual([b.species, b.sex, b.age_text, b.neutered, b.size], ['dog', 'male', '4-8 metai', true, 'small']);
+  assert.equal(b.vaccinated, null);
+  assert.equal(b.chipped, null);
+  assert.match(b.bio_lt, /^Tautmilė Bobiką vadina prieglaudos muštynių karaliumi\./);
+  assert.doesNotMatch(b.bio_lt, /📞|0671/);
 });
 
 test('tautmilesgloba: status comes from page text with evidence; missing text = unknown', async () => {
@@ -64,7 +73,7 @@ test('tautmilesgloba: status comes from page text with evidence; missing text = 
 
 test('tautmilesgloba: walks pagination to the last page and stops', async () => {
   const { run, calls } = await collect(pagedRoutes);
-  assert.deepEqual(calls.map(c => c.url), [ROBOTS_URL, P1, P2]);
+  assert.deepEqual(calls.map(c => c.url).filter(u => !u.includes("/gyvunai/")), [ROBOTS_URL, P1, P2]);
   assert.equal(run.state, 'complete');
   assert.equal(run.animals.length, 19);
 });
@@ -84,4 +93,10 @@ test('tautmilesgloba: a failing page makes the whole run failed', async () => {
   assert.equal(run.state, 'failed');
   const { run: r2 } = await collect({ ...routes, [P1]: { body: '<html><body>Maintenance</body></html>' } });
   assert.equal(r2.state, 'failed', 'layout change fails loudly');
+});
+
+test('tautmilesgloba: description lines are cut where contact details start', () => {
+  const body = '<div class="gyvunas-single-text"><p>Mėgsta ilgus pasivaikščiojimus. 0671 68608, Akvilė (jei susidomėjote, parašykite)</p>'
+    + '<p>Sterilizuota. Laukia prieglaudoje. Susisiekite +370 671 68608</p><p>📞 0671 68608</p></div>';
+  assert.equal(adapter.parseDetail(body).bio_lt, 'Mėgsta ilgus pasivaikščiojimus.\nSterilizuota. Laukia prieglaudoje.');
 });

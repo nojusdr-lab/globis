@@ -16,10 +16,28 @@
 // On 2026-11-16 both lists were a single page (no .paging block). If the CMS ever adds
 // .paging links we follow every link that stays on the same listing path; if we stop at the
 // page limit the run is not complete.
-// We do not read /lt/rade-namus/ (adopted animals). Detail pages are not read (see report:
-// none were in the probe, so their layout is not known yet).
+// We do not read /lt/rade-namus/ (adopted animals).
+// Detail pages (2026-11-18): <div id="products-description-<ID>"> holds lines like
+// "AMŽIUS: 2018 10 14<br>DYDIS: ...<br>SKIEPYTAS<br>ČIPUOTAS<br>KASTRUOTAS". We read those facts
+// (one GET per animal, cached by page hash); the description text itself is not kept.
+// A detail page that fails keeps the list-card facts; the run is not failed for one page.
 const html = require('../lib/html.cjs');
 const N = require('../lib/normalize.cjs');
+const L = require('../lib/labels.cjs');
+const { sha256 } = require('../lib/hash.cjs');
+
+const PARSER_VERSION = 'linksmosiospedutes-detail-3';
+
+function parseDetail(body, nativeId) {
+  const $ = html.load(body);
+  const box = $(`#products-description-${nativeId}`).first();
+  if (!box.length) return {};
+  const inner = box.html() || '';
+  const facts = L.fromPairs(L.pairsFromText(inner));
+  // Lines stay separate: each "SKIEPYTAS" line is its own sentence. Commented-out blocks are not page text.
+  const text = inner.replace(/<!--[\s\S]*?-->/g, '').replace(/<br\b[^>]*>|<\/p>|<\/div>/gi, '\n').replace(/<[^>]+>/g, ' ');
+  return { ...L.fromProse(text), ...facts };
+}
 
 const BASE = 'https://www.linksmosiospedutes.lt/';
 const LISTINGS = [`${BASE}lt/suniukai/`, `${BASE}lt/kaciukai/`];
@@ -112,7 +130,7 @@ function parseListing(body, pageUrl, listUrl) {
   return { animals, skipped, pages };
 }
 
-async function collect({ fetcher, log = () => {} }) {
+async function collect({ fetcher, cache, log = () => {} }) {
   const byId = new Map();
   const skipped = [];
   let complete = true;
@@ -139,6 +157,15 @@ async function collect({ fetcher, log = () => {} }) {
     }
   }
   const animals = [...byId.values()];
+  for (const a of animals) {
+    let res;
+    try { res = await fetcher.get(a.sourceUrl); }
+    catch (e) { log(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
+    const d = await cache.getOrParse(sha256(res.body), PARSER_VERSION, () => parseDetail(res.body, a.nativeId));
+    for (const k of ['species', 'sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped']) {
+      if (d[k] != null && k !== 'species') a[k] = d[k];
+    }
+  }
   log(`linksmosiospedutes: ${animals.length} animals, ${skipped.length} skipped`);
   return { animals, skipped, complete };
 }
@@ -150,4 +177,5 @@ module.exports = {
   hosts: ['www.linksmosiospedutes.lt', 'linksmosiospedutes.lt'],
   collect,
   _parseListing: parseListing,
+  _parseDetail: parseDetail,
 };

@@ -110,7 +110,8 @@ function parseListing(body, page) {
 
     animals.push({
       nativeId,
-      sourceUrl: page.url,
+      // All animals share one list page; the fragment keeps each listing URL unique (DB constraint) and still opens that page.
+      sourceUrl: `${page.url}#${nativeId.slice(page.slug.length + 1)}`,
       name,
       species: facts.species ?? species,
       sex: facts.sex ?? null,

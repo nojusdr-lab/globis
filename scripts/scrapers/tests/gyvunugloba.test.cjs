@@ -17,6 +17,7 @@ const routes = {
   [`${P}sunys/`]: { body: fx('sunys.html') },
   [`${P}kates/`]: { body: fx('kates.html') },
   [`${P}kiti/`]: { body: fx('kiti.html') },
+  'https://gyvunugloba.com/portfolio_page/loris-2/': { body: fx('detail-loris-2.html') },
 };
 // The theme's real "Show more" block (from the home page), pointed at a page-2 URL. Test-only.
 const paging = (href, rel) => `<div class="portfolio_paging"><span rel="${rel}" class="load_more"><a href="${href}" >Show more</a></span></div></body>`;
@@ -30,7 +31,8 @@ async function collect(r = routes) {
 
 test('gyvunugloba: robots.txt first, then parent and one GET per list page', async () => {
   const { calls } = await collect();
-  assert.deepEqual(calls.map(c => c.url), ['https://gyvunugloba.com/robots.txt', P, `${P}sunys/`, `${P}kates/`, `${P}kiti/`]);
+  assert.deepEqual(calls.slice(0, 5).map(c => c.url), ['https://gyvunugloba.com/robots.txt', P, `${P}sunys/`, `${P}kates/`, `${P}kiti/`]);
+  assert.equal(calls.length, 5 + 37, 'then one GET per animal page');
   assert.ok(calls.every(c => c.method === 'GET'));
 });
 
@@ -48,8 +50,15 @@ test('gyvunugloba: parses real list pages, unknowns stay null', async () => {
   assert.equal(a.photos.length, 1);
   assert.match(a.photos[0], /^https:\/\/gyvunugloba\.com\/wp-content\/uploads\//);
   for (const f of ['sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt', 'sourceUpdatedAt']) {
-    assert.equal(a[f], null, `${f} is not on the list page`);
+    assert.equal(a[f], null, `${f}: its detail page is not in the fixtures (404), list-card facts stay`);
   }
+  // Real detail page: description kept without the name line, stray "<span;>", or the donation footer.
+  const l = byId['gyvunugloba:loris-2'];
+  assert.match(l.bio_lt, /^Išbandinėjame kelione automobiliu/);
+  assert.match(l.bio_lt, /Loris kastruotas, smulkesnis nei vidutinis/);
+  assert.doesNotMatch(l.bio_lt, /span;|LT41|PayPal|anketą/);
+  assert.equal(l.neutered, true, '"Loris kastruotas" in the description');
+  for (const f of ['sex', 'size', 'vaccinated', 'chipped']) assert.equal(l[f], null, f);
   assert.equal(byId['gyvunugloba:sakira'].name, 'Šakira');
   assert.equal(byId['gyvunugloba:sakira'].species, 'dog');
   const t = byId['gyvunugloba:triusiukai'];

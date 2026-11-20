@@ -17,7 +17,7 @@ test('search matches name, city and shelter without accents and keeps eligibilit
  assert.deepEqual(selectPets(pets,{...defaults,query:'kate kaunas'}).map(p=>p.id),['b']);
  assert.equal(selectPets(pets,{...defaults,query:'zzz'}).length,0);
  assert.equal(activeFilters(defaults),0);
- assert.equal(activeFilters({...defaults,city:'Kaunas',urgent:true,query:'x',species:'cat'}),2);
+ assert.equal(activeFilters({...defaults,city:'Kaunas',urgent:true,query:'x',species:'cat'}),3);
 });
 test('Lithuanian plural forms',()=>{
  const f=n=>pl(n,'skelbimas','skelbimai','skelbimų');
@@ -33,4 +33,36 @@ test('profile facts never invent values and ask about every unknown',()=>{
  assert.equal(byKey.sex.value,'Patelė');assert.equal(byKey.vaccinated.value,'Taip');assert.equal(byKey.neutered.value,'Ne');assert.equal(byKey.vaccinated.note,'Pagal skelbimą');assert.equal(byKey.size.value,null);
  const kq=openQuestions(known,'lt');
  assert.ok(!kq.some(x=>x.includes('metų'))&&!kq.some(x=>x.includes('vis dar ieško namų'))&&kq.some(x=>x.includes('dydis')));
+});
+test('profile facts: sex and size codes in words; a birth date is labelled as one',()=>{
+ const pet={sex:'male',size:'small',ageLt:'2018 10 14',medical:{}};
+ const by=(p,l)=>Object.fromEntries(facts(p,l).map(f=>[f.key,f]));
+ assert.equal(by(pet,'lt').sex.value,'Patinas');assert.equal(by(pet,'en').size.value,'Small');
+ assert.deepEqual([by(pet,'lt').age.label,by(pet,'lt').age.value],['Gimimo data','2018 10 14']);
+ const est=by({...pet,ageLt:'Spėjama gimimo data: 2016-03-24'},'lt').age;
+ assert.deepEqual([est.label,est.value],['Gimimo data','2016-03-24 (spėjama)']);
+ assert.deepEqual([by({...pet,ageLt:'4-8 metai'},'lt').age.label,by({...pet,ageLt:'4-8 metai'},'lt').age.value],['Amžius','4-8 metai']);
+});
+test('profile in English shows the shelter\'s Lithuanian text instead of "not stated"',()=>{
+ const pet={ageLt:'4-8 metai',ageEn:null,bioLt:'Rami.',bioEn:null,medical:{}};
+ assert.equal(Object.fromEntries(facts(pet,'en').map(f=>[f.key,f])).age.value,'4-8 metai');
+ assert.ok(!openQuestions(pet,'en').some(q=>/How old|What is the animal like/.test(q)));
+});
+
+test('facts: time in shelter shown only when the shelter states it', () => {
+  const {facts}=require('../src/mobile/facts.cjs');
+  assert.equal(facts({inShelterLt:'nuo 2026-09-13'}).find(f=>f.key==='inShelter').value,'nuo 2026-09-13');
+  assert.equal(facts({}).some(f=>f.key==='inShelter'),false);
+});
+test('deck shows listings with a story and facts first, keeping source order otherwise',()=>{
+ const base={species:'dog',city:'Vilnius',shelter:{id:'x'},status:'unknown'};
+ const pets=[{...base,id:'bare'},{...base,id:'bioOnly',bioLt:'Draugiškas.'},{...base,id:'rich1',bioLt:'Ramus.',sex:'male'},{...base,id:'bare2'},{...base,id:'rich2',bioLt:'Meili.',medical:{chipped:true}}];
+ assert.deepEqual(selectPets(pets,defaults).map(p=>p.id),['rich1','rich2','bioOnly','bare','bare2']);
+});
+test('card age line labels a bare birth date and keeps a written age as is',()=>{
+ const {cardAge}=require('../src/mobile/facts.cjs');
+ assert.equal(cardAge({ageLt:'2025-10-01'},'lt'),'Gimimo data: 2025-10-01');
+ assert.equal(cardAge({ageLt:'Spėjama gimimo data: 2016-03-24'},'en'),'Born: 2016-03-24 (estimated)');
+ assert.equal(cardAge({ageLt:'4 m. amžiaus'},'lt'),'4 m. amžiaus');
+ assert.equal(cardAge({},'lt'),null);
 });

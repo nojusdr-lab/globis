@@ -1,92 +1,45 @@
-# GLOBIS — IMPLEMENTATION ROADMAP
+# GLOBIS kelias iki pirmojo leidimo
 
-_Last consolidated: 2026-11-15. Recheck repository state before starting; this is the agreed order, not a claim that work is already complete._
+Būsena patikrinta 2026-11-19. Bazė yra `main` ties `62442db`.
+Serverio integracija ir papildomi programėlės pakeitimai yra [PR #38](https://github.com/nojusdr-lab/globis/pull/38).
+Rinkimo peržiūros pataisa yra [PR #40](https://github.com/nojusdr-lab/globis/pull/40).
+[Vaizdinis kelrodis](../roadmap.html) rodo tą pačią etapų seką.
 
-## Current known baseline
+## Kur esame
 
-- Expo / React Native app.
-- Entry point: `App.js`.
-- Data access: `src/data/pets.js` → `src/data/allPets.json`.
-- Scraper: `scripts/scrape-globok.js`.
-- Scheduled workflow: `.github/workflows/update-pets.yml`.
-- Theme tokens: `src/theme/tokens.js`.
-- UI components: `src/components`.
-- Duplicate generated data directories: `data/` and `src/data/`.
-- GitHub issues #1 and #2 hold coordination and UX direction.
+**Dabar užbaigiame serverio integracijos patikimumą ir peržiūrą prieš beta bandymus.**
+Kodo patikra, migracijos gyvoje DB, bandymas telefone ir viešas leidimas yra atskiri priėmimo žingsniai.
 
-## Phase 0 — Re-establish current truth
+| Etapas | Kas paruošta | Ko dar reikia |
+| --- | --- | --- |
+| A. Duomenys | Main turi tiesioginių svetainių adapterius, validavimą, paskutinės geros kopijos apsaugą ir kasdienį rinkimą su duomenų PR. PR #38 turi 19 adapterių ir laukų patobulinimus. | PR #40 peržiūra, naujo rinkinio peržiūra, likusių prieglaudų kontaktų ir šaltinių teisių patikra. |
+| B. Serveris — vykdoma | PR #38 turi įkėlimą į Supabase, viešo skaitymo kelią ir vietinį atsarginį rinkinį. SQL ir integracija tikrinami vietiniais testais. Naujas PR #38 commit 6a3934a prideda šifruotų atsarginių kopijų eigą, kuri dar laukia konfigūracijos ir atkūrimo patikros. | Užbaigti PR #38, suderinti migracijas su veikiančia DB, patikrinti serverio atsakymą programėlėje, TLS ir atsarginių kopijų konfigūraciją bei priėmimą gyvoje aplinkoje. Publikavimo chronologijos, sertifikatų tikrinimo ir testinės kopijos atkūrimo kodas papildytas šiame PR. |
+| C. Programėlės patikra | Naršymas, filtrai, profiliai, kontaktai, išsaugojimas ir LT / EN įgyvendinti. Expo eksportas tikrinamas CI. PR #38 papildomai turi įvadą ir pasirenkamas paskyras. | Patikra iPhone ir Android, interneto praradimas, pakartotinis paleidimas, didelis šriftas, ekrano skaitytuvas ir paskyrų būsenos, jei jos įjungiamos. |
+| D. Leidimo duomenys | Yra privatumo, naudojimo sąlygų, ikonų ir parduotuvių aprašymų ruošiniai. | Tikri valdytojo duomenys, palaikymo kontaktas, viešas privatumo URL, turinio bei nuotraukų naudojimo pagrindas ir programėlės identifikatorių sprendimas. |
+| E. Uždara beta | Yra EAS build profiliai. | Patvirtintos paskyros ir projekto tapatybė, pasirašyti build’ai, TestFlight / Google Play vidinis bandymas, testuotojų atsiliepimai. |
+| F. Viešas leidimas | Pasiruošimas tęsiamas etapais A–E. | Patvirtinti testų rezultatai, galutiniai privatumo formų atsakymai ir savininko leidimas paskelbti. Web kanalas pasirenkamas atskirai. |
 
-Before coding:
-- Inspect current branch and HEAD; check working tree.
-- Inspect `.github/workflows/update-pets.yml`, scraper, data files and imports.
-- Identify canonical generated-data output and whether duplicate JSON is intentional.
-- Inspect package scripts and Expo SDK version.
-- Check whether any newer commits/PRs have already addressed audit findings.
-- Report conflicts, unknown source fields and risks.
+## Artimiausi darbai pagal eilę
 
-## PR 1 — P0: Data integrity and correctness
+1. **PR #38 patikimumas.** Kiekvieno lygiagretaus darbo DB rezultatas turi priklausyti savo šaltiniui. Nepilnas ar atmestas rinkimas turi rodyti nesėkmę. DB sutrikimo atveju turi išlikti vietinis rinkimas ir patikrinama ataskaita. Tikrinti vietiniais adapteriais ir integraciniais testais.
+2. **PR #38 ir #40 peržiūra.** Patikrinti jų bendrą kopiją, migracijų seką ir CI. Prieš jungiant patikrinti naujausią main bei Claude commitus. Esamus duomenų PR #37 ir #39 peržiūrėti pagal jų rinkimo ataskaitas.
+3. **Serverio ir atsarginės kopijos patikra.** Paruošta nauja migracija `20261119000000_source_publication_order.sql`, tikrinami senesni ir pakartoti paleidimai. Node klientai naudoja TLS sertifikato patikrą su pasirenkamu `SUPABASE_DB_CA_CERT`. Realus konkurencijos ir šifruotos kopijos atkūrimo testas įtrauktas į CI su laikinu PostgreSQL.  Patikrinti TLS, migracijų būseną, viešo skaitymo ribas, duomenų pilnumą, atkūrimą po ryšio nutrūkimo ir tai, kad ankstesnis paleidimas negali pakeisti naujesnio. Gamybinė migracija atliekama tik patvirtinus konkretų pakeitimą.
+4. **Native beta patikra.** iPhone ir Android scenarijai su realiais ekranais, save / restart / undo, šaltinio ir kontakto atidarymu, tuščiomis bei klaidų būsenomis. Rezultatus fiksuoti su platforma ir build versija.
+5. **Leidimo vartai.** Užpildyti tikrais duomenimis `supportEmail` ir `privacyPolicyUrl`, patvirtinti turinio naudojimą bei bundle ID. Tada ruošti pasirašytą vidinės beta build’ą ir jo pateikimo peržiūrą.
 
-**Scope**
-- Remove random/fabricated animal facts and synthetic shelter contacts.
-- Preserve missing fields as null/empty; update UI to hide unknown data.
-- Determine reserved status from real source evidence; exclude reserved pets from discovery but keep them in shelter roster.
-- Store observation/fetch timestamps only when actually available.
-- Fix exact shelter ID filtering.
-- Derive active Globis listing counts from eligible real records.
-- Resolve duplicated generated JSON workflow/source of truth.
-- Add validation/tests to catch fabricated facts and fake contacts.
+## Kas šiuo metu patikrinta kode
 
-**Likely files**
-- `scripts/scrape-globok.js`
-- `.github/workflows/update-pets.yml`
-- `data/**` and/or `src/data/**` (only after source-of-truth check)
-- shelter/pet data selectors and relevant UI components
-- focused tests/validation scripts
+- PR #38 `src/data/directPets.json` turi 1 061 įrašą. Tai įtaisytos kopijos dydis, o ne garantuotas šiuo metu ieškančių namų gyvūnų skaičius.
+- `src/data/shelters.json` turi 37 organizacijas. 20 jų turi telefono arba el. pašto duomenis su `contactEvidence`.
+- `app.json` `supportEmail` ir `privacyPolicyUrl` tebėra `null`.
+- `lt.globis.app` yra iOS ir Android identifikatorius (pakeista 2026-11-20). EAS projekto ID konfigūracijoje nėra.
+- Migracijų failų buvimas repozitorijoje savaime nepatvirtina jų pritaikymo gyvoje DB.
+- `docs/store/preflight.md` ir `docs/security-audit.md` aprašo ankstesnius patikros etapus. Jų išvadas reikia sutikrinti su PR #38 paskyromis, DB integracija ir pasirinktų šaltinių turiniu.
 
-**Acceptance**
-- No random or synthetic animal/shelter facts.
-- Unknown fields remain unknown.
-- No fake phone/email/registration code displayed.
-- Reserved pets absent from discovery, visible as reserved in shelter context.
-- Shelter selection is based on exact shelter ID.
-- Counts are derived and correctly labelled.
-- Data generation is reproducible and documented.
-- Available checks pass; limitations are reported.
+## Darbo taisyklės
 
-Do not begin PR2 until PR1 has been reviewed.
+„Claude Code“ vadovauja įgyvendinimui. „Codex“ prisideda atskiroje vietinėje šakoje ir rezultatus perduoda per [Issue #1](https://github.com/nojusdr-lab/globis/issues/1) bei susijusį PR. Nekeisti main tiesiogiai. Esamą darbą tęsti nuo aktualaus commito ir jo priėmimo kriterijų.
 
-## PR 2 — P0: Interaction correctness and persistence
+Mokamos paslaugos, išorinės paskyros, gamybinės migracijos ir viešas deployment reikalauja savininko leidimo konkrečiam paruoštam rezultatui. Įprasti kodo taisymai, vietiniai testai ir PR vykdomi savarankiškai.
 
-- Fix horizontal swipe threshold and tap responder collision.
-- Disable photo tap zones for 0/1 photos.
-- Make rewind undo the exact prior action, including index and saved/passed arrays.
-- Disable rewind when unavailable.
-- Persist saved, passed and language state locally using an Expo-SDK-compatible approach.
-- Test like/pass/rewind and persistence.
-
-## PR 3 — P1: Navigation and visual system
-
-- Implement three destinations: Globoti, Prieglaudos, Išsaugoti.
-- Compact header and filter sheet.
-- Apply approved palette, typography and verified logo assets.
-- Add safe-area behavior only with SDK-compatible dependency.
-- Ensure ≥44pt targets, accessibility roles/states and reduced-motion support.
-- Preserve existing functionality and translations.
-
-## PR 4 — P1/P2: Details, shelters and contact
-
-- Improve full-screen animal detail experience and gallery reset.
-- Source link, share, save/pass/contact actions.
-- Dedicated saved screen.
-- Shelter search, species filters, detail page and roster.
-- ContactBottomSheet with validated real contact fields.
-- Responsive web layout (centered deck; sidebar rail on wide screens).
-
-## Delivery rules
-
-- One PR at a time; no direct commits to main.
-- Before each PR, state branch, scope, expected files, tests and risks.
-- Keep diffs focused and reviewable.
-- Run available lint/type/test/build checks; add targeted tests where practical.
-- Explain results in plain Lithuanian.
-- Do not create paid accounts, Supabase/Firebase projects, production deployments or external services without explicit owner approval.
+Įvaikinimo paraiškos [#20](https://github.com/nojusdr-lab/globis/issues/20), išplėstos paskyrų rolės [#19](https://github.com/nojusdr-lab/globis/issues/19), pranešimai ir Globis AI [#21](https://github.com/nojusdr-lab/globis/issues/21) planuojami pagal atskirus priėmimo kriterijus.
