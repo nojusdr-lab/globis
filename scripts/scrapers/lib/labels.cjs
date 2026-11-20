@@ -55,6 +55,14 @@ function pairsFromText(text) {
     .map(m => [m[1], m[2]]);
 }
 
+// Fact lists in page HTML: "<b>Lytis:</b> Patinas", "<dt>Lytis</dt><dd>Patelė</dd>", "<th>Skiepai</th><td>Taip</td>".
+// A bold label with no text after it (a heading like "<strong>Kaip padėti?</strong>") is skipped.
+function pairsFromHtml(html) {
+  const re = /<(b|strong|dt|th)\b[^>]*>\s*([^<]{2,40}?)\s*[:：]?\s*<\/\1>\s*(?:<(?:dd|td)\b[^>]*>\s*)?([^<]*)/gi;
+  return [...String(html || '').matchAll(re)]
+    .map(m => [N.cleanText(m[2]).replace(/[:：]$/, ''), N.cleanText(m[3])])
+    .filter(([label, value]) => label && value);
+}
 // Health facts stated in free text ("Kastruotas, čipuotas, paskiepytas."). Only whole words that
 // say the thing is done or not done ("not yet done" counts as no).
 // Both a yes and a no in one text (a mother and her kittens) -> null.
@@ -139,4 +147,4 @@ function fromProse(text) {
   return out;
 }
 
-module.exports = { fromPairs, pairsFromText, fieldFor, fromProse };
+module.exports = { fromPairs, pairsFromText, pairsFromHtml, fieldFor, fromProse };

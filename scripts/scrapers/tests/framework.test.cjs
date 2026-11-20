@@ -233,3 +233,11 @@ test('parse cache: a change in the shared label rules invalidates cached parses'
   await createParseCache(dir, { libVersion: 'b' }).getOrParse('h'.repeat(64), 'v1', parse);
   assert.equal(calls, 2, 'labels.cjs/normalize.cjs changed: parse again');
 });
+
+test('pairsFromHtml: bold label, dt/dd and th/td fact lists', () => {
+  // bukmanodraugas.lt/martukas/ (2026-11-20), Elementor text widgets
+  const html = '<div><b>Amžius:</b> Gimimo data apie 2023 m. </div><div><b>Lytis:</b> Patinas </div><div><b>Ūgis:</b> Mažas </div>'
+    + '<dl><div><dt>Lytis</dt><dd>Patelė</dd></div></dl><table><tr><th>Skiepai</th><td>Taip</td></tr></table><p><strong>Kaip padėti?</strong></p>';
+  assert.deepEqual(L.pairsFromHtml(html), [['Amžius', 'Gimimo data apie 2023 m.'], ['Lytis', 'Patinas'], ['Ūgis', 'Mažas'], ['Lytis', 'Patelė'], ['Skiepai', 'Taip']]);
+  assert.deepEqual(L.fromPairs(L.pairsFromHtml(html)), { age_text: 'Gimimo data apie 2023 m.', sex: 'male', size: 'small', vaccinated: true });
+});

@@ -27,6 +27,7 @@ function routes({ perPage = 100, posts = POSTS, categories = CATEGORIES } = {}) 
     'https://bukmanodraugas.lt/robots.txt': { body: ROBOTS },
     [CAT_URL]: { body: categories },
     [MEDIA_URL]: { body: MEDIA },
+    'https://bukmanodraugas.lt/martukas/': { body: read('martukas.html') },
   };
   let page = 1;
   for (let i = 0; i < posts.length || page === 1; i += perPage, page++) r[postsUrl(perPage, page)] = { body: posts.slice(i, i + perPage) };
@@ -40,12 +41,13 @@ async function collect(r, a = adapter) {
   return { run, calls };
 }
 
-test('bukmanodraugas: robots.txt first, only GETs to the site, 4 requests in all', async () => {
+test('bukmanodraugas: robots.txt first, only GETs to the site, 4 API requests then one per animal page', async () => {
   const { run, calls } = await collect(routes());
   assert.equal(run.state, 'complete');
   assert.equal(calls[0].url, 'https://bukmanodraugas.lt/robots.txt');
   assert.ok(calls.every(c => c.method === 'GET' && new URL(c.url).hostname === 'bukmanodraugas.lt'));
-  assert.deepEqual(calls.map(c => c.url), ['https://bukmanodraugas.lt/robots.txt', CAT_URL, postsUrl(100, 1), MEDIA_URL]);
+  assert.deepEqual(calls.map(c => c.url).slice(0, 4), ['https://bukmanodraugas.lt/robots.txt', CAT_URL, postsUrl(100, 1), MEDIA_URL]);
+  assert.deepEqual(calls.slice(4).map(c => c.url).sort(), POSTS.map(p => p.link).sort());
   assert.deepEqual(adapter.hosts, ['bukmanodraugas.lt', 'www.bukmanodraugas.lt']);
 });
 
@@ -62,8 +64,10 @@ test('bukmanodraugas: real posts give name, species, photo, text; unknown facts 
   assert.deepEqual(a.photos, ['https://bukmanodraugas.lt/wp-content/uploads/2026/11/986089CA-1C1D-4BBE-8D9D-BB7C96634B39.png']);
   assert.match(a.bio_lt, /^Martulis su dar dviem/);
   assert.equal(a.sourceUpdatedAt, '2026-11-11T18:50:16Z');
-  // Prose only: nothing is guessed from words like "šunelis"; only a stated "vidutinio ūgio" gives a size.
-  for (const x of run.animals) {
+  // The animal page's "Duomenys" block states age, sex and height (Martukas); other fixture pages are missing (404),
+  // so their facts stay null: nothing is guessed from words like "šunelis".
+  assert.deepEqual([a.age_text, a.sex, a.size], ['Gimimo data apie 2023 m.', 'male', 'small']);
+  for (const x of run.animals.filter(x => x !== a)) {
     for (const f of ['sex', 'age_text', 'vaccinated', 'neutered', 'chipped']) assert.equal(x[f], null, `${x.id} ${f}`);
   }
   assert.equal(byId['bukmanodraugas:2516'].size, 'medium', '"vidutinio ūgio" stated in the text');

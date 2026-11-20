@@ -7,19 +7,22 @@
 //   sunys-iesko-namu ("Šunys ieško namų", id 38) and kates-iesko-namu ("Katės ieško namų", id 39).
 // The HTML listings (The Grid plugin) show only name + photo, so we read the same posts through
 // the public REST API instead: 1 request for category ids, posts in pages of 100, and 1 request
-// per 100 photos. No detail pages. We never list /category/rado-namus/ (adopted animals);
+// per 100 photos. Each animal page is then read once (its "Duomenys" block states
+// "Amžius:", "Lytis:", "Ūgis:" — not in REST; added 2026-11-20). We never list /category/rado-namus/ (adopted animals);
 // we only look up its id so that a post still sitting in a listing AND marked "Rado namus"
 // keeps that real status.
 //
 // Posts are free prose ("Pepsis – vidutinio ūgio šunelis ..."). We only take:
 //   species + status from the category name the site shows on every card,
 //   "Label: value" lines if a post ever has them, the title, the text and the featured photo.
-// Sex, age, size, vaccinated, neutered, chipped stay null unless written as a label line.
+// Sex, age, size, vaccinated, neutered, chipped stay null unless a label line states them.
+// A failed animal page keeps the REST facts.
 const N = require('../lib/normalize.cjs');
 const L = require('../lib/labels.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
 const PARSER_VERSION = 'bukmanodraugas-1';
+const DETAIL_VERSION = 'bukmanodraugas-detail-1';
 const BASE = 'https://bukmanodraugas.lt/';
 const LISTING_SLUGS = ['sunys-iesko-namu', 'kates-iesko-namu'];
 const ADOPTED_SLUG = 'rado-namus';
@@ -119,6 +122,13 @@ function create({ perPage = 100, maxPages = 20 } = {}) {
         statusEvidence: st.statusEvidence,
         sourceUpdatedAt: post.modified_gmt ? `${post.modified_gmt}Z` : null,
       });
+    }
+    for (const a of animals) {
+      let res;
+      try { res = await fetcher.get(a.sourceUrl); }
+      catch (e) { log(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
+      const d = await cache.getOrParse(sha256(res.body), DETAIL_VERSION, () => L.fromPairs(L.pairsFromHtml(res.body)));
+      for (const k of ['sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped']) if (d[k] != null) a[k] = d[k];
     }
     log(`bukmanodraugas: ${animals.length} animals, ${skipped.length} skipped`);
     return { animals, skipped, complete: posts.complete };
