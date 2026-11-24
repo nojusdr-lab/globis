@@ -4,7 +4,7 @@
 
 **Effective from:** [date]
 **Provided by:** [full name or company name, registration number, address]
-**Privacy contact:** [email address]
+**Privacy contact:** app.globis@gmail.com
 
 ## In short
 
@@ -50,7 +50,7 @@ An account is only needed to see your saved list on more than one device.
 
 ## Your rights
 
-Under the GDPR you have the right to know what personal data we process about you, to ask for it to be corrected or erased, and to object to processing. If you have no account, we hold no personal data about you. If you have one, the app gives you everything we store about you as JSON (Account → "Export my data"), and you can delete the account with all its data. Send questions to [email]. You may also contact the Lithuanian State Data Protection Inspectorate (vdai.lrv.lt).
+Under the GDPR you have the right to know what personal data we process about you, to ask for it to be corrected or erased, and to object to processing. If you have no account, we hold no personal data about you. If you have one, the app gives you everything we store about you as JSON (Account → "Export my data"), and you can delete the account with all its data. Send questions to app.globis@gmail.com. You may also contact the Lithuanian State Data Protection Inspectorate (vdai.lrv.lt).
 
 ## Changes
 
