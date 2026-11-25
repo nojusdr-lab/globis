@@ -4929,7 +4929,7 @@
   "status": "available",
   "statusEvidence": "Dovanojamos Katės",
   "sex": "male",
-  "ageLt": "-",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -5081,7 +5081,7 @@
   "status": "available",
   "statusEvidence": "Dovanojamos Katės",
   "sex": "male",
-  "ageLt": "-",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -5089,7 +5089,7 @@
   "medical": {
    "chipped": true,
    "vaccinated": true,
-   "neutered": false
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -5119,7 +5119,7 @@
   "status": "available",
   "statusEvidence": "Dovanojamos Katės",
   "sex": "female",
-  "ageLt": "-",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -5127,7 +5127,7 @@
   "medical": {
    "chipped": true,
    "vaccinated": true,
-   "neutered": false
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -5157,7 +5157,7 @@
   "status": "available",
   "statusEvidence": "Dovanojamos Katės",
   "sex": "male",
-  "ageLt": "-",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -5195,7 +5195,7 @@
   "status": "available",
   "statusEvidence": "Dovanojamos Katės",
   "sex": "male",
-  "ageLt": "-",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,

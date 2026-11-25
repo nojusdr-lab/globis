@@ -34,7 +34,8 @@ function fromPairs(pairs) {
   for (const [label, rawValue] of pairs) {
     const field = fieldFor(label);
     const value = N.cleanText(rawValue);
-    if (!field || !value || field in out) continue;
+    // A cell with no letters or digits ("-", "—", "?") is blank, not a fact.
+    if (!field || !value || !/[\p{L}\p{N}]/u.test(value) || field in out) continue;
     if (field === 'species') out.species = N.species(value);
     else if (field === 'sex') out.sex = N.sex(value);
     else if (field === 'size') out.size = N.size(value);
