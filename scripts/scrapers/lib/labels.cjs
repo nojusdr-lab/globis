@@ -148,4 +148,8 @@ function fromProse(text) {
   return out;
 }
 
-module.exports = { fromPairs, pairsFromText, pairsFromHtml, fieldFor, fromProse };
+// Shop/donation items some shelters list next to animals ("Dovana – parama", "... PARAMA"). Not animals.
+const DONATION_TITLE = /(^|[^\p{L}])parama([^\p{L}]|$)/iu;
+function isDonationTitle(title) { return DONATION_TITLE.test(String(title || "")); }
+
+module.exports = { fromPairs, pairsFromText, pairsFromHtml, fieldFor, fromProse, isDonationTitle };

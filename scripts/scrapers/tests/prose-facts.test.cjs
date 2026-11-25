@@ -151,3 +151,12 @@ test('fromProse: facts in parentheses are not voided by a plan word outside them
   // A plan inside the parentheses still counts as a plan.
   assert.equal(fromProse('Atvyko mamytė Čipa (ji bus sterilizuota ir grąžinta atgal).').neutered, undefined);
 });
+
+test('isDonationTitle: donation shop items, not animal names', () => {
+  const { isDonationTitle } = require('../lib/labels.cjs');
+  assert.equal(isDonationTitle('Dovana – parama'), true);
+  assert.equal(isDonationTitle('MAISTO PARAMA'), true);
+  assert.equal(isDonationTitle('Paramarija'), false);
+  assert.equal(isDonationTitle('Reksas'), false);
+  assert.equal(isDonationTitle(null), false);
+});

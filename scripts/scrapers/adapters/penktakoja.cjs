@@ -18,7 +18,6 @@ const PARSER_VERSION = 'penktakoja-1';
 // Dogs are "simple" products (some also "virtual"). The category also holds an event (variable),
 // a grouped "Parama" page, a gift card and simple donation items titled "... PARAMA" (2026-11-20).
 const ANIMAL_TYPE_CLASS = 'product-type-simple';
-const DONATION_TITLE = /\bparama\b/i;
 const ORIGIN = 'https://penktakoja.lt';
 const DOG_CATEGORY_ID = 15;
 const DOG_CATEGORY_CLASS = 'product_cat-sunys';
@@ -72,7 +71,7 @@ function create({ perPage = 100, maxPages = 10 } = {}) {
       seen.add(p.id);
       const name = N.cleanText(p.title?.rendered);
       const classes = Object.values(p.class_list || {});
-      if (!classes.includes(ANIMAL_TYPE_CLASS) || DONATION_TITLE.test(name || '')) {
+      if (!classes.includes(ANIMAL_TYPE_CLASS) || L.isDonationTitle(name)) {
         skipped.push({ nativeId: String(p.id), reason: `not an animal: ${classes.find(c => c.startsWith('product-type-')) || 'no type'} "${name}"` });
         continue;
       }

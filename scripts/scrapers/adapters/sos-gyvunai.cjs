@@ -113,6 +113,8 @@ function createAdapter({ perPage = 100, maxPages = 30 } = {}) {
     const animals = [];
     const skipped = [];
     for (const post of posts.items) {
+      const title = N.cleanText(post.title?.rendered);
+      if (L.isDonationTitle(title)) { skipped.push({ nativeId: String(post.id), reason: `not an animal: donation item "${title}"` }); continue; }
       const postTerms = (post.gyvunai || []).map(id => termById.get(id)).filter(Boolean);
       const parsed = await cache.getOrParse(sha256(JSON.stringify(post)), PARSER_VERSION, () => {
         const html = post.content?.rendered ?? null;
