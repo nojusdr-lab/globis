@@ -70,8 +70,11 @@ function pairsFromHtml(html) {
 const PROSE = {
   neutered: [/^(kastruot|sterilizuot)(as|a|i|os)$/, /^ne(kastruot|sterilizuot)(as|a|i|os)$/],
   vaccinated: [/^(pa)?(skiepyt|skiept|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|skiept|vakcinuot)(as|a|i|os)$/],
-  chipped: [/^(čipuot|(pa|su)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa|su)?ženklint)(as|a|i|os)$/],
+  chipped: [/^(čipuot|(pa|su)?(ženklint|zenklint))(as|a|i|os)$/, /^ne(čipuot|(pa|su)?(ženklint|zenklint))(as|a|i|os)$/],
 };
+// "Pažymėtas mikroschema", "žymėtas mikrochema", "ženklina mikroschema": the marking verb counts only next to the chip word.
+const MARKED = /^(ne)?(pa)?(žymėt|ženklin|zenklin)\p{L}*$/u;
+const CHIP_WORD = /^mikro(s)?c?h?em\p{L}*$/u;
 // Procedure nouns that, next to "laukia" (is waiting for), say the procedure is still to be done.
 const PENDING = {
   neutered: /^(sterilizacij|kastracij)\p{L}*$/u,
@@ -115,9 +118,13 @@ function fromProse(text) {
       const plan = words.some(w => PLAN.test(w));
       // "Dar laukia skiepai, ženklinimas, sterilizacija" / "Ateityje laukia kastracija": not done yet.
       if (words.includes('laukia') && words.some(w => PENDING[field].test(w))) seen.add(false);
-      for (const w of words) {
+      for (const [i, w] of words.entries()) {
         if (no.test(w)) seen.add(false);
         else if (yes.test(w) && !plan) seen.add(true);
+        else if (field === 'chipped' && CHIP_WORD.test(words[i + 1] || '') && MARKED.test(w)) {
+          if (w.startsWith('ne')) seen.add(false);
+          else if (!plan) seen.add(true);
+        }
       }
     }
     if (seen.size === 1) out[field] = [...seen][0];

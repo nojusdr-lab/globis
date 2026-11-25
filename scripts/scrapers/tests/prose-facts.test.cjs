@@ -160,3 +160,16 @@ test('isDonationTitle: donation shop items, not animal names', () => {
   assert.equal(isDonationTitle('Reksas'), false);
   assert.equal(isDonationTitle(null), false);
 });
+
+test('fromProse: "pažymėtas/ženklina mikroschema" counts as chipped (beglobis Gerbas, Ninja, Kingas, Lilya)', () => {
+  assert.equal(fromProse('Gerbas kastruotas, paskiepytas, pažymėtas mikroschema, tvarkingai naudojasi kraiko dėžute.').chipped, true);
+  assert.equal(fromProse('Činas skiepytas, žymėtas mikroschema.').chipped, true);
+  assert.equal(fromProse('Ninja sterilizuota, paskiepyta ir ženklina mikroschema.').chipped, true);
+  assert.equal(fromProse('Jis skiepytas ir pažymėtas mikrochema.').chipped, true);
+  assert.equal(fromProse('Kalytė sterilizuota, skiepyta, zenklinta mikroschema.').chipped, true);
+  assert.equal(fromProse('Dar nepažymėtas mikroschema.').chipped, false);
+  // "Pažymėtas" without the chip word says nothing about a chip.
+  assert.equal(fromProse('Kalendoriuje pažymėtas susitikimas.').chipped, undefined);
+  // A plan stays a plan.
+  assert.equal(fromProse('Prieš išvykstant bus pažymėtas mikroschema.').chipped, undefined);
+});
