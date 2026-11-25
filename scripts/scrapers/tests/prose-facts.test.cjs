@@ -173,3 +173,19 @@ test('fromProse: "pažymėtas/ženklina mikroschema" counts as chipped (beglobis
   // A plan stays a plan.
   assert.equal(fromProse('Prieš išvykstant bus pažymėtas mikroschema.').chipped, undefined);
 });
+
+test('fromProse: "sučipuotas/sučipuota" counts as chipped (mgma Tuma, 20254)', () => {
+  assert.equal(fromProse('Visiškai paruošta kelionei namo: Tuma jau yra paskiepyta, sterilizuota, nukirminta ir sučipuota.').chipped, true);
+  assert.equal(fromProse('Kastruotas, nukirmintas, paskiepytas kompleksine vakcina ir sučipuotas.').chipped, true);
+  assert.equal(fromProse('Dar nesučipuotas.').chipped, false);
+});
+
+test('fromProse: "tarsi/lyg būtų" is a comparison, not a plan (naminukai Žaneta)', () => {
+  const f = fromProse('Ji sterilizuota, čipuota, paskiepyta, vyresnio amžiaus, bet atrodo, tarsi būtų gimusi iš naujo.');
+  assert.equal(f.chipped, true);
+  assert.equal(f.vaccinated, true);
+  assert.equal(f.neutered, true);
+  assert.equal(fromProse('Jis skiepytas, lyg būtų visada čia gyvenęs.').vaccinated, true);
+  // Plain "būtų" still marks a wish or plan.
+  assert.equal(fromProse('Būtų gerai, kad būtų skiepytas.').vaccinated, undefined);
+});

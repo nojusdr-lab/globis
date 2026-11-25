@@ -70,7 +70,7 @@ function pairsFromHtml(html) {
 const PROSE = {
   neutered: [/^(kastruot|sterilizuot)(as|a|i|os)$/, /^ne(kastruot|sterilizuot)(as|a|i|os)$/],
   vaccinated: [/^(pa)?(skiepyt|skiept|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|skiept|vakcinuot)(as|a|i|os)$/],
-  chipped: [/^(čipuot|(pa|su)?(ženklint|zenklint))(as|a|i|os)$/, /^ne(čipuot|(pa|su)?(ženklint|zenklint))(as|a|i|os)$/],
+  chipped: [/^((su)?čipuot|(pa|su)?(ženklint|zenklint))(as|a|i|os)$/, /^ne((su)?čipuot|(pa|su)?(ženklint|zenklint))(as|a|i|os)$/],
 };
 // "Pažymėtas mikroschema", "žymėtas mikrochema", "ženklina mikroschema": the marking verb counts only next to the chip word.
 const MARKED = /^(ne)?(pa)?(žymėt|ženklin|zenklin)\p{L}*$/u;
@@ -83,6 +83,7 @@ const PENDING = {
 };
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
 const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
+const COMPARE = /^(tarsi|lyg|tartum|tarytum)$/u;
 
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
 const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female',
@@ -115,7 +116,8 @@ function fromProse(text) {
   for (const [field, [yes, no]] of Object.entries(PROSE)) {
     const seen = new Set();
     for (const words of sentences) {
-      const plan = words.some(w => PLAN.test(w));
+      // "Atrodo, tarsi būtų gimusi iš naujo": "tarsi/lyg būtų" compares, it is not a plan.
+      const plan = words.some((w, i) => PLAN.test(w) && !(w === 'būtų' && COMPARE.test(words[i - 1] || '')));
       // "Dar laukia skiepai, ženklinimas, sterilizacija" / "Ateityje laukia kastracija": not done yet.
       if (words.includes('laukia') && words.some(w => PENDING[field].test(w))) seen.add(false);
       for (const [i, w] of words.entries()) {
