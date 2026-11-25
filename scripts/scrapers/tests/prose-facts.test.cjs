@@ -189,3 +189,11 @@ test('fromProse: "tarsi/lyg būtų" is a comparison, not a plan (naminukai Žane
   // Plain "būtų" still marks a wish or plan.
   assert.equal(fromProse('Būtų gerai, kad būtų skiepytas.').vaccinated, undefined);
 });
+
+test('fromProse: "būdu/būrio" are nouns, not plan words (keturkojo-viltis Leila, gyvunugloba Apvalaini)', () => {
+  assert.equal(fromProse('✔️ Skiepyta ✔️ Sterilizuota ✔️ Ženklinta Leila – katytė, kuri pavergia savo švelnumu ir ramiu būdu.').chipped, true);
+  assert.equal(fromProse('Kad negausintų saviškių būrio, jie kastruoti ir sterilizuoti.').neutered, true);
+  // Future and conditional "bū-" forms still mark a plan.
+  assert.equal(fromProse('Būsime dėkingi, kai bus čipuota.').chipped, undefined);
+  assert.equal(fromProse('Turi būti sterilizuota.').neutered, undefined);
+});

@@ -83,7 +83,7 @@ const PENDING = {
   chipped: /^(ženklinim\p{L}*|čipavim\p{L}*|mikročip\p{L}*)$/u,
 };
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
-const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
+const PLAN = /^(bus|bū[sštč]\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
 const COMPARE = /^(tarsi|lyg|tartum|tarytum)$/u;
 
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
