@@ -2962,6 +2962,47 @@
   }
  },
  {
+  "id": "katinosvajone:kaciukai-100",
+  "url": "https://www.katinosvajone.lt/musu-globotinis/kaciukai-100",
+  "source": "katinosvajone",
+  "name": "Kačiukai",
+  "species": "cat",
+  "city": "Kaunas",
+  "photos": [
+   "https://www.katinosvajone.lt/wp-content/uploads/2026/11/916072648_2620700938449632_9166494480143434799_n.jpg",
+   "https://www.katinosvajone.lt/wp-content/uploads/2026/11/914115526_1848428449808327_6337980962033006838_n.jpg",
+   "https://www.katinosvajone.lt/wp-content/uploads/2026/11/917423937_2056272631752238_7614152531899702319_n.jpg",
+   "https://www.katinosvajone.lt/wp-content/uploads/2026/11/916619216_1751589159839626_4066540012858887752_n.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Dovanojamas",
+  "sex": "male",
+  "ageLt": "1-3 Mėnesiai",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "katinosvajonelt",
+   "name": "VšĮ Katino svajonė",
+   "city": "Kaunas",
+   "address": "P. Višinskio g. 102, Kaunas",
+   "url": "https://globok.lt/prieglaudos/katinosvajonelt"
+  }
+ },
+ {
   "id": "katinosvajone:kaciukai-99",
   "url": "https://www.katinosvajone.lt/musu-globotinis/kaciukai-99",
   "source": "katinosvajone",
@@ -3128,7 +3169,7 @@
   "id": "katinosvajone:katinas-148",
   "url": "https://www.katinosvajone.lt/musu-globotinis/katinas-148",
   "source": "katinosvajone",
-  "name": "Katinas",
+  "name": "Keitas",
   "species": "cat",
   "city": "Kaunas",
   "photos": [
@@ -3204,7 +3245,7 @@
   "id": "katinosvajone:kate-257",
   "url": "https://www.katinosvajone.lt/musu-globotinis/kate-257",
   "source": "katinosvajone",
-  "name": "Katė",
+  "name": "Pipirė",
   "species": "cat",
   "city": "Kaunas",
   "photos": [
@@ -3242,7 +3283,7 @@
   "id": "katinosvajone:kate-256",
   "url": "https://www.katinosvajone.lt/musu-globotinis/kate-256",
   "source": "katinosvajone",
-  "name": "Katė",
+  "name": "Mėlynė",
   "species": "cat",
   "city": "Kaunas",
   "photos": [
@@ -4876,6 +4917,44 @@
   }
  },
  {
+  "id": "keturkojodraugas:kates-mortis",
+  "url": "https://keturkojodraugas.lt/kates/#mortis",
+  "source": "keturkojodraugas",
+  "name": "MORTIS",
+  "species": "cat",
+  "city": "Kazlų Rūda",
+  "photos": [
+   "https://keturkojodraugas.lt/wp-content/uploads/2026/11/MORTIS.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Dovanojamos Katės",
+  "sex": "male",
+  "ageLt": "-",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": true,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Veislė: Mix. Kailio spalva: Ruda, balta. Charakteris: Judrus, meilus. Skiepytas, ženklintas, kastruotas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "keturkojodraugaslt",
+   "name": "Asociacija Keturkojo draugas",
+   "city": "Kazlų Rūda",
+   "address": "S. Daukanto g. 19L-2, Kazlų Rūda",
+   "url": "https://globok.lt/prieglaudos/keturkojodraugaslt"
+  }
+ },
+ {
   "id": "keturkojodraugas:kates-barbora",
   "url": "https://keturkojodraugas.lt/kates/#barbora",
   "source": "keturkojodraugas",
@@ -4999,8 +5078,8 @@
   "photos": [
    "https://keturkojodraugas.lt/wp-content/uploads/2026/11/NAUJOKAS-IS-4.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Dovanojamos Katės",
   "sex": "male",
   "ageLt": "-",
   "ageEn": null,
@@ -5008,15 +5087,15 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
+   "chipped": true,
+   "vaccinated": true,
    "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Veislė: Mix. Kailio spalva: Juodai balta. Charakteris: Atsargus, ramus. DAR NEDOVANOJAMAS. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+  "bioLt": "Veislė: Mix. Kailio spalva: Juodai balta. Charakteris: Atsargus, ramus. Skiepytas, ženklintas, kastruotas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
   "bioEn": null,
   "sourceUpdatedAt": null,
   "shelter": {
@@ -5037,8 +5116,8 @@
   "photos": [
    "https://keturkojodraugas.lt/wp-content/uploads/2026/11/JUODUKAS-IS-NAUJOKU.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Dovanojamos Katės",
   "sex": "female",
   "ageLt": "-",
   "ageEn": null,
@@ -5046,15 +5125,15 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
+   "chipped": true,
+   "vaccinated": true,
    "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Veislė: Mix. Kailio spalva: Juodai balta. Charakteris: Atsargi, rami. DAR NEDOVANOJAMA. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+  "bioLt": "Veislė: Mix. Kailio spalva: Juodai balta. Charakteris: Atsargi, rami. Paskiepyta ir suženklinta, sterilizuota. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
   "bioEn": null,
   "sourceUpdatedAt": null,
   "shelter": {
@@ -5075,8 +5154,8 @@
   "photos": [
    "https://keturkojodraugas.lt/wp-content/uploads/2026/11/CINAMONAS-ARBA-PIPIRAS.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Dovanojamos Katės",
   "sex": "male",
   "ageLt": "-",
   "ageEn": null,
@@ -5084,15 +5163,15 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
+   "chipped": true,
+   "vaccinated": true,
    "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Veislė: Mix. Kailio spalva: Raina su balta. Charakteris: Atsargus. DAR NEDOVANOJAMAS. Kastruotas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+  "bioLt": "Veislė: Mix. Kailio spalva: Raina su balta. Charakteris: Atsargus. Skiepytas, ženklintas, kastruotas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
   "bioEn": null,
   "sourceUpdatedAt": null,
   "shelter": {
@@ -5113,8 +5192,8 @@
   "photos": [
    "https://keturkojodraugas.lt/wp-content/uploads/2026/11/PIPIRAS.jpg"
   ],
-  "status": "unknown",
-  "statusEvidence": null,
+  "status": "available",
+  "statusEvidence": "Dovanojamos Katės",
   "sex": "male",
   "ageLt": "-",
   "ageEn": null,
@@ -5122,15 +5201,15 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
-   "vaccinated": null,
+   "chipped": true,
+   "vaccinated": true,
    "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Veislė: Mix. Kailio spalva: Raina su balta. Charakteris: Atsargus. DAR NEDOVANOJAMAS. Kastruotas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
+  "bioLt": "Veislė: Mix. Kailio spalva: Raina su balta. Charakteris: Atsargus. Skiepytas, ženklintas, kastruotas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
   "bioEn": null,
   "sourceUpdatedAt": null,
   "shelter": {
@@ -5245,44 +5324,6 @@
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
   "bioLt": "Veislė: Mix. Kailio spalva: Balta su juodu. Charakteris: Meili, rami. Skiepyta, ženklinta, sterilizuota. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
-  "bioEn": null,
-  "sourceUpdatedAt": null,
-  "shelter": {
-   "id": "keturkojodraugaslt",
-   "name": "Asociacija Keturkojo draugas",
-   "city": "Kazlų Rūda",
-   "address": "S. Daukanto g. 19L-2, Kazlų Rūda",
-   "url": "https://globok.lt/prieglaudos/keturkojodraugaslt"
-  }
- },
- {
-  "id": "keturkojodraugas:kates-renas",
-  "url": "https://keturkojodraugas.lt/kates/#renas",
-  "source": "keturkojodraugas",
-  "name": "RENAS",
-  "species": "cat",
-  "city": "Kazlų Rūda",
-  "photos": [
-   "https://keturkojodraugas.lt/wp-content/uploads/2026/11/RENAS.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojamos Katės",
-  "sex": "male",
-  "ageLt": "2025-08-02",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": false
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Veislė: Mix. Kailio spalva: Rainas. Charakteris: Judrus, žaismingas. Skiepytas, ženklintas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
   "bioEn": null,
   "sourceUpdatedAt": null,
   "shelter": {
@@ -5625,44 +5666,6 @@
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
   "bioLt": "Veislė: Mix. Kailio spalva: Rainas. Charakteris: Atsargus. Skiepytas, ženklintas, kastruotas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
-  "bioEn": null,
-  "sourceUpdatedAt": null,
-  "shelter": {
-   "id": "keturkojodraugaslt",
-   "name": "Asociacija Keturkojo draugas",
-   "city": "Kazlų Rūda",
-   "address": "S. Daukanto g. 19L-2, Kazlų Rūda",
-   "url": "https://globok.lt/prieglaudos/keturkojodraugaslt"
-  }
- },
- {
-  "id": "keturkojodraugas:kates-kukis",
-  "url": "https://keturkojodraugas.lt/kates/#kukis",
-  "source": "keturkojodraugas",
-  "name": "KUKIS",
-  "species": "cat",
-  "city": "Kazlų Rūda",
-  "photos": [
-   "https://keturkojodraugas.lt/wp-content/uploads/2026/10/Kukis.jpeg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojamos Katės",
-  "sex": "male",
-  "ageLt": "2026-07-25",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Veislė: Mix. Kailio spalva: Balta su raina. Charakteris: Žaismingas, judrus. Paskiepytas ir suženklintas, kastruotas. Moka naudotis kraiko dėžute, valgo sausą maistą ir konservus.",
   "bioEn": null,
   "sourceUpdatedAt": null,
   "shelter": {
@@ -8258,44 +8261,6 @@
   }
  },
  {
-  "id": "linksmosiospedutes:18209",
-  "url": "https://www.linksmosiospedutes.lt/lt/kaciukai/auricijus-18209.html",
-  "source": "linksmosiospedutes",
-  "name": "Auricijus",
-  "species": "cat",
-  "city": "Klaipėda",
-  "photos": [
-   "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18209&w=220&h=220&t=crop"
-  ],
-  "status": "available",
-  "statusEvidence": "Kačiukai ieškantys namų",
-  "sex": null,
-  "ageLt": "2026 05 03",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": null,
-  "shelter": {
-   "id": "linksmosiospeduteslt",
-   "name": "VšĮ Linksmosios pėdutės",
-   "city": "Klaipėda",
-   "address": "Jūrininkų pr. 38, Klaipėda, 95255 Klaipėdos m. sav.",
-   "url": "https://globok.lt/prieglaudos/linksmosiospeduteslt"
-  }
- },
- {
   "id": "linksmosiospedutes:18208",
   "url": "https://www.linksmosiospedutes.lt/lt/kaciukai/karen-18208.html",
   "source": "linksmosiospedutes",
@@ -8410,44 +8375,6 @@
   }
  },
  {
-  "id": "linksmosiospedutes:18204",
-  "url": "https://www.linksmosiospedutes.lt/lt/kaciukai/dzoja-18204.html",
-  "source": "linksmosiospedutes",
-  "name": "Džoja",
-  "species": "cat",
-  "city": "Klaipėda",
-  "photos": [
-   "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18204&w=220&h=220&t=crop"
-  ],
-  "status": "available",
-  "statusEvidence": "Kačiukai ieškantys namų",
-  "sex": null,
-  "ageLt": "2026 08 06",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": null,
-  "shelter": {
-   "id": "linksmosiospeduteslt",
-   "name": "VšĮ Linksmosios pėdutės",
-   "city": "Klaipėda",
-   "address": "Jūrininkų pr. 38, Klaipėda, 95255 Klaipėdos m. sav.",
-   "url": "https://globok.lt/prieglaudos/linksmosiospeduteslt"
-  }
- },
- {
   "id": "linksmosiospedutes:18203",
   "url": "https://www.linksmosiospedutes.lt/lt/kaciukai/dzina-18203.html",
   "source": "linksmosiospedutes",
@@ -8507,82 +8434,6 @@
    "chipped": true,
    "vaccinated": true,
    "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": null,
-  "shelter": {
-   "id": "linksmosiospeduteslt",
-   "name": "VšĮ Linksmosios pėdutės",
-   "city": "Klaipėda",
-   "address": "Jūrininkų pr. 38, Klaipėda, 95255 Klaipėdos m. sav.",
-   "url": "https://globok.lt/prieglaudos/linksmosiospeduteslt"
-  }
- },
- {
-  "id": "linksmosiospedutes:18200",
-  "url": "https://www.linksmosiospedutes.lt/lt/kaciukai/skautas-18200.html",
-  "source": "linksmosiospedutes",
-  "name": "Skautas",
-  "species": "cat",
-  "city": "Klaipėda",
-  "photos": [
-   "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18200&w=220&h=220&t=crop"
-  ],
-  "status": "available",
-  "statusEvidence": "Kačiukai ieškantys namų",
-  "sex": null,
-  "ageLt": "2026 08 03",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": null,
-  "shelter": {
-   "id": "linksmosiospeduteslt",
-   "name": "VšĮ Linksmosios pėdutės",
-   "city": "Klaipėda",
-   "address": "Jūrininkų pr. 38, Klaipėda, 95255 Klaipėdos m. sav.",
-   "url": "https://globok.lt/prieglaudos/linksmosiospeduteslt"
-  }
- },
- {
-  "id": "linksmosiospedutes:18199",
-  "url": "https://www.linksmosiospedutes.lt/lt/kaciukai/sipis-18199.html",
-  "source": "linksmosiospedutes",
-  "name": "Sipis",
-  "species": "cat",
-  "city": "Klaipėda",
-  "photos": [
-   "https://www.linksmosiospedutes.lt/index.php?module=products&method=show_image&column=image&id=18199&w=220&h=220&t=crop"
-  ],
-  "status": "available",
-  "statusEvidence": "Kačiukai ieškantys namų",
-  "sex": null,
-  "ageLt": "2026 08 03",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -10940,7 +10791,7 @@
   "personalityTraitsEn": [],
   "bioLt": "PUDRA – mažas baltai juodas džiaugsmo kamuoliukas! Ši mažylė jau pasiruošusi naujam gyvenimo nuotykiui – savo namams! Pudra – meili, žaisminga ir vaikiškai išdykusi katytė. Jai visi draugai, o viskas aplinkui – potencialūs žaislai! Smalsumo, energijos ir noro bendrauti tikrai netrūksta. Pudra gimusi apie 2026 m. rugpjūčio pabaigą. Nukirminta, paskiepyta, paženklinta mikroschema, testai FIV/FeLV – neigiami. Ieškome jai mylinčių namų, kuriuose mažasis baltai juodas kamuoliukas galėtų išsiskleisti visu savo žaismingumu ir meile. Marijampolė",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-09T08:42:31Z",
+  "sourceUpdatedAt": "2026-11-21T08:03:35Z",
   "shelter": {
    "id": "mgmalt",
    "name": "Marijampolės gyvūnų mylėtojų asociacija (MGMA)",
@@ -11016,7 +10867,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Rainiukas Uranas ieško savo žmogaus! Šiam dryžuotam gražuoliui dar reikia šiek tiek laiko, kad patikėtų žmogumi. Uranas kol kas nedrąsus ir atsargus, todėl jam labai tiktų kantrus žmogus, kuris neskubins įvykių ir leis pasitikėjimui augti savu tempu. O smalsumo ir žaismingumo mažyliui tikrai netrūksta! Kaip ir priklauso tokio amžiaus kačiukui, Uranas nori tyrinėti pasaulį, žaisti ir po truputį atrasti, kad žmogaus rankos gali būti pačios švelniausios ir saugiausios. Gimęs apie 2026 m. liepos 24 d. Skiepytas Čipuotas Nuparazitintas Tvarkingai naudojasi kačių tualetu Kačiuko mamos FIV/FeLV testai – neigiami Gal tavo namuose atsiras vietos mažyliui, kuriam reikia ne tik namų, bet ir supratimo? Padovanok Uranui kantrybę, saugumą, o jo pasitikėjimas vieną dieną gali tapti pačia gražiausia dovana tau. Marijampolė",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-10-23T10:48:46Z",
+  "sourceUpdatedAt": "2026-11-21T08:11:06Z",
   "shelter": {
    "id": "mgmalt",
    "name": "Marijampolės gyvūnų mylėtojų asociacija (MGMA)",
@@ -11178,44 +11029,6 @@
   }
  },
  {
-  "id": "mgma:27055",
-  "url": "https://mgma.lt/gyvunas/kaciukas-is-navininku-kaimo/",
-  "source": "mgma",
-  "name": "Kačiukas iš Navininkų kaimo",
-  "species": "cat",
-  "city": "Marijampolė",
-  "photos": [
-   "https://mgma.lt/wp-content/uploads/2026/09/808906836_1782470929846226_1941772777499052853_n.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "2026 09 13 į mūsų globą iš Navininkų kaimo, Kalvarijos savivaldybės, perduotas vos trijų savaičių kačiukas. Jo mama prieš kelias dienas žuvo po automobilio ratais. Vėl susiduriame su požiūriu: „Katė ne mano, aš ją tik šeriu…“ Tačiau kačiukas liko be motinos ir mūsų globoje. Kada suprasime, kad vien pašerti gyvūną nepakanka? Kol katės nebus sterilizuojamos, tokios istorijos kartosis. Tai yra atsakomybė už jau gimusias ir dar tik gimsiančias gyvybes.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-09-14T07:40:18Z",
-  "shelter": {
-   "id": "mgmalt",
-   "name": "Marijampolės gyvūnų mylėtojų asociacija (MGMA)",
-   "city": "Marijampolė",
-   "address": "Sasnavos g. 74A, Marijampolė",
-   "url": "https://globok.lt/prieglaudos/mgmalt"
-  }
- },
- {
   "id": "mgma:27022",
   "url": "https://mgma.lt/gyvunas/rastas-antanavo-k-kazlu-rudos-sav/",
   "source": "mgma",
@@ -11245,44 +11058,6 @@
   "bioLt": "PONULIS – TRIJŲ KOJŲ VYRUTIS IEŠKO SAVO ŽMOGAUS! Ponulis – ne šiaip katinas. Čia rimtas vyrukas su charakteriu! Gimęs apie 2024 metų rudenį, bet gyvenimo patirties turi tiek, kad turbūt galėtų parašyti knygą. Tiesa, kojų turi tik tris, bet dėl to gyvenimas nė kiek nesugriuvo – laksto, žaidžia, murkia ir meilumo dalina tiek, kad kai kuriems keturkojams reikėtų pasitempti! Ponulis jau susitvarkė visus „popierius“: kastruotas skiepytas čipuotas nuparazitintas FIV/FeLV testai – neigiami Dabar belieka susirasti TĄ žmogų. Tokį, kuris ne skaičiuos kojas, o skaičiuos murkimus. Nes meilės Ponulis turi – už visas keturias kojas ir dar su kaupu! Marijampolė",
   "bioEn": null,
   "sourceUpdatedAt": "2026-09-28T07:56:11Z",
-  "shelter": {
-   "id": "mgmalt",
-   "name": "Marijampolės gyvūnų mylėtojų asociacija (MGMA)",
-   "city": "Marijampolė",
-   "address": "Sasnavos g. 74A, Marijampolė",
-   "url": "https://globok.lt/prieglaudos/mgmalt"
-  }
- },
- {
-  "id": "mgma:26990",
-  "url": "https://mgma.lt/gyvunas/tarante-skiepyta-cipuota-sterilizuota/",
-  "source": "mgma",
-  "name": "Tarantė",
-  "species": "cat",
-  "city": "Marijampolė",
-  "photos": [
-   "https://mgma.lt/wp-content/uploads/2026/09/792506570_1395286212711374_5611840605143557774_n.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Kačiukai Dovanojami",
-  "sex": null,
-  "ageLt": "gimusi apie 2024 metų vasaros vidurį – jauna, graži ir, svarbiausia, be galo meili",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Tarantė jau susikrovė lagaminus! Kraitelėlis sukrautas nuo A iki Z – sterilizuota, skiepyta, čipuota, nuparazitinta, o FIV/FeLV testai – neigiami. Tarantė gimusi apie 2024 metų vasaros vidurį – jauna, graži ir, svarbiausia, be galo meili! Puikiai sutaria su savo gentainiais, bet labiausiai trokšta to vieno ypatingo dalyko – žmogaus dėmesio ir savo žmogaus. Taigi, oficialiai skelbiame: Tarantė pasiruošusi išvykti iš laikinosios stotelės į tikruosius namus! Lagaminas paruoštas, nuotaika gera, bilieto trūksta tik į Jūsų namus. Marijampolė",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-09-03T08:00:57Z",
   "shelter": {
    "id": "mgmalt",
    "name": "Marijampolės gyvūnų mylėtojų asociacija (MGMA)",
@@ -11359,44 +11134,6 @@
   "bioLt": "„Dėmesio! Ieškomas profesionalus katinų pilvukų glostytojas !“ Dūminis meilės kamuolys Kėnis ieško savo žmogaus! Vos tik pamato žmogų – pliopt ant nugaros! Pilvukas į viršų, akys sako: „Na, ko lauki? Glostyk!“ O jei paglostysite… pasiruoškite – Kėnis greitai įsitikins, kad dabar jūs oficialiai priklausote jam. Šis dūminis gražuolis yra be galo meilus, draugiškas ir žmogų myli visa savo katiniška širdimi. Jam didžiausia laimė – būti šalia, murkti ir mėgautis dėmesiu. Kastruotas Skiepytas Čipuotas FIV/FeLV testai – neigiami Suduoti vaistai nuo parazitų Gimęs apie 2020 m. viduryje. Jeigu jūsų namuose dar trūksta keturkojo draugo, kuris kasdien privers nusišypsoti ir primins, kad pilvukus glostyti – beveik šventas reikalas, Kėnis jau kraunasi lagaminą!",
   "bioEn": null,
   "sourceUpdatedAt": "2026-08-06T11:29:34Z",
-  "shelter": {
-   "id": "mgmalt",
-   "name": "Marijampolės gyvūnų mylėtojų asociacija (MGMA)",
-   "city": "Marijampolė",
-   "address": "Sasnavos g. 74A, Marijampolė",
-   "url": "https://globok.lt/prieglaudos/mgmalt"
-  }
- },
- {
-  "id": "mgma:26831",
-  "url": "https://mgma.lt/gyvunas/2-kaciukai-is-kuloku-k/",
-  "source": "mgma",
-  "name": "2 kačiukai iš Kūlokų k.",
-  "species": "cat",
-  "city": "Marijampolė",
-  "photos": [
-   "https://mgma.lt/wp-content/uploads/2026/07/753702619_1068563119076512_3121888033476799630_n.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Informacija apie rainiukę: Paprika liko Paprika. Ir nė per plauką neprijaukinta. Visą mėnesį bandėme prisijaukinti mūsų laukinukę Papriką. Kantriai, ramiai, su meile… Bet Paprikos nuomonė šiuo klausimu nepasikeitė nė trupučio – žmogus jai kelia stresą, o gyvenimas laisvėje – ramybę. Todėl šiandien, 2026 08 25, Paprika iš Kūlokų k., Marijampolės sav., buvo sterilizuota pagal PSP programą ir paleista atgal į savo teritoriją, kur glaudžiasi visa jos šeima. Kartais meilė gyvūnui reiškia ne bandyti jį pakeisti, o priimti tokį, koks jis yra. Paprika pasirinko savo kelią – ir mes jį gerbiame. Būk saugi, laukinuke!",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-08-26T07:54:43Z",
   "shelter": {
    "id": "mgmalt",
    "name": "Marijampolės gyvūnų mylėtojų asociacija (MGMA)",
@@ -16950,7 +16687,9 @@
   "name": "FUNTIKAS",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [],
+  "photos": [
+   "https://penktakoja.lt/wp-content/uploads/2026/10/funtikas-1.jpg"
+  ],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -16986,7 +16725,9 @@
   "name": "GLUOSNĖ",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [],
+  "photos": [
+   "https://penktakoja.lt/wp-content/uploads/2026/10/gluosne-4.jpg"
+  ],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -17022,7 +16763,9 @@
   "name": "GUMINUKAS",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [],
+  "photos": [
+   "https://penktakoja.lt/wp-content/uploads/2026/10/guminukas-1.jpg"
+  ],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -17058,7 +16801,9 @@
   "name": "GURU",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [],
+  "photos": [
+   "https://penktakoja.lt/wp-content/uploads/2026/10/guru-2.jpg"
+  ],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -17094,7 +16839,9 @@
   "name": "AIKA",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [],
+  "photos": [
+   "https://penktakoja.lt/wp-content/uploads/2026/10/aika-4.jpg"
+  ],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -17130,7 +16877,9 @@
   "name": "ARČIS",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [],
+  "photos": [
+   "https://penktakoja.lt/wp-content/uploads/2026/10/arcis-5.jpg"
+  ],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -17166,7 +16915,9 @@
   "name": "DŽEREMIS",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [],
+  "photos": [
+   "https://penktakoja.lt/wp-content/uploads/2026/10/dzeremis-1.jpg"
+  ],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -17538,44 +17289,6 @@
   }
  },
  {
-  "id": "penktakoja:23504",
-  "url": "https://penktakoja.lt/beglobis/tiksius/",
-  "source": "penktakoja",
-  "name": "TIKSIUS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/10/tiksius-4_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-10-08T18:26:04Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:23466",
   "url": "https://penktakoja.lt/beglobis/dzeke/",
   "source": "penktakoja",
@@ -17681,44 +17394,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2026-10-08T18:21:03Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:23463",
-  "url": "https://penktakoja.lt/beglobis/grikis/",
-  "source": "penktakoja",
-  "name": "GRIKIS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/10/grikis-5_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-10-08T18:20:42Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -18028,42 +17703,6 @@
   }
  },
  {
-  "id": "penktakoja:23329",
-  "url": "https://penktakoja.lt/beglobis/cipsas-2/",
-  "source": "penktakoja",
-  "name": "ČIPSAS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-09-21T13:58:15Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:23324",
   "url": "https://penktakoja.lt/beglobis/cita/",
   "source": "penktakoja",
@@ -18316,51 +17955,13 @@
   }
  },
  {
-  "id": "penktakoja:23281",
-  "url": "https://penktakoja.lt/beglobis/reda-lara/",
-  "source": "penktakoja",
-  "name": "REDA LARA",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-09-21T13:53:28Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:23246",
   "url": "https://penktakoja.lt/beglobis/ridikas/",
   "source": "penktakoja",
   "name": "RIDIKAS",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/09/ridikas-3_2.jpg"
-  ],
+  "photos": [],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -18396,9 +17997,7 @@
   "name": "SNAIGĖ",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/09/snaige-1_2.jpg"
-  ],
+  "photos": [],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -18434,9 +18033,7 @@
   "name": "TUNA",
   "species": "dog",
   "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/09/tuna-3_2.jpg"
-  ],
+  "photos": [],
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
@@ -18457,44 +18054,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2026-09-21T13:50:27Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:23243",
-  "url": "https://penktakoja.lt/beglobis/vajana/",
-  "source": "penktakoja",
-  "name": "VAJANA",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/09/vajana-5_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-09-21T13:50:09Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -18770,44 +18329,6 @@
   }
  },
  {
-  "id": "penktakoja:23053",
-  "url": "https://penktakoja.lt/beglobis/fuga/",
-  "source": "penktakoja",
-  "name": "FUGA",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/08/fuga-5_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-08-31T07:43:38Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:23052",
   "url": "https://penktakoja.lt/beglobis/goblinas/",
   "source": "penktakoja",
@@ -19036,120 +18557,6 @@
   }
  },
  {
-  "id": "penktakoja:22978",
-  "url": "https://penktakoja.lt/beglobis/viljamas/",
-  "source": "penktakoja",
-  "name": "VILJAMAS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/08/viljamas-4_2-1.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-08-31T06:42:23Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:22977",
-  "url": "https://penktakoja.lt/beglobis/vaibas/",
-  "source": "penktakoja",
-  "name": "VAIBAS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/08/vaibas-7_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-08-31T06:41:51Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:22971",
-  "url": "https://penktakoja.lt/beglobis/sodas/",
-  "source": "penktakoja",
-  "name": "SODAS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/08/sodas-4_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-08-31T06:40:28Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:22969",
   "url": "https://penktakoja.lt/beglobis/sniegute/",
   "source": "penktakoja",
@@ -19264,44 +18671,6 @@
   }
  },
  {
-  "id": "penktakoja:22783",
-  "url": "https://penktakoja.lt/beglobis/dzeris-beris/",
-  "source": "penktakoja",
-  "name": "DŽERIS BERIS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/07/dzeris-beris-3_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-07-21T17:32:23Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:22778",
   "url": "https://penktakoja.lt/beglobis/lakis/",
   "source": "penktakoja",
@@ -19331,44 +18700,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2026-07-21T17:31:28Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:22708",
-  "url": "https://penktakoja.lt/beglobis/figa/",
-  "source": "penktakoja",
-  "name": "FIGA",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/07/figa-2_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-07-21T16:49:14Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -19834,44 +19165,6 @@
   }
  },
  {
-  "id": "penktakoja:22496",
-  "url": "https://penktakoja.lt/beglobis/pudingas/",
-  "source": "penktakoja",
-  "name": "PUDINGAS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/07/pudingas-4_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-07-03T10:32:42Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:22433",
   "url": "https://penktakoja.lt/beglobis/rauze/",
   "source": "penktakoja",
@@ -20015,82 +19308,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2026-05-11T05:12:13Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:22019",
-  "url": "https://penktakoja.lt/beglobis/akela/",
-  "source": "penktakoja",
-  "name": "AKELA",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/05/akela-5_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-06-25T10:20:14Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:22011",
-  "url": "https://penktakoja.lt/beglobis/labutinas/",
-  "source": "penktakoja",
-  "name": "LABUTINAS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/05/labutinas-1_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-05-11T05:08:00Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -20480,44 +19697,6 @@
   }
  },
  {
-  "id": "penktakoja:21372",
-  "url": "https://penktakoja.lt/beglobis/lapa/",
-  "source": "penktakoja",
-  "name": "LAPA",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/03/lapa-8_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-03-06T10:20:18Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:21310",
   "url": "https://penktakoja.lt/beglobis/printeris/",
   "source": "penktakoja",
@@ -20775,44 +19954,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2026-03-04T08:43:18Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:21033",
-  "url": "https://penktakoja.lt/beglobis/birzelis/",
-  "source": "penktakoja",
-  "name": "BIRŽELIS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/02/birzelis-4_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-02-10T09:27:28Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -21117,44 +20258,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2026-01-13T08:38:34Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:20653",
-  "url": "https://penktakoja.lt/beglobis/bruno/",
-  "source": "penktakoja",
-  "name": "BRUNO",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2026/01/bruno-3_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-01-13T08:38:10Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -21649,44 +20752,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2025-10-20T11:40:07Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:19422",
-  "url": "https://penktakoja.lt/beglobis/kalvadosas/",
-  "source": "penktakoja",
-  "name": "KALVADOSAS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2025/10/kalvadosas-3_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2025-10-20T11:28:47Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -22418,44 +21483,6 @@
   }
  },
  {
-  "id": "penktakoja:17988",
-  "url": "https://penktakoja.lt/beglobis/laputis/",
-  "source": "penktakoja",
-  "name": "LAPUTIS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2025/05/laputis-4_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2025-05-12T11:20:52Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:17442",
   "url": "https://penktakoja.lt/beglobis/albinukas/",
   "source": "penktakoja",
@@ -22950,44 +21977,6 @@
   }
  },
  {
-  "id": "penktakoja:16575",
-  "url": "https://penktakoja.lt/beglobis/grazuolis/",
-  "source": "penktakoja",
-  "name": "GRAŽUOLIS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2025/02/grazuolis-2_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2025-02-12T18:05:03Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:16530",
   "url": "https://penktakoja.lt/beglobis/tango/",
   "source": "penktakoja",
@@ -23207,44 +22196,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2025-02-12T18:19:21Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:16414",
-  "url": "https://penktakoja.lt/beglobis/pokis/",
-  "source": "penktakoja",
-  "name": "POKIS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2025/02/pokis-2_2_2.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-06-25T11:51:51Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -23748,44 +22699,6 @@
   }
  },
  {
-  "id": "penktakoja:14305",
-  "url": "https://penktakoja.lt/beglobis/shy/",
-  "source": "penktakoja",
-  "name": "SHY",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2024/09/shy-1.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-03-30T10:11:31Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
   "id": "penktakoja:14302",
   "url": "https://penktakoja.lt/beglobis/turbo/",
   "source": "penktakoja",
@@ -24195,44 +23108,6 @@
   "bioLt": null,
   "bioEn": null,
   "sourceUpdatedAt": "2026-02-03T12:35:50Z",
-  "shelter": {
-   "id": "penktakojalt",
-   "name": "VšĮ Penkta koja",
-   "city": "Kaunas",
-   "address": "Liepų g. 2, Linksmakalnis, 53290 Kauno r. sav.",
-   "url": "https://globok.lt/prieglaudos/penktakojalt"
-  }
- },
- {
-  "id": "penktakoja:11378",
-  "url": "https://penktakoja.lt/beglobis/jonelis/",
-  "source": "penktakoja",
-  "name": "JONELIS",
-  "species": "dog",
-  "city": "Kaunas",
-  "photos": [
-   "https://penktakoja.lt/wp-content/uploads/2024/01/jonelis-scaled.jpg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": null,
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-02-23T07:06:49Z",
   "shelter": {
    "id": "penktakojalt",
    "name": "VšĮ Penkta koja",
@@ -24964,6 +23839,45 @@
   }
  },
  {
+  "id": "siauliuletenele:93079",
+  "url": "https://siauliuletenele.lt/skalis-ir-bara/",
+  "source": "siauliuletenele",
+  "name": "SKALIS IR BARA",
+  "species": "dog",
+  "city": "Šiauliai",
+  "photos": [
+   "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_23193981021783222.jpg",
+   "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_2319398102178322.jpg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": null,
+  "ageLt": "ŠUNYS, GIMĘ 2017-2023 M.",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "9 metų Skalis ir Bara iš N. Akmenės – šeimininkas numirė prieš metus, artimieji užsienyje, prižiūrėjo, kiek galėjo kaimynė. Tel. [kontaktas pašalintas]",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-23T05:49:48Z",
+  "shelter": {
+   "id": "siauliuletenelelt",
+   "name": "VšĮ Šiaulių letenėlė",
+   "city": "Šiauliai",
+   "address": "Gruzdžių g 1D, Verbūnai, 81372 Šiaulių r. sav.",
+   "url": "https://globok.lt/prieglaudos/siauliuletenelelt"
+  }
+ },
+ {
   "id": "siauliuletenele:92798",
   "url": "https://siauliuletenele.lt/is-vienkiemio/",
   "source": "siauliuletenele",
@@ -25093,6 +24007,7 @@
   "species": "dog",
   "city": "Šiauliai",
   "photos": [
+   "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_1456048512640791.jpg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_1B88A589-7D64-4877-848E-AFAB03A54DBF.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_E0C5CE88-A86F-4BF8-B5D2-DAAF0BEE282D.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_96BF779E-DF0A-47F2-A62F-0419AEF5A2F3.jpeg",
@@ -25101,8 +24016,7 @@
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_7D5E69C1-4187-4CE3-A716-3726A9A6B372.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_1CB76ED5-BDEB-4F7C-83DC-1D93AEA60F1C.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_3088AF59-DB9B-4375-8655-4204D6A146E3.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_B204A233-F77A-4D3B-94CC-0BA8D166F101.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_D6A73009-FF98-48D2-844C-B07F7E8F33A8.jpeg"
+   "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_B204A233-F77A-4D3B-94CC-0BA8D166F101.jpeg"
   ],
   "status": "unknown",
   "statusEvidence": null,
@@ -25121,9 +24035,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Dina buvo kambarinis šuniukas, taip ir turėjo būti, nes jos kailis visiškai nepritaikytas žiemoti lauke. Kodėl prieš kelis metus močiutė nusprendė ją pririšti prie būdos, nesiaiškinome. Ačiū anūkei, įtikinusiai savo močiutę atiduoti ne tik likusius vaikučius, bet ir mamytę Vargšiukė Dinutė, skaudu net įsivaizduoti, kaip jai turėjo būti šalta… Ir dabar, esant dar pliusinei temperatūrai, lauke ji dreba ir, greitai atlikusi lauke visus reikaliukus, tekina lekia šildytis… Labai norėtume galėti pasakyti, kad kreipkitės, gelbėkim visus šuniukus, kurie dreba lauke… Deja, mūsų galimybės nėra beribės, šiltų vietų prieglaudoje lygiai 0. Bet labai prašome, jei artimoje aplinkoje matote kenčiantį gyvūną, nelikite abejingi Kartais gali užtekti tik draugiško pokalbio, kad šeimininkas atsipeikėtų… Kalytė Dina (apie 4 m.) ir dvi jos dukrytės (apie 2 mėn. amžiaus) atvežtos iš Beržėnų kaimo, Kelmės r. Tel. [kontaktas pašalintas]",
+  "bioLt": "Dina buvo kambarinis šuniukas, taip ir turėjo būti, nes jos kailis visiškai nepritaikytas žiemoti lauke. Kodėl prieš kelis metus močiutė nusprendė ją pririšti prie būdos, nesiaiškinome. Ačiū anūkei, įtikinusiai savo močiutę atiduoti ne tik likusius vaikučius, bet ir mamytę Vargšiukė Dinutė, skaudu net įsivaizduoti, kaip jai turėjo būti šalta… Ir dabar, esant dar pliusinei temperatūrai, lauke ji dreba ir, greitai atlikusi lauke visus reikaliukus, tekina lekia šildytis… Labai norėtume galėti pasakyti, kad kreipkitės, gelbėkim visus šuniukus, kurie dreba lauke… Deja, mūsų galimybės nėra beribės, šiltų vietų prieglaudoje lygiai 0. Bet labai prašome, jei artimoje aplinkoje matote kenčiantį gyvūną, nelikite abejingi Kartais gali užtekti tik draugiško pokalbio, kad šeimininkas atsipeikėtų… Sonja rado namus! Kalytė Dina (apie 4 m.) ir dvi jos dukrytės (apie 2 mėn. amžiaus) atvežtos iš Beržėnų kaimo, Kelmės r. Tel. [kontaktas pašalintas]",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-16T05:49:54Z",
+  "sourceUpdatedAt": "2026-11-23T06:13:00Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -25256,46 +24170,6 @@
   "bioLt": "Radviliškyje po miestą klaidžiojęs šunelis Ardo atvyko pas mus į Verbūnus, ~2022 m. gimimo. Pasigedę savo keturkojo draugo, susisiekite tel. [kontaktas pašalintas]",
   "bioEn": null,
   "sourceUpdatedAt": "2026-11-19T08:46:18Z",
-  "shelter": {
-   "id": "siauliuletenelelt",
-   "name": "VšĮ Šiaulių letenėlė",
-   "city": "Šiauliai",
-   "address": "Gruzdžių g 1D, Verbūnai, 81372 Šiaulių r. sav.",
-   "url": "https://globok.lt/prieglaudos/siauliuletenelelt"
-  }
- },
- {
-  "id": "siauliuletenele:92178",
-  "url": "https://siauliuletenele.lt/is-seduvos-7/",
-  "source": "siauliuletenele",
-  "name": "BRUŠAS",
-  "species": "dog",
-  "city": "Šiauliai",
-  "photos": [
-   "https://siauliuletenele.lt/wp-content/uploads/2026/10/FB_IMG_1793980710118.jpg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/10/received_2417569835739988.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/10/received_1511799507449804.jpeg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "ŠUNYS, GIMĘ 2017-2023 M.",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Apleistas šunelis Brušas atvežtas iš Šeduvos, tel. [kontaktas pašalintas]",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-06T15:59:34Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -25643,9 +24517,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Šiauliuose, Terminalo g. rasta rujojanti kalytė Rudė-Pica! Čipuota, savininkė telefonu neatsiliepia. Aiškėja labai paini istorija, kurią norime išsiaiškinti galutinai ir priimti tinkamiausią sprendimą. ~2020 m. gimimo. Tel. +[kontaktas pašalintas] Mažytė Razinka ieško namų 🧡🤎 Ji sveria vos 3.5 kg, o begalinės meilės, dėmesio ir noro būti šalia žmogaus joje, lyg svertų visus 350 ❤️❤️❤️ Razinka labai prieraiši, meili, jai norisi būti ant rankų, jausti šeimininko šilumą, glaustis ir visada visur kartu lydėti savo žmogų 😊 Tačiau tokia meilės išraiška turi ir kitą pusę – ji sunkiai pakelia išsiskyrimą, patiria didelį stresą, kai lieka viena 🥺 Razinka nėra tas šuo, kuris galėtų ramiai laukti šeimininko, kol šis grįš po ilgos darbo dienos. Bent jau, dar ne dabar… Tad ieškomi namai, kuriuose jai reikėtų kuo mažiau laiko praleisti vienai. O ilgainiui, galbūt, su specialisto pagalba, Razinka išmoktų ramiai snausti, kol jos žmogus grįš po dienos darbų ir apdovanos ją už kantrybę visais šuniukiškais džiaugsmais 😉",
+  "bioLt": "Šeimininkai renkami iš jau užpildytų anketų. Šiauliuose, Terminalo g. rasta rujojanti kalytė Rudė-Pica! Čipuota, savininkė telefonu neatsiliepia. Aiškėja labai paini istorija, kurią norime išsiaiškinti galutinai ir priimti tinkamiausią sprendimą. ~2020 m. gimimo. Tel. +[kontaktas pašalintas] Mažytė Razinka ieško namų 🧡🤎 Ji sveria vos 3.5 kg, o begalinės meilės, dėmesio ir noro būti šalia žmogaus joje, lyg svertų visus 350 ❤️❤️❤️ Razinka labai prieraiši, meili, jai norisi būti ant rankų, jausti šeimininko šilumą, glaustis ir visada visur kartu lydėti savo žmogų 😊 Tačiau tokia meilės išraiška turi ir kitą pusę – ji sunkiai pakelia išsiskyrimą, patiria didelį stresą, kai lieka viena 🥺 Razinka nėra tas šuo, kuris galėtų ramiai laukti šeimininko, kol šis grįš po ilgos darbo dienos. Bent jau, dar ne dabar… Tad ieškomi namai, kuriuose jai reikėtų kuo mažiau laiko praleisti vienai. O ilgainiui, galbūt, su specialisto pagalba, Razinka išmoktų ramiai snausti, kol jos žmogus grįš po dienos darbų ir apdovanos ją už kantrybę visais šuniukiškais džiaugsmais 😉",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-20T11:45:41Z",
+  "sourceUpdatedAt": "2026-11-22T08:55:15Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -25977,52 +24851,6 @@
   }
  },
  {
-  "id": "siauliuletenele:90611",
-  "url": "https://siauliuletenele.lt/is-pakapes-10/",
-  "source": "siauliuletenele",
-  "name": "LIALIA",
-  "species": "dog",
-  "city": "Šiauliai",
-  "photos": [
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/received_2391859381618427.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/received_3032398233793210.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/received_1439344497770434.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/Messenger_creation_CF8CACFB-CA15-465A-9B9B-1DBDBD974F97.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/Messenger_creation_C8977DE5-FE16-493A-9A51-21917605ECBC.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/Messenger_creation_242BEFB4-99B7-4BAE-B0E8-8486821E5E1E.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/Messenger_creation_795580EE-E7A6-4BD1-AD34-0ABB42DD3676.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/Messenger_creation_A7CD328D-4B41-4018-91BE-73BCDCBE361A.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/Messenger_creation_2961919604151138.jpeg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuota",
-  "sex": null,
-  "ageLt": "ŠUNYS, GIMĘ 2017-2023 M.",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": false,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Rezervuota. 🐾 Susipažinkite – Lialia! ❤️ Lialia – 7 metų mažylė, sverianti vos 2,5 kg! Maža, bet su didžiule širdimi ir labai aiškiais pomėgiais🥰 Lialia be galo myli žmones! Vos pamačiusi žmogų, iškart skuba prie jo, nes juk galbūt pavyks gauti taip trokštamų paglostukų❤️ Jai žmogaus dėmesys – vienas didžiausių džiaugsmų! Su kitais šuniukais draugiška, tačiau tikroji jos silpnybė – ryži katinai! 😍 Panašu, kad dėl jų Lialia yra visiškai pametusi galvą🐈🧡 Ši nedidukė🐶 ieško mylinčių namų, kuriuose galėtų mėgautis žmogaus draugija, dėmesiu ir šiluma. Galbūt būtent Jūsų namuose laukia jos naujas gyvenimo etapas? 🏡 Lialia labai laukia savo žmogaus, kuriam galėtų atiduoti visą savo meilę! ❤️ ~2019 m. gimimo. [kontaktas pašalintas] Laikinoje namų globoje 😊 Apleista – blusėta, ausys nuėstos musių, dreduota paausiuose, murzina, smirdančia burna, visiškai neprižiūrėta, nečipuota kalytė rasta Pakapėje. Atsirado ir savininkė, bet grąžinti kalytės jai tikrai negalima..",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-10T11:30:59Z",
-  "shelter": {
-   "id": "siauliuletenelelt",
-   "name": "VšĮ Šiaulių letenėlė",
-   "city": "Šiauliai",
-   "address": "Gruzdžių g 1D, Verbūnai, 81372 Šiaulių r. sav.",
-   "url": "https://globok.lt/prieglaudos/siauliuletenelelt"
-  }
- },
- {
   "id": "siauliuletenele:90545",
   "url": "https://siauliuletenele.lt/is-verbunu-3/",
   "source": "siauliuletenele",
@@ -26238,7 +25066,7 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
+   "chipped": false,
    "vaccinated": null,
    "neutered": null
   },
@@ -26246,9 +25074,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "2026-11-08 vėl rastas dar labiau apleistas-mūsų globoje, apie 2025 m. gimimo, tel. [kontaktas pašalintas] Grįžo namo. Pastebimas nepirmą dieną Žiogų kaime, Šiaulių r. šuniukas rugsėjo 6 d. atkeliavo pas mus.",
+  "bioLt": "2026-11-08 vėl rastas dar labiau apleistas-mūsų globoje, apie 2025 m. gimimo, tel. [kontaktas pašalintas] Žiogelis tikras keliauninkas. Kas du mėnesius patekti į tą pačią prieglaudą reikia neeilinių sugebėjimų 🙂 Rugsėjo mėnesio pradžioje kelias dienas klaidžiojo viename kaime, visai netoli savo namų. O lapkričio pradžioje jau už, maždaug, 7 km nuo savo namų. Išėjo antradienį, o sekmadienį išdygo mūsų kolegės kieme ir niekur nebėjo, tiesiog jaukiai leido laiką. Žiogiuką pasiėmė dar visai mažiuką du senjorai, kad užsiauginti lapių vaikytoją, dienas leidžiant pririštu, o vakarais su dar vienu šuneliu paleidžiant. Tas kitas šunelis sugrįžta į savo vietą, o Žiogas nusprendė, matomai, kad toks gyvenimas ne jam. Pirmą kartą mes grąžinom senjorams, bet šį kartą radom šuniuką jau pilną erkių, randuotu snukučiu. O jam dar tik šiek tiek virš metų… Paklausėm jo, ar nori grįžti atgal prie būdos? Ar ieškom kitų namų? Sakė KITŲ. Atsižvelgdami į šuniuko poreikius, ieškosim jam kitų namų. P.S. buvo nečipuotas Grįžo namo. Pastebimas nepirmą dieną Žiogų kaime, Šiaulių r. šuniukas rugsėjo 6 d. atkeliavo pas mus.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-20T07:13:32Z",
+  "sourceUpdatedAt": "2026-11-23T17:44:29Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -26325,7 +25153,7 @@
   "status": "unknown",
   "statusEvidence": null,
   "sex": null,
-  "ageLt": "ŠUNYS, GIMĘ 2017-2023 M.",
+  "ageLt": "ŠUNYS, GIMĘ 2024-2026 M.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -26339,9 +25167,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Lafis rastas lakstantis tarp Kužių ir Verbūnų, ~1,5 m. amžiaus, tel. [kontaktas pašalintas]",
+  "bioLt": "🐾 Labas! Aš Lafis! 🐾 Mane rado lakstantį kažkur tarp Kužių ir Verbūnų. Nežinau, ko aš ten laksčiau – gal pasiklydau, gal kas pametė, o gal tiesiog paliko… Mano istorijos pradžios dar niekas nežino. Dabar gyvenu prieglaudoje ir, tiesą sakant, nesiskundžiu. Bet gal jau laikas susirasti savo žmogų? ❤️ Sakau, esu toks į peraugusį špicą panašus vyrukas. Baltadantis, pūkuotas, plaukai vėjyje plaikstosi, o man dar nė dvejų nėra! Esu linksmas, draugiškas ir beveik visada besišypsantis. Su žmonėmis draugauju labai labai! O su šunimis… Na, čia jau kaip nuotaika užeina. Su vienais sutariu puikiai, su kitais – nelabai. Žodžiu, ne kiekvienas man prie širdies, bet juk ir jūs ne su visais draugaujate! 😁 Tai ką, gal norėtum, kad tavo namuose atsirastų šiek tiek pūkuoto džiaugsmo? Paskambink, susipažinkime ir susitarkime dėl pasimatymo! Gal kaip tik tu esi mano žmogus? ❤️ 📞 [kontaktas pašalintas] 2024 m. gimimo",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-09-07T04:58:50Z",
+  "sourceUpdatedAt": "2026-11-23T16:28:48Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -26389,53 +25217,6 @@
   "bioLt": "10 m. Ledi atvyko iš Kurtuvėnų, nes šeimininkai senjorai nebesugebėjo ja pasirūpinti, tel. [kontaktas pašalintas]",
   "bioEn": null,
   "sourceUpdatedAt": "2026-10-08T15:57:10Z",
-  "shelter": {
-   "id": "siauliuletenelelt",
-   "name": "VšĮ Šiaulių letenėlė",
-   "city": "Šiauliai",
-   "address": "Gruzdžių g 1D, Verbūnai, 81372 Šiaulių r. sav.",
-   "url": "https://globok.lt/prieglaudos/siauliuletenelelt"
-  }
- },
- {
-  "id": "siauliuletenele:89884",
-  "url": "https://siauliuletenele.lt/pupa-5/",
-  "source": "siauliuletenele",
-  "name": "DIGNA",
-  "species": "dog",
-  "city": "Šiauliai",
-  "photos": [
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_AEEC0477-C4AF-45C5-912E-F435B15E6EF4.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_1C61AF60-92C5-440D-9B44-F4462408E009.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_9FE39B7B-70E6-499A-A9F0-1A7E801F94CF.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_FD676059-946B-4B48-81EF-BBC8DD7AECFC.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_1791A0DC-F180-4524-81FF-5D43BA25A6E2.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_D13B9A64-DA5C-4998-9C54-2CF32406F094.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_A342CD20-41B5-4705-AA2E-379E2A15BC3B.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_7447B28E-65F6-4D39-AD85-EE5FBCEC613C.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_AA324303-9A83-4F14-97C6-8CE016A2844C.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_1431915618756737.jpeg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "ŠUNYS, GIMĘ IKI 2016 M.",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Pupa, dabar jau Digna 🙂 – 10 m. iš Joniškio. Mirus šeimininkui pateko į netinkamą priežiūrą, bėgo vis į savo senus namus… tel. [kontaktas pašalintas]",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-10T11:32:22Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -30450,6 +29231,7 @@
   "species": "cat",
   "city": "Šiauliai",
   "photos": [
+   "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_1660423879093747-scaled.jpg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_4D8DE40E-FFA8-405C-BBE0-CCB61897ED2F.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_DA62EC85-18CA-4306-8E6E-7B3547865CCB.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/Messenger_creation_CF7B1B3A-1BDF-465D-BA19-9DFF7E371908.jpeg",
@@ -30458,8 +29240,7 @@
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1620456465867568.jpg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_2193883501554372.jpg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_2311779686284464.jpg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1643455914138386.jpg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_2274750466799509.jpg"
+   "https://siauliuletenele.lt/wp-content/uploads/2026/11/received_1643455914138386.jpg"
   ],
   "status": "unknown",
   "statusEvidence": null,
@@ -30480,48 +29261,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Gražuoliai kačiukai – rainas Marko, juodas su baltu Polo, raina su baltu Hortenzija (rado namus) – iš Užuožerių km., Radviliškio r., tel. [kontaktas pašalintas]",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-19T08:26:37Z",
-  "shelter": {
-   "id": "siauliuletenelelt",
-   "name": "VšĮ Šiaulių letenėlė",
-   "city": "Šiauliai",
-   "address": "Gruzdžių g 1D, Verbūnai, 81372 Šiaulių r. sav.",
-   "url": "https://globok.lt/prieglaudos/siauliuletenelelt"
-  }
- },
- {
-  "id": "siauliuletenele:92157",
-  "url": "https://siauliuletenele.lt/is-daugeliu/",
-  "source": "siauliuletenele",
-  "name": "ROČIS",
-  "species": "cat",
-  "city": "Šiauliai",
-  "photos": [
-   "https://siauliuletenele.lt/wp-content/uploads/2026/09/Messenger_creation_11DCC320-6E5E-4E62-94A9-3AF68FB43E7A.jpg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/10/received_1768069467812233.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/10/received_1762487644832156.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/10/received_1153511847034379.jpeg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "KAČIUKAI IKI 6 MĖN.",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": false
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Daugėliuose, prie pirties, rastas išsigandęs, apie 5–6 mėn. katinėlis. Nekastruotas, mikroschemos nerasta. Tel. [kontaktas pašalintas]",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-13T06:48:30Z",
+  "sourceUpdatedAt": "2026-11-23T05:50:13Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -30862,9 +29602,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Kačiukai – Driksis ir Diksė – buvo rasti prie Zoknių namelio durų… tel. [kontaktas pašalintas] Kažkam buvo visai nereikalingi, todėl atsidūrė meistriškai sukaltoje dėžėje prie prieglaudos durų… Labai norėtųsi, kad kita kelionė dėžutėje būtų jau į naujus namus ❤️ Iki 4 mėn. amžiaus",
+  "bioLt": "Kačiukai – Driksis (rado namus) ir Diksė – buvo rasti prie Zoknių namelio durų… tel. [kontaktas pašalintas] Kažkam buvo visai nereikalingi, todėl atsidūrė meistriškai sukaltoje dėžėje prie prieglaudos durų… Labai norėtųsi, kad kita kelionė dėžutėje būtų jau į naujus namus ❤️ Iki 4 mėn. amžiaus",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-18T13:09:33Z",
+  "sourceUpdatedAt": "2026-11-23T13:30:37Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -31126,9 +29866,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Katytė Tilda su vaikučiais – Čeris ir Čija – iš Šilėnų, išsamiau tel. [kontaktas pašalintas]. Juodukas Džambo, atvyko vėliausiai, sirgo-pasveiko-dėl jo teirautis tel. [kontaktas pašalintas]. Tai ką, prieglaudose tik raini arba juodi katinai? Neeee! 😁🐱 Turime ir tokią pūkuotą gražuolę, kad sunku atitraukti akis! Susipažinkite – Tilda! ❤️ Tikra pūkų karalienė – graži, miela, rami ir šiek tiek drovi katytė. Kažkada pas mus atkeliavo kartu su dviem savo vaikiukais. Mažyliais pasirūpinta, tačiau dabar pati Tilda ir jos dukrytė Čija Zoknių namelyje, o sūnelis Džambo Verbūnuose vis dar laukia savo šanso❤️ Tildai vos pora metukų. Ji sterilizuota, skiepyta, čipuota ir visiškai pasiruošusi keliauti į savo namus🏡 Tilda nėra iš tų, kurios pačios garsiai šaukia ir prašosi dėmesio. Ji kiek kuklesnė, todėl galbūt pati ir neišdrįstų paprašyti to, ko labiausiai norėtų. Todėl prašome mes ❤️ Gal Tilda, Čija ar Džambo kaip tik laukia tavęs? 😻 Čeris rado namus!",
+  "bioLt": "Katytė Tilda su vaikučiais – Čeris ir Čija – iš Šilėnų, išsamiau tel. [kontaktas pašalintas]. Juodukas Džambo, atvyko vėliausiai, sirgo-pasveiko-dėl jo teirautis tel. [kontaktas pašalintas]. Tai ką, prieglaudose tik raini arba juodi katinai? Neeee! 😁🐱 Turime ir tokią pūkuotą gražuolę, kad sunku atitraukti akis! Susipažinkite – Tilda! ❤️ Tikra kačių karalienė – graži, miela, rami ir šiek tiek drovi katytė. Kažkada pas mus atkeliavo kartu su trejais savo vaikiukais. Tad dabar Tilda ir jos dukrytė Čija Zoknių namelyje, o sūnelis Džambo Verbūnuose vis dar laukia savo šanso❤️ Tildai vos pora metukų. Ji sterilizuota, skiepyta, čipuota ir visiškai pasiruošusi keliauti į savo namus🏡 Tilda nėra iš tų, kurios pačios garsiai šaukia ir prašosi dėmesio. Ji kiek kuklesnė, todėl galbūt pati ir neišdrįstų paprašyti to, ko labiausiai norėtų. Todėl prašome mes ❤️ Gal Tilda, Čija ar Džambo kaip tik laukia tavęs? 😻 Vaizdo įrašas (1) Čeris rado namus!",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-17T18:02:27Z",
+  "sourceUpdatedAt": "2026-11-21T05:40:04Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -31246,7 +29986,7 @@
   ],
   "status": "unknown",
   "statusEvidence": null,
-  "sex": null,
+  "sex": "male",
   "ageLt": "KATĖS, GIMUSIOS IKI 2016 M.",
   "ageEn": null,
   "size": null,
@@ -31261,9 +30001,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Senjoras iš Pakruojo.. tel. [kontaktas pašalintas]",
+  "bioLt": "Labas… Aš Morganas❤️ Nežinau, kiek man metų. Niekas nežino. Bet mano snukutis turbūt galėtų papasakoti ne vieną istoriją. Greičiausiai visą savo gyvenimą praleidau gatvėje. Be savo žmogaus, be šiltos vietos, be garantijos, kad rytoj turėsiu ką pavalgyti. Gatvėje išmokau neatsirinkinėti. Valgau viską, ką tik randu. Duoną, žmonių maistą, net saldainius. Nes kai nežinai, kada vėl pasiseks rasti kąsnį, imi viską, ką gyvenimas pasiūlo. Tokia buvo mano kasdienybė. Vieną dieną mane pastebėjo savanorė. Buvau suvargęs, su sužeista kojele. Ačiū jai, kad nepraėjo pro šalį. Kad pamatė mane, tokį pavargusį gatvės katinėlį, ir atvežė ten, kur man pagaliau nebereikia kovoti už kiekvieną dieną. Dabar aš gyvenu šiltai. Mano dubenėlyje visada yra maisto. Nereikia ieškoti, raustis, laukti, kol kas nors numes kąsnelį. O žinote, kas man dar labai patinka? Žmonės. Kiekvieną atvykstantį pasitinku, džiaugiuosi paglostymais ir tiesiog mėgaujuosi tomis akimirkomis, kai kažkas sustoja prie manęs. Gal aš tik dabar supratau, kaip gera, kai tavimi rūpinasi. Kai nereikia bijoti alkio, šalčio ir nežinomybės. Kai gali ramiai susirangyti šiltoje vietelėje ir tiesiog miegoti. Tik vieno dalyko man dar trūksta. Savo žmogaus. Savo namų. Žinau, nesu gražuolis. Mano kailiukas matęs daug vargo, snukutis išduoda nugyventus metus, o kiek jų iš tiesų – niekas nežino. Galbūt nebesu tas katinas, dėl kurio žmonės sustoja pirmiausia. Bet aš vis dar moku džiaugtis žmogumi, glaustis, murkti ir laukti paglostymo. Ir žinote ką? Aš vis dar tikiu stebuklais. Gal atsiras žmogus, kuriam mano gyvenimo paliestas snukutis bus pats gražiausias? Gal kas nors pažvelgs į mane ir pasakys: „Štai tavęs aš ir laukiau.“ Aš jau nemažai gyvenimo nugyvenau gatvėje. Taip norėčiau bent likusią jo dalį praleisti ne laukdamas kito kąsnio, o laukdamas savo sugrįžtančio namo žmogaus. Gal kas nors mane pamils? Ne nepaisant mano amžiaus ir išvaizdos, o tiesiog tokį, koks esu. Aš labai norėčiau tapti kažkieno katinu. Jūsų Morganas❤️ Senjoras iš Pakruojo.. tel. [kontaktas pašalintas]",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-10-14T19:05:04Z",
+  "sourceUpdatedAt": "2026-11-21T09:46:52Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -31283,13 +30023,13 @@
    "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_2141412483926521.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_1464734972186665.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_1620859199691877.jpeg",
+   "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_1615377969839400.jpg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_9EB893AC-AE3C-4D77-85E6-5C85772F2121.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_A3603872-2CAB-473E-A2FE-BC20A342CEA0.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_4A4CC0A8-F0CC-4F20-BEF4-A3FB7B1B4AD1.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/08/Messenger_creation_416752BE-4B38-4349-AFF4-9FF77EB1F3B2.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_195C24C5-4C69-4060-97C3-417FC2D5AED4.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_53C58062-40CA-497F-AC8F-2DDEBD76E348.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_F3C7F97E-3462-4903-9E3F-618C2F221BD6.jpeg"
+   "https://siauliuletenele.lt/wp-content/uploads/2026/07/Messenger_creation_53C58062-40CA-497F-AC8F-2DDEBD76E348.jpeg"
   ],
   "status": "unknown",
   "statusEvidence": null,
@@ -31310,7 +30050,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Katukai iš Tvibių kaimo, tel. [kontaktas pašalintas] Persikutis, Žvaigždutė, Afrikas rado namus! Mažyliai – ryžiukai Nektariukė, Persikutis, Afrikas, juodas Jordanas, juoda-balta Žvaigždutė, mamytė Kibirkštėlė.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-16T06:46:38Z",
+  "sourceUpdatedAt": "2026-11-22T16:02:28Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -31667,8 +30407,8 @@
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Screenshot_20260612_215309_Facebook.jpg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Screenshot_20260612_215319_Facebook.jpg"
   ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
+  "status": "unknown",
+  "statusEvidence": null,
   "sex": "male",
   "ageLt": "KATĖS, GIMUSIOS IKI 2016 M.",
   "ageEn": null,
@@ -31684,9 +30424,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Rezervuotas Aš Kenzis. Senjoras katinas, netekęs ne tik namų, bet ir žmogaus, kurį mylėjau visą savo gyvenimą. Tačiau vieną dieną mano žmogus išvyko į slaugos namus, o aš atsidūriau prieglaudoje. Ilgai laukiau, kad jis sugrįš manęs pasiimti. Laukiau dieną, kitą, dar kitą… Bet jis taip ir neatėjo. Prieglaudoje jau po truputį apsiprantu, bet senatvėje labai sunku netekti visko, kas buvo pažįstama ir brangu. Ypač kai lieki vienas. Esu didelis meškinas, ramus ir geras katinas. Man nereikia daug. Tik savo kampelio, minkšto guolio, rankų, kurios paglostytų, ir žmogaus, kurį galėčiau mylėti. Kartais vakare susiriečiu savo narvelyje ir svajoju, kad kažkur yra namai, kuriuose dar būsiu laukiamas. Kad kažkas pamatys ne mano amžių, o mano širdį. O ji vis dar pilna meilės. Jei atversite man savo duris, pažadu – atiduosiu visą savo širdį❤️🐾 📞 Jei norėtumėte susipažinti su manimi ar padovanoti namus, skambinkite: [kontaktas pašalintas] Jūsų Kenzis🐾❤️ Katukas iš Medragių kaimo, Raudėnų sen., savininkas slaugos ligoninėje.. Katinas su pusantros akies😥, kovingai nusiteikęs… KINGAS",
+  "bioLt": "Aš Kenzis. Senjoras katinas, netekęs ne tik namų, bet ir žmogaus, kurį mylėjau visą savo gyvenimą. Tačiau vieną dieną mano žmogus išvyko į slaugos namus, o aš atsidūriau prieglaudoje. Ilgai laukiau, kad jis sugrįš manęs pasiimti. Laukiau dieną, kitą, dar kitą… Bet jis taip ir neatėjo. Prieglaudoje jau po truputį apsiprantu, bet senatvėje labai sunku netekti visko, kas buvo pažįstama ir brangu. Ypač kai lieki vienas. Esu didelis meškinas, ramus ir geras katinas. Man nereikia daug. Tik savo kampelio, minkšto guolio, rankų, kurios paglostytų, ir žmogaus, kurį galėčiau mylėti. Kartais vakare susiriečiu savo narvelyje ir svajoju, kad kažkur yra namai, kuriuose dar būsiu laukiamas. Kad kažkas pamatys ne mano amžių, o mano širdį. O ji vis dar pilna meilės. Jei atversite man savo duris, pažadu – atiduosiu visą savo širdį❤️🐾 📞 Jei norėtumėte susipažinti su manimi ar padovanoti namus, skambinkite: [kontaktas pašalintas], [kontaktas pašalintas] Jūsų Kenzis🐾❤️ Katukas iš Medragių kaimo, Raudėnų sen., savininkas slaugos ligoninėje.. Katinas su pusantros akies😥, kovingai nusiteikęs… KINGAS",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-08-15T20:41:44Z",
+  "sourceUpdatedAt": "2026-11-22T20:06:28Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -31746,25 +30486,25 @@
   "id": "siauliuletenele:85993",
   "url": "https://siauliuletenele.lt/kuzinuke/",
   "source": "siauliuletenele",
-  "name": "TRIŠOS ŠEIMA",
+  "name": "TRIŠOS ŠEIMA-TIKSĖ",
   "species": "cat",
   "city": "Šiauliai",
   "photos": [
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_4123355617966184.jpeg",
+   "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_2775543756195250.jpeg",
+   "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_2419782601763238.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_3769A15B-E23D-4854-9779-D1C3DF65AF5C.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_973F588F-EAAD-46AF-B870-A23CF9B2A6A9.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_5C362C94-258A-4620-8C57-6AB36D5E7065.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_60F34134-FC1E-4620-89E4-C1BF49FF910D.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_6E2A2EC3-0D88-4325-AC97-6E41F75B2015.jpeg",
    "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_107B5C06-9B9D-4651-849D-F31C6AAD2573.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_8BA76643-0AA4-4FC2-9606-9CF4735C5FE7.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_7793D327-DB14-4AE0-9F44-897390407454.jpeg",
-   "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_6698E541-D0A3-4AB7-BEBE-8C1964399C8A.jpeg"
+   "https://siauliuletenele.lt/wp-content/uploads/2026/04/Messenger_creation_8BA76643-0AA4-4FC2-9606-9CF4735C5FE7.jpeg"
   ],
   "status": "unknown",
   "statusEvidence": null,
   "sex": "female",
-  "ageLt": null,
+  "ageLt": "KAČIUKAI IKI 6 MĖN.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -31778,48 +30518,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Serganti katytė paimta iš Kužių, Statybininkų g., gegužės 25 d. susilaukė mažylių, tel. [kontaktas pašalintas] Tuksė rado namus! Mama Triša, vaikai – Tiksė (turi neurologinių problemų), Topas, Tuksė 🙂",
+  "bioLt": "Serganti katytė paimta iš Kužių, Statybininkų g., gegužės 25 d. susilaukė mažylių, tel. [kontaktas pašalintas] Tuksė, Triša, Topas rado namus! Mama Triša, vaikai – Tiksė (turi neurologinių problemų), Topas, Tuksė 🙂",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-10-26T06:36:17Z",
-  "shelter": {
-   "id": "siauliuletenelelt",
-   "name": "VšĮ Šiaulių letenėlė",
-   "city": "Šiauliai",
-   "address": "Gruzdžių g 1D, Verbūnai, 81372 Šiaulių r. sav.",
-   "url": "https://globok.lt/prieglaudos/siauliuletenelelt"
-  }
- },
- {
-  "id": "siauliuletenele:83155",
-  "url": "https://siauliuletenele.lt/vilniaus-13a/",
-  "source": "siauliuletenele",
-  "name": "KURŠIUKAS",
-  "species": "cat",
-  "city": "Šiauliai",
-  "photos": [
-   "https://siauliuletenele.lt/wp-content/uploads/2025/11/Messenger_creation_3205176666341663.jpg",
-   "https://siauliuletenele.lt/wp-content/uploads/2025/11/Messenger_creation_78E4C941-9AFE-4A7D-9A42-941F73D4300B.jpeg"
-  ],
-  "status": "unknown",
-  "statusEvidence": null,
-  "sex": null,
-  "ageLt": "KATĖS, GIMUSIOS 2017-2023 M.",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Sergantis katukas iš Kuršėnų, Vilniaus 13A, FIV, FeLV teigiami… tel. [kontaktas pašalintas]",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-09-28T05:13:16Z",
+  "sourceUpdatedAt": "2026-11-23T13:31:19Z",
   "shelter": {
    "id": "siauliuletenelelt",
    "name": "VšĮ Šiaulių letenėlė",
@@ -34891,44 +33592,6 @@
   "bioLt": "Mėnesis prieglaudoje ir nei vienas juodmargis karviukas nerado namų… Labai bijome, kad jie taip ir užaugs prieglaudoje . Iš patirties žinome, kad tokie nespalvoti kačiukai prieglaudoje visada praleidžia daugiau laiko, o čia dar ir bailiukai… Šie kačiukai gimė lauke, todėl nėra patys drąsiausi. Bet ir nėra pikti ar agresyvūs . Labai smalsūs, žaismingi, valgo maistelį iš rankos ir dauguma leidžiasi glostomi. Juokais šiuo nespalvotus mažylius pavadinome spalvomis . Likusios TIK mergaitės – Geltona, Raudona, Purpurinė 5-6mėn. Skiepytos, čipuotos, sterilizuotos. FIV/FELV neigiama. Kviečiame neišsigąsti jų kuklių širdelių ir atvykti susipažinti . Tinkamuose namuose jie tikrai atsiskleis taps mielais šeimos nariais . Atvykimo istorija – https://www.facebook.com/share/r/1K3GL6qc3c/?mibextid=wwXIfr",
   "bioEn": null,
   "sourceUpdatedAt": "2026-11-19T08:15:01Z",
-  "shelter": {
-   "id": "sos-gyvunailt",
-   "name": "VšĮ SOS gyvūnai",
-   "city": "Vilnius",
-   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
-   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
-  }
- },
- {
-  "id": "sos-gyvunai:3202",
-  "url": "https://sos-gyvunai.lt/dovana-parama/",
-  "source": "sos-gyvunai",
-  "name": "Dovana – parama",
-  "species": null,
-  "city": "Vilnius",
-  "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/ChatGPT-Image-Aug-13-2026-07_52_20-PM-1.png"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojami gyvūnai",
-  "sex": null,
-  "ageLt": null,
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Pirkdamas padedi tiems, kurie negali sau padėti patys! 🐾 Šis pirkinys – tai kur kas daugiau nei tik daiktas. Tai viltis, maistas ir šiltas guolis nuskriaustiems keturkojams. Ačiū, kad esate jų balsas ir renkatės daryti gerus darbus kartu!",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-08-14T06:25:06Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -39862,6 +38525,389 @@
   }
  },
  {
+  "id": "lese:avizelis-2",
+  "url": "https://lese.lt/globotiniai/avizelis-2/",
+  "source": "lese",
+  "name": "Avižėlis",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/8c04376f2d0952ba822a9a482ab82041-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/271bed5bbf87a8cf4802d5e431cbd4f6.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "male",
+  "ageLt": "8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Avižėlis kartu su savo broliukais buvo rastas Avižienių soduose. Kol kas prieglaudos aplinka dar neįprasta ir šiek tiek bauginanti – tiek daug naujų garsų, kvapų ir nepažįstamų žmonių. Avižėliui dar reikia šiek tiek laiko ir kantrybės, tačiau tikime, kad pamažu baimę pakeis smalsumas, o nedrąsų žvilgsnį – noras pažinti pasaulį ir žmogų. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:avizelis",
+  "url": "https://lese.lt/globotiniai/avizelis/",
+  "source": "lese",
+  "name": "Dribsnis",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/1f9fbe4bac4ed711e533cc178e501c9e-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/cb126ae57313605f1df07a068e3724bc.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "male",
+  "ageLt": "8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Dribsnis kartu su savo broliukais buvo rastas Avižienių soduose. Kol kas prieglaudos aplinka dar neįprasta ir šiek tiek bauginanti – tiek daug naujų garsų, kvapų ir nepažįstamų žmonių. Dribsniui dar reikia šiek tiek laiko ir kantrybės, tačiau tikime, kad pamažu baimę pakeis smalsumas, o nedrąsų žvilgsnį – noras pažinti pasaulį ir žmogų. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51897-2",
+  "url": "https://lese.lt/globotiniai/51897-2/",
+  "source": "lese",
+  "name": "Pipiriukė",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/9fe441615bd7a301b29b7c044d8191fd-768x1024.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "3 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Pipiriukė buvo rasta Naujojoje Vilnioje, Karalavičiaus gatvėje. Tai be galo meilaus charakterio katytė, kuriai sunku atsispirti. Mažylė labai mėgsta dūkti, žaisti, tačiau labiausiai ją džiugina žmogaus draugija. Vos tik užsukus pas Pipiriukę, ši nieko nelaukusi šoks į glėbį, įsitaisys kuo patogiau ir, rodos, nė neketins jūsų paleisti. Ji mielai iškeis net ir įdomiausią žaisliuką į paglostymus bei dėmesį.❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:boruzele-2",
+  "url": "https://lese.lt/globotiniai/boruzele-2/",
+  "source": "lese",
+  "name": "Boružėlė",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/aa248dfb55d54cf4c416f782c8b53b7b-768x1024.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "3 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Boružėlė į prieglaudą atkeliavo iš Stirnų gatvės. Ši mažylė kiek drovesnė, todėl pažinties pradžioje mieliau laikosi atokiau ir smalsiai stebi, kas vyksta aplinkui. Jai dar reikia šiek tiek laiko, kad išdrįstų žengti pirmąjį žingsnį žmogaus link. Tikime, kad už nedrąsaus Boružėlės žvilgsnio slypi nuostabi katytė, kuriai atsiskleisti tereikia laiko, kantrybės ir švelnumo.❤️ Bruožai: bailus, draugiškas, reikalauja daug dėmesio.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51893-2",
+  "url": "https://lese.lt/globotiniai/51893-2/",
+  "source": "lese",
+  "name": "Grūdas",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/e96edc758db2952d19974363d3eee2e0-768x1024.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "male",
+  "ageLt": "8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Grūdas kartu su savo broliukais buvo rastas Avižienių soduose. Kol kas prieglaudos aplinka dar neįprasta ir šiek tiek bauginanti – tiek daug naujų garsų, kvapų ir nepažįstamų žmonių. Grūdui dar reikia šiek tiek laiko ir kantrybės, tačiau tikime, kad pamažu baimę pakeis smalsumas, o nedrąsų žvilgsnį – noras pažinti pasaulį ir žmogų. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51891-2",
+  "url": "https://lese.lt/globotiniai/51891-2/",
+  "source": "lese",
+  "name": "Javas",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/Javas-768x1024.jpg",
+   "https://lese.lt/wp-content/uploads/2026/11/Javas2.jpg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "male",
+  "ageLt": "8 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Javas kartu su savo broliukais buvo rastas Avižienių soduose. Kol kas prieglaudos aplinka dar neįprasta ir šiek tiek bauginanti – tiek daug naujų garsų, kvapų ir nepažįstamų žmonių. Javui dar reikia šiek tiek laiko ir kantrybės, tačiau tikime, kad pamažu baimę pakeis smalsumas, o nedrąsų žvilgsnį – noras pažinti pasaulį ir žmogų. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:mice-2",
+  "url": "https://lese.lt/globotiniai/mice-2/",
+  "source": "lese",
+  "name": "Micė",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/32c3c3b76e9d7cbc322034bfd5058ae5-768x1024.jpeg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "female",
+  "ageLt": "5 m. 7 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": true,
+   "neutered": true
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Micė pas mus atkeliavo iš Kauno, nes jos šeimininkas išvyksta į užsienį.Vos tik ją pamačius, supranti, kokia ypatinga ši katytė. Būdama šalia žmogaus ji tiesiog ištirpsta – rodos, tuo metu jai nieko daugiau pasaulyje nereikia, tik paglostymų ir galimybės būti kartu. Micė jau žino, ką reiškia turėti namus, todėl labai tikimės, kad jai neteks priprasti prie gyvenimo prieglaudos narvelyje ir jau visai netrukus ji galės saldžiai murkti jaukiuose namuose.❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51887-2",
+  "url": "https://lese.lt/globotiniai/51887-2/",
+  "source": "lese",
+  "name": "Karakuma",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/74548427f3f83090891ac710bef1d223-768x1024.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "4 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Katytė atkeliavusi iš Nekronių kaimo Trakų rajone Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51885-2",
+  "url": "https://lese.lt/globotiniai/51885-2/",
+  "source": "lese",
+  "name": "Sachara",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/1c209127d9e6797414af273b3b6389c7-768x1024.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "4 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Katytė atkeliavus iš Nekronių kaimo Trakų rajone Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
+  "id": "lese:51883-2",
+  "url": "https://lese.lt/globotiniai/51883-2/",
+  "source": "lese",
+  "name": "Atakama",
+  "species": "cat",
+  "city": "Vilnius",
+  "photos": [
+   "https://lese.lt/wp-content/uploads/2026/11/df63bac884521706eb331bf29e0b62fd-768x1024.jpeg"
+  ],
+  "status": "unknown",
+  "statusEvidence": null,
+  "sex": "female",
+  "ageLt": "4 mėn.",
+  "ageEn": null,
+  "size": "small",
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": false,
+   "neutered": false
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Katytė atkeliavus iš Nekronių kaimo Trakų rajone Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-23T00:00:00Z",
+  "shelter": {
+   "id": "leseltvilnius",
+   "name": "Viešoji įstaiga Lesė (Vilnius)",
+   "city": "Vilnius",
+   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
+   "url": "https://globok.lt/prieglaudos/leseltvilnius"
+  }
+ },
+ {
   "id": "lese:en-urve",
   "url": "https://lese.lt/globotiniai/en-urve/",
   "source": "lese",
@@ -39909,8 +38955,8 @@
   "photos": [
    "https://lese.lt/wp-content/uploads/2026/11/ff50a1bff9b8d05ef8b121a15c8a4ff3-768x1024.jpeg"
   ],
-  "status": "available",
-  "statusEvidence": "Ieško namų",
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
   "sex": "female",
   "ageLt": "2 mėn.",
   "ageEn": null,
@@ -39928,7 +38974,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Ola – šunytė, kurios istorija tikrai išskirtinė. Viskas prasidėjo miške, kur jos mama nusprendė atsivesti mažylius pačios išsikastame urve. Tris dienas bandėme šuniukus prisivilioti įvairiausiais būdais, tačiau jie nė neketino lįsti lauk. Galiausiai teko imtis kastuvų ir po ilgų pastangų visus mažylius pavyko saugiai ištraukti. Taip į mūsų prieglaudą atkeliavo Ola su savo broliuku ir sesute. Nors jos šeimynėlei dar reikia laiko apsiprasti su nauja aplinka ir žmonėmis, Ola jau spėjo parodyti savo tikrąjį charakterį! Ji labai draugiška, žaisminga ir smalsi mažylė, kuriai netrūksta noro bendrauti bei išdykauti. ❤️ Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-18T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-23T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40003,9 +39049,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Katytė kartu su 3 savo mažyliais atvykusi iš Rokantiškių sodų Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioLt": "Batilda atkeliavo į mūsų prieglaudą iš Rokantiškių sodų kartu su trimis savo mažyliais. Iš pradžių naujoji aplinka Batildai atrodė bauginanti – viskas buvo svetima ir neįprasta, todėl Batilda mieliau rinkosi stebėti pasaulį iš saugaus atstumo. Tačiau laikui bėgant ji pradėjo apsiprasti ir suprasti, kad čia jai niekas negresia. Batilda – tikra gražuolė, kurios žavinga išvaizda iškart patraukia akį, tačiau jos pasitikėjimą dar reikia pelnyti. Nors ji vis dar šiek tiek atsargi ir nepuola draugauti su kiekvienu sutiktu žmogumi, jos pasitikėjimas pamažu auga. Skyrus jai šiek tiek laiko ir kantrybės, ji leidžiasi glostoma ir vis drąsiau priima žmogaus dėmesį.❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-19T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-23T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40022,7 +39068,7 @@
   "species": "cat",
   "city": "Vilnius",
   "photos": [
-   "https://lese.lt/wp-content/uploads/2026/11/8ab6a836836f0598b004ebfe53bf8e0e-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/11/Kiva-768x1024.jpg",
    "https://lese.lt/wp-content/uploads/2026/11/0b1b71a9565bf5764bb6cbee272623e0.jpeg"
   ],
   "status": "available",
@@ -40042,9 +39088,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Katytė rasta Rokantiškių soduose Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioLt": "Kiva kartu su savo mamyte ir broliukais buvo rasta Rokantiškių soduose. Iš pradžių naujoji aplinka mažylius kiek gąsdino, tačiau smalsumas greitai nugalėjo baimę ir netrukus jie apsiprato. Kiva – žaisminga ir smalsi mažylė, kuriai kiekviena diena kupina naujų nuotykių.Ji dievina žaidimus, tačiau po ilgos, linksmybių kupinos dienos mielai prisiglaudžia šalia žmogaus ir mėgaujasi jo draugija.❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-17T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-23T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40064,8 +39110,8 @@
    "https://lese.lt/wp-content/uploads/2026/11/34d96457c20e27684cf1bba46ec4aed8-768x1024.jpeg",
    "https://lese.lt/wp-content/uploads/2026/11/b48dc9d70707ddb76c67d0b7f1abc372.jpeg"
   ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
+  "status": "available",
+  "statusEvidence": "Ieško namų",
   "sex": "male",
   "ageLt": "2 mėn.",
   "ageEn": null,
@@ -40081,87 +39127,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Kačiukas rastas Rokantiškių soduose Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioLt": "Garlis kartu su savo mamyte, broliu ir sese buvo rastas Rokantiškių soduose. Iš pradžių naujoji aplinka mažylius kiek gąsdino, tačiau smalsumas greitai nugalėjo baimę ir netrukus jie apsiprato. Garlis – žaismingas ir smalsus mažylis, kuriam kiekviena diena kupina naujų nuotykių! Jis dievina žaidimus, tačiau po ilgos, linksmybių kupinos dienos mielai prisiglaudžia šalia žmogaus ir mėgaujasi jo draugija. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-18T00:00:00Z",
-  "shelter": {
-   "id": "leseltvilnius",
-   "name": "Viešoji įstaiga Lesė (Vilnius)",
-   "city": "Vilnius",
-   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
-   "url": "https://globok.lt/prieglaudos/leseltvilnius"
-  }
- },
- {
-  "id": "lese:51853-2",
-  "url": "https://lese.lt/globotiniai/51853-2/",
-  "source": "lese",
-  "name": "Greimas",
-  "species": "cat",
-  "city": "Vilnius",
-  "photos": [
-   "https://lese.lt/wp-content/uploads/2026/11/b4a814b718bad99f1b77c587d2defbc6-768x1024.jpeg",
-   "https://lese.lt/wp-content/uploads/2026/11/119b09609ae1c5bc009bfcf10cffaffe.jpeg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "male",
-  "ageLt": "2 mėn.",
-  "ageEn": null,
-  "size": "small",
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": true,
-   "neutered": false
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Kačiukas rastas Rokantiškių soduose Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-17T00:00:00Z",
-  "shelter": {
-   "id": "leseltvilnius",
-   "name": "Viešoji įstaiga Lesė (Vilnius)",
-   "city": "Vilnius",
-   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
-   "url": "https://globok.lt/prieglaudos/leseltvilnius"
-  }
- },
- {
-  "id": "lese:51842-2",
-  "url": "https://lese.lt/globotiniai/51842-2/",
-  "source": "lese",
-  "name": "Talula",
-  "species": "cat",
-  "city": "Vilnius",
-  "photos": [
-   "https://lese.lt/wp-content/uploads/2026/11/att.ElkQU9Wjd42M9uRKGbfQt5cH4pgFcVCOZfTZBB90wn8-768x1024.jpeg",
-   "https://lese.lt/wp-content/uploads/2026/11/att.06I8ggh344otLyX1Pfk_eByzWDDA4K7WqdUh8ScB8PE.jpeg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "female",
-  "ageLt": "7 mėn.",
-  "ageEn": null,
-  "size": "small",
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": false,
-   "neutered": false
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Talula rasta Salotės gatvėje. Ją radęs žmogus rūpinosi katyte, tačiau namuose gyvenantis šuo ir Talula nelabai sutarė, todėl mažylė atkeliavo pas mus. Talula – tikras meilumo įsikūnijimas. Vos priėjus prie jos narvelio, katytė iškiša savo mažą letenėlę ir prašo paglostukų. Ji labai draugiška, mėgstanti žmogaus dėmesį ir švelnumą. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-19T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-23T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40212,20 +39180,19 @@
   }
  },
  {
-  "id": "lese:51832-2",
-  "url": "https://lese.lt/globotiniai/51832-2/",
+  "id": "lese:51814-2",
+  "url": "https://lese.lt/globotiniai/51814-2/",
   "source": "lese",
-  "name": "Romanas",
+  "name": "Makbėjas",
   "species": "cat",
   "city": "Vilnius",
   "photos": [
-   "https://lese.lt/wp-content/uploads/2026/11/f3501159c0f1f722ee3c8bfde2fc68b1-768x1024.jpeg",
-   "https://lese.lt/wp-content/uploads/2026/11/2b2d4f25baacf33d4e31258841de0cc4.jpeg"
+   "https://lese.lt/wp-content/uploads/2026/11/82361ad42bd7f038ab445973f430a430-768x1024.jpeg"
   ],
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "4 m. 10 mėn.",
+  "ageLt": "2 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -40233,15 +39200,15 @@
   "medical": {
    "chipped": null,
    "vaccinated": true,
-   "neutered": true
+   "neutered": false
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Markutiškių kaime rastas nuostabus didžkis Romanas. Labai gražus, mielas ir draugiškas katinėlis, kuris, vos pamatęs žmogų, tarsi visa savo širdimi prašo: „Pasiimk mane… aš būsiu tavo geriausias draugas.“ O gal Romanui tiesiog lemta tapti kažkieno didžiąja meile? Juk ne veltui jo vardas ROMANAS – galbūt kažkur laukia pati gražiausia gyvenimo meilė ir šeima?❤ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioLt": "Makbejas rastas lauke kartu su broliu ir sesutėmis. Tai draugiškas kačiukas, kuris niekada neatsisakys pažaisti! Tikras mažas energijos kamuoliukas, ieškantis savo mylinčių namų. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-08T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-21T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40277,47 +39244,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Ravas į prieglaudą atkeliavo dar visai mažytis, vos 2 mėnesių kačiukas. Nespėjus jam čia pabūti nė dienos, atsirado tikrieji šeimininkai – paaiškėjo, kad mažylis buvo pabėgęs iš namų. Vėliau pasiteiravome, kaip Ravui sekasi, ir sužinojome, kad jis ir vėl pabėgo iš namų, tik šį kartą dingo be žinios. Praėjus kuriam laikui sulaukėme žinutės, kad katinas pagaliau grįžo, tačiau šeimininkai nebegali juo rūpintis, nes išvyksta į užsienį. Taigi, šiandien Ravas vėl pas mus, tik šį kartą jau gerokai paaugęs katinas. Bet tai nė kiek nesumažina jo noro mylėti ir būti mylimam. Ravas draugiškas, mėgsta žmogaus dėmesį, noriai glaudžiasi ir tikrai norėtų turėti žmogų, kuriam galėtų dovanoti savo murkimą. Ieškome Ravui ne laikinų, o tikrų ir atsakingų namų. Tokių, kuriuose jis būtų šeimos narys, o ne augintinis tik tol, kol patogu. ❤ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
+  "bioLt": "Ravas į prieglaudą atkeliavo dar visai mažytis, vos 2 mėnesių kačiukas. Nespėjus jam čia pabūti nė dienos, atsirado tikrieji šeimininkai – paaiškėjo, kad mažylis buvo pabėgęs iš namų. Vėliau pasiteiravome, kaip Ravui sekasi, ir sužinojome, kad jis ir vėl pabėgo iš namų, tik šį kartą dingo be žinios. Praėjus kuriam laikui sulaukėme žinutės, kad katinas pagaliau grįžo, tačiau šeimininkai nebegali juo rūpintis, nes išvyksta į užsienį. Taigi, šiandien Ravas vėl pas mus, tik šį kartą jau gerokai paaugęs katinas. Bet tai nė kiek nesumažina jo noro mylėti ir būti mylimam. Ravas draugiškas, mėgsta žmogaus dėmesį, noriai glaudžiasi ir tikrai norėtų turėti žmogų, kuriam galėtų dovanoti savo murkimą. Ieškome Ravui ne laikinų, o tikrų ir atsakingų namų. Tokių, kuriuose jis būtų šeimos narys, o ne augintinis tik tol, kol patogu. ❤ Kitų gyvūnų šiek tiek prisibijo, todėl geriausiai jaustųsi būdamas vienintelis augintinis. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-08T00:00:00Z",
-  "shelter": {
-   "id": "leseltvilnius",
-   "name": "Viešoji įstaiga Lesė (Vilnius)",
-   "city": "Vilnius",
-   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
-   "url": "https://globok.lt/prieglaudos/leseltvilnius"
-  }
- },
- {
-  "id": "lese:51807-2",
-  "url": "https://lese.lt/globotiniai/51807-2/",
-  "source": "lese",
-  "name": "Brailis",
-  "species": "cat",
-  "city": "Vilnius",
-  "photos": [
-   "https://lese.lt/wp-content/uploads/2026/11/e4bf8485751eada23cecff20d759e39c-768x1024.jpeg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "male",
-  "ageLt": "2 mėn.",
-  "ageEn": null,
-  "size": "small",
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": true,
-   "neutered": false
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Brailis rastas Trakų Vokėje, šalia greitkelio. Šio kačiuko neįmanoma nepastebėti – savo ilgais ūsais ir mielu balseliu sustabdo kiekvieną praeinantį. Kol kas jis dar šiek tiek prisibijo prieglaudos aplinkos, tačiau su laiku vis labiau drąsėja ir tikimės, kad atsiskleis jo mielas charakteris.❤️ Kačiukui įtariamas neurologinis susirgimas. Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-14T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40406,44 +39335,6 @@
   }
  },
  {
-  "id": "lese:barlis",
-  "url": "https://lese.lt/globotiniai/barlis/",
-  "source": "lese",
-  "name": "Barlis",
-  "species": "cat",
-  "city": "Vilnius",
-  "photos": [
-   "https://lese.lt/wp-content/uploads/2026/10/received_2869389583503139-768x1024.jpeg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "male",
-  "ageLt": "2 m.",
-  "ageEn": null,
-  "size": "small",
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": true,
-   "neutered": false
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Barlis rastas Pilaitėje – atklydo į ofisą. Atvykęs buvo gana nusilpęs ir dehidratavęs, tačiau dabar jau jaučiasi kur kas geriau. O vos tik sustiprėjo, iškart atsiskleidė tikrasis jo charakteris – Barlis yra be galo meilus katinas, mėgstantis žmogaus draugiją, paglostukus ir dėmesį.❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-18T00:00:00Z",
-  "shelter": {
-   "id": "leseltvilnius",
-   "name": "Viešoji įstaiga Lesė (Vilnius)",
-   "city": "Vilnius",
-   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
-   "url": "https://globok.lt/prieglaudos/leseltvilnius"
-  }
- },
- {
   "id": "lese:siera",
   "url": "https://lese.lt/globotiniai/siera/",
   "source": "lese",
@@ -40489,11 +39380,12 @@
   "species": "cat",
   "city": "Vilnius",
   "photos": [
-   "https://lese.lt/wp-content/uploads/2026/10/att.gIw3kmKeZORGFnAFV_LhoX0GxI0ywM8dkhOKBQNtyC0-768x1024.jpeg",
-   "https://lese.lt/wp-content/uploads/2026/10/att.yku1IvC1aPPCgFfbYrExHXswW9-xxyQhvAcKbuuH0WY.jpeg"
+   "https://lese.lt/wp-content/uploads/2026/10/ca7f927021676a1277bed7ed8d7f3803-768x1024.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/691894483b1618024c4c96a9ea7b6314.jpeg",
+   "https://lese.lt/wp-content/uploads/2026/10/edfc92e2a529d625228dfb02600bd70a.jpeg"
   ],
-  "status": "available",
-  "statusEvidence": "Ieško namų",
+  "status": "reserved",
+  "statusEvidence": "Rezervuotas",
   "sex": "female",
   "ageLt": "2 m. 1 mėn.",
   "ageEn": null,
@@ -40511,45 +39403,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Miauksiūnė buvo rasta partrenkta kelyje Aukštadvaris–Trakai.Katytė patyrė rimtų sužalojimų: lūžo žandikaulis ir dubens kaulai su dislokacija, taip pat buvo sužalota lūpa. Šiuo metu Miauksiūnė gydoma prieglaudoje. Tai be galo draugiška katytė, kuri mielai priima žmogaus dėmesį. Jos laukia gydymas ir sveikimas, o mes labai tikimės, kad visus sunkumus pavyks įveikti ir vieną dieną ji galės džiaugtis gyvenimu savo namuose. Galbūt būtent Jūs tapsite tuo žmogumi, kuriam Miauksiūnė patikės savo mažą širdelę? 💗 Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-10-27T00:00:00Z",
-  "shelter": {
-   "id": "leseltvilnius",
-   "name": "Viešoji įstaiga Lesė (Vilnius)",
-   "city": "Vilnius",
-   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
-   "url": "https://globok.lt/prieglaudos/leseltvilnius"
-  }
- },
- {
-  "id": "lese:sardas",
-  "url": "https://lese.lt/globotiniai/sardas/",
-  "source": "lese",
-  "name": "Sardas",
-  "species": "dog",
-  "city": "Vilnius",
-  "photos": [
-   "https://lese.lt/wp-content/uploads/2026/10/6b70a1e3479692e0605fa61b846cec74-768x1024.jpeg"
-  ],
-  "status": "available",
-  "statusEvidence": "Ieško namų",
-  "sex": "male",
-  "ageLt": "4 mėn.",
-  "ageEn": null,
-  "size": "small",
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": true,
-   "neutered": false
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Sardas kartu su savo mamyte, broliais ir sesėmis atvyko iš namų, kuriuose jais nebuvo tinkamai rūpinamasi.Dabar jie po truputį mokosi, ką reiškia turėti šiltą guoliuką ir sulaukti meilės ne tik iš savo mamos, bet ir iš žmonių.Kol kas Sardui dar viskas nauja ir šiek tiek baisu, tačiau po truputį atsiskleidžia ir jo žaismingoji pusė.🩷 Bruožai: bailus, draugiškas, reikalauja daug dėmesio, žaismingas.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-16T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-24T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40611,7 +39465,7 @@
   "status": "unknown",
   "statusEvidence": null,
   "sex": "female",
-  "ageLt": "11 m. 9 mėn.",
+  "ageLt": "11 m. 10 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -40667,7 +39521,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Baseinytė buvo rasta Fabijoniškėse, netoli baseino. Ją radę žmonės pastebėjo, kad katytė serga, todėl iš karto nuvežė į kliniką. Iš klinikos toliau gydytis Baseinytė atkeliavo pas mus. Tai labai graži, jaunutė katytė, kuri tik pasveikusi labai norės keliauti į tikruosius savo namus – ten, kur jos lauks meilė, šiluma ir saugumas. ❤️ Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-10-04T00:00:00Z",
+  "sourceUpdatedAt": "2026-11-23T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -40814,7 +39668,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "8 m. 8 mėn.",
+  "ageLt": "8 m. 9 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -40893,7 +39747,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "15 m. 7 mėn.",
+  "ageLt": "15 m. 8 mėn.",
   "ageEn": null,
   "size": "medium",
   "waitingDays": null,
@@ -40934,7 +39788,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "10 m. 10 mėn.",
+  "ageLt": "10 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -40975,7 +39829,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "7 m. 8 mėn.",
+  "ageLt": "7 m. 9 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -40992,45 +39846,6 @@
   "bioLt": "Maestro į mūsų prieglaudą atkeliavo 2019 metais, dar būdamas visai mažyliukas, ir greitai rado namus. Tačiau po daugelio metų jis vėl sugrįžo pas mus, nes per stipriai myli ir saugo savo žmogų. Sugrįžus į prieglaudą Maestro iš pradžių buvo labai nedrąsu – bijojo aplinkos, žmonių ir visko, kas buvo nauja. Tačiau laikui bėgant jis pamažu atsiskleidė ir parodė, koks iš tiesų yra mielas šuo. Dabar prieglaudoje turi savo mėgstamų žmonių ir draugų šunų, nors nepažįstamaisiais vis dar nepasitiki iš karto. Maestro – ypatingas šuo, kuriam reikia šiek tiek laiko, kantrybės ir galimybės pačiam užmegzti ryšį. Kai pajunta saugumą, tampa be galo meilus ir ištikimas draugas. Jis mėgsta pasivaikščiojimus, o po aktyvios dienos mieliausiai įsitaiso šalia savo žmogaus ant sofkutės ir mėgaujasi paglostukais. ❤️ Bruožai: bailus, reikalauja daug dėmesio.",
   "bioEn": null,
   "sourceUpdatedAt": "2026-10-31T00:00:00Z",
-  "shelter": {
-   "id": "leseltvilnius",
-   "name": "Viešoji įstaiga Lesė (Vilnius)",
-   "city": "Vilnius",
-   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
-   "url": "https://globok.lt/prieglaudos/leseltvilnius"
-  }
- },
- {
-  "id": "lese:zoris",
-  "url": "https://lese.lt/globotiniai/zoris/",
-  "source": "lese",
-  "name": "Zoris",
-  "species": "dog",
-  "city": "Vilnius",
-  "photos": [
-   "https://lese.lt/wp-content/uploads/2026/03/Zoris-2-683x1024.jpg",
-   "https://lese.lt/wp-content/uploads/2026/02/received_961977326391390.jpeg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "male",
-  "ageLt": "8 m. 10 mėn.",
-  "ageEn": null,
-  "size": "small",
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": true,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Zoris pas mus atvyko kartu su savo broliu iš Panevėžio rajono. Jo brolis jau seniai mėgaujasi namais, o Zoris dar vis laukia… Tai tikras džentelmenas – draugiškas, ramus ir puikiai bendraujantis šuo, kuris labai mėgsta žmogaus draugiją. Zoris dievina dėmesį,pasivaikščiojimus ir keliones automobiliu! Jam patinka pažinti naujas vietas ir tyrinėti pasaulį. Svarbiausia, kad tik būtų su kuo dalintis nuotykiais! O kai nuotykiai baigiasi, juk taip gera tiesiog pabūti šalia savo žmogaus ir pasimėgauti jo draugija. Šis nuostabus šunelis tikrai turi kuo pavergti širdį. Dabar Zoris svajoja sutikti žmogų, kuris pakvies jį į naują gyvenimo kelionę Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-10-25T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
@@ -41092,7 +39907,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "10 m. 10 mėn.",
+  "ageLt": "10 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41171,7 +39986,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "7 m. 10 mėn.",
+  "ageLt": "7 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41209,7 +40024,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "9 m. 8 mėn.",
+  "ageLt": "9 m. 9 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41247,7 +40062,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "6 m. 8 mėn.",
+  "ageLt": "6 m. 9 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41287,7 +40102,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "13 m. 7 mėn.",
+  "ageLt": "13 m. 8 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41368,7 +40183,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "12 m. 8 mėn.",
+  "ageLt": "12 m. 9 mėn.",
   "ageEn": null,
   "size": "medium",
   "waitingDays": null,
@@ -41407,7 +40222,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "10 m. 10 mėn.",
+  "ageLt": "10 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41447,7 +40262,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "12 m. 8 mėn.",
+  "ageLt": "12 m. 9 mėn.",
   "ageEn": null,
   "size": "medium",
   "waitingDays": null,
@@ -41485,7 +40300,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "7 m. 10 mėn.",
+  "ageLt": "7 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41523,7 +40338,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "11 m. 9 mėn.",
+  "ageLt": "11 m. 10 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41561,7 +40376,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "14 m. 8 mėn.",
+  "ageLt": "14 m. 9 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41640,7 +40455,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "11 m. 6 mėn.",
+  "ageLt": "11 m. 7 mėn.",
   "ageEn": null,
   "size": "large",
   "waitingDays": null,
@@ -41678,7 +40493,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "10 m. 8 mėn.",
+  "ageLt": "10 m. 9 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41717,7 +40532,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "13 m. 8 mėn.",
+  "ageLt": "13 m. 9 mėn.",
   "ageEn": null,
   "size": "large",
   "waitingDays": null,
@@ -41755,7 +40570,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "9 m. 8 mėn.",
+  "ageLt": "9 m. 9 mėn.",
   "ageEn": null,
   "size": "large",
   "waitingDays": null,
@@ -41831,7 +40646,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "8 m. 10 mėn.",
+  "ageLt": "8 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41871,7 +40686,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "9 m. 10 mėn.",
+  "ageLt": "9 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -41910,7 +40725,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "14 m. 9 mėn.",
+  "ageLt": "14 m. 10 mėn.",
   "ageEn": null,
   "size": "medium",
   "waitingDays": null,
@@ -41949,7 +40764,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "18 m. 9 mėn.",
+  "ageLt": "18 m. 10 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -42067,7 +40882,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "16 m. 10 mėn.",
+  "ageLt": "16 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -42183,7 +40998,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "18 m. 5 mėn.",
+  "ageLt": "18 m. 6 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -42263,7 +41078,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "20 m. 7 mėn.",
+  "ageLt": "20 m. 8 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -42301,7 +41116,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "19 m. 10 mėn.",
+  "ageLt": "19 m. 11 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -42618,7 +41433,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "female",
-  "ageLt": "17 m. 8 mėn.",
+  "ageLt": "17 m. 9 mėn.",
   "ageEn": null,
   "size": "small",
   "waitingDays": null,
@@ -42698,7 +41513,7 @@
   "status": "available",
   "statusEvidence": "Ieško namų",
   "sex": "male",
-  "ageLt": "11 m. 8 mėn.",
+  "ageLt": "11 m. 9 mėn.",
   "ageEn": null,
   "size": "large",
   "waitingDays": null,
@@ -42759,6 +41574,44 @@
    "city": "Kaunas",
    "address": "Tvenkinio g. 14, Sausinė, 54312 Kauno r. sav.",
    "url": "https://globok.lt/prieglaudos/leseltkaunas"
+  }
+ },
+ {
+  "id": "keturkojo-viltis:2333",
+  "url": "https://keturkojo-viltis.lt/gyvunai/juodis/",
+  "source": "keturkojo-viltis",
+  "name": "Juodis",
+  "species": "cat",
+  "city": "Alytus",
+  "photos": [
+   "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/e3fb0a88-8ece-4411-8ea2-d74ee1b78390.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Ieško namų",
+  "sex": "male",
+  "ageLt": "Spėjama gimimo data: 2008-01-01",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": "nuo 2026-11-18",
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Spėjama gimimo data: 2008-01-01 Prieglaudoje nuo: 2026-11-18 Alytaus rajone, Ūdrijos apylinkėse, Juodis atsirado tarsi iš niekur. Sulysęs, išsekęs, tačiau nepaprastai meilus ir švelnus katinėlis, kuris, regis, labiau už viską troško žmogaus artumo. Viena geros širdies moteris negalėjo jo palikti likimo valiai. Priglaudė, nuvežė pas veterinarijos gydytojus, tikėdamasi, kad pakaks vitaminų, gero maisto ir šilumos. Tačiau netrukus paaiškėjo, kad Juodžio situacija kur kas rimtesnė. Grįžus namo moteris pastebėjo, kad katinėlis nuolat tupiasi, stanginasi, neranda sau vietos. Skubus vizitas į veterinarijos kliniką vėlų vakarą atskleidė skaudžią tiesą – Juodžiui anksčiau buvo atlikta sudėtinga šlaplės stomos operacija, tačiau jos anga buvo užaugusi. Katinas nebegalėjo normaliai šlapintis, todėl jam skubiai reikėjo operacijos. „Verkiu, panikuoju, nežinau, ką daryti… Bus reikalinga operacija, ar galite juo pasirūpinti?“ – tokio pagalbos prašymo sulaukėme vėlų vakarą. Negalėjome nusisukti. Juodis buvo skubiai nugabentas į Kauno gyvūnų ligoninę, kur gydytojai nedelsdami atliko stomos praplatinimo operaciją. Tačiau operacija buvo tik pirmasis žingsnis. Šiuo metu Juodis vis dar gydomas stacionare, o atlikus išsamesnius tyrimus paaiškėjo, kad jo sveikatos būklė nėra gera. Nustatyti skydliaukės veiklos sutrikimai, paskirti hormoniniai vaistai. Katinėlį taip pat vargina viduriavimas, pastebėti padidėję limfmazgiai ir pakitimai vidaus organuose. Juodžio laukia tolesnis gydymas, stebėjimas ir tyrimai. Kol kas sunku pasakyti, kiek laiko prireiks, kad jo organizmas sustiprėtų ir sveikata stabilizuotųsi. Nežinome, kiek daug šis mažas katinėlis jau yra iškentęs, tačiau viena žinome tikrai – nepaisant visko, jis neprarado pasitikėjimo žmogumi. Net ir būdamas toks nusilpęs, Juodis išliko meilus ir švelnus katinas. 💛🐱",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-24T06:41:57Z",
+  "shelter": {
+   "id": "keturkojo-viltislt",
+   "name": "Asociacija Keturkojo viltis",
+   "city": "Alytus",
+   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
+   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
   }
  },
  {
@@ -44468,82 +43321,6 @@
   }
  },
  {
-  "id": "keturkojo-viltis:1692",
-  "url": "https://keturkojo-viltis.lt/gyvunai/gilse/",
-  "source": "keturkojo-viltis",
-  "name": "Gilšė",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [
-   "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/GILSE.jpg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "female",
-  "ageLt": "Spėjama gimimo data: 2024-12-10",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": "nuo 2025-05-19",
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Spėjama gimimo data: 2024-12-10 Prieglaudoje nuo: 2025-05-19",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-06T12:54:12Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
-  "id": "keturkojo-viltis:1690",
-  "url": "https://keturkojo-viltis.lt/gyvunai/gema/",
-  "source": "keturkojo-viltis",
-  "name": "Gema",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [
-   "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/GEMA.jpg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "female",
-  "ageLt": "Spėjama gimimo data: 2022-09-20",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": "nuo 2025-05-19",
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Spėjama gimimo data: 2022-09-20 Prieglaudoje nuo: 2025-05-19",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-06T12:52:38Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
   "id": "keturkojo-viltis:1686",
   "url": "https://keturkojo-viltis.lt/gyvunai/ryle/",
   "source": "keturkojo-viltis",
@@ -45045,7 +43822,7 @@
   "species": "dog",
   "city": "Alytus",
   "photos": [
-   "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/884549059_2642828656190329_6377798893056077991_n.jpg"
+   "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/Dizainas-be-pavadinimo.png"
   ],
   "status": "available",
   "statusEvidence": "Ieško namų",
@@ -45066,7 +43843,7 @@
   "personalityTraitsEn": [],
   "bioLt": "Spėjama gimimo data: 2020-01-01 Prieglaudoje nuo: 2024-05-04",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-09T12:07:26Z",
+  "sourceUpdatedAt": "2026-11-25T07:36:12Z",
   "shelter": {
    "id": "keturkojo-viltislt",
    "name": "Asociacija Keturkojo viltis",
@@ -45409,42 +44186,6 @@
   "bioLt": "Spėjama gimimo data: 2022-05-02 Prieglaudoje nuo: 2026-05-26",
   "bioEn": null,
   "sourceUpdatedAt": "2026-11-05T13:55:12Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
-  "id": "keturkojo-viltis:1609",
-  "url": "https://keturkojo-viltis.lt/gyvunai/pilke/",
-  "source": "keturkojo-viltis",
-  "name": "Pilkė",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "female",
-  "ageLt": "Spėjama gimimo data: 2018-04-01",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Gimimo data: 2018-04-01, svoris: 22,4 kg, ūgis ties ketera: 54 cm. Pilkė – draugiška ir švelni šunytė. Mielai bendrauja su suaugusiais ir vaikais, mėgsta prisiglausti, prašo paglostymų ir dėmesio. Ji puikiai vaikšto su pavadėliu, supranta vidaus tvarkos taisykes, reikaliukus susitvarko lauke. Neturi baimės lipti laiptais, pati įšoka į automobilį. Ji sutaria su kai kuriais šuneliais. Tačiau, suvalgiusi savo maistą, bando atimti iš kambariokų, tad namų sąlygomis dar reikėtų pasimokyti gerų manierų. Su katėmis elgėsi atsargiai – jautėsi kiek nedrąsiai, bet agresijos nerodė. Patekimo į prieglaudą istorija neeilinė. 2024 m. spalį gavome pagalbos prašymą – moteris partrenkė šunį. Atvykus radome Pilkę griovyje. Jai lūžo dešinė priekinė ir galinė kojytės. Rentgeno tyrimas atskleidė dar vieną detalę – viena iš kojų buvo lūžusi ir anksčiau, joje jau buvo įdėta plokštelė. Šeimininkai taip ir neatsirado.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-09T12:46:22Z",
   "shelter": {
    "id": "keturkojo-viltislt",
    "name": "Asociacija Keturkojo viltis",
@@ -49699,44 +48440,6 @@
   "bioLt": "Vokiečių aviganių mišrūnė Lola 🤎 Lola laužo stereotipus – rankiniais šuniukais gali būti ir tokie kaip ji! Dydis neriboja. 🤭 Spėjama gimimo data: 2015-01-01, svoris: 22 kg, ūgis ties ketera: 58 cm, ženklinta, skiepyta, sterilizuota. Į prieglaudą pateko 2023 vasario mėnesį. Lolos būklė buvo prasta. Išliesėjusi, išsekusi į prieglaudą atvyko su keturiais dviejų parų amžiaus mažyliais. Ji turėjo šeimininką, kuris ja tinkamai nesirūpino. Anksčiau visi Lolos šuniukai neišgyvendavo, jais būdavo atsikratoma. Visų Jūsų paramos dėka Lola prieglaudoje galėjo saugiai ir ramiai užauginti savo mažylius. Visi jie surado namus. Lola taip pat sustiprėjo ir atsigavo. 🥰 Lola – linksma, meili, vis dar aktyvi, mėgsta pasivaikščioti ir padūkti. Kadangi iki šiol dar nėra gyvenusi namuose, būsimi šeimininkai turės padėti suprasti namų taisykles. Su kitais šunimis nesutaria, todėl geriausiai jaustųsi būdama vienintelė augintinė. Moka vaikščioti su pavadėliu, yra draugiška su suaugusiais ir vaikais. Nuostabus, ištikimas šuo. Lola tikrai nusipelnė patirti, ką reiškia tikri namai. 🙏🩷 ☎️ [kontaktas pašalintas] Keturkojo viltis 💕 Stoties g. 12, Alytus",
   "bioEn": null,
   "sourceUpdatedAt": "2026-10-27T12:32:38Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
-  "id": "keturkojo-viltis:22",
-  "url": "https://keturkojo-viltis.lt/gyvunai/juodis/",
-  "source": "keturkojo-viltis",
-  "name": "Juodis",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [
-   "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Juodis-1.webp"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "male",
-  "ageLt": "Spėjama gimimo data: 2012-04-20",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "🎂 Spėjama gimimo data: 2012-04-20 ⚖️ Svoris: 20,2 kg | 📏 Ūgis ties ketera: 55 cm 🩺 Skiepytas, ženklintas, kastruotas Juodis – ramus, švelnus ir žmogų labai mylintis senjoras 🤎 Puikiai vaikšto su pavadėliu, noriai ieško žmogaus dėmesio ir paglostymų. Su nepažįstamais – tiek vaikais, tiek suaugusiais – jaučiasi saugus ir draugiškas. Voljere tvarkingas, sutaria su dauguma šunelių. 🐈 Su katinėliais patikrintas – pilname katinėlių kambaryje jautėsi gerai, agresijos nerodė. Jei katinėlis sušnypščia – Juodis tiesiog pasitraukia. 🐾 Lankėsi kirpykloje – išsimaudė, išsišukavo, procedūras atlaikė ramiai ir kantriai 🥰 Juodis jau senjoras… O tokiems šunims rasti namus ypač sunku. Visi ieško jaunų ir „tobulų“, bet Juodis tiesiog nori paprasto dalyko – šiltų, ramių namų. 🥹 Jo akytės nebemato taip gerai, kojytės nebėra tokios vikrios, bet širdis – pilna meilės. Jam nebereikia daug – tik žmogaus šalia, ramybės ir saugumo, be prieglaudos triukšmo. 📍 Į prieglaudą pateko 2024 m. rugsėjį, mirus šeimininkui",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-09T16:54:19Z",
   "shelter": {
    "id": "keturkojo-viltislt",
    "name": "Asociacija Keturkojo viltis",

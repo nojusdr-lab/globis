@@ -152,3 +152,4 @@
 ## 2026-11-25
 
 - **SOS gyvūnai: „Dovana – parama“ pašalinta** (bendras `isDonationTitle` `labels.cjs`, naudoja sos-gyvunai ir penktakoja): aukų prekė 3202 rodėsi kaip gyvūnas. Gyvai: sos-gyvunai 118→117 įrašų, ne gyvūnų 1→0; tarp 1361 programėlės įrašų kitų „parama“ pavadinimų nėra. `directPets.json` neatnaujintas (reikia pilno paleidimo). Pastaba: `npm test` paleidžia seną `node` iš PATH (nėra `node:sqlite`), todėl testai leisti tiesiogiai `/usr/local/bin/node --test`. Testai 304/0.
+- **Programėlės duomenys atnaujinti** (18 iš 19 prieglaudų gyvai `complete`; rozinepedute HTTP 522, palikti ankstesni įrašai): `directPets.json` 1361→1327 (prieglaudų svetainėse nebėra, pvz. penktakoja Tiksius 404; sos-gyvunai „Dovana – parama“ pašalinta). Visų: lytis 54,4→55,9 %, amžius 78,5→80,0 %, dydis 13,7→14,3 %, aprašymas 64,6→65,6 %. Testai 304/0.
