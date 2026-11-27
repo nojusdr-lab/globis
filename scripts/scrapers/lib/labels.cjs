@@ -85,6 +85,12 @@ const PENDING = {
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
 const PLAN = /^(bus|bū[sštč]\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
 const COMPARE = /^(tarsi|lyg|tartum|tarytum)$/u;
+// "po kastracijos katinas elgėsi agresyviai" / "leidome … atsigauti po sterilizacijos": a story told in the past
+// about this animal = neutered. Needs a past-tense verb in the sentence; a plural relative/other-animal word
+// ("kačių, kurioms po sterilizacijos neatsirado vietos") or no past verb ("Namo keliaus po sterilizacijos") = nothing.
+const AFTER_NEUTER = /^(sterilizacij|kastracij)(os)$/u;
+const PAST_VERB = /^(buvo|\p{L}{2,}(ėsi|osi|ome|ėme|ėjo|avo|ojo|ijo))$/u;
+const OTHERS = /^(kurioms|kuriems|kurie|kurios|jų|kitų|kitoms|kitiems)$/u;
 
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
 const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female',
@@ -121,6 +127,8 @@ function fromProse(text) {
       const plan = words.some((w, i) => PLAN.test(w) && !(w === 'būtų' && COMPARE.test(words[i - 1] || '')));
       // "Dar laukia skiepai, ženklinimas, sterilizacija" / "Ateityje laukia kastracija": not done yet.
       if (words.includes('laukia') && words.some(w => PENDING[field].test(w))) seen.add(false);
+      if (field === 'neutered' && !plan && words.some((w, i) => words[i - 1] === 'po' && AFTER_NEUTER.test(w))
+        && words.some(w => PAST_VERB.test(w)) && !words.some(w => OTHERS.test(w))) seen.add(true);
       for (const [i, w] of words.entries()) {
         if (no.test(w)) seen.add(false);
         else if (yes.test(w) && !plan) seen.add(true);

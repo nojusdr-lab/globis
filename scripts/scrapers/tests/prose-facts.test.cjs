@@ -197,3 +197,12 @@ test('fromProse: "būdu/būrio" are nouns, not plan words (keturkojo-viltis Leil
   assert.equal(fromProse('Būsime dėkingi, kai bus čipuota.').chipped, undefined);
   assert.equal(fromProse('Turi būti sterilizuota.').neutered, undefined);
 });
+
+test('fromProse: "po kastracijos/sterilizacijos" with recovery or the animal as subject = neutered (keturkojo-viltis Peštukas, sos-gyvunai Giria)', () => {
+  assert.equal(fromProse('Pažinties pradžia buvo sudėtinga – po kastracijos katinas elgėsi agresyviai, nemėgo narvo.').neutered, true);
+  assert.equal(fromProse('Pradžioje leidome jai apsiprasti su nauja vieta, vėliau – atsigauti po sterilizacijos.').neutered, true);
+  // Future, a plan, or other animals: not this animal's fact.
+  assert.equal(fromProse('Apie 7kg. Namo keliaus po sterilizacijos.').neutered, undefined);
+  assert.equal(fromProse('Jų virš 240, kačių, kurioms po sterilizacijos neatsirado vietos miestuose.').neutered, undefined);
+  assert.equal(fromProse('Reikės atsigauti po sterilizacijos.').neutered, undefined);
+});
