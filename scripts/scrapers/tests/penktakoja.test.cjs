@@ -108,6 +108,18 @@ test('penktakoja: a full last page then HTTP 400 is the end', async () => {
   assert.equal(run.animals.length, 5);
 });
 
+test('penktakoja: invalid page-two parameters and shifted duplicate rows cannot silently shrink the dog list', async () => {
+  const r = { ...routes, [productUrl(2, 1)]: PRODUCTS.slice(0, 2),
+    [productUrl(2, 2)]: { status: 400, body: { code: 'rest_invalid_param' } },
+    'https://penktakoja.lt/wp-json/wp/v2/media?include=23959,23964&per_page=100&_fields=id,source_url': routes[MEDIA].slice(0, 2) };
+  const a = adapter.create({ perPage: 2 });
+  assert.equal((await collect(r, a)).run.state, 'failed');
+  const headers = { 'x-wp-total': '3', 'x-wp-totalpages': '2' };
+  r[productUrl(2, 1)] = { body: PRODUCTS.slice(0, 2), headers };
+  r[productUrl(2, 2)] = { body: [PRODUCTS[1]], headers };
+  assert.equal((await collect(r, a)).run.state, 'partial');
+});
+
 test('penktakoja: page limit reached = partial, never complete', async () => {
   const r = { ...routes };
   r[productUrl(2, 1)] = PRODUCTS.slice(0, 2);

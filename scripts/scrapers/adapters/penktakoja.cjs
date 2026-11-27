@@ -11,6 +11,7 @@
 // (content) was empty for every probed dog. Sex, age, size, health and status are not in the
 // REST data, so they stay null / 'unknown' unless the content itself has "Label: value" lines.
 const N = require('../lib/normalize.cjs');
+const { readWordpressPages } = require('../lib/wordpress-pages.cjs');
 const L = require('../lib/labels.cjs');
 const H = require('../lib/html.cjs');
 const { sha256 } = require('../lib/hash.cjs');
@@ -29,19 +30,7 @@ const api = p => `${ORIGIN}/wp-json/wp/v2/${p}`;
 
 function create({ perPage = 100, maxPages = 10 } = {}) {
   async function pageThrough(fetcher, makeUrl) {
-    const items = [];
-    for (let page = 1; page <= maxPages; page++) {
-      let res;
-      try { res = await fetcher.getJson(makeUrl(page)); }
-      catch (e) {
-        if (page > 1 && e.status === 400) return { items, complete: true }; // WP: page past the end
-        throw e;
-      }
-      if (!Array.isArray(res.json)) throw new Error(`Unexpected JSON from ${res.url}`);
-      items.push(...res.json);
-      if (res.json.length < perPage) return { items, complete: true };
-    }
-    return { items, complete: false }; // hit maxPages: cannot prove we saw the end
+    return readWordpressPages(fetcher, makeUrl, { perPage, maxPages });
   }
 
   async function collect({ fetcher, cache, log = () => {} }) {

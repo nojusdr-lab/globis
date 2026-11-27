@@ -8,7 +8,7 @@
 // "MŪSŲ KATĖS" (slug kates). The HTML category list loads pages 2+ through a POST to
 // admin-ajax.php, so we use the public REST API instead (GET only, full text in one request):
 //   /wp-json/wp/v2/categories            -> category ids, slugs and names
-//   /wp-json/wp/v2/posts?categories=<id> -> the posts, paged until a short page or HTTP 400
+//   /wp-json/wp/v2/posts?categories=<id> -> posts, with shared WordPress pagination validation
 // Detail pages are NOT read: the REST content is the same text the post page shows.
 //
 // What a post gives us (and nothing more):
@@ -25,6 +25,7 @@
 // status unknown unless the first sentence says otherwise, and never infer adoption.
 const H = require('../lib/html.cjs');
 const N = require('../lib/normalize.cjs');
+const { readWordpressPages } = require('../lib/wordpress-pages.cjs');
 const L = require('../lib/labels.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
@@ -40,19 +41,7 @@ const POST_FIELDS = 'id,link,title,modified_gmt,categories,content';
 function api(path) { return `${ORIGIN}/wp-json/wp/v2/${path}`; }
 
 async function pageThrough(fetcher, makeUrl, perPage, maxPages) {
-  const items = [];
-  for (let page = 1; page <= maxPages; page++) {
-    let res;
-    try { res = await fetcher.getJson(makeUrl(page)); }
-    catch (e) {
-      if (page > 1 && e.status === 400) return { items, complete: true }; // WP: page past the last one
-      throw e;
-    }
-    if (!Array.isArray(res.json)) throw new Error(`siauliuletenele: unexpected JSON from ${res.url}`);
-    items.push(...res.json);
-    if (res.json.length < perPage) return { items, complete: true };
-  }
-  return { items, complete: false }; // stopped at maxPages: cannot prove we saw everything
+  return readWordpressPages(fetcher, makeUrl, { perPage, maxPages });
 }
 
 // Post HTML -> { text, firstSentence, photos, labelled }

@@ -7,6 +7,7 @@
 // The visible shop filter is Ieško namų, product_cat slug iesko-namu. Read
 // only that category, not all 1500+ historical/found/quarantined products.
 const N = require('../lib/normalize.cjs');
+const { readWordpressPages } = require('../lib/wordpress-pages.cjs');
 const L = require('../lib/labels.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 const BASE = 'https://egzoticsos.lt/';
@@ -22,27 +23,7 @@ const OTHER = new Set(['banguotoji papūga', 'bestuburiai', 'degu', 'dekoratyvin
 
 function create({ perPage = 100, maxPages = 30 } = {}) {
   async function pages(fetcher, makeUrl, size = perPage) {
-    const items = [];
-    let expectedPages, expectedTotal, stable = true;
-    for (let page = 1; page <= maxPages; page++) {
-      // A generic HTTP 400 is not proof of the last page. WordPress supplies
-      // explicit page counts, including an exactly-full final page.
-      const res = await fetcher.getJson(makeUrl(page));
-      if (!Array.isArray(res.json)) throw Error('egzoticsos: expected a public REST array');
-      if (res.wpTotalPages != null) {
-        if (expectedPages != null && res.wpTotalPages !== expectedPages) stable = false;
-        expectedPages = res.wpTotalPages;
-      }
-      if (res.wpTotal != null) {
-        if (expectedTotal != null && res.wpTotal !== expectedTotal) stable = false;
-        expectedTotal = res.wpTotal;
-      }
-      items.push(...res.json);
-      const end = expectedPages == null ? res.json.length < size : page >= expectedPages;
-      if (end) return { items, complete: stable && (expectedTotal == null || expectedTotal === items.length) };
-      if (!res.json.length) return { items, complete: false };
-    }
-    return { items, complete: false };
+    return readWordpressPages(fetcher, makeUrl, { perPage: size, maxPages });
   }
 
   async function collect({ fetcher, cache, log = () => {} }) {

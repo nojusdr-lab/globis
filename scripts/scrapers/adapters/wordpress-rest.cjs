@@ -4,6 +4,7 @@
 // every visitor, in a structured form, so we read far fewer pages.
 const N = require('../lib/normalize.cjs');
 const L = require('../lib/labels.cjs');
+const { readWordpressPages } = require('../lib/wordpress-pages.cjs');
 
 const PARSER_VERSION = 'wp-rest-1';
 
@@ -13,19 +14,7 @@ function createWordpressAdapter(config) {
   const api = p => `${origin}/wp-json/wp/v2/${p}`;
 
   async function pageThrough(fetcher, makeUrl, size = perPage) {
-    const items = [];
-    for (let page = 1; page <= maxPages; page++) {
-      let res;
-      try { res = await fetcher.getJson(makeUrl(page)); }
-      catch (e) {
-        if (page > 1 && e.status === 400) return { items, complete: true }; // past the last page
-        throw e;
-      }
-      if (!Array.isArray(res.json)) throw new Error(`Unexpected JSON from ${res.url}`);
-      items.push(...res.json);
-      if (res.json.length < size) return { items, complete: true };
-    }
-    return { items, complete: false }; // hit maxPages: do not trust as complete
+    return readWordpressPages(fetcher, makeUrl, { perPage: size, maxPages });
   }
 
   async function collect({ fetcher, cache, log }) {

@@ -10,9 +10,10 @@ const { sha256 } = require('./hash.cjs');
 const USER_AGENT = 'GlobisBot/0.1 (+https://github.com/nojusdr-lab/globis; gyvunu globos katalogas)';
 
 class FetchError extends Error {
-  constructor(message, { url, status, code, retryAfterMs } = {}) {
+  constructor(message, { url, status, code, retryAfterMs, responseCode } = {}) {
     super(message);
     this.url = url; this.status = status; this.code = code; this.retryAfterMs = retryAfterMs;
+    this.responseCode = responseCode;
   }
 }
 
@@ -151,13 +152,30 @@ function createFetcher({
       return get(new URL(location, url).href, { redirects: redirects - 1, method });
     }
     if (res.status === 401 || res.status === 403) throw new FetchError('Access restricted', { url: href, status: res.status, code: 'restricted' });
-    if (res.status < 200 || res.status >= 300) throw new FetchError(`HTTP ${res.status}`, {
-      url: href, status: res.status, code: 'http', retryAfterMs: retryAfter(res.headers.get('retry-after')) });
+    if (res.status < 200 || res.status >= 300) {
+      let responseCode;
+      // Keep only a bounded public WordPress error identifier, never the body,
+      // messages, personal details or credentials returned by an error page.
+      if (res.status === 400 && res.body.length <= 8192) {
+        try {
+          const error = JSON.parse(res.body);
+          if (!Array.isArray(error) && typeof error?.code === 'string' && /^rest_[a-z_]{1,60}$/.test(error.code)) responseCode = error.code;
+        } catch { /* HTML/malformed errors remain ordinary HTTP failures. */ }
+      }
+      throw new FetchError(`HTTP ${res.status}`, { url: href, status: res.status, code: 'http',
+        retryAfterMs: retryAfter(res.headers.get('retry-after')), responseCode });
+    }
     const pages = res.headers.get('x-wp-totalpages');
     const total = res.headers.get('x-wp-total');
-    return { url: url.href, status: res.status, body: res.body, contentType: res.headers.get('content-type') || '', hash: sha256(res.body),
-      ...(pages != null && /^\d+$/.test(pages) ? { wpTotalPages: Number(pages) } : {}),
-      ...(total != null && /^\d+$/.test(total) ? { wpTotal: Number(total) } : {}) };
+    const counts = {};
+    for (const [key, value] of [['wpTotalPages', pages], ['wpTotal', total]]) {
+      if (value == null) continue;
+      if (!/^\d+$/.test(value) || !Number.isSafeInteger(Number(value))) {
+        throw new FetchError('Invalid WordPress pagination metadata', { url: href, code: 'pagination' });
+      }
+      counts[key] = Number(value);
+    }
+    return { url: url.href, status: res.status, body: res.body, contentType: res.headers.get('content-type') || '', hash: sha256(res.body), ...counts };
   }
 
   async function getJson(href) {

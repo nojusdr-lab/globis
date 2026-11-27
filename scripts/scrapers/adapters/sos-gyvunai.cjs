@@ -17,6 +17,7 @@
 // Requests per run: robots.txt, listing page, taxonomy terms, gyvunas pages (100 per page),
 // media (100 ids per request). No per-animal detail pages: the REST record has everything shown.
 const N = require('../lib/normalize.cjs');
+const { readWordpressPages } = require('../lib/wordpress-pages.cjs');
 const L = require('../lib/labels.cjs');
 const H = require('../lib/html.cjs');
 const { sha256 } = require('../lib/hash.cjs');
@@ -71,19 +72,7 @@ function bioWithoutDonations(html) {
 
 function createAdapter({ perPage = 100, maxPages = 30 } = {}) {
   async function pageThrough(fetcher, size, makeUrl) {
-    const items = [];
-    for (let page = 1; page <= maxPages; page++) {
-      let res;
-      try { res = await fetcher.getJson(makeUrl(page)); }
-      catch (e) {
-        if (page > 1 && e.status === 400) return { items, complete: true }; // WP: page past the end
-        throw e;
-      }
-      if (!Array.isArray(res.json)) throw new Error(`Unexpected JSON from ${res.url}`);
-      items.push(...res.json);
-      if (res.json.length < size) return { items, complete: true };
-    }
-    return { items, complete: false };
+    return readWordpressPages(fetcher, makeUrl, { perPage: size, maxPages });
   }
 
   async function collect({ fetcher, cache, log }) {
