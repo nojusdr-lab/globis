@@ -1,5 +1,19 @@
 # Rinkiklių vykdymas ir kokybė
 
+## 2026-11-27: nepilno WordPress sąrašo apsauga
+
+Sujungti Claude Code commitai iki `4b58008`, išsaugant abiejų šakų faktų ir privatumo apsaugas. Jo darbo kopijos neįrašytas grupinės lyties testas ir `.claude/` katalogas neliečiami.
+
+Atkurta klaida: septynios nukopijuotos puslapiavimo funkcijos bet kurį HTTP 400 po pirmojo puslapio laikė sėkminga pabaiga. Mažas 3 → 2 įrašų sumažėjimas galėjo pereiti publikavimo apsaugą, nors iš tikrųjų nepavyko antras puslapis. Dabar bendrą `lib/wordpress-pages.cjs` naudoja devyni rinkikliai: KGGN, „Keturkojo viltis“, „Būk mano draugas“, MGMA, „Mažas draugas“, „Penkta koja“, „Šiaulių letenėlė“, „SOS gyvūnai“ ir „EgzoticSOS“.
+
+Bendras skaitymas tikrina `X-WP-Total`, `X-WP-TotalPages`, jų pastovumą, gautų eilučių skaičių ir pasikartojančius ID dar prieš adapterio deduplikavimą. Trumpas puslapis nėra pabaiga, jei metaduomenys žada daugiau. Tiksliai pilnam paskutiniam puslapiui papildomos užklausos nebereikia. Puslapių limitas, prieštaraujantys kiekiai ar pasikartojimai reiškia nepilną atnaujinimą. Netaisyklingi skaitiniai metaduomenys arba paprastas HTTP 400 reiškia klaidą. HTTP 400 leidžiama laikyti pabaiga tik nuo antro puslapio, su tiksliu `rest_post_invalid_page_number` kodu ir neprieštaraujančiais metaduomenimis. Klaidos teksto ar privataus turinio nesaugome.
+
+[Gyva patikra](verification-2026-11-27.json) 21:56–21:57 UTC: **9 šaltiniai, 10 filtruotų kolekcijų, 16 duomenų puslapių, 25 HTTP užklausos su robots**. Visose kolekcijose ID kiekiai sutapo su deklaruotais kiekiais, ID nesikartojo; iš viso perskaitytos 1045 kolekcijų eilutės. Tai puslapiavimo patikra tik su `_fields=id`, o ne naujas visų gyvūnų faktų ar nuotraukų auditas. Kategorijų filtrai išsaugoti; paskelbtos kopijos, programėlės gyvūnų failai ir DB šios patikros metu neatnaujinti. Laikytasi robots ir bendro HTTP domenų ribotuvo. Vienodi kiekiai negali įrodyti transakcinės kopijos: svetainė gali pakeisti įrašus tarp užklausų nekeisdama jų skaičiaus.
+
+`npm test`: **373 pass, 0 fail, 1 skip** (374 testai, Node 26.13.1). Tikras PostgreSQL testas vietoje praleidžiamas ir vykdomas CI. Regresijos patikrina klaidą antrame puslapyje, nepakeistą gerą kopiją, tikslų WordPress klaidos kodą, kintančius kiekius, trumpą tarpinį puslapį, puslapių ribą ir deduplikavimo paslėptą trūkstamą įrašą. Naujos priklausomybės nepridėtos.
+
+Oficiali semantika: [WordPress puslapiavimas](https://developer.wordpress.org/rest-api/using-the-rest-api/pagination/) ir [įrašų valdiklio klaidos kodas](https://developer.wordpress.org/reference/classes/wp_rest_posts_controller/get_items/). Šaltinio prieigos teisės iš API prieinamumo neišvedamos.
+
 ## 2026-11-19 ir 2026-11-20 patikros
 
 Oficialus [VMVT puslapis](https://vmvt.lrv.lt/lt/veiklos-sritys/gyvunu-gerove/gyvunu-augintiniu-gerove/reikalavimai-gyvunu-globejams-ir-globos-namams/gyvunu-globeju-sarasas/) patikrintas iš naujo. [Dabartinių nuorodų patikra](registry-review-2026-11-19.json) 13:48 UTC nerado organizacijų / URL skirtumų nuo inventoriaus. Inventorius turi 96 eilutes, 95 su nuoroda; 27 eilutė – neveikiantis LGGD Vilniaus skyrius. Tai registro eilučių skaičius, ne patvirtintas 95 veikiančių įvaikinimo svetainių skaičius.
