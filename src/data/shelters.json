@@ -567,6 +567,19 @@
     }
   },
   {
+    "id": "beglobislt",
+    "slug": "beglobislt",
+    "name": "VšĮ „Beglobis“",
+    "city": "Vilnius",
+    "address": "Skydo g. 44a, Vilnius",
+    "logo": null,
+    "url": "http://www.beglobis.com/",
+    "source": "website",
+    "phone": null,
+    "email": null,
+    "website": null
+  },
+  {
     "id": "egzoticsoslt",
     "slug": "egzoticsoslt",
     "name": "VšĮ „EgzoticSOS“",

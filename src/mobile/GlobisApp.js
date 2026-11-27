@@ -1,6 +1,9 @@
-import React,{useEffect,useMemo,useRef,useState} from 'react';
-import {View,Text,Image,Pressable,ScrollView,FlatList,TextInput,Animated,PanResponder,useWindowDimensions,StatusBar} from 'react-native';
+import React,{useCallback,useEffect,useMemo,useRef,useState} from 'react';
+import {View,Text,Image,Pressable,ScrollView,FlatList,TextInput,useWindowDimensions,StatusBar} from 'react-native';
 import {SafeAreaProvider,SafeAreaView} from 'react-native-safe-area-context';
+import {GestureDetector,GestureHandlerRootView,usePanGesture} from 'react-native-gesture-handler';
+import Reanimated,{Easing,Extrapolation,interpolate,useAnimatedStyle,useSharedValue,withSpring,withTiming} from 'react-native-reanimated';
+import {scheduleOnRN} from 'react-native-worklets';
 import {Image as CachedImage} from 'expo-image';
 import {Ionicons} from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient';
@@ -8,7 +11,6 @@ import * as Haptics from 'expo-haptics';
 import {useFonts,Fraunces_600SemiBold} from '@expo-google-fonts/fraunces';
 import useDiscovery from '../state/useDiscovery';
 import useReducedMotion from '../state/useReducedMotion';
-import {shouldClaim} from '../state/discovery.cjs';
 import {cardAge} from './facts.cjs';
 import {eligible} from '../data/integrity.cjs';
 import {usePets} from '../data/pets';
@@ -30,35 +32,33 @@ const THRESHOLD=80;
 const ghost=(id,snap)=>snap?{id,name:snap.name,photos:snap.photo?[snap.photo]:[],city:snap.city??null,species:snap.species??null,url:snap.url??null,
  status:'no_longer_listed',medical:{},shelter:snap.shelter?{name:snap.shelter}:null}:null;
 
-function SwipeSurface({pet,onSave,onPass,reduced,children}) {
- const x=useRef(new Animated.Value(0)).current;
- const callbacks=useRef({});callbacks.current={pet,onSave,onPass,reduced};
- const responder=useMemo(()=>PanResponder.create({
-  onStartShouldSetPanResponder:()=>false,
-  // Capture phase: the photo's tap zones (Pressable) own the touch first and would otherwise keep a horizontal drag, so the card snapped back unsaved.
-  onMoveShouldSetPanResponderCapture:(_,g)=>shouldClaim(g),
-  onMoveShouldSetPanResponder:(_,g)=>shouldClaim(g),
-  onPanResponderTerminationRequest:()=>false,
-  onPanResponderMove:(_,g)=>{if(!callbacks.current.reduced)x.setValue(g.dx);},
-  onPanResponderRelease:(_,g)=>{
-   const c=callbacks.current;
-   if(Math.abs(g.dx)<=THRESHOLD){Animated.spring(x,{toValue:0,useNativeDriver:false,friction:7}).start();return;}
-   // Read the direction now: PanResponder resets gestureState (dx=0) before the animation ends, which turned every right swipe into a pass.
-   const right=g.dx>0;
-   const decide=()=>{x.setValue(0);(right?c.onSave:c.onPass)(c.pet);};
-   if(c.reduced) decide();
-   else Animated.timing(x,{toValue:right?520:-520,duration:200,useNativeDriver:false}).start(decide);
+// Reanimated + gesture-handler: the drag, snap-back and fly-out run on the UI thread, so a busy JS thread cannot make the card lag.
+const EASE_OUT=Easing.bezier(0.23,1,0.32,1);
+function SwipeSurface({pet,onSave,onPass,reduced,saveLabel,passLabel,children}) {
+ const x=useSharedValue(0);
+ const callbacks=useRef({});callbacks.current={pet,onSave,onPass};
+ const commit=useCallback(right=>{const c=callbacks.current;(right?c.onSave:c.onPass)(c.pet);},[]);
+ const pan=usePanGesture({
+  // Horizontal only: vertical drags and taps stay with the photo and the profile button.
+  activeOffsetX:[-12,12],failOffsetY:[-14,14],
+  onUpdate:e=>{'worklet';if(!reduced)x.set(e.translationX);},
+  onDeactivate:e=>{'worklet';
+   const dx=e.translationX,fling=Math.abs(e.velocityX)>800&&Math.sign(e.velocityX)===Math.sign(dx);
+   if(Math.abs(dx)<=THRESHOLD&&!fling){x.set(withSpring(0,{duration:400,dampingRatio:0.8,velocity:e.velocityX}));return;}
+   const right=dx>0;
+   if(reduced){scheduleOnRN(commit,right);return;}
+   // No reset to 0 here: the card is keyed by pet id, so the next one mounts centred. Resetting first flashed the old card back (the "teleport").
+   x.set(withTiming(right?640:-640,{duration:180,easing:EASE_OUT},done=>{if(done)scheduleOnRN(commit,right);}));
   },
-  onPanResponderTerminate:()=>x.setValue(0),
- }),[x]);
- const rotate=x.interpolate({inputRange:[-300,0,300],outputRange:['-14deg','0deg','14deg']});
- const saveOpacity=x.interpolate({inputRange:[0,THRESHOLD],outputRange:[0,1],extrapolate:'clamp'});
- const passOpacity=x.interpolate({inputRange:[-THRESHOLD,0],outputRange:[1,0],extrapolate:'clamp'});
- return <Animated.View {...responder.panHandlers} style={{flex:1,transform:[{translateX:x},{rotate}]}}>
+ });
+ const card=useAnimatedStyle(()=>({transform:[{translateX:x.get()},{rotate:`${interpolate(x.get(),[-300,0,300],[-14,0,14])}deg`}]}));
+ const saveStamp=useAnimatedStyle(()=>({opacity:interpolate(x.get(),[0,THRESHOLD],[0,1],Extrapolation.CLAMP)}));
+ const passStamp=useAnimatedStyle(()=>({opacity:interpolate(x.get(),[-THRESHOLD,0],[1,0],Extrapolation.CLAMP)}));
+ return <GestureDetector gesture={pan}><Reanimated.View style={[{flex:1},card]}>
   {children}
-  <Animated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{left:16,borderColor:C.warm,opacity:saveOpacity,transform:[{rotate:'-8deg'}]}]}><Text style={[s.stampText,{color:C.warm}]}>IŠSAUGOTI</Text></Animated.View>
-  <Animated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{right:16,borderColor:C.ink2,opacity:passOpacity,transform:[{rotate:'8deg'}]}]}><Text style={[s.stampText,{color:C.ink2}]}>PRALEISTI</Text></Animated.View>
- </Animated.View>;
+  <Reanimated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{left:16,borderColor:C.warm,transform:[{rotate:'-8deg'}]},saveStamp]}><Text style={[s.stampText,{color:C.warm}]}>{saveLabel}</Text></Reanimated.View>
+  <Reanimated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{right:16,borderColor:C.ink2,transform:[{rotate:'8deg'}]},passStamp]}><Text style={[s.stampText,{color:C.ink2}]}>{passLabel}</Text></Reanimated.View>
+ </Reanimated.View></GestureDetector>;
 }
 
 function AppContent() {
@@ -141,7 +141,7 @@ function AppContent() {
        <View style={s.cardOverlay}><Text style={s.cardNameLight} numberOfLines={2}>{pending[1].name}</Text></View>
       </Photo>
      </View>:null}
-     <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
+     <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced} saveLabel={t('IŠSAUGOTI','SAVE')} passLabel={t('PRALEISTI','PASS')}>
       <View style={[s.card,{flex:1}]}>
        <View style={{flex:1}} onLayout={e=>setPhotoH(Math.round(e.nativeEvent.layout.height))}>
        {photoH?<Photo lang={lang} pet={top} height={photoH} tapToBrowse>
@@ -273,5 +273,5 @@ function AppContent() {
 export default function GlobisApp(){
  const [fonts,fontError]=useFonts({Fraunces_600SemiBold});
  if(!fonts&&!fontError) return null; // a font that fails to load falls back to the system face
- return <SafeAreaProvider><AppContent/></SafeAreaProvider>;
+ return <GestureHandlerRootView style={{flex:1}}><SafeAreaProvider><AppContent/></SafeAreaProvider></GestureHandlerRootView>;
 }

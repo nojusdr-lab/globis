@@ -11,7 +11,7 @@ const MENTIONS = {
   sex: /\b(patinas|patinėlis|patelė|berniukas|mergaitė|kalytė|kalaitė|lytis)\b/i,
   // 1-2 digit figures only: "2025 m. vasario mėn." is an arrival date, not an age.
   age_text: /(gim(ė|us|usi|ęs|usios|imo)\s*[:–-]?\s*\d|amžius\s*[:–-]|(?<!\d)\d{1,2}(?:[.,]\d)?\s*(m\.|metų|metukų|mėn))/i,
-  chipped: /(ženklint|čipuot|čipas|mikroschem)/i,
+  chipped: /(ženklint|zenklint|čipuot|čipas|mikros?chem)/i,
   vaccinated: /(skiep|vakcin)/i,
   neutered: /(kastr|steril)/i,
   size: /\b(dydis|dydžio|ūgio|ūgis)\b/i,

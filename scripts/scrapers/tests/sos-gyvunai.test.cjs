@@ -183,3 +183,15 @@ test('sos-gyvunai: species and age survive the 2026-11-18 term layout (Katės/Š
   assert.equal(byId['sos-gyvunai:4436'].age_text, 'Šunys jauni');
   assert.ok(run.animals.every(a => a.species), 'every fixture post carries Katės or Šunys');
 });
+
+test('sos-gyvunai: a donation shop item ("Dovana – parama", live id 3202) is skipped, not an animal', async () => {
+  const r = routes();
+  const donation = { ...data.posts[0], id: 3202, link: `${O}/dovana-parama/`, title: { rendered: 'Dovana &#8211; parama' },
+    content: { rendered: '<p>Pirkdamas padedi tiems, kurie negali sau padėti patys!</p>' } };
+  r[postsUrl(100, 1)] = { body: [...data.posts, donation] };
+  const { run } = await collect(r);
+  assert.equal(run.state, 'complete');
+  assert.ok(!run.animals.some(a => a.id === 'sos-gyvunai:3202'));
+  assert.equal(run.animals.length, data.posts.length);
+  assert.ok(run.skipped.some(s => s.nativeId === '3202'));
+});

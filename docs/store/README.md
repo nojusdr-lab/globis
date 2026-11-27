@@ -27,7 +27,7 @@ Būsena 2026-11-16. Niekas nepateikta ir nesukurta jokia paskyra.
 3. **Expo paskyra** (nemokama): expo.dev/signup. Ja bus kuriami build’ai.
 4. **Kas teikia programėlę:** tavo vardas ar įmonė, ir el. paštas palaikymui. Be to negalima paskelbti privatumo politikos.
 5. **Kur paskelbti privatumo politiką:** paprasčiausia nemokama vieta yra GitHub Pages. Jei sutiksi, paruošiu.
-6. **Programėlės ID:** dabar `com.myliutave.app` (nuo seno pavadinimo). Siūlau `lt.globis.app`, jei programėlės šiuo senu ID parduotuvėse dar nėra. Po pirmo leidimo pakeisti nebegalima.
+6. **Programėlės ID:** ~~`com.myliutave.app`~~ → `lt.globis.app` (savininko sprendimas 2026-11-20). Siūlau `lt.globis.app`, jei programėlės šiuo senu ID parduotuvėse dar nėra. Po pirmo leidimo pakeisti nebegalima.
 7. **Duomenų teisės:** nuotraukos ir skelbimai dabar iš Globok, kuris draudžia naudoti be sutikimo. Arba parašyk Globok ir paprašyk leidimo, arba palauk, kol duomenys bus renkami tiesiai iš prieglaudų svetainių.
 8. **Galutinis leidimas pateikti** abiem parduotuvėms.
 

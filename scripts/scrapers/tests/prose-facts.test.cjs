@@ -138,6 +138,87 @@ test('fromProse: "suženklintas/suženklinta" counts as chipped (sos-gyvunai Ser
   assert.equal(fromProse('Dar nesuženklintas.').chipped, false);
 });
 
+test('fromProse: short "skiepta" counts as vaccinated (sos-gyvunai Ruzlė)', () => {
+  assert.equal(fromProse('Apie 14 metų. Sterilizuota, skiepta, ženklinta.').vaccinated, true);
+  assert.equal(fromProse('Dar neskieptas.').vaccinated, false);
+});
+
+test('fromProse: facts in parentheses are not voided by a plan word outside them (siauliuletenele Zulis)', () => {
+  const r = fromProse('Apie Zulį (~2018m. gimimo, kastruotas, čipuotas, vakcinuotas) visa informacija bus suteikta tel.');
+  assert.equal(r.neutered, true);
+  assert.equal(r.chipped, true);
+  assert.equal(r.vaccinated, true);
+  // A plan inside the parentheses still counts as a plan.
+  assert.equal(fromProse('Atvyko mamytė Čipa (ji bus sterilizuota ir grąžinta atgal).').neutered, undefined);
+});
+
+test('isDonationTitle: donation shop items, not animal names', () => {
+  const { isDonationTitle } = require('../lib/labels.cjs');
+  assert.equal(isDonationTitle('Dovana – parama'), true);
+  assert.equal(isDonationTitle('MAISTO PARAMA'), true);
+  assert.equal(isDonationTitle('Paramarija'), false);
+  assert.equal(isDonationTitle('Reksas'), false);
+  assert.equal(isDonationTitle(null), false);
+});
+
+test('fromProse: "pažymėtas/ženklina mikroschema" counts as chipped (beglobis Gerbas, Ninja, Kingas, Lilya)', () => {
+  assert.equal(fromProse('Gerbas kastruotas, paskiepytas, pažymėtas mikroschema, tvarkingai naudojasi kraiko dėžute.').chipped, true);
+  assert.equal(fromProse('Činas skiepytas, žymėtas mikroschema.').chipped, true);
+  assert.equal(fromProse('Ninja sterilizuota, paskiepyta ir ženklina mikroschema.').chipped, true);
+  assert.equal(fromProse('Jis skiepytas ir pažymėtas mikrochema.').chipped, true);
+  assert.equal(fromProse('Kalytė sterilizuota, skiepyta, zenklinta mikroschema.').chipped, true);
+  assert.equal(fromProse('Dar nepažymėtas mikroschema.').chipped, false);
+  // "Pažymėtas" without the chip word says nothing about a chip.
+  assert.equal(fromProse('Kalendoriuje pažymėtas susitikimas.').chipped, undefined);
+  // A plan stays a plan.
+  assert.equal(fromProse('Prieš išvykstant bus pažymėtas mikroschema.').chipped, undefined);
+});
+
+test('fromProse: "sučipuotas/sučipuota" counts as chipped (mgma Tuma, 20254)', () => {
+  assert.equal(fromProse('Visiškai paruošta kelionei namo: Tuma jau yra paskiepyta, sterilizuota, nukirminta ir sučipuota.').chipped, true);
+  assert.equal(fromProse('Kastruotas, nukirmintas, paskiepytas kompleksine vakcina ir sučipuotas.').chipped, true);
+  assert.equal(fromProse('Dar nesučipuotas.').chipped, false);
+});
+
+test('fromProse: "tarsi/lyg būtų" is a comparison, not a plan (naminukai Žaneta)', () => {
+  const f = fromProse('Ji sterilizuota, čipuota, paskiepyta, vyresnio amžiaus, bet atrodo, tarsi būtų gimusi iš naujo.');
+  assert.equal(f.chipped, true);
+  assert.equal(f.vaccinated, true);
+  assert.equal(f.neutered, true);
+  assert.equal(fromProse('Jis skiepytas, lyg būtų visada čia gyvenęs.').vaccinated, true);
+  // Plain "būtų" still marks a wish or plan.
+  assert.equal(fromProse('Būtų gerai, kad būtų skiepytas.').vaccinated, undefined);
+});
+
+test('fromProse: "būdu/būrio" are nouns, not plan words (keturkojo-viltis Leila, gyvunugloba Apvalaini)', () => {
+  assert.equal(fromProse('✔️ Skiepyta ✔️ Sterilizuota ✔️ Ženklinta Leila – katytė, kuri pavergia savo švelnumu ir ramiu būdu.').chipped, true);
+  assert.equal(fromProse('Kad negausintų saviškių būrio, jie kastruoti ir sterilizuoti.').neutered, true);
+  // Future and conditional "bū-" forms still mark a plan.
+  assert.equal(fromProse('Būsime dėkingi, kai bus čipuota.').chipped, undefined);
+  assert.equal(fromProse('Turi būti sterilizuota.').neutered, undefined);
+});
+
+test('fromProse: "po kastracijos/sterilizacijos" with recovery or the animal as subject = neutered (keturkojo-viltis Peštukas, sos-gyvunai Giria)', () => {
+  assert.equal(fromProse('Pažinties pradžia buvo sudėtinga – po kastracijos katinas elgėsi agresyviai, nemėgo narvo.').neutered, true);
+  assert.equal(fromProse('Pradžioje leidome jai apsiprasti su nauja vieta, vėliau – atsigauti po sterilizacijos.').neutered, true);
+  // Future, a plan, or other animals: not this animal's fact.
+  assert.equal(fromProse('Apie 7kg. Namo keliaus po sterilizacijos.').neutered, undefined);
+  assert.equal(fromProse('Jų virš 240, kačių, kurioms po sterilizacijos neatsirado vietos miestuose.').neutered, undefined);
+  assert.equal(fromProse('Reikės atsigauti po sterilizacijos.').neutered, undefined);
+});
+
+test('fromProse: "atlikta sterilizacija, ženklinimas" = done (sos-gyvunai Pistacija, Pikselė, Persėja, Pompėja)', () => {
+  const f = fromProse('Katės jau keliavo į kliniką, kur buvo atlikta sterilizacija, virusinių ligų testai, ženklinimas. Dabar šiltai laukia skiepukų .');
+  assert.equal(f.neutered, true);
+  assert.equal(f.chipped, true);
+  assert.equal(fromProse('Atliktas čipavimas ir kastracija.').chipped, true);
+  // Infinitive "atlikti" (to do), negation or a plan: nothing.
+  assert.equal(fromProse('Būtina – skiepyti, ženklinti, sterilizuoti, atlikti akių vokų operacijas.').neutered, undefined);
+  assert.equal(fromProse('Dar nėra atlikta sterilizacija.').neutered, undefined);
+  assert.equal(fromProse('Kai bus atlikta sterilizacija, keliaus namo.').neutered, undefined);
+  assert.equal(fromProse('Kitoms katėms atlikta sterilizacija, jos jau namuose.').neutered, undefined);
+});
+
 test('fromProse: an uncertain or conditional pending procedure stays unknown', () => {
   assert.deepEqual(fromProse('Nežinoma, ar dar laukia skiepai.'), {});
   assert.deepEqual(fromProse('Neaišku, ar laukia kastracija ir ženklinimas.'), {});

@@ -57,7 +57,7 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
 
 <div class="wrap">
   <div>
-    <div class="label">GLOBIS · būsena patikrinta 2026-11-20 · main 62442db · PR #38 (7878f60) ir #40</div>
+    <div class="label">GLOBIS · būsena patikrinta 2026-11-20 · main 62442db · PR #38 (c24571c) ir #40</div>
     <h1>Kelrodis iki pirmojo leidimo</h1>
     <p class="lead">Dabar užbaigiame serverio integracijos patikimumą ir PR peržiūrą. Toliau — iPhone ir Android patikra, leidimo duomenys bei pasirašyta uždara beta.</p>
   </div>
@@ -100,7 +100,6 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
       <ul>
         <li>Užbaigti Supabase integraciją ir serverio duomenų patikrą → 13–19</li>
         <li>Patikrinti PR #38 pasirenkamų paskyrų atkūrimą, eksportą ir ištrynimą → 31, 36</li>
-        <li>Bundle id <code>com.myliutave.app</code> keisti ar palikti → 37</li>
         <li><code>supportEmail</code> ir <code>privacyPolicyUrl</code> dar <code>null</code> → 32–33</li>
       </ul>
     </div>
@@ -111,7 +110,7 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
   <section class="phase">
     <header><div class="label">Etapas A</div><h2>Duomenys ir scraperiai</h2><p>Patikimi, pilni, aktualūs gyvūnų įrašai.</p></header>
     <ol class="steps">
-      <li><span class="n">1</span><span>Pakartoti patvirtintą bandomąjį rinkimą iš peržiūrėtos šakos; laukia savininko: „Daily shelter collect“ iš <code>feat/supabase-loader-cli</code> arba PR #38 sujungimas</span></li>
+      <li class="done"><span class="n">1</span><span>Rinkimas su Supabase sertifikatu 2026-11-27: įrašymas į DB veikia; kur dingo daugiau gyvūnų nei leidžia riba, sauga paliko senąją kopiją (todėl paleidimas raudonas, tai numatyta)</span></li>
       <li class="done"><span class="n">2</span><span>CI įspėjimas, kai adapteris grąžina 0 arba pasikeičia HTML</span></li>
       <li class="done"><span class="n">3</span><span>Užbaigti likusių šaltinių prieigos ir naudojimo sąlygų patikrą: visų renkamų šaltinių sąlygos perskaitytos; nepatikrintos tik nerenkamų (be sąrašo, nepasiekiamų, akeso remontas)</span></li>
       <li class="done"><span class="n">4</span><span>Nauji adapteriai pagal <code>sources.json</code> prioritetą</span></li>
@@ -128,12 +127,12 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
     <header><div class="label">Etapas B</div><h2>Backend</h2><p>Duomenys iš serverio, ne įpakuoti į programėlę.</p></header>
     <ol class="steps">
       <li class="done"><span class="n">11</span><span>Supabase pasirinkimas užrašytas ADR</span></li>
-      <li><span class="n">12</span><span>Patvirtinti veikiančio Supabase projekto regioną ir konfigūraciją</span></li>
+      <li class="done"><span class="n">12</span><span>Supabase regionas ir konfigūracija patikrinti: AWS eu-west-1 (Airija, ne Frankfurtas; dokumentai pataisyti), prisijungimas tik el. paštu, el. pašto patvirtinimas išjungtas</span></li>
       <li class="next"><span class="n">13</span><span>Suderinti migracijas su gyva DB ir užbaigti RLS patikrą; RLS skaitymas patikrintas, <code>in_shelter</code> migracija gyvoje DB dar nepritaikyta</span></li>
-      <li class="next"><span class="n">14</span><span>Užbaigti loaderio lygiagretaus darbo ir nesėkmių patikrą</span></li>
-      <li class="next"><span class="n">15</span><span>Patikrinti viešą read-only view su programėlės duomenų keliu</span></li>
+      <li class="done"><span class="n">14</span><span>Loaderio lygiagretus darbas ir nesėkmės: CI su tikru Postgres (to paties šaltinio publikavimas laukia, kitas eina lygiagrečiai), klaida įkėlimo viduryje palieka paskutinę gerą kopiją</span></li>
+      <li class="done"><span class="n">15</span><span>Viešas read-only view gyvai: programėlės kodas gauna 1156 publikuotus įrašus; anon negali rašyti ir nemato nepublikuotų</span></li>
       <li class="done"><span class="n">16</span><span>Patvirtinti nuotraukų naudojimo pagrindą pagal kiekvieną šaltinį</span></li>
-      <li class="next"><span class="n">17</span><span>Patikrinti serverio skaitymą ir įtaisytą atsarginę kopiją</span></li>
+      <li class="done"><span class="n">17</span><span>Serverio skaitymas veikia; nepavykus lieka įtaisyta kopija. Programėlėje nebeliko globok.lt įrašų (30 pašalinta), rodomos tik prieglaudų svetainės</span></li>
       <li class="done"><span class="n">18</span><span>CI raktai tik per GitHub secrets</span></li>
       <li class="next"><span class="n">19</span><span>Šifruotos kopijos ir testinis atkūrimas CI; laukia CA, BACKUP_PASSPHRASE ir gyvos aplinkos patikros</span></li>
       <li class="done"><span class="n">20</span><span>Nemokamo plano limitų stebėjimas</span></li>
@@ -143,7 +142,7 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
   <section class="phase">
     <header><div class="label">Etapas C</div><h2>Programėlė</h2><p>Native kokybė, prieinamumas, būsenos.</p></header>
     <ol class="steps">
-      <li class="next"><span class="n">21</span><span>iPhone patikra Expo Go: įvadas, kortelė ir safe area veikia iPhone 17 simuliatoriuje; liko gestai ir trumpas viršutinės juostos šuolis po įvado</span></li>
+      <li class="next"><span class="n">21</span><span>iPhone patikra Expo Go: įvadas, kortelė, safe area ir mygtukai veikia. Braukimas simuliatoriuje įrašo pasirinkimą, bet ekranas neatsinaujina iki kito veiksmo; reikia patikrinti tikrame telefone</span></li>
       <li><span class="n">22</span><span>Android patikra</span></li>
       <li class="next"><span class="n">23</span><span>iPhone ir Android patikra su dideliu šriftu, VoiceOver ir TalkBack</span></li>
       <li class="next"><span class="n">24</span><span>Patikrinti tuščias, klaidų ir offline būsenas įrenginiuose</span></li>
@@ -161,11 +160,11 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
     <ol class="steps">
       <li class="done"><span class="n">31</span><span>PR #38 yra pasirenkamų paskyrų įgyvendinimas; naršymas veikia be paskyros</span></li>
       <li><span class="n">32</span><span>Privatumo politika paskelbta viešu URL</span></li>
-      <li><span class="n">33</span><span>Palaikymo el. paštas į <code>app.json</code></span></li>
+      <li class="done"><span class="n">33</span><span>Palaikymo el. paštas <code>app.globis@gmail.com</code> įrašytas į <code>app.json</code>, privatumo politiką ir sąlygas</span></li>
       <li><span class="n">34</span><span>Prieglaudų sutikimai dėl duomenų ir nuotraukų</span></li>
       <li class="done"><span class="n">35</span><span>Naudojimo sąlygos</span></li>
-      <li class="next"><span class="n">36</span><span>Patikrinti paskyros eksportą, ištrynimą ir sesijos atkūrimą</span></li>
-      <li><span class="n">37</span><span>Bundle id sprendimas prieš pirmą store build</span></li>
+      <li class="done"><span class="n">36</span><span>Paskyra gyvai patikrinta 2026-11-20: registracija, išsaugotų sinchronizacija, prisijungimas iš naujo, eksportas, ištrynimas (po jo prisijungti nebegalima); svetimi įrašai anonimui uždrausti</span></li>
+      <li class="done"><span class="n">37</span><span>Bundle id: <code>lt.globis.app</code> (iOS ir Android), slug <code>globis</code>; savininko sprendimas 2026-11-20</span></li>
     </ol>
   </section>
 
@@ -185,8 +184,8 @@ h2{font-size:20px;margin:0;font-weight:800;text-wrap:balance}
   <section class="phase">
     <header><div class="label">Etapas F</div><h2>Leidimas</h2><p>App Store ir Google Play.</p></header>
     <ol class="steps">
-      <li><span class="n">45</span><span>Store ekrano nuotraukos ir ASO tekstai LT/EN</span></li>
-      <li><span class="n">46</span><span>Privacy labels ir Data safety formos</span></li>
+      <li><span class="n">45</span><span>Store ekrano nuotraukos ir ASO tekstai LT/EN. Tekstai paruošti: <code>docs/store/listing.md</code>; nuotraukoms reikia build’o (38)</span></li>
+      <li class="done"><span class="n">46</span><span>Privacy labels ir Data safety atsakymai paruošti pagal kodą (<code>docs/store/data-safety.md</code>); įvesti į konsoles savininkas</span></li>
       <li><span class="n">47</span><span>App Store preflight ir pateikimas</span></li>
       <li><span class="n">48</span><span>Google Play pateikimas</span></li>
     </ol>

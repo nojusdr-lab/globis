@@ -15,7 +15,7 @@ Atsakymai atitinka dabartinį kodą (2026-11-16): nėra paskyrų, analitikos, re
 | Tracking | Ne | Nėra reklamos ar sekimo SDK. `ios.privacyManifests.NSPrivacyTracking = false`. |
 | Privacy Policy URL | **Reikia savininko** | Paskelbti [LT](privacy-policy.lt.md) / [EN](privacy-policy.en.md) versiją viešu adresu. |
 
-Pastaba: nuotraukos kraunamos iš trečiųjų šalių serverių (dabar `globok.lt`). Tai ne GLOBIS duomenų rinkimas, bet politikoje tai paaiškinta.
+Pastaba: nuotraukos kraunamos iš prieglaudų svetainių serverių (ADR 0002). Tai ne GLOBIS duomenų rinkimas, bet politikoje tai paaiškinta.
 
 `app.json` jau turi Apple privatumo manifestą (`PrivacyInfo.xcprivacy`) su React Native / Expo naudojamomis „required reason“ API priežastimis: UserDefaults `CA92.1`, failų laikai `C617.1`, sistemos paleidimo laikas `35F9.1`, disko vieta `E174.1`. Patikrinta `expo prebuild`: failas sugeneruojamas.
 

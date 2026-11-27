@@ -1,13 +1,13 @@
 // Listings joined with their shelter record, so verified contacts live only in shelters.json.
 import {useEffect,useState} from 'react';
-import allPets from './allPets.json';
 import directPets from './directPets.json';
 import shelters from './shelters.json';
 
-import { joinListingShelters, mergeDirect } from './integrity.cjs';
+import { joinListingShelters } from './integrity.cjs';
 import { fromRemote, fetchPublishedRows, withoutBlocked } from './appPet.cjs';
 
-const build = direct => withoutBlocked(joinListingShelters(mergeDirect(allPets, direct), shelters));
+// Only shelters' own websites reach the app; the old globok.lt copy is for crosscheck only (owner rule 2026-11-19).
+const build = direct => withoutBlocked(joinListingShelters(direct, shelters));
 
 // Bundled copy: shown first, and kept whenever the server cannot be reached (offline copy).
 export const PETS = build(directPets);

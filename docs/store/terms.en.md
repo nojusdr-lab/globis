@@ -4,7 +4,7 @@
 
 **Effective from:** [date]
 **Provided by:** [name or company name, registration number, address]
-**Contact:** [email address]
+**Contact:** app.globis@gmail.com
 
 ## What GLOBIS is
 
@@ -31,7 +31,7 @@ The app is provided as is. We work to keep it running and its data accurate, but
 
 ## Photos and content
 
-Animal photos and descriptions belong to the shelters that published them. They load directly from shelter websites and are shown with a link to the original listing. If you are a shelter and want your data removed or corrected, write to [email].
+Animal photos and descriptions belong to the shelters that published them. They load directly from shelter websites and are shown with a link to the original listing. If you are a shelter and want your data removed or corrected, write to app.globis@gmail.com.
 
 ## Privacy
 

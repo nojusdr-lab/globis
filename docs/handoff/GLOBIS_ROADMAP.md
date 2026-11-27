@@ -32,7 +32,7 @@ Kodo patikra, migracijos gyvoje DB, bandymas telefone ir viešas leidimas yra at
 - PR #38 `src/data/directPets.json` turi 1 061 įrašą. Tai įtaisytos kopijos dydis, o ne garantuotas šiuo metu ieškančių namų gyvūnų skaičius.
 - `src/data/shelters.json` turi 37 organizacijas. 20 jų turi telefono arba el. pašto duomenis su `contactEvidence`.
 - `app.json` `supportEmail` ir `privacyPolicyUrl` tebėra `null`.
-- `com.myliutave.app` yra dabartinis iOS ir Android identifikatorius. EAS projekto ID konfigūracijoje nėra.
+- `lt.globis.app` yra iOS ir Android identifikatorius (pakeista 2026-11-20). EAS projekto ID konfigūracijoje nėra.
 - Migracijų failų buvimas repozitorijoje savaime nepatvirtina jų pritaikymo gyvoje DB.
 - `docs/store/preflight.md` ir `docs/security-audit.md` aprašo ankstesnius patikros etapus. Jų išvadas reikia sutikrinti su PR #38 paskyromis, DB integracija ir pasirinktų šaltinių turiniu.
 

@@ -16,6 +16,9 @@ const H = require('../lib/html.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
 const PARSER_VERSION = 'penktakoja-1';
+// Dogs are "simple" products (some also "virtual"). The category also holds an event (variable),
+// a grouped "Parama" page, a gift card and simple donation items titled "... PARAMA" (2026-11-20).
+const ANIMAL_TYPE_CLASS = 'product-type-simple';
 const ORIGIN = 'https://penktakoja.lt';
 const DOG_CATEGORY_ID = 15;
 const DOG_CATEGORY_CLASS = 'product_cat-sunys';
@@ -67,6 +70,14 @@ function create({ perPage = 100, maxPages = 10 } = {}) {
     for (const p of products.items) {
       if (seen.has(p.id)) continue; // a product can shift pages between requests
       seen.add(p.id);
+      const name = N.cleanText(p.title?.rendered);
+      const classes = Object.values(p.class_list || {});
+      // The exact name "Parama" still needs its own detail/gallery evidence:
+      // a real animal with that name must not be removed by a title heuristic.
+      if (!classes.includes(ANIMAL_TYPE_CLASS) || (L.isDonationTitle(name) && N.fold(name) !== 'parama')) {
+        skipped.push({ nativeId: String(p.id), reason: `not an animal: ${classes.find(c => c.startsWith('product-type-')) || 'no type'} "${name}"` });
+        continue;
+      }
       const content = p.content?.rendered || '';
       const labelled = await cache.getOrParse(sha256(content), PARSER_VERSION,
         () => L.fromPairs(L.pairsFromText(content)));
@@ -77,7 +88,7 @@ function create({ perPage = 100, maxPages = 10 } = {}) {
       animals.push({
         nativeId: String(p.id),
         sourceUrl: p.link,
-        name: N.cleanText(p.title?.rendered),
+        name,
         species: labelled.species ?? N.species(DOG_CATEGORY_LABEL),
         sex: labelled.sex ?? null,
         age_text: labelled.age_text ?? null,

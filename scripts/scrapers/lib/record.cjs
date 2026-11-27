@@ -50,8 +50,10 @@ function makeAnimal(sourceId, input) {
     shelterHint: cleanText(input.shelterHint),
   };
   // Labelled facts win; the description text fills only what the adapter left unknown.
+  // `contested`: fields the shelter states both ways (table says no, text says yes); they stay unknown.
+  const contested = new Set(Array.isArray(input.contested) ? input.contested : []);
   const prose = fromProse(animal.bio_lt);
-  for (const k of ['chipped', 'vaccinated', 'neutered', 'age_text', 'size', 'in_shelter']) if (animal[k] === null && k in prose) animal[k] = prose[k];
+  for (const k of ['chipped', 'vaccinated', 'neutered', 'age_text', 'size', 'in_shelter']) if (animal[k] === null && k in prose && !contested.has(k)) animal[k] = prose[k];
   // A post named after several animals ("MARTA IR BAIKA", "TILI, MAURILĖ") never gets a sex from its story.
   if (animal.sex === null && prose.sex && !/,|&|\s(ir|su)\s/iu.test(animal.name || '')) animal.sex = prose.sex;
   if (animal.bio_lt && animal.bio_lt.length > 4000) animal.bio_lt = animal.bio_lt.slice(0, 4000) + '…';

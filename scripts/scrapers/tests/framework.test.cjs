@@ -241,3 +241,18 @@ test('pairsFromHtml: bold label, dt/dd and th/td fact lists', () => {
   assert.deepEqual(L.pairsFromHtml(html), [['Amžius', 'Gimimo data apie 2023 m.'], ['Lytis', 'Patinas'], ['Ūgis', 'Mažas'], ['Lytis', 'Patelė'], ['Skiepai', 'Taip']]);
   assert.deepEqual(L.fromPairs(L.pairsFromHtml(html)), { age_text: 'Gimimo data apie 2023 m.', sex: 'male', size: 'small', vaccinated: true });
 });
+
+test('fromPairs: a value with no letters or digits ("-", "—", "?") is a blank cell, not a fact', () => {
+  const L = require('../lib/labels.cjs');
+  assert.deepEqual(L.fromPairs([['Amžius', '-'], ['Lytis', '—'], ['Dydis', '?']]), {});
+  assert.deepEqual(L.fromPairs([['Amžius', '-'], ['Amžius', '2 metai']]), { age_text: '2 metai' });
+});
+
+test('makeAnimal: a field the adapter marks contested stays null; bio text does not refill it', () => {
+  const base = { nativeId: '1', sourceUrl: 'https://a.lt/1', name: 'Rex', bio_lt: 'Skiepytas, kastruotas.' };
+  assert.equal(makeAnimal('s', base).neutered, true);
+  const a = makeAnimal('s', { ...base, neutered: null, contested: ['neutered'] });
+  assert.equal(a.neutered, null);
+  assert.equal(a.vaccinated, true);
+  assert.equal('contested' in a, false);
+});

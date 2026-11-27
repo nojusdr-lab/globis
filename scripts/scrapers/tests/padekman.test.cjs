@@ -80,8 +80,9 @@ test('padekman: dashes in a fact mean unknown (null), not "no"', async () => {
   // Real line shapes from the feed (Nr.120): "Sterilizacija: ————-"
   const html = '<div class="mkdf-portfolio-single-holder"><div class="mkdf-ps-content-item"><div><strong>Sterilizacija</strong>: &#8212;&#8212;&#8212;&#8212;-</div><div><strong>Čipizacija: </strong> &#8212;&#8212;&#8212;&#8212;</div></div><div class="mkdf-ps-categories"><a class="mkdf-ps-info-category">Ieško namų</a></div></div>';
   const d = adapter._parseDetail(html, item('nr-120'));
-  assert.equal(d.facts.neutered, null);
-  assert.equal(d.facts.chipped, null);
+  // A dash-only cell is blank (labels.cjs): no fact, so the field stays unknown.
+  assert.equal(d.facts.neutered ?? null, null);
+  assert.equal(d.facts.chipped ?? null, null);
 });
 
 test('padekman: contradicting status labels give unknown; adopted needs evidence', async () => {

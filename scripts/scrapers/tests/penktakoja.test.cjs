@@ -130,3 +130,25 @@ test('penktakoja: a non-dog product (category changed) fails the run', async () 
   const { run } = await collect({ ...routes, [productUrl(100, 1)]: merch });
   assert.equal(run.state, 'failed');
 });
+
+test('penktakoja: donation, event and gift-card products in the dog category are skipped', async () => {
+  // Real items seen 2026-11-20 in product_cat=15: 19175 (variable, event), 20793 (grouped "Parama"),
+  // 20805 (simple+virtual "VIENKARTINĖ PARAMA"), 15856 (gift-card "Produktas").
+  const extra = (id, title, ...cls) => ({
+    ...PRODUCTS[0], id, title: { rendered: title }, featured_media: 0,
+    class_list: Object.assign({}, ['product', 'product_cat-sunys', ...cls]),
+  });
+  const items = [
+    ...PRODUCTS,
+    extra(19175, 'Gyvūnų gerovės žygis su beglobiais šunimis &#8211; spalio 4d.', 'product-type-variable'),
+    extra(20793, 'Parama', 'product-type-grouped'),
+    extra(20805, 'VIENKARTINĖ PARAMA', 'virtual', 'product-type-simple'),
+    extra(20808, 'LABAI REIKALINGA: KASMĖNESINĖ PARAMA', 'virtual', 'product-type-simple'),
+    extra(15856, 'Produktas', 'virtual', 'product-type-gift-card'),
+    extra(99001, 'IKAS', 'virtual', 'product-type-simple'), // many real dogs are virtual simple products
+  ];
+  const { run } = await collect({ ...routes, [productUrl(100, 1)]: items });
+  assert.equal(run.state, 'complete');
+  assert.deepEqual(run.animals.map(a => a.name), ['TREPSĖ', 'VOLFAS', 'ZRAZAS', 'ŠACHAS', 'ŠMAKIS', 'IKAS']);
+  assert.deepEqual(run.skipped.map(s => s.nativeId).sort(), ['15856', '19175', '20793', '20805', '20808']);
+});

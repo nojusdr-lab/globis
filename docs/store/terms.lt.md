@@ -4,7 +4,7 @@
 
 **Galioja nuo:** [data]
 **Programėlę teikia:** [vardas, pavardė arba įmonės pavadinimas, kodas, adresas]
-**Kontaktas:** [el. pašto adresas]
+**Kontaktas:** app.globis@gmail.com
 
 ## Kas yra GLOBIS
 
@@ -31,7 +31,7 @@ Programėlę teikiame tokią, kokia ji yra. Stengiamės, kad ji veiktų ir duome
 
 ## Nuotraukos ir turinys
 
-Gyvūnų nuotraukos ir aprašymai priklauso juos paskelbusioms prieglaudoms. Jie kraunami tiesiai iš prieglaudų svetainių ir rodomi su nuoroda į originalų skelbimą. Jei esate prieglauda ir norite, kad jūsų duomenys nebūtų rodomi arba būtų pataisyti, rašykite [el. paštas].
+Gyvūnų nuotraukos ir aprašymai priklauso juos paskelbusioms prieglaudoms. Jie kraunami tiesiai iš prieglaudų svetainių ir rodomi su nuoroda į originalų skelbimą. Jei esate prieglauda ir norite, kad jūsų duomenys nebūtų rodomi arba būtų pataisyti, rašykite app.globis@gmail.com.
 
 ## Privatumas
 

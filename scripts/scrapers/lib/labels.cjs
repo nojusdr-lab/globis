@@ -34,7 +34,8 @@ function fromPairs(pairs) {
   for (const [label, rawValue] of pairs) {
     const field = fieldFor(label);
     const value = N.cleanText(rawValue);
-    if (!field || !value || field in out) continue;
+    // A cell with no letters or digits ("-", "—", "?") is blank, not a fact.
+    if (!field || !value || !/[\p{L}\p{N}]/u.test(value) || field in out) continue;
     if (field === 'species') out.species = N.species(value);
     else if (field === 'sex') out.sex = N.sex(value);
     else if (field === 'size') out.size = N.size(value);
@@ -69,9 +70,12 @@ function pairsFromHtml(html) {
 // Participle in any gender/number: -as, -a, -i, -os ("Skiepytos, ženklintos" about female pups).
 const PROSE = {
   neutered: [/^(kastruot|sterilizuot)(as|a|i|os)$/, /^ne(kastruot|sterilizuot)(as|a|i|os)$/],
-  vaccinated: [/^(pa)?(skiepyt|skiepint|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|skiepint|vakcinuot)(as|a|i|os)$/],
-  chipped: [/^(čipuot|(pa|su)?ženklint)(as|a|i|os)$/, /^ne(čipuot|(pa|su)?ženklint)(as|a|i|os)$/],
+  vaccinated: [/^(pa)?(skiepyt|skiept|skiepint|vakcinuot)(as|a|i|os)$/, /^ne(pa)?(skiepyt|skiept|skiepint|vakcinuot)(as|a|i|os)$/],
+  chipped: [/^((su)?čipuot|(pa|su)?(ženklint|zenklint))(as|a|i|os)$/, /^ne((su)?čipuot|(pa|su)?(ženklint|zenklint))(as|a|i|os)$/],
 };
+// "Pažymėtas mikroschema", "žymėtas mikrochema", "ženklina mikroschema": the marking verb counts only next to the chip word.
+const MARKED = /^(ne)?(pa)?(žymėt|ženklin|zenklin)\p{L}*$/u;
+const CHIP_WORD = /^mikro(s)?c?h?em\p{L}*$/u;
 // Procedure nouns that, next to "laukia" (is waiting for), say the procedure is still to be done.
 const PENDING = {
   neutered: /^(sterilizacij|kastracij)\p{L}*$/u,
@@ -79,8 +83,25 @@ const PENDING = {
   chipped: /^(ženklinim\p{L}*|čipavim\p{L}*|mikročip\p{L}*)$/u,
 };
 // A sentence with one of these words talks about a plan or a condition, so its "yes" words are skipped.
-const PLAN = /^(bus|bū\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
+const PLAN = /^(bus|bū[sštč]\p{L}*|reikės|turės|planuojam\p{L}*|prieš|jei|jeigu|kai|galės)$/u;
 const UNCERTAIN = /^(nežinom\p{L}*|neaišk\p{L}*|galbūt|galimai|ar)$/u;
+const COMPARE = /^(tarsi|lyg|tartum|tarytum)$/u;
+// "po kastracijos katinas elgėsi agresyviai" / "leidome … atsigauti po sterilizacijos": a story told in the past
+// about this animal = neutered. Needs a past-tense verb in the sentence; a plural relative/other-animal word
+// ("kačių, kurioms po sterilizacijos neatsirado vietos") or no past verb ("Namo keliaus po sterilizacijos") = nothing.
+const AFTER_NEUTER = /^(sterilizacij|kastracij)(os)$/u;
+const PAST_VERB = /^(buvo|\p{L}{2,}(ėsi|osi|ome|ėme|ėjo|avo|ojo|ijo))$/u;
+const OTHERS = /^(kurioms|kuriems|kurie|kurios|jų|kitų|kitoms|kitiems)$/u;
+// "buvo atlikta sterilizacija, virusinių ligų testai, ženklinimas" / "Atliktas čipavimas ir kastracija": the procedure
+// noun next to a past participle "atlikta/-as/-os" = done. Infinitive "atlikti" (to do), "nėra/nebuvo", a plan or
+// other animals = nothing.
+const DONE_VERB = /^atlikt(a|as|os)$/u;
+const DONE_NOUN = {
+  neutered: /^(sterilizacija|kastracija)$/u,
+  vaccinated: /^vakcinacija$/u,
+  chipped: /^(ženklinimas|čipavimas|mikročipavimas)$/u,
+};
+const NOT_DONE = /^(nėra|nebuvo|neatlikta|neatliktas)$/u;
 
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
 const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female',
@@ -106,31 +127,32 @@ const SIZE_OF = { mažo: 'small', nedidelio: 'small', vidutinio: 'medium', didel
 
 function fromProse(text) {
   const out = {};
-  // Shelter stories often use emoji or smileys instead of a full stop. Keep a
-  // later adoption/phone condition outside the preceding medical statement.
-  const sentences = N.fold(text).split(/[.!?\n;]+|\p{Extended_Pictographic}|[:;]-?[()DP]|[,–—]\s*(?=(?:bet|tačiau|jei|jeigu|kai|o|nes)(?!\p{L}))/u)
-    .map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
+  // Emoji end a thought too: "…namuose bus meilūnas🤍 Kastruotas" is two sentences, not a plan.
+  // Parentheses too: "(kastruotas, čipuotas) visa informacija bus suteikta" is a fact, not a plan.
+  const sentences = N.fold(text).split(/[.!?\n;()]+|\p{Extended_Pictographic}+|[:;]-?[()DP]|[,–—]\s*(?=(?:bet|tačiau|jei|jeigu|kai|o|nes)(?!\p{L}))/u).map(s => s.split(/[^\p{L}]+/u).filter(Boolean));
   const words = sentences.flat();
   for (const [field, [yes, no]] of Object.entries(PROSE)) {
     const seen = new Set();
     for (const words of sentences) {
-      const plan = words.some(w => PLAN.test(w));
-      // "Dar laukia skiepai, ženklinimas, sterilizacija": explicitly pending.
-      if (!plan && !words.some(w => UNCERTAIN.test(w)) && words.includes('laukia') &&
-          words.some(w => PENDING[field].test(w))) seen.add(false);
-      for (let i = 0; i < words.length; i++) {
-        const w = words[i];
-        const microchip = field === 'chipped' && /^(pa)?žymėt(as|a|i|os)$/.test(w) && /^mikroschem/.test(words[i + 1] || '');
-        // A later adoption question must not erase an earlier health list.
+      // "Atrodo, tarsi būtų gimusi iš naujo": "tarsi/lyg būtų" compares, it is not a plan.
+      const plan = words.some((w, i) => PLAN.test(w) && !(w === 'būtų' && COMPARE.test(words[i - 1] || '')));
+      // "Dar laukia skiepai, ženklinimas, sterilizacija" / "Ateityje laukia kastracija": not done yet.
+      if (!plan && !words.some(w => UNCERTAIN.test(w)) && words.includes('laukia') && words.some(w => PENDING[field].test(w))) seen.add(false);
+      if (field === 'neutered' && !plan && words.some((w, i) => words[i - 1] === 'po' && AFTER_NEUTER.test(w))
+        && words.some(w => PAST_VERB.test(w)) && !words.some(w => OTHERS.test(w))) seen.add(true);
+      if (!plan && words.some(w => DONE_VERB.test(w)) && words.some(w => DONE_NOUN[field].test(w))
+        && !words.some(w => NOT_DONE.test(w) || OTHERS.test(w))) seen.add(true);
+      for (const [i, w] of words.entries()) {
+        const microchip = field === 'chipped' && CHIP_WORD.test(words[i + 1] || '') && MARKED.test(w);
         if (words.slice(Math.max(0, i - 5), i).some(p => UNCERTAIN.test(p)) ||
             (words[i + 1] === 'ar' && words[i + 2] === 'ne')) continue;
         if (no.test(w)) seen.add(false);
         else if ((yes.test(w) || microchip) && !plan) {
           const prefix = words.slice(Math.max(0, i - 2), i);
-          // A conjunction starts a new clause: "nėra skiepytas, bet kastruotas".
           const boundary = prefix.findLastIndex(p => ['bet', 'tačiau', 'o'].includes(p));
           const local = prefix.slice(boundary + 1);
-          const negated = local.some((p, n) => p === 'nėra' || (p === 'ne' && local[n + 1] !== 'tik'));
+          const negated = (microchip && w.startsWith('ne')) ||
+            local.some((p, n) => p === 'nėra' || (p === 'ne' && local[n + 1] !== 'tik'));
           seen.add(!negated);
         }
       }
@@ -163,4 +185,8 @@ function fromProse(text) {
   return out;
 }
 
-module.exports = { fromPairs, pairsFromText, pairsFromHtml, fieldFor, fromProse };
+// Shop/donation items some shelters list next to animals ("Dovana – parama", "... PARAMA"). Not animals.
+const DONATION_TITLE = /(^|[^\p{L}])parama([^\p{L}]|$)/iu;
+function isDonationTitle(title) { return DONATION_TITLE.test(String(title || "")); }
+
+module.exports = { fromPairs, pairsFromText, pairsFromHtml, fieldFor, fromProse, isDonationTitle };

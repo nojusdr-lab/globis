@@ -48,6 +48,14 @@ function fromText(text, yes, no) {
   return y;
 }
 
+// Table value unless the card text says the opposite (live LAPKRITIS: table "Neatlikta",
+// text "kastruotas"): the shelter states both, so we do not know.
+function tableOrText(tableValue, textValue) {
+  if (tableValue == null) return textValue;
+  if (textValue != null && textValue !== tableValue) return null;
+  return tableValue;
+}
+
 function sentences(text) {
   return String(text || '').split(/(?<=[.!?])\s+|\n/).map(s => N.cleanText(s)).filter(Boolean);
 }
@@ -108,6 +116,14 @@ function parseListing(body, page) {
     }
     if (extra) bioParts.push(extra);
 
+    const health = {
+      vaccinated: tableOrText(facts.vaccinated, fromText(extra, VACC_YES, VACC_NO)),
+      neutered: tableOrText(facts.neutered, fromText(extra, NEUT_YES, NEUT_NO)),
+      chipped: tableOrText(facts.chipped, fromText(extra, CHIP_YES, CHIP_NO)),
+    };
+    // Table and text disagree: record.cjs must not refill these from the bio.
+    const contested = Object.keys(health).filter(k => health[k] === null && facts[k] != null);
+
     animals.push({
       nativeId,
       // All animals share one list page; the fragment keeps each listing URL unique (DB constraint) and still opens that page.
@@ -117,14 +133,13 @@ function parseListing(body, page) {
       sex: facts.sex ?? null,
       age_text: facts.age_text ?? null,
       size: facts.size ?? null,
-      vaccinated: facts.vaccinated ?? fromText(extra, VACC_YES, VACC_NO),
-      neutered: facts.neutered ?? fromText(extra, NEUT_YES, NEUT_NO),
-      chipped: facts.chipped ?? fromText(extra, CHIP_YES, CHIP_NO),
+      ...health,
       photos: photo ? [photo] : [],
       bio_lt: bioParts.join('\n') || null,
       status,
       statusEvidence: status === 'unknown' ? null : statusEvidence,
       sourceUpdatedAt: null,
+      ...(contested.length ? { contested } : {}),
     });
   });
   return { animals, skipped };

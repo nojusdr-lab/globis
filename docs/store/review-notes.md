@@ -13,7 +13,7 @@
 - Account deletion (guideline 5.1.1(v)): Paskyra → sign in → **Ištrinti paskyrą** (Delete account) → confirm. The account and its saved list are deleted at once.
 - Demo account for review: [create one in Supabase before submitting and paste the email and password here].
 
-**4. External services:** Pet photos load from public shelter/listing websites. "Original listing" opens the shelter's website. Listings and the optional account use Supabase (EU, Frankfurt). The account stores only the email address and the IDs of saved animals. No analytics, ad, crash-reporting or AI services are used.
+**4. External services:** Pet photos load from public shelter/listing websites. "Original listing" opens the shelter's website. Listings and the optional account use Supabase (EU, Ireland). The account stores only the email address and the IDs of saved animals. No analytics, ad, crash-reporting or AI services are used.
 
 **5. Regional differences:** The app works the same in every region. Content covers shelters in Lithuania.
 

@@ -4,7 +4,7 @@
 
 **Galioja nuo:** [data]
 **Programėlę teikia:** [vardas, pavardė arba įmonės pavadinimas, kodas, adresas]
-**Kontaktas privatumo klausimais:** [el. pašto adresas]
+**Kontaktas privatumo klausimais:** app.globis@gmail.com
 
 ## Trumpai
 
@@ -27,7 +27,7 @@ Kad programėlė prisimintų jūsų pasirinkimus, jūsų telefone (arba naršykl
 Paskyra reikalinga tik tam, kad išsaugotų gyvūnų sąrašas būtų matomas keliuose jūsų įrenginiuose.
 
 - **Ką saugome:** el. pašto adresą, slaptažodį (tik užšifruoto maišo pavidalu, jo nematome), išsaugotų gyvūnų skelbimų numerius ir jų išsaugojimo laiką.
-- **Kur:** Supabase serveriuose Europos Sąjungoje (Frankfurtas, Vokietija). Supabase yra mūsų duomenų tvarkytojas.
+- **Kur:** Supabase serveriuose Europos Sąjungoje (Airija). Supabase yra mūsų duomenų tvarkytojas.
 - **Kam:** tik jūsų sąrašo sinchronizavimui. Kiti vartotojai jūsų duomenų nemato.
 - **Teisinis pagrindas:** sutartis (BDAR 6 str. 1 d. b p.), nes paskyrą kuriate patys, kad naudotumėtės sinchronizavimu.
 - **Kiek laiko:** kol turite paskyrą.
@@ -50,7 +50,7 @@ Paskyra reikalinga tik tam, kad išsaugotų gyvūnų sąrašas būtų matomas ke
 
 ## Jūsų teisės
 
-Pagal BDAR turite teisę gauti informaciją, kokius duomenis apie jus tvarkome, prašyti juos ištaisyti ar ištrinti ir nesutikti su tvarkymu. Jei paskyros neturite, mes jūsų asmens duomenų nelaikome. Jei turite, programėlėje (Paskyra → „Eksportuoti mano duomenis“) gausite visus apie jus saugomus duomenis JSON formatu, o paskyrą su visais duomenimis galite ištrinti. Klausimus siųskite adresu [el. paštas]. Taip pat galite kreiptis į Valstybinę duomenų apsaugos inspekciją (vdai.lrv.lt).
+Pagal BDAR turite teisę gauti informaciją, kokius duomenis apie jus tvarkome, prašyti juos ištaisyti ar ištrinti ir nesutikti su tvarkymu. Jei paskyros neturite, mes jūsų asmens duomenų nelaikome. Jei turite, programėlėje (Paskyra → „Eksportuoti mano duomenis“) gausite visus apie jus saugomus duomenis JSON formatu, o paskyrą su visais duomenimis galite ištrinti. Klausimus siųskite adresu app.globis@gmail.com. Taip pat galite kreiptis į Valstybinę duomenų apsaugos inspekciją (vdai.lrv.lt).
 
 ## Pakeitimai
 
