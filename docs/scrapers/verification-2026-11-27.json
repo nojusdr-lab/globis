@@ -1,0 +1,470 @@
+{
+  "startedAt": "2026-11-27T21:56:45.289Z",
+  "scope": "Animal collection IDs and WordPress pagination metadata only; no individual animal details, images or publication.",
+  "sources": [
+    {
+      "id": "bukmanodraugas",
+      "collections": [
+        {
+          "url": "https://bukmanodraugas.lt/wp-json/wp/v2/posts?categories=38%2C39&per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 42,
+              "total": 42,
+              "totalPages": 1
+            }
+          ],
+          "complete": true,
+          "count": 42,
+          "uniqueIds": 42,
+          "idSetSha256": "fdd788fca0304d664955f9fa796623e19221b82489a0130342e68df83845262e"
+        }
+      ],
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://bukmanodraugas.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "a44c05e24be3e99087e094fe0d4c36730730de10eeffc1ebbe91d8cacb841db0",
+          "observedAt": "2026-11-27T21:56:48.090Z"
+        },
+        {
+          "url": "https://bukmanodraugas.lt/wp-json/wp/v2/posts?categories=38%2C39&per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "6173bd91597e33f378b4e2069a53dd892d0d49f8c7548652afd6c48ea74746bd",
+          "observedAt": "2026-11-27T21:56:51.564Z"
+        }
+      ]
+    },
+    {
+      "id": "egzoticsos",
+      "collections": [
+        {
+          "url": "https://egzoticsos.lt/wp-json/wp/v2/product?product_cat=20&per_page=100&page=1&orderby=id&order=asc&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 100,
+              "total": 166,
+              "totalPages": 2
+            },
+            {
+              "page": 2,
+              "count": 66,
+              "total": 166,
+              "totalPages": 2
+            }
+          ],
+          "complete": true,
+          "count": 166,
+          "uniqueIds": 166,
+          "idSetSha256": "f7e6b7de82cef3c691deb36a39613d49f0b2a2db01898055ad85918e14d874fa"
+        }
+      ],
+      "requests": 3,
+      "evidence": [
+        {
+          "url": "https://egzoticsos.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "9311bab30d8b5d05f5fa5563a251b8c96b8470873bb77c62d3d17c146d7acab7",
+          "observedAt": "2026-11-27T21:57:01.860Z"
+        },
+        {
+          "url": "https://egzoticsos.lt/wp-json/wp/v2/product?product_cat=20&per_page=100&page=1&orderby=id&order=asc&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "20f642db5a8a1de0e335e2b051ceb5c01f2be16c144ccba6c2c1b8706c1f7990",
+          "observedAt": "2026-11-27T21:57:07.549Z"
+        },
+        {
+          "url": "https://egzoticsos.lt/wp-json/wp/v2/product?product_cat=20&per_page=100&page=2&orderby=id&order=asc&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "a2391e4d33f77aec3b0446ef0fbbedda5da85f2337f22e99316f8d8b41bbb8b2",
+          "observedAt": "2026-11-27T21:57:12.557Z"
+        }
+      ]
+    },
+    {
+      "id": "keturkojo-viltis",
+      "collections": [
+        {
+          "url": "https://keturkojo-viltis.lt/wp-json/wp/v2/gyvunas?per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 100,
+              "total": 183,
+              "totalPages": 2
+            },
+            {
+              "page": 2,
+              "count": 83,
+              "total": 183,
+              "totalPages": 2
+            }
+          ],
+          "complete": true,
+          "count": 183,
+          "uniqueIds": 183,
+          "idSetSha256": "f46caa380fb18c54d0f59f4a1fad00ec55a5a87af600144df5a2dd9145ba74ec"
+        }
+      ],
+      "requests": 3,
+      "evidence": [
+        {
+          "url": "https://keturkojo-viltis.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "5de45b3290f3ff74cb09211fff1519da307490ffa8df4dff1ea6c1445bbff056",
+          "observedAt": "2026-11-27T21:56:45.424Z"
+        },
+        {
+          "url": "https://keturkojo-viltis.lt/wp-json/wp/v2/gyvunas?per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "1d55ae62001a940f22306023fcdaa695b56f01ff80aa708106fafadc5bd3bf08",
+          "observedAt": "2026-11-27T21:56:50.626Z"
+        },
+        {
+          "url": "https://keturkojo-viltis.lt/wp-json/wp/v2/gyvunas?per_page=100&page=2&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "779e7581a21e5da5c2830ff2d1a9d4ec1ad27206cad5e6fc5b1c73660a46fde1",
+          "observedAt": "2026-11-27T21:56:55.513Z"
+        }
+      ]
+    },
+    {
+      "id": "kggn",
+      "collections": [
+        {
+          "url": "https://kggn.lt/wp-json/wp/v2/globotiniai?per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 41,
+              "total": 41,
+              "totalPages": 1
+            }
+          ],
+          "complete": true,
+          "count": 41,
+          "uniqueIds": 41,
+          "idSetSha256": "a27f18bee068bd3b054b2b77b3858434fff8e1528a96174f45b67aac5ea6d567"
+        }
+      ],
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://kggn.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "dc2f08337f914b83104b1cc09a2e273eec7d4003cc6fd7046411db9500c6056f",
+          "observedAt": "2026-11-27T21:56:45.396Z"
+        },
+        {
+          "url": "https://kggn.lt/wp-json/wp/v2/globotiniai?per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "d91f4c016577d89c135cbd34958881a5753baa59433e1c7cc2ca8aa2dc23f44d",
+          "observedAt": "2026-11-27T21:56:55.856Z"
+        }
+      ]
+    },
+    {
+      "id": "mazasdraugas",
+      "collections": [
+        {
+          "url": "https://www.mazasdraugas.lt/wp-json/wp/v2/posts?categories=34%2C35&per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 36,
+              "total": 36,
+              "totalPages": 1
+            }
+          ],
+          "complete": true,
+          "count": 36,
+          "uniqueIds": 36,
+          "idSetSha256": "4cdd159d427fb754fc7fc7900660adad081f20eb9f5b45d01b70fef90fe1be26"
+        }
+      ],
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://www.mazasdraugas.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "a877af1cc604d7d305ede7565cfd9ed3afc127f0e35f278e801f0fa0ca6c4309",
+          "observedAt": "2026-11-27T21:56:57.362Z"
+        },
+        {
+          "url": "https://www.mazasdraugas.lt/wp-json/wp/v2/posts?categories=34%2C35&per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "1bac84eb37f980c9e303cdc9ac25e08147ac145f3f6c8c92317db923ffad449a",
+          "observedAt": "2026-11-27T21:57:02.420Z"
+        }
+      ]
+    },
+    {
+      "id": "mgma",
+      "collections": [
+        {
+          "url": "https://mgma.lt/wp-json/wp/v2/product?product_cat=20%2C21%2C23%2C24&per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 21,
+              "total": 21,
+              "totalPages": 1
+            }
+          ],
+          "complete": true,
+          "count": 21,
+          "uniqueIds": 21,
+          "idSetSha256": "c923127c81b84c720a0d0eff79888c2d0779d4bfc124b25d236f03a30543a38e"
+        }
+      ],
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://mgma.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "df88b7758c6042fcf7968de6f6b56283d8095fbf9370e908c945f009795a94e4",
+          "observedAt": "2026-11-27T21:56:51.680Z"
+        },
+        {
+          "url": "https://mgma.lt/wp-json/wp/v2/product?product_cat=20%2C21%2C23%2C24&per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "a7fc760edac87d594cff207bdfc1d3639f670dbb87ed55fa60a1e65a241a543f",
+          "observedAt": "2026-11-27T21:56:59.192Z"
+        }
+      ]
+    },
+    {
+      "id": "penktakoja",
+      "collections": [
+        {
+          "url": "https://penktakoja.lt/wp-json/wp/v2/product?product_cat=15&per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 100,
+              "total": 231,
+              "totalPages": 3
+            },
+            {
+              "page": 2,
+              "count": 100,
+              "total": 231,
+              "totalPages": 3
+            },
+            {
+              "page": 3,
+              "count": 31,
+              "total": 231,
+              "totalPages": 3
+            }
+          ],
+          "complete": true,
+          "count": 231,
+          "uniqueIds": 231,
+          "idSetSha256": "2e8c5db04603e5d3532b969877128edd2c5428224e6bb8cba2951330f60826c8"
+        }
+      ],
+      "requests": 4,
+      "evidence": [
+        {
+          "url": "https://penktakoja.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "f6def844db51d33c6d5a296d1dbfcf13d85035a8b18dec46f1e472ae85c45d7d",
+          "observedAt": "2026-11-27T21:56:45.826Z"
+        },
+        {
+          "url": "https://penktakoja.lt/wp-json/wp/v2/product?product_cat=15&per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "ea76622fc2a7d589a319374f28488bcc2e6ae8d006ab55ba7f0386202e46ae6d",
+          "observedAt": "2026-11-27T21:56:50.861Z"
+        },
+        {
+          "url": "https://penktakoja.lt/wp-json/wp/v2/product?product_cat=15&per_page=100&page=2&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "77cc6608eec14699e07cb5aef6d0b62fec16412c79785c4d3e6f4ac7866a4b84",
+          "observedAt": "2026-11-27T21:56:55.692Z"
+        },
+        {
+          "url": "https://penktakoja.lt/wp-json/wp/v2/product?product_cat=15&per_page=100&page=3&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "99b95bce90bc9cbf2d4c464b0eefaa7c120d4ee71a4d1b9c59e1ec5c273e4a4f",
+          "observedAt": "2026-11-27T21:57:00.764Z"
+        }
+      ]
+    },
+    {
+      "id": "siauliuletenele",
+      "collections": [
+        {
+          "url": "https://siauliuletenele.lt/wp-json/wp/v2/posts?categories=3&per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 100,
+              "total": 120,
+              "totalPages": 2
+            },
+            {
+              "page": 2,
+              "count": 20,
+              "total": 120,
+              "totalPages": 2
+            }
+          ],
+          "complete": true,
+          "count": 120,
+          "uniqueIds": 120,
+          "idSetSha256": "9d81dd2677f2f30e06cbd2fb24e36c97f3f9bef13f8acc1d6c32a47457292548"
+        },
+        {
+          "url": "https://siauliuletenele.lt/wp-json/wp/v2/posts?categories=7&per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 86,
+              "total": 86,
+              "totalPages": 1
+            }
+          ],
+          "complete": true,
+          "count": 86,
+          "uniqueIds": 86,
+          "idSetSha256": "cb10fae3984fcac32d4db596ce4bca2b276d6f88e9247e827b7bda7fcad4610e"
+        }
+      ],
+      "requests": 4,
+      "evidence": [
+        {
+          "url": "https://siauliuletenele.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "adcbe6827dd9a47dbe55230253d1656228888d29b3e52233161f703e9d8c59e0",
+          "observedAt": "2026-11-27T21:56:55.986Z"
+        },
+        {
+          "url": "https://siauliuletenele.lt/wp-json/wp/v2/posts?categories=3&per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "505d79a4cd225cd796e9f22b8a8c41bc9095bbffaffbff6dc86797259530a6ea",
+          "observedAt": "2026-11-27T21:57:01.060Z"
+        },
+        {
+          "url": "https://siauliuletenele.lt/wp-json/wp/v2/posts?categories=3&per_page=100&page=2&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "04cf38a781c2cdcd42cbc2c38914ca47ef1ca8ef950cbde5953977a6c244b2b7",
+          "observedAt": "2026-11-27T21:57:05.988Z"
+        },
+        {
+          "url": "https://siauliuletenele.lt/wp-json/wp/v2/posts?categories=7&per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "5f956787364199e9c988668e06a6a421ab7cc7d727536df21625593cd1bae77f",
+          "observedAt": "2026-11-27T21:57:11.038Z"
+        }
+      ]
+    },
+    {
+      "id": "sos-gyvunai",
+      "collections": [
+        {
+          "url": "https://sos-gyvunai.lt/wp-json/wp/v2/gyvunas?per_page=100&page=1&_fields=id",
+          "pages": [
+            {
+              "page": 1,
+              "count": 100,
+              "total": 119,
+              "totalPages": 2
+            },
+            {
+              "page": 2,
+              "count": 19,
+              "total": 119,
+              "totalPages": 2
+            }
+          ],
+          "complete": true,
+          "count": 119,
+          "uniqueIds": 119,
+          "idSetSha256": "11a93e4d82ac4dad968cd8cd38ddd76e1f45a50a2d654f7ccf32c291fd007bf8"
+        }
+      ],
+      "requests": 3,
+      "evidence": [
+        {
+          "url": "https://sos-gyvunai.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "079230e4692cb14e80d14c4f31fe90ba48d133cbc9380ec188d68aa4956d88c9",
+          "observedAt": "2026-11-27T21:56:59.268Z"
+        },
+        {
+          "url": "https://sos-gyvunai.lt/wp-json/wp/v2/gyvunas?per_page=100&page=1&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "653e9f58044dc50f51149c8fdc0ff83ff80c7782232778ab44cdfbd5c1d494a7",
+          "observedAt": "2026-11-27T21:57:04.877Z"
+        },
+        {
+          "url": "https://sos-gyvunai.lt/wp-json/wp/v2/gyvunas?per_page=100&page=2&_fields=id",
+          "method": "GET",
+          "status": 200,
+          "hash": "b7775d89e7a9643405e543643906134759d2812a5e61b3816e8a6d3be6f10b62",
+          "observedAt": "2026-11-27T21:57:09.587Z"
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-11-27T21:57:12.559Z",
+  "codeCommit": "ff0c125a97b67905a33670b57183131bed347aba",
+  "upstreamClaudeCommit": "4b580080526dbffd34dfb796f6c9c63feee0566b",
+  "summary": {
+    "sources": 9,
+    "collections": 10,
+    "dataPages": 16,
+    "httpRequests": 25,
+    "collectionRows": 1045,
+    "allComplete": true,
+    "allIdsUniqueWithinCollection": true
+  },
+  "verification": {
+    "command": "npm test",
+    "node": "26.13.1",
+    "tests": 374,
+    "passed": 373,
+    "failed": 0,
+    "skipped": 1,
+    "skipReason": "Real PostgreSQL recovery/concurrency test runs in CI, not local unit test mode."
+  },
+  "limitations": [
+    "ID/metadata pagination probe, not a fresh animal-detail or image audit.",
+    "Collection row count is not a count of unique adoptable animals. Adapter status/donation filters were not run by this probe.",
+    "Mutable WordPress collections are not transactionally consistent snapshots; equal totals cannot prove that no row changed between requests.",
+    "No publication to source snapshots, src/data or Supabase; no new access permissions inferred."
+  ],
+  "references": [
+    "https://developer.wordpress.org/rest-api/using-the-rest-api/pagination/",
+    "https://developer.wordpress.org/reference/classes/wp_rest_posts_controller/get_items/"
+  ]
+}

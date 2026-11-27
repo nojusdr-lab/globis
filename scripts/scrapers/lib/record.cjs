@@ -10,6 +10,7 @@ const FIELDS = ['name', 'species', 'sex', 'age_text', 'size', 'chipped', 'vaccin
 // iOS blocks plain-http images. An https page's own http photo links are upgraded (same host serves https).
 function photoUrl(p, page) {
   const u = new URL(p, page);
+  if (!['https:', 'http:'].includes(u.protocol) || u.username || u.password) throw new Error('Bad photo URL');
   if (u.protocol === 'http:' && page.protocol === 'https:' && u.hostname === page.hostname) u.protocol = 'https:';
   return u.href;
 }
@@ -17,13 +18,13 @@ function photoUrl(p, page) {
 function makeAnimal(sourceId, input) {
   if (!input || typeof input !== 'object') throw new Error('Animal must be an object');
   const url = new URL(input.sourceUrl);
-  if (url.protocol !== 'https:' && url.protocol !== 'http:') throw new Error('Bad sourceUrl');
+  if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password) throw new Error('Bad sourceUrl');
   const nativeId = String(input.nativeId ?? '').trim();
   if (!/^[\w.:-]{1,120}$/u.test(nativeId)) throw new Error(`Bad nativeId: ${nativeId}`);
   const status = input.status ?? 'unknown';
   if (!STATUSES.has(status)) throw new Error(`Bad status: ${status}`);
   const statusEvidence = cleanText(input.statusEvidence);
-  if ((status === 'reserved' || status === 'confirmed_adopted') && !statusEvidence) {
+  if (status !== 'unknown' && !statusEvidence) {
     throw new Error(`Status ${status} needs evidence text from the page`);
   }
   const animal = {

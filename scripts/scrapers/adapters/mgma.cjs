@@ -19,6 +19,7 @@
 //   title does not say, and the "gimusi apie ..." phrase as age_text;
 // - species from the category name (e.g. "Kačiukai"). Sex and size are not written as facts: null.
 const N = require('../lib/normalize.cjs');
+const { readWordpressPages } = require('../lib/wordpress-pages.cjs');
 const H = require('../lib/html.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
@@ -89,19 +90,7 @@ function parseExcerpt(html) {
 
 function createMgmaAdapter({ perPage = 100, maxPages = 20 } = {}) {
   async function pageThrough(fetcher, makeUrl) {
-    const items = [];
-    for (let page = 1; page <= maxPages; page++) {
-      let res;
-      try { res = await fetcher.getJson(makeUrl(page)); }
-      catch (e) {
-        if (page > 1 && e.status === 400) return { items, complete: true }; // WordPress: past the last page
-        throw e;
-      }
-      if (!Array.isArray(res.json)) throw new Error(`Unexpected JSON from ${res.url}`);
-      items.push(...res.json);
-      if (res.json.length < perPage) return { items, complete: true };
-    }
-    return { items, complete: false }; // stopped at maxPages: cannot prove we reached the end
+    return readWordpressPages(fetcher, makeUrl, { perPage, maxPages });
   }
 
   async function collect({ fetcher, cache, log }) {

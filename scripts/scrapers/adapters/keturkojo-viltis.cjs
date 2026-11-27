@@ -1,32 +1,31 @@
 'use strict';
-// Asociacija „Keturkojo viltis“, Alytus (keturkojo-viltis.lt, with a hyphen). VMVT row 2.
-// robots.txt: "User-agent: *" Allow: /, Disallow: /wp-admin/ /?s=, no crawl-delay (checked 2026-11-18).
-// Animals are the public WordPress type "gyvunas" with taxonomy rusis (species).
-// REST content carries the story and sometimes "Spėjama gimimo data". The public animal page also has a
-// fact list (<dt>Lytis</dt><dd>Patelė</dd>, birth date) and a status line ("Ieško namų"), so each page is
-// read once per run (one request per animal, cached by page hash). A failed page keeps the REST facts.
+// Asociacija „Keturkojo viltis“, Alytus. VMVT row 2.
+// Public WordPress gyvunas/rusis; robots allows these pages, disallows /wp-admin/ and /?s=.
+// REST supplies the story. Each public detail page supplies its own labelled
+// facts/status and, where the API lacks an image, the animal's own gallery.
+// Read the page once for both purposes. REST has no authoritative status, so a
+// failed detail keeps REST candidates for diagnosis but cannot replace a good snapshot.
 const { createWordpressAdapter } = require('./wordpress-rest.cjs');
+const { galleryPhotos } = require('../lib/gallery.cjs');
+const H = require('../lib/html.cjs');
 const L = require('../lib/labels.cjs');
 const N = require('../lib/normalize.cjs');
 const { sha256 } = require('../lib/hash.cjs');
+const BASE = 'https://keturkojo-viltis.lt/';
+const DETAIL_VERSION = 'keturkojo-viltis-detail-2';
 
-const DETAIL_VERSION = 'keturkojo-viltis-detail-1';
-
-function parseDetail(html) {
-  const pairs = [...String(html).matchAll(/<dt>([^<]+)<\/dt>\s*<dd>([^<]+)<\/dd>/g)].map(m => [m[1], m[2]]);
-  const facts = L.fromPairs(pairs);
-  const st = String(html).match(/<p class="kv-status[^"]*">([^<]+)<\/p>/);
-  return { ...facts, ...(st ? N.status(st[1]) : {}) };
+function parseDetail(body, url = BASE) {
+  const $ = H.load(body), panel = $('.kv-animal__panel').first();
+  // Related animal cards and the footer cannot replace this animal's facts.
+  const facts = L.fromPairs(H.pairs($, panel.find('.kv-facts')));
+  return { ...facts, ...N.status(panel.find('.kv-status').first().text()),
+    photos: galleryPhotos(body, url, { selector: '.kv-gallery__main img' }) };
 }
 
 const base = createWordpressAdapter({
-  id: 'keturkojo-viltis',
-  name: 'Asociacija „Keturkojo viltis“',
-  base: 'https://keturkojo-viltis.lt/',
-  restBase: 'gyvunas',
-  taxonomies: { rusis: 'species' },
-  // Description only: drop the leading "Facebook nuoroda" link paragraph and the shelter's
-  // contact footer (phone, website, addresses), which starts at the paragraph with "☎".
+  id: 'keturkojo-viltis', name: 'Asociacija „Keturkojo viltis“', base: BASE,
+  restBase: 'gyvunas', taxonomies: { rusis: 'species' },
+  // Drop the leading Facebook paragraph and the shelter contact footer.
   bioHtml: h => h.replace(/<p>\s*<a[^>]*facebook\.com[^>]*>[^<]*<\/a>\s*<\/p>/gi, '').replace(/<p>[^<]*☎[\s\S]*$/, ''),
 });
 
@@ -37,12 +36,25 @@ module.exports = {
     for (const a of result.animals) {
       let res;
       try { res = await ctx.fetcher.get(a.sourceUrl); }
-      catch (e) { ctx.log?.(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
-      const d = await ctx.cache.getOrParse(sha256(res.body), DETAIL_VERSION, () => parseDetail(res.body));
-      // The page's fact list is the shelter's own record, so it wins over the REST text.
-      for (const k of ['sex', 'age_text', 'species', 'size', 'vaccinated', 'neutered', 'chipped']) if (d[k] != null) a[k] = d[k];
-      if (d.status && d.status !== 'unknown') { a.status = d.status; a.statusEvidence = d.statusEvidence; }
+      catch (e) {
+        if (['robots', 'robots_unavailable'].includes(e.code) || [401, 403, 429].includes(e.status)) throw e;
+        result.complete = false;
+        ctx.log?.(`${a.sourceUrl}: required status detail not read (${e.message})`);
+        continue;
+      }
+      const detail = await ctx.cache.getOrParse(sha256(res.url + '\n' + res.body), DETAIL_VERSION,
+        () => parseDetail(res.body, res.url));
+      for (const key of ['sex', 'age_text', 'species', 'size', 'vaccinated', 'neutered', 'chipped']) {
+        if (detail[key] != null) a[key] = detail[key];
+      }
+      if (detail.status && detail.status !== 'unknown') { a.status = detail.status; a.statusEvidence = detail.statusEvidence; }
+      if (!a.photos.length) a.photos = detail.photos;
     }
+    result.animals = result.animals.filter(a => {
+      if (a.status !== 'excluded') return true;
+      result.skipped.push({ nativeId: a.nativeId, reason: a.statusEvidence });
+      return false;
+    });
     return result;
   },
   _parseDetail: parseDetail,

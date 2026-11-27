@@ -1,0 +1,477 @@
+{
+  "scope": "Public homepage availability only; no access grant and no proof of an adoption listing",
+  "results": [
+    {
+      "id": "nuaras",
+      "vmvtRow": 1,
+      "website": "https://nuaras.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:21.431Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://nuaras.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "fd6daff03990d07b30b01ebb0242cd18272cbe0b6326513734d05b943c2c8dc8",
+          "observedAt": "2026-11-19T12:16:21.503Z"
+        },
+        {
+          "url": "https://nuaras.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "b502a4260cfdf474cc2761227ef240a550da1551fa2a392e9206671cd986e271",
+          "observedAt": "2026-11-19T12:16:26.470Z"
+        }
+      ]
+    },
+    {
+      "id": "psa",
+      "vmvtRow": 13,
+      "website": "https://www.psa.lt/benamiai-gyvunai/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:02.176Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://www.psa.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "0d25d71190b4e6e6275550a97f6cc71a36af567a0f48ed8aa312b2f5ab0f885b",
+          "observedAt": "2026-11-19T12:16:02.318Z"
+        },
+        {
+          "url": "https://www.psa.lt/benamiai-gyvunai/",
+          "method": "GET",
+          "status": 200,
+          "hash": "aeba7e7243301dc2fd13fbdbf0501dd7e54cd7e73103373751a871fce57700cc",
+          "observedAt": "2026-11-19T12:16:07.427Z"
+        }
+      ]
+    },
+    {
+      "id": "vizgis",
+      "vmvtRow": 15,
+      "website": "https://vizgis.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:02.177Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://vizgis.lt/robots.txt",
+          "method": "GET",
+          "status": 404,
+          "hash": "8bb8fb879d5478fc85c254e03c7f714099ae37aa1d696396d74601c045d0224b",
+          "observedAt": "2026-11-19T12:16:02.341Z"
+        },
+        {
+          "url": "https://vizgis.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "992c1b635599a64b59b240a1dc22d38c5b07622043681b5c27ec1516a59db465",
+          "observedAt": "2026-11-19T12:16:07.345Z"
+        }
+      ]
+    },
+    {
+      "id": "sggn",
+      "vmvtRow": 16,
+      "website": "http://sggn.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:02.177Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "http://sggn.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "dc2f08337f914b83104b1cc09a2e273eec7d4003cc6fd7046411db9500c6056f",
+          "observedAt": "2026-11-19T12:16:02.392Z"
+        },
+        {
+          "url": "http://sggn.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "c6b72e4877dcc57c67261308fa910ffd620f83589ca261170ba55ed98442f24a",
+          "observedAt": "2026-11-19T12:16:12.213Z"
+        }
+      ]
+    },
+    {
+      "id": "kursenai",
+      "vmvtRow": 17,
+      "website": "https://www.kursenai-ku.lt/d-u-k/beglobiai-gyvunai/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:02.177Z",
+      "state": "not_accessible",
+      "error": "HTTP 404",
+      "code": "http",
+      "status": 404,
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://www.kursenai-ku.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "0d25d71190b4e6e6275550a97f6cc71a36af567a0f48ed8aa312b2f5ab0f885b",
+          "observedAt": "2026-11-19T12:16:02.401Z"
+        },
+        {
+          "url": "https://www.kursenai-ku.lt/d-u-k/beglobiai-gyvunai/",
+          "method": "GET",
+          "status": 404,
+          "hash": "020fe349d6223893e349118762ac82014699d0697e172c6774bf440f5e228abf",
+          "observedAt": "2026-11-19T12:16:07.541Z"
+        }
+      ]
+    },
+    {
+      "id": "jbu",
+      "vmvtRow": 19,
+      "website": "https://jbu.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:07.420Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://jbu.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "fd89345af6aca5dab85f2aa6a830e270a362b1fa6b5f19607ddd773a081ed651",
+          "observedAt": "2026-11-19T12:16:07.652Z"
+        },
+        {
+          "url": "https://jbu.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "6a85365e441bdb4eb7084cf32f957197e49f3757a6a456dee32709698a97e26f",
+          "observedAt": "2026-11-19T12:16:12.982Z"
+        }
+      ]
+    },
+    {
+      "id": "kompak",
+      "vmvtRow": 20,
+      "website": "http://www.kompak.lt/index.php/gyvunai",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:07.526Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "http://www.kompak.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "b0badb1a6e6cf7444fb0e354203aa0f662ade78b49ddc68d3a1b892214f7897a",
+          "observedAt": "2026-11-19T12:16:07.616Z"
+        },
+        {
+          "url": "http://www.kompak.lt/index.php/gyvunai",
+          "method": "GET",
+          "status": 200,
+          "hash": "ce3b4b739b5de15d54be5790211f48d3367e8d8031c08102f32c9eb7ea9f259f",
+          "observedAt": "2026-11-19T12:16:12.595Z"
+        }
+      ]
+    },
+    {
+      "id": "binada",
+      "vmvtRow": 21,
+      "website": "https://binada.lt/",
+      "previousDecision": "unreachable",
+      "checkedAt": "2026-11-19T12:16:07.542Z",
+      "state": "not_accessible",
+      "error": "robots.txt unavailable; collection stopped",
+      "code": "robots_unavailable",
+      "status": null,
+      "requests": 1,
+      "evidence": []
+    },
+    {
+      "id": "grinda",
+      "vmvtRow": 28,
+      "website": "https://vbgst.grinda.lt/",
+      "previousDecision": "unreachable",
+      "checkedAt": "2026-11-19T12:16:08.286Z",
+      "state": "not_accessible",
+      "error": "robots.txt unavailable; collection stopped",
+      "code": "robots_unavailable",
+      "status": null,
+      "requests": 1,
+      "evidence": []
+    },
+    {
+      "id": "vysniusodas",
+      "vmvtRow": 29,
+      "website": "http://www.vysniusodas.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:08.337Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "http://www.vysniusodas.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "9311bab30d8b5d05f5fa5563a251b8c96b8470873bb77c62d3d17c146d7acab7",
+          "observedAt": "2026-11-19T12:16:10.695Z"
+        },
+        {
+          "url": "http://www.vysniusodas.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "735f41a80e457d6087a6bc1586e41f03d4675f9198c10d5d0987a35b4770d519",
+          "observedAt": "2026-11-19T12:16:15.839Z"
+        }
+      ]
+    },
+    {
+      "id": "vggd",
+      "vmvtRow": 32,
+      "website": "http://vggd.365.lt/",
+      "previousDecision": "unreachable",
+      "checkedAt": "2026-11-19T12:16:12.227Z",
+      "state": "not_accessible",
+      "error": "robots.txt unavailable; collection stopped",
+      "code": "robots_unavailable",
+      "status": null,
+      "requests": 1,
+      "evidence": []
+    },
+    {
+      "id": "kaimograndine",
+      "vmvtRow": 36,
+      "website": "https://www.kaimograndine.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:12.336Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://www.kaimograndine.lt/robots.txt",
+          "method": "GET",
+          "status": 404,
+          "hash": "3136a395eb27461176f79ccc3d2d3a6245bcd62c6c1505a6dad9bc002506f00b",
+          "observedAt": "2026-11-19T12:16:12.821Z"
+        },
+        {
+          "url": "https://www.kaimograndine.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "7fa2d9f4f9c3bf3e5e40592834dcbeb2699cda0407c5c07474a31a2d38b3752f",
+          "observedAt": "2026-11-19T12:16:17.707Z"
+        }
+      ]
+    },
+    {
+      "id": "dogspotas",
+      "vmvtRow": 37,
+      "website": "https://dogspotas.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:12.629Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://dogspotas.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "8d6707ce6a5f932164cddb62bba0ee7f156911dfc492e1f3347d87fef3b1757c",
+          "observedAt": "2026-11-19T12:16:13.959Z"
+        },
+        {
+          "url": "https://dogspotas.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "cba86a18ceeda2f1b28909e8706d6238baec0f432fce93d5ad233a14cf52327d",
+          "observedAt": "2026-11-19T12:16:17.808Z"
+        }
+      ]
+    },
+    {
+      "id": "pifas",
+      "vmvtRow": 38,
+      "website": "http://www.pifas.org/lt/",
+      "previousDecision": "unreachable",
+      "checkedAt": "2026-11-19T12:16:13.015Z",
+      "state": "not_accessible",
+      "error": "HTTP 404",
+      "code": "http",
+      "status": 404,
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "http://www.pifas.org/robots.txt",
+          "method": "GET",
+          "status": 404,
+          "hash": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0",
+          "observedAt": "2026-11-19T12:16:13.315Z"
+        },
+        {
+          "url": "http://www.pifas.org/lt/",
+          "method": "GET",
+          "status": 404,
+          "hash": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0",
+          "observedAt": "2026-11-19T12:16:18.174Z"
+        }
+      ]
+    },
+    {
+      "id": "zga",
+      "vmvtRow": 41,
+      "website": "https://zga.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:15.851Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://zga.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "c56c3231068122034216715447952e9656e01629f1443fd18b61f1f4b7362d7b",
+          "observedAt": "2026-11-19T12:16:16.455Z"
+        },
+        {
+          "url": "https://zga.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "f4819856a43d743f27e3b964e6075545fd304eab58f677c8524a5d7bf6585981",
+          "observedAt": "2026-11-19T12:16:21.399Z"
+        }
+      ]
+    },
+    {
+      "id": "makatukai",
+      "vmvtRow": 44,
+      "website": "http://makatukai.lt/",
+      "previousDecision": "unreachable",
+      "checkedAt": "2026-11-19T12:16:17.728Z",
+      "state": "not_accessible",
+      "error": "robots.txt unavailable; collection stopped",
+      "code": "robots_unavailable",
+      "status": null,
+      "requests": 1,
+      "evidence": []
+    },
+    {
+      "id": "dryzuotalaime",
+      "vmvtRow": 46,
+      "website": "https://dryzuotalaime.lt/",
+      "previousDecision": "unreachable",
+      "checkedAt": "2026-11-19T12:16:23.151Z",
+      "state": "not_accessible",
+      "error": "robots.txt unavailable; collection stopped",
+      "code": "robots_unavailable",
+      "status": null,
+      "requests": 1,
+      "evidence": []
+    },
+    {
+      "id": "donpita",
+      "vmvtRow": 48,
+      "website": "https://www.donpita.lt/",
+      "previousDecision": "unreachable",
+      "checkedAt": "2026-11-19T12:16:17.770Z",
+      "state": "not_accessible",
+      "error": "robots.txt unavailable; collection stopped",
+      "code": "robots_unavailable",
+      "status": null,
+      "requests": 1,
+      "evidence": []
+    },
+    {
+      "id": "lietuvagyvunams",
+      "vmvtRow": 55,
+      "website": "https://lietuvagyvunams.com/",
+      "previousDecision": "other_thread",
+      "checkedAt": "2026-11-19T12:16:17.806Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://lietuvagyvunams.com/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "e3cc72418e7780e14dd6685ef2d8d93f6d851b28cceda9289d396fd787254c0e",
+          "observedAt": "2026-11-19T12:16:24.511Z"
+        },
+        {
+          "url": "https://lietuvagyvunams.com/",
+          "method": "GET",
+          "status": 200,
+          "hash": "80fe48b3661068a515019f9cbe84b5eeff65f2908bc2776ff459eacb8d1a8d39",
+          "observedAt": "2026-11-19T12:16:30.145Z"
+        }
+      ]
+    },
+    {
+      "id": "pukuotasvajone",
+      "vmvtRow": 64,
+      "website": "https://pukuotasvajone.lt/",
+      "previousDecision": "unreachable",
+      "checkedAt": "2026-11-19T12:16:17.818Z",
+      "state": "not_accessible",
+      "error": "robots.txt unavailable; collection stopped",
+      "code": "robots_unavailable",
+      "status": null,
+      "requests": 1,
+      "evidence": []
+    },
+    {
+      "id": "telsiusuniukunamai",
+      "vmvtRow": 83,
+      "website": "https://www.telsiusuniukunamai.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:17.855Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://www.telsiusuniukunamai.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "19ff9d6b18d181d2f8ec1867dd848a9c2ac9596387c0684755cd626d46e38046",
+          "observedAt": "2026-11-19T12:16:18.132Z"
+        },
+        {
+          "url": "https://www.telsiusuniukunamai.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "4eda589f71e550be8fdff20c7c2cff6823c580f677bb0269059cb6d785408381",
+          "observedAt": "2026-11-19T12:16:23.138Z"
+        }
+      ]
+    },
+    {
+      "id": "devynigyvenimai",
+      "vmvtRow": 90,
+      "website": "https://www.devyni-gyvenimai.lt/",
+      "previousDecision": "no_listing",
+      "checkedAt": "2026-11-19T12:16:18.174Z",
+      "state": "reachable",
+      "requests": 2,
+      "evidence": [
+        {
+          "url": "https://www.devyni-gyvenimai.lt/robots.txt",
+          "method": "GET",
+          "status": 200,
+          "hash": "61b819a1192ff107d5482d0f10c07b5cff13f4dd3a6ecf5f992e9a06457e4084",
+          "observedAt": "2026-11-19T12:16:19.565Z"
+        },
+        {
+          "url": "https://www.devyni-gyvenimai.lt/",
+          "method": "GET",
+          "status": 200,
+          "hash": "3718bf20aadb7d46ec983ddbf562c9d0c55cea4c413686af9c5f646d7bf74ade",
+          "observedAt": "2026-11-19T12:16:23.381Z"
+        }
+      ]
+    }
+  ]
+}

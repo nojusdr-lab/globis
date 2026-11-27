@@ -218,3 +218,9 @@ test('fromProse: "atlikta sterilizacija, ženklinimas" = done (sos-gyvunai Pista
   assert.equal(fromProse('Kai bus atlikta sterilizacija, keliaus namo.').neutered, undefined);
   assert.equal(fromProse('Kitoms katėms atlikta sterilizacija, jos jau namuose.').neutered, undefined);
 });
+
+test('fromProse: an uncertain or conditional pending procedure stays unknown', () => {
+  assert.deepEqual(fromProse('Nežinoma, ar dar laukia skiepai.'), {});
+  assert.deepEqual(fromProse('Neaišku, ar laukia kastracija ir ženklinimas.'), {});
+  assert.deepEqual(fromProse('Jei laukia skiepai, susisiekite.'), {});
+});

@@ -11,7 +11,9 @@
 // (content) was empty for every probed dog. Sex, age, size, health and status are not in the
 // REST data, so they stay null / 'unknown' unless the content itself has "Label: value" lines.
 const N = require('../lib/normalize.cjs');
+const { readWordpressPages } = require('../lib/wordpress-pages.cjs');
 const L = require('../lib/labels.cjs');
+const H = require('../lib/html.cjs');
 const { sha256 } = require('../lib/hash.cjs');
 
 const PARSER_VERSION = 'penktakoja-1';
@@ -28,19 +30,7 @@ const api = p => `${ORIGIN}/wp-json/wp/v2/${p}`;
 
 function create({ perPage = 100, maxPages = 10 } = {}) {
   async function pageThrough(fetcher, makeUrl) {
-    const items = [];
-    for (let page = 1; page <= maxPages; page++) {
-      let res;
-      try { res = await fetcher.getJson(makeUrl(page)); }
-      catch (e) {
-        if (page > 1 && e.status === 400) return { items, complete: true }; // WP: page past the end
-        throw e;
-      }
-      if (!Array.isArray(res.json)) throw new Error(`Unexpected JSON from ${res.url}`);
-      items.push(...res.json);
-      if (res.json.length < perPage) return { items, complete: true };
-    }
-    return { items, complete: false }; // hit maxPages: cannot prove we saw the end
+    return readWordpressPages(fetcher, makeUrl, { perPage, maxPages });
   }
 
   async function collect({ fetcher, cache, log = () => {} }) {
@@ -71,7 +61,9 @@ function create({ perPage = 100, maxPages = 10 } = {}) {
       seen.add(p.id);
       const name = N.cleanText(p.title?.rendered);
       const classes = Object.values(p.class_list || {});
-      if (!classes.includes(ANIMAL_TYPE_CLASS) || L.isDonationTitle(name)) {
+      // The exact name "Parama" still needs its own detail/gallery evidence:
+      // a real animal with that name must not be removed by a title heuristic.
+      if (!classes.includes(ANIMAL_TYPE_CLASS) || (L.isDonationTitle(name) && N.fold(name) !== 'parama')) {
         skipped.push({ nativeId: String(p.id), reason: `not an animal: ${classes.find(c => c.startsWith('product-type-')) || 'no type'} "${name}"` });
         continue;
       }
@@ -100,8 +92,32 @@ function create({ perPage = 100, maxPages = 10 } = {}) {
         sourceUpdatedAt: p.modified_gmt ? `${p.modified_gmt}Z` : null,
       });
     }
-    log(`penktakoja: ${animals.length} animals, ${skipped.length} skipped`);
-    return { animals, skipped, complete: products.complete };
+    // Some real dogs have featured_media=0 while the product gallery contains
+    // their photos. Read only those detail pages, never a site-wide logo/og image.
+    const donations = new Set();
+    for (const a of animals.filter(a => !a.photos.length)) {
+      try {
+        const page = await fetcher.get(a.sourceUrl);
+        const detail = await cache.getOrParse(sha256(page.url + '\n' + page.body), 'penktakoja-gallery-2', () => {
+          const $ = H.load(page.body);
+          const summary = N.cleanText($('.summary').text()) || '';
+          return { photos: [...new Set($('.woocommerce-product-gallery__image a[href]').map((_, el) =>
+            H.abs($(el).attr('href'), page.url)).get().filter(Boolean))],
+          donationForm: /pasirinkite paramos tipą|continue with your donation/iu.test(summary) };
+        });
+        a.photos = detail.photos;
+        // The live /beglobis/parama/ product is a generic donation widget
+        // misplaced in Šunys. Require the actual widget plus a generic name
+        // and no individual photo/description; missing data alone is no proof.
+        if (detail.donationForm && N.fold(a.name) === 'parama' && !a.photos.length && !N.cleanText(a.bio_lt)) {
+          donations.add(a.nativeId);
+          skipped.push({ nativeId: a.nativeId, reason: 'generic donation form, not an individual animal' });
+        }
+      } catch (error) { log(`penktakoja: missing-photo detail unavailable (${error.message})`); }
+    }
+    const records = animals.filter(a => !donations.has(a.nativeId));
+    log(`penktakoja: ${records.length} animals, ${skipped.length} skipped`);
+    return { animals: records, skipped, complete: products.complete };
   }
 
   return {

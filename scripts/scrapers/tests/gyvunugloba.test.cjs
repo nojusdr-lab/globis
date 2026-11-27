@@ -29,6 +29,12 @@ async function collect(r = routes) {
   return { run, calls };
 }
 
+test('gyvunugloba: a missing list thumbnail comes from the own portfolio gallery', async () => {
+  const r = { ...routes, 'https://gyvunugloba.com/portfolio_page/triusiukai/': { body: '<img src="/logo.png"><div class="portfolio_images"><img src="/own-rabbits.jpg"></div>' } };
+  const { run } = await collect(r);
+  assert.deepEqual(run.animals.find(a => a.id === 'gyvunugloba:triusiukai').photos, ['https://gyvunugloba.com/own-rabbits.jpg']);
+});
+
 test('gyvunugloba: robots.txt first, then parent and one GET per list page', async () => {
   const { calls } = await collect();
   assert.deepEqual(calls.slice(0, 5).map(c => c.url), ['https://gyvunugloba.com/robots.txt', P, `${P}sunys/`, `${P}kates/`, `${P}kiti/`]);

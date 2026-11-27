@@ -54,7 +54,7 @@ test('fetcher: robots.txt error = deny all (fail-closed); 404 = no rules', async
     'https://a.lt/robots.txt': { status: 500, body: 'err' },
     'https://b.lt/page': { body: 'ok' },
   }) });
-  await assert.rejects(f.get('https://a.lt/page'), e => e.code === 'robots');
+  await assert.rejects(f.get('https://a.lt/page'), e => e.code === 'robots_unavailable' && e.status === 500);
   assert.equal((await f.get('https://b.lt/page')).body, 'ok');
 });
 
