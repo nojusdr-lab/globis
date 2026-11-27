@@ -32397,9 +32397,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
+   "chipped": true,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32435,9 +32435,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
+   "chipped": true,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32473,9 +32473,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
+   "chipped": true,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32511,9 +32511,9 @@
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": null,
+   "chipped": true,
    "vaccinated": null,
-   "neutered": null
+   "neutered": true
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -39551,46 +39551,6 @@
   "bioLt": "Miauksiūnė buvo rasta partrenkta kelyje Aukštadvaris–Trakai.Katytė patyrė rimtų sužalojimų: lūžo žandikaulis ir dubens kaulai su dislokacija, taip pat buvo sužalota lūpa. Šiuo metu Miauksiūnė gydoma prieglaudoje. Tai be galo draugiška katytė, kuri mielai priima žmogaus dėmesį. Jos laukia gydymas ir sveikimas, o mes labai tikimės, kad visus sunkumus pavyks įveikti ir vieną dieną ji galės džiaugtis gyvenimu savo namuose. Galbūt būtent Jūs tapsite tuo žmogumi, kuriam Miauksiūnė patikės savo mažą širdelę? 💗 Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
   "bioEn": null,
   "sourceUpdatedAt": "2026-11-24T00:00:00Z",
-  "shelter": {
-   "id": "leseltvilnius",
-   "name": "Viešoji įstaiga Lesė (Vilnius)",
-   "city": "Vilnius",
-   "address": "Dvaro g. 1, Buivydiškės, 14010 Vilniaus r. sav.",
-   "url": "https://globok.lt/prieglaudos/leseltvilnius"
-  }
- },
- {
-  "id": "lese:lakis-9",
-  "url": "https://lese.lt/globotiniai/lakis-9/",
-  "source": "lese",
-  "name": "Lakis",
-  "species": "dog",
-  "city": "Vilnius",
-  "photos": [
-   "https://lese.lt/wp-content/uploads/2026/10/att.W-8hnAQM68IfzeLDsl50CW2pIEWVzLs7koI8HqMhkZE-683x1024.jpeg",
-   "https://lese.lt/wp-content/uploads/2026/10/att.7_-opBp3EQkzTLLKREPr3USr6AgsPyDsJ9Wy1cStEDc.jpeg",
-   "https://lese.lt/wp-content/uploads/2026/10/att.XnmOH2vLk3wxncIxErHjskf8SsMu-ObyFfmnkiTgk9U.jpeg"
-  ],
-  "status": "reserved",
-  "statusEvidence": "Rezervuotas",
-  "sex": "male",
-  "ageLt": "1 m. 9 mėn.",
-  "ageEn": null,
-  "size": "medium",
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": true,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Lakis pas mus atkeliavo iš Ukmergės rajono, iš žmonių, kurie, deja, juo visai nesirūpino. Tai be galo geranoriškas, mielas ir aktyvus dičkis, kuriam tikrai netrūksta nei energijos, nei noro dalyvauti visuose reikaluose! Jis smalsus, mėgstantis bendrauti ir visada pasiruošęs įsitraukti į tai, kas vyksta aplinkui. Su tokiu linksmu bičiuliu tikrai nenuobodžiausi! Bruožai: draugiškas, reikalauja daug dėmesio, žaismingas.",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-25T00:00:00Z",
   "shelter": {
    "id": "leseltvilnius",
    "name": "Viešoji įstaiga Lesė (Vilnius)",
