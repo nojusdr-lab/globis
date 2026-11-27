@@ -91,6 +91,16 @@ const COMPARE = /^(tarsi|lyg|tartum|tarytum)$/u;
 const AFTER_NEUTER = /^(sterilizacij|kastracij)(os)$/u;
 const PAST_VERB = /^(buvo|\p{L}{2,}(ėsi|osi|ome|ėme|ėjo|avo|ojo|ijo))$/u;
 const OTHERS = /^(kurioms|kuriems|kurie|kurios|jų|kitų|kitoms|kitiems)$/u;
+// "buvo atlikta sterilizacija, virusinių ligų testai, ženklinimas" / "Atliktas čipavimas ir kastracija": the procedure
+// noun next to a past participle "atlikta/-as/-os" = done. Infinitive "atlikti" (to do), "nėra/nebuvo", a plan or
+// other animals = nothing.
+const DONE_VERB = /^atlikt(a|as|os)$/u;
+const DONE_NOUN = {
+  neutered: /^(sterilizacija|kastracija)$/u,
+  vaccinated: /^vakcinacija$/u,
+  chipped: /^(ženklinimas|čipavimas|mikročipavimas)$/u,
+};
+const NOT_DONE = /^(nėra|nebuvo|neatlikta|neatliktas)$/u;
 
 // Animal-only words. "Berniukas"/"mergaitė" are left out: they may mean a child in the story.
 const SEX_WORD = { patinas: 'male', patinėlis: 'male', patinukas: 'male', patelė: 'female', kalytė: 'female', kalaitė: 'female',
@@ -129,6 +139,8 @@ function fromProse(text) {
       if (words.includes('laukia') && words.some(w => PENDING[field].test(w))) seen.add(false);
       if (field === 'neutered' && !plan && words.some((w, i) => words[i - 1] === 'po' && AFTER_NEUTER.test(w))
         && words.some(w => PAST_VERB.test(w)) && !words.some(w => OTHERS.test(w))) seen.add(true);
+      if (!plan && words.some(w => DONE_VERB.test(w)) && words.some(w => DONE_NOUN[field].test(w))
+        && !words.some(w => NOT_DONE.test(w) || OTHERS.test(w))) seen.add(true);
       for (const [i, w] of words.entries()) {
         if (no.test(w)) seen.add(false);
         else if (yes.test(w) && !plan) seen.add(true);

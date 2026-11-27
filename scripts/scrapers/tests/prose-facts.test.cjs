@@ -206,3 +206,15 @@ test('fromProse: "po kastracijos/sterilizacijos" with recovery or the animal as 
   assert.equal(fromProse('Jų virš 240, kačių, kurioms po sterilizacijos neatsirado vietos miestuose.').neutered, undefined);
   assert.equal(fromProse('Reikės atsigauti po sterilizacijos.').neutered, undefined);
 });
+
+test('fromProse: "atlikta sterilizacija, ženklinimas" = done (sos-gyvunai Pistacija, Pikselė, Persėja, Pompėja)', () => {
+  const f = fromProse('Katės jau keliavo į kliniką, kur buvo atlikta sterilizacija, virusinių ligų testai, ženklinimas. Dabar šiltai laukia skiepukų .');
+  assert.equal(f.neutered, true);
+  assert.equal(f.chipped, true);
+  assert.equal(fromProse('Atliktas čipavimas ir kastracija.').chipped, true);
+  // Infinitive "atlikti" (to do), negation or a plan: nothing.
+  assert.equal(fromProse('Būtina – skiepyti, ženklinti, sterilizuoti, atlikti akių vokų operacijas.').neutered, undefined);
+  assert.equal(fromProse('Dar nėra atlikta sterilizacija.').neutered, undefined);
+  assert.equal(fromProse('Kai bus atlikta sterilizacija, keliaus namo.').neutered, undefined);
+  assert.equal(fromProse('Kitoms katėms atlikta sterilizacija, jos jau namuose.').neutered, undefined);
+});
