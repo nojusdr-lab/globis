@@ -32379,171 +32379,19 @@
   }
  },
  {
-  "id": "sos-gyvunai:4604",
-  "url": "https://sos-gyvunai.lt/pistacija/",
+  "id": "sos-gyvunai:4545",
+  "url": "https://sos-gyvunai.lt/aviza/",
   "source": "sos-gyvunai",
-  "name": "Pistacija",
-  "species": "cat",
+  "name": "Aviža",
+  "species": null,
   "city": "Vilnius",
   "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/1c51ee06-ada8-455d-9c27-f5b53803e42c.jpg"
+   "https://sos-gyvunai.lt/wp-content/uploads/c98ee73d-2c15-431f-b33a-4681a213714e.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės suaugusios",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": null,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "+ 4 Joms jau neteks grįžti į lauką VIDEO: https://www.facebook.com/reel/162035[kontaktas pašalintas] Atvykome paimti šunelių ir pasitiko jos… Trys lauko katės… Visos beprotiškai alkanos. Niekam netrukdo, bet niekam ir nereikia… Niekas neprašė joms padėti, nes tai TIK KATĖS. Jei norės išgyventi, tai ras maisto, o apie galimybę kažkur šiltai prisiglausti galės tik pasvajoti . Taip ir gyveno daug metų šios niekieno katės… Nepalikom. Tiesiog širdis neleido. Nors video matote tris, bet iš slėptuvės išlindo dar viena nedrąsi rainiukė, kuri kartu atvyko į prieglaudą. VISOS KETURIOS PATELĖS. Kiek kačiukų jos atvedė į badą ir mirti? Vargšės turbūt ilgą laiką nebuvo sočios, nes taip puolančių prie maisto kačių senai neteko matyti… Daugiau niekada joms neteks kovoti dėl maisto, ieškoti šiltos slėptuvės, gimdyti ir auginti kačiukų, kai pačios vos gali prasimaitinti ir išgyventi . Katės jau keliavo į kliniką, kur buvo atlikta sterilizacija, virusinių ligų testai, ženklinimas. Dabar šiltai laukia skiepukų . Būsime labai dėkingi jei padėsite šioms gyvenimo nuskriaustoms katytės surinkti pinigų krepšelį visoms reikalingoms procedūroms. Keturioms katėms reikalinga apie 400eur. Paaukoti naujokėms ir kitiems mūsų globotiniams galite :",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T10:23:24Z",
-  "shelter": {
-   "id": "sos-gyvunailt",
-   "name": "VšĮ SOS gyvūnai",
-   "city": "Vilnius",
-   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
-   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
-  }
- },
- {
-  "id": "sos-gyvunai:4601",
-  "url": "https://sos-gyvunai.lt/piksele/",
-  "source": "sos-gyvunai",
-  "name": "Pikselė",
-  "species": "cat",
-  "city": "Vilnius",
-  "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/f2d3eca0-c38a-424d-860d-805043972e48.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojami gyvūnai",
-  "sex": null,
-  "ageLt": "Katės suaugusios",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": null,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "+ 4 Joms jau neteks grįžti į lauką VIDEO: https://www.facebook.com/reel/162035[kontaktas pašalintas] Atvykome paimti šunelių ir pasitiko jos… Trys lauko katės… Visos beprotiškai alkanos. Niekam netrukdo, bet niekam ir nereikia… Niekas neprašė joms padėti, nes tai TIK KATĖS. Jei norės išgyventi, tai ras maisto, o apie galimybę kažkur šiltai prisiglausti galės tik pasvajoti . Taip ir gyveno daug metų šios niekieno katės… Nepalikom. Tiesiog širdis neleido. Nors video matote tris, bet iš slėptuvės išlindo dar viena nedrąsi rainiukė, kuri kartu atvyko į prieglaudą. VISOS KETURIOS PATELĖS. Kiek kačiukų jos atvedė į badą ir mirti? Vargšės turbūt ilgą laiką nebuvo sočios, nes taip puolančių prie maisto kačių senai neteko matyti… Daugiau niekada joms neteks kovoti dėl maisto, ieškoti šiltos slėptuvės, gimdyti ir auginti kačiukų, kai pačios vos gali prasimaitinti ir išgyventi . Katės jau keliavo į kliniką, kur buvo atlikta sterilizacija, virusinių ligų testai, ženklinimas. Dabar šiltai laukia skiepukų . Būsime labai dėkingi jei padėsite šioms gyvenimo nuskriaustoms katytės surinkti pinigų krepšelį visoms reikalingoms procedūroms. Keturioms katėms reikalinga apie 400eur. Paaukoti naujokėms ir kitiems mūsų globotiniams galite :",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T10:22:35Z",
-  "shelter": {
-   "id": "sos-gyvunailt",
-   "name": "VšĮ SOS gyvūnai",
-   "city": "Vilnius",
-   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
-   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
-  }
- },
- {
-  "id": "sos-gyvunai:4598",
-  "url": "https://sos-gyvunai.lt/perseja/",
-  "source": "sos-gyvunai",
-  "name": "Persėja",
-  "species": "cat",
-  "city": "Vilnius",
-  "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/1de0a2a6-f2a2-44a1-b506-b250ff81b072.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojami gyvūnai",
-  "sex": null,
-  "ageLt": "Katės suaugusios",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": null,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "+ 4 Joms jau neteks grįžti į lauką VIDEO: https://www.facebook.com/reel/162035[kontaktas pašalintas] Atvykome paimti šunelių ir pasitiko jos… Trys lauko katės… Visos beprotiškai alkanos. Niekam netrukdo, bet niekam ir nereikia… Niekas neprašė joms padėti, nes tai TIK KATĖS. Jei norės išgyventi, tai ras maisto, o apie galimybę kažkur šiltai prisiglausti galės tik pasvajoti . Taip ir gyveno daug metų šios niekieno katės… Nepalikom. Tiesiog širdis neleido. Nors video matote tris, bet iš slėptuvės išlindo dar viena nedrąsi rainiukė, kuri kartu atvyko į prieglaudą. VISOS KETURIOS PATELĖS. Kiek kačiukų jos atvedė į badą ir mirti? Vargšės turbūt ilgą laiką nebuvo sočios, nes taip puolančių prie maisto kačių senai neteko matyti… Daugiau niekada joms neteks kovoti dėl maisto, ieškoti šiltos slėptuvės, gimdyti ir auginti kačiukų, kai pačios vos gali prasimaitinti ir išgyventi . Katės jau keliavo į kliniką, kur buvo atlikta sterilizacija, virusinių ligų testai, ženklinimas. Dabar šiltai laukia skiepukų . Būsime labai dėkingi jei padėsite šioms gyvenimo nuskriaustoms katytės surinkti pinigų krepšelį visoms reikalingoms procedūroms. Keturioms katėms reikalinga apie 400eur. Paaukoti naujokėms ir kitiems mūsų globotiniams galite :",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T10:21:57Z",
-  "shelter": {
-   "id": "sos-gyvunailt",
-   "name": "VšĮ SOS gyvūnai",
-   "city": "Vilnius",
-   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
-   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
-  }
- },
- {
-  "id": "sos-gyvunai:4596",
-  "url": "https://sos-gyvunai.lt/pompeja/",
-  "source": "sos-gyvunai",
-  "name": "Pompėja",
-  "species": "cat",
-  "city": "Vilnius",
-  "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/d2f8d619-c279-4761-8054-8a72d8424d42.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojami gyvūnai",
-  "sex": null,
-  "ageLt": "Katės suaugusios",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": true,
-   "vaccinated": null,
-   "neutered": true
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "+ 4 Joms jau neteks grįžti į lauką VIDEO: https://www.facebook.com/reel/162035[kontaktas pašalintas] Atvykome paimti šunelių ir pasitiko jos… Trys lauko katės… Visos beprotiškai alkanos. Niekam netrukdo, bet niekam ir nereikia… Niekas neprašė joms padėti, nes tai TIK KATĖS. Jei norės išgyventi, tai ras maisto, o apie galimybę kažkur šiltai prisiglausti galės tik pasvajoti . Taip ir gyveno daug metų šios niekieno katės… Nepalikom. Tiesiog širdis neleido. Nors video matote tris, bet iš slėptuvės išlindo dar viena nedrąsi rainiukė, kuri kartu atvyko į prieglaudą. VISOS KETURIOS PATELĖS. Kiek kačiukų jos atvedė į badą ir mirti? Vargšės turbūt ilgą laiką nebuvo sočios, nes taip puolančių prie maisto kačių senai neteko matyti… Daugiau niekada joms neteks kovoti dėl maisto, ieškoti šiltos slėptuvės, gimdyti ir auginti kačiukų, kai pačios vos gali prasimaitinti ir išgyventi . Katės jau keliavo į kliniką, kur buvo atlikta sterilizacija, virusinių ligų testai, ženklinimas. Dabar šiltai laukia skiepukų . Būsime labai dėkingi jei padėsite šioms gyvenimo nuskriaustoms katytės surinkti pinigų krepšelį visoms reikalingoms procedūroms. Keturioms katėms reikalinga apie 400eur. Paaukoti naujokėms ir kitiems mūsų globotiniams galite :",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T10:19:59Z",
-  "shelter": {
-   "id": "sos-gyvunailt",
-   "name": "VšĮ SOS gyvūnai",
-   "city": "Vilnius",
-   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
-   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
-  }
- },
- {
-  "id": "sos-gyvunai:4594",
-  "url": "https://sos-gyvunai.lt/cadas/",
-  "source": "sos-gyvunai",
-  "name": "Čadas",
-  "species": "dog",
-  "city": "Vilnius",
-  "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/7394b1cb-c39a-4797-87bf-ddc0dca67d1b.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojami gyvūnai",
-  "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -32557,9 +32405,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "5 suaugę šunys atvyko iš vienų namų . Moteris, kaip galėjo taip rūpinosi pamestai, pasiklydusiais šunimis, kol teko kraustytis į socialinį būstą ir šuneliai liko be namų… Gyvenę laisvai, niekada nebuvo vedžioti, neturėję net antkaklio. Apie veterinarines procedūras jau nekalbame, nes jų tiesiog niekada nebuvo . Radome laisvai gyvenančias 3 kalytes ir du patinus. Niekas nežino, kur dingdavo visi šuniukai, kurie tikrai gimdavo . Tik 1 iš šunų į mus reagavo draugiškai, o kiti labai bijo… puola, urzgia, šiepia dantis ir ginasi išplėšti iš jiems pažįstamos aplinkos. Laukia labai ilgas kelias… Kelias link draugystės ir kelias į vet.klinikas visoms būtinoms veterinarinėms procedūroms atlikti. Būtina – skiepyti, ženklinti, nukirminti, sterilizuoti, sutvarkyti dantis, atlikti akių vokų operacijas. Tokiam kiekiui šunų pirminėms procedūroms reikalinga mažiausiai 1000 eur . Bet turbūt pradėjus keliauti į klinikas susidarys dar didesnės sumos… . Paaukoti penkiems naujokams ir kitiems mūsų globotiniams galite :",
+  "bioLt": "KRUOPIUKAI. Gal jau laikas NAMO? Viskas prasidėjo nuo to, kad kačiukų mama pradingo ir būdami 7-10 dienų jie pateko į mūsų globą. Nemokantys valgyti mažyliai tapo mūsų vargeliu ir dieną/naktį teko juos maitinti kas 3-4 valandas . Svėrimai, maudymai, pilvukų masažai, šiltos pūslės keitimas tapo kasdienybe. Kai jau atrodė, kad sunkiausia yra praeityje ir mažieji stabiliai auga jie sunkiai susirgo . Pirmuonis giardia vos nepasiglemžė dviejų kačiukų, bet pavyko . Pavyko su nuostabių gydytojų ir klinikos kolektyvo pagalba. AČIŪ . Jau supratote, kad šių mažylių gyvenimo pradžia tikrai buvo sunki. Kovojome už juos, atidavėme labai daug ir ieškome šeimininkų, kurie būtų pasiruošę aukoti tiek pat ir dar daugiau visą likusį kačiukų gyvenimą . Kačiukai labai labai meilūs, drąsūs, žaismingi, greiti, aktyvūs ir mėgsta labai garsiai murkti. Vienas ryžiukas jau sėkmingai rado namus, kur jo laukia nauja sesutė katė. Ryžieji berniukai – SORAS, MANAS. Mažoji raina sesutė – AVIŽA. 1,5mėn. nukirminti, ženklinti. Tokių mažų kačiukų niekada neatskirtume nuo mamos ir dar neieškotume namų, bet šiems mažyliams jau ilgą laiką mamą katę atstoja žmogus . Galėtume juos išleisti į ypatingus namus ir TIK SU SĄLYGA, kad neteks augti vieniems. Tai jei namuose jau turite draugišką katę, kuri priimti mažylį arba norite priglausti du kačiukus iš šios vados, tai labai labai laukiame anketų .",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T09:16:04Z",
+  "sourceUpdatedAt": "2026-11-19T08:44:44Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -32569,19 +32417,19 @@
   }
  },
  {
-  "id": "sos-gyvunai:4592",
-  "url": "https://sos-gyvunai.lt/kenas/",
+  "id": "sos-gyvunai:4535",
+  "url": "https://sos-gyvunai.lt/manas/",
   "source": "sos-gyvunai",
-  "name": "Kenas",
-  "species": "dog",
+  "name": "Manas",
+  "species": null,
   "city": "Vilnius",
   "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/ff27dbea-b254-494b-af34-e0737608cb70.jpg"
+   "https://sos-gyvunai.lt/wp-content/uploads/956edf87-1ecd-45b4-8ff3-fae76cda6085.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -32595,123 +32443,9 @@
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "5 suaugę šunys atvyko iš vienų namų . Moteris, kaip galėjo taip rūpinosi pamestai, pasiklydusiais šunimis, kol teko kraustytis į socialinį būstą ir šuneliai liko be namų… Gyvenę laisvai, niekada nebuvo vedžioti, neturėję net antkaklio. Apie veterinarines procedūras jau nekalbame, nes jų tiesiog niekada nebuvo . Radome laisvai gyvenančias 3 kalytes ir du patinus. Niekas nežino, kur dingdavo visi šuniukai, kurie tikrai gimdavo . Tik 1 iš šunų į mus reagavo draugiškai, o kiti labai bijo… puola, urzgia, šiepia dantis ir ginasi išplėšti iš jiems pažįstamos aplinkos. Laukia labai ilgas kelias… Kelias link draugystės ir kelias į vet.klinikas visoms būtinoms veterinarinėms procedūroms atlikti. Būtina – skiepyti, ženklinti, nukirminti, sterilizuoti, sutvarkyti dantis, atlikti akių vokų operacijas. Tokiam kiekiui šunų pirminėms procedūroms reikalinga mažiausiai 1000 eur . Bet turbūt pradėjus keliauti į klinikas susidarys dar didesnės sumos… . Paaukoti penkiems naujokams ir kitiems mūsų globotiniams galite :",
+  "bioLt": "KRUOPIUKAI. Gal jau laikas NAMO? Viskas prasidėjo nuo to, kad kačiukų mama pradingo ir būdami 7-10 dienų jie pateko į mūsų globą. Nemokantys valgyti mažyliai tapo mūsų vargeliu ir dieną/naktį teko juos maitinti kas 3-4 valandas . Svėrimai, maudymai, pilvukų masažai, šiltos pūslės keitimas tapo kasdienybe. Kai jau atrodė, kad sunkiausia yra praeityje ir mažieji stabiliai auga jie sunkiai susirgo . Pirmuonis giardia vos nepasiglemžė dviejų kačiukų, bet pavyko . Pavyko su nuostabių gydytojų ir klinikos kolektyvo pagalba. AČIŪ . Jau supratote, kad šių mažylių gyvenimo pradžia tikrai buvo sunki. Kovojome už juos, atidavėme labai daug ir ieškome šeimininkų, kurie būtų pasiruošę aukoti tiek pat ir dar daugiau visą likusį kačiukų gyvenimą . Kačiukai labai labai meilūs, drąsūs, žaismingi, greiti, aktyvūs ir mėgsta labai garsiai murkti. Vienas ryžiukas jau sėkmingai rado namus, kur jo laukia nauja sesutė katė. Ryžieji berniukai – SORAS, MANAS. Mažoji raina sesutė – AVIŽA. 1,5mėn. nukirminti, ženklinti. Tokių mažų kačiukų niekada neatskirtume nuo mamos ir dar neieškotume namų, bet šiems mažyliams jau ilgą laiką mamą katę atstoja žmogus . Galėtume juos išleisti į ypatingus namus ir TIK SU SĄLYGA, kad neteks augti vieniems. Tai jei namuose jau turite draugišką katę, kuri priimti mažylį arba norite priglausti du kačiukus iš šios vados, tai labai labai laukiame anketų .",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T09:15:23Z",
-  "shelter": {
-   "id": "sos-gyvunailt",
-   "name": "VšĮ SOS gyvūnai",
-   "city": "Vilnius",
-   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
-   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
-  }
- },
- {
-  "id": "sos-gyvunai:4590",
-  "url": "https://sos-gyvunai.lt/dzesika/",
-  "source": "sos-gyvunai",
-  "name": "Džesika",
-  "species": "dog",
-  "city": "Vilnius",
-  "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/e0db251d-4310-4815-9e6d-75c67f658c63.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojami gyvūnai",
-  "sex": null,
-  "ageLt": "Šunys suaugę",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "5 suaugę šunys atvyko iš vienų namų . Moteris, kaip galėjo taip rūpinosi pamestai, pasiklydusiais šunimis, kol teko kraustytis į socialinį būstą ir šuneliai liko be namų… Gyvenę laisvai, niekada nebuvo vedžioti, neturėję net antkaklio. Apie veterinarines procedūras jau nekalbame, nes jų tiesiog niekada nebuvo . Radome laisvai gyvenančias 3 kalytes ir du patinus. Niekas nežino, kur dingdavo visi šuniukai, kurie tikrai gimdavo . Tik 1 iš šunų į mus reagavo draugiškai, o kiti labai bijo… puola, urzgia, šiepia dantis ir ginasi išplėšti iš jiems pažįstamos aplinkos. Laukia labai ilgas kelias… Kelias link draugystės ir kelias į vet.klinikas visoms būtinoms veterinarinėms procedūroms atlikti. Būtina – skiepyti, ženklinti, nukirminti, sterilizuoti, sutvarkyti dantis, atlikti akių vokų operacijas. Tokiam kiekiui šunų pirminėms procedūroms reikalinga mažiausiai 1000 eur . Bet turbūt pradėjus keliauti į klinikas susidarys dar didesnės sumos… . Paaukoti penkiems naujokams ir kitiems mūsų globotiniams galite :",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T09:16:19Z",
-  "shelter": {
-   "id": "sos-gyvunailt",
-   "name": "VšĮ SOS gyvūnai",
-   "city": "Vilnius",
-   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
-   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
-  }
- },
- {
-  "id": "sos-gyvunai:4589",
-  "url": "https://sos-gyvunai.lt/karen/",
-  "source": "sos-gyvunai",
-  "name": "Karen",
-  "species": "dog",
-  "city": "Vilnius",
-  "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/3a786217-9fe0-4e27-ad09-00302dcc93e6.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojami gyvūnai",
-  "sex": null,
-  "ageLt": "Šunys suaugę",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "5 suaugę šunys atvyko iš vienų namų . Moteris, kaip galėjo taip rūpinosi pamestai, pasiklydusiais šunimis, kol teko kraustytis į socialinį būstą ir šuneliai liko be namų… Gyvenę laisvai, niekada nebuvo vedžioti, neturėję net antkaklio. Apie veterinarines procedūras jau nekalbame, nes jų tiesiog niekada nebuvo . Radome laisvai gyvenančias 3 kalytes ir du patinus. Niekas nežino, kur dingdavo visi šuniukai, kurie tikrai gimdavo . Tik 1 iš šunų į mus reagavo draugiškai, o kiti labai bijo… puola, urzgia, šiepia dantis ir ginasi išplėšti iš jiems pažįstamos aplinkos. Laukia labai ilgas kelias… Kelias link draugystės ir kelias į vet.klinikas visoms būtinoms veterinarinėms procedūroms atlikti. Būtina – skiepyti, ženklinti, nukirminti, sterilizuoti, sutvarkyti dantis, atlikti akių vokų operacijas. Tokiam kiekiui šunų pirminėms procedūroms reikalinga mažiausiai 1000 eur . Bet turbūt pradėjus keliauti į klinikas susidarys dar didesnės sumos… . Paaukoti penkiems naujokams ir kitiems mūsų globotiniams galite :",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T09:16:31Z",
-  "shelter": {
-   "id": "sos-gyvunailt",
-   "name": "VšĮ SOS gyvūnai",
-   "city": "Vilnius",
-   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
-   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
-  }
- },
- {
-  "id": "sos-gyvunai:4587",
-  "url": "https://sos-gyvunai.lt/linda/",
-  "source": "sos-gyvunai",
-  "name": "Linda",
-  "species": "dog",
-  "city": "Vilnius",
-  "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/7394b1cb-c39a-4797-87bf-ddc0dca67d1b.jpg"
-  ],
-  "status": "available",
-  "statusEvidence": "Dovanojami gyvūnai",
-  "sex": null,
-  "ageLt": "Šunys suaugę",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": null,
-  "medical": {
-   "chipped": null,
-   "vaccinated": null,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "5 suaugę šunys atvyko iš vienų namų . Moteris, kaip galėjo taip rūpinosi pamestai, pasiklydusiais šunimis, kol teko kraustytis į socialinį būstą ir šuneliai liko be namų… Gyvenę laisvai, niekada nebuvo vedžioti, neturėję net antkaklio. Apie veterinarines procedūras jau nekalbame, nes jų tiesiog niekada nebuvo . Radome laisvai gyvenančias 3 kalytes ir du patinus. Niekas nežino, kur dingdavo visi šuniukai, kurie tikrai gimdavo . Tik 1 iš šunų į mus reagavo draugiškai, o kiti labai bijo… puola, urzgia, šiepia dantis ir ginasi išplėšti iš jiems pažįstamos aplinkos. Laukia labai ilgas kelias… Kelias link draugystės ir kelias į vet.klinikas visoms būtinoms veterinarinėms procedūroms atlikti. Būtina – skiepyti, ženklinti, nukirminti, sterilizuoti, sutvarkyti dantis, atlikti akių vokų operacijas. Tokiam kiekiui šunų pirminėms procedūroms reikalinga mažiausiai 1000 eur . Bet turbūt pradėjus keliauti į klinikas susidarys dar didesnės sumos… . Paaukoti penkiems naujokams ir kitiems mūsų globotiniams galite :",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T09:16:49Z",
+  "sourceUpdatedAt": "2026-11-19T08:41:25Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -32725,15 +32459,15 @@
   "url": "https://sos-gyvunai.lt/imbieras/",
   "source": "sos-gyvunai",
   "name": "Imbieras",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/667aa5a8-56e6-405e-b386-1272860f0b98.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "male",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -32741,7 +32475,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": true
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32763,7 +32497,7 @@
   "url": "https://sos-gyvunai.lt/ize/",
   "source": "sos-gyvunai",
   "name": "Izė",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/aa5febf4-bada-4844-9685-11274acf3d92.jpg"
@@ -32771,15 +32505,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys jauni",
+  "ageLt": null,
   "ageEn": null,
-  "size": "medium",
+  "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": false,
-   "vaccinated": false,
-   "neutered": false
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32801,7 +32535,7 @@
   "url": "https://sos-gyvunai.lt/natas/",
   "source": "sos-gyvunai",
   "name": "Natas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/a8c347b3-3ad8-44be-90bb-a3239fd0e1ca.jpg"
@@ -32809,15 +32543,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys jauni",
+  "ageLt": null,
   "ageEn": null,
-  "size": "medium",
+  "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": false,
-   "vaccinated": false,
-   "neutered": false
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32839,7 +32573,7 @@
   "url": "https://sos-gyvunai.lt/stirna/",
   "source": "sos-gyvunai",
   "name": "Stirna",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/AAA_5820-scaled.png"
@@ -32847,15 +32581,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės jaunos",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32873,19 +32607,57 @@
   }
  },
  {
+  "id": "sos-gyvunai:4427",
+  "url": "https://sos-gyvunai.lt/bona/",
+  "source": "sos-gyvunai",
+  "name": "Bona",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://sos-gyvunai.lt/wp-content/uploads/ccd3c5fa-dfaa-4dc4-b3bf-0572480fd476.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Dovanojami gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Bona ieško Namų! Prieš kelias savaites prie mūsų prieglaudinukų šeimos prisijungė dvi paaugliukės – Cava ir Stirna. https://www.facebook.com/share/19ovsx1ecv/ Katytės atvyko iš VšĮ Širviai, kur nepaisant nuoširdžių savanorių pastangų niekas jomis nesusidomėjo Užvakar pas mus atvyko trečioji sesutė Bona, kuri lauke buvo atsargesnė, tad jos gaudymas užtruko, o tame tarpe ir namams paruošiančios procedūros. Bonai kol kas nedrąsu naujoje vietoje, ji išsigąsta staigiau priėjus, tačiau švelniai ir ramiai pakalbinus ji atsipalaiduoja ir net pradeda mėgautis paglostukais Beveik neabejojame, kad įdėjus truputį laiko ir pastangų Bona taps gera jūsų drauge Bona mielai namo keliautų su kažkuria (arba abiem ) iš sesučių, arba į namus, kuriuose jau auga draugiška katė amžius 6mėn. skiepyta, čipuota, sterilizuota greitieji FIV/FeLV testai neigiami",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-13T07:35:48Z",
+  "shelter": {
+   "id": "sos-gyvunailt",
+   "name": "VšĮ SOS gyvūnai",
+   "city": "Vilnius",
+   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
+   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
+  }
+ },
+ {
   "id": "sos-gyvunai:4424",
   "url": "https://sos-gyvunai.lt/rune/",
   "source": "sos-gyvunai",
   "name": "Runė",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/7aae09c2-a878-4df7-a4b6-df2b4e980f2b.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -32915,23 +32687,23 @@
   "url": "https://sos-gyvunai.lt/raudona/",
   "source": "sos-gyvunai",
   "name": "Raudona",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/13132521-935d-4ad6-affa-f06b7c56af5c.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės jaunos",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32949,25 +32721,63 @@
   }
  },
  {
-  "id": "sos-gyvunai:4220",
-  "url": "https://sos-gyvunai.lt/zorzeta/",
+  "id": "sos-gyvunai:4228",
+  "url": "https://sos-gyvunai.lt/kami/",
   "source": "sos-gyvunai",
-  "name": "Žoržeta",
-  "species": "dog",
+  "name": "Kami",
+  "species": null,
   "city": "Vilnius",
-  "photos": [],
+  "photos": [
+   "https://sos-gyvunai.lt/wp-content/uploads/888277966_992901853882098_7240146558049840196_n.jpg"
+  ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Šunys senjorai",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": false,
-   "vaccinated": false,
-   "neutered": false
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Apie 3mėn. Skiepytos, ženklintos. Spėjame, kad bus vidutinio/didesnio dydžio. Jei turite daug kantrybės, esate pasiruošę mokytis naujų dalykų, nepasiduosite ištikus pirmiems sunkumams ir toliau auklėsite mažą nenuoramą, tai labai LAUKIAME ANKETOS",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-06T13:47:12Z",
+  "shelter": {
+   "id": "sos-gyvunailt",
+   "name": "VšĮ SOS gyvūnai",
+   "city": "Vilnius",
+   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
+   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
+  }
+ },
+ {
+  "id": "sos-gyvunai:4220",
+  "url": "https://sos-gyvunai.lt/zorzeta/",
+  "source": "sos-gyvunai",
+  "name": "Žoržeta",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [],
+  "status": "available",
+  "statusEvidence": "Dovanojami gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -32989,31 +32799,31 @@
   "url": "https://sos-gyvunai.lt/homeris-ir-ralfas/",
   "source": "sos-gyvunai",
   "name": "Homeris ir Ralfas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/5b3f6dee-3120-4d9e-a96d-b74b6d54996c.jpg"
+   "https://sos-gyvunai.lt/wp-content/uploads/862613309_3004223083263874_1942143473678431101_n.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys jaunikliai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
+   "chipped": null,
+   "vaccinated": null,
    "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Jeigu esatę pasiruošę visoms mažų šuniukų išdaigoms, visiems ateityje laukiantiems iššūkiams, tada šie mažyliai laukia Jūsų anketų. Ralfas – trumpakojis. Jis nuo pat mažų dienų buvo šiek tiek „drama king”. Visada pirmas pribėgs prie žmogaus, jis pirmas išmoko loti, garsiau už kitus pradeda cypauti jei netikėtai ir jam nematant paimsi ant rankų. O šiaip jis labai mielas ir linksmas šuniukas, kuris gali tapti puikiu šeimos nariu, jeigu jam bus skiriama pakankamai laiko dresūrai ir žaidimams. Homeris – pats didžiausias, bet kukliausias iš visos vados. Už savo mažąjį broliuką jis yra švelnesnis ir šiek tiek ramesnis. Jam patinka būti ant rankų prisiglaudus prie žmogaus. Vienintelis jo minusas – netaisiklingas sąkandis. Skiepyti, ženklinti. Amžius apie 4 mėn. Mama Liza sveria apie 8 kg, kas tėtis mes nežinome, tad negalime garantuoti kokio ūgio užaugs.",
+  "bioLt": "Tikrai padykę, linksmučiai, išdykučiai ir labai meilučiai . Iš devyneto liko 2 Simpsoniukai. Šuniukai pasiruošę keliauti į namus ir mokytis naujų dalykų. Reikės išmokti vaikščioti su pavadėliu, pasilikti vieniems namuose, atlikti reikalus tik lauke, negraužti tapkių ir tt. Naujų šeimininkų tikrai lauks daug iššūkių ir tuo pačiu smagių nuotykių . Apie 3mėn. Skiepyti, ženklinti. Mamytė nedidukė, apie 7kg. Labai miela, tvarkinga ir protinga . O tėtis nežinomas . Jei esate pasiruošę mažo šunelio atvykimui į namus, tai labai laukiame anketos.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T08:57:28Z",
+  "sourceUpdatedAt": "2026-11-06T13:39:05Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -33027,23 +32837,23 @@
   "url": "https://sos-gyvunai.lt/erikas/",
   "source": "sos-gyvunai",
   "name": "Erikas",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/d4b5c726-8418-4d44-911d-603132fa992e.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "male",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33065,7 +32875,7 @@
   "url": "https://sos-gyvunai.lt/soras-manas-grikis-aviza/",
   "source": "sos-gyvunai",
   "name": "Soras",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/5b6c749a-cd1a-4ba7-afd1-bcba3f2500cb.jpg"
@@ -33073,13 +32883,13 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės jaunikliai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
+   "chipped": null,
    "vaccinated": null,
    "neutered": null
   },
@@ -33103,7 +32913,7 @@
   "url": "https://sos-gyvunai.lt/virduliukas/",
   "source": "sos-gyvunai",
   "name": "Virduliukas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/846319746_1459456756110478_3427970635480626434_n.jpg"
@@ -33111,15 +32921,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": false,
+   "chipped": null,
    "vaccinated": null,
-   "neutered": false
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33141,7 +32951,7 @@
   "url": "https://sos-gyvunai.lt/loraksas/",
   "source": "sos-gyvunai",
   "name": "Loraksas",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/420d3afe-3b13-4356-870d-eee9142b09c5.jpg"
@@ -33149,15 +32959,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės jaunos",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33179,7 +32989,7 @@
   "url": "https://sos-gyvunai.lt/cava-ir-stirna/",
   "source": "sos-gyvunai",
   "name": "Cava",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/AAA_5741-scaled.png"
@@ -33187,15 +32997,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės jaunos",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33217,7 +33027,7 @@
   "url": "https://sos-gyvunai.lt/kisstutis/",
   "source": "sos-gyvunai",
   "name": "KissTutis",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/a79f45c5-0f53-4b18-b7f3-136c6b059094.jpg"
@@ -33225,7 +33035,7 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės suaugusios",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -33233,7 +33043,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": false
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33255,7 +33065,7 @@
   "url": "https://sos-gyvunai.lt/dilgele-gebene-raktazole-rugstyne-kiskio-kopustas-slamutis/",
   "source": "sos-gyvunai",
   "name": "Dilgėlė, Gebenė, Rugštynė, Kiškio Kopūstas, Šlamutis",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/bedeb975-06b5-49f6-a63f-641ba480c0aa.jpg"
@@ -33263,7 +33073,7 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės jaunos",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -33293,7 +33103,7 @@
   "url": "https://sos-gyvunai.lt/domino/",
   "source": "sos-gyvunai",
   "name": "Domino",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/AAA_5624-scaled.png"
@@ -33301,14 +33111,14 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės jaunikliai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
+   "chipped": null,
+   "vaccinated": null,
    "neutered": null
   },
   "compatibilityTagsLt": [],
@@ -33331,31 +33141,31 @@
   "url": "https://sos-gyvunai.lt/cedere/",
   "source": "sos-gyvunai",
   "name": "Čederė",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
-   "https://sos-gyvunai.lt/wp-content/uploads/df7f72f0-4eca-47d4-a712-b5c891d41ca7.jpg"
+   "https://sos-gyvunai.lt/wp-content/uploads/37ff6dc0-1d4a-4c95-9bcb-e6e4e631a955.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Dar liepos mėnesį į mūsų globą atvyko ryža, labai suvargusi katytė. Mažutę pastebėjo mūsų darbuotoja, klaidžiojančią, gailiu balsu verkiančią ir prašančią pagalbos… Katytė buvo be galo sulysusi, purvina, o jos veidelį graužė gyvos kirmėlės… Istorija: https://www.facebook.com/share/r/18TJVFaF7V/ Po kelių savaičių gyvenimo klinikos stacionare, intensyvios priežiūros ir gydymo Čederės būklė pradėjo gerėti Pasveikusi katytė persikėlė į prieglaudos kačių kambarėlį, kur susipažino su kitais likimo draugais Nepaisant baisių patirčių lauke ir patirto žmonių abejingumo Čederė neprarado pasitikėjimo žmogumi Tai meili ir švelni katytė, kuri būna šalia pažįstamų žmonių, pakalbinus, paglosčius nušvinta iš džiaugsmo ir prašo daugiau Labai nori prisiglausti, būti ant kelių amžius 3m. skiepyta, čipuota, sterilizuota draugiškai reaguoja į kitas kates greitieji fiv/felv testai neigiami",
+  "bioLt": "Dar liepos mėnesį į mūsų globą atvyko ryža, labai suvargusi katytė. Mažutę pastebėjo mūsų darbuotoja, klaidžiojančią, gailiu balsu verkiančią ir prašančią pagalbos… Katytė buvo be galo sulysusi, purvina, o jos veidelį graužė gyvos kirmėlės… Istorija: https://www.facebook.com/share/r/18TJVFaF7V/ https://www.facebook.com/share/p/17bPaN8CPA/ Po kelių savaičių gyvenimo klinikos stacionare, intensyvios priežiūros ir gydymo Čederės būklė pradėjo gerėti Pasveikusi katytė persikėlė į prieglaudos kačių kambarėlį, kur susipažino su kitais likimo draugais Čederė draugiškai reaguoja į gentaines, tad galėtų keliauti į namus, kuriuose jau auga draugiška katė ar katinas Nepaisant baisių patirčių lauke ir patirto žmonių abejingumo Čederė neprarado pasitikėjimo žmogumi Tai meili ir švelni katytė, kuri būna šalia pažįstamų žmonių, pakalbinus, paglosčius nušvinta iš džiaugsmo ir prašo daugiau amžius 3m. skiepyta, čipuota, sterilizuota",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T10:28:08Z",
+  "sourceUpdatedAt": "2026-10-16T07:00:14Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -33369,15 +33179,15 @@
   "url": "https://sos-gyvunai.lt/rozyte-ir-jos-mazyliai/",
   "source": "sos-gyvunai",
   "name": "Rožytė",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/roz.png"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -33407,7 +33217,7 @@
   "url": "https://sos-gyvunai.lt/epika/",
   "source": "sos-gyvunai",
   "name": "Epika",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/AAA_5699-scaled.png"
@@ -33415,15 +33225,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės senjorės",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33445,7 +33255,7 @@
   "url": "https://sos-gyvunai.lt/merfis/",
   "source": "sos-gyvunai",
   "name": "Merfis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/809373386_1109652528692967_2278073399334724818_n.jpg"
@@ -33453,15 +33263,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys jauni",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33483,7 +33293,7 @@
   "url": "https://sos-gyvunai.lt/tankas/",
   "source": "sos-gyvunai",
   "name": "Tankas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/620529126_651450428029711_1948096985707189763_n.jpg"
@@ -33491,15 +33301,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2019.12.19",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33521,7 +33331,7 @@
   "url": "https://sos-gyvunai.lt/otto/",
   "source": "sos-gyvunai",
   "name": "Otto",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_7382-copy-scaled.jpg"
@@ -33529,15 +33339,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33559,7 +33369,7 @@
   "url": "https://sos-gyvunai.lt/dubis/",
   "source": "sos-gyvunai",
   "name": "Dubis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_6961-copy-scaled.jpg"
@@ -33567,15 +33377,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys jauni",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33597,7 +33407,7 @@
   "url": "https://sos-gyvunai.lt/hemas/",
   "source": "sos-gyvunai",
   "name": "Hemas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/h2.jpg"
@@ -33605,7 +33415,7 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -33635,23 +33445,23 @@
   "url": "https://sos-gyvunai.lt/tyle/",
   "source": "sos-gyvunai",
   "name": "Tylė",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/tyle.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės jaunos",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33673,7 +33483,7 @@
   "url": "https://sos-gyvunai.lt/geltona-raudona-rozine-purpurine-melynas-ir-zalias/",
   "source": "sos-gyvunai",
   "name": "Geltona, Purpurinė",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/35312afe-e0c0-47cb-bc89-c7eb14eb085c.jpg"
@@ -33681,15 +33491,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės jaunos",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33707,11 +33517,49 @@
   }
  },
  {
+  "id": "sos-gyvunai:3202",
+  "url": "https://sos-gyvunai.lt/dovana-parama/",
+  "source": "sos-gyvunai",
+  "name": "Dovana – parama",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://sos-gyvunai.lt/wp-content/uploads/ChatGPT-Image-Aug-13-2026-07_52_20-PM-1.png"
+  ],
+  "status": "available",
+  "statusEvidence": "Dovanojami gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Pirkdamas padedi tiems, kurie negali sau padėti patys! 🐾 Šis pirkinys – tai kur kas daugiau nei tik daiktas. Tai viltis, maistas ir šiltas guolis nuskriaustiems keturkojams. Ačiū, kad esate jų balsas ir renkatės daryti gerus darbus kartu!",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-08-14T06:25:06Z",
+  "shelter": {
+   "id": "sos-gyvunailt",
+   "name": "VšĮ SOS gyvūnai",
+   "city": "Vilnius",
+   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
+   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
+  }
+ },
+ {
   "id": "sos-gyvunai:3106",
   "url": "https://sos-gyvunai.lt/liza-ir-jos-8-mazyliai/",
   "source": "sos-gyvunai",
   "name": "Liza",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_72399-copy-2-scaled.jpg"
@@ -33719,23 +33567,23 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Pagaliau Liza baigė visus motiniškus vargus ir dabar yra pasiruošusi laimės ieško sau. Liza yra labai miela ir visiems draugiška. Mums ji nei karto nerodė agresijos, leido daryti net nemalonias procedūras (nagų kirpimas ir pan.). Liza šokli ir smalsi, tad tikrai namie patogiai įsitaisys miegoti ant sofos, užšoks ant stalo patikrinti ar neliko ko nors skanaus, sėdės ant palangės ir stebės kas vyksta lauke. Ji noriai eina pasivaikščioti, ramiai reaguoja į šunis ir su kai kuriais net nori žaisti. Visus reikalus atlieka tik lauke. Ji nėra pratusi prie miesto gyvenimo, bet tikrai tikime, kad kuo puikiausiai priprastų ir mielai eitu net į kavinę su savo žmogumi. Kaip reaguoja į kates ir vaikus kol kas dar nežinome. Sterilizuota, skiepyta, ženklinta. Amžius apie 2 m. Svoris apie 8 kg.",
+  "bioLt": "Jauki kalytė atvyko į prieglaudą su 8 šuniukais. Vaikučiais jau užaugino ir dauguma mažylių rado namus, tai dabar atėjo ir Lizos laikas. Liza nedidukė, tvarkinga, miela ir draugiška kalytė. ~2-3 metai. skiepyta ir ženklinta. Apie 7kg. Namo keliaus po sterilizacijos.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T08:57:59Z",
+  "sourceUpdatedAt": "2026-11-06T13:30:28Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -33749,23 +33597,23 @@
   "url": "https://sos-gyvunai.lt/kuciukas/",
   "source": "sos-gyvunai",
   "name": "Kūčiukas",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/01ebae3c-87da-448d-9bd6-da16c32e05d4.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "male",
-  "ageLt": "Katės jaunos",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33787,23 +33635,23 @@
   "url": "https://sos-gyvunai.lt/serunis/",
   "source": "sos-gyvunai",
   "name": "Serūnis",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/68278514-2768-4941-a780-643810268eec.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "male",
-  "ageLt": "Katės senjorės",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33825,23 +33673,23 @@
   "url": "https://sos-gyvunai.lt/vizija/",
   "source": "sos-gyvunai",
   "name": "Vizija",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/IMG_2745-scaled.jpeg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33863,7 +33711,7 @@
   "url": "https://sos-gyvunai.lt/selena/",
   "source": "sos-gyvunai",
   "name": "Selena",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/931fc220-d0bc-4b2f-b01e-37eb29e64f36.jpg"
@@ -33871,7 +33719,7 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės suaugusios",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -33901,7 +33749,7 @@
   "url": "https://sos-gyvunai.lt/tviksas/",
   "source": "sos-gyvunai",
   "name": "Tviksas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/735415485_1722083322401989_5810410743601046790_n.jpg"
@@ -33909,15 +33757,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33939,7 +33787,7 @@
   "url": "https://sos-gyvunai.lt/rio/",
   "source": "sos-gyvunai",
   "name": "Rio",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/738593469_2780708232302049_4818688113273526327_n.jpg"
@@ -33947,15 +33795,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -33977,23 +33825,23 @@
   "url": "https://sos-gyvunai.lt/enva-ir-4-mazyliai/",
   "source": "sos-gyvunai",
   "name": "Enva",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/ee3f2893-02e1-45a0-9012-6cb47a7b5dc4.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
    "chipped": null,
-   "vaccinated": true,
-   "neutered": false
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34015,7 +33863,7 @@
   "url": "https://sos-gyvunai.lt/taskis/",
   "source": "sos-gyvunai",
   "name": "Taškis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/5c156078-c71f-4a4c-bb2b-123813497fd0.jpg"
@@ -34023,13 +33871,13 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": false,
+   "chipped": null,
    "vaccinated": null,
    "neutered": null
   },
@@ -34053,23 +33901,23 @@
   "url": "https://sos-gyvunai.lt/merilyn-monroe/",
   "source": "sos-gyvunai",
   "name": "Merilyn Monroe",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/9e2799b3-5fc4-4017-9d01-e7eca1b827de.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės jaunos",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34091,23 +33939,23 @@
   "url": "https://sos-gyvunai.lt/luna-2/",
   "source": "sos-gyvunai",
   "name": "Aika",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_7507-copy-scaled.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Šunys senjorai",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34129,7 +33977,7 @@
   "url": "https://sos-gyvunai.lt/barklis/",
   "source": "sos-gyvunai",
   "name": "Barklis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/844736956_3881709615304049_6448580413182774656_n.png"
@@ -34137,15 +33985,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": "2019.01.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34167,7 +34015,7 @@
   "url": "https://sos-gyvunai.lt/pandukas/",
   "source": "sos-gyvunai",
   "name": "Pandukas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/34516480-7e4c-47e6-9b96-357d5505482b.jpg"
@@ -34175,15 +34023,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": false,
+   "chipped": null,
    "vaccinated": null,
-   "neutered": false
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34205,23 +34053,23 @@
   "url": "https://sos-gyvunai.lt/kulka/",
   "source": "sos-gyvunai",
   "name": "Kulka",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/738758687_1027159166430279_5762078653306806826_n.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Šunys suaugę",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34243,7 +34091,7 @@
   "url": "https://sos-gyvunai.lt/barnabis/",
   "source": "sos-gyvunai",
   "name": "Barnabis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/705427052_1499499921025811_6009807303894467743_n.jpg"
@@ -34251,15 +34099,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34277,11 +34125,49 @@
   }
  },
  {
+  "id": "sos-gyvunai:2326",
+  "url": "https://sos-gyvunai.lt/bitlas/",
+  "source": "sos-gyvunai",
+  "name": "Bitlas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://sos-gyvunai.lt/wp-content/uploads/30a88e58-d2ad-46a6-b6bf-4000f46b3494.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Dovanojami gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Sunkaus gyvenimo nepalaužtas Bitlas ieško savo Šeimos ❤️🏠 VIDEO: https://www.facebook.com/share/v/19Vq3pioFW/ Bitlas atvyko pas mus dar vasarį iš Bruknynės kaimo. Neabejinga moteris pastebėjo suvargusį katiną, pradėjo jį šerti, o kai vieną dieną vargšelis atėjo nusilpęs ir sunkiai paėjo moteris kreipėsi į mus. Jo istorijos pradžia: https://www.facebook.com/share/r/1AiaHt9zz1/ https://www.facebook.com/share/r/1EP1AW2i2j/ Bitlas iškart keliavo į kliniką, kur gyveno apie mėnesį. Sužinojome, kad tai be galo apleistas, virš 10 metų katinas su išpuvusiais dantukais, temperatūra virš 40 laipsnių, stipriu uždegimu ir anemija 💔 Iš karto buvo atkreiptas dėmesys ir į Bitlo neurologinius simptomus, sutrikusią koordinaciją 😞 Panašu, kad buvo pažeisti galviniai nervai, nes Bitlui atvykus nebuvo reakcijos akyje ir ausytėje, laimei laikui bėgant tai atsistatė. Bitlui nustatytas vestibiuliarinis sindromas. Jis laiko pakreipęs galvą į vieną pusę, sunkiau orientuojasi aplinkoje. Darytas MRT parodė vidinės ir vidurinės ausies uždegiminės kilmės pažeidimą, kurį išgydėme. Panašu, kad uždegimas ir sukėlė vestibiuliarinio aparato sutrikimą 😞 Šiai dienai nieko daugiau padaryti nebegalima, bet ir Bitlas jaučiasi nepalyginamai geriau – nepaisant pakreiptos į vieną pusę galvos jis puikiai valgo, geria, naudojasi kraikdeže ir žaidžia, gyvena be vaistų 🫶 Bitlas yra be galo geras senjoras, kuris stipriai prisiriša prie jį prižiūrinčių žmonių ir visu savo kūneliu rodo džiaugsmą juos pamatęs 🤍 Jis dievina būti šalia mylimų žmonių, džiaugiasi prisilietimu. Kartais jis vis dar išsigąsta staigesnio judesio glostant ir dreskia, tai nekyla iš agresijos, o iš nesaugumo jausmo ❤️‍🩹 Bitlas myli kitas kates ir nori jų draugijos, tačiau kambariokai nemėgsta Bitlo dėl jo kitoniškumo 😞 Mažutis ne kartą bandė eiti prie jų ir trintis su savo galvele, bet kambariokams tai nepatiko… Nuo tada Bitlas laikosi vieno kambario kampo, nes vaikščiojimas kitur reikštų susidūrimą su kambariokais… Manome, kad tinkamai supažindinus Bitlas galėtų laimingai gyventi su kita draugiška kate 🫂 Bitlui tiktų namai be mažų vaikų, su kantriais ir ramiais žmonėmis, kurie norėtų sukurti gražų ryšį su šiuo katinėliu 🫶 Bitlas nuostabus katinas, tad tikimės, kad savo antrąją gyvenimo dalį praleis apsuptas rūpesčio ir meilės 🥺 🐈‍⬛ amžius ~10 metų 🐈‍⬛ skiepytas, čipuotas, kastruotas",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-10-16T07:39:36Z",
+  "shelter": {
+   "id": "sos-gyvunailt",
+   "name": "VšĮ SOS gyvūnai",
+   "city": "Vilnius",
+   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
+   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
+  }
+ },
+ {
   "id": "sos-gyvunai:2188",
   "url": "https://sos-gyvunai.lt/nika/",
   "source": "sos-gyvunai",
   "name": "Nika",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/650391244_931793492552759_6417646625059342231_n.jpg"
@@ -34289,23 +34175,23 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Nežinome ar Nika tokia jautri buvo visada, ar tokia tapo tik jos šeimininkams ją išdavus ir palikus prieglaudoje… Prieglaudos aplinka Nikai labai netinka, nes čia nuolatos kas nors vyksta, kas nors loja, triukšmauja, o jai reikia ramios aplinkos… Jai reikia ramių namų… Nikai reikia žmogaus, kuris turi patirties su jautraus šuns auginimu, kuris pats nėra toks jautrus, kaip ji. Jai reikia žmogaus, kuris yra psichologiškai ir emociškai stiprus, kuris turi laiko ir noro nuolatos dirbti ir užsiimti su Nika. Jai reikalingas užsispyręs žmogus, kuris nepasiduos ir stengsis Nikai suteikti daug protinio darbo. Žmogus, kuris atleis jai už iš streso ne vietoje paliktą balutę, lojimą ir šokinėjimą… Nika yra labai miela ir draugiška. Jai labai patinka eiti pasivaikščioti, atlikti įvairias užduotis ir komandas už skaniukus. Jai patinka būti glostomai, sėdėti ant kelių, prisiglausti ir dalinti šlapius bučinukus. Netinka į namus su vaikais ir kitais gyvūnais. Motyvuota maistu. Moka komandų, gražiai eina vedama su pavadžiu jeigu turima skaniukų. Sterilizuota, skiepyta, ženklinta. Amžius 3 m 7 mėn. Pratusi būti narvelyje. Stengiasi visus reikalus atlikti lauke, bet visko pasitaiko. Šiuo metu gauna raminamuosius.",
+  "bioLt": "Dar jauna, išdykusi kalytė – Nikai viskas smalsu, niekur ne per aukštai ir tikrai žygyje nebus per toli. VIDEO – https://fb.watch/GFHKa9KYtd/ Bet ne viskas paprasta su Nika – nors pas mus tai nepasireiškia – Nika nemoka ir nenori pasilikti viena namuose Palikta viena gali loti ir kaukti, nes ji nori būti šalia. Su kitais šunimis nesipyksta, bet lauke pamačiusi šunį, ypač didesnį, labai reaguoja, tempia pavadį. Su pavadžiu eiti gražiai irgi reikia dar pasimokyti – yra stipriai motyvuota maistu ir mokytis labai gerai sekasi Tam, kam įdomu, galima su Nika užsiimti įvairia šunų veikla, sportuoti, mokytis triukų ar paklusnumo. Nikai 3 metai, augusi su vaikais ir galėtų gyventi su jais. Puola kates, tad ieško namų be jų. Sterilizuota, ženklinta. Geriausiai tiktų namai, kuriuose kažkas nuolat būna arba yra lankstus su darbais, galės skirti laiko šuns iškrovai ir išsiskyrimo nerimo mažinimui. Jautrioji Nika turi daug potencialo, bet jam reikės laiko ir šeimininko pastangų jį atskleisti: mokyti nurimti, valdyti savo emocijas ir labiau pasitikėti savimi bei aplinka, mokytis reikaliukus daryti tik lauke.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T09:00:10Z",
+  "sourceUpdatedAt": "2026-04-23T10:32:54Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -34319,7 +34205,7 @@
   "url": "https://sos-gyvunai.lt/laila/",
   "source": "sos-gyvunai",
   "name": "Laila",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/738511547_1561076268746886_7108873228106974187_n.jpg"
@@ -34327,15 +34213,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34357,7 +34243,7 @@
   "url": "https://sos-gyvunai.lt/munis/",
   "source": "sos-gyvunai",
   "name": "Mūnis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/738570569_2124879905047602_7203015709212138097_n.jpg"
@@ -34365,15 +34251,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34395,7 +34281,7 @@
   "url": "https://sos-gyvunai.lt/yoda/",
   "source": "sos-gyvunai",
   "name": "Yoda",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/705275498_985094394286330_6221817547564745875_n.jpg"
@@ -34403,15 +34289,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34433,7 +34319,7 @@
   "url": "https://sos-gyvunai.lt/krapstukas/",
   "source": "sos-gyvunai",
   "name": "Krapštukas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_7047-copy-scaled.jpg"
@@ -34441,23 +34327,23 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Gyvenęs „lenciūginio” šuns gyvenimą, dabar jis mėgaujasi šiluma ir minkštu guoliu. Jam trūksta tik žmonių, kurie kasdien leisis su juo į nuotykių paieškas ir glostys tik jį. Krapštukas labai mielas ir žmonėms draugiškas šuo, kuris galėtų tapti pačiu geriausiu draugu. Žinoma, jam dar daug ko reikia išmokti, bet su tinkamu žmogumi ir nuolatine dresūra, viskas yra įmanoma. Mums lieka tik atlikti pačią sunkiausią užduotį – surasti tinkamą žmogų. 🫪 Krapštukas noriai eina pasivaikščioti su kiekvienu žmogumi. Jis labai smalsus ir šoklus, tad namie tikrai patikrins kas palikta ant spintelės ar stalo. Motyvuotas maistu. Moka komandų, gražiai eina vedamas su pavadžiu, bet jeigu kažką pamato, tai tempia. Kastruotas, skiepytas, ženklintas. Amžius apie 7 m. Svoris apie 18 kg. Pratęsi būti narvelyje. Visus reikalus atlieka lauke. Netinka į namus su kitais gyvūnais.",
+  "bioLt": "Rastas lakstantis Šalčininkų rajone itin prastos būklės… nors gyvybei pavojingų sveikatos sutrikimų nebuvo, šunelį kankino stiprus dermatitas Išplikęs, nes labai pleiskanota oda nusikasyti privertė iki žaizdų… klinikoje įvertinus sveikatos būklę paskirtos dažnos maudynės su gydomu šampūnu, kokybiškas maistas, papildai. Pokytis Krapštuko akivaizdus linksmas ir smagus išdykėlis jau žvalgosi namų! Pavadėliu neblogai eina, bet reikės pasimokyti netempti, kai labai labai ko nors nori (pavyzdžiui, pasisveikinti!) Į šunis, kurie labai provokuoja reaguoja nesmagiai, bet su ramiai šunelis yra draugiškas ir ramus Krapštukas labai smalsus ir šoklus, tad tikrai esant galimybei šokinės ant pasiekiamų paviršių norėdamas patikrinti, tad namų taisyklių reikės išmokti Apie 6m. amžiaus; Kastruotas, čipuotas, skiepytas; Švarus viduje; Moka pabūti narve; Labai meilus ir mėgsta paglostukus, mielai keliaus į žygius kartu!",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T08:59:22Z",
+  "sourceUpdatedAt": "2026-11-19T07:56:04Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -34471,7 +34357,7 @@
   "url": "https://sos-gyvunai.lt/2155/",
   "source": "sos-gyvunai",
   "name": "Ruzlė",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/632377201_1913378932900130_3268978571140341822_n.jpg"
@@ -34479,15 +34365,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34509,7 +34395,7 @@
   "url": "https://sos-gyvunai.lt/vente/",
   "source": "sos-gyvunai",
   "name": "Ventė",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/v3.jpg"
@@ -34517,15 +34403,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": "2020.10.10",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34547,7 +34433,7 @@
   "url": "https://sos-gyvunai.lt/saidas/",
   "source": "sos-gyvunai",
   "name": "Saidas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/daa5e5e6-0e92-4a5f-956d-3dcb532f4baf.jpg"
@@ -34555,15 +34441,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34585,7 +34471,7 @@
   "url": "https://sos-gyvunai.lt/kavasakis/",
   "source": "sos-gyvunai",
   "name": "Kavasakis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/648153107_793290247183559_1255985938738401056_n.jpg"
@@ -34593,15 +34479,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34623,7 +34509,7 @@
   "url": "https://sos-gyvunai.lt/vinis/",
   "source": "sos-gyvunai",
   "name": "Vinis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/554096618_25014809461456738_7515381511099907039_n.jpg"
@@ -34631,15 +34517,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
    "chipped": null,
-   "vaccinated": true,
-   "neutered": true
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34661,23 +34547,23 @@
   "url": "https://sos-gyvunai.lt/turkija/",
   "source": "sos-gyvunai",
   "name": "Turkija",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/491832134_9968255169872080_8510136087577209459_n.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Šunys senjorai",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34699,7 +34585,7 @@
   "url": "https://sos-gyvunai.lt/ipa-2/",
   "source": "sos-gyvunai",
   "name": "Ipa",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/740303485_2384197742073699_7739388151818749075_n.jpg"
@@ -34707,15 +34593,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės senjorės",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34737,7 +34623,7 @@
   "url": "https://sos-gyvunai.lt/tuja/",
   "source": "sos-gyvunai",
   "name": "Tuja",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/d69fbced-7005-408d-801e-72eb0cf0e8c1.jpg"
@@ -34745,15 +34631,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": "2020.10.10",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34775,7 +34661,7 @@
   "url": "https://sos-gyvunai.lt/dzekas/",
   "source": "sos-gyvunai",
   "name": "Džekas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/736997052_1813007116743944_2132567306901117710_n.jpg"
@@ -34783,15 +34669,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34813,7 +34699,7 @@
   "url": "https://sos-gyvunai.lt/lapinas/",
   "source": "sos-gyvunai",
   "name": "Lapinas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/la1.jpg"
@@ -34821,15 +34707,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34851,7 +34737,7 @@
   "url": "https://sos-gyvunai.lt/girius/",
   "source": "sos-gyvunai",
   "name": "Girius",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/851289582_1757618965351215_7864971834414565575_n.jpg"
@@ -34859,23 +34745,23 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
   "personalityTraitsLt": [],
   "personalityTraitsEn": [],
-  "bioLt": "Vieni šunys turi tik vardą, o šis senjoras turi net du vardus. Vieni vadina jį Reksu, kiti Girium, na o treti tiesiog dieduku. Ar daug šansų surasti namus senam šuniui? Ne. Ar daug šansų surasti namus senam dideliam šuniui? Tikrai ne. Liūdna, bet tokia ta realybė… Nors mes vis tiek visada turime bent mažytę viltį, kad kažkur yra tas žmogus, kuris ieško būtent tokio seno didelio šuns. Nuo pat pirmos atvykimo dienos Reksas mums nerodė jokios agresijos. Vos jį paglosčius, jis pradeda ir toliau kišti savo galvą po ranka, vis nori prisiglausti ir būti su žmogumi. Jam labai patinka eiti pasivaikščioti, tyrinėti aplinką ir loti ant kitų šunų. Jis nemoka gražiai eiti vedamas su pavadžiu, visą laiką tempia. Jis jau senjoras, bet jį dar galima daug ko išmokinti, tam tik reikia noro, laiko ir kantrybės. Deja, bet dėl vietų stokos Reksas pas mus gyvena lauko voljere, bet tikime, kad jis galėtų tapti ir puikiu kambariniu šunimi, kuris mielai šiltai įsitaisys savo guolyje prie savo žmogaus. Jam labiausiai tiktų gyventi name. Kastruotas, skiepytas, ženklintas. Amžius apie 12 m. Svoris apie 24 kg. Didelis. Per tvorą piktai loja ir tada gali kąsti svetimiems jeigu kiš pirštus. Netinka į namus su kitais gyvūnais.",
+  "bioLt": "Apleistas šuo atvyko per didžiuosius žiemos šalčius… Nėra jis čia labai laimingas, nes nepatinka būti uždarytam, nes jis nori tik sekioti paskui jam patinkančius žmones. Per tvorą jis atrodo labai piktas ir kišant ranką tikrai įkastų, bet užėjus pas jį į svečius jis tampa be galo mielas. Vos jį paglosčius, jis pradeda ir toliau kišti savo galvą po ranka, vis nori prisiglausti ir būti su žmogumi. Jam labai patinka eiti pasivaikščioti, tyrinėti aplinką ir loti ant kitų šunų. Jis nemoka gražiai eiti vedamas su pavadžiu, visą laiką tempia. Jis jau senjoras, bet jį dar galima daug ko išmokiti, tam tik reikia noro, laiko ir kantrybės. Žinome, kad labai mažai vilties tokiam šuniui surasti naujus namus, bet vis dar tikime, kad kažkas gali jį pamilti ir priimti į savo namus. Svoris apie 23 kg. Didelis Amžius 11 m. 2 mėn. Skiepytas, ženklintas, kastruotas. Per tvorą piktai loja ir gali įkasti. Nemėgsta kitų gyvūnų.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T08:58:58Z",
+  "sourceUpdatedAt": "2026-10-20T11:21:52Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -34889,7 +34775,7 @@
   "url": "https://sos-gyvunai.lt/merkuris/",
   "source": "sos-gyvunai",
   "name": "Merkuris",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_7001-copy-scaled.jpg"
@@ -34897,15 +34783,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34913,7 +34799,45 @@
   "personalityTraitsEn": [],
   "bioLt": "Merkuris draugiškas ir mielas šuo , bet kažkodėl jam patinka ne visi žmonės. Pagal ką renkasi – nežinome. Merkuris iš tų jautresnių šunų, kuriems reikalinga rami aplinka. Esant triukšmui jis greitai susinervina ir tada pradeda loti, graužti žaislus, o nusiraminti bando čiulpdamas pledą. Prieglaudoje jam labai negerai… Jam reikalingas žmogus, kuris turi patirties su tokio tipo šuniu, kurio namai yra rami aplinka, kuris turi noro ir laiko dirbti su šuniu. Prieglaudos darbuotojoms Merkuris yra be galo draugiškas, nuolatos prašantis paglostymų ir prisiglaudimų. Mes tikime, kad tinkamui žmogui jis taptu pačiu geriausiu draugu. Eidamas, ramiai prasilenkia su kitais šunimis, bet namie geriau būtų vienintelis augintinis. Netinka į namus su vaikais. Motyvuotas maistu. Moka komandų, gražiai eina vedamas su pavadžiu. Kastruotas, skiepytas, ženklintas. Amžius apie 6 m. Pratęs būti narvelyje. Stengiasi visus reikalus atlikti lauke, bet visko pasitaiko. Nemėgsta procedūrų, bet leidžiasi uždėti antsnukį.",
   "bioEn": null,
-  "sourceUpdatedAt": "2026-11-27T09:01:57Z",
+  "sourceUpdatedAt": "2026-11-19T07:46:39Z",
+  "shelter": {
+   "id": "sos-gyvunailt",
+   "name": "VšĮ SOS gyvūnai",
+   "city": "Vilnius",
+   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
+   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
+  }
+ },
+ {
+  "id": "sos-gyvunai:1703",
+  "url": "https://sos-gyvunai.lt/getsbis/",
+  "source": "sos-gyvunai",
+  "name": "Getsbis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://sos-gyvunai.lt/wp-content/uploads/1c82504b-98be-49ad-9f8b-ed8d7daa2e02.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Dovanojami gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "VIDEO – https://fb.watch/G3tJQnV8gm/ Tai labai meilus žmogui katinėlis, pats lipa ant kelių, noriai būna ant rankų. Nori prisiglausti, sekioja visur ir tiesiog nori būti kartu . Su katėmis patelėmis bendrauja gražiai, tačiau dėl FIV viruso* geriausia būtų, kad gyventų su kita šį virusą turinčia kate, arba vienas. Getsbis atvyko pas mus dar sausio pradžioj, prieš didžiuosius šalčius. Katinukas atklydo į žmonių kiemą, pastebėjus koks jis draugiškas, bet tuo pačiu pavargęs ir žmonės skubiai kreipėsi į mus. Taip senukas atsidūrė mūsų prieglaudoje – amžius ~10 metų – skiepytas, čipuotas – kastruotas – FIV+ * Norime priminti, kad prieglaudoje turime visą kambarėlį nuostabių FIV+ katinėlių, o šis virusas nėra grėsmingas nei žmonėms, nei kitiems gyvūnams. Tarp kačių persiduoda per gilų įkandimą, todėl saugiausia yra nelaikyti sveikų kačių su turinčiomis virusą. Specialaus gydymo nereikalauja, tiesiog virusą turinčių kačių imunitetas yra silpnesnis, todėl ypač svarbu užtikrinti ramybę, kokybišką maistą ir įdėmesnę sveikatos profilaktiką, t.y. beveik tą patį ką turėtų gauti kiekvienas gyvūnas",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-09-19T09:48:01Z",
   "shelter": {
    "id": "sos-gyvunailt",
    "name": "VšĮ SOS gyvūnai",
@@ -34927,15 +34851,15 @@
   "url": "https://sos-gyvunai.lt/giria/",
   "source": "sos-gyvunai",
   "name": "Giria",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/3c78215b-d13a-4bad-a4d7-f6392918baaf.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -34943,7 +34867,7 @@
   "medical": {
    "chipped": null,
    "vaccinated": null,
-   "neutered": true
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -34965,7 +34889,7 @@
   "url": "https://sos-gyvunai.lt/cukraus-vata/",
   "source": "sos-gyvunai",
   "name": "Cukraus Vata",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/c1.jpg"
@@ -34973,15 +34897,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės senjorės",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35003,23 +34927,23 @@
   "url": "https://sos-gyvunai.lt/bijola/",
   "source": "sos-gyvunai",
   "name": "Bijola",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/fd0e8d1e-a50e-4f89-803c-5685985dfa0c.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės senjorės",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35041,7 +34965,7 @@
   "url": "https://sos-gyvunai.lt/tevukas/",
   "source": "sos-gyvunai",
   "name": "Tėvukas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/632261709_1903230783666779_591480707819917411_n.jpg"
@@ -35049,15 +34973,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35079,7 +35003,7 @@
   "url": "https://sos-gyvunai.lt/skailis/",
   "source": "sos-gyvunai",
   "name": "Skalis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/ea698830-1531-40a8-b9f3-f0b79fc2819c.jpg"
@@ -35087,15 +35011,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35117,7 +35041,7 @@
   "url": "https://sos-gyvunai.lt/seras/",
   "source": "sos-gyvunai",
   "name": "Seras",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1709733037297-image-2.jpg"
@@ -35125,15 +35049,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2016.06.01.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35155,7 +35079,7 @@
   "url": "https://sos-gyvunai.lt/ovis/",
   "source": "sos-gyvunai",
   "name": "Ovis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/652754739_1619548679329803_1612143210358372105_n.jpg"
@@ -35163,15 +35087,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2014.08.08",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35193,7 +35117,7 @@
   "url": "https://sos-gyvunai.lt/simba/",
   "source": "sos-gyvunai",
   "name": "Simba",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/631796975_2130991267655203_8734911143378466077_n.jpg"
@@ -35201,7 +35125,7 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2017.10.21",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -35231,7 +35155,7 @@
   "url": "https://sos-gyvunai.lt/reiven/",
   "source": "sos-gyvunai",
   "name": "Reiven",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/373daa0b-6250-4229-bfed-d8b0f5223445.jpg"
@@ -35239,15 +35163,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35269,7 +35193,7 @@
   "url": "https://sos-gyvunai.lt/olafas/",
   "source": "sos-gyvunai",
   "name": "Olafas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1718613600425-365465072_6805859429445019_2412185873991437426_n.jpg"
@@ -35277,15 +35201,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35307,7 +35231,7 @@
   "url": "https://sos-gyvunai.lt/niv/",
   "source": "sos-gyvunai",
   "name": "Niv",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_6801-copy-scaled.jpg"
@@ -35315,15 +35239,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2015.06.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35345,7 +35269,7 @@
   "url": "https://sos-gyvunai.lt/max/",
   "source": "sos-gyvunai",
   "name": "Max",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1750399777857-504773703_1755668628358760_1958703471570703832_n.jpg"
@@ -35353,15 +35277,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": "2020.10.15",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35383,7 +35307,7 @@
   "url": "https://sos-gyvunai.lt/marsas/",
   "source": "sos-gyvunai",
   "name": "Marsas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1722249487972-451866842_363678536577535_1345622628186402833_n-1.jpg"
@@ -35391,15 +35315,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2019.05.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35421,7 +35345,7 @@
   "url": "https://sos-gyvunai.lt/maksas/",
   "source": "sos-gyvunai",
   "name": "Maksas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_7664-copy-scaled.jpg"
@@ -35429,15 +35353,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
-  "size": "medium",
+  "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35459,7 +35383,7 @@
   "url": "https://sos-gyvunai.lt/luna/",
   "source": "sos-gyvunai",
   "name": "Luna",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1709720392216-DSCF2105-scaled.jpg"
@@ -35467,15 +35391,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2017.01.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35497,7 +35421,7 @@
   "url": "https://sos-gyvunai.lt/loko/",
   "source": "sos-gyvunai",
   "name": "Loko",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/fd69b3d5-b6de-42bc-a3c4-d151fea0db3d.jpg"
@@ -35505,15 +35429,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": "2021.07.20",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35535,7 +35459,7 @@
   "url": "https://sos-gyvunai.lt/lentis/",
   "source": "sos-gyvunai",
   "name": "Lentis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1722239419780-434397414_7693233827374237_8582258391964170521_n.jpg"
@@ -35543,15 +35467,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": "2020.10.10",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35573,7 +35497,7 @@
   "url": "https://sos-gyvunai.lt/kutukas/",
   "source": "sos-gyvunai",
   "name": "Kutukas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/844976023_2952731408412210_1621357650665359898_n.jpg"
@@ -35581,15 +35505,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35611,7 +35535,7 @@
   "url": "https://sos-gyvunai.lt/kokosas/",
   "source": "sos-gyvunai",
   "name": "Kokosas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/615202498_913012467903358_8142323561108597915_n-1.jpg"
@@ -35619,15 +35543,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2018.01.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35645,27 +35569,65 @@
   }
  },
  {
+  "id": "sos-gyvunai:1341",
+  "url": "https://sos-gyvunai.lt/kastonas/",
+  "source": "sos-gyvunai",
+  "name": "Kaštonas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://sos-gyvunai.lt/wp-content/uploads/DSC_7027-copy-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Dovanojami gyvūnai",
+  "sex": null,
+  "ageLt": "2014.12.23",
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Kaštonas turi vieną didelę svajonę. Jo svajonė – žmogus. Kaštonas pasaulio nemato akimis, bet jo klausos ir uoslės talentai yra tokie aštrūs, kad pasaulis jam atsiskleidžia ne mažiau ryškiai. Taip, Kaštonas nejaunas ir negali pasigirti puikia sveikata, tačiau jei atversite jam savo duris, Kaštonas jus nustebins: Didžiule širdimi: Jis trokšta žmogaus meilės ir dėmesio labiau už viską pasaulyje. Kiekvienas prisilietimas, kiekvienas geras žodis – jam yra visas pasaulis. Energija ir žaismingumu: Jis mėgsta pasivaikščioti, tyrinėti aplinką ir žaisti, kiek leidžia jėgos. Puikios manieros: Kaštonas – tikras džentelmenas. Jis stengiasi reikalus atlikti tik lauke. Jam svetima agresija: niekada neurzgė ir nėra bandęs kąsti. Tobula klausa ir uosle: Šie pojūčiai jam atstoja akis. Jis girdi kiekvieną žingsnį ir užuodžia nuotaiką, todėl pro jį nepraeisite nepastebėtas. Gyvenimas su aklu šunimi reikalauja šiek tiek daugiau kantrybės. Reikės jam padėti susipažinti su nauja aplinka, išmokti saugius namų kelius, nepalikti kliūčių ten, kur jų anksčiau nebuvo. Tačiau šunys stebina. Jie prisitaiko daug geriau, nei kartais atrodo. Aklas/dalinai aklas. Gimimo data: 2014.12.23 Kastruotas, skiepytas.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2026-11-19T07:30:48Z",
+  "shelter": {
+   "id": "sos-gyvunailt",
+   "name": "VšĮ SOS gyvūnai",
+   "city": "Vilnius",
+   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
+   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
+  }
+ },
+ {
   "id": "sos-gyvunai:1330",
   "url": "https://sos-gyvunai.lt/ipa/",
   "source": "sos-gyvunai",
   "name": "Ipa",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/ip2.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Šunys suaugę",
+  "sex": null,
+  "ageLt": "2019.10.07",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35687,7 +35649,7 @@
   "url": "https://sos-gyvunai.lt/hugo/",
   "source": "sos-gyvunai",
   "name": "Hugo",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1726156162615-457630377_1079030393646290_9051457354227139049_n.jpg"
@@ -35695,15 +35657,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": "2020.01.01, tiksliai sunku pasakyti.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35725,7 +35687,7 @@
   "url": "https://sos-gyvunai.lt/gotas/",
   "source": "sos-gyvunai",
   "name": "Gotas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1720609987696-449783257_10231338266895791_1416806116592975729_n.jpg"
@@ -35733,15 +35695,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2014.01.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35763,7 +35725,7 @@
   "url": "https://sos-gyvunai.lt/borgis/",
   "source": "sos-gyvunai",
   "name": "Borgis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1750401491699-506812815_1390720562163295_7154074173541336947_n.jpg"
@@ -35771,15 +35733,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35801,7 +35763,7 @@
   "url": "https://sos-gyvunai.lt/bimas/",
   "source": "sos-gyvunai",
   "name": "Bimas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_6767-copy-scaled.jpg"
@@ -35809,15 +35771,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2017.01.01.",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35839,7 +35801,7 @@
   "url": "https://sos-gyvunai.lt/baroniene-glorija/",
   "source": "sos-gyvunai",
   "name": "Baronienė Glorija",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/7791bd80-068e-4987-a0bb-a746ad0f7d72.jpg"
@@ -35847,15 +35809,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35877,7 +35839,7 @@
   "url": "https://sos-gyvunai.lt/bahama/",
   "source": "sos-gyvunai",
   "name": "Bahama",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/739312418_1028329713463407_3570991480024635237_n.jpg"
@@ -35885,15 +35847,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": "2023.01.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -35915,7 +35877,7 @@
   "url": "https://sos-gyvunai.lt/liolike-ir-bolike/",
   "source": "sos-gyvunai",
   "name": "Liolikė ir Bolikė",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/775106331_2209183753265738_2993538454620495886_n.jpg"
@@ -35923,7 +35885,7 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -35953,7 +35915,7 @@
   "url": "https://sos-gyvunai.lt/mafinas/",
   "source": "sos-gyvunai",
   "name": "Mafinas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1744799134547-482697499_1064193588856079_3122215559025073506_n.jpg"
@@ -35961,11 +35923,11 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2018.04.19",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
-  "inShelterLt": "nuo 2022.09.24",
+  "inShelterLt": null,
   "medical": {
    "chipped": null,
    "vaccinated": null,
@@ -35991,7 +35953,7 @@
   "url": "https://sos-gyvunai.lt/sansas/",
   "source": "sos-gyvunai",
   "name": "Šansas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/802241777_1535267531620042_3373488181341542776_n.jpg"
@@ -35999,15 +35961,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36029,7 +35991,7 @@
   "url": "https://sos-gyvunai.lt/zahra/",
   "source": "sos-gyvunai",
   "name": "Zahra",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/06403a02-e690-4b6e-919b-ff4bd7e2dcfa.jpg"
@@ -36037,15 +35999,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2019.05.09",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36067,7 +36029,7 @@
   "url": "https://sos-gyvunai.lt/ciarlis/",
   "source": "sos-gyvunai",
   "name": "Čiarlis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1690902352023-DSCF0083-scaled.jpg"
@@ -36075,15 +36037,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": "2016.12.12",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36105,7 +36067,7 @@
   "url": "https://sos-gyvunai.lt/sagis/",
   "source": "sos-gyvunai",
   "name": "Sagis",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1745998486114-491023346_1217662206624374_8748119137745463428_n.jpg"
@@ -36113,15 +36075,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36143,7 +36105,7 @@
   "url": "https://sos-gyvunai.lt/porteris/",
   "source": "sos-gyvunai",
   "name": "Porteris",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/po4.jpg"
@@ -36151,15 +36113,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys suaugę",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36181,7 +36143,7 @@
   "url": "https://sos-gyvunai.lt/siksnys/",
   "source": "sos-gyvunai",
   "name": "Šikšnys",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1688493418803-siksnys-scaled.jpeg"
@@ -36189,15 +36151,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės suaugusios",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36219,23 +36181,23 @@
   "url": "https://sos-gyvunai.lt/eldorado/",
   "source": "sos-gyvunai",
   "name": "Eldorado",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1727687974040-ad3732ef-1868-4d43-a0ba-1cc2fca125b2.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "male",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": "2020.03.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36257,15 +36219,15 @@
   "url": "https://sos-gyvunai.lt/ogis/",
   "source": "sos-gyvunai",
   "name": "Ogis",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/877ce37b-f720-4b5c-b087-ee708df9c65c.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "male",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
@@ -36295,23 +36257,23 @@
   "url": "https://sos-gyvunai.lt/tafel/",
   "source": "sos-gyvunai",
   "name": "Tafel",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710323675846-DSCF3325-scaled.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "male",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36333,7 +36295,7 @@
   "url": "https://sos-gyvunai.lt/reta/",
   "source": "sos-gyvunai",
   "name": "Reta",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710323584182-DSCF3318-1-scaled.jpg"
@@ -36341,15 +36303,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės suaugusios",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36371,7 +36333,7 @@
   "url": "https://sos-gyvunai.lt/pinavija/",
   "source": "sos-gyvunai",
   "name": "Pinavija",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710323440667-DSCF3291-scaled.jpg"
@@ -36379,15 +36341,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės suaugusios",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36409,7 +36371,7 @@
   "url": "https://sos-gyvunai.lt/moneta/",
   "source": "sos-gyvunai",
   "name": "Moneta",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710322889008-DSCF3341-scaled.jpg"
@@ -36417,15 +36379,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės suaugusios",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36447,23 +36409,23 @@
   "url": "https://sos-gyvunai.lt/diuma/",
   "source": "sos-gyvunai",
   "name": "Diuma",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1726156385661-418d7bb0-fe40-40aa-bdf3-821c03e60268.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės suaugusios",
+  "sex": null,
+  "ageLt": "2023.10.01",
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36485,7 +36447,7 @@
   "url": "https://sos-gyvunai.lt/nera/",
   "source": "sos-gyvunai",
   "name": "Nera",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710323770399-DSCF3331-scaled.jpg"
@@ -36493,15 +36455,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės suaugusios",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36523,7 +36485,7 @@
   "url": "https://sos-gyvunai.lt/estrela/",
   "source": "sos-gyvunai",
   "name": "Estrela",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710322979006-DSCF3343-scaled.jpg"
@@ -36531,15 +36493,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės senjorės",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36561,23 +36523,23 @@
   "url": "https://sos-gyvunai.lt/viada/",
   "source": "sos-gyvunai",
   "name": "Viada",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/3b6253ad-a0cf-4892-8d99-d24c3df971c5.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "female",
-  "ageLt": "Katės senjorės",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36599,23 +36561,23 @@
   "url": "https://sos-gyvunai.lt/fedia/",
   "source": "sos-gyvunai",
   "name": "Fedia",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/86c78c9c-5d27-4e81-8d59-17b40b1e689a.jpg"
   ],
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
-  "sex": "male",
-  "ageLt": "Katės senjorės",
+  "sex": null,
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36633,11 +36595,49 @@
   }
  },
  {
+  "id": "sos-gyvunai:983",
+  "url": "https://sos-gyvunai.lt/gelezinis-ledis/",
+  "source": "sos-gyvunai",
+  "name": "Geležinis Ledis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710323052702-DSCF3329-scaled.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Dovanojami gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": "Laukinukų kambariuko gyventoja. Katė baili, neprisleidžia žmogaus. Gim.d. 2015 metai. Sterilizuota, skiepyta, ženklinta.",
+  "bioEn": null,
+  "sourceUpdatedAt": "2025-11-25T13:33:34Z",
+  "shelter": {
+   "id": "sos-gyvunailt",
+   "name": "VšĮ SOS gyvūnai",
+   "city": "Vilnius",
+   "address": "Eglinės g. 17, Keidžių k., LT-17244, Šalčininkų raj.",
+   "url": "https://globok.lt/prieglaudos/sos-gyvunailt"
+  }
+ },
+ {
   "id": "sos-gyvunai:981",
   "url": "https://sos-gyvunai.lt/latve/",
   "source": "sos-gyvunai",
   "name": "Latvė",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710323392736-DSCF3311-scaled.jpg"
@@ -36645,15 +36645,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės senjorės",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36675,7 +36675,7 @@
   "url": "https://sos-gyvunai.lt/koko/",
   "source": "sos-gyvunai",
   "name": "Koko",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710323526878-DSCF3280-scaled.jpg"
@@ -36683,15 +36683,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės senjorės",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36713,7 +36713,7 @@
   "url": "https://sos-gyvunai.lt/neme/",
   "source": "sos-gyvunai",
   "name": "Nemė",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1710324059687-DSCF3283-scaled.jpg"
@@ -36721,15 +36721,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės senjorės",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36751,7 +36751,7 @@
   "url": "https://sos-gyvunai.lt/katyte/",
   "source": "sos-gyvunai",
   "name": "Katytė",
-  "species": "cat",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/store_01G35S5S2996DK60C9P4RR0NVT_assets_1688492727135-katyte-2-scaled.jpeg"
@@ -36759,15 +36759,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Katės senjorės",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36789,7 +36789,7 @@
   "url": "https://sos-gyvunai.lt/alyta/",
   "source": "sos-gyvunai",
   "name": "Alyta",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/b35dc0d4-39d7-4966-9863-21cf1cfe5acf.jpg"
@@ -36797,15 +36797,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -36827,7 +36827,7 @@
   "url": "https://sos-gyvunai.lt/albinas/",
   "source": "sos-gyvunai",
   "name": "Albinas",
-  "species": "dog",
+  "species": null,
   "city": "Vilnius",
   "photos": [
    "https://sos-gyvunai.lt/wp-content/uploads/DSC_7629-copy-scaled.jpg"
@@ -36835,15 +36835,15 @@
   "status": "available",
   "statusEvidence": "Dovanojami gyvūnai",
   "sex": null,
-  "ageLt": "Šunys senjorai",
+  "ageLt": null,
   "ageEn": null,
   "size": null,
   "waitingDays": null,
   "inShelterLt": null,
   "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": true
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
   },
   "compatibilityTagsLt": [],
   "compatibilityTagsEn": [],
@@ -48135,44 +48135,6 @@
   }
  },
  {
-  "id": "keturkojo-viltis:99",
-  "url": "https://keturkojo-viltis.lt/gyvunai/luna/",
-  "source": "keturkojo-viltis",
-  "name": "Luna",
-  "species": "dog",
-  "city": "Alytus",
-  "photos": [
-   "https://keturkojo-viltis.lt/wp-content/uploads/2026/10/Luna-1.webp"
-  ],
-  "status": "available",
-  "statusEvidence": "Ieško namų",
-  "sex": "female",
-  "ageLt": "Spėjama gimimo data: 2023-11-01",
-  "ageEn": null,
-  "size": null,
-  "waitingDays": null,
-  "inShelterLt": "nuo 2026 m.",
-  "medical": {
-   "chipped": true,
-   "vaccinated": true,
-   "neutered": null
-  },
-  "compatibilityTagsLt": [],
-  "compatibilityTagsEn": [],
-  "personalityTraitsLt": [],
-  "personalityTraitsEn": [],
-  "bioLt": "Gimimo data – 2023-11-01 Ūgis – 35 cm | Svoris – 11 kg. Ženklinta, skiepyta, sterelizuota Luna nedidukė, linksma, gražiai nuaugusi ir žmogaus draugijos labai pasiilgusi šunytė. ❤️‍🩹 Naujus žmones Luna pasitinka smalsiai ir gerai nusiteikusi. Kiek atsargesnė ji būna sutikusi nepažįstamą vyrą, gali sustingti ar aploti, tačiau ramiai pakalbinta greitai atsipalaiduoja. Mielai lekia į pasivaikščiojimus su kiekvienu prieglaudos lankytoju. 💨 Žmogaus dėmesys Lunai yra labai svarbus resursas. To ji net šiek tiek pavydi kitiems šunims. Jei šalia glostomas kitas šunelis, ji būtinai prieina arčiau, glaustosi ir subtiliai primena: „O aš? Ar manęs nepastebėjai?“. 🥰 Žmogaus artumą ji labai mėgsta ir mielai mėgaujasi kiekviena jai skirta dėmesio minute. Kol kas Luna nėra pati tvarkingiausia viduje, todėl persikėlus į namus reikės trupučio kantrybės mokantis namų švaros taisyklių. Tačiau tikrai nereikėtų to išsigąsti, tai lengvai ir greitai praktikuojami įgūdžiai. Gyvena su likimo broliu ir su kai kuriais šunimis sutaria puikiai. Anksčiau yra gyvenusi su katėmis. Į prieglaudą Luna atvyko 2026 m. gegužę. Ji buvo paimta iš buto Alytuje, padedant ugniagesiams ir policijos pareigūnams. Ten kartu su dviem katinėliais ilgą laiką buvo palikta be žmogaus priežiūros. Lunai labai norėtųsi rasti žmogų, kuris ne tik pamils jos mielą ir smalsią pusę, bet ir bus pasiruošęs kantriai padėti ten, kur jai dar trūksta įgūdžių ar pasitikėjimo. ❤️‍🩹",
-  "bioEn": null,
-  "sourceUpdatedAt": "2026-11-09T12:19:44Z",
-  "shelter": {
-   "id": "keturkojo-viltislt",
-   "name": "Asociacija Keturkojo viltis",
-   "city": "Alytus",
-   "address": "Stoties g. 12, Alytus, 62441 Alytaus m. sav.",
-   "url": "https://globok.lt/prieglaudos/keturkojo-viltislt"
-  }
- },
- {
   "id": "keturkojo-viltis:93",
   "url": "https://keturkojo-viltis.lt/gyvunai/luka/",
   "source": "keturkojo-viltis",
@@ -52730,6 +52692,1374 @@
    "city": "Mažeikiai",
    "address": "Mažeikių r. sav., Mažeikių sen., Mažeikiai, Vytauto g. 10, LT-89219",
    "url": "https://globok.lt/prieglaudos/mazeikiugyvunailt"
+  }
+ },
+ {
+  "id": "mazijausmai:liepsnele",
+  "url": "https://mazijausmai.lt/liepsnele/",
+  "source": "mazijausmai",
+  "name": "Liepsnelė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound551178545470449814-1-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:orionas",
+  "url": "https://mazijausmai.lt/orionas/",
+  "source": "mazijausmai",
+  "name": "Orionas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound4540238662853067588-2-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:saris",
+  "url": "https://mazijausmai.lt/saris/",
+  "source": "mazijausmai",
+  "name": "Saris",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound5931104054772487867-2-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:micaras",
+  "url": "https://mazijausmai.lt/micaras/",
+  "source": "mazijausmai",
+  "name": "Micaras",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound6502988481695326838-2-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:turkis",
+  "url": "https://mazijausmai.lt/turkis/",
+  "source": "mazijausmai",
+  "name": "Turkis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound7654246363881569183-5-1024x757.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:topazas",
+  "url": "https://mazijausmai.lt/topazas/",
+  "source": "mazijausmai",
+  "name": "Topazas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/03/inbound1283640997034901766-3-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:alantas",
+  "url": "https://mazijausmai.lt/alantas/",
+  "source": "mazijausmai",
+  "name": "Alantas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/05/Alantas_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:bite",
+  "url": "https://mazijausmai.lt/bite/",
+  "source": "mazijausmai",
+  "name": "Bitė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2021/05/inbound8839310238021936674-1-1024x766.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:lordukas",
+  "url": "https://mazijausmai.lt/lordukas/",
+  "source": "mazijausmai",
+  "name": "Lordukas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/12/Lordukas_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:alkas",
+  "url": "https://mazijausmai.lt/alkas/",
+  "source": "mazijausmai",
+  "name": "Alkas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/11/Alkas_1600x1200-1-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:tiche",
+  "url": "https://mazijausmai.lt/tiche/",
+  "source": "mazijausmai",
+  "name": "Tichė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2025/02/Tiche1_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:kurmis",
+  "url": "https://mazijausmai.lt/kurmis/",
+  "source": "mazijausmai",
+  "name": "Kurmis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/11/Kurmis_1200x900-1024x770.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:arielis",
+  "url": "https://mazijausmai.lt/arielis/",
+  "source": "mazijausmai",
+  "name": "Arielis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/12/Arielis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:klivija",
+  "url": "https://mazijausmai.lt/klivija/",
+  "source": "mazijausmai",
+  "name": "Klivija",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2025/11/Klivija3_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:kiras",
+  "url": "https://mazijausmai.lt/kiras/",
+  "source": "mazijausmai",
+  "name": "Kiras",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2025/12/Kiras3_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:ramunele",
+  "url": "https://mazijausmai.lt/ramunele/",
+  "source": "mazijausmai",
+  "name": "Ramunėlė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/05/Ramunele4_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:amaja",
+  "url": "https://mazijausmai.lt/amaja/",
+  "source": "mazijausmai",
+  "name": "Amaja",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/12/Amaja_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:armita",
+  "url": "https://mazijausmai.lt/armita/",
+  "source": "mazijausmai",
+  "name": "Armita",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2024/12/Armita_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:zumis",
+  "url": "https://mazijausmai.lt/zumis/",
+  "source": "mazijausmai",
+  "name": "Zumis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2025/11/Zumis2_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:alste",
+  "url": "https://mazijausmai.lt/alste/",
+  "source": "mazijausmai",
+  "name": "Alstė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Alste_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:kovas",
+  "url": "https://mazijausmai.lt/kovas/",
+  "source": "mazijausmai",
+  "name": "Kovas",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/07/Kovas2_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:zibute",
+  "url": "https://mazijausmai.lt/zibute/",
+  "source": "mazijausmai",
+  "name": "Žibutė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/06/Zibute_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:jaspis",
+  "url": "https://mazijausmai.lt/jaspis/",
+  "source": "mazijausmai",
+  "name": "Jaspis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/07/Jaspis-1200x900-1-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:vakaris",
+  "url": "https://mazijausmai.lt/vakaris/",
+  "source": "mazijausmai",
+  "name": "Vakaris",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/05/Vakaris_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:alksnis",
+  "url": "https://mazijausmai.lt/alksnis/",
+  "source": "mazijausmai",
+  "name": "Alksnis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/08/Uosis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:gluosnis",
+  "url": "https://mazijausmai.lt/gluosnis/",
+  "source": "mazijausmai",
+  "name": "Gluosnis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/08/Gluosnis-1200x900-1-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:guoba",
+  "url": "https://mazijausmai.lt/guoba/",
+  "source": "mazijausmai",
+  "name": "Guoba",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Guoba2_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:tuopa",
+  "url": "https://mazijausmai.lt/tuopa/",
+  "source": "mazijausmai",
+  "name": "Tuopa",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/08/Tuopa_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:apis",
+  "url": "https://mazijausmai.lt/apis/",
+  "source": "mazijausmai",
+  "name": "Apis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/09/Apis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:berzelis",
+  "url": "https://mazijausmai.lt/berzelis/",
+  "source": "mazijausmai",
+  "name": "Berželis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/09/Berzelis3_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:uosis",
+  "url": "https://mazijausmai.lt/uosis/",
+  "source": "mazijausmai",
+  "name": "Uosis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/09/Uosis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:liepa",
+  "url": "https://mazijausmai.lt/liepa/",
+  "source": "mazijausmai",
+  "name": "Liepa",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Liepa_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:mumis",
+  "url": "https://mazijausmai.lt/mumis/",
+  "source": "mazijausmai",
+  "name": "Mumis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Mumis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:acis",
+  "url": "https://mazijausmai.lt/acis/",
+  "source": "mazijausmai",
+  "name": "Ačis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Acis2_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:sermuksnis",
+  "url": "https://mazijausmai.lt/sermuksnis/",
+  "source": "mazijausmai",
+  "name": "Šermukšnis",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Sermuksnis_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
+  }
+ },
+ {
+  "id": "mazijausmai:brukne",
+  "url": "https://mazijausmai.lt/brukne/",
+  "source": "mazijausmai",
+  "name": "Bruknė",
+  "species": null,
+  "city": "Vilnius",
+  "photos": [
+   "https://mazijausmai.lt/wp-content/uploads/2026/10/Brukne_1200x900-1024x768.jpg"
+  ],
+  "status": "available",
+  "statusEvidence": "Namų ieškantys gyvūnai",
+  "sex": null,
+  "ageLt": null,
+  "ageEn": null,
+  "size": null,
+  "waitingDays": null,
+  "inShelterLt": null,
+  "medical": {
+   "chipped": null,
+   "vaccinated": null,
+   "neutered": null
+  },
+  "compatibilityTagsLt": [],
+  "compatibilityTagsEn": [],
+  "personalityTraitsLt": [],
+  "personalityTraitsEn": [],
+  "bioLt": null,
+  "bioEn": null,
+  "sourceUpdatedAt": null,
+  "shelter": {
+   "id": "mazijausmailt",
+   "name": "VšĮ Maži jausmai",
+   "city": "Vilnius",
+   "address": "S. Stanevičiaus g. 44, Vilnius",
+   "url": "https://globok.lt/prieglaudos/mazijausmailt"
   }
  }
 ]
