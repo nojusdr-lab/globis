@@ -34,7 +34,7 @@ const ghost=(id,snap)=>snap?{id,name:snap.name,photos:snap.photo?[snap.photo]:[]
 
 // Reanimated + gesture-handler: the drag, snap-back and fly-out run on the UI thread, so a busy JS thread cannot make the card lag.
 const EASE_OUT=Easing.bezier(0.23,1,0.32,1);
-function SwipeSurface({pet,onSave,onPass,reduced,children}) {
+function SwipeSurface({pet,onSave,onPass,reduced,saveLabel,passLabel,children}) {
  const x=useSharedValue(0);
  const callbacks=useRef({});callbacks.current={pet,onSave,onPass};
  const commit=useCallback(right=>{const c=callbacks.current;(right?c.onSave:c.onPass)(c.pet);},[]);
@@ -56,8 +56,8 @@ function SwipeSurface({pet,onSave,onPass,reduced,children}) {
  const passStamp=useAnimatedStyle(()=>({opacity:interpolate(x.get(),[-THRESHOLD,0],[1,0],Extrapolation.CLAMP)}));
  return <GestureDetector gesture={pan}><Reanimated.View style={[{flex:1},card]}>
   {children}
-  <Reanimated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{left:16,borderColor:C.warm,transform:[{rotate:'-8deg'}]},saveStamp]}><Text style={[s.stampText,{color:C.warm}]}>IŠSAUGOTI</Text></Reanimated.View>
-  <Reanimated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{right:16,borderColor:C.ink2,transform:[{rotate:'8deg'}]},passStamp]}><Text style={[s.stampText,{color:C.ink2}]}>PRALEISTI</Text></Reanimated.View>
+  <Reanimated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{left:16,borderColor:C.warm,transform:[{rotate:'-8deg'}]},saveStamp]}><Text style={[s.stampText,{color:C.warm}]}>{saveLabel}</Text></Reanimated.View>
+  <Reanimated.View pointerEvents="none" accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={[s.stamp,{right:16,borderColor:C.ink2,transform:[{rotate:'8deg'}]},passStamp]}><Text style={[s.stampText,{color:C.ink2}]}>{passLabel}</Text></Reanimated.View>
  </Reanimated.View></GestureDetector>;
 }
 
@@ -141,7 +141,7 @@ function AppContent() {
        <View style={s.cardOverlay}><Text style={s.cardNameLight} numberOfLines={2}>{pending[1].name}</Text></View>
       </Photo>
      </View>:null}
-     <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced}>
+     <SwipeSurface key={top.id} pet={top} onSave={save} onPass={pass} reduced={reduced} saveLabel={t('IŠSAUGOTI','SAVE')} passLabel={t('PRALEISTI','PASS')}>
       <View style={[s.card,{flex:1}]}>
        <View style={{flex:1}} onLayout={e=>setPhotoH(Math.round(e.nativeEvent.layout.height))}>
        {photoH?<Photo lang={lang} pet={top} height={photoH} tapToBrowse>
