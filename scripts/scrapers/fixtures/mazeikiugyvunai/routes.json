@@ -1,0 +1,82 @@
+{
+  "https://gyvunuglobosdraugija.lt/robots.txt": {
+    "body": "<!doctype html><html></html>",
+    "headers": {
+      "content-type": "text/html"
+    }
+  },
+  "https://gyvunuglobosdraugija.lt/api/public/integrations/animals?page=1&adoptable=true": {
+    "body": {
+      "totalItems": 3,
+      "page": 1,
+      "itemsPerPage": 2,
+      "data": [
+        {
+          "id": 829,
+          "registrationDate": "2026-09-13",
+          "arrivalCircumstances": "Rastas prie namo",
+          "adoptable": true,
+          "animal": {
+            "id": 1829,
+            "name": "Kobra",
+            "type": "Cat",
+            "sex": "Male",
+            "birthDate": "2016-01-01",
+            "breed": "mišrūnė",
+            "furColor": "raina",
+            "description": "",
+            "photoUrl": "https://fra1.digitaloceanspaces.com/images/production/829-large.jpg",
+            "thumbnailUrl": "t"
+          },
+          "outcome": null
+        },
+        {
+          "id": 830,
+          "registrationDate": "2026-09-13",
+          "arrivalCircumstances": "Rastas prie namo",
+          "adoptable": true,
+          "animal": {
+            "id": 1,
+            "name": "Reksas",
+            "type": "Dog",
+            "sex": "Female",
+            "birthDate": null,
+            "description": " Draugiškas ",
+            "photoUrl": null
+          },
+          "outcome": null
+        }
+      ]
+    }
+  },
+  "https://gyvunuglobosdraugija.lt/api/public/integrations/animals?page=2&adoptable=true": {
+    "body": {
+      "totalItems": 3,
+      "page": 2,
+      "itemsPerPage": 2,
+      "data": [
+        {
+          "id": 831,
+          "registrationDate": "2026-09-13",
+          "arrivalCircumstances": "Rastas prie namo",
+          "adoptable": true,
+          "animal": {
+            "id": 1831,
+            "name": "Išvykęs",
+            "type": "Cat",
+            "sex": "Male",
+            "birthDate": "2016-01-01",
+            "breed": "mišrūnė",
+            "furColor": "raina",
+            "description": "",
+            "photoUrl": "https://fra1.digitaloceanspaces.com/images/production/831-large.jpg",
+            "thumbnailUrl": "t"
+          },
+          "outcome": {
+            "type": "Adopted"
+          }
+        }
+      ]
+    }
+  }
+}

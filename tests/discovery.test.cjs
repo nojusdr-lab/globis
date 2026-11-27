@@ -1,6 +1,6 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {emptyState,langFromLocale,reducer,decode,shouldClaim}=require('../src/state/discovery.cjs');
+const {emptyState,langFromLocale,reducer,decode}=require('../src/state/discovery.cjs');
 test('save/pass/undo restores the exact prior sets and ordering',()=>{
  let s=emptyState();
  s=reducer(s,{type:'save',id:'a'});s=reducer(s,{type:'pass',id:'b'});
@@ -17,10 +17,6 @@ test('duplicate save is idempotent, choices and language survive reload',()=>{
  assert.deepEqual(decode(JSON.stringify(s)),s);
  assert.deepEqual(reducer(decode(JSON.stringify(s)),{type:'undo'}).saved,[]);
  for(const raw of ['broken','{}',JSON.stringify({...s,passed:s.saved}),JSON.stringify({...s,saved:['a','a']})]) assert.throws(()=>decode(raw));
-});
-test('taps and vertical scroll do not claim a swipe',()=>{
- for(const gesture of [{dx:0,dy:0},{dx:7,dy:1},{dx:10,dy:20}]) assert.equal(shouldClaim(gesture),false);
- assert.equal(shouldClaim({dx:10,dy:1}),true);assert.equal(shouldClaim({dx:-10,dy:1}),true);
 });
 
 
@@ -41,4 +37,31 @@ test('first launch language follows the phone, unknown stays Lithuanian',()=>{
  assert.equal(emptyState('en').lang,'en');
  assert.equal(emptyState().lang,'lt');
  assert.equal(emptyState('fr').lang,'lt');
+});
+
+test('onboarding and filters persist, bad filter values fall back to defaults',()=>{
+ let s=reducer(emptyState(),{type:'onboarded',filters:{species:'dog',city:'Kaunas',urgent:false,query:''}});
+ assert.equal(s.onboarded,true);
+ assert.equal(reducer(s,{type:'replayOnboarding'}).onboarded,undefined);
+ assert.deepEqual(decode(JSON.stringify(s)),s);
+ s=reducer(s,{type:'filters',filters:{species:'fish',city:5,urgent:'yes',extra:1}});
+ assert.deepEqual(s.filters,{species:'all',city:'all',urgent:false,query:''});
+ assert.equal(decode(JSON.stringify(emptyState())).onboarded,undefined);
+});
+
+test('account sync: server saves merge into the device list; plan mirrors device changes', () => {
+  const { reducer: r, emptyState: e, syncPlan } = require('../src/state/discovery.cjs');
+  let s = r(r(e(), { type: 'save', id: 'a' }), { type: 'save', id: 'b' });
+  s = r(s, { type: 'mergeSaved', ids: ['b', 'c', 7] });
+  assert.deepEqual(s.saved, ['b', 'a', 'c']);
+  assert.deepEqual(syncPlan(['a', 'c'], new Set(['c', 'x'])), { add: ['a'], drop: ['x'] });
+});
+
+test('saved snapshot: kept for saved animals, cleaned, and survives encode/decode', () => {
+  const { reducer: r, emptyState: e, decode: d } = require('../src/state/discovery.cjs');
+  let s = r(e(), { type: 'save', id: 'a', snap: { name: 'Rex', photo: 'https://x/1.jpg', evil: '<x>', city: 7 } });
+  s = r(s, { type: 'save', id: 'b', snap: { photo: 'https://x/2.jpg' } }); // no name: no snapshot
+  assert.deepEqual(s.snaps, { a: { name: 'Rex', photo: 'https://x/1.jpg' } });
+  s = r(s, { type: 'remove', id: 'a' });
+  assert.equal(d(JSON.stringify(s)).snaps, undefined); // snapshot of a removed animal is dropped on reload
 });

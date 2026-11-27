@@ -22,9 +22,13 @@
 // Status: the archive heading "Dovanojami gyvūnai" goes through normalize.status(). Any extra
 // words on a card (e.g. a badge, or "NAME (rezervuota)") go through normalize.status() and win
 // with their own evidence; unrecognised extra words make the status unknown.
-// Species, age, size, health, description are only on detail pages (not probed): v1 leaves them
-// null and does no per-animal requests. Requests per run: robots.txt + 1 listing page.
+// Detail pages /gyvunai/<slug>/ (checked 2026-11-18) have table.animals-single-table rows
+// "Gimimo data / Lytis / Kastracija / Ženklinta mikrochema / Skiepų informacija:" and the
+// description in .animals-single__description (often empty). We read them: one GET per animal,
+// cached by page hash. No species row: species stays null. A failed detail page keeps card facts.
+// Requests per run: robots.txt + listing page(s) + one per animal.
 const N = require('../lib/normalize.cjs');
+const L = require('../lib/labels.cjs');
 const H = require('../lib/html.cjs');
 
 const PARSER_VERSION = 'rozinepedute-1';
@@ -74,6 +78,7 @@ function parseListing(html, baseUrl) {
       name,
       note: [note, extra].filter(Boolean).join(' ') || null,
       gender: gender ?? null,
+      time: N.cleanText($card.find('.card-animals__time span').first().text()) || null,
       photo: img.length ? H.imgSrc(img, baseUrl) : null,
     });
   });
@@ -97,6 +102,18 @@ function cardStatus(card, listStatus) {
   if (!card.note) return listStatus;
   const own = N.status(card.note);
   return own.status !== 'unknown' ? own : { status: 'unknown', statusEvidence: null };
+}
+
+const DETAIL_PARSER = 'rozinepedute-detail-1';
+
+function parseDetail(body) {
+  const $ = H.load(body);
+  const pairs = $('table.animals-single-table tr').map((_, tr) => {
+    const td = $(tr).find('td');
+    return td.length === 2 ? [[$(td[0]).text(), $(td[1]).text()]] : [];
+  }).get();
+  const bio = N.cleanText($('.animals-single__description').first().text());
+  return { ...L.fromPairs(pairs), bio_lt: bio || null };
 }
 
 module.exports = {
@@ -154,14 +171,22 @@ module.exports = {
         chipped: null,
         photos: c.photo ? [c.photo] : [],
         bio_lt: null,
+        in_shelter: c.time, // "Prieglaudoje: 1mėn. 14d." on the card, as of the run date
         status: st.status,
         statusEvidence: st.statusEvidence,
         sourceUpdatedAt: null,
       });
+    }
+    for (const a of animals) {
+      let res;
+      try { res = await fetcher.get(a.sourceUrl); }
+      catch (e) { log(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
+      const d = await cache.getOrParse(res.hash, DETAIL_PARSER, () => parseDetail(res.body));
+      for (const k of ['species', 'sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt']) if (d[k] != null) a[k] = d[k];
     }
     log(`rozinepedute: ${animals.length} animals, ${skipped.length} skipped, ${pages.length} page(s)`);
     return { animals, skipped, complete };
   },
 };
 
-module.exports._test = { parseListing, splitName };
+module.exports._test = { parseListing, splitName, parseDetail };

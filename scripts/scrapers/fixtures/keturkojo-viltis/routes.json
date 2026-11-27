@@ -1,0 +1,59 @@
+{
+  "https://keturkojo-viltis.lt/robots.txt": {
+    "body": "User-agent: *\nAllow: /\nDisallow: /wp-admin/\nDisallow: /?s=\n"
+  },
+  "https://keturkojo-viltis.lt/wp-json/wp/v2/rusis?per_page=100&page=1&_fields=id,name": {
+    "body": [
+      {
+        "id": 5,
+        "name": "Katės"
+      },
+      {
+        "id": 4,
+        "name": "Šunys"
+      }
+    ]
+  },
+  "https://keturkojo-viltis.lt/wp-json/wp/v2/gyvunas?per_page=100&page=1&_fields=id,link,title,modified_gmt,featured_media,content,rusis": {
+    "body": [
+      {
+        "id": 2077,
+        "link": "https://keturkojo-viltis.lt/gyvunai/morana/",
+        "title": {
+          "rendered": "Morana"
+        },
+        "modified_gmt": "2026-11-10T08:00:00",
+        "featured_media": 2082,
+        "content": {
+          "rendered": "<p class=\"wp-block-paragraph\">Spėjama gimimo data: 2025-10-01<br>Prieglaudoje nuo: 2026-04-09</p>"
+        },
+        "rusis": [
+          5
+        ]
+      },
+      {
+        "id": 2050,
+        "link": "https://keturkojo-viltis.lt/gyvunai/testas/",
+        "title": {
+          "rendered": "Testas"
+        },
+        "modified_gmt": "2026-11-01T08:00:00",
+        "featured_media": 0,
+        "content": {
+          "rendered": "<p>Draugiškas šuo.</p>"
+        },
+        "rusis": [
+          4
+        ]
+      }
+    ]
+  },
+  "https://keturkojo-viltis.lt/wp-json/wp/v2/media?include=2082&per_page=100&_fields=id,source_url": {
+    "body": [
+      {
+        "id": 2082,
+        "source_url": "https://keturkojo-viltis.lt/wp-content/uploads/2026/11/morana.jpg"
+      }
+    ]
+  }
+}
