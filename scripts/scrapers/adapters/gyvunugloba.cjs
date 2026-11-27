@@ -16,10 +16,35 @@
 //      (<div class="portfolio_paging"><span rel="MAXPAGES" class="load_more"><a href=...>, seen on the
 //      home page) ever appears, we follow it to the end.
 // We do not read /iesko-namu-gyvunai/rade-namus/ (adopted) or /islydeti/ (died).
-// Detail pages (portfolio_page/<slug>/) only have free text (e.g. "Pusmetinis, kastruotas, čipuotas"),
-// no labelled facts, so we do not read them (would be one extra request per animal).
+// Detail pages (portfolio_page/<slug>/, checked 2026-11-18) hold the description in
+// <div class="info portfolio_content"> as <p> paragraphs, often prefixed with a stray "<span;>".
+// We read it (one GET per animal, cached by page hash) as bio_lt; record.cjs takes health words
+// stated in it ("Loris kastruotas"). A failed detail page keeps the list-card facts.
 const html = require('../lib/html.cjs');
 const N = require('../lib/normalize.cjs');
+const L = require('../lib/labels.cjs');
+const { sha256 } = require('../lib/hash.cjs');
+
+const PARSER_VERSION = 'gyvunugloba-detail-4';
+
+function parseDetail(body, name) {
+  const $ = html.load(body);
+  const lines = $('.portfolio_content').first().find('p').map((_, p) => {
+    $(p).find('br').replaceWith('\n');
+    return $(p).text().split('\n');
+  }).get()
+    .map(t => N.cleanText(String(t).replace(/<span;?>/g, '')))
+    .filter(t => t && !/^https?:\/\/\S+$/.test(t)); // bare links (Facebook posts) are not description
+  if (lines.length && name && N.fold(lines[0]) === N.fold(name)) lines.shift(); // first line repeats the name
+  // Every page ends with the same adoption-form and donation footer (bank account, PayPal): not about the animal.
+  let footer = lines.findIndex(l => /^(dėl augintinio prašome užpildyti anketą|ačiū visiems padedantiems)/.test(N.fold(l))
+    || /(\ba\.s\.|(^|\s)įm\. kodas|sąskait|paypal|paysera|contribee)/.test(N.fold(l)));
+  // Walk back over the lines that introduce the account: "...padėti jiems:", the society's own name.
+  while (footer > 0 && (/:$/.test(lines[footer - 1]) || /^utenos rajono gyvūnų mylėtojų draugija$/.test(N.fold(lines[footer - 1])))) footer--;
+  if (footer >= 0) lines.length = footer;
+  const facts = L.fromPairs(lines.map(l => l.match(/^([^:：]{2,40})[:：]\s*(.+)$/)).filter(Boolean).map(m => [m[1], m[2]]));
+  return { ...facts, bio_lt: lines.join('\n') || null };
+}
 
 const BASE = 'https://gyvunugloba.com/';
 const PARENT = `${BASE}iesko-namu-gyvunai/`;
@@ -82,7 +107,7 @@ module.exports = {
   name: 'Utenos rajono gyvūnų mylėtojų draugija',
   website: BASE,
   hosts: ['gyvunugloba.com', 'www.gyvunugloba.com'],
-  async collect({ fetcher, log = () => {} }) {
+  async collect({ fetcher, cache, log = () => {} }) {
     const parent = await fetcher.get(PARENT);
     const $ = html.load(parent.body);
     // "Ieško namų gyvūnai" (= looking for a home). Anything else: status unknown.
@@ -131,8 +156,16 @@ module.exports = {
         });
       }
     }
+    for (const a of animals) {
+      let res;
+      try { res = await fetcher.get(a.sourceUrl); }
+      catch (e) { log(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
+      const d = await cache.getOrParse(sha256(res.body), PARSER_VERSION, () => parseDetail(res.body, a.name));
+      for (const k of ['sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt']) if (d[k] != null) a[k] = d[k];
+    }
     log(`gyvunugloba: ${animals.length} animals, ${skipped.length} skipped`);
     return { animals, skipped, complete };
   },
   _parseList: parseList,
+  _parseDetail: parseDetail,
 };

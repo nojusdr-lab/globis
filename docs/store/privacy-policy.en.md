@@ -1,14 +1,14 @@
 # GLOBIS Privacy Policy
 
-> **Draft.** Written to match what the app does today (16 November 2026). This is not legal advice. Before publishing, the owner replaces every `[…]` with real details and, ideally, has a lawyer review it. Do not publish while any `[…]` remains.
+> **Draft.** Written to match what the app does today (17 November 2026, optional account added). This is not legal advice. Before publishing, the owner replaces every `[…]` with real details and, ideally, has a lawyer review it. Do not publish while any `[…]` remains.
 
 **Effective from:** [date]
 **Provided by:** [full name or company name, registration number, address]
-**Privacy contact:** [email address]
+**Privacy contact:** app.globis@gmail.com
 
 ## In short
 
-GLOBIS does not collect your personal data. You do not need an account. We do not use analytics, advertising or tracking tools. What you save stays on your phone.
+You do not need an account: you can browse and save animals without one, and what you save stays on your phone. If you choose to create an optional account, we store only your email address, a hash of your password and the IDs of the animals you saved. We do not use analytics, advertising or tracking tools.
 
 ## What is stored on your device
 
@@ -22,6 +22,17 @@ This data is not sent to our servers and we cannot see it. It is not linked to y
 
 **How to delete it:** remove a pet from "Saved", clear the app's data in your phone settings, or uninstall the app.
 
+## Optional account
+
+An account is only needed to see your saved list on more than one device.
+
+- **What we store:** your email address, your password (only as an encrypted hash; we cannot see it), the IDs of the listings you saved and when you saved them.
+- **Where:** on Supabase servers in the European Union (Ireland). Supabase is our data processor.
+- **Why:** only to sync your list. Other users cannot see your data.
+- **Legal basis:** contract (GDPR Art. 6(1)(b)), because you create the account to use syncing.
+- **How long:** for as long as you keep the account.
+- **How to delete it:** Account → "Delete account". The account and its list are deleted immediately.
+
 ## What happens when the app shows photos and links
 
 - **Pet photos** load directly from the servers of shelter or listing websites. As with opening any web page, those servers receive technical connection data such as your IP address and device type. The operators of those websites handle that data under their own policies.
@@ -31,7 +42,7 @@ This data is not sent to our servers and we cannot see it. It is not linked to y
 
 ## What we do not do
 
-- We do not ask for your name, email, phone number or location.
+- We do not ask for your name, phone number or location. We ask for an email address only if you create an account.
 - We do not ask for camera, microphone, contacts or location permissions.
 - We do not track you across other apps or websites.
 - We do not sell or share data for advertising.
@@ -39,8 +50,8 @@ This data is not sent to our servers and we cannot see it. It is not linked to y
 
 ## Your rights
 
-Under the GDPR you have the right to know what personal data we process about you, to ask for it to be corrected or erased, and to object to processing. Because we do not hold your personal data, the simplest step is usually to clear the app's data on your phone. Send questions to [email]. You may also contact the Lithuanian State Data Protection Inspectorate (vdai.lrv.lt).
+Under the GDPR you have the right to know what personal data we process about you, to ask for it to be corrected or erased, and to object to processing. If you have no account, we hold no personal data about you. If you have one, the app gives you everything we store about you as JSON (Account → "Export my data"), and you can delete the account with all its data. Send questions to app.globis@gmail.com. You may also contact the Lithuanian State Data Protection Inspectorate (vdai.lrv.lt).
 
 ## Changes
 
-If the app adds accounts, notifications, analytics or any other feature that processes personal data, this policy will be updated before that feature launches, and the date above will change.
+If the app adds notifications, analytics or any other feature that processes personal data, this policy will be updated before that feature launches, and the date above will change.

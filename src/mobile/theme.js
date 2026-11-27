@@ -8,10 +8,13 @@ export const C={
  ink:'#0F1F19',ink2:'#364640',muted:'#5C6D65',
  okBg:'#E3F1EA',okInk:'#1C4A38',warnBg:'#FBEFD4',warnInk:'#744A08',mutBg:'#ECF0EE',mutInk:'#46564F',
  amber:'#744A08',danger:'#B4412F',
+ // Warm accent for saving (heart). White text on it: 4.6:1 (AA).
+ warm:'#B85A1E',
  // legacy aliases kept for older call sites
  soft:'#E7F0EB',
 };
-export const serif=Platform.select({ios:'Georgia',android:'serif',web:'Newsreader, Georgia, "Times New Roman", serif',default:undefined});
+// Loaded in GlobisApp via useFonts before the first render.
+export const serif='Fraunces_600SemiBold';
 const shadow=Platform.select({web:{boxShadow:'0 1px 2px rgba(15,31,25,.05), 0 12px 28px -14px rgba(15,31,25,.26)'},default:{shadowColor:'#0F1F19',shadowOpacity:0.12,shadowRadius:14,shadowOffset:{width:0,height:8},elevation:3}});
 
 export const styles=StyleSheet.create({
@@ -41,22 +44,25 @@ export const styles=StyleSheet.create({
  chip:{minHeight:40,paddingHorizontal:14,borderRadius:20,borderWidth:1,borderColor:C.line,backgroundColor:C.white,flexDirection:'row',alignItems:'center',gap:6},
  chipOn:{backgroundColor:C.green,borderColor:C.green},
  chipText:{fontSize:14,fontWeight:'500',color:C.ink2},chipTextOn:{color:C.white},chipCount:{fontSize:12,color:C.muted},chipCountOn:{color:'rgba(255,255,255,0.75)'},
- seg:{flexDirection:'row',backgroundColor:C.surface2,borderRadius:22,padding:3},
- segBtn:{width:44,height:42,borderRadius:20,alignItems:'center',justifyContent:'center'},segOn:{backgroundColor:C.white},
 
  card:{backgroundColor:C.white,borderRadius:26,overflow:'hidden',borderWidth:1,borderColor:C.line,...shadow},
  cardInfo:{paddingHorizontal:16,paddingTop:14,paddingBottom:16,gap:6,borderTopWidth:1,borderTopColor:C.line,backgroundColor:C.white},
  cardName:{fontSize:27,lineHeight:32,fontWeight:'500',color:C.ink,fontFamily:serif,flexShrink:1},
  more:{fontSize:14,fontWeight:'600',color:C.green},
+ cardShade:{position:'absolute',left:0,right:0,bottom:0,height:'48%',zIndex:2},
+ cardOverlay:{position:'absolute',left:0,right:0,bottom:0,paddingHorizontal:18,paddingTop:28,paddingBottom:18,gap:6,zIndex:4},
+ cardNameLight:{fontSize:32,lineHeight:38,fontWeight:'600',color:C.white,fontFamily:serif,flexShrink:1},
+ cardMetaLight:{fontSize:15,lineHeight:20,fontWeight:'500',color:'rgba(255,255,255,0.9)'},
+ cardMore:{width:34,height:34,borderRadius:17,backgroundColor:'rgba(255,255,255,0.18)',alignItems:'center',justifyContent:'center'},
  onPhoto:{position:'absolute',zIndex:3,flexDirection:'row',gap:6},
- countChip:{height:26,paddingHorizontal:10,borderRadius:13,backgroundColor:'rgba(255,255,255,0.94)',justifyContent:'center'},
+ countChip:{minHeight:26,paddingVertical:3,paddingHorizontal:10,borderRadius:13,backgroundColor:'rgba(255,255,255,0.94)',justifyContent:'center'},
  countChipText:{fontSize:12.5,fontWeight:'600',color:C.ink,fontVariant:['tabular-nums']},
  stamp:{position:'absolute',top:46,zIndex:4,paddingHorizontal:12,paddingVertical:6,borderRadius:10,borderWidth:2.5,backgroundColor:C.white},
  stampText:{fontWeight:'700',fontSize:15,letterSpacing:0.9},
  actions:{flexDirection:'row',alignItems:'center',gap:12,paddingVertical:12},
- act:{height:56,borderRadius:28,alignItems:'center',justifyContent:'center',backgroundColor:C.white,borderWidth:1,borderColor:C.line2},
+ act:{minHeight:56,borderRadius:28,alignItems:'center',justifyContent:'center',backgroundColor:C.white,borderWidth:1,borderColor:C.line2},
  actRound:{width:56},actSmall:{width:48,height:48,borderRadius:24},
- actSave:{flex:1,flexDirection:'row',gap:8,backgroundColor:C.green,borderColor:C.green},
+ actSave:{flex:1,flexDirection:'row',gap:8,backgroundColor:C.warm,borderColor:C.warm},
  actSaveText:{color:C.white,fontSize:16,fontWeight:'600'},
  hint:{fontSize:12,lineHeight:16,color:C.muted,textAlign:'center'},
 
@@ -66,7 +72,7 @@ export const styles=StyleSheet.create({
  heart:{position:'absolute',top:8,right:8,zIndex:3,width:44,height:44,borderRadius:22,backgroundColor:'rgba(255,255,255,0.94)',alignItems:'center',justifyContent:'center'},
  photo:{width:'100%',backgroundColor:C.tint},placeholder:{alignItems:'center',justifyContent:'center',gap:8},
 
- status:{flexDirection:'row',alignItems:'center',gap:5,height:26,paddingLeft:8,paddingRight:10,borderRadius:13,alignSelf:'flex-start'},
+ status:{flexDirection:'row',alignItems:'center',gap:5,minHeight:26,paddingVertical:3,paddingLeft:8,paddingRight:10,borderRadius:13,alignSelf:'flex-start'},
  statusText:{fontSize:12.5,fontWeight:'600'},
  note:{flexDirection:'row',gap:10,padding:14,borderRadius:16},
  facts:{flexDirection:'row',flexWrap:'wrap',gap:10},

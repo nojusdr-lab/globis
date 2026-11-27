@@ -1,0 +1,20 @@
+-- Fields the app needs to read listings straight from published_animals:
+-- the branch hint (Lesė has a Vilnius and a Kaunas branch under one website) and the listing URL.
+alter table public.snapshot_animals add column shelter_hint text;
+
+-- s.* is expanded at creation, so the view must be recreated to include the new column.
+drop view public.published_animals;
+create view public.published_animals
+with (security_invoker = true)
+as
+select s.*, r.source, r.published_at, a.source_url
+from public.snapshot_animals s
+join public.source_runs r on r.id = s.run_id
+join public.animals a on a.id = s.animal_id
+where r.id in (
+  select distinct on (source) id from public.source_runs
+  where published
+  order by source, published_at desc, id desc
+);
+
+grant select on public.published_animals to anon, authenticated;

@@ -5,7 +5,7 @@ Patikrinta pagal Apple taisyklių sąrašą („app-store-preflight“) ir Googl
 ## ❌ Stabdo pateikimą (5)
 
 1. **[Apple 5.1.1, Play] Nėra viešo privatumo politikos adreso.** Tekstas paruoštas ([LT](privacy-policy.lt.md), [EN](privacy-policy.en.md)), bet trūksta valdytojo duomenų ir viešos vietos. Įrašyti URL į `app.json` → `extra.privacyPolicyUrl`.
-2. **[Apple 1.5] Nėra palaikymo kontakto.** `extra.supportEmail` = null. Reikia tikro el. pašto ir palaikymo puslapio URL (gali būti tas pats puslapis kaip politika).
+2. **[Apple 1.5] Nėra palaikymo kontakto.** `extra.supportEmail` = app.globis@gmail.com (2026-11-24). Dar reikia ir palaikymo puslapio URL (gali būti tas pats puslapis kaip politika).
 3. **[Apple 5.2.1, 2.3.9] Duomenų ir nuotraukų teisės.** Visos 937 gyvūnų nuotraukos ir skelbimai dabar paimti iš `globok.lt`, kurio taisyklės draudžia turinį naudoti be sutikimo. Reikia arba Globok raštiško sutikimo, arba duomenų tiesiai iš prieglaudų svetainių (daro kitas darbas).
 4. **[Apple 2.1] Įrenginyje neišbandytas build’as.** Reikia Apple ir Google kūrėjų paskyrų, tada `eas build` ir bandymo telefone.
 5. **[Apple 2.1] Pasenę duomenys.** Programėlės duomenys įrašyti į programėlę ir nesiatnaujina. Recenzentas gali rasti jau įvaikintų gyvūnų. Sprendimas: Supabase duomenų bazė (daro kitas darbas) arba bent atnaujintas rinkinys prieš pateikimą.

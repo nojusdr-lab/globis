@@ -18,19 +18,54 @@ async function main() {
   const todo = adapters.filter(a => !only || only.has(a.id));
   require('node:fs').mkdirSync(outDir, { recursive: true });
   const report = [];
+  // Optional: also load each run into Supabase Postgres. Connection string comes only from the environment (CI secret).
+  let db = null;
+  let databaseError = null;
+  if (process.env.SUPABASE_DB_URL) {
+    const { Client } = require('pg');
+    const { postgresConfig } = require('./lib/postgres-config.cjs');
+    try {
+      db = new Client(postgresConfig());
+      await db.connect();
+    } catch (error) {
+      // The local snapshots still provide the bundled fallback during an outage.
+      databaseError = 'error: ' + error.message;
+      process.exitCode = 1;
+      try { if (db) await db.end(); }
+      catch (closeError) { console.error('Database cleanup failed: ' + closeError.message); }
+      db = null;
+    }
+  }
+  const { loadRun } = require('./lib/supabase-load.cjs');
+  let dbQueue = Promise.resolve();
   const workers = Array.from({ length: Math.min(4, todo.length) }, async () => {
     while (todo.length) {
       const adapter = todo.shift();
       const fetcher = createFetcher({ allowedHosts: adapter.hosts, log: m => console.log(`[${adapter.id}] ${m}`) });
       const run = await runSource(adapter, { fetcher, cache, log: m => console.log(m) });
       const result = publish(run, { outDir });
-      report.push({ source: adapter.id, state: run.state, animals: run.animals.length, skipped: run.skipped.length, requests: run.requests, published: result.published, reason: result.reason, errors: run.errors.slice(0, 5) });
-      console.log(JSON.stringify(report.at(-1)));
+      const sourceReport = { source: adapter.id, state: run.state, animals: run.animals.length,
+        skipped: run.skipped.length, requests: run.requests, published: result.published,
+        reason: result.reason, errors: run.errors.slice(0, 5) };
+      if (databaseError) sourceReport.db = databaseError;
+      report.push(sourceReport);
+      if (db) {
+        // One shared client: serialize loads so transactions from parallel workers never interleave.
+        dbQueue = dbQueue.then(() => loadRun(db, adapter, run)).then(
+          r => {
+            sourceReport.db = r.published ? 'published' : r.reason;
+            if (!r.published) process.exitCode = 1;
+          },
+          e => { sourceReport.db = `error: ${e.message}`; process.exitCode = 1; });
+        await dbQueue;
+      }
+      console.log(JSON.stringify(sourceReport));
     }
   });
   await Promise.all(workers);
   require('node:fs').writeFileSync(path.join(outDir, 'report.json'), JSON.stringify(report, null, 2));
-  if (report.some(r => r.state === 'failed')) process.exitCode = 1;
+  if (db) await db.end();
+  if (report.some(r => r.state !== 'complete' || !r.published)) process.exitCode = 1;
 }
 
 main().catch(e => { console.error(e.message); process.exitCode = 1; });

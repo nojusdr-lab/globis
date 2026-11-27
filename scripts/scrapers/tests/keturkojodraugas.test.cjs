@@ -50,7 +50,8 @@ test('keturkojodraugas: parses card tables and free text, unknowns stay null', a
   assert.equal(z.vaccinated, true, '"Skiepytas"');
   assert.equal(z.chipped, true, '"ženklintas"');
   assert.deepEqual(z.photos, ['https://keturkojodraugas.lt/wp-content/uploads/2026/10/ZAIBAS.jpeg']);
-  assert.equal(z.sourceUrl, 'https://keturkojodraugas.lt/kates/');
+  assert.equal(z.sourceUrl, 'https://keturkojodraugas.lt/kates/#zaibas');
+  assert.equal(new Set(run.animals.map(a => a.sourceUrl)).size, run.animals.length); // DB needs unique listing URLs
   assert.match(z.bio_lt, /Charakteris: Atsargus/);
 
   const m = byId['keturkojodraugas:kates-mike'];
@@ -99,4 +100,30 @@ test('keturkojodraugas: changed layout (no cards, no empty notice) fails instead
   assert.equal(run.state, 'failed');
   const gone = { ...routes, 'https://keturkojodraugas.lt/kates/': { body: '<html><body><h1>Dovanojamos Katės</h1></body></html>' } };
   assert.equal((await collect(gone)).run.state, 'failed');
+});
+
+test('keturkojodraugas: table and card text that contradict each other give null, not the table value', () => {
+  const card = (name, neut, text) => `<h1>Dovanojamos Katės</h1><div class="alm-listing"><div class="card"><img src="/a.jpg"><div class="card-body">
+    <h4>${name}</h4><table><tr><th>Lytis</th><td>Patinas</td></tr><tr><th>Amžius</th><td>-</td></tr><tr><th>Sterilizacija/kastracija</th><td>${neut}</td></tr></table>
+    <div class="col-12"><p><b>Kiti ypatumai</b></p><p>${text}</p></div></div></div></div>`;
+  const page = { slug: 'kates', url: 'https://keturkojodraugas.lt/kates/' };
+  // Live 2026-11-25 (LAPKRITIS): table "Neatlikta", text "Skiepytas, ženklintas, kastruotas."
+  const [a] = adapter._parseListing(card('LAPKRITIS', 'Neatlikta', 'Skiepytas, ženklintas, kastruotas.'), page).animals;
+  assert.equal(a.neutered, null, 'shelter says both: unknown');
+  assert.equal(a.age_text, null, '"-" is an empty cell');
+  assert.equal(a.chipped, true);
+  const [b] = adapter._parseListing(card('X', 'Neatlikta', 'Skiepytas.'), page).animals;
+  assert.equal(b.neutered, false, 'no contradiction: table value');
+  const [c] = adapter._parseListing(card('Y', 'Atlikta', 'Kastruotas.'), page).animals;
+  assert.equal(c.neutered, true);
+});
+
+test('keturkojodraugas: contradicted field is marked contested so record.cjs keeps it null', () => {
+  const { makeAnimal } = require('../lib/record.cjs');
+  const body = `<h1>Dovanojamos Katės</h1><div class="alm-listing"><div class="card"><img src="/a.jpg"><div class="card-body">
+    <h4>LAPKRITIS</h4><table><tr><th>Sterilizacija/kastracija</th><td>Neatlikta</td></tr></table>
+    <div class="col-12"><p><b>Kiti ypatumai</b></p><p>Skiepytas, ženklintas, kastruotas.</p></div></div></div></div>`;
+  const [a] = adapter._parseListing(body, { slug: 'kates', url: 'https://keturkojodraugas.lt/kates/' }).animals;
+  assert.deepEqual(a.contested, ['neutered']);
+  assert.equal(makeAnimal('keturkojodraugas', a).neutered, null);
 });

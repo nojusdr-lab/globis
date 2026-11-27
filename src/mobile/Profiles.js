@@ -4,13 +4,13 @@ import {Ionicons} from '@expo/vector-icons';
 import {eligible,phone,email} from '../data/integrity.cjs';
 import {Avatar,Button,Photo,Sheet,SourceLink,StatusNote} from './ui';
 import {C,styles as s} from './theme';
-import {facts,openQuestions} from './facts.cjs';
+import {facts,openQuestions,text} from './facts.cjs';
 
-function Fact({label,value,note}) {
+function Fact({label,value,note,lang}) {
  const known=value!=null&&value!=='';
  return <View style={[s.fact,!known&&s.factUnknown]}>
   <Text style={s.factLabel}>{label}</Text>
-  <Text style={known?s.factValue:s.factValueUnknown}>{known?value:'Nenurodyta'}</Text>
+  <Text style={known?s.factValue:s.factValueUnknown}>{known?value:lang==='lt'?'Nenurodyta':'Not stated'}</Text>
   {known&&note?<Text style={{fontSize:12,color:C.okInk,fontWeight:'500'}}>{note}</Text>:null}
  </View>;
 }
@@ -18,7 +18,7 @@ function Fact({label,value,note}) {
 export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter,saved,reduced,onError}) {
  const t=(lt,en)=>lang==='lt'?lt:en;
  const date=pet.observedAt&&Number.isFinite(Date.parse(pet.observedAt))?new Date(pet.observedAt):null;
- const bio=lang==='lt'?pet.bioLt:pet.bioEn;
+ const bio=text(pet,'bio',lang==='lt');
  const rows=facts(pet,lang);
  const questions=openQuestions(pet,lang);
  return <Sheet full lang={lang} title={pet.name} reduced={reduced} onClose={onClose} footer={<View style={s.row}>
@@ -32,7 +32,7 @@ export function PetProfile({pet,lang,onClose,onSave,onRemove,onContact,onShelter
    <Text style={s.body}>{[pet.species==='dog'?t('Šuo','Dog'):pet.species==='cat'?t('Katė','Cat'):null,pet.city].filter(Boolean).join(' · ')}</Text>
   </View>
   <StatusNote pet={pet} lang={lang}/>
-  <View style={s.facts}>{rows.map(r=><Fact key={r.key} label={r.label} value={r.value} note={r.note}/>)}</View>
+  {rows.some(r=>r.value!=null)?<View style={s.facts}>{rows.filter(r=>r.value!=null).map(r=><Fact key={r.key} label={r.label} value={r.value} note={r.note} lang={lang}/>)}</View>:null}
   <View style={s.section}>
    <Text style={s.sectionTitle}>{t('Aprašymas','Description')}</Text>
    <Text style={s.body}>{bio||t('Prieglauda aprašymo nepateikė.','The shelter did not provide a description.')}</Text>

@@ -8,7 +8,11 @@
 // So we read the public HTML list https://tautmilesgloba.lt/dovanojami/ ("Dovanojami gyvūnai").
 // Each card gives: detail link, name, one photo, an image alt text ("Dovanojamas"), and
 // "Prieglaudoje nuo <date>" (intake date; no schema field for it, so it is not kept).
-// Species, sex, age, health facts are not on the list, so they stay null (detail pages not read).
+// Species, sex, age, health facts are not on the list. Each detail page (checked 2026-11-18) has
+// a <table class="table"> of "Rūšis / Lytis / Amžius / Sterilizacija/kastracija / Ūgio kategorija"
+// rows and the description in div.gyvunas-single-text. We read both (one GET per animal, cached
+// by page hash). The "Informacija darbuotojams" (staff) link is not followed.
+// A failed detail page keeps the list-card facts.
 // The site pages are injected with casino spam links: only cards inside section#main-gyvunas
 // that link to /gyvunai/ on this host are read.
 // Pagination: div.archive-pagination. On 2026-11-16 it was empty (all 19 animals on one page).
@@ -16,6 +20,33 @@
 // with no "next", or by an empty pagination block on page 1. Anything else = complete:false.
 const H = require('../lib/html.cjs');
 const N = require('../lib/normalize.cjs');
+const L = require('../lib/labels.cjs');
+const { sha256 } = require('../lib/hash.cjs');
+
+const PARSER_VERSION = 'tautmilesgloba-detail-2';
+
+// Contact details close many descriptions ("📞 0671 68608", "Susisiekite 0671..., Akvilė (...)").
+// The line is cut where they start, so neither the number nor a staff member's name is kept.
+function contactCut(line) {
+  let t = N.cleanText(line) || '';
+  const at = t.search(/📞|\+?\d[\d\s-]{7,}\d/u);
+  if (at >= 0) t = t.slice(0, at);
+  return N.cleanText(t.replace(/(susisiekite|skambinkite|tel\.?|telefonu)\s*[:,]?\s*$/iu, ''));
+}
+
+function parseDetail(body) {
+  const $ = H.load(body);
+  const pairs = $('#gyvunas-gyvunas table tr').map((_, tr) => {
+    const td = $(tr).find('td');
+    return td.length === 2 ? [[$(td[0]).text(), $(td[1]).text()]] : [];
+  }).get();
+  const facts = L.fromPairs(pairs);
+  const lines = $('.gyvunas-single-text p').map((_, p) => {
+    $(p).find('br').replaceWith('\n');
+    return $(p).text().split('\n');
+  }).get().map(contactCut).filter(Boolean);
+  return { ...facts, bio_lt: lines.join('\n') || null };
+}
 
 const ORIGIN = 'https://tautmilesgloba.lt';
 const LIST_URL = `${ORIGIN}/dovanojami/`;
@@ -60,7 +91,7 @@ function parsePage(html, pageUrl) {
 }
 
 function createTautmilesglobaAdapter({ maxPages = 20 } = {}) {
-  async function collect({ fetcher, log = () => {} }) {
+  async function collect({ fetcher, cache, log = () => {} }) {
     const animals = [];
     const skipped = [];
     const seenIds = new Set();
@@ -111,6 +142,13 @@ function createTautmilesglobaAdapter({ maxPages = 20 } = {}) {
       complete = parsed.hasCurrent || (page === 1 && parsed.hasPagination && !parsed.hasLinks);
       break;
     }
+    for (const a of animals) {
+      let res;
+      try { res = await fetcher.get(a.sourceUrl); }
+      catch (e) { log(`${a.sourceUrl}: detail not read (${e.message})`); continue; }
+      const d = await cache.getOrParse(sha256(res.body), PARSER_VERSION, () => parseDetail(res.body));
+      for (const k of ['species', 'sex', 'age_text', 'size', 'vaccinated', 'neutered', 'chipped', 'bio_lt']) if (d[k] != null) a[k] = d[k];
+    }
     log(`tautmilesgloba: ${animals.length} animals, ${skipped.length} skipped, complete=${complete}`);
     return { animals, skipped, complete };
   }
@@ -128,3 +166,4 @@ module.exports = createTautmilesglobaAdapter();
 module.exports.createTautmilesglobaAdapter = createTautmilesglobaAdapter;
 module.exports.parsePage = parsePage;
 module.exports.slugId = slugId;
+module.exports.parseDetail = parseDetail;

@@ -5,7 +5,7 @@ const { listingId, statusFromText, withOfficialContacts } = require('../src/data
 function migrate(pets, shelters) {
   const organizations = shelters.map(({ descriptionLt, descriptionEn,
     totalCount, dogsCount, catsCount, count, ...shelter }) =>
-    withOfficialContacts({ ...shelter, source: 'globok' }));
+    withOfficialContacts({ ...shelter, source: shelter.source ?? 'globok' }));
   const byId = new Map(organizations.map(org => [org.id, org]));
   const mapping = [];
   const seen = new Set();
